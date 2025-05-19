@@ -42,17 +42,17 @@ AI Agents can leverage tools to complete complex tasks, retrieve information, or
 
 These building blocks allow the AI agent to perform a wide range of tasks. Let's look at the key elements needed to implement the Tool Use Design Pattern:
 
-- **Function/Tool Schemas**: Detailed definitions of available tools, including function name, purpose, required parameters, and expected outputs. These schemas enable the LLM to understand what tools are available and how to construct valid requests.
+- **Function/Tool Calling**: This is the primary way to enable LLMs to interact with tools. Functions or tools are blocks of reusable code that agents use to carry out tasks. These can range from simple functions like a calculator to API calls to third-party services such as stock price lookups or weather forecasts.
 
-- **Function Execution Logic**: Governs how and when tools are invoked based on the user’s intent and conversation context. This may include planner modules, routing mechanisms, or conditional flows that determine tool usage dynamically.
+- **Dynamic Information Retrieval**: Agents can query external APIs or databases to fetch up-to-date data. This is useful for tasks like data analysis, fetching stock prices, or weather information.
 
-- **Message Handling System**: Components that manage the conversational flow between user inputs, LLM responses, tool calls, and tool outputs.
+- **Code Execution and Interpretation**: Agents can execute code or scripts to solve mathematical problems, generate reports, or perform simulations.
 
-- **Tool Integration Framework**: Infrastructure that connects the agent to various tools, whether they are simple functions or complex external services.
+- **Workflow Automation**: This involves automating repetitive or multi-step workflows by integrating tools like task schedulers, email services, or data pipelines.
 
-- **Error Handling & Validation**: Mechanisms to handle failures in tool execution, validate parameters, and manage unexpected responses.
+- **Customer Support**: Agents can interact with CRM systems, ticketing platforms, or knowledge bases to resolve user queries.
 
-- **State Management**: Tracks conversation context, previous tool interactions, and persistent data to ensure consistency across multi-turn interactions.
+- **Content Generation and Editing**: Agents can leverage tools like grammar checkers, text summarizers, or content safety evaluators to assist with content creation tasks.
 
 Next, let's look at Function/Tool Calling in more detail.
  
