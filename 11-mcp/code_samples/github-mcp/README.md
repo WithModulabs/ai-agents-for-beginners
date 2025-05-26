@@ -58,8 +58,8 @@ After connecting, you should see a (1) next to the plug icon to confirm that its
 
 ## Using the Demo 
 
-To start the agent workflow of reccomending hackathon projects, you can type a message like: 
+To start the agent workflow of recommending hackathon projects, you can type a message like: 
 
 "Recommend hackathon projects for the Github user koreyspace"
 
-**Currently we have this coded to detect the words "reccomend" and "github" to start this workflow. Later, this will be done by a Router Agent.**
+The Router Agent will analyze your request and determine which combination of agents (GitHub, Hackathon, and Events) is best suited to handle your query. The agents work together to provide comprehensive recommendations based on GitHub repository analysis, project ideation, and relevant tech events.

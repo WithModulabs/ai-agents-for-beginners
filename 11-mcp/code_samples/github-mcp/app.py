@@ -1,7 +1,9 @@
 import os
 import json
+import logging
 from dotenv import load_dotenv
-
+import requests
+import re
 
 import chainlit as cl
 from mcp import ClientSession
@@ -31,6 +33,13 @@ from azure.search.documents.indexes.models import SearchIndex, SimpleField, Sear
 # Load environment variables
 load_dotenv()
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
 
 # Example Weather Plugin (Tool)
 
@@ -42,20 +51,28 @@ class RAGPlugin:
 
     @kernel_function(name="search_events", description="Searches for relevant events based on a query")
     def search_events(self, query: str) -> str:
-        """Retrieves relevant events from Azure Search based on the query."""
+        """Retrieves relevant events from Azure Search and a live API based on the query."""
+        context_strings = []
         try:
             results = self.search_client.search(query, top=5)
-            context_strings = []
             for result in results:
                 if 'content' in result:
                     context_strings.append(f"Event: {result['content']}")
-
-            if context_strings:
-                return "\n\n".join(context_strings)
-            else:
-                return "No relevant events found."
         except Exception as e:
-            return f"Error searching for events: {str(e)}"
+            context_strings.append(f"Error searching Azure Search: {str(e)}")
+        # Live API (example: Devpost hackathons)
+        try:
+            api_resp = requests.get(f"https://devpost.com/api/hackathons?search={query}", timeout=5)
+            if api_resp.ok:
+                data = api_resp.json()
+                for event in data.get('hackathons', [])[:5]:
+                    context_strings.append(f"Live Event: {event.get('title')} - {event.get('url')}")
+        except Exception as e:
+            context_strings.append(f"Error fetching live events: {str(e)}")
+        if context_strings:
+            return "\n\n".join(context_strings)
+        else:
+            return "No relevant events found."
 
 
 # Initialize Azure AI Search with persistent storage
@@ -92,8 +109,15 @@ except Exception as e:
     index_client.create_index(index)
 
 # Always read event descriptions from markdown file
-with open("event-descriptions.md", "r") as f:
-    markdown_content = f.read()
+current_dir = os.path.dirname(os.path.abspath(__file__))
+event_descriptions_path = os.path.join(current_dir, "event-descriptions.md")
+
+try:
+    with open(event_descriptions_path, "r", encoding='utf-8') as f:
+        markdown_content = f.read()
+except FileNotFoundError:
+    logger.warning(f"Could not find {event_descriptions_path}")
+    markdown_content = ""
 
 # Split the markdown content into individual event descriptions
 event_descriptions = markdown_content.split("---")  # You can change the delimiter
@@ -124,6 +148,7 @@ def flatten(xss):
 
 @cl.on_mcp_connect
 async def on_mcp(connection, session: ClientSession):
+    logger.info(f"MCP Connection established: {connection.name}")
     result = await session.list_tools()
     tools = [{
         "name": t.name,
@@ -134,7 +159,11 @@ async def on_mcp(connection, session: ClientSession):
     mcp_tools = cl.user_session.get("mcp_tools", {})
     mcp_tools[connection.name] = tools
     cl.user_session.set("mcp_tools", mcp_tools)
-
+    
+    # Log available tools
+    print(f"Available MCP tools for {connection.name}:")
+    for tool in tools:
+        print(f"  - {tool['name']}: {tool['description']}")
 
 @cl.step(type="tool")
 async def call_tool(tool_use):
@@ -209,26 +238,32 @@ async def on_chat_start():
 
     # Add GitHub MCP plugin
     try:
-        # Create GitHub MCP plugin using MCPStdioPlugin
+        logger.info("Initializing GitHub MCP plugin...")
         github_plugin = MCPStdioPlugin(
-            name="Github",
-            description="Github Plugin",
+            name="GitHub", 
+            description="GitHub Plugin", 
             command="npx",
             args=["-y", "@modelcontextprotocol/server-github"]
         )
 
         # Connect to the GitHub MCP server
         await github_plugin.connect()
+        logger.info("GitHub MCP server connection established")
 
         # Add the plugin to the kernel
         kernel.add_plugin(github_plugin)
+        logger.info("GitHub plugin added to kernel")
 
         # Store the plugin in user session for cleanup later
         cl.user_session.set("github_plugin", github_plugin)
 
-        print("GitHub plugin added successfully")
+        logger.info("GitHub plugin setup completed successfully")
+        logger.info("✓ MCP Connection Status: Active")
+        logger.info("✓ Plugin Status: Loaded")
+        logger.info("✓ Tools: Available")
     except Exception as e:
-        print(f"Error adding GitHub plugin: {str(e)}")
+        logger.error(f"❌ Error adding GitHub plugin: {str(e)}")
+        logger.error("Try following the setup guide in MCP_SETUP.md")
 
     GITHUB_INSTRUCTIONS = """
 You are an expert on GitHub repositories. When answering questions, you **must** use the provided GitHub username to find specific information about that user's repositories, including:
@@ -251,7 +286,7 @@ Your task:
 
 When making recommendations:
 - Base your ideas strictly on the user's GitHub repositories, languages, and tools
-- Give suggestions on tools, languaghes and framweworks to use to build it. 
+- Give suggestions on tools, languages and frameworks to use to build it. 
 - Provide detailed project descriptions including architecture and implementation approach
 - Explain why the project has potential to win in specific prize categories
 - Highlight technical feasibility given the user's demonstrated skills by referencing the specific repositories or languages used.
@@ -358,6 +393,24 @@ async def on_chat_end():
         except Exception as e:
             print(f"Error closing GitHub plugin: {str(e)}")
 
+def route_user_input(user_input: str):
+    """
+    Analyze user input and return a list of agent names to invoke.
+    Returns: list of agent names (e.g., ["GitHubAgent", "HackathonAgent", "EventsAgent"])
+    """
+    user_input_lower = user_input.lower()
+    agents = []
+    # Example patterns (expand as needed)
+    if re.search(r"github|repo|repository|commit|pull request", user_input_lower):
+        agents.append("GitHubAgent")
+    if re.search(r"hackathon|project idea|competition|challenge|win", user_input_lower):
+        agents.append("HackathonAgent")
+    if re.search(r"event|conference|meetup|workshop|webinar", user_input_lower):
+        agents.append("EventsAgent")
+    if not agents:
+        agents = ["GitHubAgent", "HackathonAgent", "EventsAgent"]
+    return agents
+
 
 @cl.on_message
 async def on_message(message: cl.Message):
@@ -368,63 +421,57 @@ async def on_message(message: cl.Message):
     agent_group_chat = cl.user_session.get("agent_group_chat")
     sk_filter = cl.SemanticKernelFilter(kernel=kernel)
 
+    user_input = message.content
+    agent_names = route_user_input(user_input)
 
-    # Check if the message is requesting a hackathon project recommendation
-    user_input = message.content.lower()
-    if "recommend" and "github" in user_input:
-        sk_filter = cl.SemanticKernelFilter(kernel=kernel)
+    # Add user message to chat history
+    chat_history.add_user_message(message.content)
 
-        # Add user message to chat history
-        chat_history.add_user_message(message.content)
-
-        # Add user message to the agent group chat's channel
+    # If more than one agent is selected, use group chat
+    if len(agent_names) > 1:
         await agent_group_chat.add_chat_message(message.content)
-
-        # Create message for response stream - USE ONLY ONE MESSAGE OBJECT
-        answer = cl.Message(content="Processing your request using GitHub, Hackathon and Events agents...\n\n")
+        answer = cl.Message(content="Processing your request using: {}...\n\n".format(", ".join(agent_names)))
         await answer.send()
-
         agent_responses = []
-        async for content in agent_group_chat.invoke():
-            agent_name = content.name or "Agent"
-            response = f"**{agent_name}**: {content.content}"
-            agent_responses.append(response)
-            await answer.stream_token(f"{response}\n\n")
-
-        # Add the full agent responses to chat history
-        full_response = "\n\n".join(agent_responses)
-        chat_history.add_assistant_message(full_response)
-
-        # Update the message with all responses
-        answer.content = full_response
-        await answer.update()
+        try:
+            async for content in agent_group_chat.invoke():
+                agent_name = content.name or "Agent"
+                response = f"**{agent_name}**: {content.content}"
+                agent_responses.append(response)
+                await answer.stream_token(f"{response}\n\n")
+            full_response = "\n\n".join(agent_responses)
+            chat_history.add_assistant_message(full_response)
+            answer.content = full_response
+            await answer.update()
+        except Exception as e:
+            await answer.stream_token(f"\n\n❌ Error: {str(e)}\n\n")
+            chat_history.add_assistant_message(f"Error: {str(e)}")
+            answer.content += f"\n\n❌ Error: {str(e)}"
+            await answer.update()
     else:
-        # Regular processing for other messages
-        # Add user message to history
-        chat_history.add_user_message(message.content)
-
-        # Create a Chainlit message for the response stream
-        answer = cl.Message(content="")
-
-        async for msg in chat_completion_service.get_streaming_chat_message_content(
-            chat_history=chat_history,
-            user_input=message.content,
-            settings=settings,
-            kernel=kernel,
-        ):
-            if msg.content:
-                await answer.stream_token(msg.content)
-            # Handle function calls if they occur
-            if isinstance(msg, FunctionCallContent):
-                function_name = msg.function_name
-                function_arguments = msg.arguments
-                await answer.stream_token(f"\n\nCalling function: {function_name} with arguments: {function_arguments}\n\n")
-            # Handle function results
-            if isinstance(msg, FunctionResultContent):
-                await answer.stream_token(f"Function result: {msg.content}\n\n")
-
-        # Add the full assistant response to history
-        chat_history.add_assistant_message(answer.content)
-
-        # Send the final message
+        # Single agent: route to the appropriate agent
+        agent_name = agent_names[0]
+        answer = cl.Message(content=f"Processing your request using {agent_name}...\n\n")
         await answer.send()
+        try:
+            async for msg in chat_completion_service.get_streaming_chat_message_content(
+                chat_history=chat_history,
+                user_input=message.content,
+                settings=settings,
+                kernel=kernel,
+            ):
+                if msg.content:
+                    await answer.stream_token(msg.content)
+                if isinstance(msg, FunctionCallContent):
+                    function_name = msg.function_name
+                    function_arguments = msg.arguments
+                    await answer.stream_token(f"\n\nCalling function: {function_name} with arguments: {function_arguments}\n\n")
+                if isinstance(msg, FunctionResultContent):
+                    await answer.stream_token(f"Function result: {msg.content}\n\n")
+            chat_history.add_assistant_message(answer.content)
+            await answer.update()
+        except Exception as e:
+            await answer.stream_token(f"\n\n❌ Error: {str(e)}\n\n")
+            chat_history.add_assistant_message(f"Error: {str(e)}")
+            answer.content += f"\n\n❌ Error: {str(e)}"
+            await answer.update()
