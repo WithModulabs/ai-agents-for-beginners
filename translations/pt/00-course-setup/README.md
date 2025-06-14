@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "49fa13c21a816ffcc7740ab17ba024a9",
-  "translation_date": "2025-05-20T08:43:49+00:00",
+  "original_hash": "c729f7442eb5afd55b5522e3ad65c822",
+  "translation_date": "2025-06-11T04:41:21+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "pt"
 }
@@ -13,9 +13,11 @@ Selecione os `Fine-grained tokens` option on the left side of your screen.
 
 Then select `Generate new token`.
 
-![Generate Token](../../../translated_images/generate-token.361ec40abe59b84ac68d63c23e2b6854d6fad82bd4e41feb98fc0e6f030e8ef7.pt.png)
+![Generate Token](../../../00-course-setup/images/generate-token.png)
 
 You will be prompted to enter a name for your token, select the expiration date (Recommended: 30 Days), and select the scopes for your token (Public Repositories).
+
+It's also necessary to edit the permissions of this token: Permissions -> Models -> Allows access to GitHub Models
 
 Copy your new token that you have just created. You will now add this to your `.env` file included in this course. 
 
@@ -38,17 +40,19 @@ You should now be able to run the code samples of this course.
 
 ### Step 1: Retrieve Your Azure Project Connection String
 
-Follow the steps to creating a project and agent in Azure AI Foundry found here: [Create a project in Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-services/agents/quickstart?pivots=ai-foundry-portal?WT.mc_id=academic-105485-koreyst)
+
+Follow the steps to creating a hub and project in Azure AI Foundry found here: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
+
 
 Once you have created your project, you will need to retrieve the connection string for your project.
 
 This can be done by going to the **Overview** page of your project in the Azure AI Foundry portal.
 
-![Project Connection String](../../../translated_images/project-connection-string.8a2c7c804a33d53df14011e583d0c3fe0f79d9eb52b72e3c7d7d2f68f828c8aa.pt.png)
+![Project Connection String](../../../00-course-setup/images/project-connection-string.png)
 
 ### Step 2: Create Your `.env` File
 
-To create your `.env` execute o seguinte comando no seu terminal.
+To create your `.env`. Execute o seguinte comando no seu terminal.
 
 ```bash
 cp .env.example .env
@@ -67,7 +71,7 @@ Next, open a terminal and run `az login --use-device-code` to sign in to your Az
 Once you've logged in, select your subscription in the terminal.
 
 
-## Additional Envionment Variables - Azure Search and Azure OpenAI 
+## Additional Environment Variables - Azure Search and Azure OpenAI 
 
 For the Agentic RAG Lesson - Lesson 5 - there are samples that use Azure Search and Azure OpenAI.
 
@@ -115,9 +119,9 @@ Rather than hardcode your credentials, we'll use a keyless connection with Azure
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 ```
 
-## Travado em algum lugar?
+## Preso em Algum Lugar?
 
-Se você tiver algum problema ao executar essa configuração, entre em nosso
+Se tiver algum problema para executar esta configuração, entre em nosso
 
 ou
 
@@ -125,9 +129,9 @@ ou
 
 ## Próxima Aula
 
-Agora você está pronto para executar o código deste curso, aproveite para aprender mais sobre o mundo dos Agentes de IA!
+Agora você está pronto para executar o código deste curso. Aproveite para aprender mais sobre o mundo dos Agentes de IA!
 
 [Introdução aos Agentes de IA e Casos de Uso de Agentes](../01-intro-to-ai-agents/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
