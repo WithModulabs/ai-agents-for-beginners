@@ -1,137 +1,329 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c729f7442eb5afd55b5522e3ad65c822",
-  "translation_date": "2025-06-11T04:42:06+00:00",
+  "original_hash": "86273689a010b5efecaf7fa23104e0fb",
+  "translation_date": "2025-11-07T08:24:45+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "fa"
 }
 -->
-در حساب GitHub خود.
+# تنظیم دوره
 
-گزینه‌ی `Fine-grained tokens` option on the left side of your screen.
+## مقدمه
 
-Then select `Generate new token`.
+این درس نحوه اجرای نمونه‌های کد این دوره را پوشش می‌دهد.
 
-![Generate Token](../../../00-course-setup/images/generate-token.png)
+## پیوستن به سایر فراگیران و دریافت کمک
 
-You will be prompted to enter a name for your token, select the expiration date (Recommended: 30 Days), and select the scopes for your token (Public Repositories).
+قبل از اینکه مخزن خود را کلون کنید، به [کانال دیسکورد AI Agents For Beginners](https://aka.ms/ai-agents/discord) بپیوندید تا هرگونه کمک در مورد تنظیمات، سوالات مربوط به دوره یا ارتباط با سایر فراگیران را دریافت کنید.
 
-It's also necessary to edit the permissions of this token: Permissions -> Models -> Allows access to GitHub Models
+## کلون یا فورک کردن این مخزن
 
-Copy your new token that you have just created. You will now add this to your `.env` file included in this course. 
+برای شروع، لطفاً مخزن GitHub را کلون یا فورک کنید. این کار نسخه‌ای از مواد دوره را برای شما ایجاد می‌کند تا بتوانید کد را اجرا، آزمایش و تغییر دهید!
 
+این کار را می‌توانید با کلیک بر روی لینک <a href="https://github.com/microsoft/ai-agents-for-beginners/fork" target="_blank">فورک کردن مخزن</a> انجام دهید.
 
-### Step 2: Create Your `.env` File
+اکنون باید نسخه فورک شده خود از این دوره را در لینک زیر داشته باشید:
 
-To create your `.env` را انتخاب کنید و دستور زیر را در ترمینال خود اجرا کنید.
+![مخزن فورک شده](../../../translated_images/forked-repo.33f27ca1901baa6a5e13ec3eb1f0ddd3a44d936d91cc8cfb19bfdb9688bd2c3d.fa.png)
+
+### کلون سطحی (توصیه شده برای کارگاه / Codespaces)
+
+  >مخزن کامل ممکن است بزرگ باشد (~3 گیگابایت) زمانی که تاریخچه کامل و همه فایل‌ها را دانلود کنید. اگر فقط در کارگاه شرکت می‌کنید یا فقط به چند پوشه درس نیاز دارید، کلون سطحی (یا کلون پراکنده) بیشتر این دانلود را با کوتاه کردن تاریخچه و/یا نادیده گرفتن بلوک‌ها اجتناب می‌کند.
+
+#### کلون سطحی سریع — تاریخچه حداقلی، همه فایل‌ها
+
+در دستورات زیر `<your-username>` را با URL فورک خود (یا URL اصلی اگر ترجیح می‌دهید) جایگزین کنید.
+
+برای کلون کردن فقط تاریخچه آخرین کامیت (دانلود کوچک):
+
+```bash|powershell
+git clone --depth 1 https://github.com/<your-username>/ai-agents-for-beginners.git
+```
+
+برای کلون کردن یک شاخه خاص:
+
+```bash|powershell
+git clone --depth 1 --branch <branch-name> https://github.com/<your-username>/ai-agents-for-beginners.git
+```
+
+#### کلون جزئی (پراکنده) — بلوک‌های حداقلی + فقط پوشه‌های انتخاب شده
+
+این روش از کلون جزئی و بررسی پراکنده استفاده می‌کند (نیاز به Git 2.25+ دارد و Git مدرن با پشتیبانی از کلون جزئی توصیه می‌شود):
+
+```bash|powershell
+git clone --depth 1 --filter=blob:none --sparse https://github.com/<your-username>/ai-agents-for-beginners.git
+```
+
+به پوشه مخزن بروید:
+
+```bash|powershell
+cd ai-agents-for-beginners
+```
+
+سپس مشخص کنید کدام پوشه‌ها را می‌خواهید (مثال زیر دو پوشه را نشان می‌دهد):
+
+```bash|powershell
+git sparse-checkout set 00-course-setup 01-intro-to-ai-agents
+```
+
+پس از کلون کردن و بررسی فایل‌ها، اگر فقط به فایل‌ها نیاز دارید و می‌خواهید فضای آزاد کنید (بدون تاریخچه گیت)، لطفاً متادیتای مخزن را حذف کنید (💀غیرقابل بازگشت — تمام قابلیت‌های Git را از دست خواهید داد: بدون کامیت‌ها، کشیدن‌ها، فشار دادن‌ها یا دسترسی به تاریخچه).
 
 ```bash
+# zsh/bash
+rm -rf .git
+```
+
+```powershell
+# PowerShell
+Remove-Item -Recurse -Force .git
+```
+
+#### استفاده از GitHub Codespaces (توصیه شده برای اجتناب از دانلودهای بزرگ محلی)
+
+- یک Codespace جدید برای این مخزن از طریق [رابط کاربری GitHub](https://github.com/codespaces) ایجاد کنید.  
+
+- در ترمینال Codespace تازه ایجاد شده، یکی از دستورات کلون سطحی/پراکنده بالا را اجرا کنید تا فقط پوشه‌های درس مورد نیاز را به فضای کاری Codespace بیاورید.
+- اختیاری: پس از کلون کردن داخل Codespaces، .git را حذف کنید تا فضای اضافی آزاد شود (دستورات حذف بالا را ببینید).
+- توجه: اگر ترجیح می‌دهید مخزن را مستقیماً در Codespaces باز کنید (بدون کلون اضافی)، توجه داشته باشید که Codespaces محیط devcontainer را ایجاد می‌کند و ممکن است همچنان بیش از نیاز شما فراهم کند. کلون کردن یک نسخه سطحی داخل یک Codespace تازه به شما کنترل بیشتری بر استفاده از دیسک می‌دهد.
+
+#### نکات
+
+- همیشه URL کلون را با فورک خود جایگزین کنید اگر می‌خواهید ویرایش/کامیت کنید.
+- اگر بعداً به تاریخچه یا فایل‌های بیشتری نیاز داشتید، می‌توانید آنها را دریافت کنید یا بررسی پراکنده را تنظیم کنید تا پوشه‌های اضافی را شامل شود.
+
+## اجرای کد
+
+این دوره مجموعه‌ای از Jupyter Notebooks را ارائه می‌دهد که می‌توانید با آنها تجربه عملی ساخت عوامل هوش مصنوعی را کسب کنید.
+
+نمونه‌های کد از موارد زیر استفاده می‌کنند:
+
+**نیاز به حساب GitHub - رایگان**:
+
+1) چارچوب Semantic Kernel Agent + بازار مدل‌های GitHub. با برچسب (semantic-kernel.ipynb)
+2) چارچوب AutoGen + بازار مدل‌های GitHub. با برچسب (autogen.ipynb)
+
+**نیاز به اشتراک Azure**:
+3) Azure AI Foundry + سرویس عامل هوش مصنوعی Azure. با برچسب (azureaiagent.ipynb)
+
+ما شما را تشویق می‌کنیم که هر سه نوع مثال را امتحان کنید تا ببینید کدام یک برای شما بهتر کار می‌کند.
+
+هر گزینه‌ای که انتخاب کنید، تعیین می‌کند که کدام مراحل تنظیم را باید در زیر دنبال کنید:
+
+## الزامات
+
+- Python 3.12+
+  - **NOTE**: اگر Python3.12 نصب نشده است، مطمئن شوید که آن را نصب کنید. سپس با استفاده از python3.12 محیط مجازی خود را ایجاد کنید تا نسخه‌های صحیح از فایل requirements.txt نصب شوند.
+  
+    >مثال
+
+    ایجاد دایرکتوری محیط مجازی Python:
+
+    ```bash|powershell
+    python -m venv venv
+    ```
+
+    سپس محیط مجازی را فعال کنید برای:
+
+    ```bash
+    # zsh/bash
+    source venv/bin/activate
+    ```
+  
+    ```dos
+    # Command Prompt for Windows
+    venv\Scripts\activate
+    ```
+
+- .NET 10+: برای نمونه‌های کد که از .NET استفاده می‌کنند، مطمئن شوید که [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) یا نسخه‌های بعدی را نصب کنید. سپس نسخه SDK نصب شده .NET خود را بررسی کنید:
+
+    ```bash|powershell
+    dotnet --list-sdks
+    ```
+
+- حساب GitHub - برای دسترسی به بازار مدل‌های GitHub
+- اشتراک Azure - برای دسترسی به Azure AI Foundry
+- حساب Azure AI Foundry - برای دسترسی به سرویس عامل هوش مصنوعی Azure
+
+ما یک فایل `requirements.txt` در ریشه این مخزن قرار داده‌ایم که شامل تمام بسته‌های Python مورد نیاز برای اجرای نمونه‌های کد است.
+
+می‌توانید آنها را با اجرای دستور زیر در ترمینال در ریشه مخزن نصب کنید:
+
+```bash|powershell
+pip install -r requirements.txt
+```
+
+ما توصیه می‌کنیم یک محیط مجازی Python ایجاد کنید تا از هرگونه تضاد و مشکل جلوگیری شود.
+
+## تنظیم VSCode
+
+مطمئن شوید که از نسخه صحیح Python در VSCode استفاده می‌کنید.
+
+![تصویر](https://github.com/user-attachments/assets/a85e776c-2edb-4331-ae5b-6bfdfb98ee0e)
+
+## تنظیم برای نمونه‌ها با استفاده از مدل‌های GitHub 
+
+### مرحله 1: دریافت توکن دسترسی شخصی GitHub (PAT)
+
+این دوره از بازار مدل‌های GitHub استفاده می‌کند که دسترسی رایگان به مدل‌های زبان بزرگ (LLMs) را فراهم می‌کند که شما برای ساخت عوامل هوش مصنوعی از آنها استفاده خواهید کرد.
+
+برای استفاده از مدل‌های GitHub، باید یک [توکن دسترسی شخصی GitHub](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) ایجاد کنید.
+
+این کار را می‌توانید با رفتن به <a href="https://github.com/settings/personal-access-tokens" target="_blank">تنظیمات توکن‌های دسترسی شخصی</a> در حساب GitHub خود انجام دهید.
+
+لطفاً هنگام ایجاد توکن خود، [اصل حداقل امتیاز](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) را دنبال کنید. این بدان معناست که باید فقط مجوزهایی را که برای اجرای نمونه‌های کد در این دوره نیاز دارید به توکن بدهید.
+
+1. گزینه `توکن‌های دقیق` را در سمت چپ صفحه خود انتخاب کنید با رفتن به **تنظیمات توسعه‌دهنده**
+
+   ![تنظیمات توسعه‌دهنده](../../../translated_images/profile_developer_settings.410a859fe749c755c859d414294c5908e307222b2c61819c3203bbeed4470e25.fa.png)
+
+   سپس گزینه `ایجاد توکن جدید` را انتخاب کنید.
+
+   ![ایجاد توکن](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.fa.png)
+
+2. یک نام توصیفی برای توکن خود وارد کنید که هدف آن را منعکس کند و شناسایی آن را در آینده آسان کند.
+
+    🔐 توصیه مدت زمان توکن
+
+    مدت زمان توصیه شده: 30 روز
+    برای امنیت بیشتر، می‌توانید مدت زمان کوتاه‌تری انتخاب کنید—مانند 7 روز 🛡️
+    این یک راه عالی برای تعیین هدف شخصی و تکمیل دوره در حالی است که انگیزه یادگیری شما بالا است 🚀.
+
+    ![نام و تاریخ انقضای توکن](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.fa.png)
+
+3. دامنه توکن را به فورک این مخزن محدود کنید.
+
+    ![محدود کردن دامنه به مخزن فورک شده](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.fa.png)
+
+4. مجوزهای توکن را محدود کنید: در زیر **Permissions**، بر روی تب **Account** کلیک کنید و دکمه "+ Add permissions" را فشار دهید. یک منوی کشویی ظاهر خواهد شد. لطفاً **Models** را جستجو کنید و کادر آن را علامت بزنید.
+
+    ![افزودن مجوز مدل‌ها](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.fa.png)
+
+5. قبل از ایجاد توکن، مجوزهای مورد نیاز را بررسی کنید. ![بررسی مجوزها](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.fa.png)
+
+6. قبل از ایجاد توکن، مطمئن شوید که آماده ذخیره توکن در مکانی امن مانند یک گاوصندوق مدیریت رمز عبور هستید، زیرا پس از ایجاد آن دیگر نمایش داده نمی‌شود. ![ذخیره امن توکن](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.fa.png)
+
+توکن جدیدی که ایجاد کرده‌اید را کپی کنید. اکنون این توکن را به فایل `.env` که در این دوره گنجانده شده است اضافه خواهید کرد.
+
+### مرحله 2: ایجاد فایل `.env` خود
+
+برای ایجاد فایل `.env` خود دستور زیر را در ترمینال اجرا کنید.
+
+```bash
+# zsh/bash
 cp .env.example .env
 ```
 
-این کار فایل نمونه را کپی کرده و یک فایل `.env` in your directory and where you fill in the values for the environment variables.
+```powershell
+# PowerShell
+Copy-Item .env.example .env
+```
 
-With your token copied, open the `.env` file in your favorite text editor and paste your token into the `GITHUB_TOKEN` field.
+این دستور فایل نمونه را کپی کرده و یک `.env` در دایرکتوری شما ایجاد می‌کند که در آن مقادیر متغیرهای محیطی را پر می‌کنید.
 
-You should now be able to run the code samples of this course.
+با کپی کردن توکن خود، فایل `.env` را در ویرایشگر متن مورد علاقه خود باز کنید و توکن خود را در فیلد `GITHUB_TOKEN` قرار دهید.
 
-## Set Up for Samples using Azure AI Foundry and Azure AI Agent Service
+![فیلد توکن GitHub](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.fa.png)
 
-### Step 1: Retrieve Your Azure Project Connection String
+اکنون باید بتوانید نمونه‌های کد این دوره را اجرا کنید.
 
+## تنظیم برای نمونه‌ها با استفاده از Azure AI Foundry و سرویس عامل هوش مصنوعی Azure
 
-Follow the steps to creating a hub and project in Azure AI Foundry found here: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
+### مرحله 1: دریافت نقطه پایانی پروژه Azure خود
 
+مراحل ایجاد یک هاب و پروژه در Azure AI Foundry را دنبال کنید که در اینجا آمده است: [بررسی اجمالی منابع هاب](https://learn.microsoft.com/azure/ai-foundry/concepts/ai-resources)
 
-Once you have created your project, you will need to retrieve the connection string for your project.
+پس از ایجاد پروژه خود، باید رشته اتصال پروژه خود را دریافت کنید.
 
-This can be done by going to the **Overview** page of your project in the Azure AI Foundry portal.
+این کار را می‌توانید با رفتن به صفحه **بررسی اجمالی** پروژه خود در پورتال Azure AI Foundry انجام دهید.
 
-![Project Connection String](../../../00-course-setup/images/project-connection-string.png)
+![رشته اتصال پروژه](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.fa.png)
 
-### Step 2: Create Your `.env` File
+### مرحله 2: ایجاد فایل `.env` خود
 
-To create your `.env` ایجاد می‌کند. دستور زیر را در ترمینال خود اجرا کنید.
+برای ایجاد فایل `.env` خود دستور زیر را در ترمینال اجرا کنید.
 
 ```bash
+# zsh/bash
 cp .env.example .env
 ```
 
-این کار فایل نمونه را کپی کرده و یک فایل `.env` in your directory and where you fill in the values for the environment variables.
+```powershell
+# PowerShell
+Copy-Item .env.example .env
+```
 
-With your token copied, open the `.env` file in your favorite text editor and paste your token into the `PROJECT_CONNECTION_STRING` field.
+این دستور فایل نمونه را کپی کرده و یک `.env` در دایرکتوری شما ایجاد می‌کند که در آن مقادیر متغیرهای محیطی را پر می‌کنید.
 
-### Step 3: Sign in to Azure
+با کپی کردن توکن خود، فایل `.env` را در ویرایشگر متن مورد علاقه خود باز کنید و توکن خود را در فیلد `PROJECT_ENDPOINT` قرار دهید.
 
-As a security best practice, we'll use [keyless authentication](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) to authenticate to Azure OpenAI with Microsoft Entra ID. Before you can do so, you'll first need to install the **Azure CLI** per the [installation instructions](https://learn.microsoft.com/cli/azure/install-azure-cli?WT.mc_id=academic-105485-koreyst) for your operating system.
+### مرحله 3: ورود به Azure
 
-Next, open a terminal and run `az login --use-device-code` to sign in to your Azure account.
+به عنوان یک بهترین روش امنیتی، از [احراز هویت بدون کلید](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) برای احراز هویت به Azure OpenAI با Microsoft Entra ID استفاده خواهیم کرد.
 
-Once you've logged in, select your subscription in the terminal.
+سپس، یک ترمینال باز کنید و دستور `az login --use-device-code` را اجرا کنید تا به حساب Azure خود وارد شوید.
 
+پس از ورود، اشتراک خود را در ترمینال انتخاب کنید.
 
-## Additional Environment Variables - Azure Search and Azure OpenAI 
+## متغیرهای محیطی اضافی - Azure Search و Azure OpenAI 
 
-For the Agentic RAG Lesson - Lesson 5 - there are samples that use Azure Search and Azure OpenAI.
+برای درس Agentic RAG - درس 5 - نمونه‌هایی وجود دارد که از Azure Search و Azure OpenAI استفاده می‌کنند.
 
-If you want to run these samples, you will need to add the following environment variables to your `.env` file:
+اگر می‌خواهید این نمونه‌ها را اجرا کنید، باید متغیرهای محیطی زیر را به فایل `.env` خود اضافه کنید:
 
-### Overview Page (Project)
+### صفحه بررسی اجمالی (پروژه)
 
-- `AZURE_SUBSCRIPTION_ID` - Check **Project details** on the **Overview** page of your project.
+- `AZURE_SUBSCRIPTION_ID` - جزئیات پروژه را در صفحه **بررسی اجمالی** پروژه خود بررسی کنید.
 
-- `AZURE_AI_PROJECT_NAME` - Look at the top of the **Overview** page for your project.
+- `AZURE_AI_PROJECT_NAME` - در بالای صفحه **بررسی اجمالی** پروژه خود نگاه کنید.
 
-- `AZURE_OPENAI_SERVICE` - Find this in the **Included capabilities** tab for **Azure OpenAI Service** on the **Overview** page.
+- `AZURE_OPENAI_SERVICE` - این را در تب **قابلیت‌های گنجانده شده** برای **سرویس Azure OpenAI** در صفحه **بررسی اجمالی** پیدا کنید.
 
-### Management Center
+### مرکز مدیریت
 
-- `AZURE_OPENAI_RESOURCE_GROUP` - Go to **Project properties** on the **Overview** page of the **Management Center**.
+- `AZURE_OPENAI_RESOURCE_GROUP` - به **ویژگی‌های پروژه** در صفحه **بررسی اجمالی** مرکز مدیریت بروید.
 
-- `GLOBAL_LLM_SERVICE` - Under **Connected resources**, find the **Azure AI Services** connection name. If not listed, check the **Azure portal** under your resource group for the AI Services resource name.
+- `GLOBAL_LLM_SERVICE` - در زیر **منابع متصل**، نام اتصال **خدمات هوش مصنوعی Azure** را پیدا کنید. اگر لیست نشده است، در **پورتال Azure** زیر گروه منابع خود برای نام منبع خدمات هوش مصنوعی بررسی کنید.
 
-### Models + Endpoints Page
+### صفحه مدل‌ها + نقاط پایانی
 
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Select your embedding model (e.g., `text-embedding-ada-002`) and note the **Deployment name** from the model details.
+- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - مدل جاسازی خود را انتخاب کنید (مثلاً `text-embedding-ada-002`) و نام **استقرار** را از جزئیات مدل یادداشت کنید.
 
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Select your chat model (e.g., `gpt-4o-mini`) and note the **Deployment name** from the model details.
+- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - مدل چت خود را انتخاب کنید (مثلاً `gpt-4o-mini`) و نام **استقرار** را از جزئیات مدل یادداشت کنید.
 
-### Azure Portal
+### پورتال Azure
 
-- `AZURE_OPENAI_ENDPOINT` - Look for **Azure AI services**, click on it, then go to **Resource Management**, **Keys and Endpoint**, scroll down to the "Azure OpenAI endpoints", and copy the one that says "Language APIs".
+- `AZURE_OPENAI_ENDPOINT` - به دنبال **خدمات هوش مصنوعی Azure** باشید، روی آن کلیک کنید، سپس به **مدیریت منابع**، **کلیدها و نقطه پایانی** بروید، به پایین به "نقاط پایانی Azure OpenAI" بروید، و یکی را که می‌گوید "API‌های زبان" کپی کنید.
 
-- `AZURE_OPENAI_API_KEY` - From the same screen, copy KEY 1 or KEY 2.
+- `AZURE_OPENAI_API_KEY` - از همان صفحه، کلید 1 یا کلید 2 را کپی کنید.
 
-- `AZURE_SEARCH_SERVICE_ENDPOINT` - Find your **Azure AI Search** resource, click it, and see **Overview**.
+- `AZURE_SEARCH_SERVICE_ENDPOINT` - منبع **Azure AI Search** خود را پیدا کنید، روی آن کلیک کنید، و صفحه **بررسی اجمالی** را ببینید.
 
-- `AZURE_SEARCH_API_KEY` - Then go to **Settings** and then **Keys** to copy the primary or secondary admin key.
+- `AZURE_SEARCH_API_KEY` - سپس به **تنظیمات** و سپس **کلیدها** بروید تا کلید اصلی یا ثانویه مدیر را کپی کنید.
 
-### External Webpage
+### صفحه خارجی
 
-- `AZURE_OPENAI_API_VERSION` - Visit the [API version lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) page under **Latest GA API release**.
+- `AZURE_OPENAI_API_VERSION` - به صفحه [چرخه عمر نسخه API](https://learn.microsoft.com/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) در زیر **آخرین نسخه GA API** مراجعه کنید.
 
-### Setup keyless authentication
+### تنظیم احراز هویت بدون کلید
 
-Rather than hardcode your credentials, we'll use a keyless connection with Azure OpenAI. To do so, we'll import `DefaultAzureCredential` and later call the `DefaultAzureCredential` را برای دریافت اعتبارنامه اجرا کنید.
+به جای سخت‌کد کردن اعتبارنامه‌های خود، از اتصال بدون کلید با Azure OpenAI استفاده خواهیم کرد. برای این کار، `DefaultAzureCredential` را وارد می‌کنیم و بعداً تابع `DefaultAzureCredential` را برای دریافت اعتبارنامه فراخوانی می‌کنیم.
 
 ```python
+# Python
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 ```
 
-## گیر کرده‌اید؟
-
-اگر در اجرای این تنظیمات به مشکلی برخوردید، به کانال ما در
-
-یا
-
-مراجعه کنید.
+## جایی گیر کرده‌اید؟
+اگر در اجرای این تنظیمات مشکلی دارید، به <a href="https://discord.gg/kzRShWzttr" target="_blank">دیسکورد جامعه Azure AI</a> بپیوندید یا یک <a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">مشکل جدید ایجاد کنید</a>.
 
 ## درس بعدی
 
-اکنون آماده‌اید تا کدهای این دوره را اجرا کنید. یادگیری خوبی درباره دنیای عامل‌های هوش مصنوعی برایتان آرزو می‌کنیم!
+اکنون آماده‌اید تا کد این دوره را اجرا کنید. از یادگیری بیشتر درباره دنیای عوامل هوش مصنوعی لذت ببرید!
 
-[مقدمه‌ای بر عامل‌های هوش مصنوعی و موارد استفاده از آن‌ها](../01-intro-to-ai-agents/README.md)
+[مقدمه‌ای بر عوامل هوش مصنوعی و موارد استفاده از عوامل](../01-intro-to-ai-agents/README.md)
+
+---
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه ماشینی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، استفاده از ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده از این ترجمه ناشی شود، نیستیم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان مادری باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
