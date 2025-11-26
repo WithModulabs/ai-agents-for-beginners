@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "23afd9be7b6ba5b69a44c3b6a78e07f6",
-  "translation_date": "2025-11-06T10:06:30+00:00",
+  "original_hash": "5f351412e934f0833c8c821a0a60efaf",
+  "translation_date": "2025-11-13T13:59:55+00:00",
   "source_file": "01-intro-to-ai-agents/code_samples/01-dotnet-agent-framework.md",
   "language_code": "ro"
 }
@@ -11,29 +11,33 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 📋 Prezentare Generală a Scenariului
 
-Acest notebook demonstrează cum să construiești un agent inteligent pentru planificarea călătoriilor utilizând Microsoft Agent Framework pentru .NET. Agentul poate genera automat itinerarii personalizate pentru excursii de o zi către destinații aleatorii din întreaga lume.
+Acest exemplu demonstrează cum să construiești un agent inteligent pentru planificarea călătoriilor folosind Microsoft Agent Framework pentru .NET. Agentul poate genera automat itinerarii personalizate pentru excursii de o zi către destinații aleatorii din întreaga lume.
 
-**Capabilități Cheie:**
-- 🎲 **Selecție Aleatorie a Destinației**: Folosește un instrument personalizat pentru a alege locuri de vacanță
-- 🗺️ **Planificare Inteligentă a Călătoriilor**: Creează itinerarii detaliate zi cu zi
+### Capacități Cheie:
+
+- 🎲 **Selecție Aleatorie a Destinației**: Utilizează un instrument personalizat pentru a alege locuri de vacanță
+- 🗺️ **Planificare Inteligentă a Călătoriilor**: Creează itinerarii detaliate zi de zi
 - 🔄 **Streaming în Timp Real**: Suportă răspunsuri imediate și în flux continuu
-- 🛠️ **Integrare cu Instrumente Personalizate**: Demonstrează cum să extinzi capabilitățile agentului
+- 🛠️ **Integrare cu Instrumente Personalizate**: Demonstrează cum să extinzi capacitățile agentului
 
 ## 🔧 Arhitectura Tehnică
 
 ### Tehnologii de Bază
+
 - **Microsoft Agent Framework**: Cea mai recentă implementare .NET pentru dezvoltarea agenților AI
-- **Integrare cu Modele GitHub**: Utilizează serviciul de inferență AI al GitHub
-- **Compatibilitate cu API-ul OpenAI**: Folosește biblioteci client OpenAI cu puncte de acces personalizate
+- **Integrare cu Modelele GitHub**: Utilizează serviciul de inferență AI al GitHub
+- **Compatibilitate cu API-ul OpenAI**: Folosește biblioteci client OpenAI cu endpoint-uri personalizate
 - **Configurare Securizată**: Gestionarea cheilor API bazată pe mediu
 
 ### Componente Cheie
+
 1. **AIAgent**: Orchestratorul principal al agentului care gestionează fluxul conversației
 2. **Instrumente Personalizate**: Funcția `GetRandomDestination()` disponibilă pentru agent
 3. **Client de Chat**: Interfață de conversație susținută de Modelele GitHub
 4. **Suport pentru Streaming**: Capacități de generare a răspunsurilor în timp real
 
 ### Model de Integrare
+
 ```mermaid
 graph LR
     A[User Request] --> B[AI Agent]
@@ -43,37 +47,70 @@ graph LR
     D --> E
 ```
 
-## 🚀 Începeți
+## 🚀 Început Rapid
 
-**Prerechizite:**
-- .NET 10.0 sau mai recent
-- Token de acces API pentru Modelele GitHub
-- Variabile de mediu configurate în fișierul `.env`
+### Cerințe Prealabile
 
-**Variabile de Mediu Necesare:**
-```env
-GITHUB_TOKEN=your_github_token
-GITHUB_ENDPOINT=https://models.inference.ai.azure.com
-GITHUB_MODEL_ID=gpt-4o-mini
-```
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) sau o versiune mai recentă
+- [Token de acces API pentru Modelele GitHub](https://docs.github.com/github-models/github-models-at-scale/using-your-own-api-keys-in-github-models)
 
-Rulați exemplul de cod de mai jos în ordine pentru a vedea agentul de călătorii în acțiune!
-
----
-
-## Aplicație .NET Single File: Exemplu de Agent de Călătorii AI
-
-Consultați `01-dotnet-agent-framework.cs` pentru exemplul complet de cod executabil.
+### Variabile de Mediu Necesare
 
 ```bash
-dotnet run 01-dotnet-agent-framework.cs
+# zsh/bash
+export GH_TOKEN=<your_github_token>
+export GH_ENDPOINT=https://models.github.ai/inference
+export GH_MODEL_ID=openai/gpt-5-mini
 ```
 
-### Exemplu de Cod
+```powershell
+# PowerShell
+$env:GH_TOKEN = "<your_github_token>"
+$env:GH_ENDPOINT = "https://models.github.ai/inference"
+$env:GH_MODEL_ID = "openai/gpt-5-mini"
+```
+
+### Cod Exemplu
+
+Pentru a rula exemplul de cod,
+
+```bash
+# zsh/bash
+chmod +x ./01-dotnet-agent-framework.cs
+./01-dotnet-agent-framework.cs
+```
+
+Sau folosind CLI-ul dotnet:
+
+```bash
+dotnet run ./01-dotnet-agent-framework.cs
+```
+
+Vezi [`01-dotnet-agent-framework.cs`](../../../../01-intro-to-ai-agents/code_samples/01-dotnet-agent-framework.cs) pentru codul complet.
 
 ```csharp
+#!/usr/bin/dotnet run
+
+#:package Microsoft.Extensions.AI@9.*
+#:package Microsoft.Agents.AI.OpenAI@1.*-*
+
+using System.ClientModel;
+using System.ComponentModel;
+
+using Microsoft.Agents.AI;
+using Microsoft.Extensions.AI;
+
+using OpenAI;
+
+// Tool Function: Random Destination Generator
+// This static method will be available to the agent as a callable tool
+// The [Description] attribute helps the AI understand when to use this function
+// This demonstrates how to create custom tools for AI agents
+[Description("Provides a random vacation destination.")]
 static string GetRandomDestination()
 {
+    // List of popular vacation destinations around the world
+    // The agent will randomly select from these options
     var destinations = new List<string>
     {
         "Paris, France",
@@ -87,26 +124,39 @@ static string GetRandomDestination()
         "Bangkok, Thailand",
         "Vancouver, Canada"
     };
+
+    // Generate random index and return selected destination
+    // Uses System.Random for simple random selection
     var random = new Random();
     int index = random.Next(destinations.Count);
     return destinations[index];
 }
 
 // Extract configuration from environment variables
-var github_endpoint = Environment.GetEnvironmentVariable("GITHUB_ENDPOINT") ?? throw new InvalidOperationException("GITHUB_ENDPOINT is not set.");
-var github_model_id = Environment.GetEnvironmentVariable("GITHUB_MODEL_ID") ?? "gpt-4o-mini";
-var github_token = Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? throw new InvalidOperationException("GITHUB_TOKEN is not set.");
+// Retrieve the GitHub Models API endpoint, defaults to https://models.github.ai/inference if not specified
+// Retrieve the model ID, defaults to openai/gpt-5-mini if not specified
+// Retrieve the GitHub token for authentication, throws exception if not specified
+var github_endpoint = Environment.GetEnvironmentVariable("GH_ENDPOINT") ?? "https://models.github.ai/inference";
+var github_model_id = Environment.GetEnvironmentVariable("GH_MODEL_ID") ?? "openai/gpt-5-mini";
+var github_token = Environment.GetEnvironmentVariable("GH_TOKEN") ?? throw new InvalidOperationException("GH_TOKEN is not set.");
 
 // Configure OpenAI Client Options
+// Create configuration options to point to GitHub Models endpoint
+// This redirects OpenAI client calls to GitHub's model inference service
 var openAIOptions = new OpenAIClientOptions()
 {
     Endpoint = new Uri(github_endpoint)
 };
 
 // Initialize OpenAI Client with GitHub Models Configuration
+// Create OpenAI client using GitHub token for authentication
+// Configure it to use GitHub Models endpoint instead of OpenAI directly
 var openAIClient = new OpenAIClient(new ApiKeyCredential(github_token), openAIOptions);
 
 // Create AI Agent with Travel Planning Capabilities
+// Initialize OpenAI client, get chat client for specified model, and create AI agent
+// Configure agent with travel planning instructions and random destination tool
+// The agent can now plan trips using the GetRandomDestination function
 AIAgent agent = openAIClient
     .GetChatClient(github_model_id)
     .CreateAIAgent(
@@ -114,17 +164,34 @@ AIAgent agent = openAIClient
         tools: [AIFunctionFactory.Create(GetRandomDestination)]
     );
 
-// Execute Agent: Plan a Day Trip (Non-Streaming)
-Console.WriteLine(await agent.RunAsync("Plan me a day trip"));
-
-// Execute Agent: Plan a Day Trip (Streaming Response)
+// Execute Agent: Plan a Day Trip
+// Run the agent with streaming enabled for real-time response display
+// Shows the agent's thinking and response as it generates the content
+// Provides better user experience with immediate feedback
 await foreach (var update in agent.RunStreamingAsync("Plan me a day trip"))
 {
+    await Task.Delay(10);
     Console.Write(update);
 }
 ```
 
+## 🎓 Concluzii Cheie
+
+1. **Arhitectura Agentului**: Microsoft Agent Framework oferă o abordare clară și sigură din punct de vedere al tipurilor pentru construirea agenților AI în .NET
+2. **Integrarea Instrumentelor**: Funcțiile decorate cu atribute `[Description]` devin instrumente disponibile pentru agent
+3. **Gestionarea Configurației**: Variabilele de mediu și gestionarea securizată a acreditivelor urmează cele mai bune practici .NET
+4. **Compatibilitate cu OpenAI**: Integrarea cu Modelele GitHub funcționează perfect prin API-uri compatibile cu OpenAI
+
+## 🔗 Resurse Suplimentare
+
+- [Documentația Microsoft Agent Framework](https://learn.microsoft.com/agent-framework)
+- [Piața Modelelor GitHub](https://github.com/marketplace?type=models)
+- [Microsoft.Extensions.AI](https://learn.microsoft.com/dotnet/ai/microsoft-extensions-ai)
+- [.NET Single File Apps](https://devblogs.microsoft.com/dotnet/announcing-dotnet-run-app)
+
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de oameni. Nu ne asumăm responsabilitatea pentru neînțelegerile sau interpretările greșite care pot apărea din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
