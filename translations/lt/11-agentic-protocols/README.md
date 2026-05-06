@@ -1,176 +1,182 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aff92c6f019b4627ca9399c6e3882e17",
-  "translation_date": "2025-09-18T15:56:28+00:00",
-  "source_file": "11-agentic-protocols/README.md",
-  "language_code": "lt"
-}
--->
-# Naudojant Agentinius Protokolus (MCP, A2A ir NLWeb)
+# Using Agentic Protocols (MCP, A2A and NLWeb)
 
-[![Agentiniai Protokolai](../../../translated_images/lesson-11-thumbnail.b6c742949cf1ce2aa0255968d287b31c99b51dfa9c9beaede7c3fbed90e8fcfb.lt.png)](https://youtu.be/X-Dh9R3Opn8)
+[![Agentic Protocols](../../../translated_images/lt/lesson-11-thumbnail.b6c742949cf1ce2a.webp)](https://youtu.be/X-Dh9R3Opn8)
 
-> _(Spustelėkite paveikslėlį aukščiau, kad peržiūrėtumėte šios pamokos vaizdo įrašą)_
+> _(Spustelėkite aukščiau esančią nuotrauką, kad peržiūrėtumėte šios pamokos vaizdo įrašą)_
 
-Didėjant dirbtinio intelekto agentų naudojimui, auga ir poreikis protokolams, kurie užtikrintų standartizaciją, saugumą ir palaikytų atvirą inovaciją. Šioje pamokoje aptarsime 3 protokolus, kurie siekia patenkinti šį poreikį – Modelio Konteksto Protokolas (MCP), Agentas Agentui (A2A) ir Natūralios Kalbos Tinklas (NLWeb).
+Kadangi AI agentų naudojimas auga, auga ir poreikis protokolams, kurie užtikrina standartizavimą, saugumą ir palaiko atvirą inovaciją. Šioje pamokoje aptarsime 3 protokolus, siekiančius tenkinti šį poreikį – Model Context Protocol (MCP), Agent to Agent (A2A) ir Natural Language Web (NLWeb).
 
-## Įvadas
+## Introduction
 
 Šioje pamokoje aptarsime:
 
-• Kaip **MCP** leidžia dirbtinio intelekto agentams pasiekti išorinius įrankius ir duomenis, kad atliktų vartotojo užduotis.
+• Kaip **MCP** leidžia AI agentams pasiekti išorinius įrankius ir duomenis, kad atliktų vartotojo užduotis.
 
-• Kaip **A2A** suteikia galimybę skirtingiems dirbtinio intelekto agentams bendrauti ir bendradarbiauti.
+• Kaip **A2A** leidžia skirtingiems AI agentams bendrauti ir bendradarbiauti.
 
-• Kaip **NLWeb** suteikia natūralios kalbos sąsajas bet kuriai svetainei, leidžiant dirbtinio intelekto agentams atrasti ir sąveikauti su turiniu.
+• Kaip **NLWeb** suteikia natūralios kalbos sąsajas bet kuriam tinklalapiui, leidžiant AI agentams atrasti ir sąveikauti su turiniu.
 
-## Mokymosi tikslai
+## Learning Goals
 
-• **Identifikuoti** pagrindinę MCP, A2A ir NLWeb paskirtį bei naudą dirbtinio intelekto agentų kontekste.
+• **Nustatyti** pagrindinį MCP, A2A ir NLWeb tikslą ir naudą AI agentų kontekste.
 
-• **Paaiškinti**, kaip kiekvienas protokolas palengvina komunikaciją ir sąveiką tarp LLM, įrankių ir kitų agentų.
+• **Paaiškinti**, kaip kiekvienas protokolas palengvina ryšį ir sąveiką tarp LLM, įrankių ir kitų agentų.
 
-• **Atpažinti** skirtingus vaidmenis, kuriuos kiekvienas protokolas atlieka kuriant sudėtingas agentines sistemas.
+• **Atpažinti** skirtingas kiekvieno protokolo roles kuriant sudėtingas agentines sistemas.
 
-## Modelio Konteksto Protokolas
+## Model Context Protocol
 
-**Modelio Konteksto Protokolas (MCP)** yra atviras standartas, kuris suteikia standartizuotą būdą programoms pateikti kontekstą ir įrankius LLM. Tai leidžia sukurti „universalią jungtį“ skirtingiems duomenų šaltiniams ir įrankiams, prie kurių dirbtinio intelekto agentai gali prisijungti nuosekliai.
+The **Model Context Protocol (MCP)** yra atviras standartas, kuris suteikia standartizuotą būdą programoms pateikti kontekstą ir įrankius LLM. Tai leidžia „universalų adapterį“ skirtingiems duomenų šaltiniams ir įrankiams, prie kurių AI agentai gali prisijungti nuosekliai.
 
-Pažvelkime į MCP komponentus, privalumus, palyginti su tiesioginiu API naudojimu, ir pavyzdį, kaip dirbtinio intelekto agentai gali naudoti MCP serverį.
+Pažiūrėkime į MCP komponentus, privalumus, palyginti su tiesioginiu API naudojimu, ir pavyzdį, kaip AI agentai gali naudoti MCP serverį.
 
-### MCP Pagrindiniai Komponentai
+### MCP Core Components
 
-MCP veikia pagal **kliento-serverio architektūrą**, o pagrindiniai komponentai yra:
+MCP veikia pagal **klientas-serveris architektūrą** ir pagrindiniai komponentai yra:
 
-• **Hostai** – tai LLM programos (pvz., kodų redaktorius kaip VSCode), kurios inicijuoja ryšius su MCP serveriu.
+• **Hosts** yra LLM programos (pavyzdžiui, kodo redaktorius kaip VSCode), kurios inicijuoja ryšius su MCP serveriu.
 
-• **Klientai** – tai komponentai hosto programoje, kurie palaiko vienas su vienu ryšius su serveriais.
+• **Clients** yra komponentai host programoje, kurie palaiko vienas-prie-vieno ryšius su serveriais.
 
-• **Serveriai** – tai lengvos programos, kurios atskleidžia specifinius pajėgumus.
+• **Servers** yra lengvos programos, kurios atskleidžia specifines galimybes.
 
-Protokole yra trys pagrindiniai primityvai, kurie apibrėžia MCP serverio pajėgumus:
+Protokole įtraukti trys pagrindiniai primityvai, kurie yra MCP serverio galimybės:
 
-• **Įrankiai**: Tai atskiros funkcijos ar veiksmai, kuriuos dirbtinio intelekto agentas gali iškviesti, kad atliktų veiksmą. Pavyzdžiui, orų tarnyba gali pateikti „gauti orus“ įrankį, o e. prekybos serveris – „pirkti produktą“ įrankį. MCP serveriai reklamuoja kiekvieno įrankio pavadinimą, aprašymą ir įvesties/išvesties schemą savo pajėgumų sąraše.
+• **Tools**: tai atskiros operacijos ar funkcijos, kurias AI agentas gali iškviesti, kad atliktų veiksmą. Pavyzdžiui, orų tarnyba gali atskleisti įrankį „get weather“, arba el. prekybos serveris gali atskleisti įrankį „purchase product“. MCP serveriai savo galimybių sąraše reklamuoja kiekvieno įrankio pavadinimą, aprašymą ir įėjimo/išėjimo schemą.
 
-• **Ištekliai**: Tai tik skaitymui skirti duomenų elementai ar dokumentai, kuriuos MCP serveris gali pateikti, o klientai gali juos gauti pagal poreikį. Pavyzdžiai: failų turinys, duomenų bazės įrašai ar žurnalų failai. Ištekliai gali būti tekstiniai (pvz., kodas ar JSON) arba dvejetainiai (pvz., vaizdai ar PDF).
+• **Resources**: tai skaitymui skirtos duomenų vienetai arba dokumentai, kuriuos MCP serveris gali suteikti, o klientai gali juos gauti pagal poreikį. Pavyzdžiai: failų turinys, duomenų bazės įrašai arba žurnalo failai. Resursai gali būti tekstiniai (pvz., kodas arba JSON) arba dvejetainiai (pvz., vaizdai arba PDF).
 
-• **Šablonai**: Tai iš anksto apibrėžti šablonai, kurie pateikia siūlomus raginimus, leidžiantys sudėtingesnius darbo procesus.
+• **Prompts**: tai iš anksto apibrėžti šablonai, kurie teikia siūlomus užklausas, leidžiančius sudėtingesnes darbo eigas.
 
-### MCP Privalumai
+### Benefits of MCP
 
-MCP suteikia reikšmingų privalumų dirbtinio intelekto agentams:
+MCP siūlo ženklių privalumų AI agentams:
 
-• **Dinaminis Įrankių Atradimas**: Agentai gali dinamiškai gauti serverio siūlomų įrankių sąrašą kartu su jų aprašymais. Tai skiriasi nuo tradicinių API, kurios dažnai reikalauja statinio kodavimo integracijoms, o bet kokie API pakeitimai reikalauja kodo atnaujinimų. MCP siūlo „integruoti vieną kartą“ metodą, kuris suteikia didesnį prisitaikymą.
+• **Dynamic Tool Discovery**: Agentai gali dinamiškai gauti iš serverio prieinamų įrankių sąrašą kartu su aprašymais, ką jie atlieka. Tai skiriasi nuo tradicinių API, kurios dažnai reikalauja statinio kodavimo integracijoms, t. y. bet koks API pasikeitimas reikalauja kodo atnaujinimų. MCP siūlo „integruok vieną kartą“ požiūrį, suteikiantį didesnį prisitaikymą.
 
-• **Suderinamumas Tarp LLM**: MCP veikia su skirtingais LLM, suteikdamas lankstumą keisti pagrindinius modelius, kad būtų galima įvertinti geresnį našumą.
+• **Interoperability Across LLMs**: MCP veikia su skirtingais LLM, suteikdamas lankstumo pakeisti pagrindinius modelius siekiant geresnių rezultatų.
 
-• **Standartizuotas Saugumas**: MCP apima standartinį autentifikavimo metodą, kuris palengvina mastelio didinimą, kai pridedama prieiga prie papildomų MCP serverių. Tai paprasčiau nei valdyti skirtingus raktus ir autentifikavimo tipus įvairiems tradiciniams API.
+• **Standardized Security**: MCP apima standartinį autentifikacijos metodą, pagerindamas mastelį pridedant prieigą prie papildomų MCP serverių. Tai paprasčiau nei valdyti skirtingus raktus ir autentifikacijos tipus įvairiems tradiciniams API.
 
-### MCP Pavyzdys
+### MCP Example
 
-![MCP Diagrama](../../../translated_images/mcp-diagram.e4ca1cbd551444a12e1f0eb300191a036ab01124fce71c864fe9cb7f4ac2a15d.lt.png)
+![MCP Diagram](../../../translated_images/lt/mcp-diagram.e4ca1cbd551444a1.webp)
 
-Įsivaizduokite, kad vartotojas nori užsisakyti skrydį naudodamas dirbtinio intelekto asistentą, kuris naudoja MCP.
+Įsivaizduokite, kad vartotojas nori užsakyti skrydį naudodamasis AI asistentu, kuris naudoja MCP.
 
-1. **Ryšys**: Dirbtinio intelekto asistentas (MCP klientas) prisijungia prie MCP serverio, kurį teikia oro linijos.
+1. **Connection**: AI asistentas (MCP klientas) prisijungia prie oro linijų pateikto MCP serverio.
 
-2. **Įrankių Atradimas**: Klientas klausia oro linijų MCP serverio: „Kokius įrankius turite?“ Serveris atsako su tokiais įrankiais kaip „ieškoti skrydžių“ ir „užsakyti skrydžius“.
+2. **Tool Discovery**: Klientas paklausia oro linijų MCP serverio: „Kokius įrankius turite?“ Serveris atsako su įrankiais, tokiais kaip „search flights“ ir „book flights“.
 
-3. **Įrankio Iškvietimas**: Tada jūs paprašote dirbtinio intelekto asistento: „Prašau surasti skrydį iš Portlando į Honolulu.“ Dirbtinio intelekto asistentas, naudodamas savo LLM, nustato, kad reikia iškviesti „ieškoti skrydžių“ įrankį ir perduoda atitinkamus parametrus (išvykimo vieta, kelionės tikslas) MCP serveriui.
+3. **Tool Invocation**: Jūs tada paprašote AI asistento: „Prašau suraskite skrydį iš Portland į Honolulu.“ AI asistentas, naudodamas savo LLM, nustato, kad reikia iškviesti įrankį „search flights“ ir perduoda atitinkamus parametrus (išvykimo vieta, paskirties vieta) MCP serveriui.
 
-4. **Vykdymas ir Atsakymas**: MCP serveris, veikiantis kaip apvalkalas, atlieka faktinį skambutį į oro linijų vidinį užsakymo API. Tada jis gauna skrydžio informaciją (pvz., JSON duomenis) ir siunčia ją atgal dirbtinio intelekto asistentui.
+4. **Execution and Response**: MCP serveris, veikiantis kaip apvalkalas, atlieka faktinį skambutį į oro linijų vidinį rezervavimo API. Jis gauna skrydžių informaciją (pvz., JSON duomenis) ir siunčia ją atgal AI asistentui.
 
-5. **Tolimesnė Sąveika**: Dirbtinio intelekto asistentas pateikia skrydžio pasirinkimus. Kai pasirinksite skrydį, asistentas gali iškviesti „užsakyti skrydį“ įrankį tame pačiame MCP serveryje, užbaigdamas užsakymą.
+5. **Further Interaction**: AI asistentas pateikia skrydžių parinktis. Kai pasirinksite skrydį, asistentas gali iškviesti tą patį MCP serverį skirtą įrankį „book flight“, baigdamas užsakymą.
 
-## Agentas Agentui Protokolas (A2A)
+## Agent-to-Agent Protocol (A2A)
 
-Nors MCP orientuojasi į LLM ryšį su įrankiais, **Agentas Agentui (A2A) protokolas** žengia dar toliau, suteikdamas galimybę skirtingiems dirbtinio intelekto agentams bendrauti ir bendradarbiauti. A2A jungia dirbtinio intelekto agentus iš skirtingų organizacijų, aplinkų ir technologijų, kad atliktų bendrą užduotį.
+Kol MCP orientuojasi į LLM prisijungimą prie įrankių, **Agent-to-Agent (A2A) protokolas** žengia žingsnį toliau, įgalindamas skirtingų AI agentų tarpusavio komunikaciją ir bendradarbiavimą. A2A jungia AI agentus iš skirtingų organizacijų, aplinkų ir technologijų komplektų, kad bendradarbiautų atliekant bendrą užduotį.
 
-Aptarsime A2A komponentus ir privalumus, kartu su pavyzdžiu, kaip jis galėtų būti pritaikytas mūsų kelionių programoje.
+Aptarsime A2A komponentus ir privalumus bei pavyzdį, kaip tai galėtų būti pritaikyta mūsų kelionių programoje.
 
-### A2A Pagrindiniai Komponentai
+### A2A Core Components
 
-A2A orientuojasi į agentų komunikacijos galimybes ir jų bendradarbiavimą atliekant vartotojo užduotį. Kiekvienas protokolo komponentas prisideda prie šio proceso:
+A2A orientuojasi į agentų tarpusavio komunikacijos įgalinimą ir jų darbą kartu, kad būtų atlikta vartotojo sub-užduotis. Kiekvienas protokolo komponentas prisideda prie to:
 
-#### Agentų Kortelė
+#### Agent Card
 
-Panašiai kaip MCP serveris dalijasi įrankių sąrašu, Agentų Kortelė turi:
-- Agentų pavadinimą.
-- **Bendro pobūdžio užduočių aprašymą**, kurias jis atlieka.
-- **Specifinių įgūdžių sąrašą** su aprašymais, kad kiti agentai (ar net žmonės) suprastų, kada ir kodėl jie norėtų iškviesti tą agentą.
-- **Dabartinį agento URL adresą**.
-- **Versiją** ir **pajėgumus**, tokius kaip srautinių atsakymų ir pranešimų siuntimas.
+Panašiai kaip MCP serveris dalijasi įrankių sąrašu, Agent Card turi:
+- Agento pavadinimą.
+- **bendrą užduočių aprašymą**, kurias jis atlieka.
+- **konkrečių įgūdžių sąrašą** su aprašymais, kurie padeda kitiems agentams (arba net žmonėms) suprasti, kada ir kodėl verta kviesti tą agentą.
+- **dabartinį Endpoint URL** agento
+- Agento **versiją** ir **galimybes**, tokias kaip transliavimo atsakymai ir push pranešimai.
 
-#### Agentų Vykdytojas
+#### Agent Executor
 
-Agentų Vykdytojas yra atsakingas už **vartotojo pokalbio konteksto perdavimą nuotoliniam agentui**, kad šis suprastų, kokią užduotį reikia atlikti. A2A serveryje agentas naudoja savo LLM, kad analizuotų gaunamus prašymus ir vykdytų užduotis naudodamas savo vidinius įrankius.
+Agent Executor atsakingas už **vartotojo pokalbio konteksto perdavimą nuotoliniam agentui**, nes nuotoliniam agentui to reikia, kad suprastų, kokią užduotį reikia atlikti. A2A serveryje agentas naudoja savo didelį kalbos modelį (LLM) gaunčių užklausų analizavimui ir užduočių vykdymui naudodamas savo vidinius įrankius.
 
-#### Artefaktas
+#### Artifact
 
-Kai nuotolinis agentas užbaigia prašomą užduotį, jo darbo produktas sukuriamas kaip artefaktas. Artefaktas **turi agento atlikto darbo rezultatą**, **aprašymą, kas buvo atlikta**, ir **tekstinį kontekstą**, kuris perduodamas per protokolą. Po artefakto perdavimo ryšys su nuotoliniu agentu uždaromas, kol jo vėl prireiks.
+Kai nuotolinis agentas atliko prašomą užduotį, jo darbo produktas sukuriamas kaip artefaktas. Artefaktas **turi agento darbo rezultatą**, **aprašymą, kas buvo atlikta**, ir **teksto kontekstą**, kuris siunčiamas per protokolą. Po artefakto siuntimo ryšys su nuotoliniu agentu uždaromas iki kito poreikio.
 
-#### Įvykių Eilė
+#### Event Queue
 
-Šis komponentas naudojamas **atnaujinimų valdymui ir pranešimų perdavimui**. Tai ypač svarbu gamyboje, kad agentų sistemos ryšys nebūtų uždaromas prieš užduoties užbaigimą, ypač kai užduočių atlikimo laikas gali būti ilgesnis.
+Šis komponentas naudojamas **atnaujinimams tvarkyti ir žinutėms perduoti**. Jis ypač svarbus gamybiniame agentiniame sistemos kontekste, kad būtų užkirstas kelias ryšio uždarymui tarp agentų prieš užduočiai pilnai užbaigiant, ypač kai užduočių vykdymas gali užtrukti ilgesnį laiką.
 
-### A2A Privalumai
+### Benefits of A2A
 
-• **Pagerintas Bendradarbiavimas**: Leidžia agentams iš skirtingų tiekėjų ir platformų bendrauti, dalintis kontekstu ir dirbti kartu, palengvinant automatizaciją tarp tradiciškai nesusijusių sistemų.
+• **Enhanced Collaboration**: Leidžia agentams iš skirtingų tiekėjų ir platformų bendrauti, dalintis kontekstu ir dirbti kartu, palengvindamas sklandžią automatizaciją tarp tradiciškai atskirtų sistemų.
 
-• **Modelio Pasirinkimo Lankstumas**: Kiekvienas A2A agentas gali nuspręsti, kurį LLM naudoti savo prašymams aptarnauti, leidžiant optimizuoti ar pritaikyti modelius pagal agentą, skirtingai nei vieno LLM ryšys kai kuriose MCP situacijose.
+• **Model Selection Flexibility**: Kiekvienas A2A agentas gali pasirinkti, kurį LLM jis naudoja savo užklausoms aptarnauti, leidžiant optimizuotus arba smulkintus modelius kiekvienam agentui, skirtingai nei vienas LLM ryšys kai kuriuose MCP scenarijuose.
 
-• **Integruotas Autentifikavimas**: Autentifikavimas tiesiogiai integruotas į A2A protokolą, suteikiant tvirtą saugumo sistemą agentų sąveikai.
+• **Built-in Authentication**: Autentifikacija yra integruota tiesiogiai į A2A protokolą, suteikiant tvirtą saugumo pagrindą agentų sąveikai.
 
-### A2A Pavyzdys
+### A2A Example
 
-![A2A Diagrama](../../../translated_images/A2A-Diagram.8666928d648acc2687db4093d7b09ea2a595622f8fe18194a026ee55fc23af8e.lt.png)
+![A2A Diagram](../../../translated_images/lt/A2A-Diagram.8666928d648acc26.webp)
 
 Išplėskime mūsų kelionių užsakymo scenarijų, bet šį kartą naudodami A2A.
 
-1. **Vartotojo Prašymas Multi-Agentui**: Vartotojas bendrauja su „Kelionių Agentu“ A2A klientu/agentu, galbūt sakydamas: „Prašau užsakyti visą kelionę į Honolulu kitai savaitei, įskaitant skrydžius, viešbutį ir automobilio nuomą.“
+1. **User Request to Multi-Agent**: Vartotojas bendrauja su „Travel Agent“ A2A klientu/agento, pavyzdžiui, sakydamas: „Prašau užsakyti visą kelionę į Honolulu kitai savaitei, įskaitant skrydžius, viešbutį ir nuomojamą automobilį“.
 
-2. **Kelionių Agentas Orkestruoja**: Kelionių Agentas gauna šį sudėtingą prašymą. Jis naudoja savo LLM, kad suprastų užduotį ir nustatytų, jog reikia bendrauti su kitais specializuotais agentais.
+2. **Orchestration by Travel Agent**: Travel Agent gauna šį sudėtingą prašymą. Jis naudoja savo LLM, kad apgalvotų užduotį ir nustatytų, jog reikia bendrauti su kitais specializuotais agentais.
 
-3. **Tarpagentinė Komunikacija**: Kelionių Agentas tada naudoja A2A protokolą, kad prisijungtų prie žemyninių agentų, tokių kaip „Oro Linijų Agentas“, „Viešbučių Agentas“ ir „Automobilių Nuomos Agentas“, kurie sukurti skirtingų kompanijų.
+3. **Inter-Agent Communication**: Travel Agent tada naudoja A2A protokolą, kad prisijungtų prie tolimesnių agentų, tokių kaip „Airline Agent“, „Hotel Agent“ ir „Car Rental Agent“, kuriuos kuria skirtingos įmonės.
 
-4. **Deleguotas Užduočių Vykdymas**: Kelionių Agentas siunčia specifines užduotis šiems specializuotiems agentams (pvz., „Raskite skrydžius į Honolulu“, „Užsakykite viešbutį“, „Išnuomokite automobilį“). Kiekvienas iš šių specializuotų agentų, naudodamas savo LLM ir vidinius įrankius (kurie gali būti MCP serveriai), atlieka savo specifinę užsakymo dalį.
+4. **Delegated Task Execution**: Travel Agent siunčia konkrečias užduotis šiems specializuotiems agentams (pvz., „Raskite skrydžius į Honolulu,“ „Užsakyti viešbutį,“ „Išsinuomoti automobilį“). Kiekvienas iš šių specializuotų agentų, naudodamas savo LLM ir savo įrankius (kurie patys gali būti MCP serveriai), atlieka savo dalį rezervavimo proceso.
 
-5. **Sujungtas Atsakymas**: Kai visi žemyniniai agentai užbaigia savo užduotis, Kelionių Agentas sujungia rezultatus (skrydžio detales, viešbučio patvirtinimą, automobilio nuomos užsakymą) ir pateikia išsamų, pokalbio stiliaus atsakymą vartotojui.
+5. **Consolidated Response**: Kai visi tolimesni agentai baigia užduotis, Travel Agent sujungia rezultatus (skrydžio duomenis, viešbučio patvirtinimą, automobilių nuomos užsakymą) ir siunčia išsamią, pokalbio stiliaus atsakymą atgal vartotojui.
 
-## Natūralios Kalbos Tinklas (NLWeb)
+## Natural Language Web (NLWeb)
 
-Svetainės jau seniai yra pagrindinis būdas vartotojams pasiekti informaciją ir duomenis internete.
+Tinklalapiai ilgą laiką buvo pagrindinis būdas vartotojams pasiekti informaciją ir duomenis internete.
 
-Pažvelkime į skirtingus NLWeb komponentus, NLWeb privalumus ir pavyzdį, kaip NLWeb veikia mūsų kelionių programoje.
+Pažiūrėkime į skirtingus NLWeb komponentus, NLWeb privalumus ir pavyzdį, kaip mūsų NLWeb veikia, žiūrint į mūsų kelionių programą.
 
-### NLWeb Komponentai
+### Components of NLWeb
 
-- **NLWeb Programėlė (Pagrindinis Paslaugos Kodas)**: Sistema, kuri apdoroja natūralios kalbos klausimus. Ji jungia skirtingas platformos dalis, kad sukurtų atsakymus. Galite ją laikyti **varikliu, kuris maitina natūralios kalbos funkcijas** svetainėje.
+- **NLWeb Application (Core Service Code)**: Sistema, kuri apdoroja natūralios kalbos užklausas. Ji sujungia skirtingas platformos dalis, kad sukurtų atsakymus. Galite galvoti apie ją kaip apie **variklį, kuris palaiko natūralios kalbos funkcijas** tinklalapyje.
 
-- **NLWeb Protokolas**: Tai **pagrindinis taisyklių rinkinys natūralios kalbos sąveikai** su svetaine. Jis grąžina atsakymus JSON formatu (dažnai naudojant Schema.org). Jo tikslas – sukurti paprastą pagrindą „AI Tinklui“, taip kaip HTML padarė įmanomą dokumentų dalijimąsi internete.
+- **NLWeb Protocol**: Tai **pagrindinių taisyklių rinkinys natūralios kalbos sąveikai** su tinklalapiu. Jis grąžina atsakymus JSON formatu (dažnai naudojant Schema.org). Jo tikslas – sukurti paprastą pagrindą „AI Web“, panašiai kaip HTML padarė įmanomą dokumentų dalinimąsi internete.
 
-- **MCP Serveris (Modelio Konteksto Protokolo Galinis Taškas)**: Kiekviena NLWeb konfigūracija taip pat veikia kaip **MCP serveris**. Tai reiškia, kad ji gali **dalintis įrankiais (pvz., „klausti“ metodu) ir duomenimis** su kitomis dirbtinio intelekto sistemomis. Praktikoje tai leidžia svetainės turinį ir galimybes naudoti dirbtinio intelekto agentams, leidžiant svetainei tapti platesnės „agentų ekosistemos“ dalimi.
+- **MCP Server (Model Context Protocol Endpoint)**: Kiekvienas NLWeb nustatymas taip pat veikia kaip **MCP serveris**. Tai reiškia, kad jis gali **dalintis įrankiais (pvz., „ask“ metodu) ir duomenimis** su kitomis AI sistemomis. Praktikoje tai leidžia tinklalapio turinį ir galimybes naudoti AI agentams, todėl svetainė tampa platesnės „agentų ekosistemos“ dalimi.
 
-- **Įterpimo Modeliai**: Šie modeliai naudojami **konvertuoti svetainės turinį į skaitines reprezentacijas, vadinamas vektoriais** (įterpimais). Šie vektoriai užfiksuoja prasmę taip, kad kompiuteriai galėtų palyginti ir ieškoti. Jie saugomi specialioje duomenų bazėje, o vartotojai gali pasirinkti, kurį įterpimo modelį naudoti.
+- **Embedding Models**: Šie modeliai naudojami **paversti tinklalapio turinį į skaitines reprezentacijas, vadinamas vektoriais** (embedding). Šie vektoriai fiksuoja reikšmę taip, kad kompiuteriai gali palyginti ir ieškoti. Jie saugomi specialioje duomenų bazėje, ir vartotojai gali pasirinkti, kurį embedding modelį nori naudoti.
 
-- **Vektorinė Duomenų Bazė (Paieškos Mechanizmas)**: Ši duomenų bazė **saugo svetainės turinio įterpimus**. Kai kas nors užduoda klausimą, NLWeb patikrina vektorinę duomenų bazę, kad greitai rastų tinkamiausią informaciją. Ji pateikia greitą galimų atsakymų sąrašą, surūšiuotą pagal panašumą. NLWeb veikia su skirtingomis vektorinėmis saugojimo sistemomis, tokiomis kaip Qdrant, Snowflake, Milvus, Azure AI Search ir Elasticsearch.
+- **Vector Database (Retrieval Mechanism)**: Ši duomenų bazė **saugo tinklalapio turinio embedding'us**. Kai kas nors pateikia užklausą, NLWeb patikrina vektorinę duomenų bazę, kad greitai rastų aktualiausią informaciją. Ji pateikia greitą galimų atsakymų sąrašą, surūšiuotą pagal panašumą. NLWeb veikia su skirtingomis vektorių saugojimo sistemomis, tokiomis kaip Qdrant, Snowflake, Milvus, Azure AI Search ir Elasticsearch.
 
-### NLWeb Pavyzdys
+### NLWeb by Example
 
-![NLWeb](../../../translated_images/nlweb-diagram.c1e2390b310e5fe4b245b86690ac6c49c26e355da5ab124128c8675d58cc9b07.lt.png)
+![NLWeb](../../../translated_images/lt/nlweb-diagram.c1e2390b310e5fe4.webp)
 
-Apsvarstykime mūsų kelionių užsakymo svetainę, bet šį kartą ji veikia su NLWeb.
+Apsvarstykime vėl mūsų kelionių rezervavimo svetainę, bet šį kartą ji veikia su NLWeb.
 
-1. **Duomenų Įkėlimas**: Kelionių svetainės esami produktų katalogai (pvz., skrydžių sąrašai, viešbučių aprašymai, kelionių paketai) yra formatuojami naudojant Schema.org arba įkeliami per RSS srautus. NLWeb įrankiai įkelia šiuos struktūrizuotus duomenis, sukuria įterpimus ir saugo juos vietinėje arba nuotolinėje vektorinėje duomenų bazėje.
+1. **Data Ingestion**: Kelionių svetainės esami produktų katalogai (pvz., skrydžių sąrašai, viešbučių aprašymai, kelionių paketai) yra suformatuoti naudojant Schema.org arba įkelti per RSS srautus. NLWeb įrankiai importuoja šiuos struktūruotus duomenis, sukuria embedding'us ir saugo juos vietinėje arba nuotolinėje vektorinėje duomenų bazėje.
 
-2. **Natūralios Kalbos Užklausa (Žmogus)**: Vartotojas apsilanko svetainėje ir, užuot naršęs meniu, įveda į pokalbio sąsają: „Raskite šeimai draugišką viešbutį Honolulu su baseinu kitai savaitei“.
+2. **Natural Language Query (Human)**: Vartotojas aplanko svetainę ir, vietoj naršymo meniu, įrašo į pokalbio sąsają: „Raskite man šeimai tinkamą viešbutį Honolulu su baseinu kitai savaitei“.
 
-3. **NLWeb Apdorojimas**: NLWeb programėlė gauna šią užklausą. Ji siunčia užklausą LLM, kad suprastų, ir tuo pačiu metu ieško savo vektorinėje duomenų bazėje tinkamų viešbučių sąrašų.
+3. **NLWeb Processing**: NLWeb programa gauna šią užklausą. Ji siunčia užklausą LLM supratimui ir tuo pačiu ieško savo vektorinėje duomenų bazėje tinkamų viešbučių sąrašų.
 
-4. **Tikslūs Rezultatai**:
+4. **Accurate Results**: LLM padeda interpretuoti paieškos rezultatus iš duomenų bazės, identifikuoti geriausius atitikimus pagal kriterijus „šeimai tinkamas“, „baseinas“ ir „Honolulu“, ir tuomet suformatuoti natūralios kalbos atsakymą. Svarbu, kad atsakymas remiasi faktiniais viešbučiais iš svetainės katalogo, vengiant išgalvotos informacijos.
+
+5. **AI Agent Interaction**: Kadangi NLWeb veikia kaip MCP serveris, išorinis AI kelionių agentas taip pat galėtų prisijungti prie šios svetainės NLWeb egzemplioriaus. AI agentas tada galėtų naudoti `ask("Are there any vegan-friendly restaurants in the Honolulu area recommended by the hotel?")`. NLWeb egzempliorius suprocesuotų tai, pasinaudodamas savo restoranų informacijos duomenų baze (jei ji įkelta), ir grąžintų struktūruotą JSON atsakymą.
+
+### Got More Questions about MCP/A2A/NLWeb?
+
+Prisijunkite prie [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord), kad susitiktumėte su kitais besimokančiais, dalyvautumėte konsultacijose ir gautumėte atsakymus į savo klausimus apie AI agentus.
+
+## Resources
+
+- [MCP for Beginners](https://aka.ms/mcp-for-beginners)  
+- [MCP Documentation](https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme)
+- [NLWeb Repo](https://github.com/nlweb-ai/NLWeb)
+- [Microsoft Agent Framework](https://aka.ms/ai-agents-beginners/agent-framewrok)
 
 ---
 
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius naudojant šį vertimą.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+Atsakomybės apribojimas:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, atkreipkite dėmesį, kad automatizuoti vertimai gali turėti klaidų arba netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Svarbios informacijos atveju rekomenduojama kreiptis į profesionalų vertėją. Mes neprisiimame atsakomybės už bet kokius nesusipratimus ar neteisingą aiškinimą, kilusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

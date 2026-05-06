@@ -1,22 +1,22 @@
 # Azure AI Agent Service Development
 
-In this exercise, you use the Azure AI Agent service tools in the [Azure AI Foundry portal](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst) to create a agent for Flight Booking. The agent will be able to interact with users and provide information about flights.
+In this exercise, you use the Azure AI Agent service tools in the [Microsoft Foundry portal](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst) to create a agent for Flight Booking. The agent will be able to interact with users and provide information about flights.
 
 ## Prerequisites
 
 To complete this exercise, you need the following:
 1. An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=academic-105485-koreyst).
-2. You need permissions to create an Azure AI Foundry hub or have one created for you.
+2. You need permissions to create an Microsoft Foundry hub or have one created for you.
     - If your role is Contributor or Owner, you can follow the steps in this tutorial.
 
-## Create an Azure AI Foundry hub
+## Create an Microsoft Foundry hub
 
-> **Note:** Azure AI Foundry was formerly known as Azure AI Studio.
+> **Note:** Microsoft Foundry was formerly known as Azure AI Studio.
 
-1. Follow these guidelines from the [Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst) blog post for creating an Azure AI Foundry hub.
-2.  When your project is created, close any tips that are displayed and review the project page in Azure AI Foundry portal, which should look similar to the following image:
+1. Follow these guidelines from the [Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst) blog post for creating an Microsoft Foundry hub.
+2.  When your project is created, close any tips that are displayed and review the project page in Microsoft Foundry portal, which should look similar to the following image:
 
-    ![Azure AI Foundry Project](./images/azure-ai-foundry.png)
+    ![Microsoft Foundry Project](./images/azure-ai-foundry.png)
 
 ## Deploy a model
 
@@ -75,7 +75,7 @@ Now that you have deployed a model, you can create an agent. An agent is a conve
 
 ## Test the agent
 
-After creating the agent, you can test it to see how it responds to user queries in Azure AI Foundry portal playground.
+After creating the agent, you can test it to see how it responds to user queries in Microsoft Foundry portal playground.
 
 1. At the top of the **Setup** pane for your agent, select **Try in playground**.
 2. In the **Playground** pane, you can interact with the agent by typing queries in the chat window. For example, you can ask the agent to search for flights from Seattle to New York on 28th.
@@ -95,8 +95,8 @@ When you have finished testing the agent, you can delete it to avoid incurring a
 
 ## Resources
 
-- [Azure AI Foundry documentation](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst)
-- [Azure AI Foundry portal](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst)
+- [Microsoft Foundry documentation](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst)
+- [Microsoft Foundry portal](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst)
 - [Getting Started with Azure AI Studio](https://techcommunity.microsoft.com/blog/educatordeveloperblog/getting-started-with-azure-ai-studio/4095602?WT.mc_id=academic-105485-koreyst)
 - [Fundamentals of AI agents on Azure](https://learn.microsoft.com/en-us/training/modules/ai-agent-fundamentals/?WT.mc_id=academic-105485-koreyst)
 - [Azure AI Discord](https://aka.ms/AzureAI/Discord)

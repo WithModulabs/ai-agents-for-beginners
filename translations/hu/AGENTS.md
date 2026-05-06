@@ -1,81 +1,70 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5f54aa3f419865e5d58bcfddb1d3198",
-  "translation_date": "2025-10-03T15:52:28+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "hu"
-}
--->
 # AGENTS.md
 
-## Projekt áttekintése
+## Projekt áttekintés
 
-Ez a repozitórium az "AI Agents for Beginners" című átfogó oktatási kurzust tartalmazza, amely mindent megtanít, ami szükséges AI ügynökök létrehozásához. A kurzus több mint 15 leckéből áll, amelyek az alapokat, tervezési mintákat, keretrendszereket és az AI ügynökök gyártási telepítését fedik le.
+Ez a tároló az "AI Agents for Beginners" kurzust tartalmazza - egy átfogó oktatási anyagot, amely megtanít mindent, ami az AI ügynökök felépítéséhez szükséges. A kurzus több mint 15 leckéből áll, amelyek lefedik az alapokat, tervezési mintákat, keretrendszereket és az AI ügynökök éles környezetbe történő telepítését.
 
-**Kulcstechnológiák:**
+**Fő technológiák:**
 - Python 3.12+
 - Jupyter Notebooks interaktív tanuláshoz
-- AI keretrendszerek: Semantic Kernel, AutoGen, Microsoft Agent Framework (MAF)
-- Azure AI szolgáltatások: Azure AI Foundry, Azure AI Agent Service
-- GitHub Models Marketplace (ingyenes szint elérhető)
+- AI keretrendszerek: Microsoft Agent Framework (MAF)
+- Azure AI szolgáltatások: Microsoft Foundry, Azure AI Foundry Agent Service V2
 
 **Architektúra:**
-- Leckék alapú struktúra (00-15+ könyvtárak)
-- Minden lecke tartalmaz: README dokumentációt, kódmintákat (Jupyter notebookok) és képeket
-- Többnyelvű támogatás automatikus fordítási rendszerrel
-- Több keretrendszer opció minden leckéhez (Semantic Kernel, AutoGen, Azure AI Agent Service)
+- Leckékre bontott struktúra (00-15+ könyvtárak)
+- Minden lecke tartalmazza: README dokumentációt, kódmintákat (Jupyter notebooks) és képeket
+- Többnyelvű támogatás automatizált fordítási rendszerrel
+- Minden leckéhez egy Python jegyzetfüzet a Microsoft Agent Framework használatával
 
 ## Telepítési parancsok
 
 ### Előfeltételek
 - Python 3.12 vagy újabb
-- GitHub fiók (GitHub Models - ingyenes szinthez)
-- Azure előfizetés (opcionális, Azure AI szolgáltatásokhoz)
+- Azure-előfizetés (az Azure AI Foundry-hoz)
+- Azure CLI telepítve és hitelesítve (`az login`)
 
 ### Kezdeti beállítás
 
-1. **Repozitórium klónozása vagy forkolása:**
+1. **Klónozd vagy forkold a tárolót:**
    ```bash
    gh repo fork microsoft/ai-agents-for-beginners --clone
-   # OR
+   # VAGY
    git clone https://github.com/microsoft/ai-agents-for-beginners.git
    cd ai-agents-for-beginners
    ```
 
-2. **Python virtuális környezet létrehozása és aktiválása:**
+2. **Hozd létre és aktiváld a Python virtuális környezetet:**
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  # Windows rendszeren: venv\Scripts\activate
    ```
 
-3. **Függőségek telepítése:**
+3. **Telepítsd a függőségeket:**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Környezeti változók beállítása:**
+4. **Állítsd be a környezeti változókat:**
    ```bash
    cp .env.example .env
-   # Edit .env with your API keys and endpoints
+   # Szerkessze a .env fájlt az API-kulcsok és a végpontok megadásához.
    ```
 
 ### Szükséges környezeti változók
 
-**GitHub Models (ingyenes) esetén:**
-- `GITHUB_TOKEN` - Személyes hozzáférési token a GitHub-tól
+Az **Azure AI Foundry** esetén (szükséges):
+- `AZURE_AI_PROJECT_ENDPOINT` - Azure AI Foundry projektvégpont
+- `AZURE_AI_MODEL_DEPLOYMENT_NAME` - Modell telepítés neve (pl. gpt-4o)
 
-**Azure AI szolgáltatásokhoz** (opcionális):
-- `PROJECT_ENDPOINT` - Azure AI Foundry projekt végpont
-- `AZURE_OPENAI_API_KEY` - Azure OpenAI API kulcs
-- `AZURE_OPENAI_ENDPOINT` - Azure OpenAI végpont URL
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Chat modell telepítési neve
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Beágyazások telepítési neve
-- További Azure konfiguráció a `.env.example` fájlban található
+Az **Azure AI Search** esetén (Lesson 05 - RAG):
+- `AZURE_SEARCH_SERVICE_ENDPOINT` - Azure AI Search végpont
+- `AZURE_SEARCH_API_KEY` - Azure AI Search API kulcs
+
+Hitelesítés: Futtasd az `az login` parancsot a jegyzetfüzetek futtatása előtt (az `AzureCliCredential` használatával).
 
 ## Fejlesztési munkafolyamat
 
-### Jupyter Notebookok futtatása
+### Jupyter notebookok futtatása
 
 Minden lecke több Jupyter notebookot tartalmaz különböző keretrendszerekhez:
 
@@ -84,83 +73,66 @@ Minden lecke több Jupyter notebookot tartalmaz különböző keretrendszerekhez
    jupyter notebook
    ```
 
-2. **Navigálás egy lecke könyvtárba** (pl. `01-intro-to-ai-agents/code_samples/`)
+2. **Navigálj egy lecke könyvtárába** (pl. `01-intro-to-ai-agents/code_samples/`)
 
-3. **Notebookok megnyitása és futtatása:**
-   - `*-semantic-kernel.ipynb` - Semantic Kernel keretrendszer használata
-   - `*-autogen.ipynb` - AutoGen keretrendszer használata
-   - `*-python-agent-framework.ipynb` - Microsoft Agent Framework (Python)
-   - `*-dotnet-agent-framework.ipynb` - Microsoft Agent Framework (.NET)
-   - `*-azureaiagent.ipynb` - Azure AI Agent Service használata
+3. **Nyisd meg és futtasd a notebookokat:**
+   - `*-python-agent-framework.ipynb` - Microsoft Agent Framework használata (Python)
+   - `*-dotnet-agent-framework.ipynb` - Microsoft Agent Framework használata (.NET)
 
-### Különböző keretrendszerek használata
+### A Microsoft Agent Framework használata
 
-**Semantic Kernel + GitHub Models:**
-- Ingyenes szint elérhető GitHub fiókkal
-- Jó tanuláshoz és kísérletezéshez
-- Fájlminta: `*-semantic-kernel*.ipynb`
+**Microsoft Agent Framework + Azure AI Foundry:**
+- Azure-előfizetést igényel
+- Az Agent Service V2-hez az `AzureAIProjectAgentProvider`-t használja (az ügynökök láthatók a Foundry portálon)
+- Éles környezetre alkalmas beépített megfigyelhetőséggel
+- Fájlmintázat: `*-python-agent-framework.ipynb`
 
-**AutoGen + GitHub Models:**
-- Ingyenes szint elérhető GitHub fiókkal
-- Több ügynökös koordinációs képességek
-- Fájlminta: `*-autogen.ipynb`
+## Tesztelési utasítások
 
-**Microsoft Agent Framework (MAF):**
-- Microsoft legújabb keretrendszere
-- Elérhető Pythonban és .NET-ben
-- Fájlminta: `*-agent-framework.ipynb`
+Ez egy oktatási tároló példa kóddal, nem pedig éles környezetre szánt automatizált tesztekkel rendelkező kód. A beállítás és a változtatások ellenőrzéséhez:
 
-**Azure AI Agent Service:**
-- Azure előfizetést igényel
-- Gyártásra kész funkciók
-- Fájlminta: `*-azureaiagent.ipynb`
+### Manuális tesztelés
 
-## Tesztelési útmutató
-
-Ez egy oktatási repozitórium példakódokkal, nem pedig gyártási kód automatikus tesztekkel. A beállítás és változtatások ellenőrzéséhez:
-
-### Kézi tesztelés
-
-1. **Python környezet tesztelése:**
+1. **Teszteld a Python környezetet:**
    ```bash
-   python --version  # Should be 3.12+
-   pip list | grep -E "(autogen|semantic-kernel|azure-ai)"
+   python --version  # 3.12 vagy újabb kell legyen.
+   pip list | grep -E "(agent-framework|azure-ai|azure-identity)"
    ```
 
-2. **Notebook futtatás tesztelése:**
+2. **Teszteld a notebookok futtatását:**
    ```bash
-   # Convert notebook to script and run (tests imports)
+   # A jegyzetfüzet átalakítása szkriptté és futtatása (a tesztek importálása)
    jupyter nbconvert --to script <lesson-folder>/code_samples/<notebook>.ipynb --stdout | python
    ```
 
-3. **Környezeti változók ellenőrzése:**
+3. **Ellenőrizd a környezeti változókat:**
    ```bash
    python -c "import os; from dotenv import load_dotenv; load_dotenv(); print('✓ GITHUB_TOKEN' if os.getenv('GITHUB_TOKEN') else '✗ GITHUB_TOKEN missing')"
    ```
 
-### Egyedi notebookok futtatása
+### Egyéni notebookok futtatása
 
-Nyissa meg a notebookokat Jupyterben, és hajtsa végre a cellákat sorban. Minden notebook önálló, és tartalmazza:
-- Importálási utasítások
+Nyisd meg a notebookokat Jupyterben, és futtasd a cellákat sorban. Minden notebook önálló és tartalmazza:
+- Import utasítások
 - Konfiguráció betöltése
 - Példa ügynök implementációk
-- Várható kimenetek markdown cellákban
+- Várt kimenetek markdown cellákban
 
 ## Kódstílus
 
 ### Python konvenciók
 
 - **Python verzió**: 3.12+
-- **Kódstílus**: Kövesse a standard Python PEP 8 konvenciókat
-- **Notebookok**: Használjon tiszta markdown cellákat a fogalmak magyarázatára
-- **Importok**: Csoportosítás standard könyvtár, harmadik fél, helyi importok szerint
+- **Kód stílus**: Kövesd a standard Python PEP 8 konvenciókat
+- **Notebookok**: Használj világos markdown cellákat a fogalmak magyarázatához
+- **Importok**: Csoportosítsd standard könyvtár, harmadik féltől származó és helyi importok szerint
 
-### Jupyter Notebook konvenciók
+### Jupyter notebook konvenciók
 
-- Tartalmazzon leíró markdown cellákat a kódcellák előtt
-- Adjon hozzá kimeneti példákat a notebookokhoz referenciaként
-- Használjon tiszta változóneveket, amelyek megfelelnek a lecke fogalmainak
-- Tartsa lineáris sorrendben a notebook végrehajtását (1. cella → 2 → 3...)
+- Adj leíró markdown cellákat a kódcellák elé
+- Adj kimeneti példákat a notebookokba referencia céljából
+- Használj világos változóneveket, amelyek illeszkednek a lecke fogalmaihoz
+- Tartsd a notebook végrehajtási sorrendjét lineárisan (cell 1 → 2 → 3...)
 
 ### Fájlok szervezése
 
@@ -168,10 +140,8 @@ Nyissa meg a notebookokat Jupyterben, és hajtsa végre a cellákat sorban. Mind
 <lesson-number>-<lesson-name>/
 ├── README.md                     # Lesson documentation
 ├── code_samples/
-│   ├── <number>-semantic-kernel.ipynb
-│   ├── <number>-autogen.ipynb
 │   ├── <number>-python-agent-framework.ipynb
-│   └── <number>-azureaiagent.ipynb
+│   └── <number>-dotnet-agent-framework.ipynb  (optional)
 └── images/
     └── *.png
 ```
@@ -180,169 +150,163 @@ Nyissa meg a notebookokat Jupyterben, és hajtsa végre a cellákat sorban. Mind
 
 ### Dokumentáció építése
 
-Ez a repozitórium Markdown-t használ dokumentációhoz:
+Ez a tároló Markdown-t használ dokumentációhoz:
 - README.md fájlok minden lecke mappájában
-- Fő README.md a repozitórium gyökérkönyvtárában
-- Automatikus fordítási rendszer GitHub Actions segítségével
+- Fő README.md a tároló gyökerében
+- Automatizált fordítási rendszer GitHub Actions segítségével
 
-### CI/CD Pipeline
+### CI/CD folyamat
 
 A `.github/workflows/` könyvtárban található:
 
 1. **co-op-translator.yml** - Automatikus fordítás 50+ nyelvre
-2. **welcome-issue.yml** - Üdvözli az új probléma létrehozókat
-3. **welcome-pr.yml** - Üdvözli az új pull request beküldőket
+2. **welcome-issue.yml** - Üdvözli az új issue létrehozókat
+3. **welcome-pr.yml** - Üdvözli az új pull request hozzájárulókat
 
 ### Telepítés
 
-Ez egy oktatási repozitórium - nincs telepítési folyamat. Felhasználók:
-1. Forkolják vagy klónozzák a repozitóriumot
-2. Futtassák a notebookokat helyben vagy GitHub Codespaces-ben
-3. Tanuljanak példák módosításával és kísérletezésével
+Ez egy oktatási tároló - nincs telepítési folyamat. Felhasználók:
+1. Forkold vagy klónozd a tárolót
+2. Futtasd a notebookokat helyileg vagy GitHub Codespaces-ben
+3. Tanulj a példák módosításával és kísérletezésével
 
-## Pull Request irányelvek
+## Pull request irányelvek
 
 ### Beküldés előtt
 
-1. **Tesztelje a változtatásait:**
-   - Teljesen futtassa az érintett notebookokat
-   - Ellenőrizze, hogy minden cella hiba nélkül fut-e
-   - Győződjön meg róla, hogy a kimenetek megfelelőek
+1. **Teszteld a változtatásaidat:**
+   - Futtasd végig az érintett notebookokat
+   - Ellenőrizd, hogy minden cella hibamentesen fut-e
+   - Ellenőrizd, hogy a kimenetek megfelelőek-e
 
-2. **Dokumentáció frissítése:**
-   - Frissítse a README.md fájlt, ha új fogalmakat ad hozzá
-   - Adjon hozzá megjegyzéseket a notebookokban a bonyolult kódhoz
-   - Győződjön meg róla, hogy a markdown cellák magyarázzák a célt
+2. **Dokumentáció frissítései:**
+   - Frissítsd a README.md-et, ha új fogalmakat adsz hozzá
+   - Adj megjegyzéseket a notebookokban a bonyolult kódokhoz
+   - Biztosítsd, hogy a markdown cellák elmagyarázzák a célját
 
-3. **Fájlmódosítások:**
-   - Ne kötelezze el a `.env` fájlokat (használja a `.env.example`-t)
-   - Ne kötelezze el a `venv/` vagy `__pycache__/` könyvtárakat
-   - Tartsa meg a notebook kimeneteket, ha azok fogalmakat demonstrálnak
-   - Távolítsa el az ideiglenes fájlokat és a backup notebookokat (`*-backup.ipynb`)
+3. **Fájlváltoztatások:**
+   - Kerüld a `.env` fájlok committálását (`.env.example` használata javasolt)
+   - Ne committáld a `venv/` vagy a `__pycache__/` könyvtárakat
+   - Tartsd meg a notebook kimeneteket, ha bemutatják a fogalmakat
+   - Távolítsd el az ideiglenes fájlokat és a biztonsági mentés notebookokat (`*-backup.ipynb`)
 
 ### PR cím formátuma
 
-Használjon leíró címeket:
-- `[Lesson-XX] Új példa hozzáadása <fogalom> számára`
-- `[Fix] Helyesírási hiba javítása a lesson-XX README-ben`
-- `[Update] Kódminta javítása a lesson-XX-ben`
-- `[Docs] Telepítési utasítások frissítése`
+Használj leíró címeket:
+- `[Lesson-XX] Új példa hozzáadása a <concept> számára`
+- `[Fix] Javítsd a helyesírási hibát a lesson-XX README-ben`
+- `[Update] Javítsd a kódpéldát a lesson-XX-ben`
+- `[Docs] Frissítsd a telepítési utasításokat`
 
-### Szükséges ellenőrzések
+### Kötelező ellenőrzések
 
-- A notebookoknak hiba nélkül kell futniuk
+- A notebookoknak hibamentesen kell futniuk
 - A README fájloknak világosnak és pontosnak kell lenniük
-- Kövesse a repozitóriumban meglévő kódmintákat
-- Tartsa meg a konzisztenciát a többi leckével
+- Kövesd a meglévő kódmintákat a tárolóban
+- Tartsd fenn az egységességet a többi leckével
 
 ## További megjegyzések
 
-### Gyakori problémák
+### Gyakori buktatók
 
 1. **Python verzió eltérés:**
-   - Győződjön meg róla, hogy Python 3.12+ van használatban
-   - Néhány csomag nem működik régebbi verziókkal
-   - Használja a `python3 -m venv` parancsot a Python verzió explicit megadásához
+   - Gondoskodj róla, hogy Python 3.12+ legyen használatban
+   - Néhány csomag nem működhet régebbi verziókkal
+   - Használd a `python3 -m venv` parancsot a Python verzió egyértelmű megadásához
 
 2. **Környezeti változók:**
-   - Mindig hozzon létre `.env` fájlt a `.env.example` alapján
-   - Ne kötelezze el a `.env` fájlt (a `.gitignore`-ban van)
-   - A GitHub tokennek megfelelő jogosultságokra van szüksége
+   - Mindig hozd létre a `.env` fájlt a `.env.example` alapján
+   - Ne commitáld a `.env` fájlt (a `.gitignore`-ban szerepel)
+   - A GitHub tokennek megfelelő jogosultságokkal kell rendelkeznie
 
-3. **Csomagkonfliktusok:**
-   - Használjon friss virtuális környezetet
-   - Telepítse a `requirements.txt` fájlból, ne egyedi csomagokat
-   - Néhány notebook további csomagokat igényel, amelyek markdown cellákban vannak megemlítve
+3. **Csomagütközések:**
+   - Használj friss virtuális környezetet
+   - Telepíts a `requirements.txt`-ből az egyes csomagok helyett
+   - Néhány notebook további csomagokat igényelhet, amelyek a markdown cellákban vannak említve
 
 4. **Azure szolgáltatások:**
    - Az Azure AI szolgáltatások aktív előfizetést igényelnek
    - Néhány funkció régióspecifikus
-   - Az ingyenes szint korlátozásai vonatkoznak a GitHub Models-re
+   - Ingyenes réteg korlátozásai érvényesek a GitHub Modellekre
 
 ### Tanulási útvonal
 
-Ajánlott haladási sorrend a leckék között:
-1. **00-course-setup** - Kezdje itt a környezet beállításával
-2. **01-intro-to-ai-agents** - Ismerje meg az AI ügynökök alapjait
-3. **02-explore-agentic-frameworks** - Ismerje meg a különböző keretrendszereket
+Ajánlott sorrend a leckéken át:
+1. **00-course-setup** - Kezdd itt a környezet beállításához
+2. **01-intro-to-ai-agents** - Ismerd meg az AI ügynökök alapjait
+3. **02-explore-agentic-frameworks** - Ismerd meg a különböző keretrendszereket
 4. **03-agentic-design-patterns** - Alapvető tervezési minták
-5. Folytassa a számozott leckéket sorrendben
+5. Folytasd a számozott leckéken sorról sorra
 
 ### Keretrendszer kiválasztása
 
-Válasszon keretrendszert céljai alapján:
-- **Tanulás/Prototípus készítés**: Semantic Kernel + GitHub Models (ingyenes)
-- **Több ügynökös rendszerek**: AutoGen
-- **Legújabb funkciók**: Microsoft Agent Framework (MAF)
-- **Gyártási telepítés**: Azure AI Agent Service
+Válassz keretrendszert a céljaid alapján:
+- **Minden lecke**: Microsoft Agent Framework (MAF) az `AzureAIProjectAgentProvider`-rel
+- **Az ügynökök szerveroldalon regisztrálódnak** az Azure AI Foundry Agent Service V2-ben és láthatók a Foundry portálon
 
 ### Segítség kérése
 
-- Csatlakozzon az [Azure AI Foundry Community Discord](https://aka.ms/ai-agents/discord) közösséghez
-- Nézze át a lecke README fájlokat konkrét útmutatásért
-- Ellenőrizze a fő [README.md](./README.md) fájlt a kurzus áttekintéséhez
-- Tekintse meg a [Course Setup](./00-course-setup/README.md) fájlt részletes beállítási utasításokért
+- Csatlakozz a [Microsoft Foundry Community Discord](https://aka.ms/ai-agents/discord)
+- Nézd át a lecke README fájljait a speciális útmutatásért
+- Ellenőrizd a fő [README.md](./README.md)-et a kurzus áttekintéséhez
+- Hivatkozz a [Kurzus beállítása](./00-course-setup/README.md) a részletes telepítési utasításokért
 
 ### Hozzájárulás
 
 Ez egy nyílt oktatási projekt. Hozzájárulásokat szívesen fogadunk:
-- Kódminták javítása
-- Helyesírási hibák vagy hibák javítása
-- Magyarázó megjegyzések hozzáadása
-- Új lecke témák javaslata
-- Fordítás további nyelvekre
+- Javítsd a kód példákat
+- Javíts hibákat vagy elgépeléseket
+- Adj tisztázó megjegyzéseket
+- Javasolj új lecke témákat
+- Fordítsd le további nyelvekre
 
-Nézze meg a [GitHub Issues](https://github.com/microsoft/ai-agents-for-beginners/issues) oldalt az aktuális igényekért.
+Tekintsd meg a [GitHub Issues](https://github.com/microsoft/ai-agents-for-beginners/issues) oldalt az aktuális igényekért.
 
 ## Projekt-specifikus kontextus
 
 ### Többnyelvű támogatás
 
-Ez a repozitórium automatikus fordítási rendszert használ:
+Ez a tároló automatizált fordítási rendszert használ:
 - Több mint 50 nyelv támogatott
-- Fordítások a `/translations/<lang-code>/` könyvtárakban találhatók
-- GitHub Actions munkafolyamat kezeli a fordítási frissítéseket
-- Forrásfájlok angolul a repozitórium gyökérkönyvtárában
+- A fordítások a `/translations/<lang-code>/` könyvtárakban találhatók
+- A GitHub Actions workflow kezeli a fordítások frissítését
+- A forrásfájlok angol nyelven vannak a tároló gyökerében
 
-### Lecke struktúra
+### Lecke szerkezete
 
-Minden lecke követi a következő mintát:
+Minden lecke követ egy egységes mintát:
 1. Videó bélyegkép linkkel
 2. Írott lecke tartalom (README.md)
-3. Kódminták több keretrendszerben
+3. Kódpéldák több keretrendszerben
 4. Tanulási célok és előfeltételek
-5. További tanulási források linkelve
+5. Kapcsolt további tananyagok
 
-### Kódminta elnevezés
+### Kódminta elnevezése
 
-Formátum: `<lesson-number>-<framework-name>.ipynb`
-- `04-semantic-kernel.ipynb` - 4. lecke, Semantic Kernel
-- `07-autogen.ipynb` - 7. lecke, AutoGen
-- `14-python-agent-framework.ipynb` - 14. lecke, MAF Python
-- `14-dotnet-agent-framework.ipynb` - 14. lecke, MAF .NET
+Formátum: `<lesson-number>-python-agent-framework.ipynb`
+- `01-python-agent-framework.ipynb` - 1. lecke, MAF Python
+- `14-sequential.ipynb` - 14. lecke, MAF haladó minták
 
 ### Speciális könyvtárak
 
-- `translated_images/` - Lokalizált képek fordításokhoz
-- `images/` - Eredeti képek angol tartalomhoz
-- `.devcontainer/` - VS Code fejlesztési konténer konfiguráció
-- `.github/` - GitHub Actions munkafolyamatok és sablonok
+- `translated_images/` - Lokalizált képek a fordítások számára
+- `images/` - Eredeti képek az angol tartalomhoz
+- `.devcontainer/` - VS Code fejlesztői konténer konfiguráció
+- `.github/` - GitHub Actions workflowk és sablonok
 
 ### Függőségek
 
-Kulcsfontosságú csomagok a `requirements.txt` fájlból:
-- `autogen-agentchat`, `autogen-core`, `autogen-ext` - AutoGen keretrendszer
-- `semantic-kernel` - Semantic Kernel keretrendszer
+Kulcs csomagok a `requirements.txt`-ből:
 - `agent-framework` - Microsoft Agent Framework
+- `a2a-sdk` - Agent-to-Agent protokoll támogatás
 - `azure-ai-inference`, `azure-ai-projects` - Azure AI szolgáltatások
+- `azure-identity` - Azure hitelesítés (AzureCliCredential)
 - `azure-search-documents` - Azure AI Search integráció
-- `chromadb` - Vektoralapú adatbázis RAG példákhoz
-- `chainlit` - Chat UI keretrendszer
-- `browser_use` - Böngésző automatizálás ügynökök számára
 - `mcp[cli]` - Model Context Protocol támogatás
-- `mem0ai` - Memóriakezelés ügynökök számára
 
 ---
 
-**Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+Felelősségkizárás:
+Ezt a dokumentumot az AI-alapú fordítószolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) használatával fordítottuk. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. A dokumentum eredeti, anyanyelvi változatát kell tekinteni az irányadónak. Kritikus információk esetén professzionális, emberi fordítás igénybevételét ajánljuk. Nem vállalunk felelősséget az ezen fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

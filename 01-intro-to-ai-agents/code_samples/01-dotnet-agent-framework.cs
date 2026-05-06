@@ -1,7 +1,8 @@
 #!/usr/bin/dotnet run
 
-#:package Microsoft.Extensions.AI@10.*
-#:package Microsoft.Agents.AI.OpenAI@1.*-*
+#:package Microsoft.Extensions.AI@10.4.1
+#:package Microsoft.Extensions.AI.OpenAI@10.4.1
+#:package Microsoft.Agents.AI.OpenAI@1.1.0
 
 using System.ClientModel;
 using System.ComponentModel;
@@ -68,7 +69,7 @@ var openAIClient = new OpenAIClient(new ApiKeyCredential(github_token), openAIOp
 // The agent can now plan trips using the GetRandomDestination function
 AIAgent agent = openAIClient
     .GetChatClient(github_model_id)
-    .CreateAIAgent(
+    .AsAIAgent(
         instructions: "You are a helpful AI Agent that can help plan vacations for customers at random destinations",
         tools: [AIFunctionFactory.Create(GetRandomDestination)]
     );

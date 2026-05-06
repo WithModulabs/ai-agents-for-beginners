@@ -1,102 +1,93 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d7c3b7bd1b3528074d8b6a7c5ad33b6f",
-  "translation_date": "2025-11-18T17:03:05+00:00",
-  "source_file": "04-tool-use/README.md",
-  "language_code": "bn"
-}
--->
-[![কীভাবে ভালো এআই এজেন্ট ডিজাইন করবেন](../../../translated_images/lesson-4-thumbnail.546162853cb3daffd64edd92014f274103f76360dfb39fc6e6ee399494da38fd.bn.png)](https://youtu.be/vieRiPRx-gI?si=cEZ8ApnT6Sus9rhn)
+[![কিভাবে ভালো AI এজেন্ট ডিজাইন করবেন](../../../translated_images/bn/lesson-4-thumbnail.546162853cb3daff.webp)](https://youtu.be/vieRiPRx-gI?si=cEZ8ApnT6Sus9rhn)
 
-> _(উপরের ছবিতে ক্লিক করে এই পাঠের ভিডিও দেখুন)_
+> _(এই পাঠের ভিডিও দেখার জন্য উপরের ছবিতে ক্লিক করুন)_
 
-# টুল ব্যবহারের ডিজাইন প্যাটার্ন
+# টুল ব্যবহার ডিজাইন প্যাটার্ন
 
-টুলগুলো আকর্ষণীয় কারণ এগুলো এআই এজেন্টদের আরও বিস্তৃত ক্ষমতা প্রদান করে। এজেন্টের সীমিত কিছু কাজ করার ক্ষমতা থাকলে, একটি টুল যোগ করার মাধ্যমে এজেন্ট এখন অনেক ধরণের কাজ করতে পারে। এই অধ্যায়ে, আমরা টুল ব্যবহারের ডিজাইন প্যাটার্ন নিয়ে আলোচনা করব, যা বর্ণনা করে কীভাবে এআই এজেন্ট নির্দিষ্ট টুল ব্যবহার করে তাদের লক্ষ্য অর্জন করতে পারে।
+টুলগুলো আকর্ষণীয় কারণ এগুলো AI এজেন্টদের একটি বৃহত্তর দক্ষতার পরিধি দেয়। এজেন্টের কাছে সীমিত সংখ্যক কার্যকলাপ করার ক্ষমতা থাকার পরিবর্তে, একটি টুল যুক্ত করার মাধ্যমে এজেন্ট এখন বিস্তৃত রকমের কাজ করতে পারে। এই অধ্যায়ে, আমরা টুল ব্যবহার ডিজাইন প্যাটার্ন নিয়ে আলোচনা করব, যা বর্ণনা করে কিভাবে AI এজেন্ট নির্দিষ্ট টুল ব্যবহার করে তাদের লক্ষ্যমাত্রা অর্জন করতে পারে।
 
-## ভূমিকা
+## পরিচিতি
 
-এই পাঠে, আমরা নিম্নলিখিত প্রশ্নগুলোর উত্তর খুঁজব:
+এই পাঠে, আমরা নিম্নলিখিত প্রশ্নগুলোর উত্তর দিতে চাই:
 
-- টুল ব্যবহারের ডিজাইন প্যাটার্ন কী?
-- এটি কোন কোন ক্ষেত্রে প্রয়োগ করা যেতে পারে?
-- ডিজাইন প্যাটার্ন বাস্তবায়নের জন্য প্রয়োজনীয় উপাদান/গঠনমূলক ব্লক কী কী?
-- বিশ্বাসযোগ্য এআই এজেন্ট তৈরি করতে টুল ব্যবহারের ডিজাইন প্যাটার্ন ব্যবহারের জন্য বিশেষ বিবেচ্য বিষয়গুলো কী?
+- টুল ব্যবহার ডিজাইন প্যাটার্ন কী?
+- কোন ব্যবহারের ক্ষেত্রে এটি প্রয়োগ করা যায়?
+- ডিজাইন প্যাটার্ন বাস্তবায়নের জন্য দরকারী উপাদান/নির্মাণ ব্লক কী কী?
+- বিশ্বাসযোগ্য AI এজেন্ট তৈরি করতে টুল ব্যবহার ডিজাইন প্যাটার্ন ব্যবহার করার বিশেষ বিবেচ্য বিষয় কী কী?
 
 ## শেখার লক্ষ্য
 
-এই পাঠ শেষ করার পর, আপনি সক্ষম হবেন:
+এই পাঠ সম্পন্ন করার পর, আপনি সক্ষম হবেন:
 
-- টুল ব্যবহারের ডিজাইন প্যাটার্ন এবং এর উদ্দেশ্য ব্যাখ্যা করতে।
-- টুল ব্যবহারের ডিজাইন প্যাটার্ন প্রযোজ্য এমন ব্যবহার ক্ষেত্র চিহ্নিত করতে।
-- ডিজাইন প্যাটার্ন বাস্তবায়নের জন্য প্রয়োজনীয় মূল উপাদানগুলো বুঝতে।
-- এই ডিজাইন প্যাটার্ন ব্যবহার করে এআই এজেন্টের বিশ্বাসযোগ্যতা নিশ্চিত করার জন্য বিবেচ্য বিষয়গুলো চিহ্নিত করতে।
+- টুল ব্যবহার ডিজাইন প্যাটার্ন এবং এর উদ্দেশ্য সংজ্ঞায়িত করতে।
+- কোন ব্যবহারের ক্ষেত্রে টুল ব্যবহার ডিজাইন প্যাটার্ন প্রযোজ্য তা চিনতে।
+- ডিজাইন প্যাটার্ন বাস্তবায়নে প্রয়োজনীয় মূল উপাদান বুঝতে।
+- এই ডিজাইন প্যাটার্ন ব্যবহার করে AI এজেন্টদের বিশ্বাসযোগ্যতা নিশ্চিত করার বিবেচনা চিনতে।
 
-## টুল ব্যবহারের ডিজাইন প্যাটার্ন কী?
+## টুল ব্যবহার ডিজাইন প্যাটার্ন কী?
 
-**টুল ব্যবহারের ডিজাইন প্যাটার্ন** মূলত LLM-কে নির্দিষ্ট লক্ষ্য অর্জনের জন্য বাহ্যিক টুলের সাথে ইন্টারঅ্যাক্ট করার ক্ষমতা প্রদান করে। টুল হলো এমন কোড যা এজেন্ট দ্বারা কার্যকর করা যায়। একটি টুল হতে পারে একটি সাধারণ ফাংশন যেমন ক্যালকুলেটর, অথবা তৃতীয় পক্ষের সেবার API কল যেমন স্টক প্রাইস বা আবহাওয়ার পূর্বাভাস। এআই এজেন্টের ক্ষেত্রে, টুলগুলো এমনভাবে ডিজাইন করা হয় যাতে এজেন্ট **মডেল-জেনারেটেড ফাংশন কল** এর মাধ্যমে এগুলো কার্যকর করতে পারে।
+**টুল ব্যবহার ডিজাইন প্যাটার্ন** LLM গুলোকে নির্দিষ্ট লক্ষ্য অর্জনের জন্য বাইরের টুলগুলোর সাথে ইন্টারঅ্যাক্ট করার ক্ষমতা দেয়ার ওপর গুরুত্ব দেয়। টুল হলো এমন কোড যা কোনো এজেন্ট দ্বারা কার্যকর করা যেতে পারে কোনো কাজ সম্পন্ন করার জন্য। একটি টুল হতে পারে সহজ ফাংশন যেমন ক্যালকুলেটর, অথবা তৃতীয় পক্ষের সেবার API কল যেমন শেয়ার বাজারের মূল্য অনুসন্ধান বা আবহাওয়ার পূর্বাভাস। AI এজেন্টদের প্রেক্ষিতে, টুলগুলো মডেল-জেনারেটেড ফাংশন কল এর প্রতিক্রিয়ায় এজেন্ট দ্বারা কার্যকর করার জন্য ডিজাইন করা হয়।
 
-## এটি কোন কোন ক্ষেত্রে প্রয়োগ করা যেতে পারে?
+## কোন ব্যবহারের ক্ষেত্রে এটি প্রয়োগ করা যায়?
 
-এআই এজেন্ট টুল ব্যবহার করে জটিল কাজ সম্পন্ন করতে, তথ্য সংগ্রহ করতে বা সিদ্ধান্ত নিতে পারে। টুল ব্যবহারের ডিজাইন প্যাটার্ন সাধারণত এমন পরিস্থিতিতে ব্যবহৃত হয় যেখানে বাহ্যিক সিস্টেমের সাথে গতিশীল ইন্টারঅ্যাকশন প্রয়োজন, যেমন ডাটাবেস, ওয়েব সার্ভিস, বা কোড ইন্টারপ্রেটার। এই ক্ষমতা বিভিন্ন ক্ষেত্রে কার্যকর, যেমন:
+AI এজেন্ট টুল ব্যবহার করে জটিল কাজ সম্পন্ন করতে, তথ্য অনুসন্ধান করতে, বা সিদ্ধান্ত নিতে পারে। টুল ব্যবহার ডিজাইন প্যাটার্ন সাধারণত এমন পরিস্থিতিতে ব্যবহৃত হয় যেখানে বাইরের সিস্টেম যেমন ডাটাবেস, ওয়েব সার্ভিস, বা কোড ইন্টারপ্রেটারের সাথে গতিশীল ইন্টারঅ্যাকশন প্রয়োজন। এর কিছু গুরুত্বপূর্ণ ব্যবহারের ক্ষেত্রে হল:
 
-- **গতিশীল তথ্য সংগ্রহ:** এজেন্ট বাহ্যিক API বা ডাটাবেস থেকে আপডেটেড তথ্য সংগ্রহ করতে পারে (যেমন, SQLite ডাটাবেস থেকে ডেটা বিশ্লেষণ, স্টক প্রাইস বা আবহাওয়ার তথ্য সংগ্রহ)।
-- **কোড কার্যকর এবং ব্যাখ্যা:** এজেন্ট কোড বা স্ক্রিপ্ট কার্যকর করতে পারে গাণিতিক সমস্যা সমাধান, রিপোর্ট তৈরি, বা সিমুলেশন চালানোর জন্য।
-- **ওয়ার্কফ্লো অটোমেশন:** টাস্ক শিডিউলার, ইমেইল সার্ভিস, বা ডেটা পাইপলাইনের মতো টুল ইন্টিগ্রেট করে পুনরাবৃত্তিমূলক বা বহু-ধাপের ওয়ার্কফ্লো অটোমেট করতে পারে।
-- **গ্রাহক সহায়তা:** এজেন্ট CRM সিস্টেম, টিকেটিং প্ল্যাটফর্ম, বা নলেজ বেসের সাথে ইন্টারঅ্যাক্ট করে ব্যবহারকারীর প্রশ্নের সমাধান করতে পারে।
-- **কন্টেন্ট তৈরি এবং সম্পাদনা:** এজেন্ট গ্রামার চেকার, টেক্সট সামারাইজার, বা কন্টেন্ট সেফটি ইভ্যালুয়েটরের মতো টুল ব্যবহার করে কন্টেন্ট তৈরির কাজে সহায়তা করতে পারে।
+- **গতিশীল তথ্য অনুসন্ধান:** এজেন্টরা বাইরের API বা ডাটাবেস থেকে আপ-টু-ডেট তথ্য অনুসন্ধান করতে পারে (যেমন, SQLite ডাটাবেসে ডেটা বিশ্লেষণের জন্য প্রশ্ন করা, শেয়ার বাজারের দাম বা আবহাওয়া তথ্য আনা)।
+- **কোড কার্যকর ও ব্যাখ্যা:** এজেন্টরা কোড বা স্ক্রিপ্ট চালিয়ে গাণিতিক সমস্যা সমাধান, প্রতিবেদন তৈরি, বা সিমুলেশন করতে পারে।
+- **ওয়ার্কফ্লো স্বয়ংক্রিয়করণ:** পুনরাবৃত্তিমূলক বা বহু-ধাপের কাজ স্বয়ংক্রিয় করতে টুল যেমন টাস্ক স্কেজুলার, ইমেইল সার্ভিস, বা ডেটা পাইপলাইন ব্যবহার করা।
+- **গ্রাহক সহায়তা:** এজেন্টরা CRM সিস্টেম, টিকিটিং প্ল্যাটফর্ম, বা জ্ঞানভাণ্ডারের সাথে ইন্টারঅ্যাক্ট করেও ব্যবহারকারীর প্রশ্নের সমাধান দিতে পারে।
+- **বিষয়বস্তু সৃষ্টি ও সম্পাদনা:** গ্রামার চেকার, টেক্সট সারাংশকারী, বা বিষয়বস্তু সুরক্ষা মূল্যায়নকারী টুল ব্যবহার করে বিষয়বস্তু তৈরিতে সহায়তা।
 
-## টুল ব্যবহারের ডিজাইন প্যাটার্ন বাস্তবায়নের জন্য প্রয়োজনীয় উপাদান/গঠনমূলক ব্লক কী কী?
+## টুল ব্যবহার ডিজাইন প্যাটার্ন বাস্তবায়নের জন্য কী উপাদান/নির্মাণ ব্লক দরকার?
 
-এই গঠনমূলক ব্লকগুলো এআই এজেন্টকে বিভিন্ন ধরণের কাজ সম্পাদন করতে সক্ষম করে। আসুন টুল ব্যবহারের ডিজাইন প্যাটার্ন বাস্তবায়নের জন্য প্রয়োজনীয় মূল উপাদানগুলো দেখি:
+এই নির্মাণ ব্লকগুলো AI এজেন্টকে বিস্তৃত কাজ করতে সহায়তা করে। আসুন টুল ব্যবহার ডিজাইন প্যাটার্ন বাস্তবায়নের জন্য প্রধান উপাদানগুলো দেখি:
 
-- **ফাংশন/টুল স্কিমা:** উপলব্ধ টুলগুলোর বিস্তারিত সংজ্ঞা, যার মধ্যে ফাংশনের নাম, উদ্দেশ্য, প্রয়োজনীয় প্যারামিটার এবং প্রত্যাশিত আউটপুট অন্তর্ভুক্ত। এই স্কিমাগুলো LLM-কে উপলব্ধ টুলগুলো কী এবং কীভাবে বৈধ অনুরোধ তৈরি করতে হয় তা বুঝতে সহায়তা করে।
+- **ফাংশন/টুল স্কিমা:** উপলব্ধ টুলের বিস্তারিত সংজ্ঞা, যেমন ফাংশনের নাম, উদ্দেশ্য, প্রয়োজনীয় প্যারামিটার এবং প্রত্যাশিত আউটপুট। এই স্কিমাগুলো LLM কে উপলব্ধ টুলগুলো বুঝতে এবং সঠিক অনুরোধ গঠন করতে সাহায্য করে।
 
-- **ফাংশন কার্যকর লজিক:** ব্যবহারকারীর উদ্দেশ্য এবং কথোপকথনের প্রেক্ষাপটের উপর ভিত্তি করে টুলগুলো কীভাবে এবং কখন কার্যকর করা হবে তা নিয়ন্ত্রণ করে। এটি প্ল্যানার মডিউল, রাউটিং মেকানিজম, বা শর্তাধীন ফ্লো অন্তর্ভুক্ত করতে পারে যা গতিশীলভাবে টুল ব্যবহারের সিদ্ধান্ত নেয়।
+- **ফাংশন কার্যকরকরণের লজিক:** ব্যবহারকারীর উদ্দেশ্য ও কথোপকথনের প্রসঙ্গ অনুসারে কখন ও কিভাবে টুল ব্যবহার হবে নির্ধারণ করে। এতে পরিকল্পক মডিউল, রাউটিং ব্যবস্থাপনা, বা শর্তাধীন প্রবাহ থাকতে পারে যা গতিশীলভাবে টুল ব্যবহারের সিদ্ধান্ত নেয়।
 
-- **মেসেজ হ্যান্ডলিং সিস্টেম:** ব্যবহারকারীর ইনপুট, LLM এর প্রতিক্রিয়া, টুল কল এবং টুল আউটপুটের মধ্যে কথোপকথনের প্রবাহ পরিচালনা করে।
+- **বার্তা হ্যান্ডলিং সিস্টেম:** ব্যবহারকারী ইনপুট, LLM-এর প্রতিক্রিয়া, টুল কল ও টুল আউটপুটের মধ্যে কথোপকথনের প্রবাহ পরিচালনা করে।
 
-- **টুল ইন্টিগ্রেশন ফ্রেমওয়ার্ক:** এজেন্টকে বিভিন্ন টুলের সাথে সংযুক্ত করার অবকাঠামো, তা সাধারণ ফাংশন হোক বা জটিল বাহ্যিক সেবা।
+- **টুল ইন্টিগ্রেশন ফ্রেমওয়ার্ক:** এজেন্টকে বিভিন্ন টুলের সঙ্গে সংযোগ করানোর অবকাঠামো, হোক তা সহজ ফাংশন কিংবা জটিল বাইরের সার্ভিস।
 
-- **এরর হ্যান্ডলিং এবং ভ্যালিডেশন:** টুল কার্যকর করার সময় ব্যর্থতা পরিচালনা, প্যারামিটার যাচাই, এবং অপ্রত্যাশিত প্রতিক্রিয়া পরিচালনার জন্য প্রক্রিয়া।
+- **ত্রুটি পরিচালনা ও যাচাই:** টুল কার্যকরকরণের ব্যর্থতা পরিচালনা, প্যারামিটার যাচাই এবং অপ্রত্যাশিত প্রতিক্রিয়া পরিচালনার ব্যবস্থা।
 
-- **স্টেট ম্যানেজমেন্ট:** কথোপকথনের প্রেক্ষাপট, পূর্ববর্তী টুল ইন্টারঅ্যাকশন এবং বহুল-পর্যায়ের ইন্টারঅ্যাকশনের মধ্যে সামঞ্জস্য নিশ্চিত করতে স্থায়ী ডেটা ট্র্যাক করে।
+- **স্টেট ব্যবস্থাপনা:** কথোপকথনের প্রসঙ্গ, পূর্বের টুল সহযোগিতা এবং ধ্রুপদী ডেটা ট্র্যাক করে একাধিক ধাপে ধারাবাহিকতা নিশ্চিত করে।
 
-এখন, আসুন ফাংশন/টুল কলিং সম্পর্কে আরও বিস্তারিত জানি।
+এরপর, আসুন ফাংশন/টুল কলিং সম্পর্কে বিস্তারিত জানি।
 
 ### ফাংশন/টুল কলিং
 
-ফাংশন কলিং হলো LLM-কে টুলের সাথে ইন্টারঅ্যাক্ট করার প্রাথমিক উপায়। প্রায়ই 'ফাংশন' এবং 'টুল' শব্দগুলো একে অপরের পরিবর্তে ব্যবহৃত হয় কারণ 'ফাংশন' (পুনরায় ব্যবহারযোগ্য কোডের ব্লক) হলো এজেন্টের কাজ সম্পাদনের 'টুল'। একটি ফাংশনের কোড কার্যকর করার জন্য, LLM ব্যবহারকারীর অনুরোধকে ফাংশনের বিবরণের সাথে তুলনা করে। এটি করার জন্য, উপলব্ধ ফাংশনগুলোর বিবরণসহ একটি স্কিমা LLM-এ পাঠানো হয়। এরপর LLM কাজের জন্য সবচেয়ে উপযুক্ত ফাংশন নির্বাচন করে এবং এর নাম ও আর্গুমেন্ট ফেরত দেয়। নির্বাচিত ফাংশন কার্যকর করা হয়, এর প্রতিক্রিয়া LLM-এ পাঠানো হয়, যা ব্যবহারকারীর অনুরোধের উত্তর দিতে এই তথ্য ব্যবহার করে।
+ফাংশন কলিং হলো LLM গুলোকে টুলের সাথে ইন্টারঅ্যাক্ট করার প্রধান উপায়। 'ফাংশন' এবং 'টুল' এই দুটি শব্দ প্রায়শই বিনিময়যোগ্য হিসেবে ব্যবহৃত হয় কারণ 'ফাংশন' (পুনঃব্যবহারযোগ্য কোড ব্লক) হলো সেই 'টুল' যেগুলো এজেন্ট কাজ সম্পন্নে ব্যবহার করে। একটি ফাংশনের কোড কল করার জন্য LLM কে ব্যবহারকারীর অনুরোধের সঙ্গে ফাংশনের বর্ণনা তুলনা করতে হয়। এজন্য একটি স্কিমা যা সব উপলব্ধ ফাংশনের বর্ণনা থাকে, তা LLM-কে পাঠানো হয়। LLM তারপর সবচেয়ে উপযুক্ত ফাংশন নির্বাচন করে তার নাম ও আর্গুমেন্ট ফেরত দেয়। নির্বাচিত ফাংশন কল করা হয়, প্রতিক্রিয়া LLM-কে পাঠানো হয়, যা ব্যবহারকারীর অনুরোধের উত্তর দিতে তথ্য হিসেবে ব্যবহার করে।
 
-ডেভেলপারদের এজেন্টের জন্য ফাংশন কলিং বাস্তবায়ন করতে প্রয়োজন:
+ডেভেলপারদের জন্য এজেন্টদের ফাংশন কলিং বাস্তবায়নের জন্য লাগবে:
 
-1. একটি LLM মডেল যা ফাংশন কলিং সমর্থন করে
-2. ফাংশনের বিবরণসহ একটি স্কিমা
+1. ফাংশন কলিং সমর্থন করে এমন একটি LLM মডেল
+2. ফাংশন বর্ণনা সম্বলিত স্কিমা
 3. প্রতিটি বর্ণিত ফাংশনের কোড
 
-আসুন একটি উদাহরণ ব্যবহার করে বিষয়টি ব্যাখ্যা করি যেখানে একটি শহরের বর্তমান সময় পাওয়া যাবে:
+চলুন একটি উদাহরণ দেখাই—কোন শহরের বর্তমান সময় নেওয়া:
 
-1. **ফাংশন কলিং সমর্থন করে এমন একটি LLM ইনিশিয়ালাইজ করুন:**
+1. **ফাংশন কলিং সমর্থন করে এমন একটি LLM ইনিশিয়ালাইজ করা:**
 
-    সব মডেল ফাংশন কলিং সমর্থন করে না, তাই আপনি যে LLM ব্যবহার করছেন তা নিশ্চিত করা গুরুত্বপূর্ণ। <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/function-calling" target="_blank">Azure OpenAI</a> ফাংশন কলিং সমর্থন করে। আমরা Azure OpenAI ক্লায়েন্ট ইনিশিয়ালাইজ করে শুরু করতে পারি।
+    সব মডেল ফাংশন কলিং সমর্থন করে না, তাই ব্যবহৃত LLM এ এটি আছে কিনা তা যাচাই করা জরুরি। <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/function-calling" target="_blank">Azure OpenAI</a> ফাংশন কলিং সমর্থন করে। আমরা Azure OpenAI ক্লায়েন্ট শুরু করতে পারি।
 
     ```python
-    # Initialize the Azure OpenAI client
+    # Azure OpenAI ক্লায়েন্ট শুরু করুন
     client = AzureOpenAI(
-        azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT"), 
+        azure_endpoint = os.getenv("AZURE_AI_PROJECT_ENDPOINT"), 
         api_key=os.getenv("AZURE_OPENAI_API_KEY"),  
         api_version="2024-05-01-preview"
     )
     ```
 
-1. **একটি ফাংশন স্কিমা তৈরি করুন:**
+2. **একটি ফাংশন স্কিমা তৈরি করুন:**
 
-    এরপর আমরা একটি JSON স্কিমা সংজ্ঞায়িত করব যাতে ফাংশনের নাম, ফাংশন কী করে তার বিবরণ, এবং ফাংশনের প্যারামিটারগুলোর নাম ও বিবরণ থাকবে। 
-    আমরা এই স্কিমা ক্লায়েন্টে পাঠাবো, ব্যবহারকারীর অনুরোধের সাথে। এখানে গুরুত্বপূর্ণ বিষয় হলো একটি **টুল কল** ফেরত আসে, **প্রশ্নের চূড়ান্ত উত্তর নয়**। আগেই উল্লেখ করা হয়েছে, LLM কাজের জন্য নির্বাচিত ফাংশনের নাম এবং পাস করা আর্গুমেন্ট ফেরত দেয়।
+    এরপর একটি JSON স্কিমা সংজ্ঞায়িত করব যা ফাংশনের নাম, ফাংশন কী কাজ করে তার বর্ণনা, এবং প্যারামিটার নাম ও বর্ণনা থাকবে। 
+    তারপর এই স্কিমাটি পূর্বে তৈরি ক্লায়েন্টকে এবং ব্যবহারকারীর অনুরোধ 'San Francisco তে সময় জানতে' পাঠানো হবে। গুরুত্বপূর্ণ হলো, ফলাফল সরাসরি নয় বরং একটি **টুল কল** ফেরত দেয়া হয়। যেমন পূর্বে বলা হয়েছে, LLM কাজের জন্য নির্বাচিত ফাংশনের নাম এবং আর্গুমেন্ট দেয়।
 
     ```python
-    # Function description for the model to read
+    # মডেল পড়ার জন্য ফাংশনের বর্ণনা
     tools = [
         {
             "type": "function",
@@ -120,10 +111,10 @@ CO_OP_TRANSLATOR_METADATA:
    
     ```python
   
-    # Initial user message
+    # প্রাথমিক ব্যবহারকারী বার্তা
     messages = [{"role": "user", "content": "What's the current time in San Francisco"}] 
   
-    # First API call: Ask the model to use the function
+    # প্রথম API কল: মডেলকে ফাংশন ব্যবহার করতে বলুন
       response = client.chat.completions.create(
           model=deployment_name,
           messages=messages,
@@ -131,7 +122,7 @@ CO_OP_TRANSLATOR_METADATA:
           tool_choice="auto",
       )
   
-      # Process the model's response
+      # মডেলের প্রতিক্রিয়া প্রক্রিয়াকরণ করুন
       response_message = response.choices[0].message
       messages.append(response_message)
   
@@ -146,10 +137,10 @@ CO_OP_TRANSLATOR_METADATA:
     ChatCompletionMessage(content=None, role='assistant', function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_pOsKdUlqvdyttYB67MOj434b', function=Function(arguments='{"location":"San Francisco"}', name='get_current_time'), type='function')])
     ```
   
-1. **কাজটি সম্পাদনের জন্য প্রয়োজনীয় ফাংশন কোড:**
+3. **কাজটি সম্পন্ন করার জন্য ফাংশনের কোড:**
 
-    এখন LLM নির্ধারণ করেছে কোন ফাংশন কার্যকর করতে হবে, কাজটি সম্পাদনের জন্য কোডটি বাস্তবায়ন এবং কার্যকর করতে হবে। 
-    আমরা পাইথনে বর্তমান সময় পাওয়ার কোডটি বাস্তবায়ন করতে পারি। এছাড়াও, প্রতিক্রিয়া বার্তা থেকে নাম এবং আর্গুমেন্ট বের করার কোড লিখতে হবে।
+    এখন যখন LLM কোন ফাংশন চালানো দরকার নির্বাচিত করেছে, কাজটি সম্পন্ন করার কোড বাস্তবায়ন ও চালাতে হবে। 
+    আমরা পাইথনে বর্তমান সময় পাওয়ার কোড লিখব। পাশাপাশি response_message থেকে নাম ও আর্গুমেন্ট বের করার কোডও লিখতে হবে।
 
     ```python
       def get_current_time(location):
@@ -171,7 +162,7 @@ CO_OP_TRANSLATOR_METADATA:
     ```
 
      ```python
-     # Handle function calls
+     # ফাংশন কলগুলি পরিচালনা করুন
       if response_message.tool_calls:
           for tool_call in response_message.tool_calls:
               if tool_call.function.name == "get_current_time":
@@ -191,7 +182,7 @@ CO_OP_TRANSLATOR_METADATA:
       else:
           print("No tool calls were made by the model.")  
   
-      # Second API call: Get the final response from the model
+      # দ্বিতীয় API কল: মডেল থেকে চূড়ান্ত প্রতিক্রিয়া পান
       final_response = client.chat.completions.create(
           model=deployment_name,
           messages=messages,
@@ -206,89 +197,79 @@ CO_OP_TRANSLATOR_METADATA:
       The current time in San Francisco is 09:24 AM.
      ```
 
-ফাংশন কলিং প্রায় সব এজেন্ট টুল ব্যবহারের ডিজাইনের কেন্দ্রে থাকে, তবে এটি শূন্য থেকে বাস্তবায়ন করা কখনও কখনও চ্যালেঞ্জিং হতে পারে। 
-[Lesson 2](../../../02-explore-agentic-frameworks) এ আমরা শিখেছি যে এজেন্টিক ফ্রেমওয়ার্ক আমাদের টুল ব্যবহারের জন্য প্রি-বিল্ট গঠনমূলক ব্লক প্রদান করে।
+ফাংশন কলিং প্রায় সবাই—যদি না সব— এজেন্ট টুল ব্যবহার ডিজাইন প্যাটার্নের হৃদয়স্থল হলেও, সেটি শুরু থেকে তৈরি করা কিছু সময় জটিল হতে পারে। 
+যেমনটি শিখেছি [Lesson 2](../../../02-explore-agentic-frameworks) এজেন্টিক ফ্রেমওয়ার্ক আগে থেকেই তৈরি নির্মাণ ব্লক সরবরাহ করে টুল ব্যবহার সহজ করতে।
 
-## এজেন্টিক ফ্রেমওয়ার্ক ব্যবহার করে টুল ব্যবহারের উদাহরণ
+## Agentic Frameworks দিয়ে টুল ব্যবহারের উদাহরণ
 
-এখানে বিভিন্ন এজেন্টিক ফ্রেমওয়ার্ক ব্যবহার করে টুল ব্যবহারের ডিজাইন প্যাটার্ন বাস্তবায়নের কিছু উদাহরণ দেওয়া হলো:
+নিম্নলিখিত কিছু agentic ফ্রেমওয়ার্ক ব্যবহার করে টুল ব্যবহার ডিজাইন প্যাটার্ন কিভাবে বাস্তবায়ন করা যায় তার উদাহরণ:
 
-### সেমান্টিক কার্নেল
+### Microsoft Agent Framework
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">সেমান্টিক কার্নেল</a> হলো .NET, পাইথন, এবং জাভা ডেভেলপারদের জন্য একটি ওপেন-সোর্স এআই ফ্রেমওয়ার্ক যারা LLM নিয়ে কাজ করছেন। এটি ফাংশন কলিং ব্যবহারের প্রক্রিয়াকে সহজ করে তোলে কারণ এটি স্বয়ংক্রিয়ভাবে আপনার ফাংশন এবং এর প্যারামিটারগুলোকে মডেলের কাছে <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">সিরিয়ালাইজ</a> করে। এটি মডেল এবং আপনার কোডের মধ্যে কথোপকথন পরিচালনা করে। সেমান্টিক কার্নেলের মতো একটি এজেন্টিক ফ্রেমওয়ার্ক ব্যবহারের আরেকটি সুবিধা হলো এটি আপনাকে <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py" target="_blank">ফাইল সার্চ</a> এবং <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">কোড ইন্টারপ্রেটার</a> এর মতো প্রি-বিল্ট টুল অ্যাক্সেস করতে দেয়।
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Microsoft Agent Framework</a> হলো AI এজেন্ট তৈরি করার জন্য একটি ওপেন-সোর্স ফ্রেমওয়ার্ক। এটি ফাংশন কলিং ব্যবহারের প্রক্রিয়া সরল করে, যেখানে আপনি `@tool` ডেকোরেটর ব্যবহার করে টুলগুলোকে পাইথন ফাংশন হিসেবে সংজ্ঞায়িত করতে পারেন। ফ্রেমওয়ার্ক মডেল ও কোডের মধ্যে বার্তা বিনিময় পরিচালনা করে। এটি আগেই তৈরি ফাইল সার্চ ও কোড ইন্টারপ্রেটার টুলেও অ্যাক্সেস দেয় `AzureAIProjectAgentProvider` এর মাধ্যমে।
 
-নিচের ডায়াগ্রামটি সেমান্টিক কার্নেলের সাথে ফাংশন কলিং প্রক্রিয়াটি চিত্রিত করে:
+নীচের ডায়াগ্রামটি Microsoft Agent Framework এ ফাংশন কলিংয়ের প্রক্রিয়া তুলে ধরে:
 
-![function calling](../../../translated_images/functioncalling-diagram.a84006fc287f60140cc0a484ff399acd25f69553ea05186981ac4d5155f9c2f6.bn.png)
+![function calling](../../../translated_images/bn/functioncalling-diagram.a84006fc287f6014.webp)
 
-সেমান্টিক কার্নেলে ফাংশন/টুলগুলোকে <a href="https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python" target="_blank">প্লাগইন</a> বলা হয়। আমরা আগের `get_current_time` ফাংশনটিকে একটি ক্লাসে রূপান্তর করে প্লাগইনে পরিণত করতে পারি। আমরা `kernel_function` ডেকোরেটরও আমদানি করতে পারি, যা ফাংশনের বিবরণ গ্রহণ করে। এরপর আপনি যখন GetCurrentTimePlugin সহ একটি কার্নেল তৈরি করবেন, কার্নেল স্বয়ংক্রিয়ভাবে ফাংশন এবং এর প্যারামিটারগুলোকে সিরিয়ালাইজ করবে, প্রক্রিয়ায় LLM-এ পাঠানোর জন্য স্কিমা তৈরি করবে।
+Microsoft Agent Framework এ, টুলগুলোকে ডেকোরেটেড ফাংশন হিসেবে সংজ্ঞায়িত করা হয়। আগের 'get_current_time' ফাংশনটিকে `@tool` ডেকোরেটর দিয়ে টুলে রূপান্তর করা যায়। ফ্রেমওয়ার্ক স্বয়ংক্রিয়ভাবে ফাংশন ও তার প্যারামিটার সিরিয়ালাইজ করে, যা LLM কে পাঠানো স্কিমা তৈরি করে।
 
 ```python
-from semantic_kernel.functions import kernel_function
+from agent_framework import tool
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
-class GetCurrentTimePlugin:
-    async def __init__(self, location):
-        self.location = location
+@tool
+def get_current_time(location: str) -> str:
+    """Get the current time for a given location"""
+    ...
 
-    @kernel_function(
-        description="Get the current time for a given location"
-    )
-    def get_current_time(location: str = ""):
-        ...
+# ক্লায়েন্ট তৈরি করুন
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
 
-```
-
-```python 
-from semantic_kernel import Kernel
-
-# Create the kernel
-kernel = Kernel()
-
-# Create the plugin
-get_current_time_plugin = GetCurrentTimePlugin(location)
-
-# Add the plugin to the kernel
-kernel.add_plugin(get_current_time_plugin)
+# একটি এজেন্ট তৈরি করুন এবং টুলের সাথে চালান
+agent = await provider.create_agent(name="TimeAgent", instructions="Use available tools to answer questions.", tools=get_current_time)
+response = await agent.run("What time is it?")
 ```
   
-### Azure AI এজেন্ট সার্ভিস
+### Azure AI Agent Service
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI এজেন্ট সার্ভিস</a> হলো একটি নতুন এজেন্টিক ফ্রেমওয়ার্ক যা ডেভেলপারদের নিরাপদে উচ্চমানের এবং সম্প্রসারণযোগ্য এআই এজেন্ট তৈরি, স্থাপন এবং স্কেল করতে সক্ষম করে, এবং এর জন্য অন্তর্নিহিত কম্পিউট এবং স্টোরেজ রিসোর্স পরিচালনা করার প্রয়োজন হয় না। এটি বিশেষভাবে এন্টারপ্রাইজ অ্যাপ্লিকেশনের জন্য উপযোগী কারণ এটি একটি সম্পূর্ণ পরিচালিত সার্ভিস যা এন্টারপ্রাইজ গ্রেড নিরাপত্তা প্রদান করে।
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent Service</a> হলো একটি নতুন এজেন্টিক ফ্রেমওয়ার্ক যা ডেভেলপারদেরকে নিরাপদে, সহজে, এবং স্কেলযোগ্য উচ্চমানের AI এজেন্ট তৈরি, ডিপ্লয় ও পরিচালনার সুযোগ দেয়, নীচের কম্পিউট ও স্টোরেজ রিসোর্স ব্যবস্থাপনা ছাড়াই। বিশেষত এন্টারপ্রাইজ ব্যবহারের জন্য এটি গুরুত্বপূর্ণ কারণ এটি পূর্ণ জনপ্রিয় সার্ভিস যা এন্টারপ্রাইজ গ্রেড সিকিউরিটি প্রদান করে।
 
-LLM API সরাসরি ব্যবহার করার তুলনায় Azure AI এজেন্ট সার্ভিস কিছু সুবিধা প্রদান করে, যেমন:
+LLM API এর সঙ্গেও সরাসরি ডেভেলপমেন্টের তুলনায় Azure AI Agent Service কিছু সুবিধা দেয়, যেমন:
 
-- স্বয়ংক্রিয় টুল কলিং – টুল কল পার্স করা, টুল কার্যকর করা এবং প্রতিক্রিয়া পরিচালনা করার প্রয়োজন নেই; এগুলো এখন সার্ভার-সাইডে সম্পন্ন হয়।
-- নিরাপদে পরিচালিত ডেটা – আপনার নিজের কথোপকথনের স্টেট পরিচালনা করার পরিবর্তে, আপনি থ্রেড ব্যবহার করে প্রয়োজনীয় সমস্ত তথ্য সংরক্ষণ করতে পারেন।
-- প্রস্তুত-প্রস্তুত টুল – আপনার ডেটা সোর্সের সাথে ইন্টারঅ্যাক্ট করার জন্য টুল, যেমন Bing, Azure AI সার্চ, এবং Azure Functions।
+- স্বয়ংক্রিয় টুল কলিং – টুল কল পার্স করার, চালানোর ও প্রতিক্রিয়া ব্যবস্থাপনা করার প্রয়োজন নেই; সব কিছু এখন সার্ভার-সাইডে হয়
+- নিরাপদভাবে পরিচালিত ডেটা – আপনার কথোপকথনের সকল তথ্য সংরক্ষণে থ্রেডের উপর নির্ভর করা যায়
+- প্রস্তুত টুল – Bing, Azure AI Search, ও Azure Functions-এর মতো উৎসের সাথে ইন্টারঅ্যাকট করতে টুল
 
-Azure AI এজেন্ট সার্ভিসে উপলব্ধ টুলগুলো দুইটি ক্যাটাগরিতে বিভক্ত:
+Azure AI Agent Service এ উপলব্ধ টুল দুই ভাগে বিভক্ত:
 
-1. জ্ঞান টুল:
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview" target="_blank">Bing সার্চ দিয়ে গ্রাউন্ডিং</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/file-search?tabs=python&pivots=overview" target="_blank">ফাইল সার্চ</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-ai-search?tabs=azurecli%2Cpython&pivots=overview-azure-ai-search" target="_blank">Azure AI সার্চ</a>
+1. জ্ঞানভিত্তিক টুল:
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview" target="_blank">Bing Search দিয়ে Grounding</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/file-search?tabs=python&pivots=overview" target="_blank">File Search</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-ai-search?tabs=azurecli%2Cpython&pivots=overview-azure-ai-search" target="_blank">Azure AI Search</a>
 
-2. অ্যাকশন টুল:
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview" target="_blank">ফাংশন কলিং</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview" target="_blank">কোড ইন্টারপ্রেটার</a>
+2. কর্মসাধনের টুল:
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview" target="_blank">Function Calling</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview" target="_blank">Code Interpreter</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/openapi-spec?tabs=python&pivots=overview" target="_blank">OpenAPI নির্ধারিত টুল</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-functions?pivots=overview" target="_blank">Azure Functions</a>
 
-এজেন্ট সার্ভিস আমাদের এই টুলগুলোকে `toolset` হিসেবে একত্রে ব্যবহার করার সুযোগ দেয়। এটি `threads` ব্যবহার করে যা একটি নির্দিষ্ট কথোপকথনের বার্তাগুলোর ইতিহাস ট্র্যাক করে।
+Agent Service এইসব টুলকে একটি `toolset` হিসেবে ব্যবহারের সুযোগ দেয়। এছাড়াও এটি `threads` ব্যবহার করে নির্দিষ্ট কথোপকথনের বার্তা ইতিহাস ট্র্যাক করে।
 
-ধরা যাক আপনি Contoso নামক একটি কোম্পানির সেলস এজেন্ট। আপনি একটি কথোপকথনমূলক এজেন্ট তৈরি করতে চান যা আপনার সেলস ডেটা সম্পর্কে প্রশ্নের উত্তর দিতে পারে।
+ভাবুন আপনি একটি কোম্পানি Contoso-তে সেলস এজেন্ট। আপনি একটি কথোপকথন ভিত্তিক এজেন্ট তৈরি করতে চান যা সেলস ডেটা সম্পর্কিত প্রশ্নের উত্তর দিতে পারবে।
 
-নিচের চিত্রটি দেখায় কীভাবে আপনি Azure AI এজেন্ট সার্ভিস ব্যবহার করে আপনার সেলস ডেটা বিশ্লেষণ করতে পারেন:
+নিম্নলিখিত ছবি দেখায় কীভাবে Azure AI Agent Service ব্যবহার করে আপনার সেলস ডেটা বিশ্লেষণ করতে পারেন:
 
-![Agentic Service In Action](../../../translated_images/agent-service-in-action.34fb465c9a84659edd3003f8cb62d6b366b310a09b37c44e32535021fbb5c93f.bn.jpg)
+![Agentic Service In Action](../../../translated_images/bn/agent-service-in-action.34fb465c9a84659e.webp)
 
-এই সার্ভিসের সাথে যেকোনো টুল ব্যবহার করতে আমরা একটি ক্লায়েন্ট তৈরি করতে পারি এবং একটি টুল বা টুলসেট সংজ্ঞায়িত করতে পারি। এটি বাস্তবায়নে আমরা নিম্নলিখিত পাইথন কোড ব্যবহার করতে পারি। LLM টুলসেটটি দেখতে পারবে এবং ব্যবহারকারীর অনুরোধের উপর ভিত্তি করে ব্যবহারকারীর তৈরি ফাংশন `fetch_sales_data_using_sqlite_query` অথবা প্রি-বিল্ট কোড ইন্টারপ্রেটার ব্যবহার করবে।
+সার্ভিসের সঙ্গে কোনো টুল ব্যবহার করতে আমরা ক্লায়েন্ট তৈরি করে একটি টুল বা টুলসেট সংজ্ঞায়িত করতে পারি। ব্যবহারকারীর অনুরোধের ওপর ভিত্তি করে LLM টুলসেট দেখে নির্বাচন করবে—ব্যবহারকারী তৈরি 'fetch_sales_data_using_sqlite_query' ফাংশন ব্যবহার করবে নাকি পূর্বনির্মিত কোড ইন্টারপ্রেটার।
 
 ```python 
 import os
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
-from fetch_sales_data_functions import fetch_sales_data_using_sqlite_query # fetch_sales_data_using_sqlite_query function which can be found in a fetch_sales_data_functions.py file.
+from fetch_sales_data_functions import fetch_sales_data_using_sqlite_query # fetch_sales_data_using_sqlite_query ফাংশন যা fetch_sales_data_functions.py ফাইলে পাওয়া যাবে।
 from azure.ai.projects.models import ToolSet, FunctionTool, CodeInterpreterTool
 
 project_client = AIProjectClient.from_connection_string(
@@ -296,14 +277,15 @@ project_client = AIProjectClient.from_connection_string(
     conn_str=os.environ["PROJECT_CONNECTION_STRING"],
 )
 
-# Initialize function calling agent with the fetch_sales_data_using_sqlite_query function and adding it to the toolset
-fetch_data_function = FunctionTool(fetch_sales_data_using_sqlite_query)
+# টুলসেট ইনিশিয়ালাইজ করুন
 toolset = ToolSet()
+
+# fetch_sales_data_using_sqlite_query ফাংশন সহ ফাংশন কলিং এজেন্ট ইনিশিয়ালাইজ করুন এবং এটি টুলসেটে যোগ করুন
+fetch_data_function = FunctionTool(fetch_sales_data_using_sqlite_query)
 toolset.add(fetch_data_function)
 
-# Initialize Code Interpreter tool and adding it to the toolset. 
+# কোড ইন্টারপ্রিটার টুল ইনিশিয়ালাইজ করুন এবং এটি টুলসেটে যোগ করুন।
 code_interpreter = code_interpreter = CodeInterpreterTool()
-toolset = ToolSet()
 toolset.add(code_interpreter)
 
 agent = project_client.agents.create_agent(
@@ -312,39 +294,37 @@ agent = project_client.agents.create_agent(
 )
 ```
 
-## বিশ্বাসযোগ্য এআই এজেন্ট তৈরি করতে টুল ব্যবহারের ডিজাইন প্যাটার্ন ব্যবহারের জন্য বিশেষ বিবেচ্য বিষয়গুলো কী?
+## বিশ্বাসযোগ্য AI এজেন্ট তৈরিতে টুল ব্যবহার ডিজাইন প্যাটার্ন ব্যবহারের বিশেষ বিবেচনা কী?
 
-LLM দ্বারা গতিশীলভাবে তৈরি করা SQL নিয়ে একটি সাধারণ উদ্বেগ হলো নিরাপত্তা, বিশেষত SQL ইনজেকশন বা ক্ষতিকারক কাজের ঝুঁকি, যেমন ডাটাবেস ড্রপ করা বা পরিবর্তন করা। যদিও এই উদ্বেগগুলো বৈধ, সেগুলো কার্যকরভাবে মোকাবিলা করা যেতে পারে ডাটাবেস অ্যাক্সেস অনুমতিগুলো সঠিকভাবে কনফিগার করে। বেশিরভাগ ডাটাবেসের জন্য এটি ডাটাবেসকে শুধুমাত্র-পঠনযোগ্য (read-only) হিসেবে কনফিগার করার মাধ্যমে সম্পন্ন হয়। PostgreSQL বা Azure SQL এর মতো ডাটাবেস সার্ভিসের জন্য, অ্যাপটিকে শুধুমাত্র-প
-অ্যাপটি একটি সুরক্ষিত পরিবেশে চালানো সুরক্ষার স্তর আরও বৃদ্ধি করে। এন্টারপ্রাইজ পরিস্থিতিতে, সাধারণত ডেটা অপারেশনাল সিস্টেম থেকে বের করে একটি রিড-অনলি ডেটাবেস বা ডেটা ওয়্যারহাউসে রূপান্তরিত করা হয়, যেখানে ব্যবহারকারী-বান্ধব স্কিমা থাকে। এই পদ্ধতি নিশ্চিত করে যে ডেটা সুরক্ষিত, পারফরম্যান্স এবং অ্যাক্সেসযোগ্যতার জন্য অপ্টিমাইজ করা হয়েছে এবং অ্যাপটির সীমিত, রিড-অনলি অ্যাক্সেস রয়েছে।
+LLM দ্বারা গতিশীলভাবে তৈরি SQL নিয়ে নিরাপত্তার উদ্বেগ সাধারণ, বিশেষত SQL ইনজেকশন বা ক্ষতিকারক কাজের ঝুঁকি যেমন ডাটাবেস ড্রপ বা টেম্পারিং। এই উদ্বেগগুলি হলেও সঠিকভাবে ডাটাবেস এক্সেস পারমিশন কনফিগার করে কার্যকরভাবে নিয়ন্ত্রণ করা যেতে পারে। অধিকাংশ ডাটাবেসের জন্য এটি রিড-অনলি কনফিগারেশন অন্তর্ভুক্ত। PostgreSQL অথবা Azure SQL মত সার্ভিসের জন্য অ্যাপকে রিড-অনলি (SELECT) রোল প্রদান করা উচিত।
+
+নিরাপদ পরিবেশে অ্যাপ চালানো সুরক্ষা বৃদ্ধি করে। এন্টারপ্রাইজ ক্ষেত্রে, তথ্য অপারেশনাল সিস্টেম থেকে বের করে রিড-অনলি ডাটাবেস অথবা ডেটা ওয়্যারহাউসে রূপান্তরিত করা হয় যেখানে ব্যবহারকারী-বান্ধব স্কিমা থাকে। এতে ডেটা সুরক্ষিত, কর্মক্ষমতা ও অ্যাক্সেসযোগ্যতা উন্নত হয় এবং অ্যাপের অ্যাক্সেস সীমিত ও রিড-অনলি হয়।
 
 ## নমুনা কোড
 
-- Python: [Agent Framework](./code_samples/04-python-agent-framework.ipynb)
+- পাইথন: [Agent Framework](./code_samples/04-python-agent-framework.ipynb)
 - .NET: [Agent Framework](./code_samples/04-dotnet-agent-framework.md)
 
-## টুল ব্যবহারের ডিজাইন প্যাটার্ন সম্পর্কে আরও প্রশ্ন আছে?
+## টুল ব্যবহার ডিজাইন প্যাটার্ন সম্পর্কিত আরো প্রশ্ন?
 
-[Azure AI Foundry Discord](https://aka.ms/ai-agents/discord)-এ যোগ দিন, যেখানে আপনি অন্যান্য শিক্ষার্থীদের সাথে দেখা করতে পারবেন, অফিস আওয়ারে অংশ নিতে পারবেন এবং আপনার AI Agents সম্পর্কিত প্রশ্নের উত্তর পেতে পারবেন।
+[Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) এ যোগ দিন অন্য শিক্ষার্থীদের সাথে দেখা করতে, অফিস আওয়ারে অংশ নিতে এবং আপনার AI এজেন্ট প্রশ্নের উত্তর পেতে।
 
-## অতিরিক্ত রিসোর্স
+## অতিরিক্ত সম্পদ
 
-- <a href="https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/" target="_blank">Azure AI Agents Service Workshop</a>
-- <a href="https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop" target="_blank">Contoso Creative Writer Multi-Agent Workshop</a>
-- <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">Semantic Kernel Function Calling Tutorial</a>
-- <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Semantic Kernel Code Interpreter</a>
-- <a href="https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html" target="_blank">Autogen Tools</a>
+- <a href="https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/" target="_blank">Azure AI Agents Service ওয়ার্কশপ</a>
+- <a href="https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop" target="_blank">Contoso Creative Writer Multi-Agent ওয়ার্কশপ</a>
+- <a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Microsoft Agent Framework ওভারভিউ</a>
 
-## পূর্ববর্তী পাঠ
+## আগের পাঠ
 
-[Understanding Agentic Design Patterns](../03-agentic-design-patterns/README.md)
+[Agentic Design Patterns সম্পর্কে ধারণা](../03-agentic-design-patterns/README.md)
 
 ## পরবর্তী পাঠ
-
 [Agentic RAG](../05-agentic-rag/README.md)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**অস্বীকৃতি**:  
-এই নথিটি AI অনুবাদ পরিষেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনুবাদ করা হয়েছে। আমরা যথাসাধ্য সঠিক অনুবাদের চেষ্টা করি, তবে দয়া করে মনে রাখবেন যে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। নথিটির মূল ভাষায় থাকা সংস্করণটিকে প্রামাণিক উৎস হিসেবে বিবেচনা করা উচিত। গুরুত্বপূর্ণ তথ্যের জন্য, পেশাদার মানব অনুবাদ সুপারিশ করা হয়। এই অনুবাদ ব্যবহারের ফলে সৃষ্ট কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।
+**দায়ভারবিহীন ঘোষণা**:
+এই নথিটি AI অনুবাদ পরিষেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে স্বয়ংক্রিয় অনুবাদে ভুল বা অসম্পূর্ণতা থাকতে পারে বলে অনুগ্রহ করে সচেতন থাকুন। মূল নথি তার আদিম ভাষায়ই কর্তৃত্বপূর্ণ উৎস হিসেবে বিবেচিত হওয়া উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানুষের দ্বারা অনুবাদ করানো উচিৎ। এই অনুবাদের ব্যবহারে সৃষ্ট কোনও ভুল বোঝাবুঝি বা তাৎপর্যেমিশ্রণের জন্য আমরা দায়ী নই।
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

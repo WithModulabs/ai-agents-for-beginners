@@ -1,97 +1,93 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d7c3b7bd1b3528074d8b6a7c5ad33b6f",
-  "translation_date": "2025-11-18T16:42:28+00:00",
-  "source_file": "04-tool-use/README.md",
-  "language_code": "ur"
-}
--->
-[![اچھے AI ایجنٹس کو ڈیزائن کرنے کا طریقہ](../../../translated_images/lesson-4-thumbnail.546162853cb3daffd64edd92014f274103f76360dfb39fc6e6ee399494da38fd.ur.png)](https://youtu.be/vieRiPRx-gI?si=cEZ8ApnT6Sus9rhn)
+[![اچھے AI ایجنٹس کیسے ڈیزائن کریں](../../../translated_images/ur/lesson-4-thumbnail.546162853cb3daff.webp)](https://youtu.be/vieRiPRx-gI?si=cEZ8ApnT6Sus9rhn)
 
-> _(اوپر دی گئی تصویر پر کلک کریں تاکہ اس سبق کی ویڈیو دیکھ سکیں)_
+> _(سبق کی ویڈیو دیکھنے کے لیے اوپر موجود تصویر پر کلک کریں)_
 
-# ٹول استعمال کرنے کا ڈیزائن پیٹرن
+# Tool Use Design Pattern
 
-ٹولز دلچسپ ہیں کیونکہ یہ AI ایجنٹس کو زیادہ وسیع صلاحیتیں فراہم کرتے ہیں۔ ایجنٹ کے محدود اعمال کے بجائے، ٹول شامل کرنے سے ایجنٹ اب مختلف قسم کے اعمال انجام دے سکتا ہے۔ اس باب میں، ہم ٹول استعمال کرنے کے ڈیزائن پیٹرن پر نظر ڈالیں گے، جو بیان کرتا ہے کہ AI ایجنٹس مخصوص ٹولز کو اپنے مقاصد حاصل کرنے کے لیے کیسے استعمال کر سکتے ہیں۔
+ٹولز دلچسپ ہیں کیونکہ وہ AI ایجنٹس کو وسیع تر صلاحیتوں کا حامل بناتے ہیں۔ محدود کارروائیوں کے بجائے جو ایجنٹ انجام دے سکتا ہے، کسی ٹول کے اضافے سے ایجنٹ اب وسیع تر اعمال انجام دے سکتا ہے۔ اس باب میں، ہم Tool Use Design Pattern کا جائزہ لیں گے، جو بتاتا ہے کہ AI ایجنٹس مخصوص ٹولز کو اپنے مقاصد حاصل کرنے کے لیے کیسے استعمال کر سکتے ہیں۔
 
-## تعارف
+## Introduction
 
-اس سبق میں، ہم درج ذیل سوالات کے جوابات تلاش کریں گے:
+اس سبق میں ہم درج ذیل سوالات کے جواب تلاش کریں گے:
 
-- ٹول استعمال کرنے کا ڈیزائن پیٹرن کیا ہے؟
-- یہ کن استعمال کے معاملات پر لاگو ہو سکتا ہے؟
-- اس ڈیزائن پیٹرن کو نافذ کرنے کے لیے کون سے عناصر/بنیادی اجزاء درکار ہیں؟
-- قابل اعتماد AI ایجنٹس بنانے کے لیے ٹول استعمال کرنے کے ڈیزائن پیٹرن کے استعمال کے لیے کون سے خاص پہلوؤں پر غور کرنا چاہیے؟
+- ٹول یوز ڈیزائن پیٹرن کیا ہے؟
+- کن استعمال کے کیسز میں اسے لاگو کیا جا سکتا ہے؟
+- ڈیزائن پیٹرن کو نافذ کرنے کے لیے کون سے عناصر/بلڈنگ بلاکس درکار ہیں؟
+- قابل اعتماد AI ایجنٹس تعمیر کرنے کے لیے Tool Use Design Pattern استعمال کرتے وقت خصوصی غور و فکر کیا ہیں؟
 
-## سیکھنے کے مقاصد
+## Learning Goals
 
-اس سبق کو مکمل کرنے کے بعد، آپ قابل ہوں گے:
+اس سبق کو مکمل کرنے کے بعد، آپ قابل ہو جائیں گے:
 
-- ٹول استعمال کرنے کے ڈیزائن پیٹرن اور اس کے مقصد کی وضاحت کریں۔
-- ان استعمال کے معاملات کی شناخت کریں جہاں ٹول استعمال کرنے کا ڈیزائن پیٹرن قابل اطلاق ہے۔
-- ڈیزائن پیٹرن کو نافذ کرنے کے لیے درکار کلیدی عناصر کو سمجھیں۔
-- اس ڈیزائن پیٹرن کا استعمال کرتے ہوئے AI ایجنٹس میں اعتماد کو یقینی بنانے کے لیے غور و فکر کو پہچانیں۔
+- Tool Use Design Pattern اور اس کے مقصد کی تعریف کرنا۔
+- ان استعمال کے کیسز کی شناخت کرنا جہاں Tool Use Design Pattern لاگو ہونے کے قابل ہو۔
+- ڈیزائن پیٹرن کو نافذ کرنے کے لیے درکار اہم عناصر کو سمجھنا۔
+- اس ڈیزائن پیٹرن کو استعمال کرنے والے AI ایجنٹس میں اعتماد کو یقینی بنانے کے لئے غور و فکر کو پہچاننا۔
 
-## ٹول استعمال کرنے کا ڈیزائن پیٹرن کیا ہے؟
+## What is the Tool Use Design Pattern?
 
-**ٹول استعمال کرنے کا ڈیزائن پیٹرن** LLMs کو بیرونی ٹولز کے ساتھ تعامل کرنے کی صلاحیت دینے پر مرکوز ہے تاکہ مخصوص مقاصد حاصل کیے جا سکیں۔ ٹولز وہ کوڈ ہیں جو ایجنٹ کے ذریعے اعمال انجام دینے کے لیے چلائے جا سکتے ہیں۔ ایک ٹول ایک سادہ فنکشن ہو سکتا ہے جیسے کیلکولیٹر، یا کسی تیسرے فریق کی سروس جیسے اسٹاک کی قیمت یا موسم کی پیش گوئی کے لیے API کال۔ AI ایجنٹس کے تناظر میں، ٹولز کو ایجنٹس کے ذریعے **ماڈل سے پیدا شدہ فنکشن کالز** کے جواب میں چلانے کے لیے ڈیزائن کیا گیا ہے۔
+**Tool Use Design Pattern** کا محور یہ ہے کہ LLMs کو بیرونی ٹولز کے ساتھ تعامل کرنے کی صلاحیت دی جائے تاکہ مخصوص مقاصد حاصل کیے جا سکیں۔ ٹولز ایسے کوڈ ہوتے ہیں جنہیں ایجنٹ کسی کارروائی کو انجام دینے کے لیے چلائے سکتا ہے۔ ایک ٹول سادہ فنکشن ہو سکتا ہے جیسے کیلکولیٹر، یا تیسرے فریق کی سروس کے لیے API کال جیسے اسٹاک کی قیمت معلوم کرنا یا موسم کی پیش گوئی۔ AI ایجنٹس کے سیاق و سباق میں، ٹولز اس طریقے کے لیے ڈیزائن کیے جاتے ہیں کہ انہیں **model-generated function calls** کے جواب میں ایجنٹس چلائیں۔
 
-## یہ کن استعمال کے معاملات پر لاگو ہو سکتا ہے؟
+## What are the use cases it can be applied to?
 
-AI ایجنٹس ٹولز کا فائدہ اٹھا کر پیچیدہ کام مکمل کر سکتے ہیں، معلومات حاصل کر سکتے ہیں، یا فیصلے کر سکتے ہیں۔ ٹول استعمال کرنے کا ڈیزائن پیٹرن اکثر ایسے منظرناموں میں استعمال ہوتا ہے جن میں بیرونی نظاموں جیسے ڈیٹا بیس، ویب سروسز، یا کوڈ انٹرپریٹرز کے ساتھ متحرک تعامل کی ضرورت ہوتی ہے۔ یہ صلاحیت مختلف استعمال کے معاملات کے لیے مفید ہے، جن میں شامل ہیں:
+AI Agents پیچیدہ کام مکمل کرنے، معلومات بازیافت کرنے، یا فیصلے کرنے کے لیے ٹولز کا فائدہ اٹھا سکتے ہیں۔ ٹول یوز ڈیزائن پیٹرن اکثر ایسے منظرناموں میں استعمال ہوتا ہے جہاں بیرونی نظاموں کے ساتھ متحرک تعامل کی ضرورت ہوتی ہے، جیسے کہ ڈیٹا بیس، ویب سروسز، یا کوڈ انٹرپریٹرز۔ یہ صلاحیت کئی مختلف استعمال کے کیسز کے لیے مفید ہے جن میں شامل ہیں:
 
-- **متحرک معلومات کی بازیافت:** ایجنٹس بیرونی APIs یا ڈیٹا بیس کو استفسار کر کے تازہ ترین ڈیٹا حاصل کر سکتے ہیں (جیسے SQLite ڈیٹا بیس سے ڈیٹا تجزیہ کے لیے استفسار کرنا، اسٹاک کی قیمتیں یا موسم کی معلومات حاصل کرنا)۔
-- **کوڈ کا نفاذ اور تشریح:** ایجنٹس کوڈ یا اسکرپٹس چلا سکتے ہیں تاکہ ریاضی کے مسائل حل کریں، رپورٹس تیار کریں، یا سیمولیشنز انجام دیں۔
-- **ورک فلو آٹومیشن:** ٹاسک شیڈولرز، ای میل سروسز، یا ڈیٹا پائپ لائنز جیسے ٹولز کو مربوط کر کے بار بار یا کثیر مرحلہ ورک فلو کو خودکار بنانا۔
-- **کسٹمر سپورٹ:** ایجنٹس CRM سسٹمز، ٹکٹنگ پلیٹ فارمز، یا نالج بیسز کے ساتھ تعامل کر کے صارف کے سوالات حل کر سکتے ہیں۔
-- **مواد کی تخلیق اور تدوین:** ایجنٹس گرامر چیکرز، ٹیکسٹ سمریزرز، یا مواد کی حفاظت کے جائزہ لینے والے ٹولز کا فائدہ اٹھا کر مواد تخلیق کرنے کے کاموں میں مدد کر سکتے ہیں۔
+- **Dynamic Information Retrieval:** ایجنٹس بیرونی APIs یا ڈیٹا بیسز سے تازہ ترین ڈیٹا حاصل کر سکتے ہیں (مثلاً، تجزیہ کے لیے SQLite ڈیٹا بیس سے کوئری کرنا، اسٹاک کی قیمتیں یا موسم کی معلومات حاصل کرنا)۔
+- **Code Execution and Interpretation:** ایجنٹس ریاضیاتی مسائل حل کرنے، رپورٹس تیار کرنے، یا سیمولیشنز انجام دینے کے لیے کوڈ یا اسکرپٹس چلا سکتے ہیں۔
+- **Workflow Automation:** ٹاسک شیڈولرز، ای میل سروسز، یا ڈیٹا پائپ لائنز جیسے ٹولز کو مربوط کر کے دہرائی جانے والی یا کثیر مرحلوں والی ورک فلو کو خود کار بنانا۔
+- **Customer Support:** ایجنٹس CRM سسٹمز، ٹکٹنگ پلیٹ فارمز، یا نالج بیسس کے ساتھ تعامل کر کے صارف کے سوالات حل کر سکتے ہیں۔
+- **Content Generation and Editing:** ایجنٹس گرامر چیکرز، متن کا خلاصہ نکالنے والے، یا مواد کی حفاظت کے جائزہ کار جیسے ٹولز کا استعمال کر کے مواد بنانے کے کام میں مدد دے سکتے ہیں۔
 
-## ٹول استعمال کرنے کے ڈیزائن پیٹرن کو نافذ کرنے کے لیے کون سے عناصر/بنیادی اجزاء درکار ہیں؟
+## What are the elements/building blocks needed to implement the tool use design pattern?
 
-یہ بنیادی اجزاء AI ایجنٹ کو مختلف قسم کے کام انجام دینے کی اجازت دیتے ہیں۔ آئیے ٹول استعمال کرنے کے ڈیزائن پیٹرن کو نافذ کرنے کے لیے درکار کلیدی عناصر پر نظر ڈالیں:
+یہ بلڈنگ بلاکس AI ایجنٹ کو بہت سی اقسام کے کام انجام دینے کے قابل بناتے ہیں۔ آئیے Tool Use Design Pattern کو نافذ کرنے کے لیے درکار کلیدی عناصر دیکھتے ہیں:
 
-- **فنکشن/ٹول اسکیمز:** دستیاب ٹولز کی تفصیلی تعریفیں، جن میں فنکشن کا نام، مقصد، مطلوبہ پیرامیٹرز، اور متوقع آؤٹ پٹس شامل ہیں۔ یہ اسکیمز LLM کو یہ سمجھنے کے قابل بناتی ہیں کہ کون سے ٹولز دستیاب ہیں اور درست درخواستیں کیسے بنائی جائیں۔
-- **فنکشن نفاذ منطق:** صارف کے ارادے اور گفتگو کے سیاق و سباق کی بنیاد پر ٹولز کو کب اور کیسے استعمال کیا جائے اس پر حکمرانی کرتا ہے۔ اس میں پلانر ماڈیولز، روٹنگ میکانزم، یا مشروط فلو شامل ہو سکتے ہیں جو متحرک طور پر ٹول کے استعمال کا تعین کرتے ہیں۔
-- **پیغام ہینڈلنگ سسٹم:** وہ اجزاء جو صارف کے ان پٹ، LLM کے جوابات، ٹول کالز، اور ٹول آؤٹ پٹس کے درمیان گفتگو کے بہاؤ کو منظم کرتے ہیں۔
-- **ٹول انٹیگریشن فریم ورک:** وہ انفراسٹرکچر جو ایجنٹ کو مختلف ٹولز سے جوڑتا ہے، چاہے وہ سادہ فنکشنز ہوں یا پیچیدہ بیرونی خدمات۔
-- **غلطی سے نمٹنے اور توثیق:** ٹول کے نفاذ میں ناکامیوں کو سنبھالنے، پیرامیٹرز کی توثیق کرنے، اور غیر متوقع جوابات کا انتظام کرنے کے طریقہ کار۔
-- **اسٹیٹ مینجمنٹ:** گفتگو کے سیاق و سباق، پچھلے ٹول تعاملات، اور مستقل ڈیٹا کو ٹریک کرتا ہے تاکہ کثیر موڑ تعاملات میں مستقل مزاجی کو یقینی بنایا جا سکے۔
+- **Function/Tool Schemas**: دستیاب ٹولز کی تفصیلی تعریفیں، جن میں فنکشن کا نام، مقصد، درکار پیرامیٹرز، اور متوقع آؤٹ پٹس شامل ہوں۔ یہ اسکیموں سے LLM یہ سمجھ پاتا ہے کہ کون سے ٹولز دستیاب ہیں اور درست درخواستیں کیسے بنائی جائیں۔
 
-اب، آئیے فنکشن/ٹول کالنگ کو مزید تفصیل سے دیکھتے ہیں۔
+- **Function Execution Logic**: اس بات کا تعین کرتی ہے کہ صارف کے ارادے اور گفتگو کے سیاق و سباق کی بنیاد پر ٹولز کو کب اور کیسے بلایا جائے۔ اس میں پلانر ماڈیولز، روٹنگ میکانزم، یا شرطی فلو شامل ہو سکتے ہیں جو متحرک طور پر ٹول کے استعمال کا فیصلہ کرتے ہیں۔
 
-### فنکشن/ٹول کالنگ
+- **Message Handling System**: وہ اجزاء جو صارف کے ان پٹس، LLM جوابات، ٹول کالز، اور ٹول آؤٹ پٹس کے درمیان گفتگونی بہاؤ کو منظم کرتے ہیں۔
 
-فنکشن کالنگ وہ بنیادی طریقہ ہے جس کے ذریعے ہم بڑے زبان کے ماڈلز (LLMs) کو ٹولز کے ساتھ تعامل کرنے کے قابل بناتے ہیں۔ آپ اکثر 'فنکشن' اور 'ٹول' کو ایک دوسرے کے ساتھ استعمال ہوتے دیکھیں گے کیونکہ 'فنکشنز' (دوبارہ استعمال کے قابل کوڈ کے بلاکس) وہ 'ٹولز' ہیں جنہیں ایجنٹس کام انجام دینے کے لیے استعمال کرتے ہیں۔ کسی فنکشن کے کوڈ کو چلانے کے لیے، LLM کو صارف کی درخواست کو فنکشن کی تفصیل کے خلاف موازنہ کرنا ہوگا۔ ایسا کرنے کے لیے، تمام دستیاب فنکشنز کی تفصیلات پر مشتمل ایک اسکیم LLM کو بھیجی جاتی ہے۔ پھر LLM کام کے لیے سب سے مناسب فنکشن کا انتخاب کرتا ہے اور اس کا نام اور دلائل واپس کرتا ہے۔ منتخب کردہ فنکشن کو چلایا جاتا ہے، اس کا جواب LLM کو واپس بھیجا جاتا ہے، جو صارف کی درخواست کا جواب دینے کے لیے معلومات کا استعمال کرتا ہے۔
+- **Tool Integration Framework**: وہ انفراسٹرکچر جو ایجنٹ کو مختلف ٹولز کے ساتھ جوڑتا ہے، چاہے وہ سادہ فنکشنز ہوں یا پیچیدہ بیرونی سروسز۔
 
-ایجنٹس کے لیے فنکشن کالنگ کو نافذ کرنے کے لیے، ڈویلپرز کو درج ذیل کی ضرورت ہوگی:
+- **Error Handling & Validation**: وہ میکانزم جو ٹول کے اجرا میں ناکامیوں کو ہینڈل کرتے ہیں، پیرامیٹرز کی توثیق کرتے ہیں، اور غیر متوقع جوابات کو منظم کرتے ہیں۔
 
-1. ایک LLM ماڈل جو فنکشن کالنگ کو سپورٹ کرتا ہو
-2. فنکشن کی تفصیلات پر مشتمل ایک اسکیم
-3. ہر بیان کردہ فنکشن کے لیے کوڈ
+- **State Management**: بات چیت کے سیاق و سباق، پچھلی ٹول انٹریکشنز، اور مستقل ڈیٹا کو ٹریک کرتا ہے تاکہ کثیر موڑ بات چیت میں ہم آہنگی برقرار رہے۔
 
-آئیے ایک مثال کے ذریعے وضاحت کریں کہ کسی شہر میں موجودہ وقت حاصل کرنے کے لیے یہ کیسے کام کرتا ہے:
+اب، آئیے Function/Tool Calling کو مزید تفصیل سے دیکھتے ہیں۔
+ 
+### Function/Tool Calling
 
-1. **فنکشن کالنگ کو سپورٹ کرنے والے LLM کو شروع کریں:**
+Function calling وہ بنیادی طریقہ ہے جس کے ذریعے ہم Large Language Models (LLMs) کو ٹولز کے ساتھ تعامل کرنے کے قابل بناتے ہیں۔ آپ اکثر 'Function' اور 'Tool' کو ایک دوسرے کے متبادل کے طور پر دیکھیں گے کیونکہ 'functions' (دوبارہ استعمال کے قابل کوڈ بلاکس) وہ 'tools' ہیں جن کا ایجنٹس استعمال کرتے ہیں۔ کسی فنکشن کے کوڈ کو چلانے کے لیے، ایک LLM کو صارف کی درخواست کو فنکشن کی تفصیل کے ساتھ موازنہ کرنا ہوتا ہے۔ اس کے لیے تمام دستیاب فنکشنز کی تفصیلات پر مشتمل ایک اسکیمہ LLM کو بھیجی جاتی ہے۔ پھر LLM سب سے مناسب فنکشن کا انتخاب کرتا ہے اور اس کا نام اور دلائل واپس کرتا ہے۔ منتخب شدہ فنکشن کو چلایا جاتا ہے، اس کا جواب LLM کو بھیجا جاتا ہے، جو اس معلومات کا استعمال کر کے صارف کی درخواست کا جواب تیار کرتا ہے۔
 
-    تمام ماڈلز فنکشن کالنگ کو سپورٹ نہیں کرتے، اس لیے یہ چیک کرنا ضروری ہے کہ آپ جو LLM استعمال کر رہے ہیں وہ کرتا ہے۔ <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/function-calling" target="_blank">Azure OpenAI</a> فنکشن کالنگ کو سپورٹ کرتا ہے۔ ہم Azure OpenAI کلائنٹ کو شروع کر کے آغاز کر سکتے ہیں۔
+ڈیولپرز کے لیے ایجنٹس کے لیے فنکشن کالنگ نافذ کرنے کے لیے آپ کو درکار ہوگا:
+
+1. An LLM model that supports function calling
+2. A schema containing function descriptions
+3. The code for each function described
+
+آئیے شہر میں موجودہ وقت معلوم کرنے کی مثال استعمال کرتے ہیں تاکہ بات واضح ہو:
+
+1. **Initialize an LLM that supports function calling:**
+
+    Not all models support function calling, so it's important to check that the LLM you are using does.     <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/function-calling" target="_blank">Azure OpenAI</a> supports function calling. We can start by initiating the Azure OpenAI client. 
 
     ```python
-    # Initialize the Azure OpenAI client
+    # Azure OpenAI کلائنٹ کو ابتدائی طور پر ترتیب دیں
     client = AzureOpenAI(
-        azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT"), 
+        azure_endpoint = os.getenv("AZURE_AI_PROJECT_ENDPOINT"), 
         api_key=os.getenv("AZURE_OPENAI_API_KEY"),  
         api_version="2024-05-01-preview"
     )
     ```
 
-1. **فنکشن اسکیم بنائیں:**
+1. **Create a Function Schema**:
 
-    اگلا، ہم ایک JSON اسکیم کی وضاحت کریں گے جس میں فنکشن کا نام، فنکشن کیا کرتا ہے اس کی وضاحت، اور فنکشن پیرامیٹرز کے نام اور وضاحتیں شامل ہوں گی۔
-    پھر ہم اس اسکیم کو پہلے سے بنائے گئے کلائنٹ کو صارف کی درخواست کے ساتھ پاس کریں گے تاکہ سان فرانسسکو میں وقت معلوم کیا جا سکے۔ اہم بات یہ ہے کہ جو **ٹول کال** واپس آتی ہے، وہ سوال کا حتمی جواب **نہیں** ہوتا۔ جیسا کہ پہلے ذکر کیا گیا ہے، LLM اس فنکشن کا نام واپس کرتا ہے جو اس نے کام کے لیے منتخب کیا ہے، اور وہ دلائل جو اسے پاس کیے جائیں گے۔
+    Next we will define a JSON schema that contains the function name, description of what the function does, and the names and descriptions of the function parameters.
+    We will then take this schema and pass it to the client created previously, along with the users request to find the time in San Francisco. What's important to note is that a **tool call** is what is returned, **not** the final answer to the question. As mentioned earlier, the LLM returns the name of the function it selected for the task, and the arguments that will be passed to it.
 
     ```python
-    # Function description for the model to read
+    # ماڈل کے پڑھنے کے لیے فنکشن کی وضاحت
     tools = [
         {
             "type": "function",
@@ -115,10 +111,10 @@ AI ایجنٹس ٹولز کا فائدہ اٹھا کر پیچیدہ کام مک�
    
     ```python
   
-    # Initial user message
+    # ابتدائی صارف کا پیغام
     messages = [{"role": "user", "content": "What's the current time in San Francisco"}] 
   
-    # First API call: Ask the model to use the function
+    # پہلا API کال: ماڈل سے کہیں کہ اس فنکشن کو استعمال کرے
       response = client.chat.completions.create(
           model=deployment_name,
           messages=messages,
@@ -126,7 +122,7 @@ AI ایجنٹس ٹولز کا فائدہ اٹھا کر پیچیدہ کام مک�
           tool_choice="auto",
       )
   
-      # Process the model's response
+      # ماڈل کے جواب کو پروسیس کریں
       response_message = response.choices[0].message
       messages.append(response_message)
   
@@ -141,10 +137,10 @@ AI ایجنٹس ٹولز کا فائدہ اٹھا کر پیچیدہ کام مک�
     ChatCompletionMessage(content=None, role='assistant', function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_pOsKdUlqvdyttYB67MOj434b', function=Function(arguments='{"location":"San Francisco"}', name='get_current_time'), type='function')])
     ```
   
-1. **کام انجام دینے کے لیے مطلوبہ فنکشن کوڈ:**
+1. **The function code required to carry out the task:**
 
-    اب جب کہ LLM نے منتخب کر لیا ہے کہ کون سا فنکشن چلایا جانا چاہیے، کام انجام دینے کے لیے کوڈ کو نافذ اور چلانے کی ضرورت ہے۔
-    ہم Python میں موجودہ وقت حاصل کرنے کے لیے کوڈ نافذ کر سکتے ہیں۔ ہمیں response_message سے نام اور دلائل نکالنے کے لیے کوڈ بھی لکھنا ہوگا تاکہ حتمی نتیجہ حاصل کیا جا سکے۔
+    Now that the LLM has chosen which function needs to be run the code that carries out the task needs to be implemented and executed.
+    We can implement the code to get the current time in Python. We will also need to write the code to extract the name and arguments from the response_message to get the final result.
 
     ```python
       def get_current_time(location):
@@ -166,7 +162,7 @@ AI ایجنٹس ٹولز کا فائدہ اٹھا کر پیچیدہ کام مک�
     ```
 
      ```python
-     # Handle function calls
+     # فنکشن کالز کو سنبھالیں
       if response_message.tool_calls:
           for tool_call in response_message.tool_calls:
               if tool_call.function.name == "get_current_time":
@@ -186,7 +182,7 @@ AI ایجنٹس ٹولز کا فائدہ اٹھا کر پیچیدہ کام مک�
       else:
           print("No tool calls were made by the model.")  
   
-      # Second API call: Get the final response from the model
+      # دوسری اے پی آئی کال: ماڈل سے حتمی جواب حاصل کریں
       final_response = client.chat.completions.create(
           model=deployment_name,
           messages=messages,
@@ -201,89 +197,79 @@ AI ایجنٹس ٹولز کا فائدہ اٹھا کر پیچیدہ کام مک�
       The current time in San Francisco is 09:24 AM.
      ```
 
-فنکشن کالنگ زیادہ تر، اگر تمام نہیں، ایجنٹ ٹول استعمال کے ڈیزائن کے مرکز میں ہے، تاہم اسے شروع سے نافذ کرنا بعض اوقات چیلنجنگ ہو سکتا ہے۔
-جیسا کہ ہم نے [سبق 2](../../../02-explore-agentic-frameworks) میں سیکھا، ایجنٹک فریم ورک ہمیں ٹول استعمال کو نافذ کرنے کے لیے پہلے سے بنے ہوئے بنیادی اجزاء فراہم کرتے ہیں۔
+Function Calling is at the heart of most, if not all agent tool use design, however implementing it from scratch can sometimes be challenging.
+As we learned in [Lesson 2](../../../02-explore-agentic-frameworks) agentic frameworks provide us with pre-built building blocks to implement tool use.
+ 
+## Tool Use Examples with Agentic Frameworks
 
-## ایجنٹک فریم ورک کے ساتھ ٹول استعمال کی مثالیں
+درج ذیل کچھ مثالیں ہیں کہ آپ مختلف agentic frameworks استعمال کرتے ہوئے Tool Use Design Pattern کو کیسے نافذ کر سکتے ہیں:
 
-یہاں کچھ مثالیں ہیں کہ آپ مختلف ایجنٹک فریم ورک کا استعمال کرتے ہوئے ٹول استعمال کرنے کے ڈیزائن پیٹرن کو کیسے نافذ کر سکتے ہیں:
+### Microsoft Agent Framework
 
-### سیمینٹک کرنل
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Microsoft Agent Framework</a> ایک اوپن سورس AI فریم ورک ہے AI ایجنٹس بنانے کے لیے۔ یہ function calling کے استعمال کو آسان بناتا ہے کیونکہ آپ ٹولز کو Python فنکشنز کے طور پر `@tool` ڈی کوریٹر کے ساتھ تعریف کر سکتے ہیں۔ یہ فریم ورک ماڈل اور آپ کے کوڈ کے درمیان بات چیت کو سنبھالتا ہے۔ یہ `AzureAIProjectAgentProvider` کے ذریعے File Search اور Code Interpreter جیسے پیش ساختہ ٹولز تک رسائی بھی فراہم کرتا ہے۔
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">سیمینٹک کرنل</a> .NET، Python، اور Java ڈویلپرز کے لیے ایک اوپن سورس AI فریم ورک ہے جو بڑے زبان کے ماڈلز (LLMs) کے ساتھ کام کرتے ہیں۔ یہ فنکشن کالنگ کے استعمال کے عمل کو آسان بناتا ہے کیونکہ یہ آپ کے فنکشنز اور ان کے پیرامیٹرز کو ماڈل کے لیے خود بخود بیان کرتا ہے، جسے <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">سیریلائزنگ</a> کہا جاتا ہے۔ یہ ماڈل اور آپ کے کوڈ کے درمیان بات چیت کو بھی سنبھالتا ہے۔ ایجنٹک فریم ورک جیسے سیمینٹک کرنل کا ایک اور فائدہ یہ ہے کہ یہ آپ کو پہلے سے بنے ہوئے ٹولز تک رسائی فراہم کرتا ہے جیسے <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py" target="_blank">فائل سرچ</a> اور <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">کوڈ انٹرپریٹر</a>۔
+درج ذیل خاکہ Microsoft Agent Framework کے ساتھ function calling کے عمل کی وضاحت کرتا ہے:
 
-مندرجہ ذیل خاکہ سیمینٹک کرنل کے ساتھ فنکشن کالنگ کے عمل کو ظاہر کرتا ہے:
+![فنکشن کالنگ](../../../translated_images/ur/functioncalling-diagram.a84006fc287f6014.webp)
 
-![فنکشن کالنگ](../../../translated_images/functioncalling-diagram.a84006fc287f60140cc0a484ff399acd25f69553ea05186981ac4d5155f9c2f6.ur.png)
-
-سیمینٹک کرنل میں فنکشنز/ٹولز کو <a href="https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python" target="_blank">پلگ انز</a> کہا جاتا ہے۔ ہم پہلے دیکھے گئے `get_current_time` فنکشن کو ایک کلاس میں تبدیل کر کے پلگ ان میں تبدیل کر سکتے ہیں جس میں فنکشن موجود ہو۔ ہم `kernel_function` ڈیکوریٹر کو بھی درآمد کر سکتے ہیں، جو فنکشن کی وضاحت لیتا ہے۔ جب آپ پھر GetCurrentTimePlugin کے ساتھ ایک کرنل بناتے ہیں، تو کرنل خود بخود فنکشن اور اس کے پیرامیٹرز کو سیریلائز کر دے گا، اس عمل میں LLM کو بھیجنے کے لیے اسکیم بنائے گا۔
+Microsoft Agent Framework میں، ٹولز کو سجایا ہوا فنکشنز کے طور پر تعریف کیا جاتا ہے۔ ہم پہلے دیکھے گئے `get_current_time` فنکشن کو `@tool` ڈی کوریٹر استعمال کر کے ایک ٹول میں تبدیل کر سکتے ہیں۔ فریم ورک خود بخود فنکشن اور اس کے پیرامیٹرز کو سیریلائز کر کے LLM کو بھیجنے کے لیے اسکیمہ تیار کر دے گا۔
 
 ```python
-from semantic_kernel.functions import kernel_function
+from agent_framework import tool
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
-class GetCurrentTimePlugin:
-    async def __init__(self, location):
-        self.location = location
+@tool
+def get_current_time(location: str) -> str:
+    """Get the current time for a given location"""
+    ...
 
-    @kernel_function(
-        description="Get the current time for a given location"
-    )
-    def get_current_time(location: str = ""):
-        ...
+# کلائنٹ بنائیں
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
 
-```
-
-```python 
-from semantic_kernel import Kernel
-
-# Create the kernel
-kernel = Kernel()
-
-# Create the plugin
-get_current_time_plugin = GetCurrentTimePlugin(location)
-
-# Add the plugin to the kernel
-kernel.add_plugin(get_current_time_plugin)
+# ایک ایجنٹ بنائیں اور اسے ٹول کے ساتھ چلائیں
+agent = await provider.create_agent(name="TimeAgent", instructions="Use available tools to answer questions.", tools=get_current_time)
+response = await agent.run("What time is it?")
 ```
   
-### Azure AI ایجنٹ سروس
+### Azure AI Agent Service
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI ایجنٹ سروس</a> ایک نیا ایجنٹک فریم ورک ہے جو ڈویلپرز کو اعلیٰ معیار کے، اور قابل توسیع AI ایجنٹس کو محفوظ طریقے سے بنانے، تعینات کرنے، اور پیمانے پر لانے کے لیے ڈیزائن کیا گیا ہے، بغیر بنیادی کمپیوٹ اور اسٹوریج وسائل کا انتظام کرنے کی ضرورت کے۔ یہ خاص طور پر انٹرپرائز ایپلیکیشنز کے لیے مفید ہے کیونکہ یہ ایک مکمل طور پر منظم سروس ہے جس میں انٹرپرائز گریڈ سیکیورٹی ہے۔
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent Service</a> ایک جدید agentic framework ہے جو ڈویلپرز کو محفوظ طریقے سے اعلیٰ معیار کے، قابل توسیع AI ایجنٹس بنانے، ڈیپلائے کرنے، اور اسکیل کرنے کے قابل بناتا ہے بغیر بنیادی کمپیوٹ اور اسٹوریج وسائل کو خود مینیج کیے۔ یہ خاص طور پر انٹرپرائز ایپلیکیشنز کے لیے مفید ہے کیونکہ یہ ایک مکمل مینیجڈ سروس ہے جس میں انٹرپرائز گریڈ سیکیورٹی موجود ہے۔
 
-LLM API کے ساتھ براہ راست ترقی کرنے کے مقابلے میں، Azure AI ایجنٹ سروس کچھ فوائد فراہم کرتی ہے، جن میں شامل ہیں:
+براہِ راست LLM API کے ساتھ ڈویلپ کرنے کے مقابلے میں، Azure AI Agent Service کچھ فوائد فراہم کرتا ہے، جن میں شامل ہیں:
 
-- خودکار ٹول کالنگ – ٹول کال کو پارس کرنے، ٹول کو چلانے، اور جواب کو سنبھالنے کی ضرورت نہیں؛ یہ سب اب سرور سائیڈ پر کیا جاتا ہے۔
-- محفوظ طریقے سے منظم ڈیٹا – اپنی گفتگو کی حالت کا انتظام کرنے کے بجائے، آپ تھریڈز پر انحصار کر سکتے ہیں تاکہ آپ کو اپنی ضرورت کی تمام معلومات ذخیرہ کی جا سکیں۔
-- پہلے سے بنے ہوئے ٹولز – ایسے ٹولز جنہیں آپ اپنے ڈیٹا سورسز کے ساتھ تعامل کرنے کے لیے استعمال کر سکتے ہیں، جیسے Bing، Azure AI سرچ، اور Azure فنکشنز۔
+- Automatic tool calling – اب سرور سائیڈ پر ٹول کال پارس کرنے، ٹول چلانے، اور جواب ہینڈل کرنے کی ضرورت نہیں رہتی۔
+- Securely managed data – اپنے بات چیت کی حالت کو خود مینیج کرنے کی بجائے آپ threads پر انحصار کر سکتے ہیں تاکہ تمام مطلوبہ معلومات محفوظ ہوں۔
+- Out-of-the-box tools – ایسے ٹولز جو آپ کو آپ کے ڈیٹا سورسز کے ساتھ تعامل کرنے میں مدد دیتے ہیں، جیسے Bing، Azure AI Search، اور Azure Functions۔
 
-Azure AI ایجنٹ سروس میں دستیاب ٹولز کو دو اقسام میں تقسیم کیا جا سکتا ہے:
+Azure AI Agent Service میں دستیاب ٹولز کو دو زمروں میں تقسیم کیا جا سکتا ہے:
 
-1. نالج ٹولز:
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview" target="_blank">Bing سرچ کے ساتھ گراؤنڈنگ</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/file-search?tabs=python&pivots=overview" target="_blank">فائل سرچ</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-ai-search?tabs=azurecli%2Cpython&pivots=overview-azure-ai-search" target="_blank">Azure AI سرچ</a>
+1. Knowledge Tools:
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview" target="_blank">Grounding with Bing Search</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/file-search?tabs=python&pivots=overview" target="_blank">File Search</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-ai-search?tabs=azurecli%2Cpython&pivots=overview-azure-ai-search" target="_blank">Azure AI Search</a>
 
-2. ایکشن ٹولز:
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview" target="_blank">فنکشن کالنگ</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview" target="_blank">کوڈ انٹرپریٹر</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/openapi-spec?tabs=python&pivots=overview" target="_blank">OpenAPI سے متعین ٹولز</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-functions?pivots=overview" target="_blank">Azure فنکشنز</a>
+2. Action Tools:
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview" target="_blank">Function Calling</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview" target="_blank">Code Interpreter</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/openapi-spec?tabs=python&pivots=overview" target="_blank">OpenAPI defined tools</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-functions?pivots=overview" target="_blank">Azure Functions</a>
 
-ایجنٹ سروس ہمیں ان ٹولز کو `toolset` کے طور پر ایک ساتھ استعمال کرنے کی اجازت دیتی ہے۔ یہ `threads` کا بھی استعمال کرتی ہے جو کسی خاص گفتگو سے پیغامات کی تاریخ کو ٹریک کرتے ہیں۔
+Agent Service ہمیں ان ٹولز کو ایک `toolset` کے طور پر ایک ساتھ استعمال کرنے کی اجازت دیتا ہے۔ یہ `threads` کا استعمال بھی کرتا ہے جو کسی مخصوص گفتگو کی پیغام رسانی کی تاریخ کا ریکارڈ رکھتے ہیں۔
 
-تصور کریں کہ آپ Contoso نامی کمپنی میں ایک سیلز ایجنٹ ہیں۔ آپ ایک گفتگو ایجنٹ تیار کرنا چاہتے ہیں جو آپ کے سیلز ڈیٹا کے بارے میں سوالات کے جوابات دے سکے۔
+تصور کریں آپ Contoso کمپنی میں ایک سیلز ایجنٹ ہیں۔ آپ ایک conversational agent تیار کرنا چاہتے ہیں جو آپ کے سیلز ڈیٹا کے بارے میں سوالات کے جوابات دے سکے۔
 
-مندرجہ ذیل تصویر ظاہر کرتی ہے کہ آپ اپنے سیلز ڈیٹا کا تجزیہ کرنے کے لیے Azure AI ایجنٹ سروس کو کیسے استعمال کر سکتے ہیں:
+درج ذیل تصویر دکھاتی ہے کہ آپ Azure AI Agent Service کا استعمال کرتے ہوئے اپنے سیلز ڈیٹا کا تجزیہ کیسے کر سکتے ہیں:
 
-![ایجنٹک سروس ایکشن میں](../../../translated_images/agent-service-in-action.34fb465c9a84659edd3003f8cb62d6b366b310a09b37c44e32535021fbb5c93f.ur.jpg)
+![Agentic Service In Action](../../../translated_images/ur/agent-service-in-action.34fb465c9a84659e.webp)
 
-ان ٹولز کو سروس کے ساتھ استعمال کرنے کے لیے ہم ایک کلائنٹ بنا سکتے ہیں اور ایک ٹول یا ٹول سیٹ کی وضاحت کر سکتے ہیں۔ اسے عملی طور پر نافذ کرنے کے لیے ہم درج ذیل Python کوڈ استعمال کر سکتے ہیں۔ LLM ٹول سیٹ کو دیکھ سکے گا اور صارف کے بنائے گئے فنکشن، `fetch_sales_data_using_sqlite_query`، یا پہلے سے بنے ہوئے کوڈ انٹرپریٹر کو صارف کی درخواست کے مطابق استعمال کرنے کا فیصلہ کرے گا۔
+ان ٹولز میں سے کسی کو سروس کے ساتھ استعمال کرنے کے لیے ہم ایک کلائنٹ بنا کر ایک ٹول یا toolset کی تعریف کر سکتے ہیں۔ عملی نفاذ کے لیے ہم درج ذیل Python کوڈ استعمال کر سکتے ہیں۔ LLM toolset کو دیکھ کر فیصلہ کرے گا کہ صارف کی درخواست کے مطابق user created function `fetch_sales_data_using_sqlite_query` استعمال کرے یا پیش ساختہ Code Interpreter۔
 
 ```python 
 import os
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
-from fetch_sales_data_functions import fetch_sales_data_using_sqlite_query # fetch_sales_data_using_sqlite_query function which can be found in a fetch_sales_data_functions.py file.
+from fetch_sales_data_functions import fetch_sales_data_using_sqlite_query # fetch_sales_data_functions.py فائل میں پایا جانے والا fetch_sales_data_using_sqlite_query فنکشن۔
 from azure.ai.projects.models import ToolSet, FunctionTool, CodeInterpreterTool
 
 project_client = AIProjectClient.from_connection_string(
@@ -291,14 +277,15 @@ project_client = AIProjectClient.from_connection_string(
     conn_str=os.environ["PROJECT_CONNECTION_STRING"],
 )
 
-# Initialize function calling agent with the fetch_sales_data_using_sqlite_query function and adding it to the toolset
-fetch_data_function = FunctionTool(fetch_sales_data_using_sqlite_query)
+# ٹول سیٹ کو ابتدائی کریں۔
 toolset = ToolSet()
+
+# fetch_sales_data_using_sqlite_query فنکشن کے ساتھ فنکشن کال کرنے والا ایجنٹ مرتب کریں اور اسے ٹول سیٹ میں شامل کریں۔
+fetch_data_function = FunctionTool(fetch_sales_data_using_sqlite_query)
 toolset.add(fetch_data_function)
 
-# Initialize Code Interpreter tool and adding it to the toolset. 
+# Code Interpreter ٹول کو مرتب کریں اور اسے ٹول سیٹ میں شامل کریں۔
 code_interpreter = code_interpreter = CodeInterpreterTool()
-toolset = ToolSet()
 toolset.add(code_interpreter)
 
 agent = project_client.agents.create_agent(
@@ -307,39 +294,37 @@ agent = project_client.agents.create_agent(
 )
 ```
 
-## قابل اعتماد AI ایجنٹس بنانے کے لیے ٹول استعمال کرنے کے ڈیزائن پیٹرن کے استعمال کے لیے کون سے خاص پہلوؤں پر غور کرنا چاہیے؟
+## What are the special considerations for using the Tool Use Design Pattern to build trustworthy AI agents?
 
-LLMs کے ذریعے متحرک طور پر تیار کردہ SQL کے ساتھ ایک عام تشویش سیکیورٹی ہے، خاص طور پر SQL انجیکشن یا نقصان دہ اعمال کا خطرہ، جیسے ڈیٹا بیس کو حذف کرنا یا چھیڑ چھاڑ کرنا۔ اگرچہ
-ایپ کو محفوظ ماحول میں چلانا تحفظ کو مزید بہتر بناتا ہے۔ کاروباری منظرناموں میں، ڈیٹا عام طور پر آپریشنل سسٹمز سے نکالا اور تبدیل کیا جاتا ہے تاکہ اسے ایک ریڈ-اونلی ڈیٹا بیس یا ڈیٹا ویئرہاؤس میں منتقل کیا جا سکے، جس میں صارف دوست اسکیمہ ہوتا ہے۔ یہ طریقہ یقینی بناتا ہے کہ ڈیٹا محفوظ ہے، کارکردگی اور رسائی کے لیے بہتر بنایا گیا ہے، اور ایپ کو محدود، ریڈ-اونلی رسائی حاصل ہے۔
+LLMs کی طرف سے ڈائنامکلی جنریٹ کیے گئے SQL کے حوالے سے ایک عام تشویش سیکیورٹی ہے، خاص طور پر SQL injection یا نقصان دہ اعمال کا خطرہ، جیسے کہ ڈیٹا بیس کو ڈراپ کرنا یا اس میں چھیڑچھاڑ کرنا۔ اگرچہ یہ خدشات جائز ہیں، لیکن انہیں مناسب طریقے سے ڈیٹا بیس ایکسیس پرمشنز ترتیب دے کر مؤثر طریقے سے کم کیا جا سکتا ہے۔ زیادہ تر ڈیٹا بیسز کے لیے یہ عام طور پر ڈیٹا بیس کو read-only کنفیگر کرنے میں شامل ہوتا ہے۔ PostgreSQL یا Azure SQL جیسے ڈیٹا بیس سروسز کے لیے، ایپ کو read-only (SELECT) رول تفویض کیا جانا چاہیے۔
 
-## نمونہ کوڈز
+ایپ کو ایک محفوظ ماحول میں چلانے سے حفاظت مزید بہتر ہوتی ہے۔ انٹرپرائز منظرناموں میں، ڈیٹا عام طور پر آپریشنل سسٹمز سے نکالا اور تبدیل کر کے ایک read-only ڈیٹا بیس یا ڈیٹا ویئر ہاؤس میں رکھا جاتا ہے جس کا اسکیمہ صارف دوست ہوتا ہے۔ یہ طریقہ اس بات کو یقینی بناتا ہے کہ ڈیٹا محفوظ ہے، کارکردگی اور قابل رسائی کے لیے بہتر کیا گیا ہے، اور ایپ کو محدود، صرف پڑھنے کی رسائی حاصل ہے۔
 
-- Python: [ایجنٹ فریم ورک](./code_samples/04-python-agent-framework.ipynb)
-- .NET: [ایجنٹ فریم ورک](./code_samples/04-dotnet-agent-framework.md)
+## Sample Codes
 
-## ٹول استعمال کے ڈیزائن پیٹرنز کے بارے میں مزید سوالات ہیں؟
+- Python: [Agent Framework](./code_samples/04-python-agent-framework.ipynb)
+- .NET: [Agent Framework](./code_samples/04-dotnet-agent-framework.md)
 
-[Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) میں شامل ہوں تاکہ دوسرے سیکھنے والوں سے ملاقات کریں، آفس آورز میں شرکت کریں اور اپنے AI ایجنٹس کے سوالات کے جوابات حاصل کریں۔
+## Got More Questions about the Tool Use Design Patterns?
 
-## اضافی وسائل
+Join the [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.
 
-- <a href="https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/" target="_blank">Azure AI ایجنٹس سروس ورکشاپ</a>
-- <a href="https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop" target="_blank">Contoso Creative Writer ملٹی ایجنٹ ورکشاپ</a>
-- <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">Semantic Kernel فنکشن کالنگ ٹیوٹوریل</a>
-- <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Semantic Kernel کوڈ انٹرپریٹر</a>
-- <a href="https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html" target="_blank">Autogen ٹولز</a>
+## Additional Resources
 
-## پچھلا سبق
+- <a href="https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/" target="_blank">Azure AI Agents Service Workshop</a>
+- <a href="https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop" target="_blank">Contoso Creative Writer Multi-Agent Workshop</a>
+- <a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Microsoft Agent Framework Overview</a>
 
-[ایجنٹک ڈیزائن پیٹرنز کو سمجھنا](../03-agentic-design-patterns/README.md)
+## Previous Lesson
 
-## اگلا سبق
+[Understanding Agentic Design Patterns](../03-agentic-design-patterns/README.md)
 
+## Next Lesson
 [ایجنٹک RAG](../05-agentic-rag/README.md)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**اعلانِ لاتعلقی**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشش کرتے ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستگی ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لیے ہم ذمہ دار نہیں ہیں۔
+دستبرداری:
+اس دستاویز کا ترجمہ AI ترجمہ سروس Co‑op Translator (https://github.com/Azure/co-op-translator) کے ذریعے کیا گیا ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہِ کرم ذہن میں رکھیں کہ خودکار ترجموں میں غلطیاں یا غیر درستیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی مادری زبان میں معتبر ماخذ سمجھا جانا چاہیے۔ اہم معلومات کے لیے پیشہ ورانہ انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تعبیر کے لیے ہم ذمہ دار نہیں ہیں۔
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

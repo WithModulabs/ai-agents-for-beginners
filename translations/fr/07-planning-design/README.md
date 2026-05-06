@@ -1,64 +1,55 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "43069833a0412210ad5c3cc93d9c2146",
-  "translation_date": "2025-09-18T14:02:17+00:00",
-  "source_file": "07-planning-design/README.md",
-  "language_code": "fr"
-}
--->
-[![Planification et Modèle de Conception](../../../translated_images/lesson-7-thumbnail.f7163ac557bea1236242cc86b178c3f1bbf5eb07b87f9cd7c256b366e32bcbb6.fr.png)](https://youtu.be/kPfJ2BrBCMY?si=9pYpPXp0sSbK91Dr)
+[![Modèle de conception de planification](../../../translated_images/fr/lesson-7-thumbnail.f7163ac557bea123.webp)](https://youtu.be/kPfJ2BrBCMY?si=9pYpPXp0sSbK91Dr)
 
-> _(Cliquez sur l'image ci-dessus pour visionner la vidéo de cette leçon)_
+> _(Cliquez sur l'image ci-dessus pour regarder la vidéo de cette leçon)_
 
-# Planification et Conception
+# Conception de la planification
 
 ## Introduction
 
-Cette leçon couvrira :
+Cette leçon couvrira
 
-* Définir un objectif global clair et diviser une tâche complexe en tâches gérables.
-* Utiliser des sorties structurées pour des réponses plus fiables et lisibles par machine.
-* Appliquer une approche événementielle pour gérer des tâches dynamiques et des entrées inattendues.
+* Définir un objectif global clair et décomposer une tâche complexe en tâches gérables.
+* Exploiter une sortie structurée pour des réponses plus fiables et lisibles par machine.
+* Appliquer une approche pilotée par les événements pour gérer des tâches dynamiques et des entrées inattendues.
 
 ## Objectifs d'apprentissage
 
-Après avoir terminé cette leçon, vous comprendrez :
+Après avoir suivi cette leçon, vous aurez une compréhension de :
 
-* Comment identifier et définir un objectif global pour un agent IA, en s'assurant qu'il sait clairement ce qu'il doit accomplir.
-* Comment décomposer une tâche complexe en sous-tâches gérables et les organiser dans une séquence logique.
-* Comment équiper les agents des bons outils (par exemple, outils de recherche ou d'analyse de données), décider quand et comment les utiliser, et gérer les situations imprévues.
-* Comment évaluer les résultats des sous-tâches, mesurer les performances et itérer sur les actions pour améliorer le résultat final.
+* Identifier et définir un objectif global pour un agent IA, en s'assurant qu'il sait clairement ce qui doit être accompli.
+* Décomposer une tâche complexe en sous-tâches gérables et les organiser dans une séquence logique.
+* Équiper les agents des bons outils (par ex., outils de recherche ou d'analyse de données), décider quand et comment les utiliser, et gérer les situations inattendues qui surviennent.
+* Évaluer les résultats des sous-tâches, mesurer les performances et itérer les actions pour améliorer le résultat final.
 
 ## Définir l'objectif global et décomposer une tâche
 
-![Définir les objectifs et les tâches](../../../translated_images/defining-goals-tasks.d70439e19e37c47ac76c48b209a4eb515bea5b8a5207f6b2e7b5e597f09ccf6a.fr.png)
+![Définition des objectifs et des tâches](../../../translated_images/fr/defining-goals-tasks.d70439e19e37c47a.webp)
 
-La plupart des tâches du monde réel sont trop complexes pour être abordées en une seule étape. Un agent IA a besoin d'un objectif concis pour guider sa planification et ses actions. Par exemple, considérez l'objectif :
+Les tâches du monde réel sont généralement trop complexes pour être traitées en une seule étape. Un agent IA a besoin d'un objectif concis pour guider sa planification et ses actions. Par exemple, considérez l'objectif :
 
-    "Créer un itinéraire de voyage de 3 jours."
+    "Générer un itinéraire de voyage de 3 jours."
 
-Bien qu'il soit simple à énoncer, il nécessite encore des précisions. Plus l'objectif est clair, mieux l'agent (et les collaborateurs humains) pourra se concentrer sur l'obtention du bon résultat, comme la création d'un itinéraire complet avec des options de vol, des recommandations d'hôtels et des suggestions d'activités.
+Bien qu'il soit simple à énoncer, il nécessite encore des ajustements. Plus l'objectif est clair, mieux l'agent (et les collaborateurs humains) peuvent se concentrer sur l'obtention du bon résultat, comme la création d'un itinéraire complet avec des options de vol, des recommandations d'hôtel et des suggestions d'activités.
 
-### Décomposition des tâches
+### Décomposition de la tâche
 
-Les tâches larges ou complexes deviennent plus gérables lorsqu'elles sont divisées en sous-tâches orientées vers un objectif.
-Pour l'exemple de l'itinéraire de voyage, vous pourriez décomposer l'objectif en :
+Les tâches volumineuses ou complexes deviennent plus gérables lorsqu'elles sont divisées en sous-tâches plus petites et orientées vers un objectif.
+Pour l'exemple de l'itinéraire de voyage, vous pouvez décomposer l'objectif en :
 
 * Réservation de vol
 * Réservation d'hôtel
 * Location de voiture
 * Personnalisation
 
-Chaque sous-tâche peut ensuite être prise en charge par des agents ou processus dédiés. Un agent pourrait se spécialiser dans la recherche des meilleures offres de vol, un autre dans les réservations d'hôtel, etc. Un agent coordinateur ou "en aval" peut ensuite compiler ces résultats en un itinéraire cohérent pour l'utilisateur final.
+Chaque sous-tâche peut ensuite être traitée par des agents ou des processus dédiés. Un agent peut se spécialiser dans la recherche des meilleures offres de vol, un autre se concentrer sur les réservations d'hôtel, etc. Un agent coordonnateur ou « en aval » peut ensuite compiler ces résultats en un itinéraire cohérent pour l'utilisateur final.
 
-Cette approche modulaire permet également des améliorations progressives. Par exemple, vous pourriez ajouter des agents spécialisés pour les recommandations culinaires ou les suggestions d'activités locales et affiner l'itinéraire au fil du temps.
+Cette approche modulaire permet également des améliorations progressives. Par exemple, vous pourriez ajouter des agents spécialisés pour les recommandations alimentaires ou les suggestions d'activités locales et affiner l'itinéraire au fil du temps.
 
 ### Sortie structurée
 
-Les modèles de langage avancés (LLMs) peuvent générer des sorties structurées (par exemple, JSON) qui sont plus faciles à analyser et à traiter par des agents ou services en aval. Cela est particulièrement utile dans un contexte multi-agents, où ces tâches peuvent être exécutées après réception de la sortie de planification. Consultez ceci pour un aperçu rapide.
+Les grands modèles de langage (LLMs) peuvent générer des sorties structurées (par ex. JSON) qui sont plus faciles à analyser et à traiter pour les agents ou services en aval. Cela est particulièrement utile dans un contexte multi-agent, où nous pouvons exécuter ces tâches après réception du résultat de la planification.
 
-Le snippet Python suivant démontre un agent de planification simple décomposant un objectif en sous-tâches et générant un plan structuré :
+La capture de code Python suivante montre un agent de planification simple qui décompose un objectif en sous-tâches et génère un plan structuré :
 
 ```python
 from pydantic import BaseModel
@@ -68,9 +59,8 @@ import json
 import os
 from typing import Optional
 from pprint import pprint
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-from autogen_ext.models.azure import AzureAIChatCompletionClient
-from azure.core.credentials import AzureKeyCredential
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
 class AgentEnum(str, Enum):
     FlightBooking = "flight_booking"
@@ -81,35 +71,22 @@ class AgentEnum(str, Enum):
     DefaultAgent = "default_agent"
     GroupChatManager = "group_chat_manager"
 
-# Travel SubTask Model
+# Modèle de sous-tâche de voyage
 class TravelSubTask(BaseModel):
     task_details: str
-    assigned_agent: AgentEnum  # we want to assign the task to the agent
+    assigned_agent: AgentEnum  # nous voulons attribuer la tâche à l'agent
 
 class TravelPlan(BaseModel):
     main_task: str
     subtasks: List[TravelSubTask]
     is_greeting: bool
 
-client = AzureAIChatCompletionClient(
-    model="gpt-4o-mini",
-    endpoint="https://models.inference.ai.azure.com",
-    # To authenticate with the model you will need to generate a personal access token (PAT) in your GitHub settings.
-    # Create your PAT token by following instructions here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
-    credential=AzureKeyCredential(os.environ["GITHUB_TOKEN"]),
-    model_info={
-        "json_output": False,
-        "function_calling": True,
-        "vision": True,
-        "family": "unknown",
-    },
-)
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
 
-# Define the user message
-messages = [
-    SystemMessage(content="""You are an planner agent.
+# Définir le message de l'utilisateur
+system_prompt = """You are a planner agent.
     Your job is to decide which agents to run based on the user's request.
-                      Provide your response in JSON format with the following structure:
+    Provide your response in JSON format with the following structure:
 {'main_task': 'Plan a family trip from Singapore to Melbourne.',
  'subtasks': [{'assigned_agent': 'flight_booking',
                'task_details': 'Book round-trip flights from Singapore to '
@@ -120,45 +97,27 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(
-        content="Create a travel plan for a family of 2 kids from Singapore to Melboune", source="user"),
-]
+    - DefaultAgent: For handling general requests"""
 
-response = await client.create(messages=messages, extra_create_args={"response_format": 'json_object'})
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
 
-response_content: Optional[str] = response.content if isinstance(
-    response.content, str) else None
-if response_content is None:
-    raise ValueError("Response content is not a valid JSON string" )
+response = client.create_response(input=user_message, instructions=system_prompt)
 
+response_content = response.output_text
 pprint(json.loads(response_content))
-
-# # Ensure the response content is a valid JSON string before loading it
-# response_content: Optional[str] = response.content if isinstance(
-#     response.content, str) else None
-# if response_content is None:
-#     raise ValueError("Response content is not a valid JSON string")
-
-# # Print the response content after loading it as JSON
-# pprint(json.loads(response_content))
-
-# Validate the response content with the MathReasoning model
-# TravelPlan.model_validate(json.loads(response_content))
 ```
 
-### Agent de planification avec orchestration multi-agents
+### Agent de planification avec orchestration multi-agent
 
-Dans cet exemple, un agent routeur sémantique reçoit une demande utilisateur (par exemple, "J'ai besoin d'un plan d'hôtel pour mon voyage.").
+Dans cet exemple, un agent de routage sémantique reçoit une requête utilisateur (par ex., « J'ai besoin d'un plan d'hôtel pour mon voyage. »).
 
-Le planificateur :
+Le planificateur fait ensuite :
 
 * Reçoit le plan d'hôtel : Le planificateur prend le message de l'utilisateur et, sur la base d'un prompt système (incluant les détails des agents disponibles), génère un plan de voyage structuré.
-* Liste les agents et leurs outils : Le registre d'agents contient une liste d'agents (par exemple, pour les vols, hôtels, locations de voiture et activités) ainsi que les fonctions ou outils qu'ils offrent.
-* Route le plan vers les agents concernés : Selon le nombre de sous-tâches, le planificateur envoie soit directement le message à un agent dédié (pour des scénarios à tâche unique), soit coordonne via un gestionnaire de chat de groupe pour une collaboration multi-agents.
+* Énumère les agents et leurs outils : Le registre d'agents contient une liste d'agents (par ex., pour les vols, hôtels, locations de voiture et activités) ainsi que les fonctions ou outils qu'ils offrent.
+* Route le plan vers les agents respectifs : Selon le nombre de sous-tâches, le planificateur envoie soit le message directement à un agent dédié (pour les scénarios à tâche unique), soit coordonne via un gestionnaire de chat de groupe pour la collaboration multi-agent.
 * Résume le résultat : Enfin, le planificateur résume le plan généré pour plus de clarté.
-
-Le code Python suivant illustre ces étapes :
+L'exemple de code Python suivant illustre ces étapes :
 
 ```python
 
@@ -176,11 +135,11 @@ class AgentEnum(str, Enum):
     DefaultAgent = "default_agent"
     GroupChatManager = "group_chat_manager"
 
-# Travel SubTask Model
+# Modèle de sous-tâche de voyage
 
 class TravelSubTask(BaseModel):
     task_details: str
-    assigned_agent: AgentEnum # we want to assign the task to the agent
+    assigned_agent: AgentEnum # Nous voulons attribuer la tâche à l'agent
 
 class TravelPlan(BaseModel):
     main_task: str
@@ -190,25 +149,18 @@ import json
 import os
 from typing import Optional
 
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-from autogen_ext.models.openai import AzureOpenAIChatCompletionClient
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
-# Create the client with type-checked environment variables
+# Créer le client
 
-client = AzureOpenAIChatCompletionClient(
-    azure_deployment=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
-    model=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
-    api_version=os.getenv("AZURE_OPENAI_API_VERSION"),
-    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-)
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
 
 from pprint import pprint
 
-# Define the user message
+# Définir le message de l'utilisateur
 
-messages = [
-    SystemMessage(content="""You are an planner agent.
+system_prompt = """You are a planner agent.
     Your job is to decide which agents to run based on the user's request.
     Below are the available agents specialized in different tasks:
     - FlightBooking: For booking flights and providing flight information
@@ -216,24 +168,20 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(content="Create a travel plan for a family of 2 kids from Singapore to Melbourne", source="user"),
-]
+    - DefaultAgent: For handling general requests"""
 
-response = await client.create(messages=messages, extra_create_args={"response_format": TravelPlan})
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
 
-# Ensure the response content is a valid JSON string before loading it
+response = client.create_response(input=user_message, instructions=system_prompt)
 
-response_content: Optional[str] = response.content if isinstance(response.content, str) else None
-if response_content is None:
-    raise ValueError("Response content is not a valid JSON string")
+response_content = response.output_text
 
-# Print the response content after loading it as JSON
+# Afficher le contenu de la réponse après l'avoir chargé au format JSON
 
 pprint(json.loads(response_content))
 ```
 
-Ce qui suit est la sortie du code précédent, que vous pouvez ensuite utiliser pour router vers `assigned_agent` et résumer le plan de voyage pour l'utilisateur final.
+Ce qui suit est la sortie du code précédent et vous pouvez ensuite utiliser cette sortie structurée pour la router vers `assigned_agent` et résumer le plan de voyage pour l'utilisateur final.
 
 ```json
 {
@@ -264,21 +212,22 @@ Ce qui suit est la sortie du code précédent, que vous pouvez ensuite utiliser 
 }
 ```
 
-Un exemple de notebook avec le code précédent est disponible [ici](07-autogen.ipynb).
+Un notebook d'exemple contenant le code précédent est disponible [ici](07-python-agent-framework.ipynb).
 
 ### Planification itérative
 
-Certaines tâches nécessitent des allers-retours ou une re-planification, où le résultat d'une sous-tâche influence la suivante. Par exemple, si l'agent découvre un format de données inattendu lors de la réservation de vols, il pourrait devoir adapter sa stratégie avant de passer aux réservations d'hôtel.
+Certaines tâches nécessitent des allers-retours ou une re-planification, où le résultat d'une sous-tâche influence la suivante. Par exemple, si l'agent découvre un format de données inattendu lors de la réservation des vols, il peut devoir adapter sa stratégie avant de passer aux réservations d'hôtel.
 
-De plus, les retours utilisateurs (par exemple, un humain décidant qu'il préfère un vol plus tôt) peuvent déclencher une re-planification partielle. Cette approche dynamique et itérative garantit que la solution finale s'aligne sur les contraintes du monde réel et les préférences évolutives de l'utilisateur.
+De plus, les retours utilisateur (par ex., un humain décidant qu'il préfère un vol plus tôt) peuvent déclencher une replanification partielle. Cette approche dynamique et itérative garantit que la solution finale s'aligne sur les contraintes réelles et les préférences évolutives de l'utilisateur.
 
-Exemple de code :
+ex. : code d'exemple
 
 ```python
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-#.. same as previous code and pass on the user history, current plan
-messages = [
-    SystemMessage(content="""You are a planner agent to optimize the
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
+#.. même que le code précédent et transmettre l'historique de l'utilisateur, le plan actuel
+
+system_prompt = """You are a planner agent to optimize the
     Your job is to decide which agents to run based on the user's request.
     Below are the available agents specialized in different tasks:
     - FlightBooking: For booking flights and providing flight information
@@ -286,36 +235,43 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(content="Create a travel plan for a family of 2 kids from Singapore to Melbourne", source="user"),
-    AssistantMessage(content=f"Previous travel plan - {TravelPlan}", source="assistant")
-]
-# .. re-plan and send the tasks to respective agents
+    - DefaultAgent: For handling general requests"""
+
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
+
+response = client.create_response(
+    input=user_message,
+    instructions=system_prompt,
+    context=f"Previous travel plan - {TravelPlan}",
+)
+# .. réplanifier et envoyer les tâches aux agents respectifs
 ```
 
-Pour une planification plus complète, consultez Magnetic One pour résoudre des tâches complexes.
+Pour une planification plus complète, consultez Magnetic One <a href="https://www.microsoft.com/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks" target="_blank">billet de blog</a> sur la résolution de tâches complexes.
 
 ## Résumé
 
-Dans cet article, nous avons examiné un exemple de création d'un planificateur capable de sélectionner dynamiquement les agents disponibles définis. La sortie du planificateur décompose les tâches et assigne les agents pour qu'elles soient exécutées. Il est supposé que les agents ont accès aux fonctions/outils nécessaires pour accomplir la tâche. En plus des agents, vous pouvez inclure d'autres modèles comme la réflexion, le résumé et le chat en rotation pour une personnalisation supplémentaire.
+Dans cet article, nous avons examiné un exemple montrant comment créer un planificateur capable de sélectionner dynamiquement les agents disponibles. La sortie du planificateur décompose les tâches et attribue les agents afin qu'elles puissent être exécutées. On suppose que les agents ont accès aux fonctions/outils nécessaires pour effectuer la tâche. Outre les agents, vous pouvez inclure d'autres modèles tels que la réflexion, le résumé et le chat en rotation (round robin) pour personnaliser davantage.
 
 ## Ressources supplémentaires
 
-AutoGen Magnetic One - Un système multi-agents généraliste pour résoudre des tâches complexes et qui a obtenu des résultats impressionnants sur plusieurs benchmarks d'agents difficiles. Référence : . Dans cette implémentation, l'orchestrateur crée un plan spécifique à la tâche et délègue ces tâches aux agents disponibles. En plus de la planification, l'orchestrateur utilise également un mécanisme de suivi pour surveiller l'avancement de la tâche et re-planifier si nécessaire.
+Magentic One - Un système multi-agent généraliste pour résoudre des tâches complexes qui a obtenu des résultats impressionnants sur de nombreux benchmarks agentiques exigeants. Référence : <a href="https://www.microsoft.com/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks" target="_blank">Magentic One</a>. Dans cette implémentation, l'orchestrateur crée des plans spécifiques aux tâches et délègue ces tâches aux agents disponibles. En plus de la planification, l'orchestrateur utilise également un mécanisme de suivi pour surveiller l'avancement de la tâche et re-planifier si nécessaire.
 
-### Vous avez des questions sur le modèle de conception de planification ?
+### Vous avez d'autres questions sur le modèle de conception de la planification ?
 
-Rejoignez le [Discord Azure AI Foundry](https://aka.ms/ai-agents/discord) pour rencontrer d'autres apprenants, assister à des heures de bureau et obtenir des réponses à vos questions sur les agents IA.
+Rejoignez le [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) pour rencontrer d'autres apprenants, assister aux heures de bureau et obtenir des réponses à vos questions sur les agents IA.
 
 ## Leçon précédente
 
-[Créer des agents IA fiables](../06-building-trustworthy-agents/README.md)
+[Création d'agents IA fiables](../06-building-trustworthy-agents/README.md)
 
 ## Leçon suivante
 
-[Modèle de conception multi-agents](../08-multi-agent/README.md)
+[Modèle de conception multi-agent](../08-multi-agent/README.md)
 
 ---
 
-**Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+Avis de non-responsabilité :
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'être précis, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original, dans sa langue d'origine, doit être considéré comme la source faisant foi. Pour toute information critique, il est recommandé de recourir à une traduction professionnelle effectuée par un traducteur humain. Nous ne pouvons être tenus responsables des malentendus ou des erreurs d'interprétation résultant de l'utilisation de cette traduction.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

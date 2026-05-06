@@ -1,51 +1,42 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7e92870dc0843e13d4dabc620c09d2d9",
-  "translation_date": "2025-07-12T08:20:48+00:00",
-  "source_file": "02-explore-agentic-frameworks/azure-ai-foundry-agent-creation.md",
-  "language_code": "vi"
-}
--->
-# Phát triển Dịch vụ Azure AI Agent
+# Phát triển dịch vụ tác nhân AI Azure
 
-Trong bài tập này, bạn sẽ sử dụng các công cụ dịch vụ Azure AI Agent trong [cổng Azure AI Foundry](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst) để tạo một agent cho Đặt vé máy bay. Agent này sẽ có khả năng tương tác với người dùng và cung cấp thông tin về các chuyến bay.
+Trong bài tập này, bạn sẽ sử dụng các công cụ của dịch vụ Azure AI Agent trong [cổng Microsoft Foundry](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst) để tạo một tác nhân cho Đặt vé máy bay. Tác nhân sẽ có khả năng tương tác với người dùng và cung cấp thông tin về chuyến bay.
 
-## Yêu cầu trước
+## Yêu cầu tiên quyết
 
-Để hoàn thành bài tập này, bạn cần:
+Để hoàn thành bài tập này, bạn cần những thứ sau:
 1. Một tài khoản Azure với đăng ký đang hoạt động. [Tạo tài khoản miễn phí](https://azure.microsoft.com/free/?WT.mc_id=academic-105485-koreyst).
-2. Bạn cần có quyền tạo một Azure AI Foundry hub hoặc có người tạo giúp bạn.
+2. Bạn cần có quyền tạo một trung tâm Microsoft Foundry hoặc có người tạo sẵn cho bạn.
     - Nếu vai trò của bạn là Contributor hoặc Owner, bạn có thể làm theo các bước trong hướng dẫn này.
 
-## Tạo một Azure AI Foundry hub
+## Tạo một trung tâm Microsoft Foundry
 
-> **Note:** Azure AI Foundry trước đây được gọi là Azure AI Studio.
+> **Lưu ý:** Microsoft Foundry trước đây được gọi là Azure AI Studio.
 
-1. Làm theo hướng dẫn từ bài viết trên blog [Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst) để tạo một Azure AI Foundry hub.
-2. Khi dự án của bạn được tạo, đóng các mẹo hiển thị và xem lại trang dự án trong cổng Azure AI Foundry, trang này sẽ trông giống như hình dưới đây:
+1. Làm theo các hướng dẫn từ bài đăng trên blog [Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst) để tạo một trung tâm Microsoft Foundry.
+2. Khi dự án của bạn được tạo, đóng mọi mẹo hiển thị và xem lại trang dự án trong cổng Microsoft Foundry, trang này sẽ có giao diện tương tự hình ảnh sau:
 
-    ![Azure AI Foundry Project](../../../translated_images/azure-ai-foundry.88d0c35298348c2fca620668d9b567b50b18dfe94fd2251e0793a28d4d60854e.vi.png)
+    ![Microsoft Foundry Project](../../../translated_images/vi/azure-ai-foundry.88d0c35298348c2f.webp)
 
-## Triển khai một mô hình
+## Triển khai mô hình
 
-1. Trong bảng điều khiển bên trái của dự án, trong phần **My assets**, chọn trang **Models + endpoints**.
-2. Trong trang **Models + endpoints**, ở tab **Model deployments**, trong menu **+ Deploy model**, chọn **Deploy base model**.
+1. Ở khung bên trái cho dự án của bạn, trong phần **My assets**, chọn trang **Models + endpoints**.
+2. Ở trang **Models + endpoints**, trong tab **Model deployments**, trong menu **+ Deploy model**, chọn **Deploy base model**.
 3. Tìm kiếm mô hình `gpt-4o-mini` trong danh sách, sau đó chọn và xác nhận.
 
-    > **Note**: Giảm TPM giúp tránh sử dụng quá mức hạn ngạch có trong đăng ký bạn đang dùng.
+    > **Lưu ý**: Giảm TPM giúp tránh sử dụng quá mức hạn ngạch trong đăng ký bạn đang sử dụng.
 
-    ![Model Deployed](../../../translated_images/model-deployment.3749c53fb81e18fdc2da5beb872441b4a5f86a2d1206c5a9999a4997f78e4b7a.vi.png)
+    ![Model Deployed](../../../translated_images/vi/model-deployment.3749c53fb81e18fd.webp)
 
-## Tạo một agent
+## Tạo một tác nhân
 
-Bây giờ bạn đã triển khai mô hình, bạn có thể tạo một agent. Agent là một mô hình AI hội thoại có thể dùng để tương tác với người dùng.
+Bây giờ bạn đã triển khai mô hình, bạn có thể tạo một tác nhân. Tác nhân là một mô hình AI hội thoại có thể dùng để tương tác với người dùng.
 
-1. Trong bảng điều khiển bên trái của dự án, trong phần **Build & Customize**, chọn trang **Agents**.
-2. Nhấn **+ Create agent** để tạo một agent mới. Trong hộp thoại **Agent Setup**:
-    - Nhập tên cho agent, ví dụ `FlightAgent`.
-    - Đảm bảo mô hình `gpt-4o-mini` mà bạn đã triển khai trước đó được chọn.
-    - Đặt **Instructions** theo lời nhắc mà bạn muốn agent tuân theo. Đây là một ví dụ:
+1. Ở khung bên trái cho dự án của bạn, trong phần **Build & Customize**, chọn trang **Agents**.
+2. Nhấp **+ Create agent** để tạo một tác nhân mới. Trong hộp thoại **Agent Setup**:
+    - Nhập tên cho tác nhân, ví dụ `FlightAgent`.
+    - Đảm bảo mô hình triển khai `gpt-4o-mini` bạn đã tạo trước đó được chọn.
+    - Thiết lập **Instructions** theo lời nhắc mà bạn muốn tác nhân thực hiện. Đây là một ví dụ:
     ```
     You are FlightAgent, a virtual assistant specialized in handling flight-related queries. Your role includes assisting users with searching for flights, retrieving flight details, checking seat availability, and providing real-time flight status. Follow the instructions below to ensure clarity and effectiveness in your responses:
 
@@ -73,41 +64,46 @@ Bây giờ bạn đã triển khai mô hình, bạn có thể tạo một agent.
     
     ```
 > [!NOTE]
-> Để có lời nhắc chi tiết hơn, bạn có thể tham khảo [kho lưu trữ này](https://github.com/ShivamGoyal03/RoamMind) để biết thêm thông tin.
+> Để có lời nhắc chi tiết, bạn có thể tham khảo [kho lưu trữ này](https://github.com/ShivamGoyal03/RoamMind) để biết thêm thông tin.
     
-> Hơn nữa, bạn có thể thêm **Knowledge Base** và **Actions** để nâng cao khả năng của agent trong việc cung cấp thông tin và thực hiện các tác vụ tự động dựa trên yêu cầu của người dùng. Trong bài tập này, bạn có thể bỏ qua các bước đó.
+> Hơn nữa, bạn có thể thêm **Knowledge Base** và **Actions** để tăng cường khả năng của tác nhân trong việc cung cấp thêm thông tin và thực hiện các tác vụ tự động dựa trên yêu cầu của người dùng. Trong bài tập này, bạn có thể bỏ qua các bước này.
     
-![Agent Setup](../../../translated_images/agent-setup.9bbb8755bf5df672c712a9aaed6482305d32a4986742e6b21faf59485f25c50a.vi.png)
+![Agent Setup](../../../translated_images/vi/agent-setup.9bbb8755bf5df672.webp)
 
-3. Để tạo một agent đa AI mới, chỉ cần nhấn **New Agent**. Agent mới tạo sẽ được hiển thị trên trang Agents.
+3. Để tạo một tác nhân đa AI mới, chỉ cần nhấn **New Agent**. Tác nhân mới tạo sẽ được hiển thị trên trang Agents.
 
-## Kiểm tra agent
 
-Sau khi tạo agent, bạn có thể kiểm tra để xem nó phản hồi các truy vấn của người dùng như thế nào trong khu vực thử nghiệm của cổng Azure AI Foundry.
+## Kiểm tra tác nhân
 
-1. Ở đầu bảng **Setup** cho agent của bạn, chọn **Try in playground**.
-2. Trong bảng **Playground**, bạn có thể tương tác với agent bằng cách nhập các truy vấn trong cửa sổ chat. Ví dụ, bạn có thể yêu cầu agent tìm chuyến bay từ Seattle đến New York vào ngày 28.
+Sau khi tạo tác nhân, bạn có thể kiểm tra xem nó phản hồi ra sao với các truy vấn của người dùng trong khu vui chơi (playground) của cổng Microsoft Foundry.
 
-    > **Note**: Agent có thể không cung cấp câu trả lời chính xác vì không sử dụng dữ liệu thời gian thực trong bài tập này. Mục đích là để kiểm tra khả năng hiểu và phản hồi các truy vấn của người dùng dựa trên hướng dẫn đã cho.
+1. Ở đầu khung **Setup** cho tác nhân của bạn, chọn **Try in playground**.
+2. Trong khung **Playground**, bạn có thể tương tác với tác nhân bằng cách nhập câu hỏi trong cửa sổ chat. Ví dụ, bạn có thể yêu cầu tác nhân tìm chuyến bay từ Seattle đến New York vào ngày 28.
 
-    ![Agent Playground](../../../translated_images/agent-playground.dc146586de71501011798b919ae595f4d4facf8c3a5f53e0107e7b80fc2418d1.vi.png)
+    > **Lưu ý**: Tác nhân có thể không đưa ra các câu trả lời chính xác, vì không có dữ liệu thời gian thực nào được sử dụng trong bài tập này. Mục đích là để kiểm tra khả năng của tác nhân trong việc hiểu và phản hồi các truy vấn dựa trên hướng dẫn đã cung cấp.
 
-3. Sau khi kiểm tra agent, bạn có thể tùy chỉnh thêm bằng cách thêm nhiều intent, dữ liệu huấn luyện và hành động để nâng cao khả năng của nó.
+    ![Agent Playground](../../../translated_images/vi/agent-playground.dc146586de715010.webp)
+
+3. Sau khi kiểm tra tác nhân, bạn có thể tùy chỉnh thêm bằng cách thêm nhiều ý định, dữ liệu đào tạo và hành động để nâng cao năng lực của nó.
 
 ## Dọn dẹp tài nguyên
 
-Khi bạn đã hoàn thành việc kiểm tra agent, bạn có thể xóa nó để tránh phát sinh chi phí không cần thiết.
-1. Mở [Azure portal](https://portal.azure.com) và xem nội dung của nhóm tài nguyên nơi bạn đã triển khai các tài nguyên hub dùng trong bài tập này.
+Khi bạn đã hoàn thành việc kiểm tra tác nhân, bạn có thể xóa nó để tránh phát sinh chi phí không mong muốn.
+1. Mở [Azure portal](https://portal.azure.com) và xem nội dung của nhóm tài nguyên nơi bạn đã triển khai các tài nguyên trung tâm sử dụng trong bài tập này.
 2. Trên thanh công cụ, chọn **Delete resource group**.
 3. Nhập tên nhóm tài nguyên và xác nhận bạn muốn xóa nó.
 
 ## Tài nguyên
 
-- [Tài liệu Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst)
-- [Cổng Azure AI Foundry](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst)
+- [Tài liệu Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst)
+- [Cổng Microsoft Foundry](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst)
 - [Bắt đầu với Azure AI Studio](https://techcommunity.microsoft.com/blog/educatordeveloperblog/getting-started-with-azure-ai-studio/4095602?WT.mc_id=academic-105485-koreyst)
-- [Kiến thức cơ bản về AI agents trên Azure](https://learn.microsoft.com/en-us/training/modules/ai-agent-fundamentals/?WT.mc_id=academic-105485-koreyst)
+- [Khái niệm cơ bản về các tác nhân AI trên Azure](https://learn.microsoft.com/en-us/training/modules/ai-agent-fundamentals/?WT.mc_id=academic-105485-koreyst)
 - [Azure AI Discord](https://aka.ms/AzureAI/Discord)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc sự không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn tham khảo chính xác nhất. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1423,7 +1423,7 @@ Metacognition is a powerful tool that can significantly enhance the capabilities
 
 ### Got More Questions about the Metacognition Design Pattern?
 
-Join the [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.
+Join the [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.
 
 ## Previous Lesson
 

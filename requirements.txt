@@ -1,31 +1,25 @@
-semantic-kernel
-semantic-kernel[azure]
-semantic-kernel[mcp]
-openai
-
-# AutoGen framework
-autogen-agentchat
-autogen-core
-autogen-ext
-autogen-ext[azure]
-
-# Azure AI services
+# Azure AI & Identity
 azure-ai-inference
 azure-ai-projects
+azure-identity
 azure-search-documents
-httpx
-ipykernel
-pillow
-python-dotenv
-pandas
-uvicorn
-nest-asyncio
 
+# Microsoft Agent Framework
 agent-framework
+a2a-sdk
 
-
+# Model Context Protocol
 mcp[cli]
 
-# Other dependencies
-a2a-sdk
+# OpenAI
+openai
+
+# Data & Utilities
+httpx
+ipykernel
+nest-asyncio
 numpy
+pandas
+pillow
+python-dotenv
+uvicorn

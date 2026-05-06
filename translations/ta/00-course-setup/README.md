@@ -1,73 +1,64 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "86273689a010b5efecaf7fa23104e0fb",
-  "translation_date": "2025-11-07T08:53:55+00:00",
-  "source_file": "00-course-setup/README.md",
-  "language_code": "ta"
-}
--->
-# பாடநெறி அமைப்பு
+# பாடக்கூறு அமைப்பு
 
 ## அறிமுகம்
 
-இந்த பாடத்தில், இந்த பாடநெறியின் குறியீட்டு மாதிரிகளை இயக்குவது எப்படி என்பதைப் பற்றி கற்றுக்கொள்வீர்கள்.
+இந்த பாடத்தில், இந்த பாடக்கூற்றின் குறியீடு உதாரணங்களை எப்படி இயக்குவது என்பதைப் பற்றி விளக்கப்படும்.
 
-## மற்ற கற்றவர்களுடன் சேர்ந்து உதவி பெறுங்கள்
+## மற்ற கற்றலாளர்களுடன் சேர்ந்து உதவி பெறுங்கள்
 
-உங்கள் ரெப்போவை கிளோன் செய்ய ஆரம்பிக்கும்முன், [AI Agents For Beginners Discord சேனலில்](https://aka.ms/ai-agents/discord) சேர்ந்து அமைப்பில் உதவி பெறவும், பாடநெறி குறித்த கேள்விகளை கேட்கவும் அல்லது மற்ற கற்றவர்களுடன் தொடர்பு கொள்ளவும்.
+உங்கள் ரெப்போவை கிளோன் செய்யத் தொடங்குவதற்கு முன், அமைப்பிற்கு உதவ, பாடக்கூறுக்கான கேள்விகளை கேட்க அல்லது பிற கற்றலாளர்களுடன் தொடர்பு கொள்ள, [AI Agents For Beginners Discord சேனலில்](https://aka.ms/ai-agents/discord) சேர வேண்டும்.
 
-## இந்த ரெப்போவை கிளோன் செய்யவும் அல்லது ஃபோர்க் செய்யவும்
+## இந்த ரெப்போவை கிளோன் செய்ய அல்லது ஃபோர்க் செய்யவும்
 
-தொடங்க, தயவுசெய்து GitHub Repository ஐ கிளோன் செய்யவும் அல்லது ஃபோர்க் செய்யவும். இது பாடநெறி பொருட்களின் உங்கள் சொந்த பதிப்பை உருவாக்க உதவும், இதனால் நீங்கள் குறியீட்டை இயக்க, சோதிக்க மற்றும் மாற்ற முடியும்!
+தொடங்க, தயவுசெய்து GitHub ரெப்போவை கிளோன் செய்யவோ அல்லது ஃபோர்க் செய்யவோ செய்யவும். இது பாடத் தளப்பொருளின் உங்கள் சொந்த பதிப்பை உருவாக்கும், இதனால் நீங்கள் குறியீட்டை இயக்கி, சோதித்து மற்றும் மாற்றலாம்!
 
-இதைச் செய்ய, <a href="https://github.com/microsoft/ai-agents-for-beginners/fork" target="_blank">ரெப்போவை ஃபோர்க் செய்ய</a> இணைப்பைக் கிளிக் செய்யவும்.
+இது செய்ய <a href="https://github.com/microsoft/ai-agents-for-beginners/fork" target="_blank">ரெப்போவை ஃபோர்க் செய்ய</a> லிங்கை கிளிக் செய்யலாம்
 
-இப்போது, இந்த பாடநெறியின் உங்கள் சொந்த ஃபோர்க் செய்யப்பட்ட பதிப்பு பின்வரும் இணைப்பில் இருக்கும்:
+தற்போது, கீழ்க்கண்ட லிங்கில் இந்த பாடத்திட்டத்தின் உங்கள் சொந்த ஃபோர்க் செய்யப்பட்ட பதிப்பு இருக்கும்:
 
-![Forked Repo](../../../translated_images/forked-repo.33f27ca1901baa6a5e13ec3eb1f0ddd3a44d936d91cc8cfb19bfdb9688bd2c3d.ta.png)
+![Forked Repo](../../../translated_images/ta/forked-repo.33f27ca1901baa6a.webp)
 
-### சுருக்கமான கிளோன் (பயிற்சி / Codespaces க்கு பரிந்துரைக்கப்படுகிறது)
+### ஷலோ கிளோன் (கருத்தரங்கம்/கோட்ஸ்பேஸ்களுக்கு பரிந்துரைக்கப்படுகிறது)
 
-  >முழு ரெப்போசிட்டரி பெரியதாக இருக்கலாம் (~3 GB) முழு வரலாற்றையும் அனைத்து கோப்புகளையும் பதிவிறக்கம் செய்யும்போது. நீங்கள் பயிற்சியில் மட்டுமே பங்கேற்கிறீர்கள் அல்லது சில பாட கோப்புறைகளை மட்டுமே தேவைப்படுகிறீர்கள் என்றால், சுருக்கமான கிளோன் (அல்லது sparse clone) வரலாற்றை குறைத்து அல்லது தேவையற்ற கோப்புகளை தவிர்த்து பெரும்பாலான பதிவிறக்கத்தை தவிர்க்க உதவும்.
+  >முழு ரெப்போ (~3 GB) வரலாற்றையும் அனைத்து கோப்புகளையும் பதிவிறக்கம் செய்யும் போது பெரியதாக இருக்கலாம். நீங்கள் கருத்தரங்கத்திற்கு மட்டுமே செல்வதாக இருந்தால் அல்லது சில பாடக் கோப்புக விக்கப்பட்டால், ஷலோ கிளோன் (அல்லது ஸ்பார்ஸ் கிளோன்) பெரும்பாலான பதிவிறக்கத்தை குறைக்கும், வரலாற்றை குறைத்து அல்லது பிளாப்களை தவிர்த்து.
 
-#### விரைவான சுருக்கமான கிளோன் — குறைந்த வரலாறு, அனைத்து கோப்புகளும்
+#### விரைவான ஷலோ கிளோன் — குறைந்த வரலாறு, அனைத்து கோப்புகளும்
 
-கீழே உள்ள கட்டளைகளில் `<your-username>` ஐ உங்கள் ஃபோர்க் URL (அல்லது நீங்கள் விரும்பினால் upstream URL) மூலம் மாற்றவும்.
+கீழ்க்கண்ட கட்டளைகளில் `<your-username>`ஐ உங்கள் ஃபோர்க் URL (அல்லது மேல்சுரங்க URL) இன் மூலம் மாற்றவும்.
 
-சமீபத்திய கமிட் வரலாற்றை மட்டுமே கிளோன் செய்ய:
+சரியான commit வரலாற்றை மட்டும் கிளோன் செய்ய:
 
 ```bash|powershell
 git clone --depth 1 https://github.com/<your-username>/ai-agents-for-beginners.git
 ```
 
-ஒரு குறிப்பிட்ட கிளையை கிளோன் செய்ய:
+எந்தொரு கிளையை கிளோன் செய்ய:
 
 ```bash|powershell
 git clone --depth 1 --branch <branch-name> https://github.com/<your-username>/ai-agents-for-beginners.git
 ```
 
-#### பகுதி (sparse) கிளோன் — குறைந்த blobs + தேர்ந்தெடுக்கப்பட்ட கோப்புறைகள் மட்டுமே
+#### பகுதி (ஸ்பார்ஸ்) கிளோன் — குறைந்த பிளாப்கள் + தேர்ந்தெடுக்கப்பட்ட கோப்புறைகள் மட்டுமே
 
-இது பகுதி கிளோன் மற்றும் sparse-checkout ஐப் பயன்படுத்துகிறது (Git 2.25+ தேவை மற்றும் பகுதி கிளோன் ஆதரவு கொண்ட நவீன Git பரிந்துரைக்கப்படுகிறது):
+இது பகுதி கிளோன் மற்றும் ஸ்பார்ஸ்-செக்அவுட்டை பயன்படுத்துகிறது (Git 2.25+ தேவை, பகுதி கிளோன் ஆதரவு உடைய நவீன Git பரிந்துரைக்கப்படுகிறது):
 
 ```bash|powershell
 git clone --depth 1 --filter=blob:none --sparse https://github.com/<your-username>/ai-agents-for-beginners.git
 ```
 
-ரெப்போ கோப்புறைக்குள் செல்லவும்:
+ரெப்போ கோப்புறைக்கு செல்லவும்:
 
 ```bash|powershell
 cd ai-agents-for-beginners
 ```
 
-பின்னர் நீங்கள் எந்த கோப்புறைகளை விரும்புகிறீர்கள் என்பதை குறிப்பிடவும் (கீழே உள்ள உதாரணம் இரண்டு கோப்புறைகளை காட்டுகிறது):
+பிறகு நீங்கள் வேண்டுமென்ற கோப்புறைகளை குறிப்பிடவும் (கீழ் உதாரணம் இரண்டு கோப்புறைகளை காட்டுகிறது):
 
 ```bash|powershell
 git sparse-checkout set 00-course-setup 01-intro-to-ai-agents
 ```
 
-கோப்புகளை கிளோன் செய்து சரிபார்த்த பிறகு, நீங்கள் கோப்புகளை மட்டுமே தேவைப்படுகிறீர்கள் மற்றும் இடத்தை விடுவிக்க விரும்பினால் (git வரலாறு இல்லை), ரெப்போசிட்டரி மெட்டாடேட்டாவை நீக்கவும் (💀மீட்டெடுக்க முடியாதது — அனைத்து Git செயல்பாடுகளையும் இழக்க நேரிடும்: கமிட்கள், pulls, pushes, அல்லது வரலாறு அணுகல்).
+கிளோன் செய்து கோப்புகளை உறுதி செய்த பிறகு, நீங்கள் கோப்புகளை மட்டும் வேண்டுமெனில் (git வரலாறு இல்லாமல்) இடத்தை விடுவிக்க, ரெப்போ மெட்டாடேட்டாவை நீக்கவும் (💀திரும்ப முடியாதது — அனைத்து Git செயல்பாடுகளும் பாதிக்கப்படும்: commit, pull, push, வரலாறு அணுகல் இல்லை).
 
 ```bash
 # zsh/bash
@@ -75,55 +66,45 @@ rm -rf .git
 ```
 
 ```powershell
-# PowerShell
+# பவர் ஷெல்
 Remove-Item -Recurse -Force .git
 ```
 
 #### GitHub Codespaces பயன்படுத்துதல் (உள்ளூர் பெரிய பதிவிறக்கங்களை தவிர்க்க பரிந்துரைக்கப்படுகிறது)
 
-- இந்த ரெப்போவிற்கான புதிய Codespace ஐ [GitHub UI](https://github.com/codespaces) மூலம் உருவாக்கவும்.  
+- இந்த ரெப்போவிற்கான புதிய Codespace ஐ [GitHub UI](https://github.com/codespaces) மூலம் உருவாக்கவும்.
 
-- புதிய Codespace இன் டெர்மினலில், மேலே உள்ள சுருக்கமான/பகுதி கிளோன் கட்டளைகளில் ஒன்றை இயக்கி, உங்களுக்கு தேவையான பாட கோப்புறைகளை மட்டுமே Codespace வேலைப்பகுதிக்குள் கொண்டு வரவும்.
-- விருப்பமாக: Codespaces உள்ளே கிளோன் செய்த பிறகு, .git ஐ நீக்கி கூடுதல் இடத்தை மீட்டெடுக்கவும் (மேலே உள்ள நீக்க கட்டளைகளைப் பார்க்கவும்).
-- குறிப்பு: நீங்கள் ரெப்போவை நேரடியாக Codespaces இல் திறக்க விரும்பினால் (கூடுதல் கிளோன் இல்லாமல்), Codespaces devcontainer சூழலை உருவாக்கும் மற்றும் உங்களுக்கு தேவையானதை விட அதிகமாக வழங்கலாம் என்பதை கவனத்தில் கொள்ளவும். புதிய Codespace உள்ளே சுருக்கமான நகலை கிளோன் செய்வது டிஸ்க் பயன்பாட்டை மேலாண்மை செய்ய அதிக கட்டுப்பாட்டை வழங்கும்.
+- புதிய Codespace டெர்மினலில் மேலே உள்ள ஷலோ/ஸ்பார்ஸ் கிளோன் கட்டளைகளில் ஒரொன்றை இயக்கி தேவையான பாடக் கோப்புகளை மட்டுமே Codespace பணிப் பகுதிக்கு கொண்டு வாருங்கள்.
+- விருப்பமாக: Codespaces இல் கிளோன் செய்த பிறகு கூடுதல் இடத்தை மீட்டெடுக்க .git ஐ அகற்று (மேலே உள்ள அகற்று கட்டளைகள் பார்க்கவும்).
+- குறிப்பு: Codespaces ஐ நேரடியாக திறக்க விரும்பினால் (கிளோன் இல்லாமல்), Codespaces devcontainer சூழலை உருவாக்கும் மற்றும் நீங்கள் தேவையானதைவிட அதிக அம்சங்களை யார் வழங்கலாம். புதிய Codespace இல் ஷலோ பிரதியை கிளோன் செய்தால் இட பயன்பாட்டைக் குறுக்க அதிக கட்டுப்பாடு உண்டு.
 
-#### குறிப்புகள்
+#### குறிப்பு
 
-- நீங்கள் திருத்த/கமிட் செய்ய விரும்பினால், உங்கள் ஃபோர்க் URL ஐ எப்போதும் மாற்றவும்.
-- பின்னர் மேலும் வரலாறு அல்லது கோப்புகள் தேவைப்பட்டால், அவற்றை fetch செய்யலாம் அல்லது sparse-checkout ஐச் சரிசெய்து கூடுதல் கோப்புறைகளைச் சேர்க்கலாம்.
+- உங்கள் ஃபோர்க் URL உடன் கிளோன் URL ஐ எப்போதும் மாற்றுங்கள், நீங்கள் திருத்த / commit செய்ய விரும்பினால்.
+- பிறகு நீங்கள் அதிக வரலாறு அல்லது கோப்புகள் தேவையானால், அவற்றை பெறலாம் அல்லது ஸ்பார்ஸ்-செக்அவுட் இணைத்து கூடுதல் கோப்புறையைச் சேர்க்கலாம்.
 
 ## குறியீட்டை இயக்குதல்
 
-இந்த பாடநெறி, AI Agents உருவாக்குவதற்கான அனுபவத்தைப் பெற Jupyter Notebooks தொடர்களை வழங்குகிறது.
+இந்த பாடக்கூறு AI முகவர்களை உருவாக்க கைகண்டறிதல் அனுபவம் பெற நீங்கள் இயக்க கூடிய பல Jupyter குறிப்பேட்டுக்கள் வழங்குகிறது.
 
-குறியீட்டு மாதிரிகள் பின்வருமாறு பயன்படுத்தப்படுகின்றன:
+குறியீடு உதாரணங்கள் **Microsoft Agent Framework (MAF)** ஐ `AzureAIProjectAgentProvider` உடன் பயன்படுத்துகின்றன, இது **Microsoft Foundry** யின் மூலம் **Azure AI Agent Service V2** (Responses API) இணையமுச்சியில் இணைக்கிறது.
 
-**GitHub கணக்கு தேவை - இலவசம்**:
-
-1) Semantic Kernel Agent Framework + GitHub Models Marketplace. (semantic-kernel.ipynb) என லேபிள் செய்யப்பட்டுள்ளது.
-2) AutoGen Framework + GitHub Models Marketplace. (autogen.ipynb) என லேபிள் செய்யப்பட்டுள்ளது.
-
-**Azure சந்தா தேவை**:
-3) Azure AI Foundry + Azure AI Agent Service. (azureaiagent.ipynb) என லேபிள் செய்யப்பட்டுள்ளது.
-
-இந்த மூன்று வகையான உதாரணங்களையும் முயற்சிக்குமாறு உங்களை ஊக்குவிக்கிறோம், எது உங்களுக்கு சிறந்தது என்பதைப் பார்க்க.
-
-நீங்கள் எந்த விருப்பத்தைத் தேர்ந்தெடுத்தாலும், அதற்கேற்ப கீழே உள்ள அமைப்பு படிகளை நீங்கள் பின்பற்ற வேண்டும்:
+அனைத்து Python குறிப்பேட்டுக்கள் `*-python-agent-framework.ipynb` என குறிக்கப்பட்டுள்ளன.
 
 ## தேவைகள்
 
 - Python 3.12+
-  - **NOTE**: Python3.12 நிறுவப்படவில்லை என்றால், அதை நிறுவவும். பின்னர் python3.12 ஐப் பயன்படுத்தி உங்கள் venv ஐ உருவாக்கவும், இதனால் requirements.txt கோப்பிலிருந்து சரியான பதிப்புகள் நிறுவப்படும்.
-  
+  - **குறிப்பு**: Python3.12 நிறுவவில்லை என்றால், அதை நிறுவுக. பிறகு `requirements.txt` கோப்பில் இருந்து சரியான பதிப்புகள் நிறுவ Python3.12 கொண்டு venv உருவாக்குக.
+
     >உதாரணம்
 
-    Python venv கோப்புறை உருவாக்கவும்:
+    Python venv கோப்புறையை உருவாக்கு:
 
     ```bash|powershell
     python -m venv venv
     ```
 
-    பின்னர் venv சூழலை செயல்படுத்தவும்:
+    பிறகு venv சூழலை செயல்படுத்த:
 
     ```bash
     # zsh/bash
@@ -135,113 +116,84 @@ Remove-Item -Recurse -Force .git
     venv\Scripts\activate
     ```
 
-- .NET 10+: .NET ஐப் பயன்படுத்தும் மாதிரிக்குறியீடுகளுக்கு, [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) அல்லது அதற்கு மேல் நிறுவவும். பின்னர், நிறுவப்பட்ட .NET SDK பதிப்பைச் சரிபார்க்கவும்:
+- .NET 10+: .NET பயன்படுத்தும் உதாரண குறியீடுகளுக்கு, [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) அல்லது அதற்கு மேற்பட்டது நிறுவInstall்கு. பிறகு நிறுவிய .NET SDK பதிப்பை சரிபார்க்க:
 
     ```bash|powershell
     dotnet --list-sdks
     ```
 
-- GitHub கணக்கு - GitHub Models Marketplace அணுக
-- Azure சந்தா - Azure AI Foundry அணுக
-- Azure AI Foundry கணக்கு - Azure AI Agent Service அணுக
+- **Azure CLI** — அங்கீகாரத்திற்கு அவசியம். [aka.ms/installazurecli](https://aka.ms/installazurecli) இலிருந்து நிறுவ.
+- **Azure சந்தா** — Microsoft Foundry மற்றும் Azure AI Agent Service அணுக.
+- **Microsoft Foundry திட்டம்** — உள்ளடக்க மாடலைப்போன்ற ஒரு திட்டம் (எ.கா., `gpt-4o`). கீழே [அடி 1](#அடி-1-microsoft-foundry-திட்டத்தை-உருவாக்கவும்) பார்த்து.
 
-இந்த ரெப்போசிட்டரியின் மூலத்தில் `requirements.txt` கோப்பை சேர்த்துள்ளோம், இது குறியீட்டு மாதிரிகளை இயக்க தேவையான அனைத்து Python தொகுதிகளையும் கொண்டுள்ளது.
+இந்த ரெப்போவின் ரூட்டில் உள்ள `requirements.txt` கோப்பில் அனைத்து தேவையான Python தொகுதிகள் உள்ளன.
 
-நீங்கள் அதை ரெப்போசிட்டரியின் மூலத்தில் உங்கள் டெர்மினலில் பின்வரும் கட்டளையை இயக்குவதன் மூலம் நிறுவலாம்:
+அவற்றை நிறுவ, ரெப்போவின் ரூட்டில் கீழ்காணும் கட்டளையை உங்கள் டெர்மினலில் இயக்கவும்:
 
 ```bash|powershell
 pip install -r requirements.txt
 ```
 
-எந்தவொரு முரண்பாடுகளையும் மற்றும் சிக்கல்களையும் தவிர்க்க Python மெய்நிகர் சூழலை உருவாக்க பரிந்துரைக்கப்படுகிறது.
+எந்தவொரு முரண்பாடுகளையோ பிரச்சனையையோ தவிர்க்க Python நெருக்கமான சூழலை உருவாக்க பரிந்துரைக்கப்படுகிறது.
 
-## VSCode அமைப்பு
+## VSCode அமைக்கவும்
 
-VSCode இல் சரியான Python பதிப்பைப் பயன்படுத்துகிறீர்கள் என்பதை உறுதிசெய்க.
+VSCode இல் சரியான Python பதிப்பைப் பயன்படுத்துகிறீர்களா என்பதை சரிபார்க்கவும்.
 
 ![image](https://github.com/user-attachments/assets/a85e776c-2edb-4331-ae5b-6bfdfb98ee0e)
 
-## GitHub Models உதாரணங்களுக்கான அமைப்பு 
+## Microsoft Foundry மற்றும் Azure AI Agent Service ஐ அமைக்கவும்
 
-### படி 1: உங்கள் GitHub தனிப்பட்ட அணுகல் டோக்கனை (PAT) பெறவும்
+### அடி 1: Microsoft Foundry திட்டத்தை உருவாக்கவும்
 
-இந்த பாடநெறி GitHub Models Marketplace ஐ பயன்படுத்துகிறது, இது உங்களுக்கு இலவசமாக பெரிய மொழி மாதிரிகளை (LLMs) அணுக அனுமதிக்கிறது, இதன் மூலம் நீங்கள் AI Agents உருவாக்க முடியும்.
+நீங்கள் Azure AI Foundry **ஹப்** மற்றும் **திட்டம்** உடன் ஒரு பயனர் இருக்க வேண்டும், மேலும் குறிப்பேட்டுக்களை இயக்கும் மாடல் நடப்புத் திட்டமாக இருக்க வேண்டும்.
 
-GitHub Models ஐப் பயன்படுத்த, நீங்கள் [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) ஐ உருவாக்க வேண்டும்.
+1. [ai.azure.com](https://ai.azure.com) செல்லவும் மற்றும் உங்கள் Azure கணக்குடன் புகுபதிகை செய்யவும்.
+2. ஒரு **ஹப்** உருவாக்கவும் (அல்லது ஏற்கனவே உள்ளதை பயன்படுத்தவும்). பார்க்கவும்: [Hub resources overview](https://learn.microsoft.com/azure/ai-foundry/concepts/ai-resources).
+3. ஹப்புக்குள் ஒரு **திட்டம்** உருவாக்கவும்.
+4. **Models + Endpoints** → **Deploy model** மூலம் ஒரு மாடல் (எ.கா., `gpt-4o`) வெளியிடவும்.
 
-இது உங்கள் GitHub கணக்கில் உள்ள <a href="https://github.com/settings/personal-access-tokens" target="_blank">Personal Access Tokens settings</a> சென்று செய்யலாம்.
+### அடி 2: உங்கள் திட்ட இடைமுக மற்றும் மாடல் வெளியீட்டு பெயரை பெறுக
 
-உங்கள் டோக்கனை உருவாக்கும்போது [குறைந்த அனுமதியின் கொள்கையை](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) பின்பற்றவும். இது இந்த பாடநெறியில் உள்ள குறியீட்டு மாதிரிகளை இயக்க டோக்கனுக்கு தேவையான அனுமதிகளை மட்டுமே வழங்க வேண்டும் என்பதைக் குறிக்கிறது.
+Microsoft Foundry போர்டலில் உங்கள் திட்டத்தில் இருந்து:
 
-1. உங்கள் திரையின் இடது பக்கத்தில் **Developer settings** சென்று `Fine-grained tokens` விருப்பத்தைத் தேர்ந்தெடுக்கவும்.
+- **திட்ட இடைமுகம்** — **Overview** பக்கத்திற்கு சென்று இடைமுக URL ஐ நகல் எடுக்கவும்.
 
-   ![Developer settings](../../../translated_images/profile_developer_settings.410a859fe749c755c859d414294c5908e307222b2c61819c3203bbeed4470e25.ta.png)
+![Project Connection String](../../../translated_images/ta/project-endpoint.8cf04c9975bbfbf1.webp)
 
-   பின்னர் `Generate new token` ஐத் தேர்ந்தெடுக்கவும்.
+- **மாடல் வெளியீட்டு பெயர்** — **Models + Endpoints** சென்று உங்கள் வெளியிடப்பட்ட மாடலை தேர்வு செய்து **Deployment name** (எ.கா., `gpt-4o`) லை கவனிக்கவும்.
 
-   ![Generate Token](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.ta.png)
+### அடி 3: `az login` மூலம் Azure இல் நுழைக
 
-2. உங்கள் டோக்கனின் நோக்கத்தை பிரதிபலிக்கும் விளக்கமான பெயரை உள்ளிடவும், பின்னர் அதை அடையாளம் காண எளிதாக இருக்கும்.
+அனைத்து குறிப்பேட்டுக்களும் அங்கீகாரத்திற்கு **`AzureCliCredential`** பயன்படுத்துகின்றன — API விசைகள் தேவையில்லை. எனவே Azure CLI மூலம் உள்நுழைவது அவசியம்.
 
-    🔐 டோக்கன் காலவரையறை பரிந்துரை
+1. **Azure CLI** இன்னும் நிறுவல் செய்யவில்லை என்றால் நிறுவுக: [aka.ms/installazurecli](https://aka.ms/installazurecli)
 
-    பரிந்துரைக்கப்பட்ட காலம்: 30 நாட்கள்  
-    மேலும் பாதுகாப்பான நிலைப்பாட்டிற்காக, குறுகிய காலத்தைத் தேர்ந்தெடுக்கலாம்—7 நாட்கள் 🛡️  
-    இது ஒரு தனிப்பட்ட இலக்கை அமைக்கவும், உங்கள் கற்றல் வேகத்தை அதிகரிக்கவும் ஒரு சிறந்த வழியாகும் 🚀.
+2. உள்நுழைய கீழ்க்காணும் கட்டளையை இயக்கவும்:
 
-    ![Token Name and Expiration](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.ta.png)
+    ```bash|powershell
+    az login
+    ```
 
-3. டோக்கனின் பரந்தியை உங்கள் ரெப்போ ஃபோர்க் வரை மட்டுமே வரையறுக்கவும்.
+    அல்லது உங்களுக்கு உலாவி இல்லாத தொலைநிலை/கோட்ஸ்பேஸ் சூழல் இருந்தால்:
 
-    ![Limit scope to fork repository](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.ta.png)
+    ```bash|powershell
+    az login --use-device-code
+    ```
 
-4. டோக்கனின் அனுமதிகளை வரையறுக்கவும்: **Permissions** கீழ், **Account** தாவலை கிளிக் செய்து, "+ Add permissions" பொத்தானை கிளிக் செய்யவும். ஒரு டிராப்டவுன் தோன்றும். **Models** ஐத் தேடி, அதற்கான பெட்டியைச் சரிபார்க்கவும்.
+3. உங்களை மூடியிருக்கும் சந்தாவை தேர்ந்தெடுக்கவும் — நீங்கள் கொண்டுள்ள Foundry திட்டத்தை உள்ளடக்கியது தேர்ந்தெடுக்கவும்.
 
-    ![Add Models Permission](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.ta.png)
+4. உள்நுழைந்துள்ளீர்களா என்பதை சரிபார்க்க:
 
-5. டோக்கனை உருவாக்குவதற்கு முன் தேவையான அனுமதிகளை சரிபார்க்கவும். ![Verify Permissions](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.ta.png)
+    ```bash|powershell
+    az account show
+    ```
 
-6. டோக்கனை உருவாக்குவதற்கு முன், அதை ஒரு பாதுகாப்பான இடத்தில் (கடவுச்சொல் மேலாளர் போன்றது) சேமிக்க தயாராக இருக்கவும், ஏனெனில் நீங்கள் அதை மீண்டும் காண முடியாது. ![Store Token Securely](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.ta.png)
+> **ஏன் `az login`?** குறிப்பேட்டுக்கள் `azure-identity` உட்பெறும் `AzureCliCredential` மூலம் அங்கீகாரம் பெறுகின்றன. இது உங்கள் Azure CLI அமர்வு அங்கீகாரம் வழங்கும் — `.env` கோப்பில் API விசைகள் அல்லது ரகசியங்கள் தேவையில்லை. இது ஒரு [பாதுகாப்பு சிறந்த நடைமுறை](https://learn.microsoft.com/azure/developer/ai/keyless-connections).
 
-உங்கள் புதிய டோக்கனை நகலெடுக்கவும். இப்போது இந்த பாடநெறியில் உள்ள `.env` கோப்பில் இதைச் சேர்க்க வேண்டும்.
+### அடி 4: உங்கள் `.env` கோப்பை உருவாக்கவும்
 
-### படி 2: உங்கள் `.env` கோப்பை உருவாக்கவும்
-
-உங்கள் `.env` கோப்பை உருவாக்க, உங்கள் டெர்மினலில் பின்வரும் கட்டளையை இயக்கவும்.
-
-```bash
-# zsh/bash
-cp .env.example .env
-```
-
-```powershell
-# PowerShell
-Copy-Item .env.example .env
-```
-
-இது எடுத்துக்காட்டு கோப்பை நகலெடுத்து, உங்கள் கோப்புறையில் `.env` ஐ உருவாக்கும், அங்கு நீங்கள் சூழல் மாறிகளுக்கான மதிப்புகளை நிரப்ப வேண்டும்.
-
-உங்கள் டோக்கனை நகலெடுத்து, உங்கள் விருப்பமான உரை திருத்தியில் `.env` கோப்பைத் திறந்து, உங்கள் டோக்கனை `GITHUB_TOKEN` புலத்தில் ஒட்டவும்.
-
-![GitHub Token Field](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.ta.png)
-
-இப்போது நீங்கள் இந்த பாடநெறியின் குறியீட்டு மாதிரிகளை இயக்க முடியும்.
-
-## Azure AI Foundry மற்றும் Azure AI Agent Service உதாரணங்களுக்கான அமைப்பு
-
-### படி 1: உங்கள் Azure திட்டத்தின் இறுதிநிலையைப் பெறவும்
-
-Azure AI Foundry இல் ஒரு hub மற்றும் திட்டத்தை உருவாக்குவதற்கான படிகளை இங்கே பின்பற்றவும்: [Hub resources overview](https://learn.microsoft.com/azure/ai-foundry/concepts/ai-resources)
-
-நீங்கள் உங்கள் திட்டத்தை உருவாக்கிய பிறகு, உங்கள் திட்டத்திற்கான இணைப்பு சரத்தைப் பெற வேண்டும்.
-
-இது Azure AI Foundry போர்டலின் **Overview** பக்கத்திற்குச் சென்று செய்யலாம்.
-
-![Project Connection String](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.ta.png)
-
-### Step 2: Create Your `.env` File
-
-To create your `.env` file run the following command in your terminal.
+உதாரண கோப்பை நகலெடுக்கவும்:
 
 ```bash
 # zsh/bash
@@ -249,81 +201,134 @@ cp .env.example .env
 ```
 
 ```powershell
-# PowerShell
+# பவர் ஷெல்
 Copy-Item .env.example .env
 ```
 
-This will copy the example file and create a `.env` in your directory and where you fill in the values for the environment variables.
+`.env` திறந்து கீழ்க்காணும் இரண்டு மதிப்புகளை நிரப்பவும்:
 
-With your token copied, open the `.env` file in your favorite text editor and paste your token into the `PROJECT_ENDPOINT` field.
+```env
+AZURE_AI_PROJECT_ENDPOINT=https://<your-project>.services.ai.azure.com/api/projects/<your-project-id>
+AZURE_AI_MODEL_DEPLOYMENT_NAME=gpt-4o
+```
 
-### Step 3: Sign in to Azure
+| மாறி | எங்கு கண்டறிவது |
+|----------|-----------------|
+| `AZURE_AI_PROJECT_ENDPOINT` | Foundry போர்டல் → உங்கள் திட்டம் → **Overview** பக்கத்தில் |
+| `AZURE_AI_MODEL_DEPLOYMENT_NAME` | Foundry போர்டல் → **Models + Endpoints** → உங்கள் வெளியிடப்பட்ட மாடல் பெயர் |
 
-As a security best practice, we'll use [keyless authentication](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) to authenticate to Azure OpenAI with Microsoft Entra ID. 
+பல்கலைபாடுகளுக்கு இனி இது போதும்! குறிப்பேட்டுக்கள் தானாக உங்கள் `az login` அமர்வு மூலம் அங்கீகாரம் பெற்றுக் கொள்வது.
 
-Next, open a terminal and run `az login --use-device-code` to sign in to your Azure account.
+### அடி 5: Python சார்ந்த பொருட்களை நிறுவவும்
 
-Once you've logged in, select your subscription in the terminal.
+```bash|powershell
+pip install -r requirements.txt
+```
 
-## Additional Environment Variables - Azure Search and Azure OpenAI 
+நீங்கள் முன்பே உருவாக்கிய நெருக்கமான சூழலில் இதை இயக்க பரிந்துரைக்கப்படுகிறது.
 
-For the Agentic RAG Lesson - Lesson 5 - there are samples that use Azure Search and Azure OpenAI.
+## பாடம் 5 (Agentic RAG)க்கான கூடுதல் அமைப்பு
 
-If you want to run these samples, you will need to add the following environment variables to your `.env` file:
+பாடம் 5, மீட்பு விருத்தி உருவாக்கத்திற்காக **Azure AI Search** பயன்படுத்துகிறது. அந்தப் பாடத்தை இயக்க திட்டமிட்டால், இந்த மாறிகளை `.env` கோப்பில் சேர்க்கவும்:
 
-### Overview Page (Project)
+| மாறி | எங்கு கண்டறிவது |
+|----------|-----------------|
+| `AZURE_SEARCH_SERVICE_ENDPOINT` | Azure போர்டல் → உங்கள் **Azure AI Search** வளம் → **Overview** → URL |
+| `AZURE_SEARCH_API_KEY` | Azure போர்டல் → உங்கள் **Azure AI Search** வளம் → **Settings** → **Keys** → முதன்மை நிர்வாக விசை |
 
-- `AZURE_SUBSCRIPTION_ID` - Check **Project details** on the **Overview** page of your project.
+## பாடங்கள் 6 மற்றும் 8 (GitHub Models) க்கான கூடுதல் அமைப்பு
 
-- `AZURE_AI_PROJECT_NAME` - Look at the top of the **Overview** page for your project.
+பாடங்கள் 6 மற்றும் 8 இல் சில குறிப்பேட்டுகள் **GitHub Models** ஐ பயன்படுத்துகிறது Azure AI Foundry பதில். நீங்கள் அந்த உதாரணங்களை இயக்க திட்டமிட்டால், `.env` கோப்பில் இந்த மாறிகளை சேர்க்கவும்:
 
-- `AZURE_OPENAI_SERVICE` - Find this in the **Included capabilities** tab for **Azure OpenAI Service** on the **Overview** page.
+| மாறி | எங்கு கண்டறிவது |
+|----------|-----------------|
+| `GITHUB_TOKEN` | GitHub → **Settings** → **Developer settings** → **Personal access tokens** |
+| `GITHUB_ENDPOINT` | `https://models.inference.ai.azure.com` (ஒழுங்கு மதிப்பு) பயன்படுத்தவும் |
+| `GITHUB_MODEL_ID` | பயன்படுத்த வேண்டிய மாடல் பெயர் (எ.கா., `gpt-4o-mini`) |
 
-### Management Center
+## மாற்று வழங்குபவர்: MiniMax (OpenAI-உடன்பிறப்பானது)
 
-- `AZURE_OPENAI_RESOURCE_GROUP` - Go to **Project properties** on the **Overview** page of the **Management Center**.
+[MiniMax](https://platform.minimaxi.com/) பெரிய உள்ளடக்கம் கொண்ட மாடல்களை (204K டோக்கன்கள் வரை) OpenAI-உடன்பிறப்பான API மூலம் வழங்குகிறது. Microsoft Agent Framework இன் `OpenAIChatClient` எந்த OpenAI-உடன்பிறப்பான இடைமுகத்துடனும் வேலை செய்யும் போது, MiniMax-ஐ GitHub Models அல்லது OpenAI க்கு மாற்றி பயன்படுத்தலாம்.
 
-- `GLOBAL_LLM_SERVICE` - Under **Connected resources**, find the **Azure AI Services** connection name. If not listed, check the **Azure portal** under your resource group for the AI Services resource name.
+`.env` கோப்பில் இது போன்ற மாறிகளைச் சேர்க்கவும்:
 
-### Models + Endpoints Page
+| மாறி | எங்கு கண்டறிவது |
+|----------|-----------------|
+| `MINIMAX_API_KEY` | [MiniMax Platform](https://platform.minimaxi.com/) → API விசைகள் |
+| `MINIMAX_BASE_URL` | `https://api.minimax.io/v1` (ஒழுங்கு மதிப்பு) பயன்படுத்தவும் |
+| `MINIMAX_MODEL_ID` | பயன்படுத்த வேண்டிய மாடல் பெயர் (எ.கா., `MiniMax-M2.7`) |
 
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Select your embedding model (e.g., `text-embedding-ada-002`) and note the **Deployment name** from the model details.
+**கிடைக்கும் மாடல்கள்**: `MiniMax-M2.7` (பரிந்துரைக்கப்படும்), `MiniMax-M2.7-highspeed` (விரைவான பதில்கள்)
 
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Select your chat model (e.g., `gpt-4o-mini`) and note the **Deployment name** from the model details.
+`OpenAIChatClient` பயன்படுத்தும் குறியீடு உதாரணங்கள் (எ.கா., பாடம் 14 ஹோட்டல் பதிவு வேலைப்பாடு) when `MINIMAX_API_KEY` அமைக்கப்பட்டால் தானாக உங்கள் MiniMax அமைப்பைப் பயன்படுத்தும்.
 
-### Azure Portal
+## பாடம் 8 (Bing Grounding Workflow) க்கான கூடுதல் அமைப்பு
 
-- `AZURE_OPENAI_ENDPOINT` - Look for **Azure AI services**, click on it, then go to **Resource Management**, **Keys and Endpoint**, scroll down to the "Azure OpenAI endpoints", and copy the one that says "Language APIs".
+பாடம் 8 இல் உள்ள நிலைமை வேலைப்பாட்டுக் குறிப்பேட்டை **Bing Grounding** ஐ Azure AI Foundry மூலம் பயன்படுத்துகிறது. அந்த உதாரணத்தை இயக்க திட்டமிட்டால், `.env` கோப்பில் கீழ்காணும் மாறியைச் சேர்க்கவும்:
 
-- `AZURE_OPENAI_API_KEY` - From the same screen, copy KEY 1 or KEY 2.
+| மாறி | எங்கு கண்டறிவது |
+|----------|-----------------|
+| `BING_CONNECTION_ID` | Azure AI Foundry போர்டல் → உங்கள் திட்டம் → **Management** → **Connected resources** → உங்கள் Bing இணைப்பு → இணைப்பு ID நகலெடுக்கவும் |
 
-- `AZURE_SEARCH_SERVICE_ENDPOINT` - Find your **Azure AI Search** resource, click it, and see **Overview**.
+## பிரச்சனைகள் தீர்வுகருத்துகள்
 
-- `AZURE_SEARCH_API_KEY` - Then go to **Settings** and then **Keys** to copy the primary or secondary admin key.
+### macOS இல் SSL சான்றிதழ் உறுதிப்படுத்தல் பிழைகள்
 
-### External Webpage
+நீங்கள் macOS இல் உள்ளீர்கள் மற்றும் கீழ்க்காணும் போல பிழை காணப்படுமானால்:
 
-- `AZURE_OPENAI_API_VERSION` - Visit the [API version lifecycle](https://learn.microsoft.com/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) page under **Latest GA API release**.
+```plaintext
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain
+```
 
-### Setup keyless authentication
+இது Python இல் macOS இல் மிகவும் பரபரப்பான பிரச்சினை, கணினி SSL சான்றிதழ்கள் தானாக நம்பப்படாது. கீழ்காணும் தீர்வுகளை குறியேற்றிச் செய்யவும்:
 
-Rather than hardcode your credentials, we'll use a keyless connection with Azure OpenAI. To do so, we'll import `DefaultAzureCredential` and later call the `DefaultAzureCredential` function to get the credential.
+**விருப்பம் 1: Python இல் கூடிய Install Certificates ஸ்கிரிப்டை ஓட்டவும் (பரிந்துரைக்கப்படுகிறது)**
+
+```bash
+# உங்கள் நிறுவிய Python பதிப்பை (உதாரணமாக, 3.12 அல்லது 3.13) 3.XX என மாற்றவும்:
+/Applications/Python\ 3.XX/Install\ Certificates.command
+```
+
+**விருப்பம் 2: உங்கள் குறிப்பேட்டில் `connection_verify=False` பயன்படுத்தவும் (GitHub Models குறிப்பேட்டுகளுக்கே)**
+
+பாடம் 6 இல் (`06-building-trustworthy-agents/code_samples/06-system-message-framework.ipynb`) சொன்ன மறைக்கப்பட்ட வழி முயற்சி உள்ளது. கிளையண்ட் உருவாக்கும்போது `connection_verify=False` இனை ஒழுங்காற்றவும்:
 
 ```python
-# Python
-from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
+client = ChatCompletionsClient(
+    endpoint=endpoint,
+    credential=AzureKeyCredential(token),
+    connection_verify=False,  # சான்றிதழ் பிழைகள் ஏற்பட்டால் SSL சரிபார்ப்பை முடக்கு
+)
 ```
 
-## எங்காவது சிக்கலா?
-இந்த அமைப்பை இயக்குவதில் ஏதேனும் சிக்கல்கள் இருந்தால், எங்கள் <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a> அல்லது <a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">ஒரு பிரச்சினையை உருவாக்கவும்</a>.
+> **⚠️ எச்சரிக்கை:** SSL உறுதிப்படுத்தலை முடக்கி `connection_verify=False` பயன்படுத்துவது பாதுகாப்பின் அளவை குறைக்கும். இது சான்றிதழ் பரிசோதனையை தவிர்க்கிறது. இதை வளர்ச்சித் சூழலில் தற்காலிக தீர்வாக மட்டும் பயன்படுத்தவும், உற்பத்திச் சூழலில் தவிர்க்கவும்.
+
+**விருப்பம் 3: `truststore` ஐ நிறுவி பயன்படுத்தவும்**
+
+```bash
+pip install truststore
+```
+
+பிறகு உங்கள் குறிப்பேட்டின் மேலே அல்லது ஸ்கிரிப்டின் தொடக்கத்தில் இருக்கும் எந்த நெட்வொர்க் அழைப்பிற்கு முன் இதைச் சேர்க்கவும்:
+
+```python
+import truststore
+truststore.inject_into_ssl()
+```
+
+## எங்காவது சிக்கியிருக்கிறீர்களா?
+
+இந்த அமைப்பை இயக்கும்போது பிரச்சனைகள் இருந்தால், எங்கள் <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a>யில் வரவும் அல்லது <a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">issue ஒன்றை உருவாக்கவும்</a>.
 
 ## அடுத்த பாடம்
 
-இந்த பாடத்திற்கான குறியீட்டை இயக்க தயாராக உள்ளீர்கள். AI முகவர்களின் உலகத்தை மேலும் அறிந்து மகிழுங்கள்!
+இப்பொழுது நீங்கள் இந்த பாடம் குறியீட்டை இயக்க தயாராக உள்ளீர்கள். AI முகவர்களின் உலகத்தைப் பற்றி மேலும் கற்க மகிழுங்கள்!
 
-[AI முகவர்கள் மற்றும் முகவர் பயன்பாட்டு வழக்குகளுக்கான அறிமுகம்](../01-intro-to-ai-agents/README.md)
+[AI முகவர்களுக்கும் முகவர் பயன்பாடுகளுக்கும் அறிமுகம்](../01-intro-to-ai-agents/README.md)
 
 ---
 
-**குறிப்பு**:  
-இந்த ஆவணம் AI மொழிபெயர்ப்பு சேவை [Co-op Translator](https://github.com/Azure/co-op-translator) பயன்படுத்தி மொழிபெயர்க்கப்பட்டுள்ளது. நாங்கள் துல்லியத்திற்காக முயற்சிக்கிறோம், ஆனால் தானியங்கி மொழிபெயர்ப்புகளில் பிழைகள் அல்லது தவறுகள் இருக்கக்கூடும் என்பதை கவனத்தில் கொள்ளவும். அதன் தாய்மொழியில் உள்ள மூல ஆவணம் அதிகாரப்பூர்வ ஆதாரமாக கருதப்பட வேண்டும். முக்கியமான தகவல்களுக்கு, தொழில்முறை மனித மொழிபெயர்ப்பு பரிந்துரைக்கப்படுகிறது. இந்த மொழிபெயர்ப்பைப் பயன்படுத்துவதால் ஏற்படும் எந்த தவறான புரிதல்கள் அல்லது தவறான விளக்கங்களுக்கு நாங்கள் பொறுப்பல்ல.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**அறிவிப்பு**:  
+இந்தக் காகதம் AI மொழிபெயர்ப்பு சேவை [Co-op Translator](https://github.com/Azure/co-op-translator) மூலம் மொழிமாற்றம் செய்யப்பட்டது. நாங்கள் துல்லியத்திற்காக முயலினாலும், தானியங்கி மொழிபெயர்ப்புகளில் பிழைகள் அல்லது தவறுகள் இருக்கக்கூடும் என்பதை தயவு செய்து அறிந்துகொள்ளுங்கள். அதன் சொந்த மொழியில் உள்ள அசல் ஆவணம் அதிகாரபூர்வ ஆதாரமாகக் கருதப்பட வேண்டும். மிக முக்கியமான தகவல்களுக்கு, தொழில்முறை மனித மொழிபெயர்ப்பு பரிந்துரை செய்யப்படுகிறது. இந்த மொழிபெயர்ப்பினால் ஏற்படும் ஏதையாவது தவறான புரிதல்கள் அல்லது தவறான பொருள் விளக்கம் குறித்து நாங்கள் பொறுப்பேற்க மாட்டோம்.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

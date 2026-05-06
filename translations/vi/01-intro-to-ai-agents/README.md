@@ -1,132 +1,148 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cdd28bc00816d2773bb2b5968d782abc",
-  "translation_date": "2025-11-11T11:27:19+00:00",
-  "source_file": "01-intro-to-ai-agents/README.md",
-  "language_code": "vi"
-}
--->
-[![Giới thiệu về AI Agents](../../../translated_images/lesson-1-thumbnail.d21b2c34b32d35bbc7f1b4a40a81b031970b6076b4e0c59fb006cf818cac5d4a.vi.png)](https://youtu.be/3zgm60bXmQk?si=QA4CW2-cmul5kk3D)
+[![Intro to AI Agents](../../../translated_images/vi/lesson-1-thumbnail.d21b2c34b32d35bb.webp)](https://youtu.be/3zgm60bXmQk?si=QA4CW2-cmul5kk3D)
 
-> _(Nhấn vào hình ảnh trên để xem video của bài học này)_
+> _(Nhấp vào hình ảnh trên để xem video cho bài học này)_
 
-# Giới thiệu về AI Agents và Các Trường Hợp Sử Dụng
+# Giới thiệu về AI Agents và Các trường hợp sử dụng Agent
 
-Chào mừng bạn đến với khóa học "AI Agents cho Người Mới Bắt Đầu"! Khóa học này cung cấp kiến thức cơ bản và các ví dụ ứng dụng để xây dựng AI Agents.
+Chào mừng bạn đến với khóa học **AI Agents dành cho người mới bắt đầu**! Khóa học này cung cấp cho bạn kiến thức nền tảng — và mã thực thi thực tế — để bắt đầu xây dựng AI Agents từ đầu.
 
-Tham gia <a href="https://discord.gg/kzRShWzttr" target="_blank">Cộng đồng Azure AI Discord</a> để gặp gỡ các học viên khác và những người xây dựng AI Agents, cũng như đặt câu hỏi về khóa học này.
+Hãy chào hỏi trong <a href="https://discord.gg/kzRShWzttr" target="_blank">Cộng đồng Azure AI Discord</a> — nơi hội tụ các học viên và người xây dựng AI luôn sẵn sàng trả lời các câu hỏi.
 
-Để bắt đầu khóa học, chúng ta sẽ tìm hiểu rõ hơn về AI Agents là gì và cách chúng ta có thể sử dụng chúng trong các ứng dụng và quy trình làm việc mà chúng ta xây dựng.
+Trước khi bắt tay vào xây dựng, hãy đảm bảo chúng ta thực sự hiểu AI Agent *là gì* và khi nào nên sử dụng nó.
+
+---
 
 ## Giới thiệu
 
 Bài học này bao gồm:
 
-- AI Agents là gì và các loại agents khác nhau?
-- Những trường hợp sử dụng nào phù hợp nhất với AI Agents và chúng có thể giúp chúng ta như thế nào?
-- Một số khối xây dựng cơ bản khi thiết kế các giải pháp dựa trên Agent là gì?
+- AI Agents là gì, và các loại khác nhau tồn tại
+- Những loại nhiệm vụ nào AI Agents thích hợp nhất để giải quyết
+- Các thành phần cốt lõi bạn sẽ sử dụng khi thiết kế một giải pháp Agentic
 
 ## Mục tiêu học tập
-Sau khi hoàn thành bài học này, bạn sẽ có thể:
 
-- Hiểu các khái niệm về AI Agents và cách chúng khác biệt so với các giải pháp AI khác.
-- Áp dụng AI Agents một cách hiệu quả nhất.
-- Thiết kế các giải pháp dựa trên Agent một cách hiệu quả cho cả người dùng và khách hàng.
+Sau bài học này, bạn sẽ có thể:
 
-## Định nghĩa AI Agents và Các Loại AI Agents
+- Giải thích AI Agent là gì và điểm khác biệt so với giải pháp AI thông thường
+- Biết khi nào nên sử dụng AI Agent (và khi nào không nên)
+- Phác thảo thiết kế cơ bản của một giải pháp Agentic cho một vấn đề thực tế
+
+---
+
+## Định nghĩa AI Agents và các loại AI Agents
 
 ### AI Agents là gì?
 
-AI Agents là **hệ thống** cho phép **Large Language Models (LLMs)** **thực hiện hành động** bằng cách mở rộng khả năng của chúng thông qua việc cung cấp cho LLMs **truy cập vào công cụ** và **kiến thức**.
+Đây là cách đơn giản để nghĩ về nó:
 
-Hãy phân tích định nghĩa này thành các phần nhỏ hơn:
+> **AI Agents là hệ thống cho phép Mô hình Ngôn ngữ Lớn (LLMs) thực sự *làm việc* — bằng cách cung cấp cho chúng công cụ và kiến thức để tác động lên thế giới, không chỉ phản hồi các yêu cầu.**
 
-- **Hệ thống** - Điều quan trọng là phải nghĩ về agents không chỉ là một thành phần đơn lẻ mà là một hệ thống gồm nhiều thành phần. Ở mức cơ bản, các thành phần của một AI Agent bao gồm:
-  - **Môi trường** - Không gian được xác định nơi AI Agent hoạt động. Ví dụ, nếu chúng ta có một AI Agent đặt vé du lịch, môi trường có thể là hệ thống đặt vé du lịch mà AI Agent sử dụng để hoàn thành nhiệm vụ.
-  - **Cảm biến** - Môi trường có thông tin và cung cấp phản hồi. AI Agents sử dụng cảm biến để thu thập và diễn giải thông tin về trạng thái hiện tại của môi trường. Trong ví dụ về Agent đặt vé du lịch, hệ thống đặt vé du lịch có thể cung cấp thông tin như tình trạng phòng khách sạn hoặc giá vé máy bay.
-  - **Bộ truyền động** - Sau khi AI Agent nhận được trạng thái hiện tại của môi trường, đối với nhiệm vụ hiện tại, agent xác định hành động nào cần thực hiện để thay đổi môi trường. Đối với agent đặt vé du lịch, hành động có thể là đặt một phòng trống cho người dùng.
+Hãy phân tích thêm một chút:
 
-![AI Agents là gì?](../../../translated_images/what-are-ai-agents.1ec8c4d548af601a3a78c6c02e5c355d19c06a4a74fe93e3609a1d08e8c15689.vi.png)
+- **Hệ thống** — AI Agent không chỉ là một thành phần đơn lẻ. Nó là tập hợp các phần làm việc cùng nhau. Về cơ bản, mỗi agent đều có ba phần:
+  - **Môi trường** — Không gian mà agent hoạt động. Với agent đặt vé du lịch, đây chính là nền tảng đặt chỗ.
+  - **Cảm biến** — Cách agent đọc trạng thái hiện tại của môi trường. Agent du lịch có thể kiểm tra tình trạng phòng khách sạn hoặc giá vé máy bay.
+  - **Bộ chấp hành** — Cách agent thực hiện hành động. Agent du lịch có thể đặt phòng, gửi xác nhận hoặc hủy đặt chỗ.
 
-**Large Language Models** - Khái niệm về agents đã tồn tại trước khi LLMs được tạo ra. Lợi thế của việc xây dựng AI Agents với LLMs là khả năng diễn giải ngôn ngữ và dữ liệu của con người. Khả năng này cho phép LLMs diễn giải thông tin môi trường và xác định kế hoạch để thay đổi môi trường.
+![What Are AI Agents?](../../../translated_images/vi/what-are-ai-agents.1ec8c4d548af601a.webp)
 
-**Thực hiện hành động** - Bên ngoài hệ thống AI Agent, LLMs bị giới hạn trong các tình huống mà hành động là tạo nội dung hoặc thông tin dựa trên yêu cầu của người dùng. Bên trong hệ thống AI Agent, LLMs có thể hoàn thành nhiệm vụ bằng cách diễn giải yêu cầu của người dùng và sử dụng các công cụ có sẵn trong môi trường của chúng.
+- **Mô hình ngôn ngữ lớn** — Agents đã tồn tại trước khi có LLMs, nhưng chính LLMs là yếu tố giúp agent hiện đại trở nên mạnh mẽ. Chúng có thể hiểu ngôn ngữ tự nhiên, lý giải về ngữ cảnh và biến yêu cầu mơ hồ của người dùng thành kế hoạch hành động cụ thể.
 
-**Truy cập vào công cụ** - Các công cụ mà LLM có thể truy cập được xác định bởi 1) môi trường mà nó hoạt động và 2) nhà phát triển của AI Agent. Trong ví dụ về agent du lịch, các công cụ của agent bị giới hạn bởi các hoạt động có sẵn trong hệ thống đặt vé, và/hoặc nhà phát triển có thể giới hạn quyền truy cập của agent vào các công cụ như đặt vé máy bay.
+- **Thực hiện hành động** — Nếu không có hệ thống agent, LLM chỉ tạo ra văn bản. Trong hệ thống agent, LLM có thể *thực thi* các bước — tìm kiếm cơ sở dữ liệu, gọi API, gửi tin nhắn.
 
-**Bộ nhớ + Kiến thức** - Bộ nhớ có thể là ngắn hạn trong ngữ cảnh của cuộc trò chuyện giữa người dùng và agent. Về lâu dài, ngoài thông tin được cung cấp bởi môi trường, AI Agents cũng có thể truy xuất kiến thức từ các hệ thống, dịch vụ, công cụ khác, và thậm chí từ các agents khác. Trong ví dụ về agent du lịch, kiến thức này có thể là thông tin về sở thích du lịch của người dùng được lưu trong cơ sở dữ liệu khách hàng.
+- **Truy cập công cụ** — Công cụ mà agent có thể sử dụng phụ thuộc vào (1) môi trường nó hoạt động và (2) nhà phát triển cho phép. Agent du lịch có thể tìm kiếm chuyến bay nhưng không chỉnh sửa hồ sơ khách hàng — tất cả tuỳ thuộc vào những gì bạn cấu hình.
 
-### Các loại agents khác nhau
+- **Bộ nhớ + Kiến thức** — Agents có thể có bộ nhớ ngắn hạn (cuộc hội thoại hiện tại) và bộ nhớ dài hạn (cơ sở dữ liệu khách hàng, các tương tác trước đó). Agent du lịch có thể "nhớ" rằng bạn thích chỗ ngồi gần cửa sổ.
 
-Bây giờ chúng ta đã có một định nghĩa chung về AI Agents, hãy xem xét một số loại agents cụ thể và cách chúng được áp dụng cho một agent đặt vé du lịch.
+---
 
-| **Loại Agent**                | **Mô tả**                                                                                                                       | **Ví dụ**                                                                                                                                                                                                                   |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Simple Reflex Agents**      | Thực hiện hành động ngay lập tức dựa trên các quy tắc được định trước.                                                                                  | Agent du lịch diễn giải ngữ cảnh của email và chuyển các khiếu nại du lịch đến bộ phận chăm sóc khách hàng.                                                                                                                          |
-| **Model-Based Reflex Agents** | Thực hiện hành động dựa trên một mô hình của thế giới và các thay đổi đối với mô hình đó.                                                              | Agent du lịch ưu tiên các tuyến đường có sự thay đổi giá đáng kể dựa trên quyền truy cập vào dữ liệu giá lịch sử.                                                                                                             |
-| **Goal-Based Agents**         | Tạo kế hoạch để đạt được các mục tiêu cụ thể bằng cách diễn giải mục tiêu và xác định các hành động để đạt được nó.                                  | Agent du lịch đặt một hành trình bằng cách xác định các sắp xếp du lịch cần thiết (xe hơi, phương tiện công cộng, vé máy bay) từ vị trí hiện tại đến điểm đến.                                                                                |
-| **Utility-Based Agents**      | Xem xét sở thích và cân nhắc các đánh đổi bằng cách định lượng để xác định cách đạt được mục tiêu.                                               | Agent du lịch tối đa hóa tiện ích bằng cách cân nhắc sự tiện lợi so với chi phí khi đặt vé du lịch.                                                                                                                                          |
-| **Learning Agents**           | Cải thiện theo thời gian bằng cách phản hồi lại phản hồi và điều chỉnh hành động tương ứng.                                                        | Agent du lịch cải thiện bằng cách sử dụng phản hồi của khách hàng từ các khảo sát sau chuyến đi để thực hiện các điều chỉnh cho các lần đặt vé trong tương lai.                                                                                                               |
-| **Hierarchical Agents**       | Có nhiều agents trong một hệ thống phân cấp, với các agents cấp cao hơn chia nhỏ nhiệm vụ thành các nhiệm vụ con để các agents cấp thấp hơn hoàn thành. | Agent du lịch hủy một chuyến đi bằng cách chia nhiệm vụ thành các nhiệm vụ con (ví dụ: hủy các đặt vé cụ thể) và để các agents cấp thấp hơn hoàn thành chúng, báo cáo lại cho agent cấp cao hơn.                                     |
-| **Multi-Agent Systems (MAS)** | Các agents hoàn thành nhiệm vụ một cách độc lập, có thể hợp tác hoặc cạnh tranh.                                                           | Hợp tác: Nhiều agents đặt các dịch vụ du lịch cụ thể như khách sạn, vé máy bay, và giải trí. Cạnh tranh: Nhiều agents quản lý và cạnh tranh trên một lịch đặt phòng khách sạn chung để đặt khách hàng vào khách sạn. |
+### Các loại AI Agents khác nhau
 
-## Khi nào nên sử dụng AI Agents
+Không phải tất cả các agent đều được xây dựng giống nhau. Dưới đây là phân loại chính, lấy agent đặt vé du lịch làm ví dụ:
 
-Trong phần trước, chúng ta đã sử dụng trường hợp đặt vé du lịch để giải thích cách các loại agents khác nhau có thể được sử dụng trong các tình huống khác nhau của việc đặt vé du lịch. Chúng ta sẽ tiếp tục sử dụng ứng dụng này trong suốt khóa học.
+| **Loại Agent** | **Chức năng** | **Ví dụ Agent Du lịch** |
+|---|---|---|
+| **Simple Reflex Agents** | Tuân thủ các quy tắc cứng nhắc — không có bộ nhớ, không lên kế hoạch. | Thấy email khiếu nại → chuyển tiếp cho bộ phận chăm sóc khách hàng. Chỉ vậy thôi. |
+| **Model-Based Reflex Agents** | Giữ mô hình nội bộ về thế giới và cập nhật khi có thay đổi. | Theo dõi giá vé máy bay lịch sử và đánh dấu các chuyến bay tăng giá đột ngột. |
+| **Goal-Based Agents** | Có mục tiêu rõ ràng và tìm cách đạt được mục tiêu từng bước một. | Đặt một chuyến đi đầy đủ (chuyến bay, xe, khách sạn) từ vị trí hiện tại đến điểm đến. |
+| **Utility-Based Agents** | Không chỉ tìm *một* giải pháp — tìm giải pháp *tốt nhất* bằng cách cân nhắc các lựa chọn. | Cân bằng chi phí và tiện lợi để tìm chuyến đi phù hợp nhất với sở thích của bạn. |
+| **Learning Agents** | Cải thiện theo thời gian dựa trên phản hồi. | Điều chỉnh gợi ý đặt phòng tương lai dựa trên khảo sát sau chuyến đi. |
+| **Hierarchical Agents** | Agent cấp cao phân công công việc thành các nhiệm vụ nhỏ và giao cho agent cấp thấp hơn. | Yêu cầu "hủy chuyến đi" chia thành: hủy vé máy bay, hủy khách sạn, hủy thuê xe — mỗi phần do một sub-agent xử lý. |
+| **Multi-Agent Systems (MAS)** | Nhiều agent độc lập hợp tác (hoặc cạnh tranh). | Hợp tác: các agent riêng biệt xử lý khách sạn, chuyến bay, và giải trí. Cạnh tranh: nhiều agent cạnh tranh để bán phòng khách sạn với giá tốt nhất. |
 
-Hãy xem xét các loại trường hợp sử dụng mà AI Agents phù hợp nhất:
+---
 
-![Khi nào nên sử dụng AI Agents?](../../../translated_images/when-to-use-ai-agents.54becb3bed74a479f5caca9c951132ce81d482a6704bcd22e5a600dbabc9434e.vi.png)
+## Khi nào nên dùng AI Agents
 
-- **Vấn đề mở** - cho phép LLM xác định các bước cần thiết để hoàn thành một nhiệm vụ vì không phải lúc nào cũng có thể mã hóa cứng vào quy trình làm việc.
-- **Quy trình nhiều bước** - các nhiệm vụ yêu cầu một mức độ phức tạp mà AI Agent cần sử dụng công cụ hoặc thông tin qua nhiều lượt thay vì chỉ truy xuất một lần.  
-- **Cải thiện theo thời gian** - các nhiệm vụ mà agent có thể cải thiện theo thời gian bằng cách nhận phản hồi từ môi trường hoặc người dùng để cung cấp tiện ích tốt hơn.
+Không phải vì bạn *có thể* dùng AI Agent là bạn lúc nào cũng *nên*. Dưới đây là những tình huống agent thực sự phát huy hiệu quả:
 
-Chúng ta sẽ tìm hiểu thêm về các cân nhắc khi sử dụng AI Agents trong bài học Xây dựng AI Agents Đáng Tin Cậy.
+![When to use AI Agents?](../../../translated_images/vi/when-to-use-ai-agents.54becb3bed74a479.webp)
 
-## Cơ bản về Giải pháp Dựa trên Agent
+- **Vấn đề mở** — Khi các bước giải quyết không thể lập trình sẵn. Bạn cần LLM tự động xác định con đường.
+- **Quy trình nhiều bước** — Nhiệm vụ yêu cầu sử dụng công cụ nhiều lượt, không chỉ tra cứu hoặc tạo dữ liệu một lần.
+- **Cải thiện theo thời gian** — Khi bạn muốn hệ thống trở nên thông minh hơn dựa trên phản hồi của người dùng hoặc tín hiệu môi trường.
+
+Chúng ta sẽ đi sâu hơn về khi nào (và khi nào *không*) nên dùng AI Agents trong bài học **Xây dựng AI Agents đáng tin cậy** sau trong khóa học.
+
+---
+
+## Những điều cơ bản của giải pháp Agentic
 
 ### Phát triển Agent
 
-Bước đầu tiên trong việc thiết kế một hệ thống AI Agent là xác định các công cụ, hành động, và hành vi. Trong khóa học này, chúng ta tập trung vào việc sử dụng **Azure AI Agent Service** để định nghĩa các Agents của mình. Dịch vụ này cung cấp các tính năng như:
+Điều đầu tiên bạn làm khi xây dựng agent là xác định *nó có thể làm gì* — các công cụ, hành động và hành vi.
 
-- Lựa chọn các Mô hình Mở như OpenAI, Mistral, và Llama
-- Sử dụng Dữ liệu Được Cấp Phép thông qua các nhà cung cấp như Tripadvisor
-- Sử dụng các công cụ OpenAPI 3.0 tiêu chuẩn
+Trong khóa học này, chúng ta dùng **Azure AI Agent Service** làm nền tảng chính. Nó hỗ trợ:
 
-### Mẫu Dựa trên Agent
+- Các mô hình mở như OpenAI, Mistral, và Llama
+- Dữ liệu có bản quyền từ các nhà cung cấp như Tripadvisor
+- Định nghĩa công cụ chuẩn OpenAPI 3.0
 
-Giao tiếp với LLMs thông qua các lời nhắc. Với tính chất bán tự động của AI Agents, không phải lúc nào cũng có thể hoặc cần thiết để nhắc lại LLM sau một thay đổi trong môi trường. Chúng ta sử dụng **Mẫu Dựa trên Agent** cho phép chúng ta nhắc LLM qua nhiều bước một cách mở rộng hơn.
+### Mẫu Agentic
 
-Khóa học này được chia thành một số mẫu dựa trên Agent phổ biến hiện nay.
+Bạn giao tiếp với LLM thông qua các prompt. Với agent, bạn không thể tự tay tạo từng prompt cho mọi bước — agent cần hành động qua nhiều bước. Đó là lý do có **Mẫu Agentic**. Đây là các chiến lược tái sử dụng để prompt và điều phối LLM theo cách mở rộng và đáng tin cậy hơn.
 
-### Khung Dựa trên Agent
+Khóa học này được xây dựng dựa trên các mẫu agentic phổ biến và hữu ích nhất.
 
-Khung Dựa trên Agent cho phép các nhà phát triển triển khai các mẫu dựa trên Agent thông qua mã. Các khung này cung cấp các mẫu, plugin, và công cụ để cải thiện sự hợp tác của AI Agents. Những lợi ích này cung cấp khả năng quan sát và khắc phục sự cố tốt hơn cho các hệ thống AI Agent.
+### Framework Agentic
 
-Trong khóa học này, chúng ta sẽ khám phá khung AutoGen dựa trên nghiên cứu và khung Agent sẵn sàng sản xuất từ Semantic Kernel.
+Framework Agentic cung cấp cho nhà phát triển các mẫu sẵn, công cụ và cơ sở hạ tầng để xây dựng agent. Chúng giúp:
 
-## Mã Mẫu
+- Kết nối công cụ và khả năng
+- Giám sát hoạt động agent (và gỡ lỗi khi có sự cố)
+- Hợp tác giữa nhiều agent
 
-- Python: [Agent Framework](./code_samples/01-python-agent-framework.ipynb)
-- .NET: [Agent Framework](./code_samples/01-dotnet-agent-framework.md)
+Trong khóa học này, chúng ta tập trung vào **Microsoft Agent Framework (MAF)** để xây dựng các agent sẵn sàng dùng trong sản xuất.
 
-## Có thêm câu hỏi về AI Agents?
+---
 
-Tham gia [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) để gặp gỡ các học viên khác, tham dự giờ làm việc và nhận câu trả lời cho các câu hỏi về AI Agents của bạn.
+## Mẫu mã
+
+Sẵn sàng xem nó hoạt động chưa? Dưới đây là các mẫu mã cho bài học này:
+
+- 🐍 Python: [Agent Framework](./code_samples/01-python-agent-framework.ipynb)
+- 🔷 .NET: [Agent Framework](./code_samples/01-dotnet-agent-framework.md)
+
+---
+
+## Có câu hỏi?
+
+Tham gia [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) để kết nối với các học viên khác, tham dự giờ làm việc và nhận được câu trả lời cho các câu hỏi về AI Agent từ cộng đồng.
+
+---
 
 ## Bài học trước
 
-[Thiết lập khóa học](../00-course-setup/README.md)
+[Course Setup](../00-course-setup/README.md)
 
 ## Bài học tiếp theo
 
-[Khám phá các Khung Dựa trên Agent](../02-explore-agentic-frameworks/README.md)
+[Exploring Agentic Frameworks](../02-explore-agentic-frameworks/README.md)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được coi là nguồn chính xác và có thẩm quyền. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm cho bất kỳ hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

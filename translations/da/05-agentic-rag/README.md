@@ -1,162 +1,152 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0ebf6b2290db55dbf2d10cc49655523b",
-  "translation_date": "2025-09-30T07:14:39+00:00",
-  "source_file": "05-agentic-rag/README.md",
-  "language_code": "da"
-}
--->
-[![Agentic RAG](../../../translated_images/lesson-5-thumbnail.20ba9d0c0ae64fae06637eb2023395d437b0152c0463c2227ff456afe5f14644.da.png)](https://youtu.be/WcjAARvdL7I?si=BCgwjwFb2yCkEhR9)
+[![Agentic RAG](../../../translated_images/da/lesson-5-thumbnail.20ba9d0c0ae64fae.webp)](https://youtu.be/WcjAARvdL7I?si=BCgwjwFb2yCkEhR9)
 
-> _(Klik på billedet ovenfor for at se videoen til denne lektion)_
+> _(Klik på billedet ovenfor for at se videoen af denne lektion)_
 
 # Agentic RAG
 
-Denne lektion giver en omfattende introduktion til Agentic Retrieval-Augmented Generation (Agentic RAG), et nyt AI-paradigme, hvor store sprogmodeller (LLMs) autonomt planlægger deres næste skridt, mens de henter information fra eksterne kilder. I modsætning til statiske mønstre med "hent og læs" involverer Agentic RAG iterative kald til LLM, afbrudt af værktøjs- eller funktionskald og strukturerede outputs. Systemet evaluerer resultater, forfiner forespørgsler, anvender yderligere værktøjer efter behov og fortsætter denne cyklus, indtil en tilfredsstillende løsning er opnået.
+Denne lektion giver en omfattende oversigt over Agentic Retrieval-Augmented Generation (Agentic RAG), et fremspirende AI-paradigme hvor store sprogmodeller (LLMs) selvstændigt planlægger deres næste skridt, mens de henter information fra eksterne kilder. I modsætning til statiske mønstre med hent-og-læs involverer Agentic RAG iterative kald til LLM'en, krydret med værktøjs- eller funktionskald og strukturerede outputs. Systemet evaluerer resultater, forfiner forespørgsler, kalder yderligere værktøjer om nødvendigt og fortsætter denne cyklus, indtil en tilfredsstillende løsning er opnået.
 
 ## Introduktion
 
-Denne lektion vil dække:
+Denne lektion vil dække
 
-- **Forstå Agentic RAG:** Lær om det nye AI-paradigme, hvor store sprogmodeller (LLMs) autonomt planlægger deres næste skridt, mens de henter information fra eksterne datakilder.
-- **Forstå Iterativ Maker-Checker Stil:** Forstå loopet af iterative kald til LLM, afbrudt af værktøjs- eller funktionskald og strukturerede outputs, designet til at forbedre korrekthed og håndtere fejlbehæftede forespørgsler.
-- **Udforsk praktiske anvendelser:** Identificer scenarier, hvor Agentic RAG udmærker sig, såsom miljøer med fokus på korrekthed, komplekse databaseinteraktioner og udvidede arbejdsgange.
+- **Forstå Agentic RAG:** Lær om det fremspirende paradigme i AI, hvor store sprogmodeller (LLMs) selvstændigt planlægger deres næste skridt, mens de trækker information fra eksterne datakilder.
+- **Forstå Iterativ Maker-Checker Stil:** Forstå sløjfen af iterative kald til LLM, krydret med værktøjs- eller funktionskald og strukturerede outputs, designet til at forbedre korrekthed og håndtere fejlbehæftede forespørgsler.
+- **Udforsk Praktiske Anvendelser:** Identificer scenarier hvor Agentic RAG skinner, såsom korrektheds-fokuserede miljøer, komplekse databaseinteraktioner og udvidede arbejdsgange.
 
 ## Læringsmål
 
-Efter at have gennemført denne lektion vil du kunne/forstå:
+Efter at have gennemført denne lektion vil du vide hvordan du/forstår:
 
-- **Forstå Agentic RAG:** Lær om det nye AI-paradigme, hvor store sprogmodeller (LLMs) autonomt planlægger deres næste skridt, mens de henter information fra eksterne datakilder.
-- **Iterativ Maker-Checker Stil:** Forstå konceptet med et loop af iterative kald til LLM, afbrudt af værktøjs- eller funktionskald og strukturerede outputs, designet til at forbedre korrekthed og håndtere fejlbehæftede forespørgsler.
-- **Ejerskab over beslutningsprocessen:** Forstå systemets evne til at tage ejerskab over sin beslutningsproces og træffe beslutninger om, hvordan problemer skal tackles uden at være afhængig af foruddefinerede veje.
-- **Arbejdsgang:** Forstå, hvordan en agentisk model selvstændigt beslutter at hente markedsrapportering, identificere konkurrentdata, korrelere interne salgsmetrikker, syntetisere resultater og evaluere strategien.
-- **Iterative loops, værktøjsintegration og hukommelse:** Lær om systemets afhængighed af et loopet interaktionsmønster, der opretholder tilstand og hukommelse på tværs af trin for at undgå gentagelser og træffe informerede beslutninger.
-- **Håndtering af fejltilstande og selvkorrektion:** Udforsk systemets robuste selvkorrektionsmekanismer, herunder iteration og genforespørgsel, brug af diagnostiske værktøjer og tilbagefald til menneskelig overvågning.
-- **Grænser for autonomi:** Forstå begrænsningerne ved Agentic RAG med fokus på domænespecifik autonomi, afhængighed af infrastruktur og respekt for sikkerhedsforanstaltninger.
-- **Praktiske anvendelser og værdi:** Identificer scenarier, hvor Agentic RAG udmærker sig, såsom miljøer med fokus på korrekthed, komplekse databaseinteraktioner og udvidede arbejdsgange.
-- **Styring, gennemsigtighed og tillid:** Lær om vigtigheden af styring og gennemsigtighed, herunder forklarlige beslutninger, kontrol af bias og menneskelig overvågning.
+- **Forståelse af Agentic RAG:** Lær om det fremspirende AI-paradigme, hvor store sprogmodeller (LLMs) selvstændigt planlægger deres næste skridt, mens de trækker information fra eksterne datakilder.
+- **Iterativ Maker-Checker Stil:** Forstå konceptet med en sløjfe af iterative kald til LLM, krydret med værktøjs- eller funktionskald og strukturerede outputs, designet til at forbedre korrekthed og håndtere fejlbehæftede forespørgsler.
+- **At eje ræsonneringsprocessen:** Forstå systemets evne til at eje sin ræsonneringsproces og træffe beslutninger om, hvordan problemer skal angribes uden at være afhængig af foruddefinerede veje.
+- **Arbejdsgang:** Forstå hvordan en agentisk model selvstændigt beslutter at hente markedsrapport om tendenser, identificere konkurrentdata, korrelere interne salgsdata, syntetisere fund og evaluere strategien.
+- **Iterative Sløjfer, Værktøjsintegration og Hukommelse:** Lær om systemets afhængighed af et gentaget interaktionsmønster, der bevarer tilstand og hukommelse på tværs af skridt for at undgå gentagne sløjfer og træffe informerede beslutninger.
+- **Håndtering af Fejltilstande og Selvkorrektion:** Udforsk systemets robuste selvkorrektionsmekanismer, herunder iteration og gensøgning, brug af diagnostiske værktøjer og fald tilbage til menneskelig overvågning.
+- **Grænser for Agentur:** Forstå begrænsningerne for Agentic RAG med fokus på domænespecifik autonomi, infrastrukturafhængighed og respekt for sikkerhedsbarrierer.
+- **Praktiske Brugssager og Værdi:** Identificer situationer hvor Agentic RAG udmærker sig, såsom korrektheds-først miljøer, komplekse databaseinteraktioner og udvidede arbejdsgange.
+- **Styring, Gennemsigtighed og Tillid:** Lær om vigtigheden af styring og gennemsigtighed, inklusiv forklarbar ræsonnering, bias-kontrol og menneskelig overvågning.
 
 ## Hvad er Agentic RAG?
 
-Agentic Retrieval-Augmented Generation (Agentic RAG) er et nyt AI-paradigme, hvor store sprogmodeller (LLMs) autonomt planlægger deres næste skridt, mens de henter information fra eksterne kilder. I modsætning til statiske mønstre med "hent og læs" involverer Agentic RAG iterative kald til LLM, afbrudt af værktøjs- eller funktionskald og strukturerede outputs. Systemet evaluerer resultater, forfiner forespørgsler, anvender yderligere værktøjer efter behov og fortsætter denne cyklus, indtil en tilfredsstillende løsning er opnået. Denne iterative “maker-checker” stil forbedrer korrekthed, håndterer fejlbehæftede forespørgsler og sikrer resultater af høj kvalitet.
+Agentic Retrieval-Augmented Generation (Agentic RAG) er et fremspirende AI-paradigme, hvor store sprogmodeller (LLMs) selvstændigt planlægger deres næste skridt, mens de henter information fra eksterne kilder. I modsætning til statiske hent-og-læs-mønstre indebærer Agentic RAG iterative kald til LLM, krydret med værktøjs- eller funktionskald og strukturerede outputs. Systemet evaluerer resultater, forfiner forespørgsler, kalder yderligere værktøjer om nødvendigt og fortsætter denne cyklus, indtil en tilfredsstillende løsning opnås. Denne iterative “maker-checker” stil forbedrer korrekthed, håndterer fejlagtige forespørgsler og sikrer resultater af høj kvalitet.
 
-Systemet tager aktivt ejerskab over sin beslutningsproces, omskriver fejlede forespørgsler, vælger forskellige metoder til informationshentning og integrerer flere værktøjer—såsom vektorsøgning i Azure AI Search, SQL-databaser eller brugerdefinerede API'er—før det færdiggør sit svar. Det, der adskiller et agentisk system, er dets evne til at tage ejerskab over sin beslutningsproces. Traditionelle RAG-implementeringer er afhængige af foruddefinerede veje, men et agentisk system bestemmer autonomt rækkefølgen af trin baseret på kvaliteten af den information, det finder.
+Systemet ejer aktivt sin ræsonneringsproces, omskriver fejlede forespørgsler, vælger forskellige hentemetoder og integrerer flere værktøjer — såsom vektorsøgning i Azure AI Search, SQL-databaser eller brugerdefinerede API'er — før det færdiggør sit svar. Det karakteristiske træk ved et agentisk system er dets evne til at eje sin ræsonneringsproces. Traditionelle RAG-implementeringer er afhængige af foruddefinerede veje, men et agentisk system bestemmer selvstændigt rækkefølgen af skridt baseret på kvaliteten af den fundne information.
 
 ## Definition af Agentic Retrieval-Augmented Generation (Agentic RAG)
 
-Agentic Retrieval-Augmented Generation (Agentic RAG) er et nyt paradigme inden for AI-udvikling, hvor LLMs ikke kun henter information fra eksterne datakilder, men også autonomt planlægger deres næste skridt. I modsætning til statiske mønstre med "hent og læs" eller nøje scriptede promptsekvenser involverer Agentic RAG et loop af iterative kald til LLM, afbrudt af værktøjs- eller funktionskald og strukturerede outputs. Ved hver iteration evaluerer systemet de opnåede resultater, beslutter om forespørgsler skal forfines, anvender yderligere værktøjer efter behov og fortsætter denne cyklus, indtil det opnår en tilfredsstillende løsning.
+Agentic Retrieval-Augmented Generation (Agentic RAG) er et nyt paradigme inden for AI-udvikling, hvor LLM'er ikke blot henter information fra eksterne datakilder, men også selvstændigt planlægger deres næste skridt. I modsætning til statiske hent-og-læs-mønstre eller nøje scriptede prompt-sekvenser involverer Agentic RAG en sløjfe af iterative kald til LLM, krydret med værktøjs- eller funktionskald og strukturerede outputs. Ved hvert trin evaluerer systemet de opnåede resultater, beslutter om det skal forfine sine forespørgsler, kalder eventuelt yderligere værktøjer og fortsætter denne cyklus, indtil det når en tilfredsstillende løsning.
 
-Denne iterative “maker-checker” stil er designet til at forbedre korrekthed, håndtere fejlbehæftede forespørgsler til strukturerede databaser (f.eks. NL2SQL) og sikre balancerede, resultater af høj kvalitet. I stedet for udelukkende at være afhængig af nøje designede promptkæder tager systemet aktivt ejerskab over sin beslutningsproces. Det kan omskrive forespørgsler, der fejler, vælge forskellige metoder til informationshentning og integrere flere værktøjer—såsom vektorsøgning i Azure AI Search, SQL-databaser eller brugerdefinerede API'er—før det færdiggør sit svar. Dette eliminerer behovet for alt for komplekse orkestreringsrammer. I stedet kan et relativt simpelt loop af “LLM-kald → værktøjsbrug → LLM-kald → …” give sofistikerede og velbegrundede outputs.
+Denne iterative “maker-checker” driftsstil er designet til at forbedre korrekthed, håndtere dårligt formede forespørgsler til strukturerede databaser (f.eks. NL2SQL) og sikre balancerede, højkvalitetsresultater. I stedet for kun at stole på nøje designede promptkæder ejer systemet aktivt sin ræsonneringsproces. Det kan omskrive fejlede forespørgsler, vælge forskellige hentemetoder og integrere flere værktøjer — såsom vektorsøgning i Azure AI Search, SQL-databaser eller brugerdefinerede API'er — før svaret færdiggøres. Dette fjerner behovet for alt for komplekse orkestreringsrammer. I stedet kan en forholdsvis simpel sløjfe “LLM-kald → værktøjsbrug → LLM-kald → …” levere sofistikerede og velunderbyggede outputs.
 
-![Agentic RAG Core Loop](../../../translated_images/agentic-rag-core-loop.c8f4b85c26920f71ed181ebb14001ac7aae47c0b0af237edcf71898645a62db3.da.png)
+![Agentic RAG Core Loop](../../../translated_images/da/agentic-rag-core-loop.c8f4b85c26920f71.webp)
 
-## Ejerskab over beslutningsprocessen
+## Eje Ræsonneringsprocessen
 
-Det, der gør et system “agentisk,” er dets evne til at tage ejerskab over sin beslutningsproces. Traditionelle RAG-implementeringer er ofte afhængige af, at mennesker foruddefinerer en vej for modellen: en tankegang, der skitserer, hvad der skal hentes og hvornår. Men når et system er virkelig agentisk, beslutter det internt, hvordan det skal tackle problemet. Det udfører ikke bare et script; det bestemmer autonomt rækkefølgen af trin baseret på kvaliteten af den information, det finder.
+Det karakteristiske træk, der gør et system “agentisk”, er dets evne til at eje sin ræsonneringsproces. Traditionelle RAG-implementeringer afhænger ofte af, at mennesker foruddefinerer en vej for modellen: en tankekæde, der skitserer, hvad der skal hentes og hvornår.
+Men når et system er virkelig agentisk, bestemmer det internt, hvordan det vil angribe problemet. Det udfører ikke bare et script; det fastlægger selvstændigt rækkefølgen af skridt baseret på kvaliteten af den information, det finder.
+For eksempel, hvis det bliver bedt om at skabe en produktlanceringsstrategi, stoler det ikke kun på en prompt, der specificerer hele forsknings- og beslutningsprocessen. I stedet beslutter den agentiske model uafhængigt at:
 
-For eksempel, hvis det bliver bedt om at skabe en produktlanceringsstrategi, er det ikke kun afhængigt af en prompt, der beskriver hele forsknings- og beslutningsprocessen. I stedet beslutter den agentiske model selvstændigt at:
+1. Hente aktuelle markedsrapport om tendenser ved brug af Bing Web Grounding
+2. Identificere relevante konkurrentdata ved brug af Azure AI Search.
+3. Korreler historiske interne salgsdata ved brug af Azure SQL Database.
+4. Syntetisere fundene til en sammenhængende strategi orkestreret via Azure OpenAI Service.
+5. Evaluere strategien for mangler eller inkonsistenser og om nødvendigt starte en ny runde hentning.
+Alle disse trin — forfining af forespørgsler, valg af kilder, iteration indtil “tilfredshed” med svaret — besluttes af modellen, ikke forudskrevet af et menneske.
 
-1. Hente aktuelle markedsrapporteringer ved hjælp af Bing Web Grounding.
-2. Identificere relevante konkurrentdata ved hjælp af Azure AI Search.
-3. Korrelere historiske interne salgsmetrikker ved hjælp af Azure SQL Database.
-4. Syntetisere resultaterne til en sammenhængende strategi orkestreret via Azure OpenAI Service.
-5. Evaluere strategien for mangler eller inkonsistenser og igangsætte en ny runde med informationshentning, hvis nødvendigt.
+## Iterative Sløjfer, Værktøjsintegration og Hukommelse
 
-Alle disse trin—forfining af forespørgsler, valg af kilder, iteration indtil modellen er “tilfreds” med svaret—besluttes af modellen og er ikke foruddefineret af en menneskelig bruger.
+![Tool Integration Architecture](../../../translated_images/da/tool-integration.0f569710b5c17c10.webp)
 
-## Iterative loops, værktøjsintegration og hukommelse
+Et agentisk system bygger på et gentaget interaktionsmønster:
 
-![Tool Integration Architecture](../../../translated_images/tool-integration.0f569710b5c17c106757adba082f6c4be025ca0721bff7d1ee4b929a3617a600.da.png)
+- **Første Kald:** Brugerens mål (dvs. brugerprompt) præsenteres for LLM.
+- **Værktøjskald:** Hvis modellen identificerer manglende information eller tvetydige instruktioner, vælger den et værktøj eller en hentemetode — som en vektordatabasesspørgsmål (f.eks. Azure AI Search Hybrid-søgning over private data) eller et struktureret SQL-kald — for at indsamle mere kontekst.
+- **Vurdering & Forfining:** Efter at have gennemgået de returnerede data afgør modellen, om informationen er tilstrækkelig. Hvis ikke, forfiner den forespørgslen, prøver et andet værktøj eller justerer sin tilgang.
+- **Gentag Indtil Tilfreds:** Denne cyklus fortsætter, indtil modellen vurderer, at den har tilstrækkelig klarhed og beviser til at give et endeligt, velovervejet svar.
+- **Hukommelse & Tilstand:** Fordi systemet opretholder tilstand og hukommelse gennem trinene, kan det huske tidligere forsøg og deres resultater, undgå gentagne sløjfer og træffe mere informerede beslutninger undervejs.
 
-Et agentisk system er afhængigt af et loopet interaktionsmønster:
+Over tid skaber dette en følelse af voksende forståelse, som gør modellen i stand til at navigere komplekse, flertrinsopgaver uden behov for konstant menneskelig indblanding eller omformulering af prompten.
 
-- **Første kald:** Brugerens mål (dvs. brugerens prompt) præsenteres for LLM.
-- **Værktøjsbrug:** Hvis modellen identificerer manglende information eller tvetydige instruktioner, vælger den et værktøj eller en metode til informationshentning—som en vektordatabaseforespørgsel (f.eks. Azure AI Search Hybrid search over privat data) eller et struktureret SQL-kald—for at indsamle mere kontekst.
-- **Vurdering og forfining:** Efter at have gennemgået de returnerede data beslutter modellen, om informationen er tilstrækkelig. Hvis ikke, forfiner den forespørgslen, prøver et andet værktøj eller justerer sin tilgang.
-- **Gentag indtil tilfreds:** Denne cyklus fortsætter, indtil modellen vurderer, at den har tilstrækkelig klarhed og evidens til at levere et endeligt, velbegrundet svar.
-- **Hukommelse og tilstand:** Fordi systemet opretholder tilstand og hukommelse på tværs af trin, kan det huske tidligere forsøg og deres resultater, undgå gentagelser og træffe mere informerede beslutninger, mens det skrider frem.
+## Håndtering af Fejltilstande og Selvkorrektion
 
-Over tid skaber dette en følelse af udviklende forståelse, der gør det muligt for modellen at navigere komplekse, flertrinsopgaver uden behov for konstant menneskelig indgriben eller omformning af prompten.
+Agentic RAG's autonomi omfatter også robuste selvkorrektionsmekanismer. Når systemet rammer blindgyder — f.eks. henter irrelevante dokumenter eller støder på fejlagtige forespørgsler — kan det:
 
-## Håndtering af fejltilstande og selvkorrektion
+- **Iterere og Gensøge:** I stedet for at returnere lavværdi svar forsøger modellen nye søgestrategier, omskriver databaseforespørgsler eller undersøger alternative datasæt.
+- **Brug af Diagnostiske Værktøjer:** Systemet kan kalde yderligere funktioner, der hjælper med at fejlfinde sine ræsonneringstrin eller bekræfte korrektheden af hentede data. Værktøjer som Azure AI Tracing vil være vigtige for at muliggøre robust observerbarhed og overvågning.
+- **Fald Tilbage på Menneskelig Overvågning:** Ved højest vigtige eller gentagne gange fejlede scenarier kan modellen markere usikkerhed og anmode om menneskelig vejledning. Når mennesket giver korrektiv feedback, kan modellen inkorporere denne læring fremover.
 
-Agentic RAG’s autonomi indebærer også robuste selvkorrektionsmekanismer. Når systemet støder på blindgyder—såsom at hente irrelevante dokumenter eller støde på fejlbehæftede forespørgsler—kan det:
+Denne iterative og dynamiske tilgang gør det muligt for modellen at forbedre sig løbende og sikrer, at det ikke blot er et en-gangs system, men et der lærer af sine fejltrin i en given session.
 
-- **Iterere og genforespørge:** I stedet for at returnere lavværdige svar forsøger modellen nye søgestrategier, omskriver databaseforespørgsler eller undersøger alternative datasæt.
-- **Bruge diagnostiske værktøjer:** Systemet kan anvende yderligere funktioner designet til at hjælpe med at debugge sine beslutningstrin eller bekræfte korrektheden af hentede data. Værktøjer som Azure AI Tracing vil være vigtige for at muliggøre robust overvågelighed og monitorering.
-- **Tilbagefald til menneskelig overvågning:** For scenarier med høj risiko eller gentagne fejl kan modellen markere usikkerhed og anmode om menneskelig vejledning. Når mennesket giver korrigerende feedback, kan modellen inkorporere den læring fremadrettet.
+![Self Correction Mechanism](../../../translated_images/da/self-correction.da87f3783b7f174b.webp)
 
-Denne iterative og dynamiske tilgang gør det muligt for modellen at forbedre sig kontinuerligt, hvilket sikrer, at den ikke bare er et engangssystem, men et system, der lærer af sine fejltrin under en given session.
+## Grænser for Agentur
 
-![Self Correction Mechanism](../../../translated_images/self-correction.da87f3783b7f174bdc592c754b352884dd283814758bfeb7a68f5fd910272f3b.da.png)
+På trods af sin autonomi inden for en opgave er Agentic RAG ikke analog til Kunstig Generel Intelligens. Dets “agentiske” evner er begrænset til de værktøjer, datakilder og politikker, som er udstukket af menneskelige udviklere. Det kan ikke opfinde sine egne værktøjer eller træde uden for de domænegrænser, der er sat. Det excellerer i stedet i dynamisk orkestrering af de tilgængelige ressourcer.
+Nøgleforskelle fra mere avancerede AI-former omfatter:
 
-## Grænser for autonomi
+1. **Domæne-Specifik Autonomi:** Agentic RAG-systemer fokuserer på at opnå brugerdefinerede mål inden for et kendt domæne, hvor de anvender strategier som forespørgselsomskrivning eller værktøjsvalg for at forbedre resultater.
+2. **Infrastrukturafhængig:** Systemets evner afhænger af de værktøjer og data, som udviklerne har integreret. Det kan ikke overskride disse grænser uden menneskelig indgriben.
+3. **Respekt for Sikkerhedsspærrer:** Etiske retningslinjer, overholdelsesregler og forretningspolitikker er stadig meget vigtige. Agentens frihed er altid begrænset af sikkerhedsforanstaltninger og overvågningsmekanismer (forhåbentlig?)
 
-På trods af sin autonomi inden for en opgave er Agentic RAG ikke det samme som kunstig generel intelligens. Dens “agentiske” kapaciteter er begrænset til de værktøjer, datakilder og politikker, der er leveret af menneskelige udviklere. Den kan ikke opfinde sine egne værktøjer eller træde uden for de domænegrænser, der er blevet sat. I stedet udmærker den sig ved dynamisk at orkestrere de ressourcer, der er til rådighed.
-
-Vigtige forskelle fra mere avancerede AI-former inkluderer:
-
-1. **Domænespecifik autonomi:** Agentic RAG-systemer fokuserer på at opnå brugerdefinerede mål inden for et kendt domæne og anvender strategier som omskrivning af forespørgsler eller værktøjsvalg for at forbedre resultater.
-2. **Afhængighed af infrastruktur:** Systemets kapaciteter afhænger af de værktøjer og data, der er integreret af udviklere. Det kan ikke overskride disse grænser uden menneskelig indgriben.
-3. **Respekt for sikkerhedsforanstaltninger:** Etiske retningslinjer, overholdelsesregler og forretningspolitikker forbliver meget vigtige. Agentens frihed er altid begrænset af sikkerhedsforanstaltninger og overvågningsmekanismer (forhåbentlig?).
-
-## Praktiske anvendelser og værdi
+## Praktiske Brugssager og Værdi
 
 Agentic RAG udmærker sig i scenarier, der kræver iterativ forfining og præcision:
 
-1. **Miljøer med fokus på korrekthed:** Ved overholdelseskontrol, regulatorisk analyse eller juridisk forskning kan den agentiske model gentagne gange verificere fakta, konsultere flere kilder og omskrive forespørgsler, indtil den producerer et grundigt gennemgået svar.
-2. **Komplekse databaseinteraktioner:** Når der arbejdes med strukturerede data, hvor forespørgsler ofte kan fejle eller kræve justering, kan systemet autonomt forfine sine forespørgsler ved hjælp af Azure SQL eller Microsoft Fabric OneLake, hvilket sikrer, at den endelige hentning stemmer overens med brugerens intention.
-3. **Udvidede arbejdsgange:** Længerevarende sessioner kan udvikle sig, efterhånden som ny information dukker op. Agentic RAG kan løbende inkorporere nye data og ændre strategier, efterhånden som den lærer mere om problemområdet.
+1. **Korrektheds-Først Miljøer:** Ved compliance-kontroller, regulatorisk analyse eller juridisk forskning kan den agentiske model gentagne gange verificere fakta, konsultere flere kilder og omskrive forespørgsler, indtil der frembringes et grundigt efterprøvet svar.
+2. **Komplekse Databaseinteraktioner:** Når der arbejdes med strukturerede data, hvor forespørgsler ofte kan fejle eller kræve justering, kan systemet selvstændigt forfine sine forespørgsler ved brug af Azure SQL eller Microsoft Fabric OneLake og sikre, at den endelige hentning stemmer overens med brugerens hensigt.
+3. **Udvidede Arbejdsgange:** Længerevarende sessioner kan udvikle sig, efterhånden som nye oplysninger kommer for dagen. Agentic RAG kan kontinuerligt inkorporere nye data og justere strategier efterhånden som det lærer mere om problemstillingen.
 
-## Styring, gennemsigtighed og tillid
+## Styring, Gennemsigtighed og Tillid
 
-Efterhånden som disse systemer bliver mere autonome i deres beslutningstagning, er styring og gennemsigtighed afgørende:
+Efterhånden som disse systemer bliver mere autonome i deres ræsonnering, bliver styring og gennemsigtighed afgørende:
 
-- **Forklarlige beslutninger:** Modellen kan give en revisionsspor af de forespørgsler, den har lavet, de kilder, den har konsulteret, og de beslutningstrin, den har taget for at nå sin konklusion. Værktøjer som Azure AI Content Safety og Azure AI Tracing / GenAIOps kan hjælpe med at opretholde gennemsigtighed og reducere risici.
-- **Kontrol af bias og balanceret informationshentning:** Udviklere kan justere hentningsstrategier for at sikre, at balancerede og repræsentative datakilder overvejes, og regelmæssigt gennemgå outputs for at opdage bias eller skæve mønstre ved hjælp af brugerdefinerede modeller for avancerede data science-organisationer, der bruger Azure Machine Learning.
-- **Menneskelig overvågning og overholdelse:** For følsomme opgaver forbliver menneskelig gennemgang essentiel. Agentic RAG erstatter ikke menneskelig dømmekraft i beslutninger med høj risiko—den supplerer den ved at levere mere grundigt gennemgåede muligheder.
+- **Forklarbar Ræsonnering:** Modellen kan levere en revisionssti over de forespørgsler, den har lavet, de kilder den har konsulteret, og ræsonneringstrinene, den tog for at nå sin konklusion. Værktøjer som Azure AI Content Safety og Azure AI Tracing / GenAIOps kan hjælpe med at opretholde gennemsigtighed og mindske risici.
+- **Bias-Kontrol og Balanceret Hentning:** Udviklere kan justere hentningsstrategier for at sikre, at balancerede og repræsentative datakilder bliver overvejet, og regelmæssigt revidere outputs for at opdage bias eller skæve mønstre ved brug af brugerdefinerede modeller til avancerede data-science organisationer med Azure Machine Learning.
+- **Menneskelig Overvågning og Overholdelse:** Ved følsomme opgaver forbliver menneskelig gennemgang essentiel. Agentic RAG erstatter ikke menneskelig dømmekraft ved vigtige beslutninger — det understøtter ved at levere mere grundigt efterprøvede muligheder.
 
-At have værktøjer, der giver en klar registrering af handlinger, er afgørende. Uden dem kan det være meget vanskeligt at debugge en flertrinsproces. Se følgende eksempel fra Literal AI (firmaet bag Chainlit) for en Agent-run:
+Det er essentielt at have værktøjer, der giver en klar registrering af handlinger. Uden dem kan fejlfinding af en flertrinsproces være meget vanskelig. Se følgende eksempel fra Literal AI (firmaet bag Chainlit) for en Agent-kørsel:
 
-![AgentRunExample](../../../translated_images/AgentRunExample.471a94bc40cbdc0cd04c1f43c8d8c9b751f10d97918c900e29cb3ba0d6aa4c00.da.png)
+![AgentRunExample](../../../translated_images/da/AgentRunExample.471a94bc40cbdc0c.webp)
 
 ## Konklusion
 
-Agentic RAG repræsenterer en naturlig udvikling i, hvordan AI-systemer håndterer komplekse, dataintensive opgaver. Ved at anvende et loopet interaktionsmønster, autonomt vælge værktøjer og forfine forespørgsler, indtil der opnås et resultat af høj kvalitet, bevæger systemet sig ud over statisk prompt-følgen til en mere adaptiv, kontekstbevidst beslutningstager. Selvom det stadig er begrænset af menneskedefinerede infrastrukturer og etiske retningslinjer, muliggør disse agentiske kapaciteter rigere, mere dynamiske og i sidste ende mere nyttige AI-interaktioner for både virksomheder og slutbrugere.
+Agentic RAG repræsenterer en naturlig udvikling i, hvordan AI-systemer håndterer komplekse, dataintensive opgaver. Ved at anvende et gentaget interaktionsmønster, selvstændigt vælge værktøjer og forfine forespørgsler indtil et højkvalitetsresultat opnås, bevæger systemet sig ud over statisk prompt-efterlevelse til en mere adaptiv, kontekstbevidst beslutningstager. Selvom det stadig er begrænset af menneskedefinerede infrastrukturer og etiske retningslinjer, muliggør disse agentiske evner rigere, mere dynamiske og i sidste ende mere nyttige AI-interaktioner for både virksomheder og slutbrugere.
 
 ### Har du flere spørgsmål om Agentic RAG?
 
-Deltag i [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) for at møde andre lærende, deltage i kontortid og få svar på dine spørgsmål om AI-agenter.
+Deltag i [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) for at møde andre elever, deltage i kontortimer og få svar på dine AI-agents spørgsmål.
 
-## Yderligere ressourcer
+## Yderligere Ressourcer
+- <a href="https://learn.microsoft.com/training/modules/use-own-data-azure-openai" target="_blank">Implementér Retrieval Augmented Generation (RAG) med Azure OpenAI Service: Lær, hvordan du bruger dine egne data med Azure OpenAI Service. Dette Microsoft Learn-modul giver en omfattende guide til implementering af RAG</a>
+- <a href="https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai" target="_blank">Evaluering af generative AI-applikationer med Microsoft Foundry: Denne artikel omhandler evaluering og sammenligning af modeller på offentligt tilgængelige datasæt, herunder Agentic AI-applikationer og RAG-arkitekturer</a>
+- <a href="https://weaviate.io/blog/what-is-agentic-rag" target="_blank">Hvad er Agentic RAG | Weaviate</a>
+- <a href="https://ragaboutit.com/agentic-rag-a-complete-guide-to-agent-based-retrieval-augmented-generation/" target="_blank">Agentic RAG: En komplet guide til agentbaseret Retrieval Augmented Generation – Nyheder fra generation RAG</a>
+- <a href="https://huggingface.co/learn/cookbook/agent_rag" target="_blank">Agentic RAG: turbocharge din RAG med forespørgselsreformulering og selvforespørgsel! Hugging Face Open-Source AI Cookbook</a>
+- <a href="https://youtu.be/aQ4yQXeB1Ss?si=2HUqBzHoeB5tR04U" target="_blank">Tilføjelse af Agentic Lag til RAG</a>
+- <a href="https://www.youtube.com/watch?v=zeAyuLc_f3Q&t=244s" target="_blank">Fremtiden for Videnassistenter: Jerry Liu</a>
+- <a href="https://www.youtube.com/watch?v=AOSjiXP1jmQ" target="_blank">Sådan bygger du Agentic RAG-systemer</a>
+- <a href="https://ignite.microsoft.com/sessions/BRK102?source=sessions" target="_blank">Brug af Microsoft Foundry Agent Service til at skalere dine AI-agenter</a>
 
-- <a href="https://learn.microsoft.com/training/modules/use-own-data-azure-openai" target="_blank">Implementer Retrieval Augmented Generation (RAG) med Azure OpenAI Service: Lær hvordan du bruger dine egne data med Azure OpenAI Service. Denne Microsoft Learn-modul giver en omfattende guide til implementering af RAG</a>
-- <a href="https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai" target="_blank">Evaluering af generative AI-applikationer med Azure AI Foundry: Denne artikel dækker evaluering og sammenligning af modeller på offentligt tilgængelige datasæt, herunder agentiske AI-applikationer og RAG-arkitekturer</a>
-- <a href="https
-- <a href="https://ragaboutit.com/agentic-rag-a-complete-guide-to-agent-based-retrieval-augmented-generation/" target="_blank">Agentic RAG: En komplet guide til agentbaseret retrieval-augmented generation – Nyheder fra generation RAG</a>
-- <a href="https://huggingface.co/learn/cookbook/agent_rag" target="_blank">Agentic RAG: boost din RAG med forespørgselsreformulering og selv-forespørgsel! Hugging Face Open-Source AI Cookbook</a>
-- <a href="https://youtu.be/aQ4yQXeB1Ss?si=2HUqBzHoeB5tR04U" target="_blank">Tilføj agentiske lag til RAG</a>
-- <a href="https://www.youtube.com/watch?v=zeAyuLc_f3Q&t=244s" target="_blank">Fremtiden for vidensassistenter: Jerry Liu</a>
-- <a href="https://www.youtube.com/watch?v=AOSjiXP1jmQ" target="_blank">Sådan bygger du agentiske RAG-systemer</a>
-- <a href="https://ignite.microsoft.com/sessions/BRK102?source=sessions" target="_blank">Brug Azure AI Foundry Agent Service til at skalere dine AI-agenter</a>
+### Akademiske Artikler
 
-### Akademiske artikler
+- <a href="https://arxiv.org/abs/2303.17651" target="_blank">2303.17651 Self-Refine: Iterativ Forfining med Selvfeedback</a>
+- <a href="https://arxiv.org/abs/2303.11366" target="_blank">2303.11366 Reflexion: Sprogagenter med Verbal Forstærkningslæring</a>
+- <a href="https://arxiv.org/abs/2305.11738" target="_blank">2305.11738 CRITIC: Store Sprogsmodeller Kan Selv-korrigere med Værktøjs-interaktiv Kritik</a>
+- <a href="https://arxiv.org/abs/2501.09136" target="_blank">2501.09136 Agentic Retrieval-Augmented Generation: En Undersøgelse af Agentic RAG</a>
 
-- <a href="https://arxiv.org/abs/2303.17651" target="_blank">2303.17651 Self-Refine: Iterativ forfining med selv-feedback</a>
-- <a href="https://arxiv.org/abs/2303.11366" target="_blank">2303.11366 Reflexion: Sproglige agenter med verbal forstærkningslæring</a>
-- <a href="https://arxiv.org/abs/2305.11738" target="_blank">2305.11738 CRITIC: Store sprogmodeller kan selvkorrigere med værktøjsinteraktiv kritik</a>
-- <a href="https://arxiv.org/abs/2501.09136" target="_blank">2501.09136 Agentic Retrieval-Augmented Generation: En undersøgelse af agentisk RAG</a>
+## Forrige Lektion
 
-## Forrige lektion
+[Tool Use Design Pattern](../04-tool-use/README.md)
 
-[Designmønster for værktøjsbrug](../04-tool-use/README.md)
+## Næste Lektion
 
-## Næste lektion
-
-[Bygning af troværdige AI-agenter](../06-building-trustworthy-agents/README.md)
+[Building Trustworthy AI Agents](../06-building-trustworthy-agents/README.md)
 
 ---
 
-**Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på at sikre nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfraskrivelse**:
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på at være præcise, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

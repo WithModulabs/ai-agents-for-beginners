@@ -1,39 +1,30 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "86273689a010b5efecaf7fa23104e0fb",
-  "translation_date": "2025-11-07T08:42:27+00:00",
-  "source_file": "00-course-setup/README.md",
-  "language_code": "vi"
-}
--->
-# Cài đặt khóa học
+# Thiết lập Khóa học
 
 ## Giới thiệu
 
-Bài học này sẽ hướng dẫn cách chạy các mẫu mã của khóa học này.
+Bài học này sẽ hướng dẫn cách chạy các ví dụ mã của khóa học này.
 
-## Tham gia cùng các học viên khác và nhận hỗ trợ
+## Tham gia cùng các người học khác và nhận trợ giúp
 
-Trước khi bắt đầu sao chép kho lưu trữ của bạn, hãy tham gia [kênh Discord AI Agents For Beginners](https://aka.ms/ai-agents/discord) để nhận hỗ trợ cài đặt, giải đáp thắc mắc về khóa học hoặc kết nối với các học viên khác.
+Trước khi bắt đầu sao chép kho lưu trữ của bạn, hãy tham gia kênh [AI Agents For Beginners Discord](https://aka.ms/ai-agents/discord) để nhận trợ giúp về thiết lập, đặt câu hỏi về khóa học hoặc kết nối với các người học khác.
 
 ## Sao chép hoặc Fork kho lưu trữ này
 
-Để bắt đầu, vui lòng sao chép hoặc fork kho lưu trữ GitHub. Điều này sẽ tạo phiên bản riêng của bạn về tài liệu khóa học để bạn có thể chạy, kiểm tra và chỉnh sửa mã!
+Để bắt đầu, vui lòng sao chép hoặc fork kho lưu trữ GitHub. Việc này sẽ tạo phiên bản riêng của bạn cho tài liệu khóa học để bạn có thể chạy, thử nghiệm và tùy chỉnh mã!
 
-Bạn có thể thực hiện điều này bằng cách nhấp vào liên kết <a href="https://github.com/microsoft/ai-agents-for-beginners/fork" target="_blank">fork kho lưu trữ</a>
+Bạn có thể thực hiện bằng cách nhấp vào liên kết <a href="https://github.com/microsoft/ai-agents-for-beginners/fork" target="_blank">fork kho lưu trữ</a>
 
-Bây giờ bạn sẽ có phiên bản fork của khóa học này tại liên kết sau:
+Bạn sẽ có phiên bản fork của khóa học này tại liên kết sau:
 
-![Forked Repo](../../../translated_images/forked-repo.33f27ca1901baa6a5e13ec3eb1f0ddd3a44d936d91cc8cfb19bfdb9688bd2c3d.vi.png)
+![Forked Repo](../../../translated_images/vi/forked-repo.33f27ca1901baa6a.webp)
 
-### Sao chép nông (khuyến nghị cho workshop / Codespaces)
+### Shallow Clone (khuyến nghị cho workshop / Codespaces)
 
-  >Kho lưu trữ đầy đủ có thể rất lớn (~3 GB) khi bạn tải xuống toàn bộ lịch sử và tất cả các tệp. Nếu bạn chỉ tham gia workshop hoặc chỉ cần một vài thư mục bài học, việc sao chép nông (hoặc sao chép rời rạc) sẽ tránh được phần lớn tải xuống bằng cách cắt ngắn lịch sử và/hoặc bỏ qua các blob.
+  > Kho lưu trữ đầy đủ có thể rất lớn (~3 GB) khi bạn tải xuống toàn bộ lịch sử và tất cả các tập tin. Nếu bạn chỉ tham gia workshop hoặc chỉ cần vài thư mục bài học, một bản shallow clone (hoặc sparse clone) sẽ tránh tải xuống phần lớn bằng cách rút ngắn lịch sử và/hoặc bỏ qua các blob.
 
-#### Sao chép nông nhanh — lịch sử tối thiểu, tất cả các tệp
+#### Shallow clone nhanh — lịch sử tối thiểu, tất cả tập tin
 
-Thay thế `<your-username>` trong các lệnh dưới đây bằng URL fork của bạn (hoặc URL upstream nếu bạn muốn).
+Thay `<your-username>` trong các lệnh dưới đây bằng URL fork của bạn (hoặc URL upstream nếu bạn muốn).
 
 Để sao chép chỉ lịch sử commit mới nhất (tải xuống nhỏ):
 
@@ -47,27 +38,27 @@ git clone --depth 1 https://github.com/<your-username>/ai-agents-for-beginners.g
 git clone --depth 1 --branch <branch-name> https://github.com/<your-username>/ai-agents-for-beginners.git
 ```
 
-#### Sao chép rời rạc — blob tối thiểu + chỉ các thư mục được chọn
+#### Clone một phần (sparse) — blob tối thiểu + chỉ các thư mục chọn lọc
 
-Điều này sử dụng sao chép rời rạc và sparse-checkout (yêu cầu Git 2.25+ và khuyến nghị Git hiện đại với hỗ trợ sao chép rời rạc):
+Lệnh này sử dụng partial clone và sparse-checkout (yêu cầu Git 2.25+ và khuyến nghị Git hiện đại hỗ trợ partial clone):
 
 ```bash|powershell
 git clone --depth 1 --filter=blob:none --sparse https://github.com/<your-username>/ai-agents-for-beginners.git
 ```
 
-Đi vào thư mục kho lưu trữ:
+Đi vào thư mục repo:
 
 ```bash|powershell
 cd ai-agents-for-beginners
 ```
 
-Sau đó chỉ định các thư mục bạn muốn (ví dụ dưới đây hiển thị hai thư mục):
+Sau đó chỉ định các thư mục bạn muốn (ví dụ dưới đây cho thấy hai thư mục):
 
 ```bash|powershell
 git sparse-checkout set 00-course-setup 01-intro-to-ai-agents
 ```
 
-Sau khi sao chép và xác minh các tệp, nếu bạn chỉ cần các tệp và muốn giải phóng không gian (không có lịch sử git), vui lòng xóa metadata của kho lưu trữ (💀không thể khôi phục — bạn sẽ mất tất cả chức năng Git: không có commit, pull, push hoặc truy cập lịch sử).
+Sau khi clone và kiểm tra tập tin, nếu bạn chỉ cần các tập tin và muốn giải phóng không gian (không cần lịch sử git), vui lòng xóa dữ liệu metadata repository (💀 không thể khôi phục — bạn sẽ mất toàn bộ chức năng Git: không thể commit, pull, push hoặc truy cập lịch sử).
 
 ```bash
 # zsh/bash
@@ -79,41 +70,31 @@ rm -rf .git
 Remove-Item -Recurse -Force .git
 ```
 
-#### Sử dụng GitHub Codespaces (khuyến nghị để tránh tải xuống lớn cục bộ)
+#### Sử dụng GitHub Codespaces (khuyến nghị để tránh tải xuống lớn trên máy)
 
-- Tạo một Codespace mới cho kho lưu trữ này thông qua [Giao diện GitHub](https://github.com/codespaces).  
+- Tạo một Codespace mới cho repo này qua [GitHub UI](https://github.com/codespaces).  
 
-- Trong terminal của Codespace vừa tạo, chạy một trong các lệnh sao chép nông/rời rạc ở trên để chỉ mang các thư mục bài học bạn cần vào không gian làm việc Codespace.
-- Tùy chọn: sau khi sao chép trong Codespaces, xóa .git để giải phóng thêm không gian (xem các lệnh xóa ở trên).
-- Lưu ý: Nếu bạn muốn mở kho lưu trữ trực tiếp trong Codespaces (không cần sao chép thêm), hãy lưu ý rằng Codespaces sẽ xây dựng môi trường devcontainer và có thể vẫn cung cấp nhiều hơn bạn cần. Sao chép một bản sao nông bên trong một Codespace mới cho phép bạn kiểm soát tốt hơn việc sử dụng dung lượng đĩa.
+- Trong terminal của Codespace mới tạo, chạy một trong các lệnh shallow/sparse clone ở trên để mang chỉ các thư mục bài học bạn cần vào workspace Codespace.
+- Tùy chọn: sau khi clone bên trong Codespaces, xóa .git để giải phóng thêm dung lượng (xem các lệnh xóa ở trên).
+- Lưu ý: Nếu bạn muốn mở repo trực tiếp trong Codespaces (không clone thêm), lưu ý Codespaces sẽ xây dựng môi trường devcontainer và có thể vẫn cung cấp nhiều hơn mức bạn cần. Clone một bản shallow bên trong Codespace mới cho phép bạn kiểm soát sử dụng ổ đĩa tốt hơn.
 
 #### Mẹo
 
-- Luôn thay thế URL sao chép bằng fork của bạn nếu bạn muốn chỉnh sửa/commit.
-- Nếu sau này bạn cần thêm lịch sử hoặc tệp, bạn có thể fetch chúng hoặc điều chỉnh sparse-checkout để bao gồm các thư mục bổ sung.
+- Luôn thay URL clone bằng fork của bạn nếu bạn muốn chỉnh sửa/commit.
+- Nếu bạn sau này cần nhiều lịch sử hoặc tập tin hơn, bạn có thể fetch hoặc điều chỉnh sparse-checkout để bao gồm thêm thư mục.
 
-## Chạy mã
+## Chạy Mã
 
-Khóa học này cung cấp một loạt các Jupyter Notebooks mà bạn có thể chạy để trải nghiệm thực hành xây dựng AI Agents.
+Khóa học này cung cấp một loạt các Jupyter Notebooks để bạn có thể chạy để có trải nghiệm thực hành xây dựng các AI Agents.
 
-Các mẫu mã sử dụng:
+Mã mẫu sử dụng **Microsoft Agent Framework (MAF)** với `AzureAIProjectAgentProvider`, kết nối đến **Azure AI Agent Service V2** (API Responses) thông qua **Microsoft Foundry**.
 
-**Yêu cầu tài khoản GitHub - Miễn phí**:
-
-1) Semantic Kernel Agent Framework + GitHub Models Marketplace. Được gắn nhãn là (semantic-kernel.ipynb)
-2) AutoGen Framework + GitHub Models Marketplace. Được gắn nhãn là (autogen.ipynb)
-
-**Yêu cầu đăng ký Azure**:
-3) Azure AI Foundry + Azure AI Agent Service. Được gắn nhãn là (azureaiagent.ipynb)
-
-Chúng tôi khuyến khích bạn thử cả ba loại ví dụ để xem loại nào phù hợp nhất với bạn.
-
-Dù bạn chọn tùy chọn nào, điều đó sẽ xác định các bước cài đặt bạn cần thực hiện dưới đây:
+Tất cả các notebook Python được gắn nhãn `*-python-agent-framework.ipynb`.
 
 ## Yêu cầu
 
 - Python 3.12+
-  - **LƯU Ý**: Nếu bạn chưa cài đặt Python3.12, hãy đảm bảo bạn cài đặt nó. Sau đó tạo venv của bạn bằng python3.12 để đảm bảo các phiên bản chính xác được cài đặt từ tệp requirements.txt.
+  - **LƯU Ý**: Nếu bạn chưa cài Python3.12, đảm bảo bạn cài đặt nó. Sau đó tạo môi trường ảo venv sử dụng python3.12 để đảm bảo các phiên bản đúng được cài từ tệp requirements.txt.
   
     >Ví dụ
 
@@ -135,113 +116,84 @@ Dù bạn chọn tùy chọn nào, điều đó sẽ xác định các bước c
     venv\Scripts\activate
     ```
 
-- .NET 10+: Đối với các mã mẫu sử dụng .NET, hãy đảm bảo bạn cài đặt [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) hoặc mới hơn. Sau đó, kiểm tra phiên bản .NET SDK đã cài đặt của bạn:
+- .NET 10+: Đối với mã mẫu sử dụng .NET, hãy cài đặt [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) hoặc phiên bản mới hơn. Sau đó kiểm tra phiên bản SDK .NET bạn đã cài đặt:
 
     ```bash|powershell
     dotnet --list-sdks
     ```
 
-- Tài khoản GitHub - Để truy cập GitHub Models Marketplace
-- Đăng ký Azure - Để truy cập Azure AI Foundry
-- Tài khoản Azure AI Foundry - Để truy cập Azure AI Agent Service
+- **Azure CLI** — Yêu cầu để xác thực. Cài tại [aka.ms/installazurecli](https://aka.ms/installazurecli).
+- **Azure Subscription** — Để truy cập Microsoft Foundry và Azure AI Agent Service.
+- **Microsoft Foundry Project** — Một dự án có mô hình đã được triển khai (ví dụ: `gpt-4o`). Xem [Bước 1](#bước-1-tạo-dự-án-microsoft-foundry) bên dưới.
 
-Chúng tôi đã bao gồm một tệp `requirements.txt` trong thư mục gốc của kho lưu trữ này, chứa tất cả các gói Python cần thiết để chạy các mẫu mã.
+Chúng tôi đã bao gồm tệp `requirements.txt` ở thư mục gốc của repo chứa tất cả các gói Python cần thiết để chạy mã mẫu.
 
-Bạn có thể cài đặt chúng bằng cách chạy lệnh sau trong terminal tại thư mục gốc của kho lưu trữ:
+Bạn có thể cài đặt chúng bằng cách chạy lệnh sau trong terminal ở thư mục gốc repo:
 
 ```bash|powershell
 pip install -r requirements.txt
 ```
 
-Chúng tôi khuyến nghị tạo một môi trường ảo Python để tránh bất kỳ xung đột và vấn đề nào.
+Chúng tôi khuyên bạn nên tạo môi trường ảo Python để tránh xung đột và sự cố.
 
-## Cài đặt VSCode
+## Thiết lập VSCode
 
-Đảm bảo rằng bạn đang sử dụng đúng phiên bản Python trong VSCode.
+Đảm bảo bạn đang dùng đúng phiên bản Python trong VSCode.
 
 ![image](https://github.com/user-attachments/assets/a85e776c-2edb-4331-ae5b-6bfdfb98ee0e)
 
-## Cài đặt cho các mẫu sử dụng GitHub Models 
+## Thiết lập Microsoft Foundry và Azure AI Agent Service
 
-### Bước 1: Lấy mã truy cập cá nhân (PAT) GitHub của bạn
+### Bước 1: Tạo Dự án Microsoft Foundry
 
-Khóa học này sử dụng GitHub Models Marketplace, cung cấp quyền truy cập miễn phí vào các mô hình ngôn ngữ lớn (LLMs) mà bạn sẽ sử dụng để xây dựng AI Agents.
+Bạn cần một **hub** và một **dự án** Azure AI Foundry có mô hình được triển khai để chạy notebook.
 
-Để sử dụng GitHub Models, bạn sẽ cần tạo một [mã truy cập cá nhân GitHub](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+1. Vào [ai.azure.com](https://ai.azure.com) và đăng nhập với tài khoản Azure của bạn.
+2. Tạo một **hub** (hoặc dùng hub hiện có). Xem: [Tổng quan tài nguyên Hub](https://learn.microsoft.com/azure/ai-foundry/concepts/ai-resources).
+3. Trong hub, tạo một **dự án**.
+4. Triển khai một mô hình (ví dụ: `gpt-4o`) từ **Models + Endpoints** → **Deploy model**.
 
-Điều này có thể được thực hiện bằng cách truy cập <a href="https://github.com/settings/personal-access-tokens" target="_blank">cài đặt mã truy cập cá nhân</a> trong tài khoản GitHub của bạn.
+### Bước 2: Lấy Endpoint Dự án và Tên Triển khai Mô hình
 
-Vui lòng tuân theo [Nguyên tắc tối thiểu quyền](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) khi tạo mã của bạn. Điều này có nghĩa là bạn chỉ nên cấp cho mã các quyền cần thiết để chạy các mẫu mã trong khóa học này.
+Từ dự án của bạn trong cổng Microsoft Foundry:
 
-1. Chọn tùy chọn `Fine-grained tokens` ở phía bên trái màn hình của bạn bằng cách truy cập **Developer settings**
+- **Project Endpoint** — Vào trang **Overview** và sao chép URL endpoint.
 
-   ![Developer settings](../../../translated_images/profile_developer_settings.410a859fe749c755c859d414294c5908e307222b2c61819c3203bbeed4470e25.vi.png)
+![Project Connection String](../../../translated_images/vi/project-endpoint.8cf04c9975bbfbf1.webp)
 
-   Sau đó chọn `Generate new token`.
+- **Model Deployment Name** — Vào **Models + Endpoints**, chọn mô hình đã triển khai và ghi chú **Deployment name** (ví dụ: `gpt-4o`).
 
-   ![Generate Token](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.vi.png)
+### Bước 3: Đăng nhập Azure với `az login`
 
-2. Nhập tên mô tả cho mã của bạn phản ánh mục đích của nó, giúp dễ dàng nhận diện sau này.
+Tất cả notebook dùng **`AzureCliCredential`** để xác thực — không cần quản lý các khóa API. Điều này yêu cầu bạn đăng nhập qua Azure CLI.
 
-    🔐 Khuyến nghị thời gian tồn tại mã
+1. **Cài Azure CLI** nếu bạn chưa: [aka.ms/installazurecli](https://aka.ms/installazurecli)
 
-    Thời gian khuyến nghị: 30 ngày
-    Để bảo mật hơn, bạn có thể chọn thời gian ngắn hơn—chẳng hạn như 7 ngày 🛡️
-    Đây là cách tuyệt vời để đặt mục tiêu cá nhân và hoàn thành khóa học trong khi động lực học tập của bạn đang cao 🚀.
+2. **Đăng nhập** bằng lệnh:
 
-    ![Token Name and Expiration](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.vi.png)
+    ```bash|powershell
+    az login
+    ```
 
-3. Giới hạn phạm vi của mã vào fork của kho lưu trữ này.
+    Hoặc nếu bạn ở môi trường remote/Codespace không có trình duyệt:
 
-    ![Limit scope to fork repository](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.vi.png)
+    ```bash|powershell
+    az login --use-device-code
+    ```
 
-4. Hạn chế quyền của mã: Trong **Permissions**, nhấp vào tab **Account**, và nhấp vào nút "+ Add permissions". Một menu thả xuống sẽ xuất hiện. Vui lòng tìm kiếm **Models** và đánh dấu vào ô.
+3. **Chọn đăng ký Azure** nếu được yêu cầu — chọn đăng ký chứa dự án Foundry của bạn.
 
-    ![Add Models Permission](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.vi.png)
+4. **Xác minh** bạn đã đăng nhập:
 
-5. Xác minh các quyền cần thiết trước khi tạo mã. ![Verify Permissions](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.vi.png)
+    ```bash|powershell
+    az account show
+    ```
 
-6. Trước khi tạo mã, hãy đảm bảo bạn sẵn sàng lưu mã trong nơi an toàn như kho mật khẩu, vì nó sẽ không được hiển thị lại sau khi bạn tạo. ![Store Token Securely](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.vi.png)
+> **Tại sao lại `az login`?** Các notebook xác thực thông qua `AzureCliCredential` của gói `azure-identity`. Điều này có nghĩa phiên làm việc Azure CLI của bạn cung cấp thông tin xác thực — không cần API key hay bí mật trong tệp `.env`. Đây là một [thực hành bảo mật tốt](https://learn.microsoft.com/azure/developer/ai/keyless-connections).
 
-Sao chép mã mới mà bạn vừa tạo. Bây giờ bạn sẽ thêm mã này vào tệp `.env` được bao gồm trong khóa học này.
+### Bước 4: Tạo tệp `.env` của bạn
 
-### Bước 2: Tạo tệp `.env` của bạn
-
-Để tạo tệp `.env`, chạy lệnh sau trong terminal của bạn.
-
-```bash
-# zsh/bash
-cp .env.example .env
-```
-
-```powershell
-# PowerShell
-Copy-Item .env.example .env
-```
-
-Điều này sẽ sao chép tệp ví dụ và tạo một `.env` trong thư mục của bạn, nơi bạn điền các giá trị cho các biến môi trường.
-
-Với mã của bạn đã được sao chép, mở tệp `.env` trong trình soạn thảo văn bản yêu thích của bạn và dán mã vào trường `GITHUB_TOKEN`.
-
-![GitHub Token Field](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.vi.png)
-
-Bây giờ bạn đã có thể chạy các mẫu mã của khóa học này.
-
-## Cài đặt cho các mẫu sử dụng Azure AI Foundry và Azure AI Agent Service
-
-### Bước 1: Lấy điểm cuối dự án Azure của bạn
-
-Làm theo các bước để tạo hub và dự án trong Azure AI Foundry tại đây: [Tổng quan về tài nguyên hub](https://learn.microsoft.com/azure/ai-foundry/concepts/ai-resources)
-
-Sau khi bạn đã tạo dự án của mình, bạn sẽ cần lấy chuỗi kết nối cho dự án của mình.
-
-Điều này có thể được thực hiện bằng cách truy cập trang **Overview** của dự án trong cổng Azure AI Foundry.
-
-![Project Connection String](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.vi.png)
-
-### Bước 2: Tạo tệp `.env` của bạn
-
-Để tạo tệp `.env`, chạy lệnh sau trong terminal của bạn.
+Sao chép tệp mẫu:
 
 ```bash
 # zsh/bash
@@ -253,77 +205,130 @@ cp .env.example .env
 Copy-Item .env.example .env
 ```
 
-Điều này sẽ sao chép tệp ví dụ và tạo một `.env` trong thư mục của bạn, nơi bạn điền các giá trị cho các biến môi trường.
+Mở `.env` và điền hai giá trị sau:
 
-Với mã của bạn đã được sao chép, mở tệp `.env` trong trình soạn thảo văn bản yêu thích của bạn và dán mã vào trường `PROJECT_ENDPOINT`.
+```env
+AZURE_AI_PROJECT_ENDPOINT=https://<your-project>.services.ai.azure.com/api/projects/<your-project-id>
+AZURE_AI_MODEL_DEPLOYMENT_NAME=gpt-4o
+```
 
-### Bước 3: Đăng nhập vào Azure
+| Biến | Nơi tìm thấy |
+|----------|-------------|
+| `AZURE_AI_PROJECT_ENDPOINT` | Cổng Foundry → dự án của bạn → trang **Overview** |
+| `AZURE_AI_MODEL_DEPLOYMENT_NAME` | Cổng Foundry → **Models + Endpoints** → tên mô hình đã triển khai |
 
-Theo thực hành bảo mật tốt nhất, chúng ta sẽ sử dụng [xác thực không cần khóa](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) để xác thực vào Azure OpenAI với Microsoft Entra ID. 
+Đó là tất cả cho hầu hết bài học! Các notebook sẽ tự động xác thực qua phiên `az login` của bạn.
 
-Tiếp theo, mở terminal và chạy `az login --use-device-code` để đăng nhập vào tài khoản Azure của bạn.
+### Bước 5: Cài đặt các phụ thuộc Python
 
-Sau khi bạn đã đăng nhập, chọn đăng ký của bạn trong terminal.
+```bash|powershell
+pip install -r requirements.txt
+```
 
-## Các biến môi trường bổ sung - Azure Search và Azure OpenAI 
+Chúng tôi khuyên bạn nên chạy lệnh này trong môi trường ảo bạn đã tạo trước đó.
 
-Đối với bài học Agentic RAG - Bài học 5 - có các mẫu sử dụng Azure Search và Azure OpenAI.
+## Thiết lập thêm cho Bài học 5 (Agentic RAG)
 
-Nếu bạn muốn chạy các mẫu này, bạn sẽ cần thêm các biến môi trường sau vào tệp `.env` của bạn:
+Bài 5 dùng **Azure AI Search** cho retrieval-augmented generation. Nếu bạn dự định chạy bài này, thêm các biến sau vào tệp `.env`:
 
-### Trang Tổng quan (Dự án)
+| Biến | Nơi tìm thấy |
+|-------|---------------|
+| `AZURE_SEARCH_SERVICE_ENDPOINT` | Cổng Azure → tài nguyên **Azure AI Search** → **Overview** → URL |
+| `AZURE_SEARCH_API_KEY` | Cổng Azure → tài nguyên **Azure AI Search** → **Settings** → **Keys** → key quản trị chính |
 
-- `AZURE_SUBSCRIPTION_ID` - Kiểm tra **Chi tiết dự án** trên trang **Overview** của dự án của bạn.
+## Thiết lập thêm cho Bài học 6 và Bài học 8 (GitHub Models)
 
-- `AZURE_AI_PROJECT_NAME` - Xem ở đầu trang **Overview** của dự án của bạn.
+Một số notebook trong bài 6 và 8 dùng **GitHub Models** thay vì Azure AI Foundry. Nếu bạn muốn chạy các mẫu đó, thêm các biến này vào tệp `.env`:
 
-- `AZURE_OPENAI_SERVICE` - Tìm thấy trong tab **Included capabilities** cho **Azure OpenAI Service** trên trang **Overview**.
+| Biến | Nơi tìm thấy |
+|---------|--------------|
+| `GITHUB_TOKEN` | GitHub → **Settings** → **Developer settings** → **Personal access tokens** |
+| `GITHUB_ENDPOINT` | Dùng `https://models.inference.ai.azure.com` (giá trị mặc định) |
+| `GITHUB_MODEL_ID` | Tên mô hình sử dụng (ví dụ `gpt-4o-mini`) |
 
-### Trung tâm Quản lý
+## Nhà cung cấp thay thế: MiniMax (Tương thích OpenAI)
 
-- `AZURE_OPENAI_RESOURCE_GROUP` - Đi tới **Thuộc tính dự án** trên trang **Overview** của **Trung tâm Quản lý**.
+[MiniMax](https://platform.minimaxi.com/) cung cấp các mô hình có ngữ cảnh lớn (lên đến 204K token) thông qua API tương thích OpenAI. Vì Microsoft Agent Framework `OpenAIChatClient` hoạt động với bất kỳ đầu cuối tương thích OpenAI nào, bạn có thể dùng MiniMax như một thay thế cho GitHub Models hoặc OpenAI.
 
-- `GLOBAL_LLM_SERVICE` - Dưới **Connected resources**, tìm tên kết nối **Azure AI Services**. Nếu không được liệt kê, kiểm tra **cổng Azure** dưới nhóm tài nguyên của bạn để tìm tên tài nguyên AI Services.
+Thêm các biến sau vào tệp `.env`:
 
-### Trang Models + Endpoints
+| Biến | Nơi tìm thấy |
+|--------|--------------|
+| `MINIMAX_API_KEY` | [MiniMax Platform](https://platform.minimaxi.com/) → API Keys |
+| `MINIMAX_BASE_URL` | Dùng `https://api.minimax.io/v1` (giá trị mặc định) |
+| `MINIMAX_MODEL_ID` | Tên mô hình sử dụng (ví dụ: `MiniMax-M2.7`) |
 
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Chọn mô hình embedding của bạn (ví dụ: `text-embedding-ada-002`) và ghi lại **Tên triển khai** từ chi tiết mô hình.
+**Các mô hình có sẵn**: `MiniMax-M2.7` (khuyến nghị), `MiniMax-M2.7-highspeed` (phản hồi nhanh hơn)
 
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Chọn mô hình chat của bạn (ví dụ: `gpt-4o-mini`) và ghi lại **Tên triển khai** từ chi tiết mô hình.
+Các ví dụ mã dùng `OpenAIChatClient` (ví dụ: bài 14 về quy trình đặt phòng khách sạn) sẽ tự động phát hiện và dùng cấu hình MiniMax của bạn khi `MINIMAX_API_KEY` được thiết lập.
 
-### Cổng Azure
+## Thiết lập thêm cho Bài học 8 (Quy trình Bing Grounding)
 
-- `AZURE_OPENAI_ENDPOINT` - Tìm **Azure AI services**, nhấp vào nó, sau đó đi tới **Quản lý tài nguyên**, **Keys and Endpoint**, cuộn xuống "Azure OpenAI endpoints", và sao chép cái có ghi "Language APIs".
+Notebook quy trình có điều kiện trong bài 8 dùng **Bing grounding** qua Azure AI Foundry. Nếu bạn định chạy mẫu này, thêm biến sau vào `.env`:
 
-- `AZURE_OPENAI_API_KEY` - Từ cùng màn hình, sao chép KEY 1 hoặc KEY 2.
+| Biến | Nơi tìm thấy |
+|---------|--------------|
+| `BING_CONNECTION_ID` | Cổng Azure AI Foundry → dự án của bạn → **Management** → **Connected resources** → kết nối Bing của bạn → sao chép connection ID |
 
-- `AZURE_SEARCH_SERVICE_ENDPOINT` - Tìm tài nguyên **Azure AI Search** của bạn, nhấp vào nó, và xem **Overview**.
+## Xử lý sự cố
 
-- `AZURE_SEARCH_API_KEY` - Sau đó đi tới **Settings** và sau đó **Keys** để sao chép khóa admin chính hoặc phụ.
+### Lỗi Xác thực chứng chỉ SSL trên macOS
 
-### Trang web bên ngoài
+Nếu bạn dùng macOS gặp lỗi như:
 
-- `AZURE_OPENAI_API_VERSION` - Truy cập trang [vòng đời phiên bản API](https://learn.microsoft.com/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) dưới **Phiên bản API GA mới nhất**.
+```plaintext
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain
+```
 
-### Cài đặt xác thực không cần khóa
+Đây là vấn đề thường gặp với Python trên macOS khi hệ thống không tự động tin cậy chứng chỉ SSL. Thử các giải pháp sau theo thứ tự:
 
-Thay vì mã hóa cứng thông tin đăng nhập của bạn, chúng ta sẽ sử dụng kết nối không cần khóa với Azure OpenAI. Để làm điều này, chúng ta sẽ import `DefaultAzureCredential` và sau đó gọi hàm `DefaultAzureCredential` để lấy thông tin đăng nhập.
+**Lựa chọn 1: Chạy script Cài đặt chứng chỉ của Python (khuyến nghị)**
+
+```bash
+# Thay thế 3.XX bằng phiên bản Python bạn đã cài đặt (ví dụ, 3.12 hoặc 3.13):
+/Applications/Python\ 3.XX/Install\ Certificates.command
+```
+
+**Lựa chọn 2: Dùng `connection_verify=False` trong notebook (chỉ với notebook GitHub Models)**
+
+Trong notebook Bài 6 (`06-building-trustworthy-agents/code_samples/06-system-message-framework.ipynb`), có sẵn phương án giải quyết đã bị comment. Bỏ comment `connection_verify=False` khi tạo client:
 
 ```python
-# Python
-from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
+client = ChatCompletionsClient(
+    endpoint=endpoint,
+    credential=AzureKeyCredential(token),
+    connection_verify=False,  # Vô hiệu hóa xác thực SSL nếu bạn gặp lỗi chứng chỉ
+)
 ```
 
-## Bị mắc kẹt ở đâu đó?
-Nếu bạn gặp bất kỳ vấn đề nào khi chạy thiết lập này, hãy tham gia <a href="https://discord.gg/kzRShWzttr" target="_blank">Discord Cộng đồng Azure AI</a> của chúng tôi hoặc <a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">tạo một vấn đề mới</a>.
+> **⚠️ Cảnh báo:** Vô hiệu hóa xác thực SSL (`connection_verify=False`) làm giảm độ bảo mật vì bỏ qua kiểm tra chứng chỉ. Chỉ dùng như giải pháp tạm thời trong môi trường phát triển, không dùng trong sản xuất.
+
+**Lựa chọn 3: Cài và dùng `truststore`**
+
+```bash
+pip install truststore
+```
+
+Sau đó thêm dòng sau trên đầu notebook hoặc script trước khi gọi network:
+
+```python
+import truststore
+truststore.inject_into_ssl()
+```
+
+## Bị kẹt?  
+
+Nếu bạn gặp sự cố khi chạy thiết lập, hãy tham gia vào <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a> hoặc <a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">tạo một issue</a>.
 
 ## Bài học tiếp theo
 
-Bạn đã sẵn sàng để chạy mã cho khóa học này. Chúc bạn học vui về thế giới của AI Agents!
+Bạn giờ đã sẵn sàng chạy mã cho khóa học này. Chúc bạn học vui và tìm hiểu thêm về thế giới các AI Agents!
 
-[Giới thiệu về AI Agents và các trường hợp sử dụng của Agent](../01-intro-to-ai-agents/README.md)
+[Giới thiệu về AI Agents và Các trường hợp sử dụng Agent](../01-intro-to-ai-agents/README.md)
 
 ---
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với các thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

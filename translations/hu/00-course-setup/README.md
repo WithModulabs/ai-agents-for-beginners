@@ -1,73 +1,64 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "86273689a010b5efecaf7fa23104e0fb",
-  "translation_date": "2025-11-07T08:45:37+00:00",
-  "source_file": "00-course-setup/README.md",
-  "language_code": "hu"
-}
--->
-# Tanfolyam Beállítása
+# Tanfolyam beállítása
 
 ## Bevezetés
 
-Ebben a leckében bemutatjuk, hogyan futtathatók a tanfolyam kódmintái.
+Ebben az órában megmutatjuk, hogyan futtathatók a tanfolyam kódmintái.
 
 ## Csatlakozz más tanulókhoz és kérj segítséget
 
-Mielőtt elkezdenéd klónozni a repót, csatlakozz az [AI Agents For Beginners Discord csatornához](https://aka.ms/ai-agents/discord), hogy segítséget kapj a beállításhoz, választ kapj a tanfolyammal kapcsolatos kérdéseidre, vagy kapcsolatba lépj más tanulókkal.
+Mielőtt klónoznád a tárhelyedet, csatlakozz az [AI Agents For Beginners Discord csatornához](https://aka.ms/ai-agents/discord), hogy segítséget kapj a beállításhoz, kérdéseket tehess fel a tanfolyammal kapcsolatban, vagy kapcsolatba léphess más tanulókkal.
 
-## Klónozd vagy Forkold ezt a Repót
+## Klónozd vagy forkoljad ezt a tárhelyet
 
-Először klónozd vagy forkold a GitHub repót. Így létrehozhatod a tanfolyam anyagainak saját verzióját, amelyet futtathatsz, tesztelhetsz és módosíthatsz!
+Kezdéshez kérjük, klónozd vagy forkoljad a GitHub tárhelyet. Ez létrehozza a saját verziódat a tananyagból, így futtathatod, tesztelheted és módosíthatod a kódot!
 
-Ezt úgy teheted meg, hogy rákattintasz a <a href="https://github.com/microsoft/ai-agents-for-beginners/fork" target="_blank">repo forkolása</a> linkre.
+Ezt az alábbi linkre kattintva teheted meg: <a href="https://github.com/microsoft/ai-agents-for-beginners/fork" target="_blank">forkold a tárhelyet</a>
 
-Most már rendelkezel a tanfolyam saját forkolt verziójával az alábbi linken:
+Most már meg kell legyen a saját forkolt verziód erről a tanfolyamról az alábbi linken:
 
-![Forkolt Repo](../../../translated_images/forked-repo.33f27ca1901baa6a5e13ec3eb1f0ddd3a44d936d91cc8cfb19bfdb9688bd2c3d.hu.png)
+![Forked Repo](../../../translated_images/hu/forked-repo.33f27ca1901baa6a.webp)
 
-### Sekély Klónozás (ajánlott workshophoz / Codespaces-hez)
+### Felületes klón (ajánlott workshop/Codespaces esetén)
 
-  >A teljes repó mérete nagy lehet (~3 GB), ha letöltöd az összes előzményt és fájlt. Ha csak a workshopon veszel részt, vagy csak néhány lecke mappára van szükséged, a sekély klónozás (vagy ritka klónozás) elkerüli a legtöbb letöltést az előzmények lerövidítésével és/vagy a blobok kihagyásával.
+  >A teljes tárhely nagy lehet (~3 GB), ha az összes előzményt és fájlt letöltöd. Ha csak a workshopon veszel részt, vagy csak néhány leckemappára van szükséged, akkor a felületes klón (vagy ritkított klónozás) elkerüli a legtöbb letöltést azáltal, hogy az előzményeket lecsökkenti vagy fájlokat kihagy.
 
-#### Gyors sekély klónozás — minimális előzmény, minden fájl
+#### Gyors felületes klón — minimális előzmények, minden fájl
 
-Cseréld ki `<your-username>`-t az alábbi parancsokban a fork URL-re (vagy az upstream URL-re, ha azt preferálod).
+Az alábbi parancsokban cseréld le a `<your-username>` részt a saját forkod URL-jére (vagy az upstream URL-re, ha azt preferálod).
 
-Csak a legutóbbi commit előzmény klónozása (kis letöltés):
+Csak a legutóbbi commit előzményének klónozásához (kicsi letöltés):
 
 ```bash|powershell
 git clone --depth 1 https://github.com/<your-username>/ai-agents-for-beginners.git
 ```
 
-Egy adott branch klónozása:
+Egy adott ág klónozásához:
 
 ```bash|powershell
 git clone --depth 1 --branch <branch-name> https://github.com/<your-username>/ai-agents-for-beginners.git
 ```
 
-#### Részleges (ritka) klónozás — minimális blobok + csak kiválasztott mappák
+#### Részleges (ritkított) klón — minimális blob + csak kiválasztott mappák
 
-Ez részleges klónozást és ritka-checkoutot használ (Git 2.25+ szükséges, modern Git ajánlott részleges klónozás támogatásával):
+Ez részleges klónozást és sparse-checkout-ot használ (Git 2.25+ szükséges, ajánlott modern Git részleges klónozáshoz):
 
 ```bash|powershell
 git clone --depth 1 --filter=blob:none --sparse https://github.com/<your-username>/ai-agents-for-beginners.git
 ```
 
-Lépj be a repo mappájába:
+Lépj be a tárhely mappájába:
 
 ```bash|powershell
 cd ai-agents-for-beginners
 ```
 
-Ezután add meg, mely mappákat szeretnéd (az alábbi példa két mappát mutat):
+Majd add meg, mely mappákat szeretnéd (az alábbi példa két mappát mutat):
 
 ```bash|powershell
 git sparse-checkout set 00-course-setup 01-intro-to-ai-agents
 ```
 
-Miután klónoztad és ellenőrizted a fájlokat, ha csak fájlokra van szükséged és helyet szeretnél felszabadítani (nincs git előzmény), töröld a repó metaadatokat (💀visszafordíthatatlan — elveszíted az összes Git funkciót: nincs commit, pull, push vagy előzmény hozzáférés).
+A klónozás és a fájlok ellenőrzése után, ha csak fájlokra van szükséged és helyet akarsz felszabadítani (nem kell git előzmény), töröld a tárhely metaadatait (💀visszafordíthatatlan — elvesznek a Git funkciók: nincs commit, pull, push, vagy előzmény elérés).
 
 ```bash
 # zsh/bash
@@ -79,41 +70,30 @@ rm -rf .git
 Remove-Item -Recurse -Force .git
 ```
 
-#### GitHub Codespaces használata (ajánlott a helyi nagy letöltések elkerülésére)
+#### GitHub Codespaces használata (ajánlott a nagy helyi letöltések elkerüléséhez)
 
-- Hozz létre egy új Codespace-t ehhez a repóhoz a [GitHub UI](https://github.com/codespaces) segítségével.  
-
-- Az újonnan létrehozott Codespace termináljában futtasd a fenti sekély/ritka klónozási parancsok egyikét, hogy csak a szükséges lecke mappákat hozd be a Codespace munkaterületére.
-- Opcionális: a Codespaces-ben történő klónozás után távolítsd el a .git-et, hogy extra helyet szabadíts fel (lásd a fenti eltávolítási parancsokat).
-- Megjegyzés: Ha inkább közvetlenül a Codespaces-ben nyitod meg a repót (extra klónozás nélkül), vedd figyelembe, hogy a Codespaces létrehozza a devcontainer környezetet, és lehet, hogy többet biztosít, mint amire szükséged van. Egy sekély másolat klónozása egy friss Codespace-ben nagyobb kontrollt ad a lemezhasználat felett.
+- Hozz létre egy új Codespace-et ehhez a tárhelyhez a [GitHub UI](https://github.com/codespaces) felületén.
+- Az új Codespace termináljában futtasd a fenti felületes/ritkított klónozó parancsok egyikét, hogy csak a szükséges leckemappákat hozd be a Codespace munkaterületre.
+- Opcionális: a klónozás után a Codespace-ben töröld a .git mappát a további hely felszabadításához (lásd a fenti törlési parancsokat).
+- Megjegyzés: ha közvetlenül Codespace-ben nyitod meg a tárhelyet (klónozás nélkül), vedd figyelembe, hogy a Codespace kialakítja a devcontainer környezetet, és több dolgot telepíthet, mint amire szükséged van. Egy friss Codespace-ben a felületes klónozás jobb kontrollt ad a lemezhasználat felett.
 
 #### Tippek
 
-- Mindig cseréld ki a klónozási URL-t a forkodra, ha szerkeszteni/commitálni szeretnél.
-- Ha később több előzményre vagy fájlra van szükséged, letöltheted őket, vagy módosíthatod a ritka-checkoutot, hogy további mappákat is tartalmazzon.
+- Mindig cseréld le a klón URL-jét a saját forkodra, ha szerkeszteni vagy commitolni szeretnél.
+- Ha később több előzményre vagy fájlra van szükséged, letöltheted őket, vagy módosíthatod a sparse-checkout beállításait további mappák bevonására.
 
-## A Kód Futtatása
+## A kód futtatása
 
-Ez a tanfolyam egy sor Jupyter Notebookot kínál, amelyeket futtathatsz, hogy gyakorlati tapasztalatot szerezz AI Agentek építésében.
+Ez a tanfolyam egy sor Jupyter Notebookot kínál, amelyek segítségével gyakorlati tapasztalatot szerezhetsz AI ügynökök építésében.
 
-A kódminták az alábbiakat használják:
+A kódminták a **Microsoft Agent Framework (MAF)** használatával készültek az `AzureAIProjectAgentProvider`-rel, amely kapcsolódik az **Azure AI Agent Service V2**-höz (a Response API) a **Microsoft Foundry**-n keresztül.
 
-**GitHub Fiók Szükséges - Ingyenes**:
-
-1) Semantic Kernel Agent Framework + GitHub Models Marketplace. Jelölve mint (semantic-kernel.ipynb)
-2) AutoGen Framework + GitHub Models Marketplace. Jelölve mint (autogen.ipynb)
-
-**Azure Előfizetés Szükséges**:
-3) Azure AI Foundry + Azure AI Agent Service. Jelölve mint (azureaiagent.ipynb)
-
-Javasoljuk, hogy próbáld ki mindhárom példát, hogy megtudd, melyik működik a legjobban számodra.
-
-Bármelyik opciót választod, az határozza meg, hogy mely beállítási lépéseket kell követned az alábbiakban:
+Minden Python notebook neve a `*-python-agent-framework.ipynb` végződésű.
 
 ## Követelmények
 
 - Python 3.12+
-  - **MEGJEGYZÉS**: Ha nincs telepítve a Python3.12, győződj meg róla, hogy telepíted. Ezután hozz létre egy venv-t python3.12 használatával, hogy biztosítsd a helyes verziók telepítését a requirements.txt fájlból.
+  - **MEGJEGYZÉS**: Ha nincs telepítve Python3.12, telepítsd azt, majd hozd létre a venv környezetet python3.12-vel, hogy a requirements.txt-ben megadott verziók kerüljenek telepítésre.
   
     >Példa
 
@@ -123,7 +103,7 @@ Bármelyik opciót választod, az határozza meg, hogy mely beállítási lépé
     python -m venv venv
     ```
 
-    Ezután aktiváld a venv környezetet:
+    Majd aktiváld a venv környezetet a következőkhöz:
 
     ```bash
     # zsh/bash
@@ -135,113 +115,84 @@ Bármelyik opciót választod, az határozza meg, hogy mely beállítási lépé
     venv\Scripts\activate
     ```
 
-- .NET 10+: A .NET-et használó kódmintákhoz győződj meg róla, hogy telepíted a [.NET 10 SDK-t](https://dotnet.microsoft.com/download/dotnet/10.0) vagy újabbat. Ezután ellenőrizd a telepített .NET SDK verziót:
+- .NET 10+: A .NET-et használó mintakódokhoz telepítsd a [.NET 10 SDK-t](https://dotnet.microsoft.com/download/dotnet/10.0) vagy újabbat. Ezután ellenőrizd a telepített .NET SDK verziót:
 
     ```bash|powershell
     dotnet --list-sdks
     ```
 
-- GitHub Fiók - A GitHub Models Marketplace eléréséhez
-- Azure Előfizetés - Az Azure AI Foundry eléréséhez
-- Azure AI Foundry Fiók - Az Azure AI Agent Service eléréséhez
+- **Azure CLI** — Hitelesítéshez szükséges. Telepítsd innen: [aka.ms/installazurecli](https://aka.ms/installazurecli).
+- **Azure-előfizetés** — A Microsoft Foundry és Azure AI Agent Service eléréséhez.
+- **Microsoft Foundry projekt** — Egy modelllel telepített projekt (pl. `gpt-4o`). Lásd [1. lépés](#1-lépés-microsoft-foundry-projekt-létrehozása) alább.
 
-A repó gyökérkönyvtárában található egy `requirements.txt` fájl, amely tartalmazza az összes szükséges Python csomagot a kódminták futtatásához.
+A repository gyökérkönyvtárában megtalálod a `requirements.txt` fájlt, amely tartalmazza a kódminták futtatásához szükséges összes Python csomagot.
 
-Ezeket a következő parancs futtatásával telepítheted a terminálban a repó gyökérkönyvtárában:
+Telepítésükhöz futtasd a következő parancsot a terminálban a repository gyökérkönyvtárában:
 
 ```bash|powershell
 pip install -r requirements.txt
 ```
 
-Javasoljuk, hogy hozz létre egy Python virtuális környezetet, hogy elkerüld az esetleges konfliktusokat és problémákat.
+Ajánlott egy Python virtuális környezet létrehozása az esetleges ütközések és problémák elkerülésére.
 
-## VSCode Beállítása
+## VSCode beállítása
 
-Győződj meg róla, hogy a megfelelő Python verziót használod a VSCode-ban.
+Győződj meg róla, hogy a VSCode-ban a megfelelő Python verzió van kiválasztva.
 
 ![image](https://github.com/user-attachments/assets/a85e776c-2edb-4331-ae5b-6bfdfb98ee0e)
 
-## Beállítás GitHub Modellekhez
+## Microsoft Foundry és Azure AI Agent Service beállítása
 
-### 1. lépés: GitHub Személyes Hozzáférési Token (PAT) Lekérése
+### 1. lépés: Microsoft Foundry projekt létrehozása
 
-Ez a tanfolyam a GitHub Models Marketplace-t használja, amely ingyenes hozzáférést biztosít Nagy Nyelvi Modellekhez (LLM-ek), amelyeket az AI Agentek építéséhez fogsz használni.
+Ahhoz, hogy futtasd a notebookokat, szükséged van egy Azure AI Foundry **hubra** és **projektre**, amelyen telepítve van egy modell.
 
-A GitHub Modellek használatához létre kell hoznod egy [GitHub Személyes Hozzáférési Tokent](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+1. Látogass el a [ai.azure.com](https://ai.azure.com) oldalra, és jelentkezz be Azure fiókoddal.
+2. Hozz létre egy **hubb**ot (vagy használj meglévőt). Lásd: [Hub erőforrások áttekintése](https://learn.microsoft.com/azure/ai-foundry/concepts/ai-resources).
+3. A hubon belül hozz létre egy **projektet**.
+4. Telepíts egy modellt (pl. `gpt-4o`) a **Models + Endpoints** → **Deploy model** menüpont alatt.
 
-Ezt úgy teheted meg, hogy a GitHub Fiókodban a <a href="https://github.com/settings/personal-access-tokens" target="_blank">Személyes Hozzáférési Tokenek beállításai</a> oldalra mész.
+### 2. lépés: Szerezd meg a projekted végpontját és a modell telepítési nevét
 
-Kérjük, kövesd a [Legkisebb Jogosultság Elvét](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) a token létrehozásakor. Ez azt jelenti, hogy csak azokat a jogosultságokat add meg a tokennek, amelyek szükségesek a tanfolyam kódmintáinak futtatásához.
+A Microsoft Foundry portálon, a projektedben:
 
-1. Válaszd ki a `Fine-grained tokens` opciót a képernyő bal oldalán, a **Fejlesztői beállítások** menüpontban.
+- **Projekt végpont** — Nyisd meg az **Áttekintés** oldalt és másold ki a végpont URL-jét.
 
-   ![Fejlesztői beállítások](../../../translated_images/profile_developer_settings.410a859fe749c755c859d414294c5908e307222b2c61819c3203bbeed4470e25.hu.png)
+![Project Connection String](../../../translated_images/hu/project-endpoint.8cf04c9975bbfbf1.webp)
 
-   Ezután válaszd a `Generate new token` opciót.
+- **Modell telepítési neve** — Menj a **Models + Endpoints** részhez, válaszd ki a telepített modelled, és jegyezd meg a **Deployment name**-t (pl. `gpt-4o`).
 
-   ![Token Generálása](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.hu.png)
+### 3. lépés: Jelentkezz be az Azure-ba az `az login` segítségével
 
-2. Adj meg egy leíró nevet a tokennek, amely tükrözi annak célját, hogy később könnyen azonosítható legyen.
+Minden notebook a **`AzureCliCredential`**-et használja hitelesítéshez — nincs szükség API kulcsokra. Ehhez be kell jelentkezni az Azure CLI-n keresztül.
 
-    🔐 Token Időtartam Ajánlás
+1. **Telepítsd az Azure CLI-t**, ha még nincs meg: [aka.ms/installazurecli](https://aka.ms/installazurecli)
 
-    Ajánlott időtartam: 30 nap
-    A biztonságosabb hozzáállás érdekében választhatsz rövidebb időszakot is—például 7 nap 🛡️
-    Ez egy remek módja annak, hogy személyes célt tűzz ki, és befejezd a tanfolyamot, miközben a tanulási lendület magas 🚀.
+2. **Jelentkezz be** az alábbi paranccsal:
 
-    ![Token Név és Lejárati Dátum](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.hu.png)
+    ```bash|powershell
+    az login
+    ```
 
-3. Korlátozd a token hatókörét a repód forkjára.
+    Vagy ha távoli/Codespace környezetben vagy, ahol nincs böngésző:
 
-    ![Hatókör korlátozása fork repóra](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.hu.png)
+    ```bash|powershell
+    az login --use-device-code
+    ```
 
-4. Korlátozd a token jogosultságait: A **Jogosultságok** alatt kattints az **Account** fülre, majd kattints a "+ Add permissions" gombra. Egy legördülő menü jelenik meg. Keresd meg a **Models** opciót, és jelöld be a négyzetet.
+3. **Válaszd ki az előfizetésed**, ha kéri — azt, amely tartalmazza a Foundry projektet.
 
-    ![Modellek Jogosultság Hozzáadása](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.hu.png)
+4. **Ellenőrizd**, hogy be vagy jelentkezve:
 
-5. Ellenőrizd a szükséges jogosultságokat, mielőtt létrehoznád a tokent. ![Jogosultságok Ellenőrzése](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.hu.png)
+    ```bash|powershell
+    az account show
+    ```
 
-6. Mielőtt létrehoznád a tokent, győződj meg róla, hogy készen állsz a token biztonságos helyen történő tárolására, például egy jelszókezelőben, mivel a token nem lesz újra megtekinthető a létrehozás után. ![Token Biztonságos Tárolása](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.hu.png)
+> **Miért az `az login`?** A notebookok az `azure-identity` csomagból az `AzureCliCredential`-t használják hitelesítéshez. Ez azt jelenti, hogy az Azure CLI sessioned szolgáltatja a hitelesítő adatokat — nincs szükség API kulcsokra vagy titkokra a `.env` fájlban. Ez egy [biztonsági bevált gyakorlat](https://learn.microsoft.com/azure/developer/ai/keyless-connections).
 
-Másold ki az újonnan létrehozott tokent. Most add hozzá ezt a tanfolyam `.env` fájljához.
+### 4. lépés: Hozd létre a `.env` fájlodat
 
-### 2. lépés: Hozd létre a `.env` fájlt
-
-A `.env` fájl létrehozásához futtasd a következő parancsot a terminálban.
-
-```bash
-# zsh/bash
-cp .env.example .env
-```
-
-```powershell
-# PowerShell
-Copy-Item .env.example .env
-```
-
-Ez lemásolja a példa fájlt, és létrehoz egy `.env` fájlt a könyvtáradban, ahol kitöltheted a környezeti változók értékeit.
-
-A tokened másolása után nyisd meg a `.env` fájlt a kedvenc szövegszerkesztődben, és illeszd be a tokent a `GITHUB_TOKEN` mezőbe.
-
-![GitHub Token Mező](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.hu.png)
-
-Most már képesnek kell lenned futtatni a tanfolyam kódmintáit.
-
-## Beállítás Azure AI Foundry és Azure AI Agent Service mintákhoz
-
-### 1. lépés: Azure Projekt Endpoint Lekérése
-
-Kövesd az Azure AI Foundry hub és projekt létrehozásának lépéseit itt: [Hub erőforrások áttekintése](https://learn.microsoft.com/azure/ai-foundry/concepts/ai-resources)
-
-Miután létrehoztad a projektedet, le kell kérned a projekt kapcsolatának karakterláncát.
-
-Ezt a **Áttekintés** oldalra lépve teheted meg az Azure AI Foundry portálon.
-
-![Projekt Kapcsolat Karakterlánc](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.hu.png)
-
-### 2. lépés: `.env` fájl létrehozása
-
-A `.env` fájl létrehozásához futtasd a következő parancsot a terminálban.
+Másold le a minta fájlt:
 
 ```bash
 # zsh/bash
@@ -253,70 +204,130 @@ cp .env.example .env
 Copy-Item .env.example .env
 ```
 
-Ez lemásolja a példa fájlt, és létrehoz egy `.env` fájlt a könyvtáradban, ahol kitöltheted a környezeti változók értékeit.
+Nyisd meg a `.env` fájlt, és töltsd ki a következő értékeket:
 
-A tokened másolása után nyisd meg a `.env` fájlt a kedvenc szövegszerkesztődben, és illeszd be a tokent a `PROJECT_ENDPOINT` mezőbe.
+```env
+AZURE_AI_PROJECT_ENDPOINT=https://<your-project>.services.ai.azure.com/api/projects/<your-project-id>
+AZURE_AI_MODEL_DEPLOYMENT_NAME=gpt-4o
+```
 
-### 3. lépés: Bejelentkezés az Azure-ba
+| Változó | Hol találod meg |
+|----------|-----------------|
+| `AZURE_AI_PROJECT_ENDPOINT` | Foundry portál → projekted → **Áttekintés** oldal |
+| `AZURE_AI_MODEL_DEPLOYMENT_NAME` | Foundry portál → **Models + Endpoints** → telepített modell neve |
 
-Biztonsági legjobb gyakorlatként [kulcs nélküli hitelesítést](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) fogunk használni az Azure OpenAI hitelesítéséhez a Microsoft Entra ID-vel. 
+Ennyi az esetek többségében! A notebookok automatikusan hitelesítenek az `az login` session keresztül.
 
-Ezután nyiss meg egy terminált, és futtasd az `az login --use-device-code` parancsot, hogy bejelentkezz az Azure fiókodba.
+### 5. lépés: Telepítsd a Python függőségeket
 
-Miután bejelentkeztél, válaszd ki az előfizetésedet a terminálban.
+```bash|powershell
+pip install -r requirements.txt
+```
 
-## További Környezeti Változók - Azure Search és Azure OpenAI 
+Javasoljuk, hogy ezt a korábban létrehozott virtuális környezetben futtasd.
 
-Az Agentic RAG Lecke - 5. lecke - mintái az Azure Search és Azure OpenAI használatát igénylik.
+## További beállítás az 5. leckéhez (Agentic RAG)
 
-Ha ezeket a mintákat szeretnéd futtatni, hozzá kell adnod a következő környezeti változókat a `.env` fájlodhoz:
+Az 5. lecke az **Azure AI Search**-t használja lekérdezéssel bővített generáláshoz. Ha ezt a leckét futtatod, add hozzá ezeket a változókat a `.env` fájlodhoz:
 
-### Áttekintés Oldal (Projekt)
+| Változó | Hol találod meg |
+|----------|-----------------|
+| `AZURE_SEARCH_SERVICE_ENDPOINT` | Azure portál → **Azure AI Search** erőforrásod → **Áttekintés** → URL |
+| `AZURE_SEARCH_API_KEY` | Azure portál → **Azure AI Search** erőforrásod → **Beállítások** → **Kulcsok** → elsődleges admin kulcs |
 
-- `AZURE_SUBSCRIPTION_ID` - Ellenőrizd a **Projekt részletek** részt a projekt **Áttekintés** oldalán.
+## További beállítás a 6. és 8. leckéhez (GitHub modellek)
 
-- `AZURE_AI_PROJECT_NAME` - Nézd meg a projekt **Áttekintés** oldalának tetejét.
+A 6. és 8. leckében néhány notebook a **GitHub Modelleket** használja az Azure AI Foundry helyett. Ha ezeket a példákat akarod futtatni, add hozzá ezeket a változókat a `.env` fájlhoz:
 
-- `AZURE_OPENAI_SERVICE` - Keresd meg az **Azure OpenAI Service**-t az **Included capabilities** fülön az **Áttekintés** oldalon.
+| Változó | Hol találod meg |
+|----------|-----------------|
+| `GITHUB_TOKEN` | GitHub → **Beállítások** → **Fejlesztői beállítások** → **Személyes hozzáférési tokenek** |
+| `GITHUB_ENDPOINT` | Használd a `https://models.inference.ai.azure.com` (alapértelmezett érték) |
+| `GITHUB_MODEL_ID` | Használni kívánt modell neve (pl. `gpt-4o-mini`) |
 
-### Menedzsment Központ
+## Alternatív szolgáltató: MiniMax (OpenAI-kompatibilis)
 
-- `AZURE_OPENAI_RESOURCE_GROUP` - Menj a **Projekt tulajdonságok** részhez az **Áttekintés** oldalon a **Menedzsment Központban**.
+A [MiniMax](https://platform.minimaxi.com/) nagy kontextusú modelleket (akár 204K tokenig) kínál egy OpenAI-kompatibilis API-n keresztül. Mivel a Microsoft Agent Framework `OpenAIChatClient` bármely OpenAI-kompatibilis végponttal működik, a MiniMax használható alternatívaként a GitHub Modellek vagy az OpenAI helyett.
 
-- `GLOBAL_LLM_SERVICE` - Az **Kapcsolt erőforrások** alatt keresd meg az **Azure AI Services** kapcsolat nevét. Ha nem szerepel, nézd meg az **Azure portálon** az erőforráscsoportodban az AI Services erőforrás nevét.
+Add hozzá ezt a változókat a `.env` fájlodhoz:
 
-### Modellek + Endpointok Oldal
+| Változó | Hol találod meg |
+|----------|-----------------|
+| `MINIMAX_API_KEY` | [MiniMax Platform](https://platform.minimaxi.com/) → API kulcsok |
+| `MINIMAX_BASE_URL` | Használd a `https://api.minimax.io/v1` (alapértelmezett érték) |
+| `MINIMAX_MODEL_ID` | Használni kívánt modell neve (pl. `MiniMax-M2.7`) |
 
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Válaszd ki az embedding modelledet (pl. `text-embedding-ada-002`), és jegyezd fel a **Deployment name**-et a modell részleteiből.
+**Elérhető modellek**: `MiniMax-M2.7` (ajánlott), `MiniMax-M2.7-highspeed` (gyorsabb válaszok)
 
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Válaszd ki a chat modelledet (pl. `gpt-4o-mini`), és jegyezd fel a **Deployment name**-et a modell részleteiből.
+Az `OpenAIChatClient`-et használó kódminták (pl. 14. lecke szállásfoglalási munkafolyamat) automatikusan észlelik és használják a MiniMax konfigurációt, ha be van állítva a `MINIMAX_API_KEY`.
 
-### Azure Portál
+## További beállítás a 8. leckéhez (Bing Grounding munkafolyamat)
 
-- `AZURE_OPENAI_ENDPOINT` - Keresd meg az **Azure AI services**-t, kattints rá, majd menj a **Resource Management**, **Keys and Endpoint** részhez, görgess le az "Azure OpenAI endpoints" részhez, és másold ki azt, amelyik "Language APIs"-t mond.
+A 8. leckében az opcionális munkafolyamat kötetlenül használja a **Bing groundinget** az Azure AI Foundry-n keresztül. Ha ezt a példát futtatod, add hozzá ezt a változót a `.env` fájlhoz:
 
-- `AZURE_OPENAI_API_KEY` - Ugyanazon a képernyőn másold ki az 1. vagy 2. kulcsot.
+| Változó | Hol találod meg |
+|----------|-----------------|
+| `BING_CONNECTION_ID` | Azure AI Foundry portál → projekted → **Management** → **Connected resources** → Bing kapcsolatod → másold ki a kapcsolat ID-t |
 
-- `AZURE_SEARCH_SERVICE_ENDPOINT` - Keresd meg az **Azure AI Search** erőforrásodat, kattints rá, és nézd meg az **Áttekintés** részt.
+## Hibakeresés
 
-- `AZURE_SEARCH_API_KEY` - Ezután menj a **Beállítások** részhez, majd **Kulcsok**-hoz, hogy lemásold az elsődleges vagy másodlagos admin kulcsot.
+### SSL tanúsítvány ellenőrzési hibák macOS-en
 
-### Külső Weboldal
+Ha macOS-en az alábbihoz hasonló hibaüzenetet kapsz:
 
-- `AZURE_OPENAI_API_VERSION` - Látogasd meg az [API verzió életciklus](https://learn.microsoft.com/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) oldalt a **Legújabb GA API kiadás** alatt.
+```plaintext
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain
+```
 
-### Kulcs nélküli hitelesítés beállítása
+Ez egy ismert probléma Python alatt macOS-en, ahol a rendszer SSL tanúsítványai nem kerülnek automatikusan elfogadásra. Próbáld ki a következő megoldásokat sorrendben:
 
-Ahelyett, hogy a hitelesítő adatokat kódolnánk, kulcs nélküli kapcsolat
-Ha bármilyen problémád adódik a beállítás futtatása során, csatlakozz az <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a> közösséghez, vagy <a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">hozz létre egy hibajelentést</a>.
+**1. opció: Futtasd a Python telepítési tanúsítvány szkriptjét (ajánlott)**
+
+```bash
+# Cseréld le a 3.XX-et a telepített Python verziódra (pl. 3.12 vagy 3.13):
+/Applications/Python\ 3.XX/Install\ Certificates.command
+```
+
+**2. opció: Használd a `connection_verify=False` beállítást a notebookodban (csak GitHub Modellek notebookokhoz)**
+
+A 6. leckében lévő notebookban (`06-building-trustworthy-agents/code_samples/06-system-message-framework.ipynb`) egy megjegyzett megoldás már benne van. Feloldhatod a kommentet a `connection_verify=False`-on a kliens létrehozásánál:
+
+```python
+client = ChatCompletionsClient(
+    endpoint=endpoint,
+    credential=AzureKeyCredential(token),
+    connection_verify=False,  # Tiltsa le az SSL ellenőrzést, ha tanúsítványhibákkal találkozik
+)
+```
+
+> **⚠️ Figyelem:** Az SSL ellenőrzés kikapcsolása (`connection_verify=False`) csökkenti a biztonságot azáltal, hogy kihagyja a tanúsítványok érvényesítését. Ezt csak fejlesztési környezetekben, ideiglenes megoldásként használd, soha ne éles rendszerben.
+
+**3. opció: Telepítsd és használd a `truststore`-t**
+
+```bash
+pip install truststore
+```
+
+Ezután add hozzá a következőt a notebook vagy szkript tetejére, mielőtt hálózati hívásokat végeznél:
+
+```python
+import truststore
+truststore.inject_into_ssl()
+```
+
+## Elakadtál valahol?
+
+Ha bármilyen problémád van a beállítással, gyere be a <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a> csatornába vagy <a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">nyiss egy hibajegyet</a>.
 
 ## Következő lecke
 
-Most már készen állsz arra, hogy futtasd a kurzushoz tartozó kódot. Jó tanulást az AI ügynökök világáról! 
+Most már készen állsz a tanfolyam kódjának futtatására. Sok sikert az AI ügynökök világának felfedezéséhez!
 
-[Bevezetés az AI ügynökökbe és az ügynökök felhasználási eseteibe](../01-intro-to-ai-agents/README.md)
+[Bevezetés az AI ügynökök és ügynök alkalmazások témakörébe](../01-intro-to-ai-agents/README.md)
 
 ---
 
-**Felelősség kizárása**:  
-Ez a dokumentum az AI fordítási szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Felelősségkizárás**:  
+Ezt a dokumentumot az AI fordító szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt professzionális, emberi fordítást igénybe venni. Nem vállalunk felelősséget az ezen fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

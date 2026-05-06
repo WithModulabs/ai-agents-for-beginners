@@ -1,104 +1,95 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5f0deef171fc3a68d5d3d770a8bfb03d",
-  "translation_date": "2025-08-29T19:50:12+00:00",
-  "source_file": "09-metacognition/README.md",
-  "language_code": "sw"
-}
--->
-[![Multi-Agent Design](../../../translated_images/lesson-9-thumbnail.38059e8af1a5b71d890c92f576f933c6a307c691339dca7e8ca6ea75a8d857a1.sw.png)](https://youtu.be/His9R6gw6Ec?si=3_RMb8VprNvdLRhX)
+[![Multi-Agent Design](../../../translated_images/sw/lesson-9-thumbnail.38059e8af1a5b71d.webp)](https://youtu.be/His9R6gw6Ec?si=3_RMb8VprNvdLRhX)
 
 > _(Bofya picha hapo juu kutazama video ya somo hili)_
-# Metakujitambua kwa Mawakala wa AI
+# Metakognisheni katika Wakala wa AI
 
 ## Utangulizi
 
-Karibu kwenye somo la metakujitambua kwa mawakala wa AI! Sura hii imeundwa kwa wanaoanza ambao wanavutiwa na jinsi mawakala wa AI wanavyoweza kufikiria kuhusu mchakato wao wa kufikiri. Mwishoni mwa somo hili, utaelewa dhana muhimu na utakuwa na mifano ya vitendo ya kutumia metakujitambua katika muundo wa mawakala wa AI.
+Karibu kwenye somo kuhusu metakognisheni katika wakala wa AI! Sura hii imebuniwa kwa wanaoanza ambao wanavutiwa na jinsi wakala wa AI wanavyoweza kufikiria kuhusu michakato yao ya kufikiri. Mwisho wa somo hili, utaelewa dhana muhimu na kuwa na mifano ya vitendo ya kutumia metakognisheni katika muundo wa wakala wa AI.
 
 ## Malengo ya Kujifunza
 
 Baada ya kukamilisha somo hili, utaweza:
 
-1. Kuelewa athari za mizunguko ya kufikiri katika ufafanuzi wa mawakala.
-2. Kutumia mbinu za kupanga na kutathmini kusaidia mawakala wanaojirekebisha.
-3. Kuunda mawakala wako wenye uwezo wa kudhibiti msimbo ili kutimiza majukumu.
+1. Kuelewa athari za mizunguko ya hoja katika ufafanuzi wa wakala.
+2. Kutumia mbinu za upangaji na tathmini kusaidia wakala wanaojiendesha wenyewe.
+3. Kuunda wakala wako mwenyewe anayeweza kuendesha msimbo ili kutekeleza kazi.
 
-## Utangulizi wa Metakujitambua
+## Utangulizi wa Metakognisheni
 
-Metakujitambua inahusu michakato ya juu ya kiakili inayohusisha kufikiria kuhusu fikra za mtu mwenyewe. Kwa mawakala wa AI, hii inamaanisha kuwa na uwezo wa kutathmini na kurekebisha vitendo vyao kulingana na kujitambua na uzoefu wa zamani. Metakujitambua, au "kufikiria kuhusu kufikiri," ni dhana muhimu katika maendeleo ya mifumo ya AI yenye uwezo wa kujitambua. Inahusisha mifumo ya AI kuwa na ufahamu wa michakato yao ya ndani na kuwa na uwezo wa kufuatilia, kudhibiti, na kubadilisha tabia yao ipasavyo. Kama tunavyofanya tunaposoma hali au kuangalia tatizo. Kujitambua huku kunaweza kusaidia mifumo ya AI kufanya maamuzi bora, kutambua makosa, na kuboresha utendaji wao kwa muda—tena ikihusiana na mtihani wa Turing na mjadala kuhusu kama AI itachukua nafasi.
+Metakognisheni inahusu michakato ya juu ya kifikra inayohusisha kufikiria kuhusu fikra za mtu binafsi. Kwa wakala wa AI, hii inamaanisha kuwa na uwezo wa kutathmini na kurekebisha matendo yao kulingana na uelewa wa nafsi na uzoefu wa zamani. Metakognisheni, au "kufikiria kuhusu kufikiria," ni dhana muhimu katika maendeleo ya mifumo ya wakala wa AI. Inahusisha mifumo ya AI kuwa na ufahamu wa michakato yao ya ndani na kuwa na uwezo wa kufuatilia, kudhibiti, na kubadilisha tabia zao ipasavyo. Kama tunavyofanya tunapojua hali ya mtu au tunapoangalia tatizo. Uelewa huu wa nafsi unaweza kusaidia mifumo ya AI kufanya maamuzi bora, kugundua makosa, na kuboresha utendaji wao kwa muda- tena ikihusiana na jaribio la Turing na mjadala kuhusu kama AI itachukua nafasi.
 
-Katika muktadha wa mifumo ya AI yenye uwezo wa kujitambua, metakujitambua inaweza kusaidia kushughulikia changamoto kadhaa, kama vile:
-- Uwazi: Kuhakikisha kuwa mifumo ya AI inaweza kuelezea sababu na maamuzi yao.
-- Kufikiri: Kuboresha uwezo wa mifumo ya AI kuchanganua taarifa na kufanya maamuzi sahihi.
-- Urekebishaji: Kuruhusu mifumo ya AI kubadilika kwa mazingira mapya na hali zinazobadilika.
-- Utambuzi: Kuboresha usahihi wa mifumo ya AI katika kutambua na kutafsiri data kutoka kwa mazingira yao.
+Katika muktadha wa mifumo ya wakala wa AI, metakognisheni inaweza kusaidia kushughulikia changamoto kadhaa, kama vile:
+- Uwainishaji: Kuhakikisha mifumo ya AI inaweza kueleza hoja na maamuzi yao.
+- Hoja: Kuongeza uwezo wa mifumo ya AI kusintetisha taarifa na kufanya maamuzi sahihi.
+- Mabadiliko: Kuwezesha mifumo ya AI kuendana na mazingira mapya na mabadiliko ya hali.
+- Utambuzi: Kuboresha usahihi wa mifumo ya AI katika kutambua na kufasiri data kutoka mazingira yao.
 
-### Metakujitambua ni Nini?
+### Metakognisheni ni Nini?
 
-Metakujitambua, au "kufikiria kuhusu kufikiri," ni mchakato wa juu wa kiakili unaohusisha kujitambua na kujidhibiti kwa michakato ya kiakili ya mtu. Katika ulimwengu wa AI, metakujitambua huwapa mawakala uwezo wa kutathmini na kubadilisha mikakati na vitendo vyao, na hivyo kuboresha uwezo wa kutatua matatizo na kufanya maamuzi. Kwa kuelewa metakujitambua, unaweza kubuni mawakala wa AI ambao si tu wenye akili zaidi bali pia wanaoweza kubadilika na kuwa na ufanisi zaidi. Katika metakujitambua ya kweli, ungeona AI ikifikiri waziwazi kuhusu kufikiri kwake.
+Metakognisheni, au "kufikiria kuhusu kufikiria," ni mchakato wa juu wa kifikra unaojumuisha uelewa wa nafsi na udhibiti wa michakato ya kifikra ya mtu binafsi. Katika ulimwengu wa AI, metakognisheni inawawezesha wakala kutathmini na kubadilisha mikakati na matendo yao, na kusababisha uboreshaji wa utatuzi wa matatizo na uwezo wa kufanya maamuzi. Kwa kuelewa metakognisheni, unaweza kubuni wakala wa AI ambao si tu akili zaidi bali pia wenye uwezo wa kuendana na ufanisi zaidi. Katika metakognisheni ya kweli, utaona AI ikitoa hoja wazi kuhusu hoja yake mwenyewe.
 
-Mfano: “Nilipa kipaumbele ndege za bei nafuu kwa sababu… huenda nikakosa ndege za moja kwa moja, kwa hivyo acha niangalie tena.”
-Kufuatilia jinsi au kwa nini ilichagua njia fulani.
-- Kutambua kuwa ilifanya makosa kwa sababu ilitegemea sana mapendeleo ya mtumiaji kutoka mara ya mwisho, kwa hivyo inarekebisha mkakati wake wa kufanya maamuzi, si tu mapendekezo ya mwisho.
-- Kuchunguza mifumo kama, “Kila ninaposikia mtumiaji akitaja ‘imejaa sana,’ sipaswi tu kuondoa vivutio fulani bali pia kutafakari kuwa mbinu yangu ya kuchagua ‘vivutio vya juu’ ni mbovu ikiwa kila mara ninapanga kwa umaarufu.”
+Mfano: “Nilipendelea ndege za bei nafuu kwa sababu… Inawezekana napoteza ndege za moja kwa moja, hivyo acheni nirejee tena.”.
+Kufuata jinsi au kwa nini ilichagua njia fulani.
+- Kutambua kwamba ilifanya makosa kwa kuwa imetegemea sana mapendeleo ya mtumiaji kutoka kipindi kilichopita, hivyo inabadilisha mkakati wake wa kufanya maamuzi siyo tu pendekezo la mwisho.
+- Kuchunguza mifumo kama, “Kila ninapomuona mtumiaji akikataa 'macho tupu', sihitaji tu kuondoa vivutio fulani bali pia kufikiria kuwa njia yangu ya kuchagua ‘vituo bora’ ni mbaya ikiwa kila mara niongeza kwa umaarufu.”
 
-### Umuhimu wa Metakujitambua kwa Mawakala wa AI
+### Umuhimu wa Metakognisheni kwa Wakala wa AI
 
-Metakujitambua ina jukumu muhimu katika muundo wa mawakala wa AI kwa sababu kadhaa:
+Metakognisheni ina jukumu muhimu katika muundo wa wakala wa AI kwa sababu kadhaa:
 
-![Umuhimu wa Metakujitambua](../../../translated_images/importance-of-metacognition.b381afe9aae352f7734c8628ea3f4b23084634b791c5a120c76a02bb7eeeb7ec.sw.png)
+![Importance of Metacognition](../../../translated_images/sw/importance-of-metacognition.b381afe9aae352f7.webp)
 
-- Kujitafakari: Mawakala wanaweza kutathmini utendaji wao na kutambua maeneo yanayohitaji kuboreshwa.
-- Urekebishaji: Mawakala wanaweza kubadilisha mikakati yao kulingana na uzoefu wa zamani na mazingira yanayobadilika.
-- Urekebishaji wa Makosa: Mawakala wanaweza kugundua na kurekebisha makosa kwa kujitegemea, na hivyo kusababisha matokeo sahihi zaidi.
-- Usimamizi wa Rasilimali: Mawakala wanaweza kuboresha matumizi ya rasilimali, kama vile muda na nguvu ya kompyuta, kwa kupanga na kutathmini vitendo vyao.
+- Kujitathmini: Wakala wanaweza kutathmini utendaji wao na kubaini maeneo ya kuboresha.
+- Uwezo wa Kuendana: Wakala wanaweza kubadilisha mikakati yao kulingana na uzoefu wa zamani na mazingira yanayobadilika.
+- Rekebisho za Makosa: Wakala wanaweza kugundua na kurekebisha makosa kwa kujitegemea, na kusababisha matokeo sahihi zaidi.
+- Usimamizi wa Rasilimali: Wakala wanaweza kuboresha matumizi ya rasilimali, kama vile muda na nguvu za kompyuta, kwa kupanga na kutathmini matendo yao.
 
-## Vipengele vya Wakala wa AI
+## Sehemu za Wakala wa AI
 
-Kabla ya kuingia katika michakato ya metakujitambua, ni muhimu kuelewa vipengele vya msingi vya wakala wa AI. Wakala wa AI kwa kawaida huwa na:
+Kabla ya kuingia kwenye michakato ya metakognisheni, ni muhimu kuelewa sehemu za msingi za wakala wa AI. Wakala wa AI kawaida huwa na:
 
-- Persona: Utu na sifa za wakala, ambazo hufafanua jinsi unavyoshirikiana na watumiaji.
-- Zana: Uwezo na kazi ambazo wakala anaweza kutekeleza.
+- Persona: Tabia na sifa za wakala, ambazo huamua jinsi anavyoshirikiana na watumiaji.
+- Vifaa: Uwezo na kazi ambazo wakala anaweza kutekeleza.
 - Ujuzi: Maarifa na utaalamu ambao wakala anamiliki.
 
-Vipengele hivi hufanya kazi pamoja kuunda "kitengo cha utaalamu" ambacho kinaweza kutekeleza majukumu maalum.
+Sehemu hizi hufanya kazi pamoja kuunda "kikundi cha utaalamu" ambacho kinaweza kutekeleza kazi maalum.
 
 **Mfano**:
-Fikiria wakala wa kusafiri, huduma za wakala ambazo si tu zinapanga likizo yako bali pia zinarekebisha njia yake kulingana na data ya wakati halisi na uzoefu wa safari za wateja wa zamani.
+Fikiria wakala wa usafiri, huduma za wakala ambao si tu kupanga likizo yako bali pia kubadilisha njia yake kulingana na data za moja kwa moja na uzoefu wa safari za wateja wa zamani.
 
-### Mfano: Metakujitambua katika Huduma ya Wakala wa Kusafiri
+### Mfano: Metakognisheni katika Huduma ya Wakala wa Usafiri
 
-Fikiria unaunda huduma ya wakala wa kusafiri inayotumia AI. Wakala huyu, "Wakala wa Kusafiri," husaidia watumiaji kupanga likizo zao. Ili kuingiza metakujitambua, Wakala wa Kusafiri anahitaji kutathmini na kurekebisha vitendo vyake kulingana na kujitambua na uzoefu wa zamani. Hivi ndivyo metakujitambua inaweza kuchukua jukumu:
+Fikiria unabuni huduma ya wakala wa usafiri inayotumia AI. Wakala huyu, "Wakala wa Usafiri," husaidia watumiaji kupanga likizo zao. Ili kuingiza metakognisheni, Wakala wa Usafiri unahitaji kutathmini na kurekebisha matendo yake kulingana na uelewa wa nafsi na uzoefu wa zamani. Hapa ni jinsi metakognisheni inaweza kucheza sehemu:
 
 #### Kazi ya Sasa
 
-Kazi ya sasa ni kumsaidia mtumiaji kupanga safari ya kwenda Paris.
+Kazi ya sasa ni kusaidia mtumiaji kupanga safari kwenda Paris.
 
-#### Hatua za Kukamilisha Kazi
+#### Hatua za Kumaliza Kazi
 
-1. **Kukusanya Mapendeleo ya Mtumiaji**: Uliza mtumiaji kuhusu tarehe za kusafiri, bajeti, maslahi (mfano: makumbusho, vyakula, ununuzi), na mahitaji maalum.
-2. **Kupata Taarifa**: Tafuta chaguo za ndege, malazi, vivutio, na migahawa inayolingana na mapendeleo ya mtumiaji.
-3. **Kutoa Mapendekezo**: Toa ratiba ya kibinafsi yenye maelezo ya ndege, uhifadhi wa hoteli, na shughuli zilizopendekezwa.
-4. **Kurekebisha Kulingana na Maoni**: Uliza mtumiaji maoni kuhusu mapendekezo na fanya marekebisho yanayohitajika.
+1. **Kusanya Mapendeleo ya Mtumiaji**: Muulize mtumiaji kuhusu tarehe za usafiri, bajeti, mambo anayopenda (kama vile makumbusho, vyakula, ununuzi), na mahitaji maalum yoyote.
+2. **Pata Taarifa**: Tafuta chaguzi za ndege, malazi, vivutio, na mikahawa inayolingana na mapendeleo ya mtumiaji.
+3. **Tengeneza Mapendekezo**: Toa ratiba iliyobinafsishwa na maelezo ya ndege, uhifadhi wa hoteli, na shughuli zilizopendekezwa.
+4. **Badilisha Kwa Kulingana na Maoni**: Muulize mtumiaji maoni kuhusu mapendekezo na fanya marekebisho muhimu.
 
 #### Rasilimali Zinazohitajika
 
-- Ufikiaji wa hifadhidata za uhifadhi wa ndege na hoteli.
-- Taarifa kuhusu vivutio na migahawa ya Paris.
-- Data ya maoni ya mtumiaji kutoka kwa mwingiliano wa awali.
+- Upatikanaji wa hifadhidata za ndege na hoteli.
+- Taarifa kuhusu vivutio na mikahawa ya Paris.
+- Data za maoni ya watumiaji kutoka kwa mawasiliano ya awali.
 
-#### Uzoefu na Kujitafakari
+#### Uzoefu na Kujitathmini
 
-Wakala wa Kusafiri hutumia metakujitambua kutathmini utendaji wake na kujifunza kutoka kwa uzoefu wa zamani. Kwa mfano:
+Wakala wa Usafiri hutumia metakognisheni kutathmini utendaji wake na kujifunza kutoka kwa uzoefu wa zamani. Kwa mfano:
 
-1. **Kuchambua Maoni ya Mtumiaji**: Wakala wa Kusafiri hupitia maoni ya mtumiaji ili kubaini mapendekezo yaliyopokelewa vizuri na yale ambayo hayakupokelewa. Inarekebisha mapendekezo yake ya baadaye ipasavyo.
-2. **Urekebishaji**: Ikiwa mtumiaji amewahi kutaja kutopenda maeneo yenye watu wengi, Wakala wa Kusafiri ataepuka kupendekeza maeneo maarufu wakati wa saa za kilele katika siku zijazo.
-3. **Urekebishaji wa Makosa**: Ikiwa Wakala wa Kusafiri alifanya kosa katika uhifadhi wa zamani, kama kupendekeza hoteli iliyokuwa imejaa, inajifunza kuangalia upatikanaji kwa makini zaidi kabla ya kutoa mapendekezo.
+1. **Kuchambua Maoni ya Mtumiaji**: Wakala wa Usafiri hukagua maoni ya mtumiaji ili kubaini mapendekezo ambayo yalipokelewa vizuri na yale yasiyopokelewa. Hubadilisha mapendekezo ya baadaye ipasavyo.
+2. **Uwezo wa Kuendana**: Ikiwa mtumiaji ametaja awali kutotaka maeneo yenye watu wengi, Wakala wa Usafiri atazuia kupendekeza maeneo maarufu wakati wa saa za kilele siku za usafiri zijazo.
+3. **Rekebisho la Makosa**: Ikiwa Wakala wa Usafiri alifanya kosa katika uhifadhi wa zamani, kama kupendekeza hoteli iliyokuwa imejaa, hujifunza kukagua upatikanaji kwa makini zaidi kabla ya kutoa mapendekezo.
 
-#### Mfano wa Vitendo kwa Mwandishi wa Programu
+#### Mfano wa Mjenzi wa Programu
 
-Hapa kuna mfano rahisi wa jinsi msimbo wa Wakala wa Kusafiri unaweza kuonekana wakati wa kuingiza metakujitambua:
+Hapa kuna mfano rahisi wa msimbo wa Travel Agent unapoingiza metakognisheni:
 
 ```python
 class Travel_Agent:
@@ -110,7 +101,7 @@ class Travel_Agent:
         self.user_preferences = preferences
 
     def retrieve_information(self):
-        # Search for flights, hotels, and attractions based on preferences
+        # Tafuta ndege, hoteli, na vivutio kulingana na mapendeleo
         flights = search_flights(self.user_preferences)
         hotels = search_hotels(self.user_preferences)
         attractions = search_attractions(self.user_preferences)
@@ -123,10 +114,10 @@ class Travel_Agent:
 
     def adjust_based_on_feedback(self, feedback):
         self.experience_data.append(feedback)
-        # Analyze feedback and adjust future recommendations
+        # Changanua maoni na rekebisha mapendekezo ya baadaye
         self.user_preferences = adjust_preferences(self.user_preferences, feedback)
 
-# Example usage
+# Mfano wa matumizi
 travel_agent = Travel_Agent()
 preferences = {
     "destination": "Paris",
@@ -141,70 +132,70 @@ feedback = {"liked": ["Louvre Museum"], "disliked": ["Eiffel Tower (too crowded)
 travel_agent.adjust_based_on_feedback(feedback)
 ```
 
-#### Kwa Nini Metakujitambua Ni Muhimu
+#### Kwa Nini Metakognisheni ni Muhimu
 
-- **Kujitafakari**: Mawakala wanaweza kuchambua utendaji wao na kutambua maeneo yanayohitaji kuboreshwa.
-- **Urekebishaji**: Mawakala wanaweza kubadilisha mikakati kulingana na maoni na hali zinazobadilika.
-- **Urekebishaji wa Makosa**: Mawakala wanaweza kugundua na kurekebisha makosa kwa kujitegemea.
-- **Usimamizi wa Rasilimali**: Mawakala wanaweza kuboresha matumizi ya rasilimali, kama vile muda na nguvu ya kompyuta.
+- **Kujitathmini**: Wakala wanaweza kuchambua utendaji wao na kubaini maeneo ya kuboresha.
+- **Uwezo wa Kuendana**: Wakala wanaweza kubadilisha mikakati kulingana na maoni na mabadiliko ya hali.
+- **Rekebisho la Makosa**: Wakala wanaweza kugundua na kufuta makosa kwa kujitegemea.
+- **Usimamizi wa Rasilimali**: Wakala wanaweza kuboresha matumizi ya rasilimali, kama vile muda na nguvu za kompyuta.
 
-Kwa kuingiza metakujitambua, Wakala wa Kusafiri anaweza kutoa mapendekezo ya kusafiri yaliyo sahihi zaidi na ya kibinafsi, na hivyo kuboresha uzoefu wa mtumiaji kwa ujumla.
+Kwa kuingiza metakognisheni, Wakala wa Usafiri anaweza kutoa mapendekezo ya usafiri ambayo ni binafsi zaidi na sahihi, na kuboresha uzoefu wa mtumiaji kwa ujumla.
 
 ---
 
-## 2. Upangaji kwa Mawakala
+## 2. Upangaji katika Wakala
 
-Upangaji ni sehemu muhimu ya tabia ya wakala wa AI. Inahusisha kuainisha hatua zinazohitajika kufanikisha lengo, kwa kuzingatia hali ya sasa, rasilimali, na vikwazo vinavyowezekana.
+Upangaji ni sehemu muhimu ya tabia ya wakala wa AI. Inahusisha kufafanua hatua zinazohitajika kufikia lengo, kuzingatia hali ya sasa, rasilimali, na vizingiti vinavyoweza kutokea.
 
 ### Vipengele vya Upangaji
 
-- **Kazi ya Sasa**: Fafanua kazi kwa uwazi.
-- **Hatua za Kukamilisha Kazi**: Gawanya kazi katika hatua zinazoweza kudhibitiwa.
+- **Kazi ya Sasa**: Tafsiri kazi kwa uwazi.
+- **Hatua za Kumaliza Kazi**: Gawanya kazi kuwa hatua ndogo ndogo zinazoweza kudhibitiwa.
 - **Rasilimali Zinazohitajika**: Tambua rasilimali zinazohitajika.
-- **Uzoefu**: Tumia uzoefu wa zamani kuarifu upangaji.
+- **Uzoefu**: Tumia uzoefu wa zamani kusaidia kupanga.
 
 **Mfano**:
-Hizi ni hatua ambazo Wakala wa Kusafiri anahitaji kuchukua ili kumsaidia mtumiaji kupanga safari yao kwa ufanisi:
+Hapa ni hatua ambazo Wakala wa Usafiri anahitaji kuchukua kusaidia mtumiaji kupanga safari yake kwa ufanisi:
 
-### Hatua za Wakala wa Kusafiri
+### Hatua za Wakala wa Usafiri
 
-1. **Kukusanya Mapendeleo ya Mtumiaji**
-   - Uliza mtumiaji maelezo kuhusu tarehe za kusafiri, bajeti, maslahi, na mahitaji maalum.
-   - Mfano: "Unapanga kusafiri lini?" "Bajeti yako ni kiasi gani?" "Unapenda shughuli gani wakati wa likizo?"
+1. **Kusanya Mapendeleo ya Mtumiaji**
+   - Muulize mtumiaji maelezo kuhusu tarehe za usafiri, bajeti, mambo anayopenda, na mahitaji maalum.
+   - Mifano: "Utapanga kusafiri lini?" "Bajeti yako ni kiasi gani?" "Ni shughuli gani unazopenda wakati wa likizo?"
 
-2. **Kupata Taarifa**
-   - Tafuta chaguo za kusafiri zinazofaa kulingana na mapendeleo ya mtumiaji.
-   - **Ndege**: Tafuta ndege zinazopatikana ndani ya bajeti ya mtumiaji na tarehe za kusafiri zinazopendekezwa.
-   - **Malazi**: Tafuta hoteli au mali za kukodisha zinazolingana na mapendeleo ya mtumiaji kuhusu eneo, bei, na huduma.
-   - **Vivutio na Migahawa**: Tambua vivutio maarufu, shughuli, na chaguo za kula zinazolingana na maslahi ya mtumiaji.
+2. **Pata Taarifa**
+   - Tafuta chaguzi za usafiri zinazolingana na mapendeleo ya mtumiaji.
+   - **Ndege**: Tafuta ndege zilizopo ndani ya bajeti ya mtumiaji na tarehe za kusafiri alizotaka.
+   - **Malazi**: Tafuta hoteli au nyumba za kukodisha zinazolingana na mapendeleo ya mtumiaji kuhusu eneo, bei, na huduma.
+   - **Vitutio na Mikahawa**: Tambua vivutio maarufu, shughuli, na maeneo ya chakula yanayolingana na mambo anayopenda mtumiaji.
 
-3. **Kutoa Mapendekezo**
-   - Kusanya taarifa zilizopatikana katika ratiba ya kibinafsi.
-   - Toa maelezo kama chaguo za ndege, uhifadhi wa hoteli, na shughuli zilizopendekezwa, ukihakikisha mapendekezo yamepangwa kulingana na mapendeleo ya mtumiaji.
+3. **Tengeneza Mapendekezo**
+   - Kusanya taarifa zilizopatikana katika ratiba iliyobinafsishwa.
+   - Toa maelezo kama chaguzi za ndege, uhifadhi wa hoteli, na shughuli zilizopendekezwa, ukihakikisha mapendekezo yanalingana na mapendeleo ya mtumiaji.
 
-4. **Kuwasilisha Ratiba kwa Mtumiaji**
-   - Shiriki ratiba iliyopendekezwa na mtumiaji kwa ukaguzi wao.
-   - Mfano: "Hii hapa ratiba iliyopendekezwa kwa safari yako ya kwenda Paris. Inajumuisha maelezo ya ndege, uhifadhi wa hoteli, na orodha ya shughuli na migahawa iliyopendekezwa. Niambie maoni yako!"
+4. **Wasilisha Ratiba kwa Mtumiaji**
+   - Shiriki ratiba iliyopendekezwa na mtumiaji ajili ya mapitio.
+   - Mfano: "Hii ni ratiba niliyopendekeza kwa safari yako kwenda Paris. Inajumuisha maelezo ya ndege, uhifadhi wa hoteli, na orodha ya shughuli na mikahawa iliyopendekezwa. Niambie maoni yako!"
 
-5. **Kukusanya Maoni**
-   - Uliza mtumiaji maoni kuhusu ratiba iliyopendekezwa.
-   - Mfano: "Je, unapenda chaguo za ndege?" "Je, hoteli inafaa mahitaji yako?" "Kuna shughuli zozote ungependa kuongeza au kuondoa?"
+5. **Kusanya Maoni**
+   - Muulize mtumiaji maoni kuhusu ratiba iliyopendekezwa.
+   - Mifano: "Je, unapenda chaguzi za ndege?" "Je, hoteli inakidhi mahitaji yako?" "Kuna shughuli zozote ungependa kuongeza au kuondoa?"
 
-6. **Kurekebisha Kulingana na Maoni**
+6. **Badilisha Kulingana na Maoni**
    - Rekebisha ratiba kulingana na maoni ya mtumiaji.
-   - Fanya mabadiliko yanayohitajika kwa mapendekezo ya ndege, malazi, na shughuli ili yaendane vyema na mapendeleo ya mtumiaji.
+   - Fanya marekebisho muhimu kwa upangaji ndege, malazi na mapendekezo ya shughuli ili kuendana zaidi na mapendeleo ya mtumiaji.
 
 7. **Uthibitisho wa Mwisho**
-   - Wasilisha ratiba iliyorekebishwa kwa mtumiaji kwa uthibitisho wa mwisho.
-   - Mfano: "Nimefanya marekebisho kulingana na maoni yako. Hii hapa ratiba iliyorekebishwa. Je, kila kitu kinaonekana sawa kwako?"
+   - Wasilisha ratiba iliyosasishwa kwa mtumiaji kwa uthibitisho wa mwisho.
+   - Mfano: "Nimefanya marekebisho kulingana na maoni yako. Hii ni ratiba iliyosahihishwa. Je, kila kitu kinaonekana sawa kwako?"
 
-8. **Uhifadhi na Uthibitisho wa Uhifadhi**
-   - Mara mtumiaji anapokubali ratiba, endelea na uhifadhi wa ndege, malazi, na shughuli zilizopangwa.
+8. **Fanya Uhifadhi na Thibitisha**
+   - Mara mtumiaji atakubali ratiba, endelea na uhifadhi wa ndege, malazi, na shughuli zozote zilizopangwa awali.
    - Tuma maelezo ya uthibitisho kwa mtumiaji.
 
-9. **Kutoa Msaada wa Kuendelea**
-   - Kuwa tayari kusaidia mtumiaji na mabadiliko yoyote au maombi ya ziada kabla na wakati wa safari yao.
-   - Mfano: "Ikiwa unahitaji msaada wowote zaidi wakati wa safari yako, usisite kunijulisha wakati wowote!"
+9. **Toa Msaada Endelevu**
+   - Kuwa tayari kusaidia mtumiaji na mabadiliko au maombi ya ziada kabla na wakati wa safari yao.
+   - Mfano: "Kama utahitaji msaada zaidi wakati wa safari yako, jisikie huru kuwasiliana nami wakati wowote!"
 
 ### Mfano wa Mwingiliano
 
@@ -232,7 +223,7 @@ class Travel_Agent:
         self.experience_data.append(feedback)
         self.user_preferences = adjust_preferences(self.user_preferences, feedback)
 
-# Example usage within a booing request
+# Mfano wa matumizi ndani ya ombi la booing
 travel_agent = Travel_Agent()
 preferences = {
     "destination": "Paris",
@@ -247,48 +238,125 @@ feedback = {"liked": ["Louvre Museum"], "disliked": ["Eiffel Tower (too crowded)
 travel_agent.adjust_based_on_feedback(feedback)
 ```
 
-## 3. Mfumo wa Marekebisho wa RAG
+## 3. Mfumo wa RAG wa Marekebisho
 
-Kwanza, hebu tuanze kwa kuelewa tofauti kati ya Zana ya RAG na Upakiaji wa Muktadha wa Kuzuia Mapema.
+Kwanza anza kwa kuelewa tofauti kati ya Kifaa cha RAG na Upakuaji wa Muktadha wa kabla
 
-![RAG vs Upakiaji wa Muktadha](../../../translated_images/rag-vs-context.9eae588520c00921f531e4dc788992e8a7b69b6ff7c9eaa69fb9bc83ad243504.sw.png)
+![RAG vs Context Loading](../../../translated_images/sw/rag-vs-context.9eae588520c00921.webp)
 
-### Utoaji wa Taarifa Ulioimarishwa na Urejeshaji (RAG)
+### Uzalishaji Ukioungwa Mkono na Upataji (RAG)
 
-RAG huunganisha mfumo wa urejeshaji na mfano wa kizazi. Wakati swali linapoulizwa, mfumo wa urejeshaji hupata hati au data husika kutoka kwa chanzo cha nje, na taarifa hii iliyorejeshwa hutumika kuimarisha pembejeo kwa mfano wa kizazi. Hii husaidia mfano kutoa majibu sahihi zaidi na yanayofaa kwa muktadha.
+RAG huunganisha mfumo wa upataji na mfano wa kizazi. Wakati swali linaulizwa, mfumo wa upataji huchukua hati muhimu au data kutoka chanzo cha nje, na taarifa hii inayotolewa hutumika kuongeza pembejeo kwa mfano wa kizazi. Hii inasaidia mfano kutoa majibu sahihi zaidi na yanayofaa muktadha.
 
-Katika mfumo wa RAG, wakala hurejesha taarifa husika kutoka kwa hifadhidata ya maarifa na kuitumia kutoa majibu au vitendo vinavyofaa.
+Katika mfumo wa RAG, wakala hutafuta taarifa muhimu kutoka kwenye hifadhidata ya maarifa na kuitumia kuzalisha majibu au matendo yanayofaa.
 
-### Njia ya Marekebisho ya RAG
+### Mbinu ya RAG ya Marekebisho
 
-Njia ya Marekebisho ya RAG inalenga kutumia mbinu za RAG kurekebisha makosa na kuboresha usahihi wa mawakala wa AI. Hii inahusisha:
+Mbinu ya RAG ya Marekebisho inalenga kutumia mbinu za RAG kurekebisha makosa na kuboresha usahihi wa wakala wa AI. Hii inajumuisha:
 
-1. **Mbinu ya Kutoa Maoni**: Kutumia maoni maalum kuongoza wakala katika kurejesha taarifa husika.
-2. **Zana**: Kutekeleza algoriti na mifumo inayowezesha wakala kutathmini umuhimu wa taarifa iliyorejeshwa na kutoa majibu sahihi.
+1. **Mbinu ya Kuendeleza**: Kutumia maelekezo maalum kuongoza wakala katika kupata taarifa muhimu.
+2. **Kifaa**: Kutekeleza algoriti na mifumo inayowezesha wakala kutathmini umuhimu wa taarifa iliyo pata na kutoa majibu sahihi.
 3. **Tathmini**: Kuendelea kutathmini utendaji wa wakala na kufanya marekebisho ili kuboresha usahihi na ufanisi wake.
 
-#### Mfano: Marekebisho ya RAG katika Wakala wa Utafutaji
+#### Mfano: RAG ya Marekebisho katika Wakala wa Utafutaji
 
-Fikiria wakala wa utafutaji anayerejesha taarifa kutoka mtandao ili kujibu maswali ya mtumiaji. Njia ya Marekebisho ya RAG inaweza kuhusisha:
+Fikiria wakala wa utafutaji anayepata taarifa kutoka intaneti kujibu maswali ya mtumiaji. Mbinu ya RAG ya Marekebisho inaweza kujumuisha:
 
-1. **Mbinu ya Kutoa Maoni**: Kuunda maswali ya utafutaji kulingana na pembejeo ya mtumiaji.
-2. **Zana**: Kutumia usindikaji wa lugha asilia na algoriti za kujifunza mashine kupanga na kuchuja matokeo ya utafutaji.
-3. **Tathmini**: Kuchambua maoni ya mtumiaji ili kutambua na kurekebisha makosa katika taarifa iliyorejeshwa.
+1. **Mbinu ya Kuendeleza**: Kuunda maswali ya utafutaji kulingana na maelezo ya mtumiaji.
+2. **Kifaa**: Kutumia lugha ya asili na algoriti za mashine kujifunza kupanga na kuchuja matokeo ya utafutaji.
+3. **Tathmini**: Kuchambua maoni ya watumiaji kubaini na kurekebisha makosa katika taarifa zilizopatikana.
 
-### Marekebisho ya RAG katika Wakala wa Kusafiri
+### RAG ya Marekebisho katika Wakala wa Usafiri
 
-Marekebisho ya RAG (Utoaji wa Taarifa Ulioimarishwa na Urejeshaji) huongeza uwezo wa AI wa kurejesha na kutoa taarifa huku ikirekebisha makosa yoyote. Hebu tuone jinsi Wakala wa Kusafiri anaweza kutumia njia ya Marekebisho ya RAG kutoa mapendekezo ya kusafiri yaliyo sahihi zaidi na yanayofaa.
+RAG ya Marekebisho (Uzalishaji Ukioungwa Mkono na Upataji) huongeza uwezo wa AI kupata na kutoa taarifa wakati ikirekebisha usahihi wake. Turejee jinsi Wakala wa Usafiri anavyoweza kutumia Mbinu ya RAG ya Marekebisho kutoa mapendekezo ya usafiri sahihi zaidi na yenye uhusiano.
 
-Hii inahusisha:
+Hii inajumuisha:
 
-- **Mbinu ya Kutoa Maoni:** Kutumia maoni maalum kuongoza wakala katika kurejesha taarifa husika.
-- **Zana:** Kutekeleza algoriti na mifumo inayowezesha wakala kutathmini umuhimu wa taarifa iliyorejeshwa na kutoa majibu sahihi.
+- **Mbinu ya Kuendeleza:** Kutumia maelekezo maalum kuongoza wakala katika kupata taarifa muhimu.
+- **Kifaa:** Kutekeleza algoriti na mifumo inayomruhusu wakala kutathmini umuhimu wa taarifa iliyo pata na kutoa majibu sahihi.
 - **Tathmini:** Kuendelea kutathmini utendaji wa wakala na kufanya marekebisho ili kuboresha usahihi na ufanisi wake.
 
-#### Hatua za Kutekeleza Marekebisho ya RAG katika Wakala wa Kusafiri
+#### Hatua za Kutekeleza RAG ya Marekebisho katika Wakala wa Usafiri
 
 1. **Mwingiliano wa Awali na Mtumiaji**
-   - Wakala wa Kusafiri hukusanya mapendeleo ya awali kutoka kwa mtumiaji, kama vile marudio, tarehe za kusafiri, bajeti, na masl
+   - Wakala wa Usafiri hukusanya mapendeleo ya awali kutoka kwa mtumiaji, kama vile mahali pa kwenda, tarehe za usafiri, bajeti, na mambo anayopenda.
+   - Mfano:
+
+     ```python
+     preferences = {
+         "destination": "Paris",
+         "dates": "2025-04-01 to 2025-04-10",
+         "budget": "moderate",
+         "interests": ["museums", "cuisine"]
+     }
+     ```
+
+2. **Upataji wa Taarifa**
+   - Wakala wa Usafiri anapokea taarifa kuhusu ndege, malazi, vivutio, na mikahawa kulingana na mapendeleo ya mtumiaji.
+   - Mfano:
+
+     ```python
+     flights = search_flights(preferences)
+     hotels = search_hotels(preferences)
+     attractions = search_attractions(preferences)
+     ```
+
+3. **Kuzalisha Mapendekezo ya Awali**
+   - Wakala wa Usafiri hutumia taarifa zilizopatikana kutengeneza ratiba iliyobinafsishwa.
+   - Mfano:
+
+     ```python
+     itinerary = create_itinerary(flights, hotels, attractions)
+     print("Suggested Itinerary:", itinerary)
+     ```
+
+4. **Kusanya Maoni ya Mtumiaji**
+   - Wakala wa Usafiri huomba maoni kuhusu mapendekezo ya awali.
+   - Mfano:
+
+     ```python
+     feedback = {
+         "liked": ["Louvre Museum"],
+         "disliked": ["Eiffel Tower (too crowded)"]
+     }
+     ```
+
+5. **Mchakato wa RAG wa Marekebisho**
+   - **Mbinu ya Kuendeleza**: Wakala wa Usafiri huunda maswali mapya ya utafutaji kulingana na maoni ya mtumiaji.
+     - Mfano:
+
+       ```python
+       if "disliked" in feedback:
+           preferences["avoid"] = feedback["disliked"]
+       ```
+
+   - **Kifaa**: Wakala wa Usafiri hutumia algoriti kupanga na kuchuja matokeo mapya ya utafutaji, akisisitiza umuhimu kulingana na maoni ya mtumiaji.
+     - Mfano:
+
+       ```python
+       new_attractions = search_attractions(preferences)
+       new_itinerary = create_itinerary(flights, hotels, new_attractions)
+       print("Updated Itinerary:", new_itinerary)
+       ```
+
+   - **Tathmini**: Wakala wa Usafiri huendelea kutathmini umuhimu na usahihi wa mapendekezo yake kwa kuchambua maoni ya mtumiaji na kufanya marekebisho yanayohitajika.
+     - Mfano:
+
+       ```python
+       def adjust_preferences(preferences, feedback):
+           if "liked" in feedback:
+               preferences["favorites"] = feedback["liked"]
+           if "disliked" in feedback:
+               preferences["avoid"] = feedback["disliked"]
+           return preferences
+
+       preferences = adjust_preferences(preferences, feedback)
+       ```
+
+#### Mfano wa Vitendo
+
+Hapa kuna mfano rahisi wa msimbo wa Python unaoingiza mbinu ya RAG ya Marekebisho katika Wakala wa Usafiri:
+
 ```python
 class Travel_Agent:
     def __init__(self):
@@ -315,7 +383,7 @@ class Travel_Agent:
         new_itinerary = self.generate_recommendations()
         return new_itinerary
 
-# Example usage
+# Mfano wa matumizi
 travel_agent = Travel_Agent()
 preferences = {
     "destination": "Paris",
@@ -331,16 +399,15 @@ new_itinerary = travel_agent.adjust_based_on_feedback(feedback)
 print("Updated Itinerary:", new_itinerary)
 ```
 
-### Upakiaji wa Muktadha wa Awali
+### Upakuaji wa Muktadha wa Kabla
+Kupakia Muktadha Kabla Haja kunahusisha kupakia muktadha unaofaa au taarifa za msingi kwenye modeli kabla ya kuchakata swali. Hii ina maana modeli ina ufikiaji wa taarifa hii tangu mwanzo, ambayo inaweza kusaidia kutoa majibu yenye taarifa zaidi bila hitaji la kupata data za ziada wakati wa mchakato.
 
-Upakiaji wa Muktadha wa Awali unahusisha kupakia muktadha au taarifa muhimu kwenye modeli kabla ya kushughulikia swali. Hii inamaanisha modeli inakuwa na ufikiaji wa taarifa hizi tangu mwanzo, jambo ambalo linaweza kusaidia kutoa majibu yenye taarifa zaidi bila hitaji la kupata data ya ziada wakati wa mchakato.
-
-Hapa kuna mfano rahisi wa jinsi upakiaji wa muktadha wa awali unaweza kuonekana kwa programu ya wakala wa kusafiri katika Python:
+Hapa kuna mfano rahisi wa jinsi kupakia muktadha kabla ya haja kunavyoweza kuonekana kwa programu ya wakala wa usafiri katika Python:
 
 ```python
 class TravelAgent:
     def __init__(self):
-        # Pre-load popular destinations and their information
+        # Chukua maeneo maarufu na taarifa zao kabla
         self.context = {
             "Paris": {"country": "France", "currency": "Euro", "language": "French", "attractions": ["Eiffel Tower", "Louvre Museum"]},
             "Tokyo": {"country": "Japan", "currency": "Yen", "language": "Japanese", "attractions": ["Tokyo Tower", "Shibuya Crossing"]},
@@ -349,42 +416,42 @@ class TravelAgent:
         }
 
     def get_destination_info(self, destination):
-        # Fetch destination information from pre-loaded context
+        # Pata taarifa za mahali kutoka kwenye muktadha uliosababishwa awali
         info = self.context.get(destination)
         if info:
             return f"{destination}:\nCountry: {info['country']}\nCurrency: {info['currency']}\nLanguage: {info['language']}\nAttractions: {', '.join(info['attractions'])}"
         else:
             return f"Sorry, we don't have information on {destination}."
 
-# Example usage
+# Mfano wa matumizi
 travel_agent = TravelAgent()
 print(travel_agent.get_destination_info("Paris"))
 print(travel_agent.get_destination_info("Tokyo"))
 ```
 
-#### Maelezo
+#### Ufafanuzi
 
-1. **Uanzishaji (Njia ya `__init__`)**: Darasa la `TravelAgent` linapakia kamusi inayojumuisha taarifa kuhusu maeneo maarufu kama Paris, Tokyo, New York, na Sydney. Kamusi hii inajumuisha maelezo kama nchi, sarafu, lugha, na vivutio vikuu kwa kila eneo.
+1. **Uanzishaji (`__init__` method`)**: Darasa la `TravelAgent` linapakia kina kamusi yenye taarifa kuhusu maeneo maarufu kama Paris, Tokyo, New York, na Sydney. Kamusi hii ina maelezo kama nchi, sarafu, lugha, na vivutio vikuu kwa kila eneo.
 
-2. **Kupata Taarifa (Njia ya `get_destination_info`)**: Wakati mtumiaji anauliza kuhusu eneo fulani, njia ya `get_destination_info` inachukua taarifa husika kutoka kwenye kamusi ya muktadha iliyopakiwa awali.
+2. **Kupata Taarifa (`get_destination_info` method)**: Wakati mtumiaji anapouliza kuhusu eneo maalum, njia ya `get_destination_info` huchukua taarifa zinazohitajika kutoka kwenye kamusi iliyopakiwa kabla.
 
-Kwa kupakia muktadha mapema, programu ya wakala wa kusafiri inaweza kujibu maswali ya watumiaji haraka bila hitaji la kupata taarifa hizi kutoka chanzo cha nje kwa wakati halisi. Hii inafanya programu kuwa bora zaidi na yenye mwitikio wa haraka.
+Kwa kupakia muktadha mapema, programu ya wakala wa usafiri inaweza kujibu haraka maswali ya mtumiaji bila hitaji la kupata taarifa hizi kutoka chanzo kingine kwa wakati halisi. Hii hufanya programu kuwa bora zaidi na yenye majibu ya haraka.
 
-### Kuanzisha Mpango na Lengo Kabla ya Kurudia
+### Kuanzisha Mpango kwa Lengo Kabla ya Kurudia Mzunguko
 
-Kuanzisha mpango na lengo kunahusisha kuanza na malengo au matokeo wazi yaliyokusudiwa. Kwa kufafanua lengo hili mapema, modeli inaweza kulitumia kama mwongozo katika mchakato wa kurudia. Hii husaidia kuhakikisha kila hatua inakaribia kufanikisha matokeo yaliyokusudiwa, na kufanya mchakato kuwa bora na wenye mwelekeo.
+Kuanzisha mpango kwa lengo kunahusisha kuanza na malengo wazi au matokeo yanayotarajiwa akilini. Kwa kufafanua lengo hili mapema, modeli inaweza kulitumia kama kanuni huduma wakati wote wa mchakato wa kurudia mzunguko. Hii husaidia kuhakikisha kila mzunguko unakaribia kufikia matokeo yanayotakiwa, na kufanya mchakato kuwa mzuri na ulio na lengo wazi.
 
-Hapa kuna mfano wa jinsi unavyoweza kuanzisha mpango wa kusafiri na lengo kabla ya kurudia kwa wakala wa kusafiri katika Python:
+Hapa kuna mfano wa jinsi unavyoweza kuanzisha mpango wa safari kwa lengo kabla ya kurudia kwa wakala wa usafiri katika Python:
 
-### Hali
+### Hali Halisi
 
-Wakala wa kusafiri anataka kupanga likizo maalum kwa mteja. Lengo ni kuunda ratiba ya safari inayoongeza kuridhika kwa mteja kulingana na mapendeleo yao na bajeti.
+Mwakala wa usafiri anataka kupanga likizo iliyobinafsishwa kwa mteja. Lengo ni kuunda ratiba ya safari inayoongeza furaha ya mteja kulingana na mapendeleo yao na bajeti.
 
 ### Hatua
 
-1. Fafanua mapendeleo ya mteja na bajeti.
+1. Tambua mapendeleo na bajeti ya mteja.
 2. Anzisha mpango wa awali kulingana na mapendeleo haya.
-3. Rudia ili kuboresha mpango, ukizingatia kuridhika kwa mteja.
+3. Rudia mpango kuboresha, ukiwa unalenga furaha ya mteja.
 
 #### Msimbo wa Python
 
@@ -421,7 +488,7 @@ class TravelAgent:
     def calculate_cost(self, plan, new_destination):
         return sum(destination['cost'] for destination in plan) + new_destination['cost']
 
-# Example usage
+# Mfano wa matumizi
 destinations = [
     {"name": "Paris", "cost": 1000, "activity": "sightseeing"},
     {"name": "Tokyo", "cost": 1200, "activity": "shopping"},
@@ -440,57 +507,57 @@ refined_plan = travel_agent.iterate_plan(initial_plan, preferences, budget)
 print("Refined Plan:", refined_plan)
 ```
 
-#### Maelezo ya Msimbo
+#### Ufafanuzi wa Msimbo
 
-1. **Uanzishaji (Njia ya `__init__`)**: Darasa la `TravelAgent` linaanzishwa na orodha ya maeneo yanayowezekana, kila moja likiwa na sifa kama jina, gharama, na aina ya shughuli.
+1. **Uanzishaji (`__init__` method`)**: Darasa la `TravelAgent` linaanzishwa na orodha ya maeneo yanayoweza kutembelewa, kila kikiwa na sifa kama jina, gharama, na aina ya shughuli.
 
-2. **Kuanzisha Mpango (Njia ya `bootstrap_plan`)**: Njia hii huunda mpango wa awali wa safari kulingana na mapendeleo ya mteja na bajeti. Inapitia orodha ya maeneo na kuyaongeza kwenye mpango ikiwa yanalingana na mapendeleo ya mteja na yanaendana na bajeti.
+2. **Kuanzisha Mpango (`bootstrap_plan` method)**: Njia hii huunda mpango wa awali wa safari kulingana na mapendeleo na bajeti ya mteja. Huirudia kwenye orodha ya maeneo na kuiweka kwenye mpango ikiwa inalingana na mapendeleo na inahakikisha haizidi bajeti.
 
-3. **Kulinganisha Mapendeleo (Njia ya `match_preferences`)**: Njia hii hukagua ikiwa eneo linalingana na mapendeleo ya mteja.
+3. **Kulinganisha Mapendeleo (`match_preferences` method)**: Njia hii huangalia kama eneo linalolingana na mapendeleo ya mteja.
 
-4. **Kurudia Mpango (Njia ya `iterate_plan`)**: Njia hii inaboresha mpango wa awali kwa kujaribu kubadilisha kila eneo kwenye mpango na chaguo bora zaidi, ikizingatia mapendeleo ya mteja na vikwazo vya bajeti.
+4. **Kurudia Mpango (`iterate_plan` method)**: Njia hii huboresha mpango wa awali kwa kujaribu kubadilisha kila eneo kwenye mpango na linganifu bora zaidi, zikizingatiwa mapendeleo ya mteja na vizingiti vya bajeti.
 
-5. **Kuhesabu Gharama (Njia ya `calculate_cost`)**: Njia hii huhesabu gharama ya jumla ya mpango wa sasa, ikijumuisha eneo jipya linalowezekana.
+5. **Kuhesabu Gharama (`calculate_cost` method)**: Njia hii huhesabu jumla ya gharama za mpango wa sasa, ikijumuisha eneo jipya linalowezekana.
 
-#### Matumizi ya Mfano
+#### Mfano wa Matumizi
 
-- **Mpango wa Awali**: Wakala wa kusafiri huunda mpango wa awali kulingana na mapendeleo ya mteja ya kutembelea vivutio na bajeti ya $2000.
-- **Mpango Ulioboreshwa**: Wakala wa kusafiri hurudia mpango, akiboresha kwa mapendeleo ya mteja na bajeti.
+- **Mpango wa Awali**: Mwakala wa usafiri huunda mpango wa awali kulingana na mapendeleo ya mteja ya kutembelea vivutio vya utalii na bajeti ya $2000.
+- **Mpango Ulioboreshwa**: Mwakala wa usafiri hurudia mpango, anauboresha kwa kuzingatia mapendeleo ya mteja na bajeti.
 
-Kwa kuanzisha mpango na lengo wazi (mfano, kuongeza kuridhika kwa mteja) na kurudia ili kuboresha mpango, wakala wa kusafiri anaweza kuunda ratiba ya safari iliyobinafsishwa na iliyoboreshwa kwa mteja. Njia hii inahakikisha kuwa mpango wa safari unalingana na mapendeleo na bajeti ya mteja tangu mwanzo na unaboreshwa kwa kila hatua.
+Kwa kuanzisha mpango kwa lengo wazi (mfano, kuongeza furaha ya mteja) na kurudia kuboresha mpango, wakala wa usafiri anaweza kuunda ratiba ya safari iliyobinafsishwa na iliyoboreshwa kwa mteja. Njia hii huhakikisha kwamba mpango wa safari unaendana na mapendeleo na bajeti ya mteja tangu mwanzo na kuboreshwa kila wakati wa mzunguko.
 
-### Kutumia LLM kwa Upangaji Upya na Uwekaji Alama
+### Kutumia Faida za LLM kwa Upangaji Upya na Kufungasha Alama
 
-Mifano Mikubwa ya Lugha (LLMs) inaweza kutumika kwa upangaji upya na uwekaji alama kwa kutathmini umuhimu na ubora wa nyaraka zilizopatikana au majibu yaliyotolewa. Hivi ndivyo inavyofanya kazi:
+Mifano Mikubwa ya Lugha (LLMs) inaweza kutumika kwa kupanga upya na kufungasha alama kwa kutathmini umuhimu na ubora wa nyaraka zilizopatikana au majibu yaliyotengenezwa. Hapa kuna jinsi inavyofanya kazi:
 
-**Upatikanaji:** Hatua ya awali ya upatikanaji inachukua seti ya nyaraka au majibu yanayowezekana kulingana na swali.
+**Kukusanya:** Hatua ya awali ya ukusanyaji huleta seti ya nyaraka au majibu yanayowezekana kulingana na swali.
 
-**Upangaji Upya:** LLM inatathmini wagombea hawa na kuwapanga upya kulingana na umuhimu na ubora wao. Hatua hii inahakikisha kuwa taarifa muhimu na za ubora wa juu zinawasilishwa kwanza.
+**Upangaji Upya:** LLM inatathmini wagombea hawa na kuwapangia upya kulingana na umuhimu na ubora wao. Hatua hii huhakikisha taarifa zinazofaa na bora zipo mbele kabisa.
 
-**Uwekaji Alama:** LLM inatoa alama kwa kila mgombea, ikionyesha umuhimu na ubora wao. Hii husaidia kuchagua jibu au nyaraka bora zaidi kwa mtumiaji.
+**Kufungasha Alama:** LLM hutumia alama kwa kila mgombea, zikionyesha umuhimu na ubora wao. Hii husaidia kuchagua jibu bora au hati bora kwa mtumiaji.
 
-Kwa kutumia LLMs kwa upangaji upya na uwekaji alama, mfumo unaweza kutoa taarifa sahihi zaidi na inayolingana na muktadha, kuboresha uzoefu wa mtumiaji kwa ujumla.
+Kwa kutumia LLM kwa kupanga upya na kufungasha alama, mfumo unaweza kutoa taarifa sahihi na zinazofaa kiuktadha zaidi, kuboresha uzoefu wa mtumiaji kwa ujumla.
 
-Hapa kuna mfano wa jinsi wakala wa kusafiri anaweza kutumia Mfano Mkubwa wa Lugha (LLM) kwa upangaji upya na uwekaji alama wa maeneo ya kusafiri kulingana na mapendeleo ya mtumiaji katika Python:
+Hapa kuna mfano wa jinsi wakala wa usafiri anavyoweza kutumia Mfano Mkubwa wa Lugha (LLM) kwa kupanga upya na kufungasha alama maeneo ya kusafiria kulingana na mapendeleo ya mtumiaji katika Python:
 
-#### Hali - Kusafiri kulingana na Mapendeleo
+#### Hali Halisi - Usafiri Kulingana na Mapendeleo
 
-Wakala wa kusafiri anataka kupendekeza maeneo bora ya kusafiri kwa mteja kulingana na mapendeleo yao. LLM itasaidia kupanga upya na kuweka alama maeneo ili kuhakikisha chaguo muhimu zaidi yanawasilishwa.
+Mwakala wa usafiri anataka kupendekeza maeneo bora ya kusafiria kwa mteja kulingana na mapendeleo yao. LLM itasaidia kupanga upya na kufungasha alama maeneo kuhakikisha chaguzi zinazofaa zaidi zinaonyeshwa.
 
 #### Hatua:
 
-1. Kukusanya mapendeleo ya mtumiaji.
-2. Kupata orodha ya maeneo ya kusafiri yanayowezekana.
-3. Kutumia LLM kupanga upya na kuweka alama maeneo kulingana na mapendeleo ya mtumiaji.
+1. Kusanya mapendeleo ya mtumiaji.
+2. Pata orodha ya maeneo yanayowezekana ya kusafiria.
+3. Tumia LLM kupanga upya na kufungasha alama maeneo kulingana na mapendeleo ya mtumiaji.
 
-Hivi ndivyo unavyoweza kusasisha mfano wa awali ili kutumia Huduma za Azure OpenAI:
+Hivi ndivyo unavyoweza kusasisha mfano wa awali ili kutumia Azure OpenAI Services:
 
 #### Mahitaji
 
-1. Unahitaji kuwa na usajili wa Azure.
-2. Unda rasilimali ya Azure OpenAI na upate funguo zako za API.
+1. Lazima uwe na usajili wa Azure.
+2. Unda rasilimali ya Azure OpenAI na upate ufunguo wako wa API.
 
-#### Msimbo wa Mfano wa Python
+#### Mfano wa Msimbo wa Python
 
 ```python
 import requests
@@ -501,10 +568,10 @@ class TravelAgent:
         self.destinations = destinations
 
     def get_recommendations(self, preferences, api_key, endpoint):
-        # Generate a prompt for the Azure OpenAI
+        # Tengeneza ombi kwa ajili ya Azure OpenAI
         prompt = self.generate_prompt(preferences)
         
-        # Define headers and payload for the request
+        # Eleza vichwa na maudhui ya ombi
         headers = {
             'Content-Type': 'application/json',
             'Authorization': f'Bearer {api_key}'
@@ -515,11 +582,11 @@ class TravelAgent:
             "temperature": 0.7
         }
         
-        # Call the Azure OpenAI API to get the re-ranked and scored destinations
+        # Piga API ya Azure OpenAI kupata marudio yaliyopangwa upya na yenye alama
         response = requests.post(endpoint, headers=headers, json=payload)
         response_data = response.json()
         
-        # Extract and return the recommendations
+        # Chuja na rudisha mapendekezo
         recommendations = response_data['choices'][0]['text'].strip().split('\n')
         return recommendations
 
@@ -532,7 +599,7 @@ class TravelAgent:
             prompt += f"- {destination['name']}: {destination['description']}\n"
         return prompt
 
-# Example usage
+# Mfano wa matumizi
 destinations = [
     {"name": "Paris", "description": "City of lights, known for its art, fashion, and culture."},
     {"name": "Tokyo", "description": "Vibrant city, famous for its modernity and traditional temples."},
@@ -551,24 +618,265 @@ for rec in recommendations:
     print(rec)
 ```
 
-#### Maelezo ya Msimbo - Mchagua Mapendeleo
+#### Ufafanuzi wa Msimbo - Msimamizi wa Mapendeleo
 
-1. **Uanzishaji**: Darasa la `TravelAgent` linaanzishwa na orodha ya maeneo ya kusafiri yanayowezekana, kila moja likiwa na sifa kama jina na maelezo.
+1. **Uanzishaji**: Darasa la `TravelAgent` linaanzishwa na orodha ya maeneo yanayowezekana ya kusafiria, kila kikiwa na sifa kama jina na maelezo.
 
-2. **Kupata Mapendekezo (Njia ya `get_recommendations`)**: Njia hii huunda maelezo kwa huduma ya Azure OpenAI kulingana na mapendeleo ya mtumiaji na hufanya ombi la HTTP POST kwa API ya Azure OpenAI ili kupata maeneo yaliyopangwa upya na kuwekwa alama.
+2. **Kupata Mapendekezo (`get_recommendations` method)**: Njia hii hutengeneza kauli kwa huduma ya Azure OpenAI kulingana na mapendeleo ya mtumiaji na hufanya maombi ya HTTP POST kwenye API ya Azure OpenAI kupata maeneo yaliyopangiliwa upya na kufungashwa alama.
 
-3. **Kuunda Maelezo (Njia ya `generate_prompt`)**: Njia hii huunda maelezo kwa Azure OpenAI, ikijumuisha mapendeleo ya mtumiaji na orodha ya maeneo. Maelezo haya yanaongoza modeli kupanga upya na kuweka alama maeneo kulingana na mapendeleo yaliyotolewa.
+3. **Kutengeneza Kauli (`generate_prompt` method)**: Njia hii huunda kauli kwa Azure OpenAI, ikijumuisha mapendeleo ya mtumiaji na orodha ya maeneo. Kauli hii inaelekeza modeli kupanga upya na kufungasha alama maeneo kulingana na mapendeleo yaliyotolewa.
 
-4. **Ombi la API**: Maktaba ya `requests` inatumika kufanya ombi la HTTP POST kwa sehemu ya mwisho ya API ya Azure OpenAI. Jibu linajumuisha maeneo yaliyopangwa upya na kuwekwa alama.
+4. **Upigaji API**: Maktaba ya `requests` inatumika kufanya maombi ya HTTP POST kwa endpoint ya API ya Azure OpenAI. Jibu linaorodhesha maeneo yaliyopangiliwa upya na kufungashwa alama.
 
-5. **Matumizi ya Mfano**: Wakala wa kusafiri anakusanya mapendeleo ya mtumiaji (mfano, kupendezwa na vivutio na tamaduni tofauti) na kutumia huduma ya Azure OpenAI kupata mapendekezo yaliyopangwa upya na kuwekwa alama kwa maeneo ya kusafiri.
+5. **Mfano wa Matumizi**: Mwakala wa usafiri anakusanya mapendeleo ya mtumiaji (mfano, msisitizo wa kutembelea vivutio vya kisanii na tamaduni mbalimbali) na kutumia huduma ya Azure OpenAI kupata mapendekezo yaliyopangiliwa upya na kufungashwa alama ya maeneo ya kusafiria.
 
-Hakikisha unabadilisha `your_azure_openai_api_key` na funguo yako halisi ya API ya Azure OpenAI na `https://your-endpoint.com/...` na URL halisi ya sehemu ya mwisho ya Azure OpenAI.
+Hakikisha kubadili `your_azure_openai_api_key` na ufunguo wako halisi wa Azure OpenAI API na `https://your-endpoint.com/...` na URL halisi ya endpoint ya usambazaji wako wa Azure OpenAI.
 
-Kwa kutumia LLM kwa upangaji upya na uwekaji alama, wakala wa kusafiri anaweza kutoa mapendekezo ya kusafiri yaliyobinafsishwa na yanayofaa zaidi kwa wateja, kuboresha uzoefu wao kwa ujumla.
-#### Mfano wa Kivitendo: Kutafuta kwa Nia katika Wakala wa Usafiri
+Kwa kutumia LLM kwa kupanga upya na kufungasha alama, wakala wa usafiri anaweza kutoa mapendekezo ya kusafiri yanayobinafsishwa na yanayofaa zaidi kwa wateja, kuboresha uzoefu wao kwa jumla.
 
-Hebu tuchukue Wakala wa Usafiri kama mfano wa kuona jinsi kutafuta kwa nia kunavyoweza kutekelezwa.
+### RAG: Mbinu ya Kuandika Maswali vs Chombo
+
+Uzalishaji wa Kupanuliwa kwa Kupata Taarifa (RAG) unaweza kuwa mbinu ya kuandika maswali na pia chombo katika maendeleo ya mawakala wa AI. Kuuelewa tofauti kati ya hizi mbili kunaweza kusaidia kutumia RAG kwa ufanisi zaidi katika miradi yako.
+
+#### RAG kama Mbinu ya Kuandika Maswali
+
+**Ni nini?**
+
+- Kama mbinu ya kuandika maswali, RAG inahusisha kutengeneza maswali maalum au maagizo ya kuongoza upatikanaji wa taarifa zinazofaa kutoka kwenye korpasi kubwa au hifadhidata. Taarifa hii ina tumika kisha kuunda majibu au vitendo.
+
+**Jinsi inavyofanya kazi:**
+
+1. **Tengeneza Maagizo**: Tengeneza maagizo au maswali yaliyopangwa vyema kulingana na kazi au ingizo la mtumiaji.
+2. **Pata Taarifa**: Tumia maagizo kutafuta data inayofaa kutoka kwenye hifadhidata au seti ya taarifa iliyopo.
+3. **Tengeneza Jibu**: Changanya taarifa zilizopatikana na mifano ya AI yenye uwezo wa uundaji majibu kutoa jibu kamili na linaloshikamana.
+
+**Mfano kwa Wakala wa Usafiri**:
+
+- Ingizo la Mtumiaji: "Nataka kutembelea makumbusho huko Paris."
+- Kauli: "Tafuta makumbusho makuu huko Paris."
+- Taarifa Iliyo Patikana: Maelezo kuhusu Louvre Museum, Musée d'Orsay, n.k.
+- Jibu Lililotengenezwa: "Hapa kuna baadhi ya makumbusho makuu huko Paris: Louvre Museum, Musée d'Orsay, na Centre Pompidou."
+
+#### RAG kama Chombo
+
+**Ni nini?**
+
+- Kama chombo, RAG ni mfumo uliounganishwa unaoendesha mchakato wa upatikanaji na uzalishaji kwa moja kwa moja, kurahisisha kwa waendelezaji kutekeleza kazi ngumu za AI bila kuandika maagizo kila mara kwa kila swali.
+
+**Jinsi inavyofanya kazi:**
+
+1. **Uunganaji**: Weka RAG ndani ya usanifu wa wakala wa AI, ikiruhusu kusimamia moja kwa moja kazi za kupata na kuundwa kwa majibu.
+2. **Uendeshaji Kiotomatiki**: Chombo husimamia mchakato mzima, kuanzia kupokea ingizo la mtumiaji hadi kutoa jibu la mwisho, bila hitaji la maagizo maalum.
+3. **Ufanisi**: Huboresha utendaji wa wakala kwa kuweka mtiririko wa kazi za kupata na kuunda majibu kuwa rahisi na haraka.
+
+**Mfano kwa Wakala wa Usafiri**:
+
+- Ingizo la Mtumiaji: "Nataka kutembelea makumbusho huko Paris."
+- Chombo cha RAG: Kinapata taarifa kuhusu makumbusho na kuunda jibu kiotomatiki.
+- Jibu Lililotengenezwa: "Hapa kuna baadhi ya makumbusho makuu huko Paris: Louvre Museum, Musée d'Orsay, na Centre Pompidou."
+
+### Mlinganisho
+
+| Kipengele                | Mbinu ya Kuandika Maswali                               | Chombo                                               |
+|-------------------------|---------------------------------------------------------|-----------------------------------------------------|
+| **Maandalizi au Kiotomatiki** | Maandamano ya mikono ya maagizo kwa kila swali.        | Mchakato wa kiotomatiki wa upatikanaji na uzalishaji.|
+| **Udhibiti**            | Hutoa udhibiti zaidi juu ya mchakato wa upatikanaji.    | Huwekzesha na kuendesha mchakato wa upatikanaji na uzalishaji.|
+| **Uwezo wa Kubadilika** | Inaruhusu maagizo yaliyobinafsishwa kulingana na mahitaji. | Inafaa zaidi kwa utekelezaji mkubwa.                  |
+| **Ugumu**               | Inahitaji kutengeneza na kurekebisha maagizo.           | Rahisi kuingiza ndani ya usanifu wa wakala wa AI.    |
+
+### Mifano ya Kivitendo
+
+**Mfano wa Mbinu ya Kuandika Maswali:**
+
+```python
+def search_museums_in_paris():
+    prompt = "Find top museums in Paris"
+    search_results = search_web(prompt)
+    return search_results
+
+museums = search_museums_in_paris()
+print("Top Museums in Paris:", museums)
+```
+
+**Mfano wa Chombo:**
+
+```python
+class Travel_Agent:
+    def __init__(self):
+        self.rag_tool = RAGTool()
+
+    def get_museums_in_paris(self):
+        user_input = "I want to visit museums in Paris."
+        response = self.rag_tool.retrieve_and_generate(user_input)
+        return response
+
+travel_agent = Travel_Agent()
+museums = travel_agent.get_museums_in_paris()
+print("Top Museums in Paris:", museums)
+```
+
+### Kutathmini Umuhimu
+
+Kutathmini umuhimu ni kipengele muhimu katika utendaji wa wakala wa AI. Inahakikisha taarifa zilizopatikana na majibu yaliyotengenezwa na wakala ni sahihi, za kweli, na zenye manufaa kwa mtumiaji. Tuchunguze jinsi ya kutathmini umuhimu katika mawakala wa AI, ikiwa ni pamoja na mifano ya vitendo na mbinu.
+
+#### Misingi Muhimu Katika Kutathmini Umuhimu
+
+1. **Uelewa wa Muktadha**:
+   - Wakala lazima aelewe muktadha wa swali la mtumiaji ili kupata na kutoa taarifa zinazofaa.
+   - Mfano: Ikiwa mtumiaji anauliza "mikahawa bora huko Paris," wakala atazingatia mapendeleo ya mtumiaji, kama aina ya chakula na bajeti.
+
+2. **Usahihi**:
+   - Taarifa zinazotolewa na wakala zinapaswa kuwa sahihi kiutendaji na za sasa.
+   - Mfano: Kupendekeza mikahawa ambayo bado iko wazi na ina tathmini nzuri badala ya zile zilizofungwa au za zamani.
+
+3. **Madhumuni ya Mtumiaji**:
+   - Wakala anapaswa kubaini madhumuni ya mtumiaji nyuma ya swali ili kutoa taarifa zinazofaa zaidi.
+   - Mfano: Ikiwa mtumiaji anauliza "hoteli kwa bajeti ndogo," wakala atazipa kipaumbele chaguzi za bei nafuu.
+
+4. **Mzunguko wa Maoni**:
+   - Kukusanya na kuchambua maoni ya mtumiaji mara kwa mara husaidia wakala kuboresha mchakato wa kutathmini umuhimu.
+   - Mfano: Kujumuisha tathmini na maoni ya watumiaji kuhusu mapendekezo ya awali ili kuboresha majibu ya baadaye.
+
+#### Mbinu za Kivitendo za Kutathmini Umuhimu
+
+1. **Kupangilia Kwa Alama ya Umuhimu**:
+   - Panga alama za umuhimu kwa kila kipengee kilichopatikana kulingana na jinsi kinavyolingana na swali na mapendeleo ya mtumiaji.
+   - Mfano:
+
+     ```python
+     def relevance_score(item, query):
+         score = 0
+         if item['category'] in query['interests']:
+             score += 1
+         if item['price'] <= query['budget']:
+             score += 1
+         if item['location'] == query['destination']:
+             score += 1
+         return score
+     ```
+
+2. **Kuchuja na Kupangilia Kwenye Orodha**:
+   - Chuja vitu visivyohusiana na pangilia vitu vilivyoondolewa kulingana na alama za umuhimu.
+   - Mfano:
+
+     ```python
+     def filter_and_rank(items, query):
+         ranked_items = sorted(items, key=lambda item: relevance_score(item, query), reverse=True)
+         return ranked_items[:10]  # Rudisha vitu 10 vinavyofaa zaidi
+     ```
+
+3. **Usindikaji wa Lugha Asilia (NLP)**:
+   - Tumia mbinu za NLP kuelewa swali la mtumiaji na kupata taarifa zinazofaa.
+   - Mfano:
+
+     ```python
+     def process_query(query):
+         # Tumia NLP kutoa taarifa muhimu kutoka kwa swali la mtumiaji
+         processed_query = nlp(query)
+         return processed_query
+     ```
+
+4. **Ujumlishaji wa Maoni ya Mtumiaji**:
+   - Kusanya maoni ya mtumiaji juu ya mapendekezo yaliyotolewa na uyatumie kurekebisha tathmini za umuhimu kwa siku zijazo.
+   - Mfano:
+
+     ```python
+     def adjust_based_on_feedback(feedback, items):
+         for item in items:
+             if item['name'] in feedback['liked']:
+                 item['relevance'] += 1
+             if item['name'] in feedback['disliked']:
+                 item['relevance'] -= 1
+         return items
+     ```
+
+#### Mfano: Kutathmini Umuhimu kwa Wakala wa Usafiri
+
+Hapa kuna mfano wa vitendo wa jinsi Wakala wa Usafiri anavyotathmini umuhimu wa mapendekezo ya kusafiri:
+
+```python
+class Travel_Agent:
+    def __init__(self):
+        self.user_preferences = {}
+        self.experience_data = []
+
+    def gather_preferences(self, preferences):
+        self.user_preferences = preferences
+
+    def retrieve_information(self):
+        flights = search_flights(self.user_preferences)
+        hotels = search_hotels(self.user_preferences)
+        attractions = search_attractions(self.user_preferences)
+        return flights, hotels, attractions
+
+    def generate_recommendations(self):
+        flights, hotels, attractions = self.retrieve_information()
+        ranked_hotels = self.filter_and_rank(hotels, self.user_preferences)
+        itinerary = create_itinerary(flights, ranked_hotels, attractions)
+        return itinerary
+
+    def filter_and_rank(self, items, query):
+        ranked_items = sorted(items, key=lambda item: self.relevance_score(item, query), reverse=True)
+        return ranked_items[:10]  # Rudisha vitu 10 vinavyohusiana zaidi
+
+    def relevance_score(self, item, query):
+        score = 0
+        if item['category'] in query['interests']:
+            score += 1
+        if item['price'] <= query['budget']:
+            score += 1
+        if item['location'] == query['destination']:
+            score += 1
+        return score
+
+    def adjust_based_on_feedback(self, feedback, items):
+        for item in items:
+            if item['name'] in feedback['liked']:
+                item['relevance'] += 1
+            if item['name'] in feedback['disliked']:
+                item['relevance'] -= 1
+        return items
+
+# Mfano wa matumizi
+travel_agent = Travel_Agent()
+preferences = {
+    "destination": "Paris",
+    "dates": "2025-04-01 to 2025-04-10",
+    "budget": "moderate",
+    "interests": ["museums", "cuisine"]
+}
+travel_agent.gather_preferences(preferences)
+itinerary = travel_agent.generate_recommendations()
+print("Suggested Itinerary:", itinerary)
+feedback = {"liked": ["Louvre Museum"], "disliked": ["Eiffel Tower (too crowded)"]}
+updated_items = travel_agent.adjust_based_on_feedback(feedback, itinerary['hotels'])
+print("Updated Itinerary with Feedback:", updated_items)
+```
+
+### Kutafuta kwa Madhumuni
+
+Kutafuta kwa madhumuni kunahusisha kuelewa na kufasiri kusudi la msingi au lengo nyuma ya swali la mtumiaji ili kupata na kutoa taarifa inayofaa na yenye manufaa zaidi. Njia hii inapita zaidi ya kulinganisha maneno na inalenga kuelewa mahitaji halisi ya mtumiaji na muktadha.
+
+#### Misingi Muhimu Katika Kutafuta kwa Madhumuni
+
+1. **Kuelewa Madhumuni ya Mtumiaji**:
+   - Madhumuni ya mtumiaji yanaweza kugawanywa katika aina kuu tatu: ya taarifa, ya kuvinjari, na ya miamala.
+     - **Madhumuni ya Taarifa**: Mtumiaji anatafuta taarifa kuhusu mada (mfano, "Ni makumbusho bora gani huko Paris?").
+     - **Madhumuni ya Kuvinjari**: Mtumiaji anataka kuvinjari tovuti au ukurasa maalum (mfano, "Tovuti rasmi ya Louvre Museum").
+     - **Madhumuni ya Miamala**: Mtumiaji ana nia ya kufanya muamala, kama kuweka tiketi au kununua (mfano, "Weka tiketi ya ndege kwenda Paris").
+
+2. **Uelewa wa Muktadha**:
+   - Kuchambua muktadha wa swali la mtumiaji husaidia kubaini madhumuni yao kwa usahihi. Hii ni pamoja na kuzingatia mwingiliano uliopita, mapendeleo ya mtumiaji, na maelezo maalum ya swali la sasa.
+
+3. **Usindikaji wa Lugha Asilia (NLP)**:
+   - Mbinu za NLP hutumika kuelewa na kufasiri maswali ya lugha asilia yanayotolewa na watumiaji. Hii ni pamoja na mambo kama utambuzi wa vyombo, uchambuzi wa hisia, na uchambuzi wa maswali.
+
+4. **Ubinufishaji**:
+   - Kubinafsisha matokeo ya utafutaji kulingana na historia ya mtumiaji, mapendeleo, na maoni huongeza umuhimu wa taarifa zilizopatikana.
+
+#### Mfano wa Kivitendo: Kutafuta kwa Madhumuni kwa Wakala wa Usafiri
+
+Tuchukue Wakala wa Usafiri kama mfano kuona jinsi kutafuta kwa madhumuni kunavyoweza kutekelezwa.
 
 1. **Kukusanya Mapendeleo ya Mtumiaji**
 
@@ -581,7 +889,7 @@ Hebu tuchukue Wakala wa Usafiri kama mfano wa kuona jinsi kutafuta kwa nia kunav
            self.user_preferences = preferences
    ```
 
-2. **Kuelewa Nia ya Mtumiaji**
+2. **Kuelewa Madhumuni ya Mtumiaji**
 
    ```python
    def identify_intent(query):
@@ -594,10 +902,9 @@ Hebu tuchukue Wakala wa Usafiri kama mfano wa kuona jinsi kutafuta kwa nia kunav
    ```
 
 3. **Uelewa wa Muktadha**
-
    ```python
    def analyze_context(query, user_history):
-       # Combine current query with user history to understand context
+       # Changanisha uchunguzi wa sasa na historia ya mtumiaji kuelewa muktadha
        context = {
            "current_query": query,
            "user_history": user_history
@@ -605,7 +912,7 @@ Hebu tuchukue Wakala wa Usafiri kama mfano wa kuona jinsi kutafuta kwa nia kunav
        return context
    ```
 
-4. **Kutafuta na Kubinafsisha Matokeo**
+4. **Tafuta na Binafsisha Matokeo**
 
    ```python
    def search_with_intent(query, preferences, user_history):
@@ -621,24 +928,24 @@ Hebu tuchukue Wakala wa Usafiri kama mfano wa kuona jinsi kutafuta kwa nia kunav
        return personalized_results
 
    def search_information(query, preferences):
-       # Example search logic for informational intent
+       # Mfano wa mantiki ya utafutaji kwa nia ya taarifa
        results = search_web(f"best {preferences['interests']} in {preferences['destination']}")
        return results
 
    def search_navigation(query):
-       # Example search logic for navigational intent
+       # Mfano wa mantiki ya utafutaji kwa nia ya urambazaji
        results = search_web(query)
        return results
 
    def search_transaction(query, preferences):
-       # Example search logic for transactional intent
+       # Mfano wa mantiki ya utafutaji kwa nia ya muamala
        results = search_web(f"book {query} to {preferences['destination']}")
        return results
 
    def personalize_results(results, user_history):
-       # Example personalization logic
+       # Mfano wa mantiki ya ubinafsishaji
        personalized = [result for result in results if result not in user_history]
-       return personalized[:10]  # Return top 10 personalized results
+       return personalized[:10]  # Rudisha matokeo 10 bora yaliyo binafsi
    ```
 
 5. **Mfano wa Matumizi**
@@ -658,44 +965,44 @@ Hebu tuchukue Wakala wa Usafiri kama mfano wa kuona jinsi kutafuta kwa nia kunav
 
 ---
 
-## 4. Kuzalisha Msimbo kama Zana
+## 4. Kutengeneza Msimbo kama Chombo
 
-Wakala wa kuzalisha msimbo hutumia mifano ya AI kuandika na kutekeleza msimbo, kutatua matatizo magumu na kuendesha kazi kiotomatiki.
+Wakili wa kutengeneza msimbo hutumia mifano ya AI kuandika na kutekeleza msimbo, kutatua matatizo magumu na kuendesha kazi kwa moja kwa moja.
 
-### Wakala wa Kuzalisha Msimbo
+### Wakala wa Kutengeneza Msimbo
 
-Wakala wa kuzalisha msimbo hutumia mifano ya AI ya kizazi kuandika na kutekeleza msimbo. Wakala hawa wanaweza kutatua matatizo magumu, kuendesha kazi kiotomatiki, na kutoa maarifa muhimu kwa kuzalisha na kutekeleza msimbo katika lugha mbalimbali za programu.
+Wakala wa kutengeneza msimbo hutumia mifano ya AI ya kizazi kuandika na kutekeleza msimbo. Wakala hawa wanaweza kutatua matatizo magumu, kuendesha kazi kwa moja kwa moja, na kutoa ufahamu muhimu kwa kutengeneza na kuendesha msimbo katika lugha mbalimbali za programu.
 
 #### Matumizi ya Kivitendo
 
-1. **Kuzalisha Msimbo Kiotomatiki**: Kuzalisha vipande vya msimbo kwa kazi maalum, kama vile uchambuzi wa data, uchakataji wa wavuti, au ujifunzaji wa mashine.  
-2. **SQL kama RAG**: Kutumia maswali ya SQL kupata na kudhibiti data kutoka kwa hifadhidata.  
-3. **Kutatua Matatizo**: Kuunda na kutekeleza msimbo kutatua matatizo maalum, kama vile kuboresha algorithimu au kuchambua data.  
+1. **Uundaji wa Msimbo Kwa Moja kwa Moja**: Tengeneza vipande vya msimbo kwa kazi maalum, kama vile uchambuzi wa data, kunyunyizia wavuti, au ujifunzaji wa mashine.
+2. **SQL kama RAG**: Tumia maswali ya SQL kuchukua na kubadilisha data kutoka kwa hifadhidata.
+3. **Kutatua Matatizo**: Tengeneza na kuendesha msimbo kutatua matatizo maalum, kama vile kuboresha algorithms au kuchambua data.
 
-#### Mfano: Wakala wa Kuzalisha Msimbo kwa Uchambuzi wa Data
+#### Mfano: Wakili wa Kutengeneza Msimbo kwa Uchambuzi wa Data
 
-Fikiria unaunda wakala wa kuzalisha msimbo. Hivi ndivyo unavyoweza kufanya kazi:
+Fikiria unatengeneza wakala wa kutengeneza msimbo. Hapa ni jinsi inaweza kufanya kazi:
 
-1. **Kazi**: Kuchambua seti ya data ili kutambua mienendo na mifumo.  
-2. **Hatua**:  
-   - Pakia seti ya data kwenye zana ya uchambuzi wa data.  
-   - Zalisha maswali ya SQL kuchuja na kujumlisha data.  
-   - Tekeleza maswali na pata matokeo.  
-   - Tumia matokeo kuzalisha vielelezo na maarifa.  
-3. **Rasilimali Zinazohitajika**: Ufikiaji wa seti ya data, zana za uchambuzi wa data, na uwezo wa SQL.  
-4. **Uzoefu**: Tumia matokeo ya uchambuzi wa awali kuboresha usahihi na umuhimu wa uchambuzi wa baadaye.  
+1. **Kazi**: Chambua seti ya data ili kubaini mwenendo na mifumo.
+2. **Hatua**:
+   - Pakia seti ya data ndani ya zana ya uchambuzi wa data.
+   - Tengeneza maswali ya SQL kuchuja na kujumlisha data.
+   - Endesha maswali na toa matokeo.
+   - Tumia matokeo kufanya uchoraji na kutoa ufahamu.
+3. **Rasilimali Zinazohitajika**: Kupata seti ya data, zana za uchambuzi wa data, na uwezo wa SQL.
+4. **Uzoefu**: Tumia matokeo ya uchambuzi wa zamani kuboresha usahihi na uhalali wa uchambuzi wa baadaye.
 
-### Mfano: Wakala wa Kuzalisha Msimbo kwa Wakala wa Usafiri
+### Mfano: Wakili wa Kutengeneza Msimbo kwa Wakala wa Usafiri
 
-Katika mfano huu, tutaunda wakala wa kuzalisha msimbo, Wakala wa Usafiri, kusaidia watumiaji kupanga safari zao kwa kuzalisha na kutekeleza msimbo. Wakala huyu anaweza kushughulikia kazi kama vile kupata chaguo za usafiri, kuchuja matokeo, na kuandaa ratiba kwa kutumia AI ya kizazi.
+Katika mfano huu, tutatengeneza wakala wa kutengeneza msimbo, Wakala wa Usafiri, kusaidia watumiaji kupanga safari zao kwa kutengeneza na kuendesha msimbo. Wakili huyu anaweza kushughulikia kazi kama vile kupata chaguzi za safari, kuchuja matokeo, na kuandaa ratiba kwa kutumia AI ya kizazi.
 
-#### Muhtasari wa Wakala wa Kuzalisha Msimbo
+#### Muhtasari wa Wakili wa Kutengeneza Msimbo
 
-1. **Kukusanya Mapendeleo ya Mtumiaji**: Hukusanya maoni ya mtumiaji kama vile marudio, tarehe za safari, bajeti, na maslahi.  
-2. **Kuzalisha Msimbo wa Kupata Data**: Huzalisha vipande vya msimbo kupata data kuhusu ndege, hoteli, na vivutio.  
-3. **Kutekeleza Msimbo Uliogenezwa**: Hutekeleza msimbo uliogenezwa kupata taarifa za wakati halisi.  
-4. **Kuandaa Ratiba**: Hujumuisha data iliyopatikana kuwa mpango wa safari uliobinafsishwa.  
-5. **Kurekebisha Kulingana na Maoni**: Hupokea maoni ya mtumiaji na kuzalisha tena msimbo ikiwa ni lazima kuboresha matokeo.  
+1. **Kukusanya Mapendeleo ya Mtumiaji**: Anakusanya maelezo ya mtumiaji kama vile mahali pa kwenda, tarehe za safari, bajeti, na mambo yanayovutia.
+2. **Kutengeneza Msimbo wa Kupata Data**: Anazalisha vipande vya msimbo vya kupata habari juu ya ndege, hoteli, na vivutio.
+3. **Kutekeleza Msimbo Uliotengenezwa**: Anaendesha msimbo uliotengenezwa kupata habari halisi kwa wakati.
+4. **Kutengeneza Ratiba**: Anakusanya data iliyopatikana na kuunda mpango wa safari unaolingana na mtumiaji.
+5. **Kurekebisha Kulingana na Maoni**: Anapokea maoni kutoka kwa mtumiaji na kutengeneza upya msimbo inapohitajika kurekebisha matokeo.
 
 #### Utekelezaji Hatua kwa Hatua
 
@@ -710,11 +1017,11 @@ Katika mfano huu, tutaunda wakala wa kuzalisha msimbo, Wakala wa Usafiri, kusaid
            self.user_preferences = preferences
    ```
 
-2. **Kuzalisha Msimbo wa Kupata Data**
+2. **Kutengeneza Msimbo wa Kupata Data**
 
    ```python
    def generate_code_to_fetch_data(preferences):
-       # Example: Generate code to search for flights based on user preferences
+       # Mfano: Tengeneza msimbo wa kutafuta ndege kulingana na mapendeleo ya mtumiaji
        code = f"""
        def search_flights():
            import requests
@@ -724,7 +1031,7 @@ Katika mfano huu, tutaunda wakala wa kuzalisha msimbo, Wakala wa Usafiri, kusaid
        return code
 
    def generate_code_to_fetch_hotels(preferences):
-       # Example: Generate code to search for hotels
+       # Mfano: Tengeneza msimbo wa kutafuta hoteli
        code = f"""
        def search_hotels():
            import requests
@@ -734,11 +1041,11 @@ Katika mfano huu, tutaunda wakala wa kuzalisha msimbo, Wakala wa Usafiri, kusaid
        return code
    ```
 
-3. **Kutekeleza Msimbo Uliogenezwa**
+3. **Kutekeleza Msimbo Uliotengenezwa**
 
    ```python
    def execute_code(code):
-       # Execute the generated code using exec
+       # Tekeleza nambari iliyotengenezwa kwa kutumia exec
        exec(code)
        result = locals()
        return result
@@ -762,7 +1069,7 @@ Katika mfano huu, tutaunda wakala wa kuzalisha msimbo, Wakala wa Usafiri, kusaid
    print("Hotel Options:", hotels)
    ```
 
-4. **Kuandaa Ratiba**
+4. **Kutengeneza Ratiba**
 
    ```python
    def generate_itinerary(flights, hotels, attractions):
@@ -782,7 +1089,7 @@ Katika mfano huu, tutaunda wakala wa kuzalisha msimbo, Wakala wa Usafiri, kusaid
 
    ```python
    def adjust_based_on_feedback(feedback, preferences):
-       # Adjust preferences based on user feedback
+       # Rekebisha mapendeleo kulingana na maoni ya mtumiaji
        if "liked" in feedback:
            preferences["favorites"] = feedback["liked"]
        if "disliked" in feedback:
@@ -792,7 +1099,7 @@ Katika mfano huu, tutaunda wakala wa kuzalisha msimbo, Wakala wa Usafiri, kusaid
    feedback = {"liked": ["Louvre Museum"], "disliked": ["Eiffel Tower (too crowded)"]}
    updated_preferences = adjust_based_on_feedback(feedback, preferences)
    
-   # Regenerate and execute code with updated preferences
+   # Tengeneza upya na tekeleza msimbo kwa mapendeleo yaliyosasishwa
    updated_flight_code = generate_code_to_fetch_data(updated_preferences)
    updated_hotel_code = generate_code_to_fetch_hotels(updated_preferences)
    
@@ -803,33 +1110,33 @@ Katika mfano huu, tutaunda wakala wa kuzalisha msimbo, Wakala wa Usafiri, kusaid
    print("Updated Itinerary:", updated_itinerary)
    ```
 
-### Kutumia Uelewa wa Mazingira na Utoaji Sababu
+### Kutumia Uelewa wa Mazingira na Ufafanuzi
 
-Kulingana na mpangilio wa jedwali, mfumo unaweza kuboresha mchakato wa kizazi cha maswali kwa kutumia uelewa wa mazingira na utoaji sababu.
+Kulingana na muundo wa jedwali kunaweza kuboresha mchakato wa kuunda maswali kwa kutumia uelewa wa mazingira na ufafanuzi.
 
-Hapa kuna mfano wa jinsi hii inaweza kufanyika:
+Hapa kuna mfano wa jinsi hiki kinavyoweza kufanywa:
 
-1. **Kuelewa Mpangilio**: Mfumo utaelewa mpangilio wa jedwali na kutumia taarifa hii kuimarisha kizazi cha maswali.  
-2. **Kurekebisha Kulingana na Maoni**: Mfumo utarekebisha mapendeleo ya mtumiaji kulingana na maoni na kufikiria ni sehemu gani za mpangilio zinahitaji kusasishwa.  
-3. **Kuzalisha na Kutekeleza Maswali**: Mfumo utazalisha na kutekeleza maswali kupata data mpya ya ndege na hoteli kulingana na mapendeleo mapya.  
+1. **Kuelewa Muundo**: Mfumo utafahamu muundo wa jedwali na kutumia taarifa hii kuimarisha uzalishaji wa maswali.
+2. **Kurekebisha Kulingana na Maoni**: Mfumo utarekebisha mapendeleo ya mtumiaji kulingana na maoni na kufikiria ni sehemu gani za muundo zinahitaji kusasishwa.
+3. **Kutengeneza na Kuendesha Maswali**: Mfumo utazalisha na kuendesha maswali kupata taarifa mpya za ndege na hoteli kulingana na mabadiliko ya mapendeleo.
 
 Hapa kuna mfano wa msimbo wa Python uliosasishwa unaojumuisha dhana hizi:
 
 ```python
 def adjust_based_on_feedback(feedback, preferences, schema):
-    # Adjust preferences based on user feedback
+    # Rekebisha mapendeleo kulingana na maoni ya mtumiaji
     if "liked" in feedback:
         preferences["favorites"] = feedback["liked"]
     if "disliked" in feedback:
         preferences["avoid"] = feedback["disliked"]
-    # Reasoning based on schema to adjust other related preferences
+    # Hoja kulingana na schema kurekebisha mapendeleo mengine yanayohusiana
     for field in schema:
         if field in preferences:
             preferences[field] = adjust_based_on_environment(feedback, field, schema)
     return preferences
 
 def adjust_based_on_environment(feedback, field, schema):
-    # Custom logic to adjust preferences based on schema and feedback
+    # Mantiki maalum kurekebisha mapendeleo kulingana na schema na maoni
     if field in feedback["liked"]:
         return schema[field]["positive_adjustment"]
     elif field in feedback["disliked"]:
@@ -837,33 +1144,33 @@ def adjust_based_on_environment(feedback, field, schema):
     return schema[field]["default"]
 
 def generate_code_to_fetch_data(preferences):
-    # Generate code to fetch flight data based on updated preferences
+    # Tengeneza msimbo wa kupata data za ndege kulingana na mapendeleo yaliyosasishwa
     return f"fetch_flights(preferences={preferences})"
 
 def generate_code_to_fetch_hotels(preferences):
-    # Generate code to fetch hotel data based on updated preferences
+    # Tengeneza msimbo wa kupata data za hoteli kulingana na mapendeleo yaliyosasishwa
     return f"fetch_hotels(preferences={preferences})"
 
 def execute_code(code):
-    # Simulate execution of code and return mock data
+    # iga utendaji wa msimbo na rudisha data bandia
     return {"data": f"Executed: {code}"}
 
 def generate_itinerary(flights, hotels, attractions):
-    # Generate itinerary based on flights, hotels, and attractions
+    # Tengeneza ratiba kulingana na ndege, hoteli, na vivutio
     return {"flights": flights, "hotels": hotels, "attractions": attractions}
 
-# Example schema
+# Mfano wa schema
 schema = {
     "favorites": {"positive_adjustment": "increase", "negative_adjustment": "decrease", "default": "neutral"},
     "avoid": {"positive_adjustment": "decrease", "negative_adjustment": "increase", "default": "neutral"}
 }
 
-# Example usage
+# Matumizi ya mfano
 preferences = {"favorites": "sightseeing", "avoid": "crowded places"}
 feedback = {"liked": ["Louvre Museum"], "disliked": ["Eiffel Tower (too crowded)"]}
 updated_preferences = adjust_based_on_feedback(feedback, preferences, schema)
 
-# Regenerate and execute code with updated preferences
+# Tengeneza upya na utekeleze msimbo na mapendeleo yaliyosasishwa
 updated_flight_code = generate_code_to_fetch_data(updated_preferences)
 updated_hotel_code = generate_code_to_fetch_hotels(updated_preferences)
 
@@ -874,51 +1181,51 @@ updated_itinerary = generate_itinerary(updated_flights, updated_hotels, feedback
 print("Updated Itinerary:", updated_itinerary)
 ```
 
-#### Maelezo - Kuhifadhi Kulingana na Maoni
+#### Maelezo - Uhifadhi Kulingana na Maoni
 
-1. **Uelewa wa Mpangilio**: Kamusi ya `schema` inafafanua jinsi mapendeleo yanavyopaswa kurekebishwa kulingana na maoni. Inajumuisha sehemu kama `favorites` na `avoid`, pamoja na marekebisho yanayolingana.  
-2. **Kurekebisha Mapendeleo (`adjust_based_on_feedback` method)**: Njia hii inarekebisha mapendeleo kulingana na maoni ya mtumiaji na mpangilio.  
-3. **Marekebisho Yanayotegemea Mazingira (`adjust_based_on_environment` method)**: Njia hii inabinafsisha marekebisho kulingana na mpangilio na maoni.  
-4. **Kuzalisha na Kutekeleza Maswali**: Mfumo huzalisha msimbo kupata data mpya ya ndege na hoteli kulingana na mapendeleo yaliyorekebishwa na kuiga utekelezaji wa maswali haya.  
-5. **Kuandaa Ratiba**: Mfumo huunda ratiba iliyosasishwa kulingana na data mpya ya ndege, hoteli, na vivutio.  
+1. **Uelewa wa Muundo**: Kamusi `schema` inaeleza jinsi mapendeleo yanavyopaswa kurekebishwa kulingana na maoni. Inajumuisha sehemu kama `favorites` na `avoid`, huku ikieleza marekebisho yanayohitajika.
+2. **Kurekebisha Mapendeleo (mbinu `adjust_based_on_feedback`)**: Mbinu hii inarekebisha mapendeleo kulingana na maoni ya mtumiaji na muundo.
+3. **Marekebisho Kulingana na Mazingira (mbinu `adjust_based_on_environment`)**: Mbinu hii inabinafsisha marekebisho kulingana na muundo na maoni.
+4. **Kutengeneza na Kuendesha Maswali**: Mfumo unazalisha msimbo wa kupata taarifa mpya za ndege na hoteli kulingana na mapendeleo yaliyorekebishwa na kuiga utekelezaji wa maswali haya.
+5. **Kutengeneza Ratiba**: Mfumo huunda ratiba iliyosasishwa kulingana na taarifa mpya za ndege, hoteli, na vivutio.
 
-Kwa kufanya mfumo uwe na uelewa wa mazingira na utoaji sababu kulingana na mpangilio, unaweza kuzalisha maswali sahihi zaidi na muhimu, na hivyo kutoa mapendekezo bora ya usafiri na uzoefu wa mtumiaji uliobinafsishwa.
+Kwa kufanya mfumo uwe mwenye uelewa wa mazingira na kuwatathmini kulingana na muundo, unaweza kutoa maswali sahihi na yenye maana zaidi, na hivyo kupata mapendekezo bora ya safari na uzoefu wa mtumiaji wa kibinafsi.
 
-### Kutumia SQL kama Mbinu ya Retrieval-Augmented Generation (RAG)
+### Kutumia SQL kama Mbinu ya Uzalishaji wa Data Zilizochaguliwa (RAG)
 
-SQL (Structured Query Language) ni zana yenye nguvu ya kuingiliana na hifadhidata. Inapotumika kama sehemu ya mbinu ya Retrieval-Augmented Generation (RAG), SQL inaweza kupata data muhimu kutoka kwa hifadhidata ili kuarifu na kuzalisha majibu au vitendo katika mawakala wa AI. Hebu tuchunguze jinsi SQL inavyoweza kutumika kama mbinu ya RAG katika muktadha wa Wakala wa Usafiri.
+SQL (Lugha ya Maswali ya Muundo) ni chombo chenye nguvu cha kuingiliana na hifadhidata. Inapotumika kama sehemu ya mbinu ya Uzalishaji wa Data Zilizochaguliwa (RAG), SQL inaweza kuchukua data inayofaa kutoka kwa hifadhidata ili kutoa majibu au hatua katika maajenti wa AI. Tuchambue jinsi SQL inavyotumika kama mbinu ya RAG katika muktadha wa Wakala wa Usafiri.
 
 #### Dhana Muhimu
 
-1. **Mwingiliano na Hifadhidata**:  
-   - SQL hutumika kuuliza hifadhidata, kupata taarifa muhimu, na kudhibiti data.  
-   - Mfano: Kupata maelezo ya ndege, hoteli, na vivutio kutoka kwa hifadhidata ya usafiri.  
+1. **Mwingiliano na Hifadhidata**:
+   - SQL hutumiwa kuuliza hifadhidata, kuchukua taarifa zinazohitajika, na kubadilisha data.
+   - Mfano: Kupata taarifa za ndege, hoteli, na vivutio kutoka kwa hifadhidata ya usafiri.
 
-2. **Ujumuishaji na RAG**:  
-   - Maswali ya SQL yanazalishwa kulingana na maoni na mapendeleo ya mtumiaji.  
-   - Data iliyopatikana hutumika kuzalisha mapendekezo au vitendo vilivyobinafsishwa.  
+2. **Uunganisho na RAG**:
+   - Maswali ya SQL huzalishwa kulingana na maelezo na mapendeleo ya mtumiaji.
+   - Data iliyochukuliwa hutumika kutoa mapendekezo binafsi au hatua.
 
-3. **Kizazi Dinamiki cha Maswali**:  
-   - Wakala wa AI huzalisha maswali ya SQL dinamiki kulingana na muktadha na mahitaji ya mtumiaji.  
-   - Mfano: Kubinafsisha maswali ya SQL kuchuja matokeo kulingana na bajeti, tarehe, na maslahi.  
+3. **Uzalishaji wa Maswali ya Kienyeji**:
+   - Wakala wa AI huzalisha maswali ya SQL yanayobadilika kulingana na muktadha na mahitaji ya mtumiaji.
+   - Mfano: Kurekebisha maswali ya SQL kuchuja matokeo kulingana na bajeti, tarehe, na mambo yanayovutia.
 
 #### Matumizi
 
-- **Kuzalisha Msimbo Kiotomatiki**: Kuzalisha vipande vya msimbo kwa kazi maalum.  
-- **SQL kama RAG**: Kutumia maswali ya SQL kudhibiti data.  
-- **Kutatua Matatizo**: Kuunda na kutekeleza msimbo kutatua matatizo.  
+- **Uzalishaji wa Msimbo Kwa Moja kwa Moja**: Tengeneza vipande vya msimbo kwa kazi maalum.
+- **SQL kama RAG**: Tumia maswali ya SQL kubadilisha data.
+- **Kutatua Matatizo**: Tengeneza na kuendesha msimbo kutatua matatizo.
 
-**Mfano**:  
-Wakala wa uchambuzi wa data:
+**Mfano**:
+Mwakili wa uchambuzi wa data:
 
-1. **Kazi**: Kuchambua seti ya data ili kupata mienendo.  
-2. **Hatua**:  
-   - Pakia seti ya data.  
-   - Zalisha maswali ya SQL kuchuja data.  
-   - Tekeleza maswali na pata matokeo.  
-   - Zalisha vielelezo na maarifa.  
-3. **Rasilimali**: Ufikiaji wa seti ya data, uwezo wa SQL.  
-4. **Uzoefu**: Tumia matokeo ya awali kuboresha uchambuzi wa baadaye.  
+1. **Kazi**: Chunguza seti ya data kugundua mwenendo.
+2. **Hatua**:
+   - Pakia seti ya data.
+   - Tengeneza maswali ya SQL kuchuja data.
+   - Endesha maswali na toa matokeo.
+   - Tengeneza michoro na ufahamu.
+3. **Rasilimali**: Upatikanaji wa seti ya data, uwezo wa SQL.
+4. **Uzoefu**: Tumia matokeo ya zamani kuboresha uchambuzi wa baadaye.
 
 #### Mfano wa Kivitendo: Kutumia SQL katika Wakala wa Usafiri
 
@@ -933,7 +1240,7 @@ Wakala wa uchambuzi wa data:
            self.user_preferences = preferences
    ```
 
-2. **Kuzalisha Maswali ya SQL**
+2. **Kutengeneza Maswali ya SQL**
 
    ```python
    def generate_sql_query(table, preferences):
@@ -945,7 +1252,7 @@ Wakala wa uchambuzi wa data:
        return query
    ```
 
-3. **Kutekeleza Maswali ya SQL**
+3. **Kuendesha Maswali ya SQL**
 
    ```python
    import sqlite3
@@ -959,7 +1266,7 @@ Wakala wa uchambuzi wa data:
        return results
    ```
 
-4. **Kuzalisha Mapendekezo**
+4. **Kutengeneza Mapendekezo**
 
    ```python
    def generate_recommendations(preferences):
@@ -1010,28 +1317,28 @@ Wakala wa uchambuzi wa data:
    SELECT * FROM attractions WHERE destination='Paris' AND interests='museums, cuisine';
    ```
 
-Kwa kutumia SQL kama sehemu ya mbinu ya Retrieval-Augmented Generation (RAG), mawakala wa AI kama Wakala wa Usafiri wanaweza kupata na kutumia data muhimu kwa njia dinamiki ili kutoa mapendekezo sahihi na yaliyobinafsishwa.
+Kwa kutumia SQL kama sehemu ya mbinu ya Uzalishaji wa Data Zilizochaguliwa (RAG), mawakala wa AI kama Wakala wa Usafiri wanaweza kuchukua na kutumia data inayofaa kwa wakati halisi ili kutoa mapendekezo sahihi na ya kibinafsi.
 
-### Mfano wa Metakujitambua
+### Mfano wa Metakognition
 
-Ili kuonyesha utekelezaji wa metakujitambua, hebu tuunde wakala rahisi anayefikiria juu ya mchakato wake wa kufanya maamuzi wakati wa kutatua tatizo. Katika mfano huu, tutaunda mfumo ambapo wakala anajaribu kuboresha chaguo la hoteli, lakini kisha anapitia mchakato wake wa kufikiri na kurekebisha mkakati wake anapofanya makosa au chaguo duni.
+Ili kuonyesha utekelezaji wa metakognition, hebu tujenge wakili rahisi anayefikiria juu ya mchakato wake wa kufanya maamuzi anapounga mkono tatizo. Kwa mfano huu, tutaunda mfumo ambapo wakili anajaribu kuboresha uchaguzi wa hoteli, kisha kutathmini sababu zake na kurekebisha mbinu yake pale anapofanya makosa au uchaguzi usiofaa.
 
-Tutatumia mfano rahisi ambapo wakala huchagua hoteli kulingana na mchanganyiko wa bei na ubora, lakini "anafikiria" juu ya maamuzi yake na kurekebisha ipasavyo.
+Tutaiga hili kwa kutumia mfano rahisi ambapo wakili huchagua hoteli kulingana na mchanganyiko wa bei na ubora, lakini atafikiria juu ya maamuzi yake na kurekebisha ipasavyo.
 
-#### Jinsi Hii Inaonyesha Metakujitambua:
+#### Jinsi hii inavyoonyesha metakognition:
 
-1. **Uamuzi wa Awali**: Wakala atachagua hoteli ya bei nafuu zaidi, bila kuelewa athari za ubora.  
-2. **Kutafakari na Kutathmini**: Baada ya chaguo la awali, wakala atakagua ikiwa hoteli ni "chaguo mbaya" kwa kutumia maoni ya mtumiaji. Ikiwa ubora wa hoteli ni wa chini sana, atafakari juu ya sababu zake.  
-3. **Kurekebisha Mkakati**: Wakala atarekebisha mkakati wake kulingana na tafakari yake, akibadilisha kutoka "bei nafuu zaidi" hadi "ubora wa juu zaidi," na hivyo kuboresha mchakato wake wa kufanya maamuzi katika majaribio yajayo.  
+1. **Uamuzi wa Awali**: Wakili atachagua hoteli ya bei nafuu zaidi, bila kuelewa athari za ubora.
+2. **Kufikiria na Kutathmini**: Baada ya uchaguzi wa awali, wakili atakagua kama hoteli ilikuwa "mbaya" kupitia maoni ya mtumiaji. Ikiwa atagundua ubora wa hoteli ulikuwa chini sana, atafikiria juu ya mchakato wake.
+3. **Kurekebisha Mkakati**: Wakili atarekebisha mkakati wake kulingana na tafakari hiyo na kubadilisha kutoka "bei nafuu zaidi" hadi "ubora wa juu zaidi", hivyo kuboresha mchakato wa maamuzi kwa mara zijazo.
 
 Hapa kuna mfano:
 
 ```python
 class HotelRecommendationAgent:
     def __init__(self):
-        self.previous_choices = []  # Stores the hotels chosen previously
-        self.corrected_choices = []  # Stores the corrected choices
-        self.recommendation_strategies = ['cheapest', 'highest_quality']  # Available strategies
+        self.previous_choices = []  # Hifadhi hoteli zilizochaguliwa hapo awali
+        self.corrected_choices = []  # Hifadhi chaguzi zilizorekebishwa
+        self.recommendation_strategies = ['cheapest', 'highest_quality']  # Mikakati inayopatikana
 
     def recommend_hotel(self, hotels, strategy):
         """
@@ -1056,11 +1363,11 @@ class HotelRecommendationAgent:
             return "No choices made yet."
 
         last_choice_strategy, last_choice = self.previous_choices[-1]
-        # Let's assume we have some user feedback that tells us whether the last choice was good or not
+        # Tuseme tuna maoni ya mtumiaji yanayotueleza kama uchaguzi wa mwisho ulikuwa mzuri au si mzuri
         user_feedback = self.get_user_feedback(last_choice)
 
         if user_feedback == "bad":
-            # Adjust strategy if the previous choice was unsatisfactory
+            # Rekebisha mkakati ikiwa uchaguzi uliopita haukuridhisha
             new_strategy = 'highest_quality' if last_choice_strategy == 'cheapest' else 'cheapest'
             self.corrected_choices.append((new_strategy, last_choice))
             return f"Reflecting on choice. Adjusting strategy to {new_strategy}."
@@ -1077,54 +1384,56 @@ class HotelRecommendationAgent:
             return "bad"
         return "good"
 
-# Simulate a list of hotels (price and quality)
+# Simuliza orodha ya hoteli (bei na ubora)
 hotels = [
     {'name': 'Budget Inn', 'price': 80, 'quality': 6},
     {'name': 'Comfort Suites', 'price': 120, 'quality': 8},
     {'name': 'Luxury Stay', 'price': 200, 'quality': 9}
 ]
 
-# Create an agent
+# Unda wakala
 agent = HotelRecommendationAgent()
 
-# Step 1: The agent recommends a hotel using the "cheapest" strategy
+# Hatua 1: Wakala anapendekeza hoteli kwa kutumia mkakati wa "bei nafuu zaidi"
 recommended_hotel = agent.recommend_hotel(hotels, 'cheapest')
 print(f"Recommended hotel (cheapest): {recommended_hotel['name']}")
 
-# Step 2: The agent reflects on the choice and adjusts strategy if necessary
+# Hatua 2: Wakala anafikiria juu ya uchaguzi na kurekebisha mkakati ikiwa ni lazima
 reflection_result = agent.reflect_on_choice()
 print(reflection_result)
 
-# Step 3: The agent recommends again, this time using the adjusted strategy
+# Hatua 3: Wakala anapendekeza tena, mara hii kwa kutumia mkakati uliorekebishwa
 adjusted_recommendation = agent.recommend_hotel(hotels, 'highest_quality')
 print(f"Adjusted hotel recommendation (highest_quality): {adjusted_recommendation['name']}")
 ```
 
-#### Uwezo wa Metakujitambua wa Wakala
+#### Uwezo wa Metakognition kwa Wakala
 
-Jambo kuu hapa ni uwezo wa wakala wa:  
-- Kutathmini chaguo zake za awali na mchakato wa kufanya maamuzi.  
-- Kurekebisha mkakati wake kulingana na tafakari hiyo, yaani, metakujitambua kwa vitendo.  
+Kiini hapa ni uwezo wa wakili wa:
+- Kutathmini uchaguzi wake wa awali na mchakato wa uamuzi.
+- Kurekebisha mkakati wake kulingana na tafakari hiyo ya ndani ya mchakato, yaani metakognition inayotekelezwa.
 
-Hii ni aina rahisi ya metakujitambua ambapo mfumo una uwezo wa kurekebisha mchakato wake wa kufikiri kulingana na maoni ya ndani.
+Hii ni aina rahisi ya metakognition ambapo mfumo unaweza kurekebisha mchakato wake wa kufikiri kulingana na maoni ya ndani.
 
 ### Hitimisho
 
-Metakujitambua ni zana yenye nguvu inayoweza kuboresha kwa kiasi kikubwa uwezo wa mawakala wa AI. Kwa kujumuisha michakato ya metakujitambua, unaweza kubuni mawakala ambao ni werevu zaidi, wanaoweza kubadilika, na wenye ufanisi. Tumia rasilimali za ziada kuchunguza zaidi ulimwengu wa kuvutia wa metakujitambua katika mawakala wa AI.
+Metakognition ni chombo chenye nguvu kinachoweza kuboresha kwa kiasi kikubwa uwezo wa maajenti wa AI. Kwa kujumuisha michakato ya metakognitive, unaweza kubuni maajenti wenye akili zaidi, yanayoweza kubadilika, na yenye ufanisi. Tumia rasilimali za ziada kuchunguza zaidi ulimwengu wa kuvutia wa metakognition katika maajenti wa AI.
 
-### Una Maswali Zaidi Kuhusu Muundo wa Metakujitambua?
+### Je, Una Maswali Zaidi Kuhusu Muundo wa Metakognition?
 
-Jiunge na [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) kukutana na wanafunzi wengine, kuhudhuria saa za ofisi, na kupata majibu ya maswali yako kuhusu Mawakala wa AI.
+Jiunge na [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) kukutana na wanafunzi wengine, kuhudhuria saa za ofisi na kupata majibu kwa maswali yako kuhusu Maajenti wa AI.
 
-## Somo Lililopita
+## Somo lililopita
 
-[Muundo wa Mawakala Wengi](../08-multi-agent/README.md)
+[Muundo wa Maajenti Wengi](../08-multi-agent/README.md)
 
-## Somo Lijalo
+## Somo lijalo
 
-[Mawakala wa AI katika Uzalishaji](../10-ai-agents-production/README.md)
+[Maajenti wa AI Katika Uzalishaji](../10-ai-agents-production/README.md)
 
 ---
 
-**Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Kiaruhusi**:
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za moja kwa moja zinaweza kuwa na makosa au upotoshaji. Nyaraka ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu na ya binadamu inapendekezwa. Hatuna dhima kwa maelewano mabaya au tafsiri potofu zitokanazo na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

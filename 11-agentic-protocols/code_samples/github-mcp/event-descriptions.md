@@ -107,11 +107,11 @@ LlamaIndex is known for making it easy to build Retrieval-Augmented Generation (
 
 ---
 
-## Event Name: AI Agents for Java using Azure AI Foundry and GitHub Copilot
+## Event Name: AI Agents for Java using Microsoft Foundry and GitHub Copilot
 
 ## Description
 
-In this session we’ll show you how to embed advanced AI Agent capabilities into your Java applications using Azure AI Foundry, including setting project goals and experimenting with models and securely deploying production-ready solutions at scale. Along the way, you’ll learn how GitHub Copilot (in IntelliJ, VS Code, and Eclipse) can streamline coding and prompt creation, while best practices in model selection, fine-tuning, and agentic workflows ensure responsible and efficient development. Whether you’re new to AI Agents or looking for advanced agent-building techniques, this session will equip you to deliver next-level experiences with the tooling you already know.
+In this session we’ll show you how to embed advanced AI Agent capabilities into your Java applications using Microsoft Foundry, including setting project goals and experimenting with models and securely deploying production-ready solutions at scale. Along the way, you’ll learn how GitHub Copilot (in IntelliJ, VS Code, and Eclipse) can streamline coding and prompt creation, while best practices in model selection, fine-tuning, and agentic workflows ensure responsible and efficient development. Whether you’re new to AI Agents or looking for advanced agent-building techniques, this session will equip you to deliver next-level experiences with the tooling you already know.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25336/>

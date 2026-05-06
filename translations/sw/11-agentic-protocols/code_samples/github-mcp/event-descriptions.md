@@ -1,138 +1,128 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d3b0e20122a974cc2fae7f889400bbc",
-  "translation_date": "2025-08-29T21:23:33+00:00",
-  "source_file": "11-agentic-protocols/code_samples/github-mcp/event-descriptions.md",
-  "language_code": "sw"
-}
--->
-## Jina la Tukio: Jenga programu yako ya kwanza ya AI kwa kutumia Azure AI Agent Service (EMEA/US offering)
+## Jina la Tukio: Jenga programu yako ya kwanza kwa msimbo na Azure AI Agent Service (toleo la EMEA/US)
 
 ## Maelezo
 
-Huduma ya Azure AI Agent ni mchanganyiko wa huduma na SDK inayorahisisha maendeleo ya suluhisho thabiti zinazoendeshwa na AI. Katika kikao hiki, utajifunza jinsi ya kujenga wakala wako wa AI kwa kutumia Azure ambaye anaweza kujibu maswali, kufanya uchambuzi wa data, na kuunganisha vyanzo vya data vya nje. Pia utachunguza usanifu tata zaidi, ikiwa ni pamoja na mawakala wengi wanaofanya kazi pamoja.
+Azure AI Agent Service ni mchanganyiko mtamu wa huduma na SDK unaorahisisha ujenzi wa suluhisho imara zinazoendeshwa na AI. Katika kikao hiki, utajifunza jinsi ya kujenga wakala wako wa AI wa kwanza unaotegemea msimbo na Azure ambao unaweza kujibu maswali, kufanya uchambuzi wa data, na kuunganisha vyanzo vya data vya nje. Pia utachunguza miundo tata zaidi, ikiwa ni pamoja na mawakala kadhaa wakifanya kazi pamoja.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25325/>
 
 ---
 
-## Jina la Tukio: Kubadilisha Mchakato wa Biashara kwa kutumia AI ya Mawakala Wengi na Semantic Kernel
+## Jina la Tukio: Kubadilisha Michakato ya Biashara kwa kutumia Multi-Agent AI kwa kutumia Semantic Kernel
 
 ## Maelezo
 
-Gundua nguvu ya mifumo ya AI ya mawakala wengi kupitia maonyesho ya moja kwa moja na kujifunza kwa vitendo kwa kutumia mifumo kama mazungumzo ya kikundi, tafakari, chaguo, na kundi. Tumia Mfumo wa Mchakato wa Semantic Kernel kuendesha na kupanua michakato muhimu ya biashara, kutoka kwa msaada wa wateja hadi usimamizi wa miradi kwa kutumia Python.
+Gundua nguvu ya mifumo ya multi-agent AI kupitia maonyesho ya moja kwa moja na kujifunza kwa vitendo kwa kutumia mifumo kama group-chat, reflection, selector, na swarm. Tumia Semantic Kernel Process Framework kuendeleza na kupanua michakato muhimu ya biashara, kuanzia msaada kwa wateja hadi usimamizi wa miradi kwa kutumia Python
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25313/>
 
 ---
 
-## Jina la Tukio: Kujenga Programu za Mawakala kwa AutoGen v0.4
+## Jina la Tukio: Kujenga Maombi Agentic na AutoGen v0.4
 
 ## Maelezo
 
-Anza kujenga mawakala na timu za mawakala wengi kwa kutumia AutoGen v0.4. Tutapitia muhtasari wa usanifu mpya wa AutoGen v0.4 na kukuonyesha jinsi ya kujenga timu ya mawakala wengi kwa kutumia kiolesura cha mtumiaji cha mtandao.
+Anza kujenga mawakala na timu za multi-agent kwa kutumia AutoGen v0.4. Tutafunika muhtasari wa usanifu mpya wa AutoGen v0.4 na kukupeleka hatua kwa hatua jinsi ya kujenga timu ya multi-agent yenye kiolesura cha mtumiaji kinachotegemea wavuti.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25327/>
 
 ---
 
-## Jina la Tukio: Kujaribu Mawakala wa AI kwa kutumia Miundo ya GitHub
+## Jina la Tukio: Kuunda Wakala wa AI kwa kutumia Modeli za GitHub
 
 ## Maelezo
 
-Shukrani kwa Miundo ya GitHub, unachohitaji kujenga wakala wako wa kwanza wa AI ni akaunti ya GitHub! Miundo ya GitHub inajumuisha miundo yenye nguvu kama OpenAI gpt-4o, DeepSeek-R1, Llama-3.1, na mingine mingi, tayari kujaribiwa kwenye uwanja wa majaribio au kwenye msimbo wako.  
-Katika kikao hiki, tutaonyesha jinsi ya kuunganisha na Miundo ya GitHub kutoka Python, na kisha kujenga mawakala kwa kutumia vifurushi maarufu vya Python kama PydanticAI, AutoGen, na Semantic Kernel.  
-Unaweza kufuatilia moja kwa moja kwenye GitHub Codespaces, au kujaribu mifano mwenyewe wakati wowote baada ya kikao.
+Shukrani kwa GitHub Models, kila unachohitaji ili kujenga Wakala wako wa kwanza wa AI ni akaunti ya GitHub! GitHub Models inajumuisha modeli zenye nguvu kama OpenAI gpt-4o, DeepSeek-R1, Llama-3.1, na nyingine nyingi, tayari kujaribiwa kwenye playground au katika msimbo wako.
+Katika kikao hiki, tutaonyesha jinsi ya kuungana na GitHub Models kutoka Python, na kisha kujenga mawakala kwa kutumia vifurushi maarufu vya Python kama PydanticAI, AutoGen, na Semantic Kernel.
+Unaweza kufuata moja kwa moja ndani ya GitHub Codespaces, au kujaribu mifano mwenyewe wakati wowote baada ya kikao.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25481/>
 
 ---
 
-## Jina la Tukio: Kujenga Mawakala kwa Jeshi la Miundo kutoka Katalogi ya Miundo ya Azure AI
+## Jina la Tukio: Kujenga mawakala kwa jeshi la modeli kutoka kwa katalogi ya modeli ya Azure AI
 
 ## Maelezo
 
-Katalogi ya Miundo ya Azure AI inatoa aina mbalimbali za miundo, yenye ujuzi na uwezo tofauti. Wakati wa kutumia muundo wa kawaida kuanza, watengenezaji wanapohitaji kazi za hali ya juu zaidi, wanaweza kutumia miundo maalum kufanya kazi katika mfumo wao wa chaguo. Katika uwasilishaji huu, tutapitia kile kinachotolewa na katalogi ya miundo, na jinsi unavyoweza kujenga mawakala wanaotumia jeshi la miundo - bila gharama kubwa.
+Katalogi ya modeli ya Azure AI inatoa aina kubwa ya modeli, zenye ujuzi na uwezo tofauti. Wakati ukitumia modeli iliyopo sokoni kukusaidia kuanza, wahandisi wa programu wanapokuwa na mtiririko wa kazi unaokomaa zaidi, wanaweza kutumia modeli maalum kufanya kazi katika fremu yao wanayoipendelea. Katika uwasilishaji huu tunapitia kile katalogi ya modeli inachotoa, na jinsi unavyoweza kujenga mawakala yanayokaa juu ya jeshi la modeli - bila kukufanya utumie hazina yako yote.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25328/>
 
 ---
 
-## Jina la Tukio: API ya Mawakala Wengi kwa kutumia LangGraph na Azure Cosmos DB
+## Jina la Tukio: Multi-Agent API na LangGraph na Azure Cosmos DB
 
 ## Maelezo
 
-Kuibuka kwa programu za AI za mawakala wengi kunabadilisha jinsi tunavyounda mifumo ya akili - lakini unazijengaje kwa kiwango halisi na utendaji bora? Katika kikao hiki, tutachunguza kwa kina programu ya mawakala wengi ya daraja la uzalishaji iliyojengwa kwa LangGraph kwa uratibu wa mawakala, FastAPI kwa safu ya API, na Azure Cosmos DB kama msingi wa usimamizi wa hali, uhifadhi wa vekta, na data ya miamala.  
+Kuibuka kwa programu za multi-agent AI kunaibadilisha jinsi tunavyojenga mifumo yenye akili - lakini unaundaji wake kwa kivipi ili uzingatie upanuzi wa ulimwengu halisi na utendaji? Katika kikao hiki, tutachunguza kwa kina programu ya kiwango cha uzalishaji ya multi-agent iliyojengwa na LangGraph kwa uongozi wa mawakala, FastAPI kwa safu ya API, na Azure Cosmos DB kama mgongo wa usimamizi wa hali, uhifadhi wa vector, na data za muamala.
 
-Kupitia mwongozo wa kina wa msimbo, utaona jinsi ya kubuni na kutekeleza mtiririko wa kazi unaoendeshwa na mawakala ambao unajumuisha kwa urahisi kizazi kilichoongezewa na urejeshaji (RAG), uhifadhi wa kumbukumbu, na mabadiliko ya hali ya nguvu. Tutashughulikia:  
+Kupitia mwito wa msimbo kwa undani, utaona jinsi ya kubuni na kutekeleza mtiririko wa kazi unaoendeshwa na wakala ambao unaunganisha kwa ufanisi retrieval-augmented generation (RAG), kuhifadhi kumbukumbu, na mabadiliko ya hali ya nguvu. Tutagusia:
 
-- Ushirikiano wa mawakala kwa kutumia LangGraph kwa hoja za muundo  
-- Uhifadhi wa historia ya mazungumzo kwa wakati halisi kwa kutumia Azure Cosmos DB - hifadhidata ile ile inayotumika katika historia ya mazungumzo ya ChatGPT, programu ya wakala wa AI inayokua kwa kasi zaidi katika historia  
-- Utafutaji wa vekta kwa urejeshaji wa maarifa kwa msaada wa asili wa embeddings wa Cosmos DB  
-- Uwezo wa async wa FastAPI ili kuweka mwingiliano msikivu na wa kiwango  
-
-Mwisho wa kikao hiki, utakuwa na mpango wazi wa kujenga na kupeleka programu zako za mawakala wengi zinazoweza kupanuka, zinazotumia wingu, ambazo zinatumia nguvu ya AI ya kisasa na miundombinu ya wingu. Ikiwa wewe ni mhandisi wa AI, mbunifu wa wingu, au mtengenezaji wa Python, mazungumzo haya yatakupa maarifa ya vitendo na mifumo iliyojaribiwa ili kujenga kizazi kijacho cha programu zinazoendeshwa na AI.
+Agent collaboration with LangGraph for structured reasoning
+Real-time chat history storage using Azure Cosmos DB - the same database that powers the chat history in ChatGPT, the fastest-growing AI agent application in history
+Vector search for knowledge retrieval with Cosmos DB's native embeddings support
+FastAPI’s async capabilities to keep interactions responsive and scalable
+Mwisho wa kikao hiki, utakuwa na mchoro wazi wa jinsi ya kujenga na kutangaza programu zako za multi-agent zinazoendana na wingu, zinazoweza kupanuka, zinazotumia nguvu ya AI ya kisasa na miundombinu ya wingu. Iwe wewe ni mhandisi wa AI, mbunifu wa wingu, au msanidi wa Python, mazungumzo haya yatakupa maarifa ya vitendo na mifumo iliyojaribiwa kukusaidia kujenga kizazi kijacho cha programu zinazoendeshwa na AI
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25314/>
 
 ---
 
-## Jina la Tukio: Wakala wako wa Kwanza wa AI kwa JS kwa kutumia Azure AI Agent Service
+## Jina la Tukio: Wakala Wangu wa Kwanza wa AI kwa JS na Azure AI Agent Service
 
 ## Maelezo
 
-Jifunze jinsi ya kujenga wakala wako wa kwanza wa AI kwa kutumia JavaScript SDK ya Azure AI Agent Service, jukwaa linalosimamiwa kikamilifu ambalo hufanya maendeleo kuwa rahisi. Utaona jinsi ya kuisanidi, kuunganisha zana kama Azure AI Search, na kupeleka wakala rahisi wa kujibu maswali. Kwa maonyesho ya moja kwa moja, utagundua jinsi upigaji simu wa zana otomatiki na hali inayosimamiwa inavyorahisisha mchakato. Kamili kwa wanaoanza, kikao hiki kinakupa hatua za vitendo na vidokezo vya kuanza safari yako ya wakala wa AI kwa kujiamini.
+Jifunze jinsi ya kujenga wakala wako wa kwanza wa AI kwa kutumia JavaScript SDK kwa Azure AI Agent Service, jukwaa lililoratibiwa kikamilifu linalofanya maendeleo kuwa rahisi. Utaona jinsi ya kuiweka, kuunganisha zana kama Azure AI Search, na kuzindua wakala rahisi wa kujibu maswali. Kwa onyesho la moja kwa moja, utagundua jinsi upigiaji zana kiotomatiki na hali iliyosimamiwa vinavyorahisisha mchakato. Inafaa kwa wanaoanza, kikao hiki kinakupa hatua za vitendo na vidokezo vya kuanza safari yako ya wakala wa AI kwa ujasiri.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25381/>
 
 ---
 
-## Jina la Tukio: Kuandika Maagizo ni Scripting Mpya: Kutana na GenAIScript
+## Jina la Tukio: Kuanzisha Scripting Mpya: Kutambulisha GenAIScript
 
 ## Maelezo
 
-jQuery ilifanya maendeleo ya wavuti kuwa rahisi kwa kuondoa ugumu, ikiruhusu watengenezaji kuzingatia kujenga badala ya kupambana na quirks za kivinjari. Leo, maendeleo ya AI yanakabiliwa na changamoto kama hiyo. Mifumo mipya inaibuka kila mara na kufuatilia inaweza kuwa changamoto, hasa wakati zana za AI—hasa zile za wakala—zinakuwa zenye nguvu na ngumu zaidi. Je, ikiwa ungeweza kutumia uwezo wa AI wa kisasa kuendesha kazi kwa kutumia abstractions rahisi na za kawaida za JavaScript? Ingia GenAIScript—njia ya kuunganisha AI katika mtiririko wako wa kazi kwa urahisi, ukichukulia maagizo kama vipande vya msimbo vinavyoweza kutumika tena. Katika mazungumzo haya, tutachunguza jinsi GenAIScript inavyofanya mawakala wa otomatiki wa AI kuhisi kuwa rahisi kama kuandika JavaScript, kukusaidia kurahisisha kazi za kurudia bila hitaji la utaalamu wa kina wa AI.
+jQuery iliwahi kurahisisha maendeleo ya wavuti kwa kuficha ugumu, ikiwaruhusu watengenezaji kuzingatia ujenzi badala ya kupigana na miondoko ya vichunguzi. Leo, maendeleo ya AI yanakumbana na changamoto kama hiyo. Mifumo mipya inaibuka mara kwa mara na kuendelea kufuatilia kunaweza kuwa mzito, hasa wakati zana za AI—hasa zile zenye tabia za wakala—zinakuwa zenye nguvu na tata zaidi. Je, ungeweza kutumia uwezo wa kisasa wa AI kuendesha kazi kwa kutumia ufupisho rahisi wa JavaScript unaojulikana? Weka GenAIScript—njia ya kuingiza AI kwenye mtiririko wako wa kazi kwa urahisi, ukitumia prompts kama vipande vya msimbo vinavyoweza kutumika tena. Katika mazungumzo haya, tutaelezea jinsi GenAIScript inavyofanya mawakala wa uendeshaji wa AI kuwa ya asili kama kuandika JavaScript, ikikusaidia kupunguza kazi za kurudiwa bila hitaji la utaalamu wa kina wa AI.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25441/>
 
 ---
 
-## Jina la Tukio: Mawakala Wanaoongezewa Maarifa kwa LlamaIndex.TS
+## Jina la Tukio: Mawakala walioboreshwa kwa maarifa kwa kutumia LlamaIndex.TS
 
 ## Maelezo
 
-LlamaIndex inajulikana kwa kurahisisha kujenga kizazi kilichoongezewa na urejeshaji (RAG), lakini mifumo yetu pia inarahisisha kujenga mawakala na mifumo ya mawakala wengi! Katika kikao hiki tutatambulisha Workflows, sehemu yetu ya msingi ya kujenga mifumo ya wakala, na kujenga wakala anayechanganya RAG na zana nyingine.
+LlamaIndex inajulikana kwa kurahisisha ujenzi wa Retrieval-Augmented Generation (RAG), lakini fremu zetu pia zinafanya iwe rahisi kujenga mawakala na mifumo ya multi-agent! Katika kikao hiki tutawasilisha Workflows, jiwe letu la msingi la ujenzi wa mifumo ya wakala, na kujenga wakala anayetumia RAG na zana nyingine.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25440/>
 
 ---
 
-## Jina la Tukio: Mawakala wa AI kwa Java kwa kutumia Azure AI Foundry na GitHub Copilot
+## Jina la Tukio: Mawakala wa AI kwa Java kwa kutumia Microsoft Foundry na GitHub Copilot
 
 ## Maelezo
 
-Katika kikao hiki tutakuonyesha jinsi ya kuingiza uwezo wa hali ya juu wa Mawakala wa AI katika programu zako za Java kwa kutumia Azure AI Foundry, ikiwa ni pamoja na kuweka malengo ya mradi na kujaribu miundo na kupeleka suluhisho tayari kwa uzalishaji kwa usalama na kwa kiwango. Njiani, utajifunza jinsi GitHub Copilot (katika IntelliJ, VS Code, na Eclipse) inaweza kurahisisha uandishi wa msimbo na uundaji wa maagizo, huku mbinu bora za kuchagua miundo, kurekebisha, na mtiririko wa kazi wa wakala zikihakikisha maendeleo ya uwajibikaji na ufanisi. Ikiwa wewe ni mgeni kwa Mawakala wa AI au unatafuta mbinu za hali ya juu za kujenga mawakala, kikao hiki kitakupa vifaa vya kutoa uzoefu wa kiwango cha juu kwa kutumia zana unazozijua tayari.
+Katika kikao hiki tutaonyesha jinsi ya kujaza uwezo wa juu wa Wakala wa AI ndani ya programu zako za Java kwa kutumia Microsoft Foundry, ikijumuisha kuweka malengo ya mradi na kujaribu modeli na kuzindua suluhisho kwa usalama na kuwa tayari kwa uzalishaji kwa wima. Katika njia hiyo, utajifunza jinsi GitHub Copilot (katika IntelliJ, VS Code, na Eclipse) unavyoweza kurahisisha uprogramu na uundaji wa prompts, wakati mbinu bora katika uteuzi wa modeli, fine-tuning, na mtiririko wa kazi wa agentic zinaweka maendeleo kuwa ya uwajibikaji na yenye ufanisi. Iwe wewe ni mpya kwa Mawakala wa AI au unatafuta mbinu za juu za kujenga mawakala, kikao hiki kitakupa uwezo wa kutoa uzoefu wa kiwango cha juu kwa zana unazozijua tayari.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25336/>
 
 ---
 
-## Jina la Tukio: Kujenga Mawakala wa AI wa Java kwa kutumia LangChain4j na Vikao vya Dynamic
+## Jina la Tukio: Kujenga Mawakala ya AI ya Java kwa kutumia LangChain4j na Vikao Vinavyobadilika
 
 ## Maelezo
 
-Fungua uwezo wa Mawakala wa AI katika programu zako za Java kwa kuchanganya LangChain4j na vikao vya dynamic vya Azure Container Apps (ACA) vilivyounganishwa na huduma za Azure AI. Kikao hiki kinaonyesha mfano wa vitendo wa kujenga wakala anayefanya maingiliano na mazingira ya mbali, ikiwa ni pamoja na usimamizi wa faili. Jifunze jinsi ya kufafanua zana maalum, kuzijumuisha katika mtiririko wa kazi wa wakala, na kutumia miundombinu inayoweza kupanuka ya Azure kupeleka suluhisho za akili na za dynamic.
+Fungua uwezo wa Mawakala wa AI katika programu zako za Java kwa kuchanganya LangChain4j na vikao vinavyobadilika vya Azure Container Apps (ACA) vinavyounganishwa na huduma za Azure AI. Kikao hiki kinaonyesha mfano wa vitendo wa kujenga wakala anayeweza kuingiliana na mazingira ya mbali, ikijumuisha usimamizi wa faili. Jifunze jinsi ya kufafanua zana maalum, kuziunganisha katika mtiririko wa kazi wa wakala, na kutumia miundombinu ya Azure inayoweza kupanuka kupeleka suluhisho janja na zinazoendeshwa.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25337/>
@@ -143,54 +133,56 @@ Fungua uwezo wa Mawakala wa AI katika programu zako za Java kwa kuchanganya Lang
 
 ## Maelezo
 
-Jiunge nasi tunapochunguza hatari zinazoweza kutokea za mawakala wa AI na kushughulikia changamoto ya kuingiza mazoea ya AI yanayowajibika katika majukwaa ya AI ya mazungumzo! Kikao hiki kinachambua mifano ya mawakala wa AI wasio wa kuwajibika—kikionyesha mifano ya kushangaza ya kushindwa kwa miundo, jailbreak za adui, na hatari nyingine zinazopunguza uaminifu na uzingatiaji.  
+Ungana nasi tunapochunguza hatari zinazowezekana za mawakala wa AI na kukabiliana na changamoto ya kuingiza mbinu za AI zinazoweza kuaminika ndani ya majukwaa ya mazungumzo ya AI! Kikao hiki kinakagua kwa undani mifano ya mawakala wa AI wasio wajibu—kuonyesha mifano ya kushangaza ya kushindwa kwa modeli, jailbreak za upinzani, na hatari nyingine zinazodhoofisha uaminifu na uzingatiaji.
 
-Tutachunguza zana za kisasa za Microsoft kwa AI inayowajibika, ikiwa ni pamoja na vichujio vya maudhui, mikakati ya red teaming, na tathmini—ikiwa ni pamoja na maonyesho ya moja kwa moja ya mawakala wa AI wakifanya kazi kwa uwajibikaji na bila uwajibikaji kwa njia ambazo huwezi kuamini.  
+Tutachunguza zana za kisasa za Microsoft kwa AI inayoweza kuaminika, zikiwemo vichujio vya maudhui, mikakati ya red teaming, na tathmini—ikiwa na maonyesho ya moja kwa moja ya mawakala wa AI wakifanya kazi kwa uwajibikaji na kwa njia zisizo za uwajibikaji ambazo hutachokuwa nazo.
 
-🔥 Unachotapata:  
-✅ Jinsi ya kutambua na kupunguza hatari za AI kabla hazijatumika vibaya  
-✅ Jinsi ya kupeleka Usalama wa Maudhui wa Azure AI ili kugundua na kupunguza tabia hatarishi  
-✅ Siri ya kufanya mawakala wa AI kuwa wa kuaminika  
+🔥 Unachotakuja nacho:
+✅ Jinsi ya kugundua na kupunguza hatari za AI kabla hazijaweza kutumiwa
+✅ Jinsi ya kutumia Azure AI Content Safety kugundua na kupunguza tabia hatarishi
+✅ Kiungo cha siri cha kuifanya mawakala wa AI wawe wa kuaminika
 
-Jiandae kwa kikao kilichojaa msisimko, drama ya AI yenye hatari kubwa, na mikakati muhimu ya kuhakikisha AI yako iko upande sahihi wa historia. Usijenge tu AI—jenga AI inayojali!
+Jiandae kwa kikao kilichojaa msisimko, tamthilia za juu za AI, na mikakati muhimu ya kujua ili kuweka AI yako upande sahihi wa historia. Usijenge tu AI—jenga AI inayofaa!
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25388/>
 
 ---
 
-## Jina la Tukio: Jenga programu yako ya kwanza ya AI kwa kutumia Azure AI Agent Service (.NET)
+## Jina la Tukio: Jenga programu yako ya kwanza kwa msimbo na Azure AI Agent Service (.NET)
 
 ## Maelezo
 
-Huduma ya Azure AI Agent ni mchanganyiko wa huduma na SDK inayorahisisha maendeleo ya suluhisho thabiti zinazoendeshwa na AI. Katika kikao hiki, utajifunza jinsi ya kujenga wakala wako wa AI kwa kutumia Azure na C# ambaye anaweza kujibu maswali, kufanya uchambuzi wa data, na kuunganisha vyanzo vya data vya nje. Pia utachunguza usanifu tata zaidi, ikiwa ni pamoja na mawakala wengi wanaofanya kazi pamoja.
+Azure AI Agent Service ni mchanganyiko mtamu wa huduma na SDK unaorahisisha ujenzi wa suluhisho imara zinazoendeshwa na AI. Katika kikao hiki, utajifunza jinsi ya kujenga wakala wako wa AI wa kwanza unaotegemea msimbo na Azure na C# ambaye anaweza kujibu maswali, kufanya uchambuzi wa data, na kuunganisha vyanzo vya data vya nje. Pia utachunguza miundo tata zaidi, ikiwa ni pamoja na mawakala kadhaa wakifanya kazi pamoja.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25370/>
 
 ---
 
-## Jina la Tukio: Mawakala wa AI + .NET Aspire
+## Jina la Tukio: AI Agents + .NET Aspire
 
 ## Maelezo
 
-Katika kikao hiki tutashiriki baadhi ya maendeleo ya kusisimua zaidi kwenye jukwaa la .NET kuhusu Mawakala. Gundua hali ya sasa ya .NET, ikiwa ni pamoja na vipengele vyake vipya na maboresho. Chunguza uwezo wa nguvu wa Mawakala wa AI. Na tutafanya uandishi wa msimbo wa moja kwa moja na Mawakala na .NET Aspire.
+Katika kikao hiki tutashiriki baadhi ya maendeleo za kusisimua zaidi kwenye jukwaa la .NET kuhusu Mawakala. Gundua hali ya sasa ya .NET, ikiwa ni pamoja na vipengele vipya na maboresho yake. Gunduza uwezo mkubwa wa Mawakala wa AI. Na tutafanya uprogramu wa moja kwa moja na Mawakala na .NET Aspire.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25332/>
 
 ---
 
-## Jina la Tukio: Semantic Kernel na C# kujenga programu za AI za mawakala wengi zinazoendeshwa na Azure Cosmos
+## Jina la Tukio: Semantic Kernel kwa C# kujenga programu za multi-agent AI zinazoendeshwa na Azure Cosmos
 
 ## Maelezo
 
-Tutakupitisha kwenye programu ya mawakala wengi katika C# ambayo imejengwa juu ya mfumo wa Semantic Kernel. Utaelewa dhana nyuma ya programu za wakala, kuelewa maelezo ya utekelezaji na nuances, na kujifunza jinsi ya kuunganisha Azure Cosmos DB kama hifadhidata kwa matumizi mbalimbali.
+Tutakupeleka kwenye programu ya multi-agent kwa C# ambayo imejengwa juu ya fremu ya Semantic Kernel. Utaelewa dhana nyuma ya programu za agentic, kuelewa undani wa utekelezaji na nuances, na kujifunza jinsi ya kuunganisha Azure Cosmos DB kama hifadhidata kwa matumizi mbalimbali.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25455/>
 
 ---
 
-**Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+Taarifa ya kukanusha:
+Hati hii imetafsiriwa kwa kutumia huduma ya utafsiri wa AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kufikia usahihi, tafadhali kumbuka kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au ukosefu wa usahihi. Nyaraka ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo chenye mamlaka. Kwa taarifa muhimu, inapendekezwa kutumia tafsiri ya kitaalamu inayofanywa na binadamu. Hatubebei wajibu kwa kutokuelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

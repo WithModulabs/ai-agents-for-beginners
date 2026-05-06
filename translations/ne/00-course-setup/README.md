@@ -1,73 +1,64 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "86273689a010b5efecaf7fa23104e0fb",
-  "translation_date": "2025-11-07T08:32:08+00:00",
-  "source_file": "00-course-setup/README.md",
-  "language_code": "ne"
-}
--->
 # कोर्स सेटअप
 
 ## परिचय
 
-यो पाठले यस कोर्सका कोड नमूनाहरू कसरी चलाउने भन्ने कुरा समेट्नेछ।
+यो पाठले यो कोर्सका कोड नमूना कसरी चलाउने बारेमा छलफल गर्नेछ।
 
-## अन्य सिक्नेहरूमा सामेल हुनुहोस् र सहयोग प्राप्त गर्नुहोस्
+## अन्य सिक्नेहरूमा सामेल हुनुहोस् र मद्दत पाउनुहोस्
 
-तपाईंको रिपो क्लोन गर्न सुरु गर्नु अघि, [AI Agents For Beginners Discord च्यानल](https://aka.ms/ai-agents/discord) मा सामेल हुनुहोस्। यहाँ सेटअपमा सहयोग, कोर्सका प्रश्नहरू, वा अन्य सिक्नेहरूसँग जडान गर्न सक्नुहुन्छ।
+तपाईंको रेपो क्लोन गर्न सुरु गर्नु अघि, सेटअपमा कुनै पनि सहायता, कोर्सको बारेमा कुनै प्रश्नहरू, वा अन्य सिक्नेहरूसँग जडान हुन [AI Agents For Beginners Discord च्यानल](https://aka.ms/ai-agents/discord) मा सामेल हुनुहोस्।
 
-## यो रिपो क्लोन वा फोर्क गर्नुहोस्
+## यो रेपो क्लोन वा फोर्क गर्नुहोस्
 
-सुरु गर्न, कृपया GitHub रिपोजिटरी क्लोन वा फोर्क गर्नुहोस्। यसले तपाईंलाई कोर्स सामग्रीको आफ्नै संस्करण बनाउने अनुमति दिनेछ ताकि तपाईं कोड चलाउन, परीक्षण गर्न, र परिमार्जन गर्न सक्नुहुन्छ!
+सुरू गर्न, कृपया GitHub रिपोजिटोरी क्लोन वा फोर्क गर्नुहोस्। यसले तपाईंलाई कोर्स सामग्रीको आफ्नै संस्करण बनाउन मद्दत गर्दछ ताकि तपाईं कोड चलाउन, परीक्षण गर्न र परिमार्जन गर्न सक्नुहोस्!
 
-यो गर्नको लागि <a href="https://github.com/microsoft/ai-agents-for-beginners/fork" target="_blank">रिपो फोर्क गर्नुहोस्</a> लिंकमा क्लिक गर्नुहोस्।
+यो <a href="https://github.com/microsoft/ai-agents-for-beginners/fork" target="_blank">रेपो फोर्क गर्न</a> लिंकमा क्लिक गरेर गर्न सकिन्छ।
 
-अब तपाईंको कोर्सको फोर्क गरिएको संस्करण निम्न लिंकमा हुनेछ:
+अब तपाईंको आफ्नै फोर्क गरिएको कोर्सको संस्करण निम्न लिंकमा हुनुपर्छ:
 
-![Forked Repo](../../../translated_images/forked-repo.33f27ca1901baa6a5e13ec3eb1f0ddd3a44d936d91cc8cfb19bfdb9688bd2c3d.ne.png)
+![Forked Repo](../../../translated_images/ne/forked-repo.33f27ca1901baa6a.webp)
 
-### शैलो क्लोन (वर्कशप / Codespaces का लागि सिफारिस गरिएको)
+### शालो क्लोन (कार्यशाला / Codespaces का लागि सिफारिस गरिन्छ)
 
-  >पूर्ण रिपोजिटरी ठूलो (~3 GB) हुन सक्छ जब तपाईं पूर्ण इतिहास र सबै फाइलहरू डाउनलोड गर्नुहुन्छ। यदि तपाईं केवल वर्कशपमा भाग लिँदै हुनुहुन्छ वा केवल केही पाठ फोल्डरहरू चाहिन्छ भने, शैलो क्लोन (वा स्पार्स क्लोन) ले अधिकांश डाउनलोडलाई रोक्छ।
+  > पूरा रिपोजिटोरी डाउनलोड गर्दा इतिहास र सबै फाइलहरूका कारण ठूलो (~3 GB) हुन सक्छ। यदि तपाईं केवल कार्यशालामा सहभागी हुँदै हुनुहुन्छ वा केही पाठ्यक्रम फोल्डरहरू मात्र चाहिन्छ भने, शालो क्लोन (वा sparse क्लोन) ले धेरै डाउनलोड बचत गर्दछ जसले इतिहास कटौती गर्छ र/वा ब्लबहरू स्किप गर्छ।
 
-#### छिटो शैलो क्लोन — न्यूनतम इतिहास, सबै फाइलहरू
+#### छिटो शालो क्लोन — न्यूनतम इतिहास, सबै फाइलहरू
 
-तलका आदेशहरूमा `<your-username>` लाई तपाईंको फोर्क URL (वा तपाईंले चाहेको भए अपस्ट्रीम URL) सँग बदल्नुहोस्।
+तलका आदेशहरूमा `<your-username>` लाई तपाईंको फोर्क URL (वा upstream URL यदि चाहनुहुन्छ भने) मध्ये एउटा राख्नुहोस्।
 
-केवल पछिल्लो कमिट इतिहास क्लोन गर्न (सानो डाउनलोड):
+हालैको कमिट इतिहास मात्र क्लोन गर्न (सानो डाउनलोड):
 
 ```bash|powershell
 git clone --depth 1 https://github.com/<your-username>/ai-agents-for-beginners.git
 ```
 
-विशिष्ट ब्रान्च क्लोन गर्न:
+विशिष्ट शाखा क्लोन गर्न:
 
 ```bash|powershell
 git clone --depth 1 --branch <branch-name> https://github.com/<your-username>/ai-agents-for-beginners.git
 ```
 
-#### आंशिक (स्पार्स) क्लोन — न्यूनतम ब्लब्स + केवल चयनित फोल्डरहरू
+#### आंशिक (sparse) क्लोन — न्यूनतम ब्लबहरू + मात्र चयन गरिएको फोल्डरहरू
 
-यसले आंशिक क्लोन र स्पार्स-चेकआउट प्रयोग गर्दछ (Git 2.25+ आवश्यक छ र आंशिक क्लोन समर्थनको साथ आधुनिक Git सिफारिस गरिएको छ):
+यो आंशिक क्लोन र sparse-checkout प्रयोग गर्छ (Git 2.25+ र आधुनिकीकरण गरिएको Git सिफारिस गरिएको):
 
 ```bash|powershell
 git clone --depth 1 --filter=blob:none --sparse https://github.com/<your-username>/ai-agents-for-beginners.git
 ```
 
-रिपो फोल्डरमा जानुहोस्:
+रेपो फोल्डर भित्र जानुहोस्:
 
 ```bash|powershell
 cd ai-agents-for-beginners
 ```
 
-त्यसपछि तपाईं कुन फोल्डरहरू चाहनुहुन्छ निर्दिष्ट गर्नुहोस् (तलको उदाहरणले दुई फोल्डरहरू देखाउँछ):
+तपाईंले चाहानुभएको फोल्डरहरू तोक्नुहोस् (तलको उदाहरणमा दुई फोल्डरहरू छन्):
 
 ```bash|powershell
 git sparse-checkout set 00-course-setup 01-intro-to-ai-agents
 ```
 
-क्लोन र फाइलहरू प्रमाणित गरेपछि, यदि तपाईंलाई केवल फाइलहरू चाहिन्छ र ठाउँ खाली गर्न चाहनुहुन्छ (कुनै git इतिहास छैन), कृपया रिपोजिटरी मेटाडाटा मेटाउनुहोस् (💀अपरिवर्तनीय — तपाईं सबै Git कार्यक्षमता गुमाउनुहुनेछ: कुनै कमिट, पुल, पुश, वा इतिहास पहुँच छैन)।
+क्लोन पछि फाइलहरूको जाँच गर्दा, यदि तपाईंलाई केवल फाइलहरू चाहिन्छ र स्थान खाली गर्न चाहनुहुन्छ (git इतिहास बिना), कृपया रिपोजिटोरी मेटाडाटा मेटाउनुहोस् (💀अपरिवर्तनीय — सबै Git कार्यक्षमताहरू हराउनेछन्: कुनै कमिट, पुल, पुश, वा इतिहास पहुँच छैन)।
 
 ```bash
 # zsh/bash
@@ -75,49 +66,39 @@ rm -rf .git
 ```
 
 ```powershell
-# PowerShell
+# पावरशेल
 Remove-Item -Recurse -Force .git
 ```
 
-#### GitHub Codespaces प्रयोग गर्दै (स्थानीय ठूलो डाउनलोडहरू रोक्न सिफारिस गरिएको)
+#### GitHub Codespaces प्रयोग गर्दै (स्थानीय ठूलो डाउनलोडबाट बच्न सिफारिस)
 
-- [GitHub UI](https://github.com/codespaces) मार्फत यस रिपोका लागि नयाँ Codespace सिर्जना गर्नुहोस्।  
+- यो रेपोसँग नयाँ Codespace GitHub UI [GitHub UI](https://github.com/codespaces) बाट सिर्जना गर्नुहोस्।
 
-- नयाँ सिर्जित Codespace को टर्मिनलमा, माथिका शैलो/स्पार्स क्लोन आदेशहरू चलाउनुहोस् ताकि तपाईंलाई आवश्यक पाठ फोल्डरहरू Codespace कार्यक्षेत्रमा ल्याउन सक्नुहुन्छ।
-- वैकल्पिक: Codespaces भित्र क्लोन गरेपछि, अतिरिक्त ठाउँ पुनः प्राप्त गर्न .git हटाउनुहोस् (माथिका हटाउने आदेशहरू हेर्नुहोस्)।
-- नोट: यदि तपाईं Codespaces मा रिपो सीधा खोल्न चाहनुहुन्छ (अतिरिक्त क्लोन बिना), ध्यान दिनुहोस् Codespaces ले devcontainer वातावरण निर्माण गर्नेछ र अझै पनि तपाईंलाई आवश्यक भन्दा बढी प्रावधान गर्न सक्छ। नयाँ Codespace भित्र शैलो प्रतिलिपि क्लोन गर्नुले डिस्क प्रयोगमा अधिक नियन्त्रण दिन्छ।
+- नयाँ सिर्जना गरिएको Codespace को टर्मिनलमा, माथिका शालो/स्पार्स क्लोन आदेशहरू मध्ये कुनै एक चलाउनुहोस् ताकि आवश्यक पाठ्यक्रम फोल्डरहरू मात्र Codespace कार्यक्षेत्रमा ल्याउन सकियोस्।
+- वैकल्पिक: Codespaces भित्र क्लोन गरेपछि, अतिरिक्त स्थान फिर्ता गर्न .git हटाउन सकिन्छ (माथिका हटाउने आदेशहरू हेर्नुहोस्)।
+- नोट: यदि तपाईं नजिकै क्लोन नगरी सिधै Codespaces मा रेपो खोल्न चाहनुहुन्छ भने, Codespaces ले devcontainer वातावरण बनाउँछ र अझ धेरै स्रोतहरू प्रदान गर्न सक्छ। नयाँ Codespace भित्र शालो प्रतिलिपि क्लोन गरेपछि डिस्क प्रयोगमा बढी नियन्त्रण हुन्छ।
 
 #### सुझावहरू
 
-- यदि तपाईं सम्पादन/कमिट गर्न चाहनुहुन्छ भने सधैं क्लोन URL तपाईंको फोर्कसँग बदल्नुहोस्।
-- यदि तपाईंलाई पछि थप इतिहास वा फाइलहरू चाहिन्छ भने, तपाईं तिनीहरूलाई फेच गर्न वा स्पार्स-चेकआउट समायोजन गर्न सक्नुहुन्छ।
+- सम्पादन/कमिट गर्न चाहनुहुन्छ भने सधैं क्लोन URL लाई तपाईंको फोर्कसँग परिवर्तन गर्नुहोस्।
+- पछि यदि थप इतिहास वा फाइलहरू चाहियो भने, तिनीहरूलाई फेच गर्न वा sparse-checkout समायोजन गर्न सक्नुहुन्छ।
 
-## कोड चलाउँदै
+## कोड चलाउने
 
-यो कोर्सले Jupyter Notebooks को श्रृंखला प्रदान गर्दछ जसले तपाईंलाई AI एजेन्टहरू निर्माण गर्न व्यावहारिक अनुभव प्राप्त गर्न अनुमति दिन्छ।
+यस कोर्सले एक श्रृंखला Jupyter नोटबुकहरू प्रदान गर्दछ जुन तपाईंले AI एजेन्टहरू निर्माणमा व्यावहारिक अनुभवका लागि चलाउन सक्नुहुन्छ।
 
-कोड नमूनाहरू निम्न प्रयोग गर्छन्:
+कोड नमूनाहरू **Microsoft Agent Framework (MAF)** प्रयोग गर्छन् `AzureAIProjectAgentProvider` सँग, जुन **Azure AI Agent Service V2** (Responses API) मार्फत **Microsoft Foundry** सँग जडान हुन्छ।
 
-**GitHub खाता आवश्यक - निःशुल्क**:
-
-1) Semantic Kernel Agent Framework + GitHub Models Marketplace। (semantic-kernel.ipynb) लेबल गरिएको।
-2) AutoGen Framework + GitHub Models Marketplace। (autogen.ipynb) लेबल गरिएको।
-
-**Azure सदस्यता आवश्यक**:
-3) Azure AI Foundry + Azure AI Agent Service। (azureaiagent.ipynb) लेबल गरिएको।
-
-हामी तपाईंलाई तीन प्रकारका उदाहरणहरू प्रयास गर्न प्रोत्साहित गर्छौं ताकि कुन तपाईंको लागि उत्तम काम गर्छ हेर्न सक्नुहुन्छ।
-
-तपाईंले जुन विकल्प चयन गर्नुहुन्छ, यसले तलका सेटअप चरणहरू निर्धारण गर्नेछ:
+सबै Python नोटबुकहरू `*-python-agent-framework.ipynb` ले लेबल गरिएको छन्।
 
 ## आवश्यकताहरू
 
 - Python 3.12+
-  - **NOTE**: यदि तपाईंले Python3.12 स्थापना गर्नुभएको छैन भने, सुनिश्चित गर्नुहोस् कि तपाईं यसलाई स्थापना गर्नुहुन्छ। त्यसपछि requirements.txt फाइलबाट सही संस्करणहरू स्थापना गर्न python3.12 प्रयोग गरेर आफ्नो venv सिर्जना गर्नुहोस्।
+  - **NOTE**: यदि तपाईंंसँग Python3.12 छैन भने, यसलाई स्थापना गर्न सुनिश्चित गर्नुहोस्। त्यसपछि आफ्नो venv सिर्जना गर्दा python3.12 प्रयोग गर्नुहोस् ताकि requirements.txt बाट सही संस्करणहरू इन्स्टल हुन सकुन्।
   
     >उदाहरण
 
-    Python venv डाइरेक्टरी सिर्जना गर्नुहोस्:
+    Python venv डाइरकट्री सिर्जना गर्नुहोस्:
 
     ```bash|powershell
     python -m venv venv
@@ -135,113 +116,84 @@ Remove-Item -Recurse -Force .git
     venv\Scripts\activate
     ```
 
-- .NET 10+: .NET प्रयोग गर्ने नमूनाहरूका लागि, सुनिश्चित गर्नुहोस् कि तपाईंले [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) वा पछिल्लो संस्करण स्थापना गर्नुभएको छ। त्यसपछि, तपाईंको स्थापना गरिएको .NET SDK संस्करण जाँच गर्नुहोस्:
+- .NET 10+: .NET प्रयोग गरेको नमूनाहरूका लागि, सुनिश्चित गर्नुहोस् [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) वा पछिल्लो संस्करण स्थापना गरिएको छ। त्यसपछि आफ्नो .NET SDK संस्करण जाँच्नुहोस्:
 
     ```bash|powershell
     dotnet --list-sdks
     ```
 
-- GitHub खाता - GitHub Models Marketplace पहुँचको लागि।
-- Azure सदस्यता - Azure AI Foundry पहुँचको लागि।
-- Azure AI Foundry खाता - Azure AI Agent Service पहुँचको लागि।
+- **Azure CLI** — प्रमाणीकरणका लागि आवश्यक। [aka.ms/installazurecli](https://aka.ms/installazurecli) बाट स्थापना गर्नुहोस्।
+- **Azure Subscription** — Microsoft Foundry र Azure AI Agent Service पहुँचका लागि।
+- **Microsoft Foundry Project** — तैनाथ मोडेल भएको प्रोजेक्ट (जस्तै `gpt-4o`)। [Step 1](#चरण-१-microsoft-foundry-प्रोजेक्ट-सिर्जना-गर्नुहोस्) हेर्नुहोस्।
 
-हामीले यस रिपोजिटरीको मूलमा `requirements.txt` फाइल समावेश गरेका छौं जसमा कोड नमूनाहरू चलाउन आवश्यक सबै Python प्याकेजहरू छन्।
+हाम्रो यो रिपोजिटोरीको मूल फोल्डरमा `requirements.txt` फाइल समावेश गरिएको छ जसमा कोड नमूनाहरू चलाउन आवश्यक सबै Python प्याकेजहरू छन्।
 
-तपाईं यसलाई निम्न आदेश चलाएर स्थापना गर्न सक्नुहुन्छ:
+तपाईंले रिपोजिटोरीको मूल फोल्डरमा आफ्नो टर्मिनलमा तलको आदेश चलाएर तिनीहरू इन्स्टल गर्न सक्नुहुन्छ:
 
 ```bash|powershell
 pip install -r requirements.txt
 ```
 
-कुनै पनि द्वन्द्व र समस्याहरू रोक्न Python भर्चुअल वातावरण सिर्जना गर्न सिफारिस गरिन्छ।
+हामी सिफारिस गर्छौं कि कुनै पनि द्वन्द्व र समस्याहरूबाट बच्न Python वर्चुअल वातावरण सिर्जना गर्नुहोस्।
 
 ## VSCode सेटअप गर्नुहोस्
 
-सुनिश्चित गर्नुहोस् कि तपाईंले VSCode मा सही Python संस्करण प्रयोग गरिरहनुभएको छ।
+VSCode मा सुनिश्चित गर्नुहोस् कि तपाईं सही Python संस्करण प्रयोग गर्दै हुनुहुन्छ।
 
 ![image](https://github.com/user-attachments/assets/a85e776c-2edb-4331-ae5b-6bfdfb98ee0e)
 
-## GitHub Models प्रयोग गर्ने नमूनाहरूको सेटअप
+## Microsoft Foundry र Azure AI Agent सेवा सेटअप गर्नुहोस्
 
-### चरण 1: तपाईंको GitHub व्यक्तिगत पहुँच टोकन (PAT) प्राप्त गर्नुहोस्
+### चरण १: Microsoft Foundry प्रोजेक्ट सिर्जना गर्नुहोस्
 
-यो कोर्सले GitHub Models Marketplace प्रयोग गर्दछ, जसले तपाईंलाई AI एजेन्टहरू निर्माण गर्न प्रयोग गर्ने Large Language Models (LLMs) को निःशुल्क पहुँच प्रदान गर्दछ।
+तपाईंलाई Azure AI Foundry **हब** र **प्रोजेक्ट** आवश्यक छ जहाँ मोडेल तैनाथ गरिएको छ, जसले नोटबुकहरू चलाउन मद्दत गर्दछ।
 
-GitHub Models प्रयोग गर्न, तपाईंले [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) सिर्जना गर्न आवश्यक छ।
+1. जानुहोस् [ai.azure.com](https://ai.azure.com) र आफ्नो Azure खाताबाट साइन इन गर्नुहोस्।
+2. **हब** सिर्जना गर्नुहोस् (वा पहिलेबाट रहेको प्रयोग गर्नुहोस्)। हेर्नुहोस्: [Hub resources overview](https://learn.microsoft.com/azure/ai-foundry/concepts/ai-resources).
+3. हब भित्र नयाँ **प्रोजेक्ट** सिर्जना गर्नुहोस्।
+4. **Models + Endpoints** → **Deploy model** बाट मोडेल (जस्तै `gpt-4o`) तैनाथ गर्नुहोस्।
 
-यो तपाईंको GitHub खाता अन्तर्गत <a href="https://github.com/settings/personal-access-tokens" target="_blank">Personal Access Tokens सेटिङ्स</a> मा गएर गर्न सकिन्छ।
+### चरण २: तपाईको प्रोजेक्ट अन्त्यबिन्दु र मोडेल तैनाथ नाम प्राप्त गर्नुहोस्
 
-कृपया टोकन सिर्जना गर्दा [Principle of Least Privilege](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) पालना गर्नुहोस्। यसको मतलब तपाईंले टोकनलाई यस कोर्सका कोड नमूनाहरू चलाउन आवश्यक अनुमति मात्र दिनुपर्छ।
+Microsoft Foundry पोर्टलमा तपाईको प्रोजेक्ट बाट:
 
-1. **Developer settings** मा गएर `Fine-grained tokens` विकल्प चयन गर्नुहोस्।
+- **Project Endpoint** — **Overview** पृष्ठमा जानुहोस् र अन्त्यबिन्दु URL प्रतिलिपि गर्नुहोस्।
 
-   ![Developer settings](../../../translated_images/profile_developer_settings.410a859fe749c755c859d414294c5908e307222b2c61819c3203bbeed4470e25.ne.png)
+![Project Connection String](../../../translated_images/ne/project-endpoint.8cf04c9975bbfbf1.webp)
 
-   त्यसपछि `Generate new token` चयन गर्नुहोस्।
+- **Model Deployment Name** — **Models + Endpoints** मा जानुहोस्, तैनाथ गरिएको मोडेल छान्नुहोस्, र **Deployment name** नोट गर्नुहोस् (जस्तै `gpt-4o`)।
 
-   ![Generate Token](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.ne.png)
+### चरण ३: `az login` गरेर Azure मा साइन इन गर्नुहोस्
 
-2. टोकनको उद्देश्यलाई प्रतिबिम्बित गर्ने वर्णनात्मक नाम प्रविष्ट गर्नुहोस् ताकि पछि सजिलै चिन्हित गर्न सकियोस्।
+सबै नोटबुकहरूले प्रमाणीकरणका लागि **`AzureCliCredential`** प्रयोग गर्छन् — कुनै API कुञ्जीहरू व्यवस्थापन गर्न पर्दैन। यसलाई Azure CLI मार्फत साइन इन हुनु आवश्यक छ।
 
-    🔐 टोकन अवधि सिफारिस
+1. **Azure CLI स्थापना गर्नुहोस्**, यदि पहिले स्थापना नगरिएको भए: [aka.ms/installazurecli](https://aka.ms/installazurecli)
 
-    सिफारिस गरिएको अवधि: 30 दिन
-    अधिक सुरक्षित दृष्टिकोणको लागि, तपाईं छोटो अवधि चयन गर्न सक्नुहुन्छ—जस्तै 7 दिन 🛡️
-    यो व्यक्तिगत लक्ष्य सेट गर्न र कोर्स पूरा गर्नको लागि राम्रो तरिका हो 🚀।
+2. **साइन इन** गर्न:
 
-    ![Token Name and Expiration](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.ne.png)
+    ```bash|powershell
+    az login
+    ```
 
-3. टोकनको स्कोपलाई यस रिपोजिटरीको फोर्कमा सीमित गर्नुहोस्।
+    वा यदि तपाई रिमोट/Codespace वातावरणमा ब्राउजर बिना हुनुहुन्छ भने:
 
-    ![Limit scope to fork repository](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.ne.png)
+    ```bash|powershell
+    az login --use-device-code
+    ```
 
-4. टोकनको अनुमति सीमित गर्नुहोस्: **Permissions** अन्तर्गत, **Account** ट्याबमा क्लिक गर्नुहोस्, र "+ Add permissions" बटन क्लिक गर्नुहोस्। ड्रपडाउन देखा पर्नेछ। कृपया **Models** खोज्नुहोस् र त्यसको लागि बाकस जाँच गर्नुहोस्।
+3. **तपाईंको सदस्यता चयन गर्नुहोस्** यदि आग्रह भए — तपाईंको Foundry प्रोजेक्ट भएको सदस्यता छान्नुहोस्।
 
-    ![Add Models Permission](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.ne.png)
+4. **साइन इन भएको पुष्टि गर्नुहोस्**:
 
-5. टोकन सिर्जना गर्नु अघि आवश्यक अनुमति प्रमाणित गर्नुहोस्। ![Verify Permissions](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.ne.png)
+    ```bash|powershell
+    az account show
+    ```
 
-6. टोकन सिर्जना गर्नु अघि, सुनिश्चित गर्नुहोस् कि तपाईंले टोकनलाई सुरक्षित स्थानमा जस्तै पासवर्ड म्यानेजर भल्टमा भण्डारण गर्न तयार हुनुहुन्छ, किनकि यो सिर्जना गरेपछि फेरि देखाइने छैन। ![Store Token Securely](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.ne.png)
+> **किन `az login`?** नोटबुकहरूले `azure-identity` प्याकेजको `AzureCliCredential` मार्फत प्रमाणीकरण गर्छन्। यसको अर्थ तपाईंको Azure CLI सत्रले प्रमाणीकरण प्रदान गर्छ — तपाइको `.env` फाइलमा कुनै API कुञ्जी वा गोप्य सूचना छैन। यो [सुरक्षा उत्कृष्ट अभ्यास](https://learn.microsoft.com/azure/developer/ai/keyless-connections) हो।
 
-तपाईंले अहिले सिर्जना गरेको नयाँ टोकन प्रतिलिपि गर्नुहोस्। अब तपाईंले यसलाई यस कोर्समा समावेश गरिएको `.env` फाइलमा थप्नुहुनेछ।
+### चरण ४: आफ्नो `.env` फाइल सिर्जना गर्नुहोस्
 
-### चरण 2: तपाईंको `.env` फाइल सिर्जना गर्नुहोस्
-
-तपाईंको `.env` फाइल सिर्जना गर्न निम्न आदेश टर्मिनलमा चलाउनुहोस्।
-
-```bash
-# zsh/bash
-cp .env.example .env
-```
-
-```powershell
-# PowerShell
-Copy-Item .env.example .env
-```
-
-यसले उदाहरण फाइललाई प्रतिलिपि गर्नेछ र `.env` तपाईंको डाइरेक्टरीमा सिर्जना गर्नेछ जहाँ तपाईं वातावरण चरहरूको लागि मानहरू भर्नेछ।
-
-तपाईंको टोकन प्रतिलिपि गरेर, `.env` फाइललाई तपाईंको मनपर्ने टेक्स्ट एडिटरमा खोल्नुहोस् र `GITHUB_TOKEN` फिल्डमा टोकन पेस्ट गर्नुहोस्।
-
-![GitHub Token Field](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.ne.png)
-
-अब तपाईंले यस कोर्सका कोड नमूनाहरू चलाउन सक्नुहुन्छ।
-
-## Azure AI Foundry र Azure AI Agent Service प्रयोग गर्ने नमूनाहरूको सेटअप
-
-### चरण 1: तपाईंको Azure प्रोजेक्ट अन्त बिन्दु प्राप्त गर्नुहोस्
-
-Azure AI Foundry मा हब र प्रोजेक्ट सिर्जना गर्ने चरणहरू यहाँ फेला पार्नुहोस्: [Hub resources overview](https://learn.microsoft.com/azure/ai-foundry/concepts/ai-resources)
-
-तपाईंले आफ्नो प्रोजेक्ट सिर्जना गरेपछि, तपाईंले आफ्नो प्रोजेक्टको कनेक्शन स्ट्रिङ प्राप्त गर्न आवश्यक छ।
-
-यो Azure AI Foundry पोर्टलमा तपाईंको प्रोजेक्टको **Overview** पृष्ठमा गएर गर्न सकिन्छ।
-
-![Project Connection String](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.ne.png)
-
-### चरण 2: तपाईंको `.env` फाइल सिर्जना गर्नुहोस्
-
-तपाईंको `.env` फाइल सिर्जना गर्न निम्न आदेश टर्मिनलमा चलाउनुहोस्।
+नमुना फाइल कपी गर्नुहोस्:
 
 ```bash
 # zsh/bash
@@ -249,81 +201,134 @@ cp .env.example .env
 ```
 
 ```powershell
-# PowerShell
+# पावरशेल
 Copy-Item .env.example .env
 ```
 
-यसले उदाहरण फाइललाई प्रतिलिपि गर्नेछ र `.env` तपाईंको डाइरेक्टरीमा सिर्जना गर्नेछ जहाँ तपाईं वातावरण चरहरूको लागि मानहरू भर्नेछ।
+`.env` खोल्नुहोस् र यी दुई मानहरू भर्नुहोस्:
 
-तपाईंको टोकन प्रतिलिपि गरेर, `.env` फाइललाई तपाईंको मनपर्ने टेक्स्ट एडिटरमा खोल्नुहोस् र `PROJECT_ENDPOINT` फिल्डमा टोकन पेस्ट गर्नुहोस्।
+```env
+AZURE_AI_PROJECT_ENDPOINT=https://<your-project>.services.ai.azure.com/api/projects/<your-project-id>
+AZURE_AI_MODEL_DEPLOYMENT_NAME=gpt-4o
+```
 
-### चरण 3: Azure मा साइन इन गर्नुहोस्
+| परिवर्तनीय | कहाँ फेला पार्ने |
+|----------|-----------------|
+| `AZURE_AI_PROJECT_ENDPOINT` | Foundry पोर्टल → तपाईंको प्रोजेक्ट → **Overview** पृष्ठ |
+| `AZURE_AI_MODEL_DEPLOYMENT_NAME` | Foundry पोर्टल → **Models + Endpoints** → तपाईंले तैनाथ गरेको मोडेलको नाम |
 
-सुरक्षा उत्तम अभ्यासको रूपमा, हामी [keyless authentication](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) प्रयोग गर्नेछौं Microsoft Entra ID को साथ Azure OpenAI मा प्रमाणित गर्न।
+यो अधिकांश पाठहरूको लागि हो! नोटबुकहरूले तपाईंको `az login` सत्रबाट स्वतः प्रमाणीकरण गर्नेछन्।
 
-अर्को, टर्मिनल खोल्नुहोस् र `az login --use-device-code` चलाएर आफ्नो Azure खातामा साइन इन गर्नुहोस्।
+### चरण ५: Python निर्भरता इन्स्टल गर्नुहोस्
 
-साइन इन गरेपछि, टर्मिनलमा आफ्नो सदस्यता चयन गर्नुहोस्।
+```bash|powershell
+pip install -r requirements.txt
+```
 
-## अतिरिक्त वातावरण चरहरू - Azure Search र Azure OpenAI 
+हामी सिफारिस गर्छौं कि यसलाई तपाईंले पहिले सिर्जना गरेको वर्चुअल वातावरणमा चलाउनुहोस्।
 
-Agentic RAG पाठ - पाठ 5 - मा Azure Search र Azure OpenAI प्रयोग गर्ने नमूनाहरू छन्।
+## पाठ ५ (Agentic RAG) का लागि थप सेटअप
 
-यदि तपाईं यी नमूनाहरू चलाउन चाहनुहुन्छ भने, तपाईंले आफ्नो `.env` फाइलमा निम्न वातावरण चरहरू थप्न आवश्यक छ:
+पाठ ५ ले पुनःप्राप्ति-अंकित उत्पादनको लागि **Azure AI Search** प्रयोग गर्छ। यदि तपाईं त्यो पाठ चलाउन चाहनुहुन्छ भने, यी भेरियेबलहरू `.env` फाइलमा थप्नुहोस्:
 
-### ओभरभ्यू पृष्ठ (प्रोजेक्ट)
+| परिवर्तनीय | कहाँ फेला पार्ने |
+|----------|-----------------|
+| `AZURE_SEARCH_SERVICE_ENDPOINT` | Azure पोर्टल → तपाईंको **Azure AI Search** स्रोत → **Overview** → URL |
+| `AZURE_SEARCH_API_KEY` | Azure पोर्टल → तपाईंको **Azure AI Search** स्रोत → **Settings** → **Keys** → प्राथमिक प्रशासक कुञ्जी |
 
-- `AZURE_SUBSCRIPTION_ID` - **Overview** पृष्ठको **Project details** मा जाँच गर्नुहोस्।
+## पाठ ६ र पाठ ८ (GitHub मोडेलहरू) का लागि थप सेटअप
 
-- `AZURE_AI_PROJECT_NAME` - **Overview** पृष्ठको शीर्षमा तपाईंको प्रोजेक्ट हेर्नुहोस्।
+पाठ ६ र ८ का केही नोटबुकहरूले Azure AI Foundry सट्टा **GitHub Models** प्रयोग गर्छन्। यदि तपाईं ती नमूनाहरू चलाउन चाहनुहुन्छ भने, यी भेरियेबलहरू `.env` फाइलमा थप गर्नुहोस्:
 
-- `AZURE_OPENAI_SERVICE` - **Overview** पृष्ठको **Included capabilities** ट्याबमा **Azure OpenAI Service** को लागि हेर्नुहोस्।
+| परिवर्तनीय | कहाँ फेला पार्ने |
+|----------|-----------------|
+| `GITHUB_TOKEN` | GitHub → **Settings** → **Developer settings** → **Personal access tokens** |
+| `GITHUB_ENDPOINT` | `https://models.inference.ai.azure.com` (पूर्वनिर्धारित मान) प्रयोग गर्नुहोस् |
+| `GITHUB_MODEL_ID` | प्रयोग गर्नुपर्ने मोडेल नाम (जस्तै `gpt-4o-mini`) |
 
-### व्यवस्थापन केन्द्र
+## वैकल्पिक प्रदायक: MiniMax (OpenAI-अनुकूल)
 
-- `AZURE_OPENAI_RESOURCE_GROUP` - **Management Center** को **Overview** पृष्ठमा **Project properties** मा जानुहोस्।
+[MiniMax](https://platform.minimaxi.com/) ठूलो सन्दर्भ मोडेलहरू (२०४K टोकनसम्म) OpenAI-अनुकूल API मार्फत प्रदान गर्छ। Microsoft Agent Framework को `OpenAIChatClient` कुनै OpenAI-अनुकूल अन्त्यबिन्दुमा काम गर्छ, यसैले MiniMax लाई GitHub Models वा OpenAI को विकल्पको रूपमा प्रयोग गर्न सकिन्छ।
 
-- `GLOBAL_LLM_SERVICE` - **Connected resources** अन्तर्गत, **Azure AI Services** कनेक्शन नाम फेला पार्नुहोस्। यदि सूचीबद्ध छैन भने, **Azure portal** मा तपाईंको स्रोत समूह अन्तर्गत AI Services स्रोत नाम जाँच गर्नुहोस्।
+यी भेरियेबलहरू आफ्नो `.env` फाइलमा थप्नुहोस्:
 
-### Models + Endpoints पृष्ठ
+| परिवर्तनीय | कहाँ फेला पार्ने |
+|----------|-----------------|
+| `MINIMAX_API_KEY` | [MiniMax Platform](https://platform.minimaxi.com/) → API Keys |
+| `MINIMAX_BASE_URL` | `https://api.minimax.io/v1` (पूर्वनिर्धारित मान) प्रयोग गर्नुहोस् |
+| `MINIMAX_MODEL_ID` | प्रयोग गर्नुपर्ने मोडेल नाम (जस्तै `MiniMax-M2.7`) |
 
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - तपाईंको embedding मोडेल चयन गर्नुहोस् (जस्तै, `text-embedding-ada-002`) र मोडेल विवरणबाट **Deployment name** नोट गर्नुहोस्।
+**उपलब्ध मोडेलहरू**: `MiniMax-M2.7` (सिफारिस), `MiniMax-M2.7-highspeed` (छिटो प्रतिक्रिया)
 
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - तपाईंको chat मोडेल चयन गर्नुहोस् (जस्तै, `gpt-4o-mini`) र मोडेल विवरणबाट **Deployment name** नोट गर्नुहोस्।
+`OpenAIChatClient` प्रयोग गर्ने कोड नमूनाहरू (जस्तै पाठ १४ होटल बुकिङ कार्यप्रवाह) स्वतः तपाईंको MiniMax कन्फिगरेशन पत्ता लगाएर प्रयोग गर्छन् जब `MINIMAX_API_KEY` सेट गरिएको हुन्छ।
 
-### Azure पोर्टल
+## पाठ ८ (Bing Grounding Workflow) का लागि थप सेटअप
 
-- `AZURE_OPENAI_ENDPOINT` - **Azure AI services** हेर्नुहोस्, त्यसमा क्लिक गर्नुहोस्, त्यसपछि **Resource Management**, **Keys and Endpoint** मा जानुहोस्, "Azure OpenAI endpoints" मा स्क्रोल गर्नुहोस्, र "Language APIs" भन्ने एक प्रतिलिपि गर्नुहोस्।
+पाठ ८ मा सर्ताधारित कार्यप्रवाह नोटबुकले Azure AI Foundry मार्फत **Bing grounding** प्रयोग गर्छ। यदि तपाईं त्यो नमूना चलाउन चाहनुहुन्छ भने, तपाईंको `.env` फाइलमा यो भेरियेबल थप्नुहोस्:
 
-- `AZURE_OPENAI_API_KEY` - त्यही स्क्रिनबाट, KEY 1 वा KEY 2 प्रतिलिपि गर्नुहोस्।
+| परिवर्तनीय | कहाँ फेला पार्ने |
+|----------|-----------------|
+| `BING_CONNECTION_ID` | Azure AI Foundry पोर्टल → तपाईंको प्रोजेक्ट → **Management** → **Connected resources** → तपाईंको Bing कनेक्शन → कनेक्शन ID प्रतिलिपि गर्नुहोस् |
 
-- `AZURE_SEARCH_SERVICE_ENDPOINT` - तपाईंको **Azure AI Search** स्रोत फेला पार्नुहोस्, त्यसमा क्लिक गर्नुहोस्, र **Overview** हेर्नुहोस्।
+## समस्या समाधान
 
-- `AZURE_SEARCH_API_KEY` - त्यसपछि **Settings** मा जानुहोस् र **Keys** मा गएर प्राथमिक वा द्वितीयक प्रशासकीय कुञ्जी प्रतिलिपि गर्नुहोस्।
+### macOS मा SSL प्रमाणपत्र प्रमाणीकरण त्रुटिहरू
 
-### बाह्य वेबपेज
+यदि तपाईं macOS मा हुनुहुन्छ र यस्तो त्रुटि आइपरेको छ भने:
 
-- `AZURE_OPENAI_API_VERSION` - [API version lifecycle](https://learn.microsoft.com/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) पृष्ठ अन्तर्गत **Latest GA API release** हेर्नुहोस्।
+```plaintext
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain
+```
 
-### keyless authentication सेटअप गर्नुहोस्
+यो macOS मा Python संग परिचित समस्या हो जहाँ सिस्टम SSL प्रमाणपत्रहरू स्वचालित रूपमा विश्वास प्राप्त गर्दैनन्। तलका समाधानहरू प्रयास गर्नुहोस्:
 
-तपाईंको प्रमाणहरू हार्डकोड नगरी, हामी Azure OpenAI सँग keyless कनेक्शन प्रयोग गर्नेछौं। यसका लागि, हामी `DefaultAzureCredential` आयात गर्नेछौं र पछि `DefaultAzureCredential` फंक्शनलाई प्रमाण प्राप्त गर्न कल गर्नेछौं।
+**विकल्प १: Python को Install Certificates स्क्रिप्ट चलाउनुहोस् (सिफारिस गरिएको)**
+
+```bash
+# तपाईंले स्थापना गर्नुभएको Python संस्करण (जस्तै, 3.12 वा 3.13) सँग 3.XX प्रतिस्थापन गर्नुहोस्:
+/Applications/Python\ 3.XX/Install\ Certificates.command
+```
+
+**विकल्प २: तपाईंको नोटबुकमा `connection_verify=False` प्रयोग गर्नुहोस् (GitHub Models नोटबुकहरूका लागि मात्र)**
+
+पाठ ६ को नोटबुक (`06-building-trustworthy-agents/code_samples/06-system-message-framework.ipynb`) मा एक टिप्पणी गरिएको समाधान पहिलेबाटै छ। क्लाइन्ट सिर्जना गर्दा `connection_verify=False` लाई अनकमेन्ट गर्नुहोस्:
 
 ```python
-# Python
-from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
+client = ChatCompletionsClient(
+    endpoint=endpoint,
+    credential=AzureKeyCredential(token),
+    connection_verify=False,  # यदि तपाईं प्रमाणपत्र त्रुटिहरू सामना गर्नुहुन्छ भने SSL प्रमाणीकरण अक्षम गर्नुहोस्
+)
 ```
 
-## कतै अडिनुभएको छ?
-यदि तपाईंलाई यो सेटअप चलाउन कुनै समस्या छ भने, हाम्रो <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a> मा जानुहोस् वा <a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">समस्या सिर्जना गर्नुहोस्</a>।
+> **⚠️ चेतावनी:** SSL प्रमाणीकरण अक्षम गर्दा (`connection_verify=False`) सुरक्षा कम हुन्छ किनकि प्रमाणपत्र प्रमाणीकरण छोडिन्छ। विकास वातावरणमा मात्र अस्थायी समाधानको रूपमा प्रयोग गर्नुहोस्, उत्पादन वातावरणमा कहिल्यै प्रयोग नगर्नुहोस्।
+
+**विकल्प ३: `truststore` इन्स्टल र प्रयोग गर्नुहोस्**
+
+```bash
+pip install truststore
+```
+
+त्यसपछि तपाईंको नोटबुक वा स्क्रिप्टको शीर्षमा थप्नुहोस् नेटवर्क कलहरू गर्नु अघि:
+
+```python
+import truststore
+truststore.inject_into_ssl()
+```
+
+## कतै अड्किनुभयो?
+
+यदि तपाईंलाई यो सेटअप चलाउन कुनै पनि समस्या आयो भने, हाम्रो <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a> मा जानुहोस् वा <a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">समस्या सिर्जना गर्नुहोस्</a>।
 
 ## अर्को पाठ
 
-अब तपाईं यस पाठ्यक्रमको कोड चलाउन तयार हुनुहुन्छ। AI एजेन्टहरूको संसारबारे थप सिक्न शुभकामना!
+अब तपाईं यो कोर्सका कोडहरू चलाउन तयार हुनुहुन्छ। AI एजेन्टहरूको संसारबारे थप सिक्न खुशी हुनुहोस्!
 
-[AI एजेन्टहरू र एजेन्ट प्रयोग केसहरूको परिचय](../01-intro-to-ai-agents/README.md)
+[Introduction to AI Agents and Agent Use Cases](../01-intro-to-ai-agents/README.md)
 
 ---
 
-**अस्वीकरण**:  
-यो दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरेर अनुवाद गरिएको छ। हामी शुद्धताको लागि प्रयास गर्छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादहरूमा त्रुटिहरू वा अशुद्धताहरू हुन सक्छ। यसको मूल भाषा मा रहेको मूल दस्तावेज़लाई आधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीको लागि, व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न हुने कुनै पनि गलतफहमी वा गलत व्याख्याको लागि हामी जिम्मेवार हुनेछैनौं।
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**अस्वीकरण**:
+यो दस्तावेज [Co-op Translator](https://github.com/Azure/co-op-translator) नामक एआई अनुवाद सेवाको प्रयोग गरी अनुवाद गरिएको हो। हामी सटीकता को प्रयास गर्दैनौं, कृपया जान्नुहोस् कि स्वचालित अनुवादमा त्रुटिहरू वा अशुद्धिहरू हुन सक्छन्। मूल दस्तावेज यसको स्वदेशी भाषामा अधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीका लागि, व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

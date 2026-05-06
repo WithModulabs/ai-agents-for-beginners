@@ -1,193 +1,194 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1a008c204051cba8d0e253b75f261c41",
-  "translation_date": "2025-08-30T15:01:34+00:00",
-  "source_file": "08-multi-agent/README.md",
-  "language_code": "lt"
-}
--->
-[![Multi-Agent Design](../../../translated_images/lesson-8-thumbnail.278a3e4a59137d625df92de3f885d2da2a92b1f7017abba25a99fb25edd83a55.lt.png)](https://youtu.be/V6HpE9hZEx0?si=A7K44uMCqgvLQVCa)
+[![Daugiagentės dizaino šablonai](../../../translated_images/lt/lesson-8-thumbnail.278a3e4a59137d62.webp)](https://youtu.be/V6HpE9hZEx0?si=A7K44uMCqgvLQVCa)
 
-> _(Spustelėkite paveikslėlį aukščiau, kad peržiūrėtumėte šios pamokos vaizdo įrašą)_
+> _(Spustelėkite aukščiau esantį paveikslėlį, norėdami peržiūrėti šios pamokos vaizdo įrašą)_
 
-# Daugiaveiksnių sistemų dizaino šablonai
+# Daugiagentės dizaino šablonai
 
-Kai tik pradėsite dirbti su projektu, kuriame dalyvauja keli agentai, turėsite apsvarstyti daugiaveiksnių sistemų dizaino šabloną. Tačiau gali būti ne iš karto aišku, kada pereiti prie daugiaveiksnių sistemų ir kokie yra jų privalumai.
+Kai tik pradedate dirbti su projektu, kuriame dalyvauja keli agentai, turėsite apsvarstyti daugiagentės dizaino šabloną. Tačiau gali būti ne iš karto aišku, kada pereiti prie daugiagentės sistemos ir kokie yra jos pranašumai.
 
 ## Įvadas
 
 Šioje pamokoje siekiame atsakyti į šiuos klausimus:
 
-- Kokiose situacijose daugiaveiksnės sistemos yra tinkamos?
-- Kokie yra daugiaveiksnių sistemų privalumai, palyginti su vienu agentu, atliekančiu kelias užduotis?
-- Kokie yra pagrindiniai elementai, reikalingi įgyvendinant daugiaveiksnių sistemų dizaino šabloną?
-- Kaip užtikrinti matomumą, kaip keli agentai sąveikauja tarpusavyje?
+- Kokios situacijos tinka daugiagentėms sistemoms?
+- Kokie pranašumai naudojant daugiagentę sistemą, palyginti su vienu agentu, kuris atlieka kelias užduotis?
+- Kokie yra daugiagentės dizaino šablono įgyvendinimo blokai?
+- Kaip mes galime matyti, kaip tarpusavyje sąveikauja keli agentai?
 
 ## Mokymosi tikslai
 
 Po šios pamokos turėtumėte gebėti:
 
-- Nustatyti situacijas, kuriose daugiaveiksnės sistemos yra tinkamos.
-- Atpažinti daugiaveiksnių sistemų privalumus, palyginti su vienu agentu.
-- Suprasti pagrindinius elementus, reikalingus įgyvendinant daugiaveiksnių sistemų dizaino šabloną.
+- Nustatyti situacijas, kuriose tinka naudoti daugiagentę sistemą
+- Suprasti daugiagentės sistemos pranašumus, palyginti su vienu agentu
+- Suprasti daugiagentės dizaino šablono įgyvendinimo blokų esmę
 
-Koks yra platesnis kontekstas?
+Koks didesnis vaizdas?
 
-*Daugiaveiksnės sistemos yra dizaino šablonas, leidžiantis keliems agentams dirbti kartu siekiant bendro tikslo.*
+*Daugiagentės sistemos yra dizaino šablonas, leidžiantis keliems agentams dirbti kartu siekiant bendro tikslo.*
 
-Šis šablonas plačiai naudojamas įvairiose srityse, įskaitant robotiką, autonomines sistemas ir paskirstytąjį skaičiavimą.
+Šis šablonas plačiai naudojamas įvairiose srityse, įskaitant robotiką, autonomines sistemas ir paskirstytą kompiuteriją.
 
-## Situacijos, kuriose daugiaveiksnės sistemos yra tinkamos
+## Situacijos, kuriose tinka naudoti daugiagentę sistemą
 
-Taigi, kokios situacijos yra tinkamos daugiaveiksnių sistemų naudojimui? Atsakymas yra tas, kad daugiaveiksnės sistemos yra naudingos daugelyje situacijų, ypač šiais atvejais:
+Kokios situacijos yra tinkamos naudoti daugiagentę sistemą? Atsakymas yra, kad daugelyje situacijų naudinga naudoti kelis agentus, ypač šiais atvejais:
 
-- **Didelės darbo apimtys**: Didelės darbo apimtys gali būti suskaidytos į mažesnes užduotis ir paskirstytos skirtingiems agentams, leidžiant vykdyti užduotis lygiagrečiai ir greičiau jas užbaigti. Pavyzdys galėtų būti didelės apimties duomenų apdorojimo užduotis.
-- **Sudėtingos užduotys**: Sudėtingos užduotys, kaip ir didelės darbo apimtys, gali būti suskaidytos į mažesnius subtikslus ir paskirstytos skirtingiems agentams, kiekvienam specializuojantis tam tikroje užduoties dalyje. Geras pavyzdys galėtų būti autonominiai automobiliai, kur skirtingi agentai valdo navigaciją, kliūčių aptikimą ir komunikaciją su kitais automobiliais.
-- **Įvairi ekspertizė**: Skirtingi agentai gali turėti įvairią ekspertizę, leidžiančią jiems efektyviau spręsti skirtingus užduoties aspektus nei vienas agentas. Pavyzdys galėtų būti sveikatos priežiūros srityje, kur agentai valdo diagnostiką, gydymo planus ir pacientų stebėjimą.
+- **Didelės darbo apimtys**: Dideles darbo apimtis galima suskaidyti į mažesnes užduotis ir paskirstyti skirtingiems agentams, leidžiant lygiagrečiai apdoroti ir greičiau baigti. Pavyzdys — didelės duomenų apdorojimo užduoties atvejis.
+- **Sudėtingos užduotys**: Sudėtingas užduotis, kaip ir dideles darbo apimtis, galima suskaidyti į mažesnes dalines užduotis ir paskirti skirtingiems agentams, kurių kiekvienas specializuojasi konkrečioje užduoties dalyje. Pavyzdys — autonominių transporto priemonių atvejis, kur skirtingi agentai valdo navigaciją, kliūčių aptikimą ir bendravimą su kitais automobiliais.
+- **Įvairiapusė ekspertizė**: Skirtingi agentai gali turėti įvairiapusę ekspertizę, leidžiančią jiems veiksmingiau spręsti skirtingas užduoties dalis nei vienam agentui. Pavyzdys čia būtų sveikatos priežiūra, kur agentai gali dirbti su diagnostika, gydymo planais ir paciento stebėjimu.
 
-## Daugiaveiksnių sistemų privalumai, palyginti su vienu agentu
+## Privalumai naudojant daugiagentę sistemą, palyginti su vienu agentu
 
-Vieno agento sistema gali gerai veikti paprastoms užduotims, tačiau sudėtingesnėms užduotims daugiaveiksnės sistemos gali suteikti keletą privalumų:
+Vieno agento sistema galėtų tinkamai veikti paprastoms užduotims, tačiau sudėtingesnėms užduotims naudojant kelis agentus galima pasiekti kelis privalumus:
 
-- **Specializacija**: Kiekvienas agentas gali būti specializuotas tam tikrai užduočiai. Vieno agento sistema, neturinti specializacijos, gali susidurti su sunkumais atliekant sudėtingas užduotis, nes agentas gali atlikti užduotį, kuriai jis nėra geriausiai pritaikytas.
-- **Skalavimas**: Sistemos skalavimas yra lengvesnis pridedant daugiau agentų, o ne perkraunant vieną agentą.
-- **Gedimų tolerancija**: Jei vienas agentas sugenda, kiti gali toliau veikti, užtikrindami sistemos patikimumą.
+- **Specializacija**: Kiekvienas agentas gali būti specializuotas konkrečiai užduočiai. Vieno agento trūkumas yra tas, kad agentas, bandantis viską atlikti, gali sutrikti susidūręs su sudėtinga užduotimi. Jis gali, pavyzdžiui, imtis užduoties, kuriai jis nėra geriausiai pritaikytas.
+- **Mastelio keitimas**: Lengviau plečiama sistema pridedant daugiau agentų, nei apkraunant vieną agentą per daug.
+- **Atsparumas gedimams**: Jei vienas agentas sugenda, kiti gali tęsti darbą, užtikrinant sistemos patikimumą.
 
-Pavyzdžiui, tarkime, kad reikia užsakyti kelionę vartotojui. Vieno agento sistema turėtų tvarkyti visus kelionės užsakymo proceso aspektus – nuo skrydžių paieškos iki viešbučių ir automobilių nuomos užsakymo. Tai galėtų sukurti sudėtingą ir monolitinę sistemą, kurią sunku prižiūrėti ir skalauti. Daugiaveiksnių sistemų atveju skirtingi agentai galėtų specializuotis skrydžių paieškoje, viešbučių užsakymuose ir automobilių nuomoje. Tai padarytų sistemą moduliarią, lengviau prižiūrimą ir skalaujamą.
+Pažiūrėkime pavyzdį — užsisakykime kelionę vartotojui. Vieno agento sistema turėtų rūpintis visais kelionės užsakymo aspektais — nuo skrydžių paieškos iki viešbučių ir automobilių nuomos užsakymo. Norint tai įgyvendinti su vienu agentu, jis turėtų turėti įrankius visoms šiems užduotims atlikti. Tai gali sukurti sudėtingą ir sunkiai prižiūrimą, monolitinę sistemą. Tuo tarpu daugiagentė sistema galėtų turėti skirtingus agentus, specializuotus skrydžių paieškai, viešbučių ir automobilių nuomos užsakymui. Tai padarytų sistemą modularią, lengviau prižiūrimą ir išplečiamą.
 
-Palyginkime tai su kelionių biuru, kuris veikia kaip šeimos verslas, ir kelionių biuru, kuris veikia kaip franšizė. Šeimos verslas turėtų vieną agentą, tvarkantį visus kelionės užsakymo proceso aspektus, o franšizė turėtų skirtingus agentus, tvarkančius skirtingus kelionės užsakymo proceso aspektus.
+Palyginkime tai su kelionių agentūra, kuri veikia kaip mažas šeimos verslas, ir kelionių agentūra-franšizė. Mažas šeimos verslas turėtų vieną agentą, kuris rūpinasi visais kelionės užsakymo aspektais, o franšizė turėtų skirtingus agentus, kurie atlieka skirtingas užduotis.
 
-## Pagrindiniai elementai, reikalingi įgyvendinant daugiaveiksnių sistemų dizaino šabloną
+## Daugiagentės dizaino šablono įgyvendinimo blokai
 
-Prieš įgyvendinant daugiaveiksnių sistemų dizaino šabloną, reikia suprasti pagrindinius elementus, sudarančius šį šabloną.
+Prieš pradėdami įgyvendinti daugiagentės dizaino šabloną, turite suprasti jo sudedamąsias dalis.
 
-Grįžkime prie kelionės užsakymo vartotojui pavyzdžio. Šiuo atveju pagrindiniai elementai būtų:
+Padarykime tai konkretesnį, vėl pasižiūrėdami į vartotojo kelionės užsakymo pavyzdį. Šiuo atveju įgyvendinimo blokai būtų:
 
-- **Agentų komunikacija**: Agentai, atsakingi už skrydžių paiešką, viešbučių užsakymus ir automobilių nuomą, turi komunikuoti ir dalintis informacija apie vartotojo pageidavimus ir apribojimus. Reikia nuspręsti, kokie bus šios komunikacijos protokolai ir metodai. Pavyzdžiui, skrydžių paieškos agentas turi komunikuoti su viešbučių užsakymo agentu, kad užtikrintų, jog viešbutis būtų užsakytas toms pačioms datoms kaip ir skrydis.
-- **Koordinavimo mechanizmai**: Agentai turi koordinuoti savo veiksmus, kad užtikrintų vartotojo pageidavimų ir apribojimų įgyvendinimą. Pavyzdžiui, vartotojas gali norėti viešbučio netoli oro uosto, o apribojimas gali būti tas, kad automobilių nuoma galima tik oro uoste.
-- **Agentų architektūra**: Agentai turi turėti vidinę struktūrą, leidžiančią priimti sprendimus ir mokytis iš sąveikos su vartotoju. Pavyzdžiui, skrydžių paieškos agentas turi turėti vidinę struktūrą, leidžiančią priimti sprendimus, kokius skrydžius rekomenduoti vartotojui.
-- **Matomumas į daugiaveiksnių sistemų sąveiką**: Reikia turėti matomumą, kaip keli agentai sąveikauja tarpusavyje. Tai gali būti pasiekta naudojant registravimo ir stebėjimo įrankius, vizualizacijos įrankius ir našumo metrikas.
-- **Daugiaveiksnių sistemų šablonai**: Yra įvairių šablonų, skirtų daugiaveiksnių sistemų įgyvendinimui, tokių kaip centralizuotos, decentralizuotos ir hibridinės architektūros. Reikia nuspręsti, kuris šablonas geriausiai tinka jūsų atvejui.
-- **Žmogaus įsitraukimas**: Daugeliu atvejų sistemoje dalyvaus žmogus, ir reikia nurodyti agentams, kada prašyti žmogaus įsikišimo. Pavyzdžiui, vartotojas gali paprašyti konkretaus viešbučio ar skrydžio, kurio agentai nerekomendavo, arba prašyti patvirtinimo prieš užsakant skrydį ar viešbutį.
+- **Agentų komunikacija**: Agentai, atsakingi už skrydžių paiešką, viešbučių ir automobilių nuomą, turi bendrauti ir dalintis informacija apie vartotojo pageidavimus ir apribojimus. Turite nuspręsti, kokie bus šios komunikacijos protokolai ir metodai. Konkrečiai tai reiškia, kad skrydžių agentas turi bendrauti su viešbučių agentu, kad viešbutis būtų užsakytas tomis pačiomis datomis kaip ir skrydis. Tai reiškia, kad agentai turi dalintis informacija apie vartotojo kelionės datas, ir jums reikia nuspręsti, *kuriuos agentus ir kaip jie dalinsis informacija*.
+- **Koordinavimo mechanizmai**: Agentai turi koordinuoti savo veiksmus, kad atitiktų vartotojo pageidavimus ir apribojimus. Pavyzdžiui, vartotojas gali norėti viešbučio šalia oro uosto, o apribojimas gali būti toks, kad automobilių nuoma yra tik oro uoste. Tai reiškia, kad viešbučių agentas turi koordinuotis su automobilių nuomos agentu, kad vartotojo pageidavimai ir apribojimai būtų įgyvendinti. Jūs turite nuspręsti, *kaip agentai koordinuoja savo veiksmus*.
+- **Agentų architektūra**: Agentai turi turėti vidinę struktūrą, leidžiančią priimti sprendimus ir mokytis iš sąveikos su vartotoju. Tai reiškia, kad skrydžių agentas turi turėti vidinę struktūrą sprendimams, kokius skrydžius pasiūlyti vartotojui. Jūs turite nuspręsti, *kaip agentai priima sprendimus ir mokosi iš sąveikos su vartotoju*. Pavyzdžiui, skrydžių agentas gali naudoti mašininio mokymosi modelį, kad remdamasis praeities vartotojo pageidavimais rekomenduotų skrydžius.
+- **Matomumas apie daugiagentę sąveiką**: Turite turėti galimybę matyti, kaip keli agentai sąveikauja tarpusavyje. Tam reikia turėti įrankius ir technikas agentų veiklos ir sąveikų stebėjimui — pavyzdžiui, registravimo, stebėjimo įrankius, vizualizacijas ir našumo metrikas.
+- **Daugiagentės sistemos šablonai**: Yra įvairūs šablonai daugiagentėms sistemoms įgyvendinti, tokie kaip centralizuotos, decentralizuotos ir hibridinės architektūros. Turite pasirinkti, kuris šablonas geriausiai tinka jūsų atvejui.
+- **Žmogus grandinėje**: Dažnai bus žmogus, dalyvaujantis procese, ir reikia nustatyti, kada agentai turi prašyti žmogaus įsikišimo. Tai gali būti, pavyzdžiui, kai vartotojas prašo konkretaus viešbučio ar skrydžio, kurio agentai nesiūlė, arba kai reikia patvirtinimo prieš užsakant skrydį ar viešbutį.
 
-## Matomumas į daugiaveiksnių sistemų sąveiką
+## Matomumas apie daugiagentę sąveiką
 
-Svarbu turėti matomumą, kaip keli agentai sąveikauja tarpusavyje. Šis matomumas yra būtinas derinimui, optimizavimui ir bendram sistemos efektyvumui užtikrinti. Norint tai pasiekti, reikia turėti įrankius ir technikas agentų veikloms ir sąveikoms stebėti. Tai gali būti registravimo ir stebėjimo įrankiai, vizualizacijos įrankiai ir našumo metrikos.
+Svarbu turėti galimybę matyti, kaip keli agentai sąveikauja tarpusavyje. Šis matomumas yra būtinas trikčių šalinimui, optimizavimui ir bendro sistemos efektyvumo užtikrinimui. Norint tai pasiekti, reikia turėti įrankius ir technikas agentų veiklos ir sąveikos sekimui. Tai gali būti registravimo, stebėjimo įrankiai, vizualizacijos ir našumo metrikos.
 
-Pavyzdžiui, kelionės užsakymo vartotojui atveju galėtumėte turėti prietaisų skydelį, kuriame būtų rodomas kiekvieno agento statusas, vartotojo pageidavimai ir apribojimai bei agentų sąveikos. Šis prietaisų skydelis galėtų rodyti vartotojo kelionės datas, skrydžius, kuriuos rekomendavo skrydžių agentas, viešbučius, kuriuos rekomendavo viešbučių agentas, ir automobilius, kuriuos rekomendavo automobilių nuomos agentas. Tai suteiktų aiškų vaizdą, kaip agentai sąveikauja tarpusavyje ir ar vartotojo pageidavimai bei apribojimai yra įgyvendinami.
+Pavyzdžiui, vartotojo kelionės užsakymo atveju galėtumėte turėti informacinę skydelį, rodantį kiekvieno agente būseną, vartotojo pageidavimus ir apribojimus, bei agentų sąveiką. Šis skydelis galėtų rodyti vartotojo kelionės datas, skrydžių, kuriuos rekomenduoja skrydžių agentas, viešbučius, kuriuos siūlo viešbučių agentas, ir automobilių nuomą, kurią rekomenduoja automobilių nuomos agentas. Tai suteiktų aiškų vaizdą, kaip agentai sąveikauja ir ar vartotojo pageidavimai bei apribojimai yra tenkinami.
 
-Pažvelkime į kiekvieną iš šių aspektų išsamiau.
+Aptarkime kiekvieną iš šių aspektų detaliau.
 
-- **Registravimo ir stebėjimo įrankiai**: Norite registruoti kiekvieną agento atliktą veiksmą. Registracijos įrašas galėtų saugoti informaciją apie agentą, kuris atliko veiksmą, veiksmą, laiką, kada veiksmas buvo atliktas, ir veiksmo rezultatą. Ši informacija gali būti naudojama derinimui, optimizavimui ir kt.
-- **Vizualizacijos įrankiai**: Vizualizacijos įrankiai gali padėti matyti agentų sąveikas intuityvesniu būdu. Pavyzdžiui, galėtumėte turėti grafiką, kuris rodo informacijos srautą tarp agentų. Tai galėtų padėti identifikuoti kliūtis, neefektyvumą ir kitas sistemos problemas.
-- **Našumo metrikos**: Našumo metrikos gali padėti stebėti daugiaveiksnių sistemų efektyvumą. Pavyzdžiui, galėtumėte stebėti užduoties atlikimo laiką, užduočių skaičių per laiko vienetą ir agentų rekomendacijų tikslumą. Ši informacija gali padėti identifikuoti tobulinimo sritis ir optimizuoti sistemą.
+- **Registravimo ir stebėjimo įrankiai**: Norite užfiksuoti kiekvieną agento atliktą veiksmą. Registracijos įrašas gali saugoti informaciją apie agentą, kuris atliko veiksmą, veiksmą, jo atlikimo laiką ir rezultatą. Ši informacija gali būti naudojama trikčių šalinimui, optimizavimui ir pan.
+- **Vizualizacijos įrankiai**: Jie leidžia matyti agentų sąveiką intuityvesniu būdu. Pavyzdžiui, galėtumėte turėti grafą, rodantį informacijos srautą tarp agentų. Tai padeda identifikuoti perkrovos taškus, neefektyvumą ir kitas problemas.
+- **Našumo metrikos**: Padeda sekti daugiagentės sistemos efektyvumą. Pavyzdžiui, galite stebėti užduoties atlikimo laiką, vienetui laiko atliktų užduočių skaičių ir agentų rekomendacijų tikslumą. Ši informacija leidžia nustatyti tobulinimo sritis ir optimizuoti sistemą.
 
-## Daugiaveiksnių sistemų šablonai
+## Daugiagentės sistemos šablonai
 
-Pažvelkime į keletą konkrečių šablonų, kuriuos galime naudoti kuriant daugiaveiksnių programas. Štai keletas įdomių šablonų, kuriuos verta apsvarstyti:
+Pažvelkime į konkretų šablonų rinkinį, kuriuos galima naudoti kuriant daugiagentines programas. Štai keli įdomūs šablonai, kuriuos verta apsvarstyti:
 
 ### Grupinis pokalbis
 
-Šis šablonas naudingas, kai norite sukurti grupinio pokalbio programą, kurioje keli agentai gali komunikuoti tarpusavyje. Tipiniai šio šablono naudojimo atvejai apima komandinį bendradarbiavimą, klientų aptarnavimą ir socialinius tinklus.
+Šis šablonas naudingas, kai siekiate sukurti grupinio pokalbio programą, kur keli agentai gali bendrauti tarpusavyje. Tipinės panaudojimo sritys: komandinis bendradarbiavimas, klientų aptarnavimas, socialiniai tinklai.
 
-Šiame šablone kiekvienas agentas atstovauja vartotoją grupiniame pokalbyje, o žinutės keičiasi tarp agentų naudojant žinučių protokolą. Agentai gali siųsti žinutes į grupinį pokalbį, gauti žinutes iš grupinio pokalbio ir atsakyti į kitų agentų žinutes.
+Šiame šablone kiekvienas agentas atstovauja vartotoją grupiniame pokalbyje, o žinutės keičiasi tarp agentų naudojant susirašinėjimo protokolą. Agentai gali siųsti žinutes į grupę, gauti žinutes iš grupės ir atsakyti į kitų agentų žinutes.
 
-Šis šablonas gali būti įgyvendintas naudojant centralizuotą architektūrą, kur visos žinutės nukreipiamos per centrinį serverį, arba decentralizuotą architektūrą, kur žinutės keičiasi tiesiogiai.
+Šis šablonas gali būti įgyvendinamas naudojant centralizuotą architektūrą, kur visos žinutės keliauja per centrinį serverį, arba decentralizuotą, kur žinutės keičiasi tiesiogiai.
 
-![Grupinis pokalbis](../../../translated_images/multi-agent-group-chat.ec10f4cde556babd7b450fd01e1a0fac1f9788c27d3b9e54029377bb1bdd1db6.lt.png)
+![Grupinis pokalbis](../../../translated_images/lt/multi-agent-group-chat.ec10f4cde556babd.webp)
 
-### Perdavimas
+### Perdavimas (Hand-off)
 
-Šis šablonas naudingas, kai norite sukurti programą, kurioje keli agentai gali perduoti užduotis vienas kitam.
+Šis šablonas naudingas, kai norite sukurti programą, kurioje keli agentai gali perduoti vienas kitam užduotis.
 
-Tipiniai šio šablono naudojimo atvejai apima klientų aptarnavimą, užduočių valdymą ir darbo srautų automatizavimą.
+Tipinės panaudojimo sritys: klientų aptarnavimas, užduočių valdymas, darbo eigos automatizavimas.
 
-Šiame šablone kiekvienas agentas atstovauja užduotį arba žingsnį darbo sraute, o agentai gali perduoti užduotis kitiems agentams pagal iš anksto nustatytas taisykles.
+Šiame šablone kiekvienas agentas reprezentuoja užduotį arba žingsnį darbo eigoje, o agentai perduoda užduotis vienas kitam pagal iš anksto nustatytas taisykles.
 
-![Perdavimas](../../../translated_images/multi-agent-hand-off.4c5fb00ba6f8750a0754bf29d49fa19d578080c61da40416df84d866bcdd87a3.lt.png)
+![Perdavimas](../../../translated_images/lt/multi-agent-hand-off.4c5fb00ba6f8750a.webp)
 
-### Bendradarbiavimo filtravimas
+### Bendradarbiaujantis filtravimas
 
-Šis šablonas naudingas, kai norite sukurti programą, kurioje keli agentai gali bendradarbiauti, kad pateiktų rekomendacijas vartotojams.
+Šis šablonas naudingas, kai norite sukurti programą, kurioje keli agentai bendradarbiauja, kad pateiktų rekomendacijas vartotojams.
 
-Kodėl verta, kad keli agentai bendradarbiautų? Todėl, kad kiekvienas agentas gali turėti skirtingą ekspertizę ir prisidėti prie rekomendacijų proceso skirtingais būdais.
+Kodėl verta, kad agentai bendradarbiautų? Nes kiekvienas agentas gali turėti skirtingą ekspertizę ir skirtingai prisidėti prie rekomendacijų teikimo proceso.
 
-Pavyzdžiui, vartotojas nori rekomendacijos dėl geriausios akcijos, kurią galima įsigyti akcijų rinkoje.
+Paimkime pavyzdį, kai vartotojas nori rekomendacijos, kokias geriausias akcijas įsigyti.
 
-- **Pramonės ekspertas**: Vienas agentas galėtų būti pramonės ekspertas.
-- **Techninė analizė**: Kitas agentas galėtų būti techninės analizės ekspertas.
-- **Fundamentinė analizė**: Ir dar vienas agentas galėtų būti fundamentinės analizės ekspertas. Bendradarbiaudami šie agentai galėtų pateikti vartotojui išsamesnę rekomendaciją.
+- **Pramonės ekspertas**: Vienas agentas gali būti pramonės srities ekspertas.
+- **Techninė analizė**: Kitas agentas gali būti techninės analizės ekspertas.
+- **Fundamentali analizė**: Trečias agentas gali būti fundamentali analizės ekspertas. Bendradarbiaudami šie agentai gali pateikti vartotojui išsamesnę rekomendaciją.
 
-![Rekomendacija](../../../translated_images/multi-agent-filtering.d959cb129dc9f60826916f0f12fe7a8339b532f5f236860afb8f16b63ea10dc2.lt.png)
+![Rekomendacijos](../../../translated_images/lt/multi-agent-filtering.d959cb129dc9f608.webp)
 
-## Scenarijus: Grąžinimo procesas
+## Scenarijus: pinigų grąžinimo procesas
 
-Apsvarstykime scenarijų, kai klientas bando gauti grąžinimą už produktą. Šiame procese gali dalyvauti nemažai agentų, tačiau suskirstykime juos į agentus, specifinius šiam procesui, ir bendruosius agentus, kurie gali būti naudojami kituose procesuose.
+Aptarkime scenarijų, kai klientas bando gauti pinigų grąžinimą už produktą. Šiame procese gali būti daug agentų, bet suskirstykime juos į konkrečius šiam procesui skirtus agentus ir bendrus agentus, kurie gali būti naudojami ir kituose procesuose.
 
-**Agentai, specifiniai grąžinimo procesui**:
+**Agentai, skirti pinigų grąžinimo procesui**:
 
-Štai keletas agentų, kurie galėtų dalyvauti grąžinimo procese:
+Šie agentai gali dalyvauti pinigų grąžinimo procese:
 
-- **Kliento agentas**: Šis agentas atstovauja klientą ir yra atsakingas už grąžinimo proceso inicijavimą.
-- **Pardavėjo agentas**: Šis agentas atstovauja pardavėją ir yra atsakingas už grąžinimo apdorojimą.
-- **Mokėjimo agentas**: Šis agentas atstovauja mokėjimo procesą ir yra atsakingas už kliento mokėjimo grąžinimą.
-- **Sprendimo agentas**: Šis agentas atstovauja sprendimo procesą ir yra atsakingas už bet kokių problemų, kylančių grąžinimo proceso metu, sprendimą.
-- **Atitikties agentas**: Šis agentas atstovauja atitikties procesą ir yra atsakingas už tai, kad grąžinimo procesas atitiktų reglamentus ir politiką.
+- **Kliento agentas**: Atstovauja klientui ir atsakingas už pinigų grąžinimo proceso pradžią.
+- **Pardavėjo agentas**: Atstovauja pardavėjui ir atsakingas už grąžinimo apdorojimą.
+- **Mokėjimo agentas**: Atsakingas už vartotojo mokėjimo grąžinimą.
+- **Išsprendimo agentas**: Atsakingas už problemų sprendimą, kilusių per grąžinimo procesą.
+- **Atitikties agentas**: Užtikrina, kad grąžinimo procesas atitiktų taisykles ir politikas.
 
-**Bendrieji agentai**:
+**Bendri agentai**:
 
-Šie agentai gali būti naudojami kitose jūsų verslo dalyse.
+Šie agentai gali būti naudojami kitose jūsų verslo srityse.
 
-- **Siuntimo agentas**: Šis agentas atstovauja siuntimo procesą ir yra atsakingas už produkto siuntimą atgal pardavėjui. Šis agentas gali būti naudojamas tiek grąžinimo procese, tiek bendrame produkto siuntime, pavyzdžiui, pirkimo metu.
-- **Atsiliepimų agentas**: Šis agentas atstovauja atsiliepimų procesą ir yra atsakingas už klientų atsiliepimų rinkimą. Atsiliepimai gali būti renkami bet kuriuo metu, ne tik grąžinimo proceso metu.
-- **Eskalavimo agentas**: Šis agentas atstovauja eskalavimo procesą ir yra atsakingas už problemų eskalavimą į aukštesnį palaikymo lygį. Šio tipo agentą galima naudoti bet kuriame procese, kuriame reikia eskaluoti problemą.
-- **Pranešimų agentas**: Šis agentas atstovauja pranešimų procesą ir yra atsakingas už pranešimų siuntimą klientui įvairiais grąžinimo proceso etapais.
-- **Analizės agentas**: Šis agentas atstovauja analizės procesą ir yra atsakingas už duomenų, susijusių su grąžinimo procesu, analizę.
-- **Audito agentas**: Šis agentas atstovauja audito procesą ir
-## Sprendimas
+- **Siuntimo agentas**: Atsakingas už prekės siuntimą atgal pardavėjui. Gali būti naudojamas tiek grąžinimo procese, tiek bendram produktų siuntimui pavyzdžiui per pirkimą.
+- **Atsiliepimų agentas**: Rinkti atsiliepimus iš kliento. Atsiliepimus galima gauti bet kuriuo metu, ne tik grąžinimo proceso metu.
+- **Eskalavimo agentas**: Atsakingas už problemų eskalavimą aukštesnio lygio palaikymui. Galima naudoti bet kuriame procese, kur reikia eskaluoti problemą.
+- **Pranešimų agentas**: Atsakingas už klientų informavimą įvairiuose grąžinimo proceso etapuose.
+- **Analitikos agentas**: Analizuoja duomenis, susijusius su grąžinimo procesu.
+- **Auditavimo agentas**: Atlieka grąžinimo proceso auditą, kad įsitikintų, jog jis vykdomas teisingai.
+- **Ataskaitų agentas**: Rengia ataskaitas apie grąžinimo procesą.
+- **Žinių agentas**: Palaiko žinių bazę apie grąžinimo procesą ir kitas verslo sritis.
+- **Saugumo agentas**: Užtikrina grąžinimo proceso saugumą.
+- **Kokybės agentas**: Užtikrina grąžinimo proceso kokybę.
 
-Sukurkite daugiaveikį sistemą klientų aptarnavimo procesui. Nustatykite procese dalyvaujančius agentus, jų vaidmenis ir atsakomybes bei kaip jie sąveikauja tarpusavyje. Apsvarstykite tiek agentus, skirtus konkrečiai klientų aptarnavimo procesui, tiek bendruosius agentus, kurie gali būti naudojami kitose jūsų verslo srityse.
+Išvardinti agentai apima tiek specifinius grąžinimo proceso agentus, tiek bendruosius agentus, naudojamus kituose verslo segmentuose. Tikimės, jog tai suteikia jums supratimą, kaip spręsti klausimą, kokius agentus naudoti daugiagentėje sistemoje.
 
-> Pagalvokite prieš skaitydami pateiktą sprendimą, jums gali prireikti daugiau agentų, nei manote.
+## Užduotis
 
-> PATARIMAS: Pagalvokite apie skirtingus klientų aptarnavimo proceso etapus ir taip pat apsvarstykite agentus, reikalingus bet kuriai sistemai.
+Sukurkite daugiagentę sistemą klientų aptarnavimo procesui. Nustatykite procese dalyvaujančius agentus, jų roles ir atsakomybes bei kaip jie sąveikauja tarpusavyje. Apsvarstykite tiek klientų aptarnavimo procesui specifinius agentus, tiek bendruosius agentus, kurie gali būti naudojami kitose jūsų verslo srityse.
+> Pagalvokite prieš skaitydami toliau pateiktą sprendimą, gali prireikti daugiau agentų nei manote.
+
+> PATARIMAS: Apsvarstykite skirtingus klientų aptarnavimo proceso etapus ir taip pat pamąstykite apie agentus, reikalingus bet kuriai sistemai.
 
 ## Sprendimas
 
 [Sprendimas](./solution/solution.md)
 
-## Žinių patikrinimas
+## Žinių patikrinimai
 
-Klausimas: Kada reikėtų apsvarstyti daugiaveikių agentų naudojimą?
+Klausimas: Kada reikėtų svarstyti apie daugelio agentų naudojimą?
 
 - [ ] A1: Kai turite mažą darbo krūvį ir paprastą užduotį.
-- [ ] A2: Kai turite didelį darbo krūvį.
+- [ ] A2: Kai turite didelį darbo krūvį
 - [ ] A3: Kai turite paprastą užduotį.
 
 [Sprendimo testas](./solution/solution-quiz.md)
 
 ## Santrauka
 
-Šioje pamokoje aptarėme daugiaveikių agentų dizaino modelį, įskaitant scenarijus, kuriuose daugiaveikiai agentai yra tinkami, daugiaveikių agentų pranašumus prieš vieną agentą, pagrindinius daugiaveikių agentų dizaino modelio įgyvendinimo elementus ir kaip stebėti, kaip keli agentai sąveikauja tarpusavyje.
+Šiame pamokoje aptarėme daugelio agentų dizaino šabloną, įskaitant atvejus, kai tinkama naudoti kelis agentus, privalumus, palyginti su vienu agentu, daugelio agentų dizaino šablono įgyvendinimo pagrindinius elementus ir kaip stebėti, kaip keli agentai sąveikauja tarpusavyje.
 
-### Turite daugiau klausimų apie daugiaveikių agentų dizaino modelį?
+### Turite daugiau klausimų apie daugelio agentų dizaino šabloną?
 
-Prisijunkite prie [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord), kad susitiktumėte su kitais besimokančiaisiais, dalyvautumėte konsultacijų valandose ir gautumėte atsakymus į savo klausimus apie AI agentus.
+Prisijunkite prie [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord), kur galite susitikti su kitais besimokančiais, dalyvauti konsultacijose ir gauti atsakymus į savo klausimus apie dirbtinio intelekto agentus.
 
 ## Papildomi ištekliai
 
-- 
+- <a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Microsoft agentų sistemos dokumentacija</a>
+- <a href="https://www.analyticsvidhya.com/blog/2024/10/agentic-design-patterns/" target="_blank">Agentų dizaino šablonai</a>
+
 
 ## Ankstesnė pamoka
 
 [Planavimo dizainas](../07-planning-design/README.md)
 
-## Kita pamoka
+## Kitoji pamoka
 
-[Metakognicija AI agentuose](../09-metacognition/README.md)
+[Metakognicija dirbtinio intelekto agentuose](../09-metacognition/README.md)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, atkreipkite dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, atkreipkite dėmesį, kad automatizuoti vertimai gali turėti klaidų ar netikslumų. Autentišku ir tiksliausiu šaltiniu laikomas originalus dokumentas jo gimtąja kalba. Kritinės informacijos atveju rekomenduojamas profesionalus žmogaus vertimas. Mes neatsakome už bet kokius nesusipratimus ar neteisingą interpretavimą, kylančius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

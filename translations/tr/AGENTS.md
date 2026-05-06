@@ -1,52 +1,42 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5f54aa3f419865e5d58bcfddb1d3198",
-  "translation_date": "2025-10-03T15:41:49+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "tr"
-}
--->
 # AGENTS.md
 
 ## Proje Genel Bakış
 
-Bu depo, "Yeni Başlayanlar için AI Ajanları" adlı kapsamlı bir eğitim kursunu içerir. Kurs, AI ajanları oluşturmak için gereken her şeyi öğretir. 15'ten fazla ders, temel bilgiler, tasarım kalıpları, çerçeveler ve AI ajanlarının üretim ortamına dağıtımını kapsar.
+Bu depo "Başlangıç için Yapay Zeka Ajanları" içerir - Yapay Zeka Ajanları oluşturmak için gereken her şeyi öğreten kapsamlı bir eğitim kursu. Kurs, yapay zeka ajanlarının temelleri, tasarım kalıpları, çerçeveler ve üretim dağıtımı dahil olmak üzere 15+ ders içermektedir.
 
-**Anahtar Teknolojiler:**
+**Ana Teknolojiler:**
 - Python 3.12+
-- Etkileşimli öğrenme için Jupyter Notebooks
-- AI Çerçeveleri: Semantic Kernel, AutoGen, Microsoft Agent Framework (MAF)
-- Azure AI Hizmetleri: Azure AI Foundry, Azure AI Agent Service
-- GitHub Modeller Pazarı (ücretsiz katman mevcut)
+- Etkileşimli öğrenim için Jupyter Notebooks
+- Yapay Zeka Çerçeveleri: Microsoft Agent Framework (MAF)
+- Azure AI Hizmetleri: Microsoft Foundry, Azure AI Foundry Agent Service V2
 
 **Mimari:**
-- Ders tabanlı yapı (00-15+ dizinler)
-- Her ders şunları içerir: README dokümantasyonu, kod örnekleri (Jupyter not defterleri) ve görseller
-- Otomatik çeviri sistemi ile çoklu dil desteği
-- Her ders için birden fazla çerçeve seçeneği (Semantic Kernel, AutoGen, Azure AI Agent Service)
+- Ders tabanlı yapı (00-15+ dizinleri)
+- Her ders içerir: README dokümantasyonu, kod örnekleri (Jupyter notebook’ları) ve görseller
+- Otomatik çeviri sistemiyle çoklu dil desteği
+- Microsoft Agent Framework kullanan her ders için bir Python notebook’u
 
 ## Kurulum Komutları
 
-### Ön Koşullar
+### Önkoşullar
 - Python 3.12 veya üstü
-- GitHub hesabı (GitHub Modelleri için - ücretsiz katman)
-- Azure aboneliği (isteğe bağlı, Azure AI hizmetleri için)
+- Azure aboneliği (Azure AI Foundry için)
+- Azure CLI yüklü ve giriş yapılmış (`az login`)
 
 ### İlk Kurulum
 
 1. **Depoyu klonlayın veya çatallayın:**
    ```bash
    gh repo fork microsoft/ai-agents-for-beginners --clone
-   # OR
+   # VEYA
    git clone https://github.com/microsoft/ai-agents-for-beginners.git
    cd ai-agents-for-beginners
    ```
 
-2. **Python sanal ortamı oluşturun ve etkinleştirin:**
+2. **Python sanal ortamı oluşturun ve aktifleştirin:**
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  # Windows'ta: venv\Scripts\activate
    ```
 
 3. **Bağımlılıkları yükleyin:**
@@ -57,79 +47,61 @@ Bu depo, "Yeni Başlayanlar için AI Ajanları" adlı kapsamlı bir eğitim kurs
 4. **Ortam değişkenlerini ayarlayın:**
    ```bash
    cp .env.example .env
-   # Edit .env with your API keys and endpoints
+   # API anahtarlarınız ve uç noktalarınızla .env dosyasını düzenleyin
    ```
 
 ### Gerekli Ortam Değişkenleri
 
-**GitHub Modelleri (Ücretsiz)** için:
-- `GITHUB_TOKEN` - GitHub'dan alınan kişisel erişim tokeni
+**Azure AI Foundry** için (Zorunlu):
+- `AZURE_AI_PROJECT_ENDPOINT` - Azure AI Foundry proje uç noktası
+- `AZURE_AI_MODEL_DEPLOYMENT_NAME` - Model dağıtım adı (ör. gpt-4o)
 
-**Azure AI Hizmetleri** (isteğe bağlı) için:
-- `PROJECT_ENDPOINT` - Azure AI Foundry proje uç noktası
-- `AZURE_OPENAI_API_KEY` - Azure OpenAI API anahtarı
-- `AZURE_OPENAI_ENDPOINT` - Azure OpenAI uç nokta URL'si
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Sohbet modeli için dağıtım adı
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Gömülü modeller için dağıtım adı
-- `.env.example` dosyasında gösterilen ek Azure yapılandırması
+**Azure AI Search** için (Ders 05 - RAG):
+- `AZURE_SEARCH_SERVICE_ENDPOINT` - Azure AI Search uç noktası
+- `AZURE_SEARCH_API_KEY` - Azure AI Search API anahtarı
+
+Kimlik Doğrulama: Notebook’ları çalıştırmadan önce `az login` komutunu çalıştırın (`AzureCliCredential` kullanır).
 
 ## Geliştirme İş Akışı
 
-### Jupyter Not Defterlerini Çalıştırma
+### Jupyter Notebook’ları Çalıştırma
 
-Her ders, farklı çerçeveler için birden fazla Jupyter not defteri içerir:
+Her ders farklı çerçeveler için birden fazla Jupyter notebook içerir:
 
-1. **Jupyter'i başlatın:**
+1. **Jupyter’i başlatın:**
    ```bash
    jupyter notebook
    ```
 
-2. **Bir ders dizinine gidin** (örneğin, `01-intro-to-ai-agents/code_samples/`)
+2. **Bir ders dizinine gidin** (ör. `01-intro-to-ai-agents/code_samples/`)
 
-3. **Not defterlerini açın ve çalıştırın:**
-   - `*-semantic-kernel.ipynb` - Semantic Kernel çerçevesini kullanarak
-   - `*-autogen.ipynb` - AutoGen çerçevesini kullanarak
-   - `*-python-agent-framework.ipynb` - Microsoft Agent Framework (Python) kullanarak
-   - `*-dotnet-agent-framework.ipynb` - Microsoft Agent Framework (.NET) kullanarak
-   - `*-azureaiagent.ipynb` - Azure AI Agent Service kullanarak
+3. **Notebook’ları açın ve çalıştırın:**
+   - `*-python-agent-framework.ipynb` - Microsoft Agent Framework kullanarak (Python)
+   - `*-dotnet-agent-framework.ipynb` - Microsoft Agent Framework kullanarak (.NET)
 
-### Farklı Çerçevelerle Çalışma
+### Microsoft Agent Framework ile Çalışma
 
-**Semantic Kernel + GitHub Modelleri:**
-- GitHub hesabı ile ücretsiz katman mevcut
-- Öğrenme ve deney için uygun
-- Dosya deseni: `*-semantic-kernel*.ipynb`
-
-**AutoGen + GitHub Modelleri:**
-- GitHub hesabı ile ücretsiz katman mevcut
-- Çoklu ajan düzenleme yetenekleri
-- Dosya deseni: `*-autogen.ipynb`
-
-**Microsoft Agent Framework (MAF):**
-- Microsoft'un en yeni çerçevesi
-- Python ve .NET'te mevcut
-- Dosya deseni: `*-agent-framework.ipynb`
-
-**Azure AI Agent Service:**
+**Microsoft Agent Framework + Azure AI Foundry:**
 - Azure aboneliği gerektirir
-- Üretime hazır özellikler
-- Dosya deseni: `*-azureaiagent.ipynb`
+- Agent Service V2 için `AzureAIProjectAgentProvider` kullanır (ajanlar Foundry portalında görünür)
+- Yerleşik gözlemlenebilirlik ile üretime hazır
+- Dosya paterni: `*-python-agent-framework.ipynb`
 
 ## Test Talimatları
 
-Bu, otomatik testlere sahip üretim kodu yerine örnek kod içeren bir eğitim deposudur. Kurulumunuzu ve değişikliklerinizi doğrulamak için:
+Bu depo üretim kodu yerine eğitim amaçlı örnek kodlar içerir ve otomatik testler yoktur. Kurulumunuzu ve değişikliklerinizi doğrulamak için:
 
 ### Manuel Test
 
 1. **Python ortamını test edin:**
    ```bash
-   python --version  # Should be 3.12+
-   pip list | grep -E "(autogen|semantic-kernel|azure-ai)"
+   python --version  # 3.12+ olmalıdır
+   pip list | grep -E "(agent-framework|azure-ai|azure-identity)"
    ```
 
-2. **Not defteri çalıştırmayı test edin:**
+2. **Notebook çalıştırmayı test edin:**
    ```bash
-   # Convert notebook to script and run (tests imports)
+   # Defteri betiğe dönüştür ve çalıştır (testlerin içe aktarımlarını kontrol eder)
    jupyter nbconvert --to script <lesson-folder>/code_samples/<notebook>.ipynb --stdout | python
    ```
 
@@ -138,29 +110,29 @@ Bu, otomatik testlere sahip üretim kodu yerine örnek kod içeren bir eğitim d
    python -c "import os; from dotenv import load_dotenv; load_dotenv(); print('✓ GITHUB_TOKEN' if os.getenv('GITHUB_TOKEN') else '✗ GITHUB_TOKEN missing')"
    ```
 
-### Bireysel Not Defterlerini Çalıştırma
+### Tekil Notebook’ları Çalıştırma
 
-Not defterlerini Jupyter'de açın ve hücreleri sırayla çalıştırın. Her not defteri bağımsızdır ve şunları içerir:
+Notebook’ları Jupyter'de açın ve hücreleri sırasıyla çalıştırın. Her notebook bağımsızdır ve şunları içerir:
 - İçe aktarma ifadeleri
-- Yapılandırma yükleme
+- Konfigürasyon yüklemesi
 - Örnek ajan uygulamaları
-- Beklenen çıktılar markdown hücrelerinde
+- Markdown hücrelerinde beklenen çıktılar
 
 ## Kod Stili
 
 ### Python Konvansiyonları
 
 - **Python Versiyonu**: 3.12+
-- **Kod Stili**: Standart Python PEP 8 konvansiyonlarını takip edin
-- **Not Defterleri**: Kavramları açıklamak için net markdown hücreleri kullanın
-- **İçe Aktarmalar**: Standart kütüphane, üçüncü taraf, yerel içe aktarmalar olarak gruplandırın
+- **Kod Stili**: Standart Python PEP 8 kurallarına uyun
+- **Notebook’lar**: Konseptleri açıklayan net markdown hücreleri kullanın
+- **İçe Aktarımlar**: Standart kütüphane, üçüncü taraf, yerel importlar olarak gruplayın
 
-### Jupyter Not Defteri Konvansiyonları
+### Jupyter Notebook Konvansiyonları
 
 - Kod hücrelerinden önce açıklayıcı markdown hücreleri ekleyin
-- Referans için not defterlerinde çıktı örnekleri ekleyin
-- Ders kavramlarına uygun net değişken adları kullanın
-- Not defteri yürütme sırasını doğrusal tutun (hücre 1 → 2 → 3...)
+- Referans için çıktı örnekleri notebook’larda bulundurun
+- Ders kavramlarına uygun net değişken isimleri kullanın
+- Notebook yürütme sırasını lineer tutun (hücre 1 → 2 → 3...)
 
 ### Dosya Organizasyonu
 
@@ -168,10 +140,8 @@ Not defterlerini Jupyter'de açın ve hücreleri sırayla çalıştırın. Her n
 <lesson-number>-<lesson-name>/
 ├── README.md                     # Lesson documentation
 ├── code_samples/
-│   ├── <number>-semantic-kernel.ipynb
-│   ├── <number>-autogen.ipynb
 │   ├── <number>-python-agent-framework.ipynb
-│   └── <number>-azureaiagent.ipynb
+│   └── <number>-dotnet-agent-framework.ipynb  (optional)
 └── images/
     └── *.png
 ```
@@ -180,146 +150,142 @@ Not defterlerini Jupyter'de açın ve hücreleri sırayla çalıştırın. Her n
 
 ### Dokümantasyon Derleme
 
-Bu depo, dokümantasyon için Markdown kullanır:
+Bu depo dokümantasyon için Markdown kullanır:
 - Her ders klasöründe README.md dosyaları
 - Depo kökünde ana README.md
-- GitHub Actions aracılığıyla otomatik çeviri sistemi
+- GitHub Actions ile otomatik çeviri sistemi
 
-### CI/CD Pipeline
+### CI/CD Hattı
 
-`.github/workflows/` içinde yer alır:
+`.github/workflows/` dizininde:
 
 1. **co-op-translator.yml** - 50+ dile otomatik çeviri
-2. **welcome-issue.yml** - Yeni sorun oluşturucuları karşılar
-3. **welcome-pr.yml** - Yeni çekme isteği katkıcılarını karşılar
+2. **welcome-issue.yml** - Yeni issue oluşturanları karşılama
+3. **welcome-pr.yml** - Yeni pull request katkıda bulunanları karşılama
 
 ### Dağıtım
 
-Bu bir eğitim deposudur - dağıtım süreci yoktur. Kullanıcılar:
-1. Depoyu çatallayın veya klonlayın
-2. Not defterlerini yerel olarak veya GitHub Codespaces'te çalıştırın
-3. Örnekleri değiştirerek ve deneyerek öğrenin
+Bu eğitim amaçlı bir depodur - dağıtım süreci yoktur. Kullanıcılar:
+1. Depoyu çatallayabilir veya klonlayabilir
+2. Notebook’ları yerel veya GitHub Codespaces’de çalıştırabilir
+3. Örnekleri değiştirerek ve deneyerek öğrenir
 
-## Çekme İsteği Yönergeleri
+## Pull Request Kılavuzu
 
-### Göndermeden Önce
+### Gönderim Öncesi
 
 1. **Değişikliklerinizi test edin:**
-   - Etkilenen not defterlerini tamamen çalıştırın
-   - Tüm hücrelerin hatasız çalıştığını doğrulayın
-   - Çıktıların uygun olduğunu kontrol edin
+   - İlgili notebook’ları tamamen çalıştırın
+   - Tüm hücrelerin hata vermeden tamamlandığını doğrulayın
+   - Çıktıların uygun olduğundan emin olun
 
 2. **Dokümantasyon güncellemeleri:**
-   - Yeni kavramlar ekliyorsanız README.md'yi güncelleyin
-   - Karmaşık kod için not defterlerine yorum ekleyin
+   - Yeni kavram ekliyorsanız README.md’yi güncelleyin
+   - Notebook’larda karmaşık kodlar için yorumlar ekleyin
    - Markdown hücrelerinin amacı açıklamasını sağlayın
 
 3. **Dosya değişiklikleri:**
-   - `.env` dosyalarını taahhüt etmeyin (`.env.example` kullanın)
-   - `venv/` veya `__pycache__/` dizinlerini taahhüt etmeyin
-   - Kavramları gösterdiğinde not defteri çıktısını koruyun
-   - Geçici dosyaları ve yedek not defterlerini (`*-backup.ipynb`) kaldırın
+   - `.env` dosyası göndermekten kaçının (`.env.example` kullanın)
+   - `venv/` veya `__pycache__/` dizinlerini göndermeyin
+   - Kavramları gösteren notebook çıktılarını koruyun
+   - Geçici dosyalar ve yedek notebook’ları (`*-backup.ipynb`) kaldırın
 
 ### PR Başlık Formatı
 
 Açıklayıcı başlıklar kullanın:
-- `[Lesson-XX] <kavram> için yeni örnek ekle`
-- `[Fix] lesson-XX README'de yazım hatasını düzelt`
-- `[Update] lesson-XX'deki kod örneğini iyileştir`
-- `[Docs] Kurulum talimatlarını güncelle`
+- `[Lesson-XX] <konsept> için yeni örnek eklendi`
+- `[Fix] lesson-XX README’de yazım hatası düzeltildi`
+- `[Update] lesson-XX kod örneği iyileştirildi`
+- `[Docs] kurulum talimatları güncellendi`
 
 ### Gerekli Kontroller
 
-- Not defterleri hatasız çalışmalı
-- README dosyaları net ve doğru olmalı
-- Depodaki mevcut kod kalıplarını takip edin
-- Diğer derslerle tutarlılığı koruyun
+- Notebook’lar hata vermeden çalışmalı
+- README dosyaları açık ve doğru olmalı
+- Depodaki mevcut kod kalıplarına uyulmalı
+- Diğer derslerle tutarlılık korunmalı
 
 ## Ek Notlar
 
 ### Yaygın Sorunlar
 
 1. **Python sürüm uyumsuzluğu:**
-   - Python 3.12+ kullandığınızdan emin olun
+   - Python 3.12+ kullanıldığından emin olun
    - Bazı paketler eski sürümlerle çalışmayabilir
    - Python sürümünü açıkça belirtmek için `python3 -m venv` kullanın
 
 2. **Ortam değişkenleri:**
    - Her zaman `.env.example` dosyasından `.env` oluşturun
-   - `.env` dosyasını taahhüt etmeyin (`.gitignore` içinde)
-   - GitHub tokeni uygun izinlere ihtiyaç duyar
+   - `.env` dosyasını göndermeyin (`.gitignore`dadır)
+   - GitHub jetonunuzun gerekli izinlere sahip olduğundan emin olun
 
-3. **Paket çatışmaları:**
-   - Yeni bir sanal ortam kullanın
-   - Bireysel paketler yerine `requirements.txt` dosyasından yükleme yapın
-   - Bazı not defterleri markdown hücrelerinde belirtilen ek paketlere ihtiyaç duyabilir
+3. **Paket çakışmaları:**
+   - Temiz bir sanal ortam kullanın
+   - Paketleri tek tek değil, `requirements.txt` üzerinden kurun
+   - Bazı notebook’lar markdown hücrelerinde ek paket gereksinimleri belirtebilir
 
 4. **Azure hizmetleri:**
-   - Azure AI hizmetleri aktif abonelik gerektirir
-   - Bazı özellikler bölgeye özeldir
-   - GitHub Modelleri için ücretsiz katman sınırlamaları geçerlidir
+   - Azure AI servisleri aktif abonelik gerektirir
+   - Bazı özellikler bölgesel sınırlamalar içerebilir
+   - GitHub Modeller için ücretsiz katman kısıtlamaları geçerlidir
 
 ### Öğrenme Yolu
 
-Dersler arasında önerilen ilerleme:
+Derslere önerilen sıra:
 1. **00-course-setup** - Ortam kurulumuna buradan başlayın
-2. **01-intro-to-ai-agents** - AI ajanlarının temelini anlayın
-3. **02-explore-agentic-frameworks** - Farklı çerçeveleri öğrenin
+2. **01-intro-to-ai-agents** - AI ajanlarının temellerini öğrenin
+3. **02-explore-agentic-frameworks** - Farklı çerçeveleri keşfedin
 4. **03-agentic-design-patterns** - Temel tasarım kalıpları
-5. Numaralandırılmış derslere sırayla devam edin
+5. Numaralandırılmış sonraki derslere sırayla devam edin
 
 ### Çerçeve Seçimi
 
 Hedeflerinize göre çerçeve seçin:
-- **Öğrenme/Prototipleme**: Semantic Kernel + GitHub Modelleri (ücretsiz)
-- **Çoklu ajan sistemleri**: AutoGen
-- **En yeni özellikler**: Microsoft Agent Framework (MAF)
-- **Üretim dağıtımı**: Azure AI Agent Service
+- **Tüm dersler**: Microsoft Agent Framework (MAF) ve `AzureAIProjectAgentProvider`
+- Ajanlar Azure AI Foundry Agent Service V2’de sunucu tarafında kayıt olur ve Foundry portalında görünür
 
 ### Yardım Alma
 
-- [Azure AI Foundry Community Discord](https://aka.ms/ai-agents/discord) topluluğuna katılın
-- Belirli rehberlik için ders README dosyalarını inceleyin
-- Kurs genel bakışı için ana [README.md](./README.md) dosyasını kontrol edin
-- Ayrıntılı kurulum talimatları için [Course Setup](./00-course-setup/README.md) dosyasına bakın
+- [Microsoft Foundry Community Discord](https://aka.ms/ai-agents/discord)’a katılın
+- Ders README dosyalarında spesifik rehberlik bulabilirsiniz
+- Kurs genel bakışı için [ana README.md](./README.md)’yi inceleyin
+- Detaylı kurulum talimatları için [Course Setup](./00-course-setup/README.md)’a bakın
 
 ### Katkıda Bulunma
 
-Bu açık bir eğitim projesidir. Katkılar memnuniyetle karşılanır:
-- Kod örneklerini iyileştirin
+Bu açık eğitim projesidir. Katkılar kabul edilir:
+- Kod örneklerini geliştirin
 - Yazım hatalarını veya hataları düzeltin
 - Açıklayıcı yorumlar ekleyin
 - Yeni ders konuları önerin
-- Ek dillerde çeviri yapın
+- Ek dillere çeviri yapın
 
-Mevcut ihtiyaçlar için [GitHub Issues](https://github.com/microsoft/ai-agents-for-beginners/issues) bölümüne bakın.
+Mevcut ihtiyaçlar için [GitHub Issues](https://github.com/microsoft/ai-agents-for-beginners/issues)’a bakın.
 
-## Proje-Specifik Bağlam
+## Proje Özel Bağlamı
 
 ### Çoklu Dil Desteği
 
-Bu depo, otomatik bir çeviri sistemi kullanır:
+Bu depo otomatik çeviri sistemi kullanır:
 - 50+ dil desteklenir
-- Çeviriler `/translations/<lang-code>/` dizinlerinde yer alır
+- Çeviriler `/translations/<lang-code>/` dizinlerindedir
 - GitHub Actions iş akışı çeviri güncellemelerini yönetir
-- Kaynak dosyalar depo kökünde İngilizce olarak bulunur
+- Kaynak dosyalar İngilizce olarak depo kökündedir
 
 ### Ders Yapısı
 
-Her ders tutarlı bir deseni takip eder:
-1. Video küçük resmi ve bağlantısı
+Her ders tutarlı bir düzen izler:
+1. Linkli video küçük resmi
 2. Yazılı ders içeriği (README.md)
-3. Birden fazla çerçevede kod örnekleri
+3. Çoklu çerçevelerde kod örnekleri
 4. Öğrenme hedefleri ve ön koşullar
-5. Ek öğrenme kaynaklarına bağlantılar
+5. Ek öğrenme kaynakları bağlantılı
 
-### Kod Örnek Adlandırma
+### Kod Örneği İsimlendirmesi
 
-Format: `<ders-numarası>-<çerçeve-adı>.ipynb`
-- `04-semantic-kernel.ipynb` - Ders 4, Semantic Kernel
-- `07-autogen.ipynb` - Ders 7, AutoGen
-- `14-python-agent-framework.ipynb` - Ders 14, MAF Python
-- `14-dotnet-agent-framework.ipynb` - Ders 14, MAF .NET
+Format: `<ders-numarası>-python-agent-framework.ipynb`
+- `01-python-agent-framework.ipynb` - 1. Ders, MAF Python
+- `14-sequential.ipynb` - 14. Ders, MAF gelişmiş kalıplar
 
 ### Özel Dizinler
 
@@ -330,19 +296,17 @@ Format: `<ders-numarası>-<çerçeve-adı>.ipynb`
 
 ### Bağımlılıklar
 
-`requirements.txt` dosyasından önemli paketler:
-- `autogen-agentchat`, `autogen-core`, `autogen-ext` - AutoGen çerçevesi
-- `semantic-kernel` - Semantic Kernel çerçevesi
+`requirements.txt`’den önemli paketler:
 - `agent-framework` - Microsoft Agent Framework
+- `a2a-sdk` - Agent-to-Agent protokol desteği
 - `azure-ai-inference`, `azure-ai-projects` - Azure AI hizmetleri
-- `azure-search-documents` - Azure AI Arama entegrasyonu
-- `chromadb` - RAG örnekleri için vektör veritabanı
-- `chainlit` - Sohbet UI çerçevesi
-- `browser_use` - Ajanlar için tarayıcı otomasyonu
+- `azure-identity` - Azure kimlik doğrulama (AzureCliCredential)
+- `azure-search-documents` - Azure AI Search entegrasyonu
 - `mcp[cli]` - Model Context Protocol desteği
-- `mem0ai` - Ajanlar için hafıza yönetimi
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi özgün dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalardan dolayı tarafımız sorumlu tutulamaz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

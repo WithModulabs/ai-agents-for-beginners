@@ -1,53 +1,44 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "498802b4c3c3cc486b86f27a12cebb34",
-  "translation_date": "2025-08-29T18:04:09+00:00",
-  "source_file": "06-building-trustworthy-agents/README.md",
-  "language_code": "id"
-}
--->
-[![Trustworthy AI Agents](../../../translated_images/lesson-6-thumbnail.a58ab36c099038d4f786c2b0d5d6e89f41f4c2ecc05ab10b67bced2695eeb218.id.png)](https://youtu.be/iZKkMEGBCUQ?si=Q-kEbcyHUMPoHp8L)
+[![Agent AI Terpercaya](../../../translated_images/id/lesson-6-thumbnail.a58ab36c099038d4.webp)](https://youtu.be/iZKkMEGBCUQ?si=Q-kEbcyHUMPoHp8L)
 
-> _(Klik gambar di atas untuk menonton video pelajaran ini)_
+> _(Klik gambar di atas untuk melihat video pelajaran ini)_
 
-# Membangun Agen AI yang Dapat Dipercaya
+# Membangun Agent AI Terpercaya
 
 ## Pendahuluan
 
 Pelajaran ini akan membahas:
 
-- Cara membangun dan menerapkan Agen AI yang aman dan efektif.
-- Pertimbangan keamanan penting saat mengembangkan Agen AI.
-- Cara menjaga privasi data dan pengguna saat mengembangkan Agen AI.
+- Cara membangun dan menerapkan Agent AI yang aman dan efektif
+- Pertimbangan keamanan penting saat mengembangkan Agent AI.
+- Cara menjaga data dan privasi pengguna saat mengembangkan Agent AI.
 
 ## Tujuan Pembelajaran
 
-Setelah menyelesaikan pelajaran ini, Anda akan mengetahui cara:
+Setelah menyelesaikan pelajaran ini, Anda akan mengetahui cara untuk:
 
-- Mengidentifikasi dan mengurangi risiko saat membuat Agen AI.
-- Menerapkan langkah-langkah keamanan untuk memastikan data dan akses dikelola dengan baik.
-- Membuat Agen AI yang menjaga privasi data dan memberikan pengalaman pengguna yang berkualitas.
+- Mengidentifikasi dan mengurangi risiko saat membuat Agent AI.
+- Menerapkan langkah-langkah keamanan untuk memastikan bahwa data dan akses dikelola dengan tepat.
+- Membuat Agent AI yang menjaga privasi data dan memberikan pengalaman pengguna berkualitas.
 
 ## Keamanan
 
-Mari kita mulai dengan membahas cara membangun aplikasi agen yang aman. Keamanan berarti bahwa Agen AI berfungsi sesuai dengan desainnya. Sebagai pembuat aplikasi agen, kita memiliki metode dan alat untuk memaksimalkan keamanan:
+Mari kita lihat terlebih dahulu bagaimana membangun aplikasi agentik yang aman. Keamanan berarti bahwa agent AI berfungsi sesuai desain. Sebagai pembangun aplikasi agentik, kita memiliki metode dan alat untuk memaksimalkan keamanan:
 
 ### Membangun Kerangka Pesan Sistem
 
-Jika Anda pernah membangun aplikasi AI menggunakan Large Language Models (LLMs), Anda pasti tahu pentingnya merancang prompt sistem atau pesan sistem yang kuat. Prompt ini menetapkan aturan meta, instruksi, dan pedoman tentang bagaimana LLM akan berinteraksi dengan pengguna dan data.
+Jika Anda pernah membangun aplikasi AI menggunakan Large Language Models (LLM), Anda tahu pentingnya merancang prompt sistem atau pesan sistem yang kuat. Prompt ini menetapkan aturan meta, instruksi, dan panduan tentang bagaimana LLM akan berinteraksi dengan pengguna dan data.
 
-Untuk Agen AI, prompt sistem menjadi lebih penting karena Agen AI memerlukan instruksi yang sangat spesifik untuk menyelesaikan tugas yang telah kita rancang untuk mereka.
+Untuk Agent AI, prompt sistem bahkan lebih penting karena Agent AI memerlukan instruksi yang sangat spesifik untuk menyelesaikan tugas yang telah kita desain untuk mereka.
 
-Untuk membuat prompt sistem yang dapat diskalakan, kita dapat menggunakan kerangka pesan sistem untuk membangun satu atau lebih agen dalam aplikasi kita:
+Untuk membuat prompt sistem yang dapat diskalakan, kita dapat menggunakan kerangka pesan sistem untuk membangun satu atau lebih agent dalam aplikasi kita:
 
-![Building a System Message Framework](../../../translated_images/system-message-framework.3a97368c92d11d6814577b03cd128ec8c71a5fd1e26f341835cfa5df59ae87ae.id.png)
+![Membangun Kerangka Pesan Sistem](../../../translated_images/id/system-message-framework.3a97368c92d11d68.webp)
 
-#### Langkah 1: Buat Meta Pesan Sistem
+#### Langkah 1: Buat Pesan Sistem Meta
 
-Meta prompt akan digunakan oleh LLM untuk menghasilkan prompt sistem bagi agen yang kita buat. Kita merancangnya sebagai template sehingga kita dapat dengan efisien membuat beberapa agen jika diperlukan.
+Prompt meta akan digunakan oleh LLM untuk menghasilkan prompt sistem bagi agent yang kita buat. Kita merancangnya sebagai template sehingga kita dapat dengan efisien membuat beberapa agent jika diperlukan.
 
-Berikut adalah contoh meta pesan sistem yang akan kita berikan kepada LLM:
+Berikut adalah contoh pesan sistem meta yang akan kita berikan ke LLM:
 
 ```plaintext
 You are an expert at creating AI agent assistants. 
@@ -56,11 +47,11 @@ information that you will use to provide a system prompt for.
 To create the system prompt, be descriptive as possible and provide a structure that a system using an LLM can better understand the role and responsibilities of the AI assistant. 
 ```
 
-#### Langkah 2: Buat Prompt Dasar
+#### Langkah 2: Buat prompt dasar
 
-Langkah berikutnya adalah membuat prompt dasar untuk mendeskripsikan Agen AI. Anda harus menyertakan peran agen, tugas yang akan diselesaikan agen, dan tanggung jawab lainnya.
+Langkah berikutnya adalah membuat prompt dasar untuk menjelaskan Agent AI. Anda harus menyertakan peran agent, tugas yang akan dilakukan agent, dan tanggung jawab lainnya dari agent tersebut.
 
-Berikut adalah contohnya:
+Berikut adalah contoh:
 
 ```plaintext
 You are a travel agent for Contoso Travel that is great at booking flights for customers. To help customers you can perform the following tasks: lookup available flights, book flights, ask for preferences in seating and times for flights, cancel any previously booked flights and alert customers on any delays or cancellations of flights.  
@@ -68,9 +59,9 @@ You are a travel agent for Contoso Travel that is great at booking flights for c
 
 #### Langkah 3: Berikan Pesan Sistem Dasar ke LLM
 
-Sekarang kita dapat mengoptimalkan pesan sistem ini dengan memberikan meta pesan sistem sebagai pesan sistem dan pesan sistem dasar kita.
+Sekarang kita dapat mengoptimalkan pesan sistem ini dengan menyediakan pesan sistem meta sebagai pesan sistem dan pesan sistem dasar kita.
 
-Ini akan menghasilkan pesan sistem yang lebih baik untuk memandu Agen AI kita:
+Ini akan menghasilkan pesan sistem yang lebih baik dirancang untuk membimbing Agent AI kita:
 
 ```markdown
 **Company Name:** Contoso Travel  
@@ -124,83 +115,88 @@ This AI assistant is designed to streamline the flight booking process for custo
 
 #### Langkah 4: Iterasi dan Perbaikan
 
-Nilai dari kerangka pesan sistem ini adalah kemampuannya untuk mempermudah pembuatan pesan sistem untuk beberapa agen serta meningkatkan pesan sistem Anda seiring waktu. Jarang sekali Anda akan memiliki pesan sistem yang langsung berfungsi untuk semua kasus penggunaan Anda. Dengan melakukan penyesuaian kecil dan perbaikan pada pesan sistem dasar dan menjalankannya melalui sistem, Anda dapat membandingkan dan mengevaluasi hasilnya.
+Nilai dari kerangka pesan sistem ini adalah kemampuannya untuk memperluas pembuatan pesan sistem dari banyak agent dengan lebih mudah serta meningkatkan pesan sistem Anda dari waktu ke waktu. Jarang Anda memiliki pesan sistem yang berhasil pada percobaan pertama untuk kasus penggunaan lengkap Anda. Mampu melakukan penyempurnaan kecil dan perbaikan dengan mengubah pesan sistem dasar dan menjalankannya melalui sistem akan memungkinkan Anda membandingkan dan mengevaluasi hasil.
 
 ## Memahami Ancaman
 
-Untuk membangun Agen AI yang dapat dipercaya, penting untuk memahami dan mengurangi risiko serta ancaman terhadap Agen AI Anda. Mari kita lihat beberapa ancaman terhadap Agen AI dan cara Anda dapat merencanakan serta mempersiapkannya dengan lebih baik.
+Untuk membangun agent AI yang dapat dipercaya, penting untuk memahami dan mengurangi risiko dan ancaman terhadap agent AI Anda. Mari kita lihat beberapa ancaman berbeda terhadap agent AI dan bagaimana Anda dapat merencanakan dan mempersiapkannya dengan lebih baik.
 
-![Understanding Threats](../../../translated_images/understanding-threats.89edeada8a97fc0f7053558567d5dd27c0c333b74e47fffdde490fa6777a4c17.id.png)
+![Memahami Ancaman](../../../translated_images/id/understanding-threats.89edeada8a97fc0f.webp)
 
 ### Tugas dan Instruksi
 
-**Deskripsi:** Penyerang mencoba mengubah instruksi atau tujuan Agen AI melalui prompt atau manipulasi input.
+**Deskripsi:** Penyerang mencoba mengubah instruksi atau tujuan agent AI melalui pemicu perintah atau manipulasi input.
 
-**Mitigasi:** Lakukan pemeriksaan validasi dan filter input untuk mendeteksi prompt yang berpotensi berbahaya sebelum diproses oleh Agen AI. Karena serangan ini biasanya memerlukan interaksi yang sering dengan Agen, membatasi jumlah giliran dalam percakapan adalah cara lain untuk mencegah jenis serangan ini.
+**Mitigasi**: Lakukan pemeriksaan validasi dan filter input untuk mendeteksi prompt berbahaya sebelum diproses oleh Agent AI. Karena serangan ini biasanya memerlukan interaksi berulang dengan Agent, membatasi jumlah giliran dalam percakapan adalah cara lain untuk mencegah jenis serangan ini.
 
 ### Akses ke Sistem Kritis
 
-**Deskripsi:** Jika Agen AI memiliki akses ke sistem dan layanan yang menyimpan data sensitif, penyerang dapat mengkompromikan komunikasi antara agen dan layanan ini. Ini bisa berupa serangan langsung atau upaya tidak langsung untuk mendapatkan informasi tentang sistem ini melalui agen.
+**Deskripsi**: Jika agent AI memiliki akses ke sistem dan layanan yang menyimpan data sensitif, penyerang dapat mengompromikan komunikasi antara agent dan layanan tersebut. Ini bisa berupa serangan langsung atau upaya tidak langsung untuk mendapatkan informasi tentang sistem melalui agent.
 
-**Mitigasi:** Agen AI sebaiknya hanya memiliki akses ke sistem berdasarkan kebutuhan untuk mencegah jenis serangan ini. Komunikasi antara agen dan sistem juga harus aman. Menerapkan autentikasi dan kontrol akses adalah cara lain untuk melindungi informasi ini.
+**Mitigasi**: Agent AI harus memiliki akses ke sistem hanya berdasarkan kebutuhan untuk mencegah jenis serangan ini. Komunikasi antara agent dan sistem juga harus aman. Menerapkan otentikasi dan kontrol akses adalah cara lain untuk melindungi informasi ini.
 
-### Overloading Sumber Daya dan Layanan
+### Beban Berlebih pada Sumber Daya dan Layanan
 
-**Deskripsi:** Agen AI dapat mengakses berbagai alat dan layanan untuk menyelesaikan tugas. Penyerang dapat memanfaatkan kemampuan ini untuk menyerang layanan tersebut dengan mengirimkan volume permintaan yang tinggi melalui Agen AI, yang dapat menyebabkan kegagalan sistem atau biaya tinggi.
+**Deskripsi:** Agent AI dapat mengakses berbagai alat dan layanan untuk menyelesaikan tugas. Penyerang dapat menggunakan kemampuan ini untuk menyerang layanan dengan mengirimkan volume permintaan tinggi melalui Agent AI, yang dapat menyebabkan kegagalan sistem atau biaya tinggi.
 
-**Mitigasi:** Terapkan kebijakan untuk membatasi jumlah permintaan yang dapat dilakukan Agen AI ke suatu layanan. Membatasi jumlah giliran percakapan dan permintaan ke Agen AI Anda adalah cara lain untuk mencegah jenis serangan ini.
+**Mitigasi:** Terapkan kebijakan untuk membatasi jumlah permintaan yang dapat dibuat Agent AI ke suatu layanan. Membatasi jumlah giliran percakapan dan permintaan ke Agent AI Anda adalah cara lain untuk mencegah jenis serangan ini.
 
-### Peracunan Basis Pengetahuan
+### Keracunan Basis Pengetahuan
 
-**Deskripsi:** Jenis serangan ini tidak menargetkan Agen AI secara langsung tetapi menargetkan basis pengetahuan dan layanan lain yang akan digunakan Agen AI. Ini bisa melibatkan merusak data atau informasi yang akan digunakan Agen AI untuk menyelesaikan tugas, yang mengarah pada respons yang bias atau tidak diinginkan kepada pengguna.
+**Deskripsi:** Jenis serangan ini tidak langsung menargetkan Agent AI tetapi menargetkan basis pengetahuan dan layanan lain yang akan digunakan Agent AI. Ini bisa melibatkan merusak data atau informasi yang digunakan Agent AI untuk menyelesaikan tugas, yang mengarah pada respons yang bias atau tidak diinginkan kepada pengguna.
 
-**Mitigasi:** Lakukan verifikasi rutin terhadap data yang akan digunakan Agen AI dalam alur kerjanya. Pastikan bahwa akses ke data ini aman dan hanya dapat diubah oleh individu terpercaya untuk menghindari jenis serangan ini.
+**Mitigasi:** Lakukan verifikasi rutin terhadap data yang akan digunakan Agent AI dalam alur kerjanya. Pastikan akses ke data ini aman dan hanya diubah oleh individu terpercaya untuk menghindari jenis serangan ini.
 
-### Kesalahan Berantai
+### Kesalahan Berjenjang
 
-**Deskripsi:** Agen AI mengakses berbagai alat dan layanan untuk menyelesaikan tugas. Kesalahan yang disebabkan oleh penyerang dapat menyebabkan kegagalan sistem lain yang terhubung dengan Agen AI, sehingga serangan menjadi lebih luas dan sulit untuk diatasi.
+**Deskripsi:** Agent AI mengakses berbagai alat dan layanan untuk menyelesaikan tugas. Kesalahan yang disebabkan oleh penyerang dapat menyebabkan kegagalan sistem lain yang terhubung dengan agent tersebut, sehingga serangan menjadi lebih meluas dan sulit ditangani.
 
-**Mitigasi:** Salah satu metode untuk menghindari ini adalah dengan membuat Agen AI beroperasi di lingkungan terbatas, seperti melakukan tugas di dalam kontainer Docker, untuk mencegah serangan langsung ke sistem. Membuat mekanisme fallback dan logika pengulangan ketika sistem tertentu merespons dengan kesalahan adalah cara lain untuk mencegah kegagalan sistem yang lebih besar.
+**Mitigasi**: Salah satu metode untuk menghindari hal ini adalah agar Agent AI beroperasi di lingkungan terbatas, seperti menjalankan tugas dalam container Docker, untuk mencegah serangan langsung ke sistem. Membuat mekanisme fallback dan logika percobaan ulang ketika sistem tertentu merespons dengan kesalahan adalah cara lain untuk mencegah kegagalan sistem yang lebih besar.
 
-## Human-in-the-Loop
+## Manusia dalam Rantai (Human-in-the-Loop)
 
-Cara efektif lainnya untuk membangun sistem Agen AI yang dapat dipercaya adalah dengan menggunakan Human-in-the-loop. Ini menciptakan alur di mana pengguna dapat memberikan umpan balik kepada Agen selama proses berjalan. Pengguna pada dasarnya bertindak sebagai agen dalam sistem multi-agen dengan memberikan persetujuan atau penghentian proses yang sedang berjalan.
+Cara efektif lain untuk membangun sistem Agent AI terpercaya adalah menggunakan Human-in-the-loop. Ini menciptakan aliran di mana pengguna dapat memberikan umpan balik kepada Agent selama proses berjalan. Pengguna secara esensial bertindak sebagai agent dalam sistem multi-agent dan memberikan persetujuan atau menghentikan proses yang sedang berjalan.
 
-![Human in The Loop](../../../translated_images/human-in-the-loop.5f0068a678f62f4fc8373d5b78c4c22f35d9e4da35c93f66c3b634c1774eff34.id.png)
+![Manusia dalam Rantai](../../../translated_images/id/human-in-the-loop.5f0068a678f62f4f.webp)
 
-Berikut adalah cuplikan kode menggunakan AutoGen untuk menunjukkan bagaimana konsep ini diterapkan:
+Berikut ini adalah potongan kode yang menggunakan Microsoft Agent Framework untuk menunjukkan bagaimana konsep ini diimplementasikan:
 
 ```python
+import os
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
-# Create the agents.
-model_client = OpenAIChatCompletionClient(model="gpt-4o-mini")
-assistant = AssistantAgent("assistant", model_client=model_client)
-user_proxy = UserProxyAgent("user_proxy", input_func=input)  # Use input() to get user input from console.
+# Buat penyedia dengan persetujuan manusia dalam proses
+provider = AzureAIProjectAgentProvider(
+    credential=AzureCliCredential(),
+)
 
-# Create the termination condition which will end the conversation when the user says "APPROVE".
-termination = TextMentionTermination("APPROVE")
+# Buat agen dengan langkah persetujuan manusia
+response = provider.create_response(
+    input="Write a 4-line poem about the ocean.",
+    instructions="You are a helpful assistant. Ask for user approval before finalizing.",
+)
 
-# Create the team.
-team = RoundRobinGroupChat([assistant, user_proxy], termination_condition=termination)
-
-# Run the conversation and stream to the console.
-stream = team.run_stream(task="Write a 4-line poem about the ocean.")
-# Use asyncio.run(...) when running in a script.
-await Console(stream)
-
+# Pengguna dapat meninjau dan menyetujui respons
+print(response.output_text)
+user_input = input("Do you approve? (APPROVE/REJECT): ")
+if user_input == "APPROVE":
+    print("Response approved.")
+else:
+    print("Response rejected. Revising...")
 ```
 
 ## Kesimpulan
 
-Membangun Agen AI yang dapat dipercaya memerlukan desain yang hati-hati, langkah-langkah keamanan yang kuat, dan iterasi yang berkelanjutan. Dengan menerapkan sistem meta prompting yang terstruktur, memahami potensi ancaman, dan menerapkan strategi mitigasi, pengembang dapat menciptakan Agen AI yang aman dan efektif. Selain itu, mengintegrasikan pendekatan human-in-the-loop memastikan bahwa Agen AI tetap selaras dengan kebutuhan pengguna sambil meminimalkan risiko. Seiring perkembangan AI, menjaga sikap proaktif terhadap keamanan, privasi, dan pertimbangan etika akan menjadi kunci untuk membangun kepercayaan dan keandalan dalam sistem berbasis AI.
+Membangun agent AI terpercaya membutuhkan desain yang cermat, langkah-langkah keamanan yang kuat, dan iterasi berkelanjutan. Dengan menerapkan sistem meta prompting yang terstruktur, memahami ancaman potensial, dan menerapkan strategi mitigasi, pengembang dapat membuat agent AI yang aman dan efektif. Selain itu, mengadopsi pendekatan human-in-the-loop memastikan agent AI tetap selaras dengan kebutuhan pengguna sekaligus meminimalkan risiko. Seiring AI terus berkembang, mempertahankan sikap proaktif terhadap keamanan, privasi, dan pertimbangan etis akan menjadi kunci untuk membangun kepercayaan dan keandalan dalam sistem yang digerakkan oleh AI.
 
-### Punya Pertanyaan Lebih Lanjut tentang Membangun Agen AI yang Dapat Dipercaya?
+### Punya Pertanyaan Lebih Lanjut tentang Membangun Agent AI Terpercaya?
 
-Bergabunglah dengan [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) untuk bertemu dengan pelajar lain, menghadiri jam konsultasi, dan mendapatkan jawaban atas pertanyaan Anda tentang Agen AI.
+Bergabunglah dengan [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) untuk bertemu dengan pelajar lain, menghadiri jam kantor, dan mendapatkan jawaban atas pertanyaan Agent AI Anda.
 
 ## Sumber Daya Tambahan
 
-- <a href="https://learn.microsoft.com/azure/ai-studio/responsible-use-of-ai-overview" target="_blank">Tinjauan AI yang Bertanggung Jawab</a>
+- <a href="https://learn.microsoft.com/azure/ai-studio/responsible-use-of-ai-overview" target="_blank">Gambaran AI Bertanggung Jawab</a>
 - <a href="https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai" target="_blank">Evaluasi model AI generatif dan aplikasi AI</a>
 - <a href="https://learn.microsoft.com/azure/ai-services/openai/concepts/system-message?context=%2Fazure%2Fai-studio%2Fcontext%2Fcontext&tabs=top-techniques" target="_blank">Pesan sistem keamanan</a>
 - <a href="https://blogs.microsoft.com/wp-content/uploads/prod/sites/5/2022/06/Microsoft-RAI-Impact-Assessment-Template.pdf?culture=en-us&country=us" target="_blank">Template Penilaian Risiko</a>
@@ -209,11 +205,13 @@ Bergabunglah dengan [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord)
 
 [Agentic RAG](../05-agentic-rag/README.md)
 
-## Pelajaran Selanjutnya
+## Pelajaran Berikutnya
 
-[Planning Design Pattern](../07-planning-design/README.md)
+[Polanya Desain Perencanaan](../07-planning-design/README.md)
 
 ---
 
-**Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan hasil yang akurat, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang timbul dari penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Penafian**:
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,64 +1,55 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "43069833a0412210ad5c3cc93d9c2146",
-  "translation_date": "2025-09-18T15:47:03+00:00",
-  "source_file": "07-planning-design/README.md",
-  "language_code": "hr"
-}
--->
-[![Planiranje dizajnerskog obrasca](../../../translated_images/lesson-7-thumbnail.f7163ac557bea1236242cc86b178c3f1bbf5eb07b87f9cd7c256b366e32bcbb6.hr.png)](https://youtu.be/kPfJ2BrBCMY?si=9pYpPXp0sSbK91Dr)
+[![Obrazac dizajna planiranja](../../../translated_images/hr/lesson-7-thumbnail.f7163ac557bea123.webp)](https://youtu.be/kPfJ2BrBCMY?si=9pYpPXp0sSbK91Dr)
 
-> _(Kliknite na sliku iznad za video lekcije)_
+> _(Kliknite sliku iznad da pogledate video ove lekcije)_
 
-# Planiranje dizajna
+# Dizajn planiranja
 
 ## Uvod
 
-Ova lekcija obuhvaća:
+Ova lekcija će obuhvatiti
 
-* Definiranje jasnog cilja i razbijanje složenog zadatka na upravljive dijelove.
+* Definiranje jasnog općeg cilja i razbijanje složenog zadatka na upravljive zadatke.
 * Korištenje strukturiranog izlaza za pouzdanije i strojno čitljive odgovore.
-* Primjenu pristupa temeljenog na događajima za upravljanje dinamičnim zadacima i neočekivanim unosima.
+* Primjena pristupa vođenog događajima za rukovanje dinamičnim zadacima i neočekivanim unosima.
 
 ## Ciljevi učenja
 
-Nakon završetka ove lekcije, razumjet ćete:
+Nakon završetka ove lekcije razumjet ćete:
 
-* Kako identificirati i postaviti opći cilj za AI agenta, osiguravajući da jasno zna što treba postići.
-* Kako razložiti složen zadatak na upravljive podzadatke i organizirati ih u logičan slijed.
-* Kako opremiti agente odgovarajućim alatima (npr. alatima za pretraživanje ili analizu podataka), odlučiti kada i kako ih koristiti te upravljati neočekivanim situacijama.
-* Kako procijeniti rezultate podzadatka, mjeriti izvedbu i iterirati radnje za poboljšanje konačnog rezultata.
+* Identificirati i postaviti opći cilj za AI agenta, osiguravajući da jasno zna što treba postići.
+* Razložiti složen zadatak na upravljive podzadatke i organizirati ih u logičan slijed.
+* Opremiti agente odgovarajućim alatima (npr. alati za pretraživanje ili alati za analizu podataka), odlučiti kada i kako se koriste te rukovati neočekivanim situacijama koje se pojave.
+* Procijeniti rezultate podzadatka, mjeriti izvedbu i iterirati radnje kako bi se poboljšao konačni rezultat.
 
-## Definiranje općeg cilja i razbijanje zadatka
+## Definiranje ukupnog cilja i razbijanje zadatka
 
-![Definiranje ciljeva i zadataka](../../../translated_images/defining-goals-tasks.d70439e19e37c47ac76c48b209a4eb515bea5b8a5207f6b2e7b5e597f09ccf6a.hr.png)
+![Definiranje ciljeva i zadataka](../../../translated_images/hr/defining-goals-tasks.d70439e19e37c47a.webp)
 
-Većina zadataka iz stvarnog svijeta previše je složena da bi se riješila u jednom koraku. AI agentu je potreban sažet cilj koji će voditi njegovo planiranje i radnje. Na primjer, razmotrite cilj:
+Većina zadataka u stvarnom svijetu previše je složena da bi se rješavala u jednom koraku. AI agentu je potreban sažet cilj koji će usmjeravati njegovo planiranje i radnje. Na primjer, razmotrite cilj:
 
-    "Generiraj trodnevni plan putovanja."
+    "Generirajte trodnevni plan putovanja."
 
-Iako je jednostavno naveden, još uvijek zahtijeva doradu. Što je cilj jasniji, to bolje agent (i ljudski suradnici) mogu usmjeriti svoje napore na postizanje pravog rezultata, poput stvaranja sveobuhvatnog plana s opcijama za letove, preporukama za hotele i prijedlozima aktivnosti.
+Iako je jednostavno navesti, i dalje treba doradu. Što je cilj jasniji, to se agent (i svi ljudski suradnici) mogu bolje usredotočiti na postizanje pravog ishoda, poput stvaranja sveobuhvatnog itinerera s opcijama leta, preporukama hotela i prijedlozima aktivnosti.
 
-### Razlaganje zadatka
+### Dekompozicija zadatka
 
-Veliki ili složeni zadaci postaju upravljiviji kada se podijele na manje, ciljno orijentirane podzadatke. 
-Za primjer plana putovanja, cilj možete razložiti na:
+Veliki ili složeni zadaci postaju upravljiviji kada se podijele na manje, ciljno orijentirane podzadatke.
+Za primjer itinerera putovanja, cilj možete razložiti na:
 
 * Rezervacija leta
 * Rezervacija hotela
 * Najam automobila
 * Personalizacija
 
-Svaki podzadatak može se obraditi od strane posvećenih agenata ili procesa. Jedan agent može se specijalizirati za traženje najboljih ponuda za letove, drugi za rezervaciju hotela i tako dalje. Koordinirajući ili "downstream" agent može zatim objediniti te rezultate u jedan koherentan plan za krajnjeg korisnika.
+Svaki podzadatak tada mogu rješavati specijalizirani agenti ili procesi. Jedan agent mogao bi se specijalizirati za pronalaženje najboljih ponuda letova, drugi se usredotočiti na rezervacije hotela itd. Koordinirajući ili "downstream" agent tada može sastaviti ove rezultate u jedan koherentan itinerer za krajnjeg korisnika.
 
-Ovaj modularni pristup također omogućuje postupna poboljšanja. Na primjer, možete dodati specijalizirane agente za preporuke hrane ili lokalne aktivnosti i s vremenom usavršavati plan.
+Ovaj modularni pristup također omogućava postepena poboljšanja. Na primjer, možete dodati specijalizirane agente za preporuke hrane ili prijedloge lokalnih aktivnosti i s vremenom usavršavati itinerer.
 
 ### Strukturirani izlaz
 
-Veliki jezični modeli (LLM-ovi) mogu generirati strukturirani izlaz (npr. JSON) koji je lakše parsirati i obraditi od strane drugih agenata ili usluga. Ovo je posebno korisno u kontekstu više agenata, gdje se zadaci mogu izvršiti nakon što se primi izlaz planiranja. Pogledajte ovo za brzi pregled.
+Large Language Models (LLM-ovi) mogu generirati strukturirani izlaz (npr. JSON) koji je lakše parsirati i obraditi za downstream agente ili servise. To je posebno korisno u multi-agentnom kontekstu, gdje možemo pokrenuti ove zadatke nakon što se primi plan u strukturiranom obliku.
 
-Sljedeći Python isječak demonstrira jednostavan planerski agent koji razlaže cilj na podzadatke i generira strukturirani plan:
+The following Python snippet demonstrates a simple planning agent decomposing a goal into subtasks and generating a structured plan:
 
 ```python
 from pydantic import BaseModel
@@ -68,9 +59,8 @@ import json
 import os
 from typing import Optional
 from pprint import pprint
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-from autogen_ext.models.azure import AzureAIChatCompletionClient
-from azure.core.credentials import AzureKeyCredential
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
 class AgentEnum(str, Enum):
     FlightBooking = "flight_booking"
@@ -81,35 +71,22 @@ class AgentEnum(str, Enum):
     DefaultAgent = "default_agent"
     GroupChatManager = "group_chat_manager"
 
-# Travel SubTask Model
+# Model podzadatka putovanja
 class TravelSubTask(BaseModel):
     task_details: str
-    assigned_agent: AgentEnum  # we want to assign the task to the agent
+    assigned_agent: AgentEnum  # želimo dodijeliti zadatak agentu
 
 class TravelPlan(BaseModel):
     main_task: str
     subtasks: List[TravelSubTask]
     is_greeting: bool
 
-client = AzureAIChatCompletionClient(
-    model="gpt-4o-mini",
-    endpoint="https://models.inference.ai.azure.com",
-    # To authenticate with the model you will need to generate a personal access token (PAT) in your GitHub settings.
-    # Create your PAT token by following instructions here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
-    credential=AzureKeyCredential(os.environ["GITHUB_TOKEN"]),
-    model_info={
-        "json_output": False,
-        "function_calling": True,
-        "vision": True,
-        "family": "unknown",
-    },
-)
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
 
-# Define the user message
-messages = [
-    SystemMessage(content="""You are an planner agent.
+# Definirajte korisničku poruku
+system_prompt = """You are a planner agent.
     Your job is to decide which agents to run based on the user's request.
-                      Provide your response in JSON format with the following structure:
+    Provide your response in JSON format with the following structure:
 {'main_task': 'Plan a family trip from Singapore to Melbourne.',
  'subtasks': [{'assigned_agent': 'flight_booking',
                'task_details': 'Book round-trip flights from Singapore to '
@@ -120,45 +97,27 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(
-        content="Create a travel plan for a family of 2 kids from Singapore to Melboune", source="user"),
-]
+    - DefaultAgent: For handling general requests"""
 
-response = await client.create(messages=messages, extra_create_args={"response_format": 'json_object'})
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
 
-response_content: Optional[str] = response.content if isinstance(
-    response.content, str) else None
-if response_content is None:
-    raise ValueError("Response content is not a valid JSON string" )
+response = client.create_response(input=user_message, instructions=system_prompt)
 
+response_content = response.output_text
 pprint(json.loads(response_content))
-
-# # Ensure the response content is a valid JSON string before loading it
-# response_content: Optional[str] = response.content if isinstance(
-#     response.content, str) else None
-# if response_content is None:
-#     raise ValueError("Response content is not a valid JSON string")
-
-# # Print the response content after loading it as JSON
-# pprint(json.loads(response_content))
-
-# Validate the response content with the MathReasoning model
-# TravelPlan.model_validate(json.loads(response_content))
 ```
 
-### Planerski agent s orkestracijom više agenata
+### Planer s orkestracijom više agenata
 
-U ovom primjeru, Semantički Router Agent prima korisnički zahtjev (npr. "Treba mi plan za hotel za moje putovanje.").
+U ovom primjeru, Semantički usmjerivački agent prima korisnički zahtjev (npr. "Trebam plan hotela za moje putovanje.").
 
 Planer zatim:
 
-* Prima plan hotela: Planer uzima korisničku poruku i, na temelju sistemskog upita (uključujući detalje dostupnih agenata), generira strukturirani plan putovanja.
-* Navodi agente i njihove alate: Registar agenata sadrži popis agenata (npr. za letove, hotele, najam automobila i aktivnosti) zajedno s funkcijama ili alatima koje nude.
-* Usmjerava plan odgovarajućim agentima: Ovisno o broju podzadataka, planer ili šalje poruku izravno posvećenom agentu (za scenarije s jednim zadatkom) ili koordinira putem upravitelja grupnog razgovora za suradnju više agenata.
-* Sažima rezultat: Na kraju, planer sažima generirani plan radi jasnoće.
-
-Sljedeći Python uzorak koda ilustrira ove korake:
+* Prima plan hotela: Planer uzima korisnikovu poruku i, na temelju sistemskog prompta (uključujući dostupne detalje agenata), generira strukturirani plan putovanja.
+* Navodi agente i njihove alate: registar agenata sadrži popis agenata (npr. za letove, hotele, najam automobila i aktivnosti) zajedno s funkcijama ili alatima koje nude.
+* Usmjerava plan odgovarajućim agentima: Ovisno o broju podzadatka, planer ili šalje poruku izravno posvećenom agentu (za scenarije s jednim zadatkom), ili koordinira putem upravitelja grupnog chata za suradnju više agenata.
+* Sažima ishod: Na kraju, planer sažima generirani plan radi jasnoće.
+Sljedeći Python primjer koda ilustrira ove korake:
 
 ```python
 
@@ -176,11 +135,11 @@ class AgentEnum(str, Enum):
     DefaultAgent = "default_agent"
     GroupChatManager = "group_chat_manager"
 
-# Travel SubTask Model
+# Model podzadatka putovanja
 
 class TravelSubTask(BaseModel):
     task_details: str
-    assigned_agent: AgentEnum # we want to assign the task to the agent
+    assigned_agent: AgentEnum # Želimo dodijeliti zadatak agentu
 
 class TravelPlan(BaseModel):
     main_task: str
@@ -190,25 +149,18 @@ import json
 import os
 from typing import Optional
 
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-from autogen_ext.models.openai import AzureOpenAIChatCompletionClient
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
-# Create the client with type-checked environment variables
+# Stvorite klijenta
 
-client = AzureOpenAIChatCompletionClient(
-    azure_deployment=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
-    model=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
-    api_version=os.getenv("AZURE_OPENAI_API_VERSION"),
-    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-)
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
 
 from pprint import pprint
 
-# Define the user message
+# Definirajte korisničku poruku
 
-messages = [
-    SystemMessage(content="""You are an planner agent.
+system_prompt = """You are a planner agent.
     Your job is to decide which agents to run based on the user's request.
     Below are the available agents specialized in different tasks:
     - FlightBooking: For booking flights and providing flight information
@@ -216,24 +168,20 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(content="Create a travel plan for a family of 2 kids from Singapore to Melbourne", source="user"),
-]
+    - DefaultAgent: For handling general requests"""
 
-response = await client.create(messages=messages, extra_create_args={"response_format": TravelPlan})
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
 
-# Ensure the response content is a valid JSON string before loading it
+response = client.create_response(input=user_message, instructions=system_prompt)
 
-response_content: Optional[str] = response.content if isinstance(response.content, str) else None
-if response_content is None:
-    raise ValueError("Response content is not a valid JSON string")
+response_content = response.output_text
 
-# Print the response content after loading it as JSON
+# Ispišite sadržaj odgovora nakon učitavanja kao JSON
 
 pprint(json.loads(response_content))
 ```
 
-Rezultat prethodnog koda možete koristiti za usmjeravanje prema `assigned_agent` i sažimanje plana putovanja krajnjem korisniku.
+What follows is the output from the previous code and you can then use this structured output to route to `assigned_agent` and summarize the travel plan to the end user.
 
 ```json
 {
@@ -264,21 +212,22 @@ Rezultat prethodnog koda možete koristiti za usmjeravanje prema `assigned_agent
 }
 ```
 
-Primjer bilježnice s prethodnim uzorkom koda dostupan je [ovdje](07-autogen.ipynb).
+Primjer bilježnice s prethodnim primjerom koda dostupan je [ovdje](07-python-agent-framework.ipynb).
 
 ### Iterativno planiranje
 
-Neki zadaci zahtijevaju povratnu informaciju ili ponovno planiranje, gdje rezultat jednog podzadatka utječe na sljedeći. Na primjer, ako agent otkrije neočekivani format podataka prilikom rezervacije letova, možda će morati prilagoditi svoju strategiju prije nego što nastavi s rezervacijom hotela.
+Neki zadaci zahtijevaju međusobnu razmjenu ili ponovno planiranje, gdje ishod jednog podzadatka utječe na sljedeći. Na primjer, ako agent otkrije neočekivani format podataka pri rezervaciji letova, možda će trebati prilagoditi svoju strategiju prije prelaska na rezervacije hotela.
 
-Osim toga, povratne informacije korisnika (npr. odluka korisnika da preferira raniji let) mogu pokrenuti djelomično ponovno planiranje. Ovaj dinamičan, iterativan pristup osigurava da konačno rješenje odgovara stvarnim ograničenjima i promjenjivim preferencijama korisnika.
+Osim toga, povratne informacije korisnika (npr. kada osoba odluči da preferira raniji let) mogu pokrenuti djelomično ponovno planiranje. Ovaj dinamični, iterativni pristup osigurava da konačno rješenje bude usklađeno sa stvarnim ograničenjima i mijenjajućim preferencijama korisnika.
 
-Primjer koda:
+npr. primjer koda
 
 ```python
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-#.. same as previous code and pass on the user history, current plan
-messages = [
-    SystemMessage(content="""You are a planner agent to optimize the
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
+#.. isto kao i prethodni kod i proslijedi povijest korisnika, trenutni plan
+
+system_prompt = """You are a planner agent to optimize the
     Your job is to decide which agents to run based on the user's request.
     Below are the available agents specialized in different tasks:
     - FlightBooking: For booking flights and providing flight information
@@ -286,28 +235,31 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(content="Create a travel plan for a family of 2 kids from Singapore to Melbourne", source="user"),
-    AssistantMessage(content=f"Previous travel plan - {TravelPlan}", source="assistant")
-]
-# .. re-plan and send the tasks to respective agents
+    - DefaultAgent: For handling general requests"""
+
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
+
+response = client.create_response(
+    input=user_message,
+    instructions=system_prompt,
+    context=f"Previous travel plan - {TravelPlan}",
+)
+# .. ponovno planiraj i pošalji zadatke odgovarajućim agentima
 ```
 
-Za sveobuhvatnije planiranje pogledajte Magnetic One za rješavanje složenih zadataka.
+Za sveobuhvatnije planiranje pogledajte Magnetic One <a href="https://www.microsoft.com/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks" target="_blank">objavu na blogu</a> za rješavanje složenih zadataka.
 
 ## Sažetak
 
-U ovom članku smo pogledali primjer kako možemo stvoriti planer koji dinamično odabire dostupne definirane agente. Izlaz planera razlaže zadatke i dodjeljuje agente kako bi se mogli izvršiti. Pretpostavlja se da agenti imaju pristup funkcijama/alatima potrebnim za obavljanje zadatka. Osim agenata, možete uključiti i druge obrasce poput refleksije, sažimanja i kružnog razgovora za dodatnu prilagodbu.
+U ovom članku pogledali smo primjer kako možemo stvoriti planer koji može dinamički odabrati definirane dostupne agente. Izlaz planera razlaže zadatke i dodjeljuje agente tako da se mogu izvršiti. Pretpostavlja se da agenti imaju pristup funkcijama/alatima potrebnim za obavljanje zadatka. Osim agenata možete uključiti i druge obrasce poput refleksije, sažimača i round robin chata kako biste dodatno prilagodili sustav.
 
 ## Dodatni resursi
 
-AutoGen Magnetic One - Generalistički sustav više agenata za rješavanje složenih zadataka koji je postigao impresivne rezultate na više izazovnih agentnih mjerila. Referenca:
-
-U ovoj implementaciji orkestrator stvara plan specifičan za zadatak i delegira te zadatke dostupnim agentima. Osim planiranja, orkestrator također koristi mehanizam za praćenje kako bi pratio napredak zadatka i ponovno planirao prema potrebi.
+Magentic One - Generalistički multi-agentni sustav za rješavanje složenih zadataka koji je postigao impresivne rezultate na više zahtjevnih agentskih benchmarka. Referenca: <a href="https://www.microsoft.com/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks" target="_blank">Magentic One</a>. U ovoj implementaciji orkestrator stvara planove specifične za zadatke i delegira te zadatke dostupnim agentima. Osim planiranja, orkestrator također koristi mehanizam praćenja za nadzor napretka zadatka i ponovno planiranje po potrebi.
 
 ### Imate li još pitanja o obrascu dizajna planiranja?
 
-Pridružite se [Azure AI Foundry Discordu](https://aka.ms/ai-agents/discord) kako biste se povezali s drugim učenicima, sudjelovali u uredskim satima i dobili odgovore na svoja pitanja o AI agentima.
+Pridružite se [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) kako biste se susreli s drugim učenicima, sudjelovali na uredovnim satima i dobili odgovore na pitanja o svojim AI agentima.
 
 ## Prethodna lekcija
 
@@ -315,9 +267,11 @@ Pridružite se [Azure AI Foundry Discordu](https://aka.ms/ai-agents/discord) kak
 
 ## Sljedeća lekcija
 
-[Obrazac dizajna više agenata](../08-multi-agent/README.md)
+[Obrazac dizajna za više agenata](../08-multi-agent/README.md)
 
 ---
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane ljudskog prevoditelja. Ne preuzimamo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+Izjava o odricanju odgovornosti:
+Ovaj je dokument preveden korištenjem AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba se smatrati mjerodavnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

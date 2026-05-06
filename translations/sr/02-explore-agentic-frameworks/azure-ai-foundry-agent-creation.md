@@ -1,51 +1,42 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7e92870dc0843e13d4dabc620c09d2d9",
-  "translation_date": "2025-07-12T08:22:50+00:00",
-  "source_file": "02-explore-agentic-frameworks/azure-ai-foundry-agent-creation.md",
-  "language_code": "sr"
-}
--->
-# Azure AI Agent Service Development
+# Развој Azure AI агента
 
-У овом задатку користите алате Azure AI Agent сервиса у [Azure AI Foundry порталу](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst) да бисте креирали агента за резервацију летова. Агент ће моћи да комуницира са корисницима и пружа информације о летовима.
+У овом задатку, користите алате сервиса Azure AI Agent у [Microsoft Foundry порталу](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst) да бисте креирали агента за резервацију летова. Агент ће моћи да комуницира са корисницима и пружа информације о летовима.
 
-## Претпоставке
+## Захтеви
 
 Да бисте завршили овај задатак, потребно вам је следеће:
-1. Azure налог са активном претплатом. [Креирајте налог бесплатно](https://azure.microsoft.com/free/?WT.mc_id=academic-105485-koreyst).
-2. Потребне су вам дозволе за креирање Azure AI Foundry хаба или да вам неко други креира.
-    - Ако вам је улога Contributor или Owner, можете пратити кораке у овом туторијалу.
+1. Azure налог са активном претплатом. [Направите налог бесплатно](https://azure.microsoft.com/free/?WT.mc_id=academic-105485-koreyst).
+2. Потребна вам је дозвола за креирање Microsoft Foundry хаба или да вам неко направи.
+    - Ако сте у улози Contributor или Owner, можете пратити кораке у овом туторијалу.
 
-## Креирање Azure AI Foundry хаба
+## Креирање Microsoft Foundry хаба
 
-> **Note:** Azure AI Foundry је раније био познат као Azure AI Studio.
+> **Белешка:** Microsoft Foundry је претходно био познат као Azure AI Studio.
 
-1. Пратите упутства из [Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst) блог поста за креирање Azure AI Foundry хаба.
-2. Када је ваш пројекат креиран, затворите све савете који се појаве и прегледајте страницу пројекта у Azure AI Foundry порталу, која би требало да изгледа слично као на следећој слици:
+1. Пратити ове смернице из [Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst) блог поста за креирање Microsoft Foundry хаба.
+2. Када је пројекат креиран, затворите све приказане савете и прегледајте страницу пројекта у Microsoft Foundry порталу, која би требало да изгледа слично као на следећој слици:
 
-    ![Azure AI Foundry Project](../../../translated_images/azure-ai-foundry.88d0c35298348c2fca620668d9b567b50b18dfe94fd2251e0793a28d4d60854e.sr.png)
+    ![Microsoft Foundry Project](../../../translated_images/sr/azure-ai-foundry.88d0c35298348c2f.webp)
 
 ## Деплојовање модела
 
-1. У левом панелу за ваш пројекат, у одељку **My assets**, изаберите страницу **Models + endpoints**.
-2. На страници **Models + endpoints**, у картици **Model deployments**, у менију **+ Deploy model**, изаберите **Deploy base model**.
-3. Потражите модел `gpt-4o-mini` на листи, затим га изаберите и потврдите.
+1. У левом панелу вашег пројекта, у секцији **My assets**, изаберите страницу **Models + endpoints**.
+2. На страници **Models + endpoints**, у табу **Model deployments**, у менију **+ Deploy model**, изаберите **Deploy base model**.
+3. Потражите модел `gpt-4o-mini` у листи, затим га изаберите и потврдите.
 
-    > **Note**: Смањење TPM помаже да се избегне прекомерна употреба квоте доступне у претплати коју користите.
+    > **Белешка**: Смањивање TPM помаже да се избегне пречесто коришћење квоте која вам стоји на располагању у претплати коју користите.
 
-    ![Model Deployed](../../../translated_images/model-deployment.3749c53fb81e18fdc2da5beb872441b4a5f86a2d1206c5a9999a4997f78e4b7a.sr.png)
+    ![Model Deployed](../../../translated_images/sr/model-deployment.3749c53fb81e18fd.webp)
 
 ## Креирање агента
 
-Сада када сте деплојовали модел, можете креирати агента. Агент је конверзациони AI модел који се користи за интеракцију са корисницима.
+Сада када сте деплојовали модел, можете креирати агента. Агент је разговорни AI модел који се користи за интеракцију са корисницима.
 
-1. У левом панелу за ваш пројекат, у одељку **Build & Customize**, изаберите страницу **Agents**.
-2. Кликните на **+ Create agent** да бисте креирали новог агента. У дијалогу **Agent Setup**:
+1. У левом панелу вашег пројекта, у секцији **Build & Customize**, изаберите страницу **Agents**.
+2. Кликните **+ Create agent** да бисте креирали новог агента. У дијалошком прозору **Agent Setup**:
     - Унесите име агента, на пример `FlightAgent`.
-    - Проверите да је изабрано деплојовање модела `gpt-4o-mini` које сте раније креирали.
-    - Поставите **Instructions** према упутствима која желите да агент прати. Ево примера:
+    - Уверите се да је изабран `gpt-4o-mini` модел деплојован раније.
+    - Подесите **Instructions** у складу са упутствима која желите да агент прати. Ево примера:
     ```
     You are FlightAgent, a virtual assistant specialized in handling flight-related queries. Your role includes assisting users with searching for flights, retrieving flight details, checking seat availability, and providing real-time flight status. Follow the instructions below to ensure clarity and effectiveness in your responses:
 
@@ -75,24 +66,25 @@ CO_OP_TRANSLATOR_METADATA:
 > [!NOTE]
 > За детаљнији упит, можете погледати [овaj репозиторијум](https://github.com/ShivamGoyal03/RoamMind) за више информација.
     
-> Поред тога, можете додати **Knowledge Base** и **Actions** да бисте побољшали могућности агента да пружа више информација и извршава аутоматизоване задатке на основу корисничких захтева. За овај задатак, ове кораке можете прескочити.
+> Поред тога, можете додати **Knowledge Base** и **Actions** да бисте повећали могућности агента да пружи више информација и извршава аутоматизоване задатке на основу захтева корисника. За овај задатак, ове кораке можете прескочити.
     
-![Agent Setup](../../../translated_images/agent-setup.9bbb8755bf5df672c712a9aaed6482305d32a4986742e6b21faf59485f25c50a.sr.png)
+![Agent Setup](../../../translated_images/sr/agent-setup.9bbb8755bf5df672.webp)
 
-3. Да бисте креирали новог мулти-AI агента, једноставно кликните на **New Agent**. Новокреирани агент ће се појавити на страници Agents.
+3. Да бисте креирали новог мулти-AI агента, једноставно кликните **New Agent**. Новокреирани агент ће се појавити на страници Agents.
+
 
 ## Тестирање агента
 
-Након креирања агента, можете га тестирати да видите како одговара на корисничке упите у Azure AI Foundry порталу у режиму playground.
+Након креирања агента, можете га тестирати да видите како одговара на упите корисника у Microsoft Foundry портал playground-у.
 
 1. На врху панела **Setup** за вашег агента, изаберите **Try in playground**.
-2. У панелу **Playground** можете комуницирати са агентом тако што ћете уносити упите у прозор за ћаскање. На пример, можете питати агента да потражи летове од Сијетла до Њујорка 28. у месецу.
+2. У панели **Playground**, можете комуницирати са агентом тако што ћете унети упите у прозор за чат. На пример, можете питати агента да потражи летове са Сијетла до Њујорка 28. у месецу.
 
-    > **Note**: Агент можда неће пружити тачне одговоре, јер се у овом задатку не користе подаци у реалном времену. Циљ је да се тестира способност агента да разуме и одговара на корисничке упите на основу датих упутстава.
+    > **Белешка**: Агент можда неће давати тачне одговоре, јер се у овом задатку не користе подаци у реалном времену. Сврха је тестирати способност агента да разуме и одговара на корисничке упите у складу са датим упутствима.
 
-    ![Agent Playground](../../../translated_images/agent-playground.dc146586de71501011798b919ae595f4d4facf8c3a5f53e0107e7b80fc2418d1.sr.png)
+    ![Agent Playground](../../../translated_images/sr/agent-playground.dc146586de715010.webp)
 
-3. Након тестирања агента, можете га додатно прилагодити додавањем више намера, података за обуку и акција како бисте побољшали његове могућности.
+3. Након тестирања агента, можете га додатно прилагодити додавањем више намера, података за тренинг и акција да повећате његове могућности.
 
 ## Чишћење ресурса
 
@@ -103,11 +95,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Ресурси
 
-- [Azure AI Foundry документација](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst)
-- [Azure AI Foundry портал](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst)
+- [Microsoft Foundry документација](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst)
+- [Microsoft Foundry портал](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst)
 - [Почетак рада са Azure AI Studio](https://techcommunity.microsoft.com/blog/educatordeveloperblog/getting-started-with-azure-ai-studio/4095602?WT.mc_id=academic-105485-koreyst)
 - [Основе AI агената на Azure](https://learn.microsoft.com/en-us/training/modules/ai-agent-fundamentals/?WT.mc_id=academic-105485-koreyst)
 - [Azure AI Discord](https://aka.ms/AzureAI/Discord)
 
-**Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Искључење одговорности**:
+Овај документ је преведен помоћу AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо тачности, имајте у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на свом изворном језику треба сматрати коначним и поузданим извором. За критичне информације препоручује се професионални људски превод. Ниједна одговорност није преузета за неспоразуме или погрешне интерпретације настале коришћењем овог превода.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

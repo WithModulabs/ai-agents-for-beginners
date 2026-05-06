@@ -1,62 +1,55 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "43069833a0412210ad5c3cc93d9c2146",
-  "translation_date": "2025-09-18T14:43:28+00:00",
-  "source_file": "07-planning-design/README.md",
-  "language_code": "pa"
-}
--->
-[![ਪਲਾਨਿੰਗ ਡਿਜ਼ਾਈਨ ਪੈਟਰਨ](../../../translated_images/lesson-7-thumbnail.f7163ac557bea1236242cc86b178c3f1bbf5eb07b87f9cd7c256b366e32bcbb6.pa.png)](https://youtu.be/kPfJ2BrBCMY?si=9pYpPXp0sSbK91Dr)
+[![Planning Design Pattern](../../../translated_images/pa/lesson-7-thumbnail.f7163ac557bea123.webp)](https://youtu.be/kPfJ2BrBCMY?si=9pYpPXp0sSbK91Dr)
 
-> _(ਉਪਰ ਦਿੱਤੀ ਤਸਵੀਰ 'ਤੇ ਕਲਿੱਕ ਕਰਕੇ ਇਸ ਪਾਠ ਦਾ ਵੀਡੀਓ ਵੇਖੋ)_
+> _(ਇਸ ਪਾਠ ਦੀ ਵੀਡੀਓ ਵੇਖਣ ਲਈ ਉੱਪਰ ਦੀ ਚਿੱਤਰ 'ਤੇ ਕਲਿੱਕ ਕਰੋ)_
 
-# ਪਲਾਨਿੰਗ ਡਿਜ਼ਾਈਨ
+# ਯੋਜਨਾ ਬਣਾਉਣ ਦਾ ਡਿਜ਼ਾਈਨ
 
-## ਜਾਣ ਪਛਾਣ
+## ਪਰਿਚਯ
 
-ਇਸ ਪਾਠ ਵਿੱਚ ਕਵਰ ਕੀਤਾ ਜਾਵੇਗਾ:
+ਇਹ ਪਾਠ ਕਵਰ ਕਰੇਗਾ
 
-* ਇੱਕ ਸਪਸ਼ਟ ਸਮੁੱਚੇ ਲਕਸ਼ ਨੂੰ ਪਰਿਭਾਸ਼ਿਤ ਕਰਨਾ ਅਤੇ ਇੱਕ ਜਟਿਲ ਕੰਮ ਨੂੰ ਸੰਭਾਲਣ ਯੋਗ ਕੰਮਾਂ ਵਿੱਚ ਵੰਡਣਾ।
-* ਸੰਰਚਿਤ ਆਉਟਪੁੱਟ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਹੋਰ ਭਰੋਸੇਯੋਗ ਅਤੇ ਮਸ਼ੀਨ-ਪੜ੍ਹਨਯੋਗ ਜਵਾਬ ਪ੍ਰਾਪਤ ਕਰਨਾ।
-* ਗਤੀਸ਼ੀਲ ਕੰਮਾਂ ਅਤੇ ਅਣਅਪੇਖਿਤ ਇਨਪੁਟ ਨੂੰ ਸੰਭਾਲਣ ਲਈ ਇੱਕ ਇਵੈਂਟ-ਚਲਿਤ ਪਹੁੰਚ ਲਾਗੂ ਕਰਨਾ।
+* ਇੱਕ ਸਪੱਸ਼ਟ ਕੁੱਲ ਲਕੜੀ ਨਿਰਧਾਰਿਤ ਕਰਨਾ ਅਤੇ ਇੱਕ ਜਟਿਲ ਕਾਰਜ ਨੂੰ ਪ੍ਰਬੰਧਨਯੋਗ ਕਾਰਜਾਂ ਵਿੱਚ ਵੰਡਣਾ।
+* ਵਿਵਸਥਿਤ ਆਉਟਪੁੱਟ ਦਾ ਲਾਭ ਉਠਾਉਣਾ ਤਾਂ ਜੋ ਜ਼ਿਆਦਾ ਭਰੋਸੇਯੋਗ ਅਤੇ ਮਸ਼ੀਨ-ਪਠਨਯੋਗ ਪ੍ਰਤੀਕਿਰਿਆਵਾਂ ਮਿਲ ਸਕਣ।
+* ਗਤੀਸ਼ੀਲ ਕਾਰਜਾਂ ਅਤੇ ਅਣਪਛਾਤੇ ਇਨਪੁੱਟਾਂ ਨੂੰ ਸੰਭਾਲਣ ਲਈ ਇਕ ਘਟਨਾ-ਚਾਲਿਤ ਪਹੁੰਚ ਲਾਗੂ ਕਰਨਾ।
 
-## ਸਿੱਖਣ ਦੇ ਲਕਸ਼
+## ਸਿੱਖਣ ਦੇ ਲਕੜੀ
 
-ਇਸ ਪਾਠ ਨੂੰ ਪੂਰਾ ਕਰਨ ਤੋਂ ਬਾਅਦ, ਤੁਸੀਂ ਸਮਝ ਪਾ ਲਵੋਗੇ:
+ਇਸ ਪਾਠ ਨੂੰ ਪੂਰਾ ਕਰਨ ਤੋਂ ਬਾਅਦ, ਤੁਹਾਨੂੰ ਇਹ ਸਮਝ ਆ ਜਾਵੇਗੀ:
 
-* AI ਏਜੰਟ ਲਈ ਇੱਕ ਸਮੁੱਚਾ ਲਕਸ਼ ਪਛਾਣਣਾ ਅਤੇ ਸੈਟ ਕਰਨਾ, ਇਹ ਯਕੀਨੀ ਬਣਾਉਣਾ ਕਿ ਇਸ ਨੂੰ ਸਪਸ਼ਟ ਪਤਾ ਹੈ ਕਿ ਕੀ ਹਾਸਲ ਕਰਨਾ ਹੈ।
-* ਇੱਕ ਜਟਿਲ ਕੰਮ ਨੂੰ ਸੰਭਾਲਣ ਯੋਗ ਉਪ-ਕੰਮਾਂ ਵਿੱਚ ਵੰਡਣਾ ਅਤੇ ਉਨ੍ਹਾਂ ਨੂੰ ਇੱਕ ਤਰਕਸੰਗਤ ਕ੍ਰਮ ਵਿੱਚ ਸੰਗਠਿਤ ਕਰਨਾ।
-* ਏਜੰਟਾਂ ਨੂੰ ਸਹੀ ਟੂਲ (ਜਿਵੇਂ ਕਿ ਖੋਜ ਟੂਲ ਜਾਂ ਡਾਟਾ ਵਿਸ਼ਲੇਸ਼ਣ ਟੂਲ) ਨਾਲ ਸਜਾਉਣਾ, ਇਹ ਫੈਸਲਾ ਕਰਨਾ ਕਿ ਕਦੋਂ ਅਤੇ ਕਿਵੇਂ ਉਨ੍ਹਾਂ ਦੀ ਵਰਤੋਂ ਕੀਤੀ ਜਾਵੇ, ਅਤੇ ਉਪਜਣ ਵਾਲੀਆਂ ਅਣਅਪੇਖਿਤ ਸਥਿਤੀਆਂ ਨੂੰ ਸੰਭਾਲਣਾ।
-* ਉਪ-ਕੰਮ ਦੇ ਨਤੀਜਿਆਂ ਦਾ ਮੁਲਾਂਕਣ ਕਰਨਾ, ਪ੍ਰਦਰਸ਼ਨ ਨੂੰ ਮਾਪਣਾ, ਅਤੇ ਅੰਤਮ ਨਤੀਜੇ ਨੂੰ ਸੁਧਾਰਨ ਲਈ ਕਾਰਵਾਈਆਂ 'ਤੇ ਦੁਬਾਰਾ ਵਿਚਾਰ ਕਰਨਾ।
+* ਇੱਕ AI ਏਜੰਟ ਲਈ ਕੁੱਲ ਮਕਸਦ ਦੀ ਪਛਾਣ ਕਰੋ ਅਤੇ ਇਹ ਸੈੱਟ ਕਰੋ ਕਿ ਇਹ ਸਪੱਸ਼ਟ ਤੌਰ 'ਤੇ ਜਾਣਦਾ ਹੈ ਕਿ ਕੀ ਪ੍ਰਾਪਤ ਕਰਨਾ ਹੈ।
+* ਇੱਕ ਜਟਿਲ ਕਾਰਜ ਨੂੰ ਪ੍ਰਬੰਧਨਯੋਗ ਉਪ-ਕਾਰਜਾਂ ਵਿੱਚ ਵੰਡੋ ਅਤੇ ਉਨ੍ਹਾਂ ਨੂੰ ਤਰਕਸੰਗਤ ਕ੍ਰਮ ਵਿੱਚ ਵਿਵਸਥਿਤ ਕਰੋ।
+* ਏਜੰਟ ਨੂੰ ਸਹੀ ਸੰਦਾਂ (ਜਿਵੇਂ ਖੋਜ ਸੰਦ ਜਾਂ ਡਾਟਾ ਵਿਸ਼ਲੇਸ਼ਣ ਸੰਦ) ਨਾਲ ਸਜਾਓ, ਇਹ ਫੈਸਲਾ ਕਰੋ ਕਿ ਕਦੋਂ ਅਤੇ ਕਿਵੇਂ ਇਹਨਾਂ ਦੀ ਵਰਤੋਂ ਕਰਨੀ ਹੈ, ਅਤੇ ਉੱਥੇ ਉੱਠਣ ਵਾਲੀਆਂ ਅਣਪਛਾਤੀਆਂ ਸਥਿਤੀਆਂ ਨੂੰ ਸੰਭਾਲੋ।
+* ਉਪ-ਕਾਰਜਾਂ ਦੇ ਨਤੀਜਿਆਂ ਦਾ ਮੁਲਾਂਕਣ ਕਰੋ, ਪ੍ਰਦਰਸ਼ਨ ਮਾਪੋ, ਅਤੇ ਆਖ਼ਰੀ ਆਉਟਪੁੱਟ ਨੂੰ ਸੁਧਾਰਨ ਲਈ ਕਰਵਾਈ ਵਿਚ ਸੁਧਾਰ ਕਰੋ।
 
-## ਸਮੁੱਚੇ ਲਕਸ਼ ਨੂੰ ਪਰਿਭਾਸ਼ਿਤ ਕਰਨਾ ਅਤੇ ਕੰਮ ਨੂੰ ਵੰਡਣਾ
+## ਕੁੱਲ ਮਕਸਦ ਨਿਰਧਾਰਿਤ ਕਰਨਾ ਅਤੇ ਕਾਰਜ ਵੰਡਣਾ
 
-![ਲਕਸ਼ ਅਤੇ ਕੰਮ ਪਰਿਭਾਸ਼ਿਤ ਕਰਨਾ](../../../translated_images/defining-goals-tasks.d70439e19e37c47ac76c48b209a4eb515bea5b8a5207f6b2e7b5e597f09ccf6a.pa.png)
+![Defining Goals and Tasks](../../../translated_images/pa/defining-goals-tasks.d70439e19e37c47a.webp)
 
-ਅਧਿਕਤਰ ਅਸਲ-ਜਗਤ ਦੇ ਕੰਮ ਇੱਕ ਹੀ ਕਦਮ ਵਿੱਚ ਹੱਲ ਕਰਨ ਲਈ ਬਹੁਤ ਜਟਿਲ ਹੁੰਦੇ ਹਨ। ਇੱਕ AI ਏਜੰਟ ਨੂੰ ਆਪਣੀ ਯੋਜਨਾ ਅਤੇ ਕਾਰਵਾਈਆਂ ਨੂੰ ਮਾਰਗਦਰਸ਼ਨ ਦੇਣ ਲਈ ਇੱਕ ਸੰਖੇਪ ਉਦੇਸ਼ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ। ਉਦਾਹਰਣ ਲਈ, ਲਕਸ਼ ਨੂੰ ਧਿਆਨ ਵਿੱਚ ਰੱਖੋ:
+ਜ਼ਿਆਦਾਤਰ ਅਸਲੀ ਦੁਨੀਆ ਦੇ ਕਾਰਜ ਇੱਕ ਕਦਮ ਵਿੱਚ ਕਰਨ ਲਈ ਬਹੁਤ ਜਟਿਲ ਹੁੰਦੇ ਹਨ। ਇਕ AI ਏਜੰਟ ਨੂੰ ਆਪਣੀ ਯੋਜਨਾ ਅਤੇ ਕਾਰਵਾਈ ਲਈ ਇੱਕ ਸੰਖੇਪ ਉਦੇਸ਼ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ। ਉਦਾਹਰਨ ਵਜੋਂ, ਇੱਥੇ ਲਕੜੀ ਹੈ:
 
-    "3 ਦਿਨ ਦੀ ਯਾਤਰਾ ਦੀ ਯੋਜਨਾ ਬਣਾਓ।"
+    "3-ਦਿਨ ਦਾ ਯਾਤਰਾ ਯੋਜਨਾ ਤਿਆਰ ਕਰੋ।"
 
-ਜਦੋਂ ਕਿ ਇਹ ਕਹਿਣਾ ਸਧਾਰਨ ਹੈ, ਇਸ ਨੂੰ ਫਿਰ ਵੀ ਸੁਧਾਰ ਦੀ ਲੋੜ ਹੈ। ਜਿੰਨਾ ਸਪਸ਼ਟ ਲਕਸ਼ ਹੋਵੇਗਾ, ਉਨਾ ਹੀ ਚੰਗਾ ਏਜੰਟ (ਅਤੇ ਕੋਈ ਵੀ ਮਨੁੱਖੀ ਸਹਿਯੋਗੀ) ਸਹੀ ਨਤੀਜੇ ਨੂੰ ਹਾਸਲ ਕਰਨ 'ਤੇ ਧਿਆਨ ਕੇਂਦਰਿਤ ਕਰ ਸਕਦੇ ਹਨ, ਜਿਵੇਂ ਕਿ ਉਡਾਨ ਦੇ ਵਿਕਲਪਾਂ, ਹੋਟਲ ਦੀ ਸਿਫਾਰਸ਼ਾਂ, ਅਤੇ ਗਤੀਵਿਧੀਆਂ ਦੇ ਸੁਝਾਅ ਦੇ ਨਾਲ ਇੱਕ ਵਿਸਤ੍ਰਿਤ ਯੋਜਨਾ ਬਣਾਉਣਾ।
+ਜੇਕਰچہ ਇਹ ਸਧਾਰਣ ਹੈ, ਇਹ ਨੂੰ ਫਿਰ ਵੀ ਸੁਧਾਰ ਦੇਣ ਦੀ ਲੋੜ ਹੈ। ਜਿੰਨਾ ਜ਼ਿਆਦਾ ਸਪੱਠ ਲਕੜੀ ਹੋਵੇਗਾ, ਏਜੰਟ (ਅਤੇ ਕੋਈ ਵੀ ਮਨੁੱਖੀ ਸਹਿਯੋਗੀ) ਬੇਹਤਰ ਤਰੀਕੇ ਨਾਲ ਸਹੀ ਨਤੀਜਾ ਪ੍ਰਾਪਤ ਕਰਨ 'ਤੇ ਧਿਆਨ ਕੇਂਦ੍ਰਿਤ ਕਰ ਸਕਦੇ ਹਨ, ਜਿਵੇਂ ਕਿ ਫਲਾਈਟ ਵਿਕਲਪ, ਹੋਟਲ ਸਿਫਾਰਸ਼ਾਂ, ਅਤੇ ਕਿਰਿਆਸ਼ੀਲ ਸੁਝਾਵਾਂ ਦੇ ਨਾਲ ਇੱਕ ਵਿਸਥਾਰਪੂਰਕ ਯਾਤਰਾ ਦਸਤਾਵੇਜ਼ ਬਣਾਉਣਾ।
 
-### ਕੰਮ ਦਾ ਵਿਭਾਜਨ
+### ਕਾਰਜ ਵੰਡ
 
-ਵੱਡੇ ਜਾਂ ਜਟਿਲ ਕੰਮ ਛੋਟੇ, ਲਕਸ਼-ਕੇਂਦਰਿਤ ਉਪ-ਕੰਮਾਂ ਵਿੱਚ ਵੰਡੇ ਜਾਣ 'ਤੇ ਹੋਰ ਸੰਭਾਲਣ ਯੋਗ ਬਣ ਜਾਂਦੇ ਹਨ।  
-ਯਾਤਰਾ ਦੀ ਯੋਜਨਾ ਦੇ ਉਦਾਹਰਣ ਲਈ, ਤੁਸੀਂ ਲਕਸ਼ ਨੂੰ ਇਸ ਤਰ੍ਹਾਂ ਵੰਡ ਸਕਦੇ ਹੋ:
+ਵੱਡੇ ਜਾਂ ਜਟਿਲ ਕਾਰਜ ਛੋਟੇ, ਲਕੜੀ-ਕੇਂਦਰਿਤ ਉਪ-ਕਾਰਜਾਂ ਵਿੱਚ ਵੰਡੇ ਜਾਣ 'ਤੇ ਜ਼ਿਆਦਾ ਮੈਨਠੇ ਜਾਂਦੇ ਹਨ।  
+ਯਾਤਰਾ ਯੋਜਨਾ ਦੇ ਉਦਾਹਰਨ ਲਈ, ਤੁਸੀਂ ਲਕੜੀ ਨੂੰ ਵੰਡ ਸਕਦੇ ਹੋ:
 
-* ਉਡਾਨ ਬੁੱਕਿੰਗ
-* ਹੋਟਲ ਬੁੱਕਿੰਗ
-* ਕਾਰ ਕਿਰਾਏ 'ਤੇ ਲੈਣਾ
+* ਫਲਾਈਟ ਬੁਕਿੰਗ  
+* ਹੋਟਲ ਬੁਕਿੰਗ  
+* ਕਾਰ ਕਿਰਾਏ 'ਤੇ ਲੈਣਾ  
 * ਨਿੱਜੀਕਰਨ
 
-ਹਰ ਉਪ-ਕੰਮ ਨੂੰ ਫਿਰ ਸਮਰਪਿਤ ਏਜੰਟਾਂ ਜਾਂ ਪ੍ਰਕਿਰਿਆਵਾਂ ਦੁਆਰਾ ਹੱਲ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ। ਇੱਕ ਏਜੰਟ ਸਭ ਤੋਂ ਵਧੀਆ ਉਡਾਨ ਦੇ سودੇ ਖੋਜਣ ਵਿੱਚ ਮਾਹਰ ਹੋ ਸਕਦਾ ਹੈ, ਦੂਜਾ ਹੋਟਲ ਬੁੱਕਿੰਗ 'ਤੇ ਧਿਆਨ ਕੇਂਦਰਿਤ ਕਰ ਸਕਦਾ ਹੈ, ਆਦਿ। ਇੱਕ ਸਹਿ-ਸੰਯੋਜਕ ਜਾਂ "ਡਾਊਨਸਟ੍ਰੀਮ" ਏਜੰਟ ਫਿਰ ਇਹ ਨਤੀਜੇ ਇੱਕ ਸੰਗਠਿਤ ਯੋਜਨਾ ਵਿੱਚ ਇਕੱਠੇ ਕਰ ਸਕਦਾ ਹੈ ਜੋ ਅੰਤਮ ਉਪਭੋਗਤਾ ਨੂੰ ਦਿੱਤੀ ਜਾਵੇ।
+ਹਰ ਉਪ-ਕਾਰਜ ਨੂੰ ਸਮਰਪਿਤ ਏਜੰਟਾਂ ਜਾਂ ਪ੍ਰਕਿਰਿਆਵਾਂ ਵੱਲੋਂ ਸਾਂਭਿਆ ਜਾ ਸਕਦਾ ਹੈ। ਇੱਕ ਏਜੰਟ ਸਭ ਤੋਂ ਵਧੀਆ ਫਲਾਈਟ ਦਾਮ ਖੋਜਣ ਵਿੱਚ ਮੁਹਾਰਤ ਰੱਖ ਸਕਦਾ ਹੈ, ਦੂਜਾ ਹੋਟਲ ਬੁਕਿੰਗ 'ਤੇ ਧਿਆਨ ਕੇਂਦ੍ਰਿਤ ਕਰਦਾ ਹੈ, ਆਦਿ। ਇੱਕ ਕੋਆਰਡੀਨੇਟਿੰਗ ਜਾਂ "ਡਾਊਨਸਟਰਿਮ" ਏਜੰਟ ਫਿਰ ਇਹ ਨਤੀਜੇ ਇੱਕ ਮਨਮੁਹਾਂਦੇ ਯਾਤਰਾ ਦਸਤਾਵੇਜ਼ ਵਿੱਚ ਇਕੱਠੇ ਕਰ ਸਕਦਾ ਹੈ ਜਿਹੜਾ ਅੰਤ ਮੂਲ ਉਪਭੋਗਤਾ ਲਈ ਹੁੰਦਾ ਹੈ।  
 
-ਇਹ ਮੋਡਿਊਲਰ ਪਹੁੰਚ ਤਰੱਕੀਸ਼ੀਲ ਸੁਧਾਰਾਂ ਦੀ ਵੀ ਆਗਿਆ ਦਿੰਦੀ ਹੈ। ਉਦਾਹਰਣ ਲਈ, ਤੁਸੀਂ ਖਾਣੇ ਦੀ ਸਿਫਾਰਸ਼ਾਂ ਜਾਂ ਸਥਾਨਕ ਗਤੀਵਿਧੀ ਸੁਝਾਅ ਲਈ ਵਿਸ਼ੇਸ਼ ਏਜੰਟ ਸ਼ਾਮਲ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਸਮੇਂ ਦੇ ਨਾਲ ਯੋਜਨਾ ਨੂੰ ਸੁਧਾਰ ਸਕਦੇ ਹੋ।
+ਇਹ ਮਾਡਿਊਲਰ ਪਹੁੰਚ ਵੀ ਵਾਧੂ ਸੁਧਾਰਾਂ ਦੀ ਆਗਿਆ ਦਿੰਦੀ ਹੈ। ਉਦਾਹਰਨ ਲਈ, ਤੁਸੀਂ ਖ਼ਾਣ-ਪੀਣ ਦੀਆਂ ਸਿਫ਼ਾਰਸ਼ਾਂ ਜਾਂ ਸਥਾਨਕ ਗਤੀਵਿਧੀਆਂ ਦੀਆਂ ਸੁਝਾਵਾਂ ਲਈ ਵਿਸ਼ੇਸ਼ ਏਜੰਟ ਜੋੜ ਸਕਦੇ ਹੋ ਅਤੇ ਸਮੇਂ-ਸਮੇਂ 'ਤੇ ਯਾਤਰਾ ਦਸਤਾਵੇਜ਼ ਨੂੰ ਸੁਧਾਰ ਸਕਦੇ ਹੋ।
 
-### ਸੰਰਚਿਤ ਆਉਟਪੁੱਟ
+### ਵਿਵਸਥਿਤ ਆਉਟਪੁੱਟ
 
-ਵੱਡੇ ਭਾਸ਼ਾ ਮਾਡਲ (LLMs) ਸੰਰਚਿਤ ਆਉਟਪੁੱਟ (ਜਿਵੇਂ JSON) ਤਿਆਰ ਕਰ ਸਕਦੇ ਹਨ ਜੋ ਡਾਊਨਸਟ੍ਰੀਮ ਏਜੰਟਾਂ ਜਾਂ ਸੇਵਾਵਾਂ ਲਈ ਪਾਰਸ ਅਤੇ ਪ੍ਰਕਿਰਿਆ ਕਰਨ ਲਈ ਆਸਾਨ ਹੁੰਦਾ ਹੈ। ਇਹ ਖਾਸ ਤੌਰ 'ਤੇ ਇੱਕ ਬਹੁ-ਏਜੰਟ ਸੰਦਰਭ ਵਿੱਚ ਲਾਭਦਾਇਕ ਹੈ, ਜਿੱਥੇ ਅਸੀਂ ਯੋਜਨਾ ਦੇ ਆਉਟਪੁੱਟ ਪ੍ਰਾਪਤ ਹੋਣ ਤੋਂ ਬਾਅਦ ਇਹ ਕੰਮ ਕਰ ਸਕਦੇ ਹਾਂ। ਇੱਕ ਝਲਕ ਲਈ:
+ਵੱਡੇ ਭਾਸ਼ਾ ਮਾਡਲ (LLMs) ਵਿਵਸਥਿਤ ਆਉਟਪੁੱਟ (ਜਿਵੇਂ JSON) ਤਿਆਰ ਕਰ ਸਕਦੇ ਹਨ ਜੋ ਡਾਊਨਸਟਰਿਮ ਏਜੰਟ ਜਾਂ ਸੇਵਾਵਾਂ ਲਈ ਅਸਾਨੀ ਨਾਲ ਪਾਰਸ ਅਤੇ ਪ੍ਰਕਿਰਿਆਗਤ ਹੋ ਜਾਂਦਾ ਹੈ। ਇਹ ਖ਼ਾਸ ਤੌਰ 'ਤੇ ਬਹੁ-ਏਜੰਟ ਸੰਦਰਭ ਵਿੱਚ ਲਾਭਕਾਰੀ ਹੈ, ਜਿੱਥੇ ਅਸੀਂ ਇਹ ਕਾਰਜ ਯੋਜਨਾ ਬਣਾਉਣ ਦੇ ਆਉਟਪੁੱਟ ਮਿਲਣ ਤੋਂ ਬਾਅਦ ਕਰ ਸਕਦੇ ਹਾਂ।  
+
+ਹੇਠਾਂ ਦਿੱਤਾ ਪਾਇਥਨ ਸਨਿੱਪੇਟ ਇੱਕ ਸਧਾਰਣ ਯੋਜਨਾ ਬਣਾਉਣ ਵਾਲੇ ਏਜੰਟ ਨੂੰ ਕਿਵੇਂ ਇੱਕ ਲਕੜੀ ਨੂੰ ਉਪ-ਕਾਰਜਾਂ ਵਿੱਚ ਵੰਡਦਾ ਹੈ ਅਤੇ ਇੱਕ ਵਿਵਸਥਿਤ ਯੋਜਨਾ ਤਿਆਰ ਕਰਦਾ ਹੈ ਦਿਖਾਉਂਦਾ ਹੈ:
 
 ```python
 from pydantic import BaseModel
@@ -66,9 +59,8 @@ import json
 import os
 from typing import Optional
 from pprint import pprint
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-from autogen_ext.models.azure import AzureAIChatCompletionClient
-from azure.core.credentials import AzureKeyCredential
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
 class AgentEnum(str, Enum):
     FlightBooking = "flight_booking"
@@ -79,35 +71,22 @@ class AgentEnum(str, Enum):
     DefaultAgent = "default_agent"
     GroupChatManager = "group_chat_manager"
 
-# Travel SubTask Model
+# ਯਾਤਰਾ ਸਬਟਾਸਕ ਮਾਡਲ
 class TravelSubTask(BaseModel):
     task_details: str
-    assigned_agent: AgentEnum  # we want to assign the task to the agent
+    assigned_agent: AgentEnum  # ਅਸੀਂ ਕਾਰਜ ਏਜੰਟ ਨੂੰ ਸੌਂਪਣਾ ਚਾਹੁੰਦੇ ਹਾਂ
 
 class TravelPlan(BaseModel):
     main_task: str
     subtasks: List[TravelSubTask]
     is_greeting: bool
 
-client = AzureAIChatCompletionClient(
-    model="gpt-4o-mini",
-    endpoint="https://models.inference.ai.azure.com",
-    # To authenticate with the model you will need to generate a personal access token (PAT) in your GitHub settings.
-    # Create your PAT token by following instructions here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
-    credential=AzureKeyCredential(os.environ["GITHUB_TOKEN"]),
-    model_info={
-        "json_output": False,
-        "function_calling": True,
-        "vision": True,
-        "family": "unknown",
-    },
-)
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
 
-# Define the user message
-messages = [
-    SystemMessage(content="""You are an planner agent.
+# ਯੂਜ਼ਰ ਸੁਨੇਹਾ ਪਰਿਭਾਸ਼ਿਤ ਕਰੋ
+system_prompt = """You are a planner agent.
     Your job is to decide which agents to run based on the user's request.
-                      Provide your response in JSON format with the following structure:
+    Provide your response in JSON format with the following structure:
 {'main_task': 'Plan a family trip from Singapore to Melbourne.',
  'subtasks': [{'assigned_agent': 'flight_booking',
                'task_details': 'Book round-trip flights from Singapore to '
@@ -118,44 +97,27 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(
-        content="Create a travel plan for a family of 2 kids from Singapore to Melboune", source="user"),
-]
+    - DefaultAgent: For handling general requests"""
 
-response = await client.create(messages=messages, extra_create_args={"response_format": 'json_object'})
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
 
-response_content: Optional[str] = response.content if isinstance(
-    response.content, str) else None
-if response_content is None:
-    raise ValueError("Response content is not a valid JSON string" )
+response = client.create_response(input=user_message, instructions=system_prompt)
 
+response_content = response.output_text
 pprint(json.loads(response_content))
-
-# # Ensure the response content is a valid JSON string before loading it
-# response_content: Optional[str] = response.content if isinstance(
-#     response.content, str) else None
-# if response_content is None:
-#     raise ValueError("Response content is not a valid JSON string")
-
-# # Print the response content after loading it as JSON
-# pprint(json.loads(response_content))
-
-# Validate the response content with the MathReasoning model
-# TravelPlan.model_validate(json.loads(response_content))
 ```
+  
+### ਬਹੁ-ਏਜੰਟ ਸਮਨ્વਣ ਵਾਲਾ ਯੋਜਨਾ ਬਣਾਉਣ ਵਾਲਾ ਏਜੰਟ  
 
-### ਬਹੁ-ਏਜੰਟ ਸਹਿ-ਸੰਯੋਜਨ ਨਾਲ ਯੋਜਨਾ ਬਣਾਉਣ ਵਾਲਾ ਏਜੰਟ
+ਇਸ ਉਦਾਹਰਨ ਵਿੱਚ, ਇੱਕ ਸੈਮਾਂਟਿਕ ਰਾਊਟਰ ਏਜੰਟ ਇੱਕ ਉਪਭੋਗਤਾ ਦੀ ਬੇਨਤੀ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ (ਜਿਵੇਂ "ਮੈਨੂੰ ਆਪਣੀ ਯਾਤਰਾ ਲਈ ਹੋਟਲ ਯੋਜਨਾ ਦੀ ਲੋੜ ਹੈ।")।
 
-ਇਸ ਉਦਾਹਰਣ ਵਿੱਚ, ਇੱਕ ਸੈਮੈਂਟਿਕ ਰਾਊਟਰ ਏਜੰਟ ਉਪਭੋਗਤਾ ਦੀ ਬੇਨਤੀ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ (ਜਿਵੇਂ, "ਮੈਨੂੰ ਆਪਣੀ ਯਾਤਰਾ ਲਈ ਹੋਟਲ ਦੀ ਯੋਜਨਾ ਦੀ ਲੋੜ ਹੈ।")।
+ਫਿਰ ਯੋਜਨਾਕਾਰ:
 
-ਯੋਜਨਾਕਾਰ ਫਿਰ:
-
-* ਹੋਟਲ ਯੋਜਨਾ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ: ਯੋਜਨਾਕਾਰ ਉਪਭੋਗਤਾ ਦਾ ਸੁਨੇਹਾ ਲੈਂਦਾ ਹੈ ਅਤੇ, ਸਿਸਟਮ ਪ੍ਰੋੰਪਟ (ਉਪਲਬਧ ਏਜੰਟ ਵੇਰਵੇ ਸਮੇਤ) ਦੇ ਆਧਾਰ 'ਤੇ, ਇੱਕ ਸੰਰਚਿਤ ਯਾਤਰਾ ਯੋਜਨਾ ਤਿਆਰ ਕਰਦਾ ਹੈ।
-* ਏਜੰਟਾਂ ਅਤੇ ਉਨ੍ਹਾਂ ਦੇ ਟੂਲਾਂ ਦੀ ਸੂਚੀ ਬਣਾਉਂਦਾ ਹੈ: ਏਜੰਟ ਰਜਿਸਟਰੀ ਵਿੱਚ ਏਜੰਟਾਂ ਦੀ ਸੂਚੀ (ਜਿਵੇਂ, ਉਡਾਨ, ਹੋਟਲ, ਕਾਰ ਕਿਰਾਏ, ਅਤੇ ਗਤੀਵਿਧੀਆਂ ਲਈ) ਅਤੇ ਉਹਨਾਂ ਦੇ ਫੰਕਸ਼ਨ ਜਾਂ ਟੂਲ ਸ਼ਾਮਲ ਹੁੰਦੇ ਹਨ।
-* ਯੋਜਨਾ ਨੂੰ ਸੰਬੰਧਿਤ ਏਜੰਟਾਂ ਨੂੰ ਭੇਜਦਾ ਹੈ: ਉਪ-ਕੰਮਾਂ ਦੀ ਗਿਣਤੀ ਦੇ ਆਧਾਰ 'ਤੇ, ਯੋਜਨਾਕਾਰ ਜਾਂ ਤਾਂ ਸੁਨੇਹਾ ਸਿੱਧੇ ਸਮਰਪਿਤ ਏਜੰਟ ਨੂੰ ਭੇਜਦਾ ਹੈ (ਇੱਕ-ਕੰਮ ਸਥਿਤੀਆਂ ਲਈ) ਜਾਂ ਬਹੁ-ਏਜੰਟ ਸਹਿ-ਸੰਵਾਦ ਲਈ ਗਰੁੱਪ ਚੈਟ ਮੈਨੇਜਰ ਦੁਆਰਾ ਸਹਿ-ਸੰਯੋਜਨ ਕਰਦਾ ਹੈ।
-* ਨਤੀਜੇ ਦਾ ਸਾਰ ਬਣਾਉਂਦਾ ਹੈ: ਅੰਤ ਵਿੱਚ, ਯੋਜਨਾਕਾਰ ਸਪਸ਼ਟਤਾ ਲਈ ਤਿਆਰ ਕੀਤੀ ਯੋਜਨਾ ਦਾ ਸਾਰ ਬਣਾਉਂਦਾ ਹੈ।  
-ਹੇਠਾਂ ਦਿੱਤਾ ਪਾਇਥਨ ਕੋਡ ਸੈਂਪਲ ਇਹ ਕਦਮ ਦਰਸਾਉਂਦਾ ਹੈ:
+* ਹੋਟਲ ਯੋਜਨਾ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ: ਯੋਜਨਾਕਾਰ ਉਪਭੋਗਤਾ ਦਾ ਸੁਨੇਹਾ ਲੈਂਦਾ ਹੈ ਅਤੇ ਸਿਸਟਮ ਪ੍ਰਾਂਪਟ (ਉਪਲੱਬਧ ਏਜੰਟ ਵੇਰਿਆਂ ਸਮੇਤ) ਦੇ ਆਧਾਰ 'ਤੇ ਇੱਕ ਵਿਵਸਥਿਤ ਯਾਤਰਾ ਯੋਜਨਾ ਤਿਆਰ ਕਰਦਾ ਹੈ।  
+* ਏਜੰਟ ਅਤੇ ਉਨ੍ਹਾਂ ਦੇ ਸੰਦਾਂ ਦੀ ਸੂਚੀ ਬਣਾਉਂਦਾ ਹੈ: ਏਜੰਟ ਰਜਿਸਟਰੀ ਵਿੱਚ ਏਜੰਟਾਂ ਦੀ ਸੂਚੀ ਹੁੰਦੀ ਹੈ (ਉਦਾਹਰਣ ਵਜੋਂ ਫਲਾਈਟ, ਹੋਟਲ, ਕਾਰ ਕਿਰਾਏ, ਅਤੇ ਗਤੀਵਿਧੀ ਲਈ) ਅਤੇ ਉਹਨਾਂ ਵੱਲੋਂ ਪੇਸ਼ ਕੀਤੇ ਫੰਕਸ਼ਨ ਜਾਂ ਸੰਦ।  
+* ਯੋਜਨਾ ਨੂੰ ਸੰਬੰਧਤ ਏਜੰਟਾਂ ਤੱਕ ਭੇਜਦਾ ਹੈ: ਉਪ-ਕਾਰਜਾਂ ਦੀ ਗਿਣਤੀ ਦੇ ਮੱਦੇਨਜ਼ਰ ਯੋਜਨਾਕਾਰ ਸੁਨੇਹਾ ਸੀਧਾ ਕਿਸੇ ਸਮਰਪਿਤ ਏਜੰਟ ਨੂੰ ਭੇਜਦਾ ਹੈ (ਇੱਕ ਕਾਰਜ ਵਾਲੀਆਂ ਸਥਿਤੀਆਂ ਲਈ) ਜਾਂ ਬਹੁ-ਏਜੰਟ ਸਹਿਯੋਗ ਲਈ ਗਰੁੱਪ ਚੈਟ ਮੈਨੇਜਰ ਰਾਹੀਂ ਕੋਆਰਡੀਨੇਟ ਕਰਦਾ ਹੈ।  
+* ਨਤੀਜਾ ਸੰਖੇਪ ਕਰਦਾ ਹੈ: ਆਖ਼ਰਕਾਰ, ਯੋਜਨਾਕਾਰ ਸਪਸ਼ਟਤਾ ਲਈ ਤਿਆਰ ਕੀਤੀ ਯੋਜਨਾ ਦਾ ਸੰਖੇਪ ਕਰਦਾ ਹੈ।  
+ਹੇਠਾਂ ਦਿੱਤਾ ਪਾਇਥਨ ਕੋਡ ਨਮੂਨਾ ਇਹ ਕਦਮ ਦਰਸਾਉਂਦਾ ਹੈ:  
 
 ```python
 
@@ -173,11 +135,11 @@ class AgentEnum(str, Enum):
     DefaultAgent = "default_agent"
     GroupChatManager = "group_chat_manager"
 
-# Travel SubTask Model
+# ਯਾਤਰਾ ਸਬਟਾਸਕ ਮਾਡਲ
 
 class TravelSubTask(BaseModel):
     task_details: str
-    assigned_agent: AgentEnum # we want to assign the task to the agent
+    assigned_agent: AgentEnum # ਅਸੀਂ ਟਾਸਕ ਨੂੰ ਏਜੰਟ ਨੂੰ ਸੌਂਪਣਾ ਚਾਹੁੰਦੇ ਹਾਂ
 
 class TravelPlan(BaseModel):
     main_task: str
@@ -187,25 +149,18 @@ import json
 import os
 from typing import Optional
 
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-from autogen_ext.models.openai import AzureOpenAIChatCompletionClient
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
-# Create the client with type-checked environment variables
+# ਕਲਾਇੰਟ ਬਣਾਓ
 
-client = AzureOpenAIChatCompletionClient(
-    azure_deployment=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
-    model=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
-    api_version=os.getenv("AZURE_OPENAI_API_VERSION"),
-    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-)
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
 
 from pprint import pprint
 
-# Define the user message
+# ਯੂਜ਼ਰ ਮੈਸਜ ਨੂੰ ਪਰਿਭਾਸ਼ਿਤ ਕਰੋ
 
-messages = [
-    SystemMessage(content="""You are an planner agent.
+system_prompt = """You are a planner agent.
     Your job is to decide which agents to run based on the user's request.
     Below are the available agents specialized in different tasks:
     - FlightBooking: For booking flights and providing flight information
@@ -213,24 +168,20 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(content="Create a travel plan for a family of 2 kids from Singapore to Melbourne", source="user"),
-]
+    - DefaultAgent: For handling general requests"""
 
-response = await client.create(messages=messages, extra_create_args={"response_format": TravelPlan})
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
 
-# Ensure the response content is a valid JSON string before loading it
+response = client.create_response(input=user_message, instructions=system_prompt)
 
-response_content: Optional[str] = response.content if isinstance(response.content, str) else None
-if response_content is None:
-    raise ValueError("Response content is not a valid JSON string")
+response_content = response.output_text
 
-# Print the response content after loading it as JSON
+# ਇਸਨੂੰ JSON ਵਜੋਂ ਲੋਡ ਕਰਨ ਤੋਂ ਬਾਅਦ ਜਵਾਬ ਸਮੱਗਰੀ ਪ੍ਰਿੰਟ ਕਰੋ
 
 pprint(json.loads(response_content))
 ```
-
-ਪਿਛਲੇ ਕੋਡ ਤੋਂ ਨਤੀਜਾ ਹੇਠਾਂ ਦਿੱਤਾ ਗਿਆ ਹੈ ਅਤੇ ਤੁਸੀਂ ਇਸ ਸੰਰਚਿਤ ਆਉਟਪੁੱਟ ਨੂੰ `assigned_agent` ਨੂੰ ਰੂਟ ਕਰਨ ਅਤੇ ਯਾਤਰਾ ਯੋਜਨਾ ਨੂੰ ਅੰਤਮ ਉਪਭੋਗਤਾ ਲਈ ਸਾਰ ਬਣਾਉਣ ਲਈ ਵਰਤ ਸਕਦੇ ਹੋ।
+  
+ਹੇਠਾਂ ਦਿੱਤਾ ਗਿਆ ਕੋਡ ਔਟਪੁੱਟ ਪਿਛਲੇ ਕੋਡ ਦੇ ਨਤੀਜੇ ਨੂੰ ਦਰਸਾਉਂਦਾ ਹੈ ਅਤੇ ਤੁਸੀਂ ਇਸ ਵਿਵਸਥਿਤ ਆਉਟਪੁੱਟ ਨੂੰ `assigned_agent` ਵੱਲ ਭੇਜਣ ਅਤੇ ਯਾਤਰਾ ਯੋਜਨਾ ਨੂੰ ਅੰਤਮ ਉਪਭੋਗਤਾ ਲਈ ਸੰਖੇਪ ਕਰਨ ਲਈ ਵਰਤ ਸਕਦੇ ਹੋ।
 
 ```json
 {
@@ -260,22 +211,23 @@ pprint(json.loads(response_content))
     ]
 }
 ```
+  
+ਪਿਛਲੇ ਕੋਡ ਨਮੂਨੇ ਵਾਲਾ ਇੱਕ ਉਦਾਹਰਨ ਨੋਟਬੁੱਕ [ਇਥੇ](07-python-agent-framework.ipynb) ਉਪਲਬਧ ਹੈ।
 
-ਪਿਛਲੇ ਕੋਡ ਸੈਂਪਲ ਦੇ ਨਾਲ ਇੱਕ ਉਦਾਹਰਣ ਨੋਟਬੁੱਕ [ਇੱਥੇ](07-autogen.ipynb) ਉਪਲਬਧ ਹੈ।
+### ਦੁਹਰਾਉਂਦੀ ਯੋਜਨਾ ਬਣਾਉਣਾ
 
-### ਦੁਹਰਾਈਯੋਗ ਯੋਜਨਾ
+ਕੁਝ ਕਾਰਜਾਂ ਲਈ ਅੱਗੇ-ਪਿੱਛੇ ਜਾਂ ਦੁਬਾਰਾ ਯੋਜਨਾਬੰਦੀ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ, ਜਿੱਥੇ ਇੱਕ ਉਪ-ਕਾਰਜ ਦਾ ਨਤੀਜਾ ਅਗਲੇ ਉਪ-ਕਾਰਜ 'ਤੇ ਪ੍ਰਭਾਵ ਪਾਂਦਾ ਹੈ। ਉਦਾਹਰਨ ਵਜੋਂ, ਜੇਕਰ ਏਜੰਟ ਫਲਾਈਟ ਬੁਕਿੰਗ ਦੌਰਾਨ ਅਣਪਛਾਤੇ ਡਾਟਾ ਫਾਰਮੈਟ ਦਾ ਪਤਾ ਲਗਾਉਂਦਾ ਹੈ, ਤਾਂ ਇਸ ਨੂੰ ਹੋਟਲ ਬੁਕਿੰਗ ਦੀ ਯੋਜਨਾ ਸ਼ੁਰੂ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਆਪਣੀ ਯੋਜਨਾਬੰਦੀ ਨੂੰ ਢਾਲਣਾ ਪੈ ਸਕਦਾ ਹੈ।  
 
-ਕੁਝ ਕੰਮਾਂ ਨੂੰ ਵਾਪਸ-ਅੱਗੇ ਜਾਂ ਦੁਬਾਰਾ ਯੋਜਨਾ ਬਣਾਉਣ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ, ਜਿੱਥੇ ਇੱਕ ਉਪ-ਕੰਮ ਦਾ ਨਤੀਜਾ ਅਗਲੇ 'ਤੇ ਪ੍ਰਭਾਵ ਪਾਉਂਦਾ ਹੈ। ਉਦਾਹਰਣ ਲਈ, ਜੇ ਏਜੰਟ ਉਡਾਨਾਂ ਦੀ ਬੁੱਕਿੰਗ ਦੌਰਾਨ ਇੱਕ ਅਣਅਪੇਖਿਤ ਡਾਟਾ ਫਾਰਮੈਟ ਦੀ ਖੋਜ ਕਰਦਾ ਹੈ, ਤਾਂ ਇਹ ਹੋਟਲ ਬੁੱਕਿੰਗ 'ਤੇ ਅੱਗੇ ਵਧਣ ਤੋਂ ਪਹਿਲਾਂ ਆਪਣੀ ਰਣਨੀਤੀ ਨੂੰ ਅਨੁਕੂਲ ਕਰਨ ਦੀ ਲੋੜ ਹੋ ਸਕਦੀ ਹੈ।
+ਇਸ ਤੋਂ ਇਲਾਵਾ, ਉਪਭੋਗਤਾ ਦੀ ਰਾਏ (ਜਿਵੇਂ ਕੋਈ ਮਨੁੱਖ ਪਹਿਲੀ ਫਲਾਈਟ ਨੂੰ ਤਰਜੀਹ ਦੇਵੇ) ਇੱਕ ਹਿੱਸੇਵਾਰੀ ਦੁਬਾਰਾ ਯੋਜਨਾ ਨੂੰ ਚਾਲੂ ਕਰ ਸਕਦੀ ਹੈ। ਇਹ ਤਰਤੀਬ ਵਾਲੀ, ਦੁਹਰਾਉਣ ਵਾਲੀ ਪਹੁੰਚ ਇਹ ਯਕੀਨੀ ਬਣਾਉਂਦੀ ਹੈ ਕਿ ਆਖਰੀ ਹੱਲ ਅਸਲੀ ਦੁਨੀਆ ਦੀਆਂ ਪਾਬੰਦੀਆਂ ਅਤੇ ਬਦਲਦੀਆਂ ਉਪਭੋਗਤਾ ਪਸੰਦਾਂ ਨਾਲ ਮੇਲ ਖਾਂਦਾ ਹੈ।  
 
-ਇਸ ਤੋਂ ਇਲਾਵਾ, ਉਪਭੋਗਤਾ ਫੀਡਬੈਕ (ਜਿਵੇਂ, ਇੱਕ ਮਨੁੱਖ ਫੈਸਲਾ ਕਰਦਾ ਹੈ ਕਿ ਉਹ ਪਹਿਲੀ ਉਡਾਨ ਨੂੰ ਤਰਜੀਹ ਦਿੰਦੇ ਹਨ) ਇੱਕ ਅੰਸ਼ਿਕ ਦੁਬਾਰਾ ਯੋਜਨਾ ਨੂੰ ਸ਼ੁਰੂ ਕਰ ਸਕਦਾ ਹੈ। ਇਹ ਗਤੀਸ਼ੀਲ, ਦੁਹਰਾਈਯੋਗ ਪਹੁੰਚ ਇਹ ਯਕੀਨੀ ਬਣਾਉਂਦੀ ਹੈ ਕਿ ਅੰਤਮ ਹੱਲ ਅਸਲ-ਜਗਤ ਦੀਆਂ ਪਾਬੰਦੀਆਂ ਅਤੇ ਵਿਕਸਿਤ ਉਪਭੋਗਤਾ ਪਸੰਦਾਂ ਨਾਲ ਸੰਗਤ ਹੈ।
-
-ਉਦਾਹਰਣ ਲਈ ਸੈਂਪਲ ਕੋਡ:
+ਉਦਾਹਰਨ ਕੋਡ
 
 ```python
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-#.. same as previous code and pass on the user history, current plan
-messages = [
-    SystemMessage(content="""You are a planner agent to optimize the
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
+#.. ਪਿਛਲੇ ਕੋਡ ਵਾਂਗ ਹੀ ਅਤੇ ਯੂਜ਼ਰ ਇਤਿਹਾਸ, ਮੌਜੂਦਾ ਯੋਜਨਾ ਨੂੰ ਅੱਗੇ ਵਧਾਓ
+
+system_prompt = """You are a planner agent to optimize the
     Your job is to decide which agents to run based on the user's request.
     Below are the available agents specialized in different tasks:
     - FlightBooking: For booking flights and providing flight information
@@ -283,32 +235,35 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(content="Create a travel plan for a family of 2 kids from Singapore to Melbourne", source="user"),
-    AssistantMessage(content=f"Previous travel plan - {TravelPlan}", source="assistant")
-]
-# .. re-plan and send the tasks to respective agents
+    - DefaultAgent: For handling general requests"""
+
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
+
+response = client.create_response(
+    input=user_message,
+    instructions=system_prompt,
+    context=f"Previous travel plan - {TravelPlan}",
+)
+# .. ਮੁੜ ਯੋਜਨਾ ਬਣਾਓ ਅਤੇ ਕੰਮਾਂ ਨੂੰ ਸੰਬੰਧਿਤ ਏਜੰਟਾਂ ਨੂੰ ਭੇਜੋ
 ```
+  
+ਜਿਆਦਾ ਵਿਸਥਾਰਪੂਰਕ ਯੋਜਨਾ ਬਣਾਉਣ ਲਈ ਮੈਗਨੇਟਿਕ ਵਨ ਦੇ <a href="https://www.microsoft.com/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks" target="_blank">ਬਲੌਗਪੋਸਟ</a> ਨੂੰ ਦੇਖੋ ਜੋ ਕਿ ਜਟਿਲ ਕਾਰਜਾਂ ਹੱਲ ਕਰਨ ਲਈ ਹੈ।
 
-ਵਧੇਰੇ ਵਿਸਤ੍ਰਿਤ ਯੋਜਨਾ ਲਈ Magnetic One ਦੀ ਜਾਂਚ ਕਰੋ।
+## ਸੰਖੇਪ
 
-## ਸਾਰ
-
-ਇਸ ਲੇਖ ਵਿੱਚ ਅਸੀਂ ਇੱਕ ਉਦਾਹਰਣ ਦੇਖਿਆ ਕਿ ਕਿਵੇਂ ਅਸੀਂ ਇੱਕ ਯੋਜਨਾਕਾਰ ਬਣਾਉਣ ਲਈ ਯੋਜਨਾ ਤਿਆਰ ਕਰ ਸਕਦੇ ਹਾਂ ਜੋ ਉਪਲਬਧ ਏਜੰਟਾਂ ਨੂੰ ਪਰਿਭਾਸ਼ਿਤ ਕਰਕੇ ਗਤੀਸ਼ੀਲ ਤੌਰ 'ਤੇ ਚੁਣਦਾ ਹੈ। ਯੋਜਨਾਕਾਰ ਦਾ ਆਉਟਪੁੱਟ ਕੰਮਾਂ ਨੂੰ ਵੰਡਦਾ ਹੈ ਅਤੇ ਏਜੰਟਾਂ ਨੂੰ ਅਸਾਈਨ ਕਰਦਾ ਹੈ ਤਾਂ ਜੋ ਉਹ ਕਾਰਜਨਵਿਤ ਹੋ ਸਕਣ। ਇਹ ਮੰਨਿਆ ਜਾਂਦਾ ਹੈ ਕਿ ਏਜੰਟਾਂ ਕੋਲ ਉਹ ਫੰਕਸ਼ਨ/ਟੂਲਾਂ ਦੀ ਪਹੁੰਚ ਹੈ ਜੋ ਕੰਮ ਨੂੰ ਕਰਨ ਲਈ ਲੋੜੀਂਦੇ ਹਨ। ਏਜੰਟਾਂ ਦੇ ਇਲਾਵਾ ਤੁਸੀਂ ਹੋਰ ਪੈਟਰਨ ਸ਼ਾਮਲ ਕਰ ਸਕਦੇ ਹੋ ਜਿਵੇਂ ਕਿ ਰਿਫਲੈਕਸ਼ਨ, ਸਾਰ ਬਣਾਉਣ ਵਾਲਾ, ਅਤੇ ਰਾਊਂਡ ਰੋਬਿਨ ਚੈਟ ਨੂੰ ਹੋਰ ਕਸਟਮਾਈਜ਼ ਕਰਨ ਲਈ।
+ਇਸ ਲੇਖ ਵਿੱਚ ਅਸੀਂ ਦੇਖਿਆ ਕਿ ਕਿਵੇਂ ਇੱਕ ਯੋਜਨਾਕਾਰ ਬਣਾਇਆ ਜਾ ਸਕਦਾ ਹੈ ਜੋ ਉਪਲਬਧ ਏਜੰਟਾਂ ਦੀ ਡਾਇਨਾਮਿਕ ਚੋਣ ਕਰਦਾ ਹੈ। ਯੋਜਨਾਕਾਰ ਦਾ ਆਉਟਪੁੱਟ ਕਾਰਜਾਂ ਨੂੰ ਵੰਡਦਾ ਹੈ ਅਤੇ ਉਹਨਾਂ ਨੂੰ ਐਜੰਟਾਂ ਨੂੰ ਸੌਂਪਦਾ ਹੈ ਤਾਂ ਜੋ ਉਹ ਲਾਗੂ ਹੋ ਸਕਣ। ਇਹ ਮੰਨਿਆ ਜਾਂਦਾ ਹੈ ਕਿ ਏਜੰਟਾਂ ਕੋਲ ਉਹ ਫੰਕਸ਼ਨ/ਸੰਦ ਹਨ ਜੋ ਕਾਰਜ ਕਰਨ ਲਈ ਜਰੂਰੀ ਹਨ। ਏਜੰਟਾਂ ਦੇ ਇਲਾਵਾ ਤੁਸੀਂ ਹੋਰ ਪੈਟਰਨਾਂ ਜਿਵੇਂ ਰਿਫਲੈਕਸ਼ਨ, ਸੰਖੇਪਕ, ਅਤੇ ਰਾਊਂਡ ਰੋਬਿਨ ਚੈਟ ਵੱਧ ਸਕਦੇ ਹੋ ਤਾਂ ਜੋ ਹੋਰ ਵਿਅਕਤੀਗਤਕਰਨ ਕੀਤਾ ਜਾ ਸਕੇ।
 
 ## ਵਾਧੂ ਸਰੋਤ
 
-AutoGen Magnetic One - ਇੱਕ ਜਨਰਲਿਸਟ ਬਹੁ-ਏਜੰਟ ਸਿਸਟਮ ਜੋ ਜਟਿਲ ਕੰਮਾਂ ਨੂੰ ਹੱਲ ਕਰਨ ਲਈ ਹੈ ਅਤੇ ਕਈ ਚੁਣੌਤੀਪੂਰਨ ਏਜੰਟਿਕ ਬੈਂਚਮਾਰਕਾਂ 'ਤੇ ਸ਼ਾਨਦਾਰ ਨਤੀਜੇ ਪ੍ਰਾਪਤ ਕੀਤੇ ਹਨ। ਹਵਾਲਾ:
+Magentic One - ਜਟਿਲ ਕਾਰਜਾਂ ਹੱਲ ਕਰਨ ਲਈ ਇੱਕ ਜਨਰਲਿਸਟ ਬਹੁ-ਏਜੰਟ ਸਿਸਟਮ ਹੈ ਅਤੇ ਇਹ ਬਹੁਤ ਸਾਰੇ ਚੁਣੌਤੀਪੂਰਕ ਏਜੰਟਿਕ ਮਾਪਦੰਡਾਂ ‘ਤੇ ਸ਼ਾਨਦਾਰ ਨਤੀਜੇ ਪ੍ਰਾਪਤ ਕਰ ਚੁੱਕਾ ਹੈ। ਹਵਾਲਾ: <a href="https://www.microsoft.com/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks" target="_blank">Magentic One</a>। ਇਸ ਅਮਲ ਵਿੱਚ, ਅੰਤਰਰਾਸ਼ਟਰਕਾਰਕ ਕਾਰਜ ਵਿਸ਼ੇਸ਼ ਯੋਜਨਾਵਾਂ ਬਣਾਉਂਦਾ ਹੈ ਅਤੇ ਇਹ ਕਾਰਜ ਉਪਲਬਧ ਏਜੰਟਾਂ ਨੂੰ ਸੁਪਰਵਾਈਜ਼ ਕਰਦਾ ਹੈ। ਯੋਜਨਾਂ ਦੇ ਇਲਾਵਾ, ਅੰਤਰਰਾਸ਼ਟਰਕਾਰਕ ਇੱਕ ਟ੍ਰੈਕਿੰਗ ਵਿਧੀ ਵੀ ਵਰਤਦਾ ਹੈ ਜੋ ਕਾਰਜ ਦੀ ਪ੍ਰਗਤੀ ਨੂੰ ਨਿਗਰਾਨੀ ਕਰਦਾ ਹੈ ਅਤੇ ਜਰੂਰਤ ਮੁਤਾਬਕ ਦੁਬਾਰਾ ਯੋਜਨਾ ਬਣਾਉਂਦਾ ਹੈ।
 
-. ਇਸ ਨImplementation ਵਿੱਚ, orchestrator ਟਾਸਕ-ਵਿਸ਼ੇਸ਼ ਯੋਜਨਾ ਬਣਾਉਂਦਾ ਹੈ ਅਤੇ ਉਪਲਬਧ ਏਜੰਟਾਂ ਨੂੰ ਇਹ ਕੰਮ ਸੌਂਪਦਾ ਹੈ। ਯੋਜਨਾ ਬਣਾਉਣ ਦੇ ਇਲਾਵਾ, orchestrator ਇੱਕ ਟ੍ਰੈਕਿੰਗ ਮਕੈਨਿਜ਼ਮ ਦੀ ਵੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ ਜੋ ਕੰਮ ਦੀ ਪ੍ਰਗਤੀ ਦੀ ਨਿਗਰਾਨੀ ਕਰਦਾ ਹੈ ਅਤੇ ਜਰੂਰਤ ਪੈਣ 'ਤੇ ਦੁਬਾਰਾ ਯੋਜਨਾ ਬਣਾਉਂਦਾ ਹੈ।
+### ਯੋਜਨਾ ਬਣਾਉਣ ਦੇ ਡਿਜ਼ਾਈਨ ਪੈਟਰਨ ਬਾਰੇ ਹੋਰ ਸਵਾਲ ਹਨ?
 
-### ਪਲਾਨਿੰਗ ਡਿਜ਼ਾਈਨ ਪੈਟਰਨ ਬਾਰੇ ਹੋਰ ਸਵਾਲ ਹਨ?
-
-[Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ ਤਾਂ ਜੋ ਹੋਰ ਸਿੱਖਣ ਵਾਲਿਆਂ ਨਾਲ ਮਿਲ ਸਕੋ, ਦਫ਼ਤਰ ਦੇ ਘੰਟਿਆਂ ਵਿੱਚ ਸ਼ਿਰਕਤ ਕਰ ਸਕੋ ਅਤੇ ਆਪਣੇ AI Agents ਸਬੰਧੀ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਪ੍ਰਾਪਤ ਕਰ ਸਕੋ।
+ਦੂਜੇ ਸਿੱਖਣ ਵਾਲਿਆਂ ਨਾਲ ਮਿਲਣ, ਦਫ਼ਤਰ ਵਾਰੀਏਂਸ਼ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਣ ਅਤੇ ਆਪਣੇ AI ਏਜੰਟਸ ਸਬੰਧੀ ਸਵਾਲ ਪੁੱਛਣ ਲਈ [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ।
 
 ## ਪਿਛਲਾ ਪਾਠ
 
-[ਭਰੋਸੇਯੋਗ AI ਏਜੰਟ ਬਣਾਉਣਾ](../06-building-trustworthy-agents/README.md)
+[ਯਕੀਨੀ ਯੋਗ AI ਏਜੰਟ ਬਣਾਉਣਾ](../06-building-trustworthy-agents/README.md)
 
 ## ਅਗਲਾ ਪਾਠ
 
@@ -316,5 +271,7 @@ AutoGen Magnetic One - ਇੱਕ ਜਨਰਲਿਸਟ ਬਹੁ-ਏਜੰਟ �
 
 ---
 
-**ਅਸਵੀਕਰਤੀ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀ ਹੋਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਦਿਓ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸੁਚਤਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਇਸ ਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਮੂਲ ਦਸਤਾਵੇਜ਼ ਨੂੰ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਗਲਤ ਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ਡਿਸਕਲੇਮਰ**:
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਅਤ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਜਾਣੂ ਹੋਵੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸੂਚਨਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਉਸ ਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਹੀ ਪ੍ਰਮਾਣਿਕ ਸ੍ਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪ੍ਰੋਫੈਸ਼ਨਲ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਿਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਕਾਰਨ ਹੋਣ ਵਾਲੀਆਂ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀਆਂ ਜਾਂ ਗਲਤ ਅਰਥ ਲਗਾਉਣ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

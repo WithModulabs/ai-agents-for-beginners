@@ -1,160 +1,170 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d2c9703548140bafa2d6a77406552542",
-  "translation_date": "2025-10-03T14:58:48+00:00",
-  "source_file": "13-agent-memory/README.md",
-  "language_code": "sw"
-}
--->
-# Kumbukumbu kwa Mawakala wa AI
-[![Kumbukumbu ya Mawakala](../../../translated_images/lesson-13-thumbnail.959e3bc52d210c64a614a3bece6b170a2c472138dc0a14c7fbde07306ef95ae7.sw.png)](https://youtu.be/QrYbHesIxpw?si=qNYW6PL3fb3lTPMk)
+# Kumbukumbu kwa Maajenti wa AI 
+[![Kumbukumbu za Maajenti wa AI](../../../translated_images/sw/lesson-13-thumbnail.959e3bc52d210c64.webp)](https://youtu.be/QrYbHesIxpw?si=qNYW6PL3fb3lTPMk)
 
-Tunapozungumzia faida za kipekee za kuunda Mawakala wa AI, mambo mawili yanajadiliwa sana: uwezo wa kutumia zana kukamilisha majukumu na uwezo wa kuboresha kwa muda. Kumbukumbu ni msingi wa kuunda wakala anayejiboresha mwenyewe ili kutoa uzoefu bora kwa watumiaji wetu.
+When discussing the unique benefits of creating AI Agents, two things are mainly discussed: the ability to call tools to complete tasks and the ability to improve over time. Memory is at the foundation of creating self-improving agent that can create better experiences for our users.
 
-Katika somo hili, tutachunguza kumbukumbu ni nini kwa Mawakala wa AI na jinsi tunavyoweza kuisimamia na kuitumia kwa manufaa ya programu zetu.
+In this lesson, we will look at what memory is for AI Agents and how we can manage it and use it for the benefit of our applications.
 
 ## Utangulizi
 
-Somo hili litashughulikia:
+This lesson will cover:
 
-• **Kuelewa Kumbukumbu ya Mawakala wa AI**: Kumbukumbu ni nini na kwa nini ni muhimu kwa mawakala.
+• **Kuelewa Kumbukumbu za Maajenti wa AI**: What memory is and why it's essential for agents.
 
-• **Kutekeleza na Kuhifadhi Kumbukumbu**: Mbinu za vitendo za kuongeza uwezo wa kumbukumbu kwa mawakala wako wa AI, kwa kuzingatia kumbukumbu ya muda mfupi na ya muda mrefu.
+• **Kutekeleza na Kuhifadhi Kumbukumbu**: Practical methods for adding memory capabilities to your AI agents, focusing on short-term and long-term memory.
 
-• **Kufanya Mawakala wa AI Kujiboresha**: Jinsi kumbukumbu inavyowezesha mawakala kujifunza kutokana na mwingiliano wa zamani na kuboresha kwa muda.
+• **Kufanya Maajenti wa AI Kujiboresha**: How memory enables agents to learn from past interactions and improve over time.
+
+## Utekelezaji Zinazopatikana
+
+This lesson includes two comprehensive notebook tutorials:
+
+• **[13-agent-memory.ipynb](./13-agent-memory.ipynb)**: Inatekeleza kumbukumbu kwa kutumia Mem0 na Azure AI Search with Microsoft Agent Framework
+
+• **[13-agent-memory-cognee.ipynb](./13-agent-memory-cognee.ipynb)**: Inatekeleza structured memory using Cognee, automatically building knowledge graph backed by embeddings, visualizing graph, and intelligent retrieval
 
 ## Malengo ya Kujifunza
 
-Baada ya kukamilisha somo hili, utajua jinsi ya:
+After completing this lesson, you will know how to:
 
-• **Kutofautisha aina mbalimbali za kumbukumbu za mawakala wa AI**, ikiwa ni pamoja na kumbukumbu ya kazi, ya muda mfupi, na ya muda mrefu, pamoja na aina maalum kama kumbukumbu ya tabia na ya matukio.
+• **Kutofautisha kati ya aina mbalimbali za kumbukumbu za maajenti wa AI**, including working, short-term, and long-term memory, as well as specialized forms like persona and episodic memory.
 
-• **Kutekeleza na kusimamia kumbukumbu ya muda mfupi na ya muda mrefu kwa mawakala wa AI** kwa kutumia mfumo wa Semantic Kernel, ukitumia zana kama Mem0 na kumbukumbu ya Whiteboard, na kuunganisha na Azure AI Search.
+• **Kutekeleza na kusimamia kumbukumbu za muda mfupi na za muda mrefu kwa maajenti wa AI** using Microsoft Agent Framework, leveraging tools like Mem0, Cognee, Whiteboard memory, and integrating with Azure AI Search.
 
-• **Kuelewa kanuni za mawakala wa AI wanaojiboresha** na jinsi mifumo thabiti ya usimamizi wa kumbukumbu inavyosaidia kujifunza na kubadilika kwa kuendelea.
+• **Kuelewa kanuni za maajenti wa AI wanaojiboresha wenyewe** and how robust memory management systems contribute to continuous learning and adaptation.
 
-## Kuelewa Kumbukumbu ya Mawakala wa AI
+## Kuelewa Kumbukumbu za Maajenti wa AI
 
-Kwa msingi wake, **kumbukumbu kwa mawakala wa AI inahusu mifumo inayowawezesha kuhifadhi na kukumbuka taarifa**. Taarifa hizi zinaweza kuwa maelezo maalum kuhusu mazungumzo, mapendeleo ya mtumiaji, vitendo vya zamani, au hata mifumo iliyojifunza.
+At its core, **memory for AI agents refers to the mechanisms that allow them to retain and recall information**. This information can be specific details about a conversation, user preferences, past actions, or even learned patterns.
 
-Bila kumbukumbu, programu za AI mara nyingi hazina hali ya kudumu, ikimaanisha kila mwingiliano huanza upya. Hii husababisha uzoefu wa mtumiaji unaorudiwa na wa kukatisha tamaa ambapo wakala "anasahau" muktadha au mapendeleo ya awali.
+Without memory, AI applications are often stateless, meaning each interaction starts from scratch. This leads to a repetitive and frustrating user experience where the agent "forgets" previous context or preferences.
 
-### Kwa Nini Kumbukumbu Ni Muhimu?
+### Kwanini Kumbukumbu ni Muhimu?
 
-Uwezo wa wakala kuwa na akili unategemea sana uwezo wake wa kukumbuka na kutumia taarifa za zamani. Kumbukumbu inawawezesha mawakala kuwa:
+an agent's intelligence is deeply tied to its ability to recall and utilize past information. Memory allows agents to be:
 
-• **Wenye kutafakari**: Kujifunza kutokana na vitendo na matokeo ya zamani.
+• **Kutafakari**: Learning from past actions and outcomes.
 
-• **Wenye kuingiliana**: Kudumisha muktadha katika mazungumzo yanayoendelea.
+• **Kushirikiana**: Maintaining context over an ongoing conversation.
 
-• **Wenye kutabiri na kujibu**: Kutambua mahitaji au kujibu ipasavyo kulingana na data ya kihistoria.
+• **Kuwahi na Kujibu**: Anticipating needs or responding appropriately based on historical data.
 
-• **Wenye kujitegemea**: Kufanya kazi kwa uhuru zaidi kwa kutumia maarifa yaliyohifadhiwa.
+• **Kujiendesha Bila Msaidizi**: Operating more independently by drawing on stored knowledge.
 
-Lengo la kutekeleza kumbukumbu ni kufanya mawakala kuwa **wa kuaminika na wenye uwezo zaidi**.
+The goal of implementing memory is to make agents more **reliable and capable**.
 
 ### Aina za Kumbukumbu
 
 #### Kumbukumbu ya Kazi
 
-Fikiria hii kama karatasi ya maandishi ambayo wakala hutumia wakati wa kazi moja au mchakato wa mawazo unaoendelea. Inashikilia taarifa za haraka zinazohitajika kuhesabu hatua inayofuata.
+Think of this as a piece of scratch paper an agent uses during a single, ongoing task or thought process. It holds immediate information needed to compute the next step.
 
-Kwa mawakala wa AI, kumbukumbu ya kazi mara nyingi huchukua taarifa muhimu zaidi kutoka kwa mazungumzo, hata kama historia ya mazungumzo ni ndefu au imefupishwa. Inazingatia kutoa vipengele muhimu kama mahitaji, mapendekezo, maamuzi, na vitendo.
+For AI agents, working memory often captures the most relevant information from a conversation, even if the full chat history is long or truncated. It focuses on extracting key elements like requirements, proposals, decisions, and actions.
 
-**Mfano wa Kumbukumbu ya Kazi**
+**Working Memory Example**
 
-Katika wakala wa uhifadhi wa safari, kumbukumbu ya kazi inaweza kushika ombi la sasa la mtumiaji, kama "Nataka kuhifadhi safari kwenda Paris". Mahitaji haya maalum yanashikiliwa katika muktadha wa haraka wa wakala ili kuongoza mwingiliano wa sasa.
+In a travel booking agent, working memory might capture the user's current request, such as "Nataka kuhifadhi safari kwenda Paris". This specific requirement is held in the agent's immediate context to guide the current interaction.
 
 #### Kumbukumbu ya Muda Mfupi
 
-Aina hii ya kumbukumbu huhifadhi taarifa kwa muda wa mazungumzo au kikao kimoja. Ni muktadha wa mazungumzo ya sasa, unaomruhusu wakala kurejelea mizunguko ya awali ya mazungumzo.
+This type of memory retains information for the duration of a single conversation or session. It's the context of the current chat, allowing the agent to refer back to previous turns in the dialogue.
 
-**Mfano wa Kumbukumbu ya Muda Mfupi**
+**Short Term Memory Example**
 
-Ikiwa mtumiaji anauliza, "Safari ya kwenda Paris itagharimu kiasi gani?" na kisha kufuatilia na "Je, kuhusu malazi huko?", kumbukumbu ya muda mfupi inahakikisha wakala anajua "huko" inahusu "Paris" ndani ya mazungumzo hayo hayo.
+If a user asks, "Ndege kwenda Paris itagharimu kiasi gani?" and then follows up with "Je, kuhusu malazi huko?", short-term memory ensures the agent knows "there" refers to "Paris" within the same conversation.
 
 #### Kumbukumbu ya Muda Mrefu
 
-Hii ni taarifa inayodumu katika mazungumzo au vikao vingi. Inawawezesha mawakala kukumbuka mapendeleo ya mtumiaji, mwingiliano wa kihistoria, au maarifa ya jumla kwa muda mrefu. Hii ni muhimu kwa ubinafsishaji.
+This is information that persists across multiple conversations or sessions. It allows agents to remember user preferences, historical interactions, or general knowledge over extended periods. This is important for personalization.
 
-**Mfano wa Kumbukumbu ya Muda Mrefu**
+**Long Term Memory Example**
 
-Kumbukumbu ya muda mrefu inaweza kuhifadhi kwamba "Ben anapenda skiing na shughuli za nje, anapenda kahawa na mandhari ya mlima, na anataka kuepuka miteremko ya skiing ya hali ya juu kutokana na jeraha la zamani". Taarifa hii, iliyojifunza kutoka kwa mwingiliano wa awali, inaathiri mapendekezo katika vikao vya kupanga safari vya baadaye, na kuyafanya kuwa ya kibinafsi sana.
+A long-term memory might store that "Ben enjoys skiing and outdoor activities, likes coffee with a mountain view, and wants to avoid advanced ski slopes due to a past injury". This information, learned from previous interactions, influences recommendations in future travel planning sessions, making them highly personalized.
 
-#### Kumbukumbu ya Tabia
+#### Kumbukumbu ya Persona
 
-Aina hii maalum ya kumbukumbu husaidia wakala kuendeleza "tabia" au "nafasi" thabiti. Inamruhusu wakala kukumbuka maelezo kuhusu yeye mwenyewe au jukumu lake lililokusudiwa, na kufanya mwingiliano kuwa laini na wenye mwelekeo.
+This specialized memory type helps an agent develop a consistent "personality" or "persona". It allows the agent to remember details about itself or its intended role, making interactions more fluid and focused.
 
-**Mfano wa Kumbukumbu ya Tabia**
+**Persona Memory Example**
+If the travel agent is designed to be an "expert ski planner," persona memory might reinforce this role, influencing its responses to align with an expert's tone and knowledge.
 
-Ikiwa wakala wa safari ameundwa kuwa "mtaalamu wa kupanga safari za skiing," kumbukumbu ya tabia inaweza kuimarisha jukumu hili, na kuathiri majibu yake ili yaendane na sauti na maarifa ya mtaalamu.
+#### Kumbukumbu za Mchakato / Episodic Memory
 
-#### Kumbukumbu ya Mtiririko/Matukio
+This memory stores the sequence of steps an agent takes during a complex task, including successes and failures. It's like remembering specific "episodes" or past experiences to learn from them.
 
-Kumbukumbu hii huhifadhi mlolongo wa hatua ambazo wakala huchukua wakati wa kazi ngumu, ikiwa ni pamoja na mafanikio na kushindwa. Ni kama kukumbuka "matukio" maalum au uzoefu wa zamani ili kujifunza kutoka kwao.
+**Episodic Memory Example**
 
-**Mfano wa Kumbukumbu ya Matukio**
+If the agent attempted to book a specific flight but it failed due to unavailability, episodic memory could record this failure, allowing the agent to try alternative flights or inform the user about the issue in a more informed way during a subsequent attempt.
 
-Ikiwa wakala alijaribu kuhifadhi safari maalum lakini ilishindikana kutokana na kutokuwepo, kumbukumbu ya matukio inaweza kurekodi kushindwa huku, na kumruhusu wakala kujaribu safari mbadala au kumjulisha mtumiaji kuhusu tatizo kwa njia iliyo na taarifa zaidi wakati wa jaribio la baadaye.
+#### Kumbukumbu za Entiti
 
-#### Kumbukumbu ya Viumbe
+This involves extracting and remembering specific entities (like people, places, or things) and events from conversations. It allows the agent to build a structured understanding of key elements discussed.
 
-Hii inahusisha kutoa na kukumbuka viumbe maalum (kama watu, maeneo, au vitu) na matukio kutoka kwa mazungumzo. Inamruhusu wakala kujenga uelewa ulio na muundo wa vipengele muhimu vilivyojadiliwa.
+**Entity Memory Example**
 
-**Mfano wa Kumbukumbu ya Viumbe**
+From a conversation about a past trip, the agent might extract "Paris," "Eiffel Tower," and "dinner at Le Chat Noir restaurant" as entities. In a future interaction, the agent could recall "Le Chat Noir" and offer to make a new reservation there.
 
-Kutoka kwa mazungumzo kuhusu safari ya zamani, wakala anaweza kutoa "Paris," "Mnara wa Eiffel," na "chakula cha jioni katika mgahawa wa Le Chat Noir" kama viumbe. Katika mwingiliano wa baadaye, wakala anaweza kukumbuka "Le Chat Noir" na kutoa kuhifadhi tena huko.
+#### RAG Yenye Muundo (Retrieval Augmented Generation)
 
-#### RAG Iliyopangiliwa (Retrieval Augmented Generation)
+While RAG is a broader technique, "Structured RAG" is highlighted as a powerful memory technology. It extracts dense, structured information from various sources (conversations, emails, images) and uses it to enhance precision, recall, and speed in responses. Unlike classic RAG that relies solely on semantic similarity, Structured RAG works with the inherent structure of information.
 
-Wakati RAG ni mbinu pana, "RAG Iliyopangiliwa" inasisitizwa kama teknolojia yenye nguvu ya kumbukumbu. Inatoa taarifa yenye muundo mzito kutoka kwa vyanzo mbalimbali (mazungumzo, barua pepe, picha) na kuitumia kuboresha usahihi, kumbukumbu, na kasi ya majibu. Tofauti na RAG ya kawaida inayotegemea tu kufanana kwa semantiki, RAG Iliyopangiliwa inafanya kazi na muundo wa asili wa taarifa.
+**Structured RAG Example**
 
-**Mfano wa RAG Iliyopangiliwa**
-
-Badala ya kulinganisha tu maneno muhimu, RAG Iliyopangiliwa inaweza kuchambua maelezo ya safari (mahali, tarehe, muda, shirika la ndege) kutoka kwa barua pepe na kuyahifadhi kwa njia iliyo na muundo. Hii inaruhusu maswali sahihi kama "Ni safari gani niliyohifadhi kwenda Paris siku ya Jumanne?"
+Instead of just matching keywords, Structured RAG could parse flight details (destination, date, time, airline) from an email and store them in a structured way. This allows precise queries like "Ndege gani niliyoiweka kwenda Paris siku ya Jumanne?"
 
 ## Kutekeleza na Kuhifadhi Kumbukumbu
 
-Kutekeleza kumbukumbu kwa mawakala wa AI kunahusisha mchakato wa kimfumo wa **usimamizi wa kumbukumbu**, ambao unajumuisha kuzalisha, kuhifadhi, kurejesha, kuunganisha, kusasisha, na hata "kusahau" (au kufuta) taarifa. Urejeshaji ni kipengele muhimu hasa.
+Implementing memory for AI agents involves a systematic process of **memory management**, which includes generating, storing, retrieving, integrating, updating, and even "forgetting" (or deleting) information. Retrieval is a particularly crucial aspect.
 
 ### Zana Maalum za Kumbukumbu
 
-Njia moja ya kuhifadhi na kusimamia kumbukumbu ya wakala ni kutumia zana maalum kama Mem0. Mem0 inafanya kazi kama safu ya kumbukumbu ya kudumu, ikiruhusu mawakala kukumbuka mwingiliano muhimu, kuhifadhi mapendeleo ya mtumiaji na muktadha wa ukweli, na kujifunza kutokana na mafanikio na kushindwa kwa muda. Wazo hapa ni kwamba mawakala wasio na hali ya kudumu hubadilika kuwa wenye hali ya kudumu.
+#### Mem0
 
-Inafanya kazi kupitia **mchakato wa awamu mbili wa kumbukumbu: uchimbaji na sasisho**. Kwanza, ujumbe unaoongezwa kwenye mfululizo wa wakala hutumwa kwa huduma ya Mem0, ambayo hutumia Large Language Model (LLM) kufupisha historia ya mazungumzo na kutoa kumbukumbu mpya. Hatimaye, awamu ya sasisho inayotegemea LLM huamua ikiwa kuongeza, kurekebisha, au kufuta kumbukumbu hizi, na kuzihifadhi katika hifadhi ya data mseto inayoweza kujumuisha vector, grafu, na hifadhidata za thamani muhimu. Mfumo huu pia unasaidia aina mbalimbali za kumbukumbu na unaweza kujumuisha kumbukumbu ya grafu kwa kusimamia uhusiano kati ya viumbe.
+One way to store and manage agent memory is using specialized tools like Mem0. Mem0 works as a persistent memory layer, allowing agents to recall relevant interactions, store user preferences and factual context, and learn from successes and failures over time. The idea here is that stateless agents turn into stateful ones.
+
+It works through a **two-phase memory pipeline: extraction and update**. First, messages added to an agent's thread are sent to the Mem0 service, which uses a Large Language Model (LLM) to summarize conversation history and extract new memories. Subsequently, an LLM-driven update phase determines whether to add, modify, or delete these memories, storing them in a hybrid data store that can include vector, graph, and key-value databases. This system also supports various memory types and can incorporate graph memory for managing relationships between entities.
+
+#### Cognee
+
+Another powerful approach is using **Cognee**, an open-source semantic memory for AI agents that transforms structured and unstructured data into queryable knowledge graphs backed by embeddings. Cognee provides a **dual-store architecture** combining vector similarity search with graph relationships, enabling agents to understand not just what information is similar, but how concepts relate to each other.
+
+It excels at **hybrid retrieval** that blends vector similarity, graph structure, and LLM reasoning - from raw chunk lookup to graph-aware question answering. The system maintains **living memory** that evolves and grows while remaining queryable as one connected graph, supporting both short-term session context and long-term persistent memory.
+
+The Cognee notebook tutorial ([13-agent-memory-cognee.ipynb](./13-agent-memory-cognee.ipynb)) demonstrates building this unified memory layer, with practical examples of ingesting diverse data sources, visualizing the knowledge graph, and querying with different search strategies tailored to specific agent needs.
 
 ### Kuhifadhi Kumbukumbu kwa RAG
 
-Zaidi ya zana maalum za kumbukumbu kama Mem0, unaweza kutumia huduma za utafutaji thabiti kama **Azure AI Search kama sehemu ya nyuma ya kuhifadhi na kurejesha kumbukumbu**, hasa kwa RAG Iliyopangiliwa.
+Beyond specialized memory tools like mem0 , you can leverage robust search services like **Azure AI Search as a backend for storing and retrieving memories**, especially for structured RAG.
 
-Hii inakuwezesha kuimarisha majibu ya wakala wako kwa data yako mwenyewe, kuhakikisha majibu yanayofaa zaidi na sahihi. Azure AI Search inaweza kutumika kuhifadhi kumbukumbu za safari za mtumiaji, katalogi za bidhaa, au maarifa yoyote maalum ya kikoa.
+This allows you to ground your agent's responses with your own data, ensuring more relevant and accurate answers. Azure AI Search can be used to store user-specific travel memories, product catalogs, or any other domain-specific knowledge.
 
-Azure AI Search inasaidia uwezo kama **RAG Iliyopangiliwa**, ambayo ni bora katika kutoa na kurejesha taarifa yenye muundo mzito kutoka kwa seti kubwa za data kama historia ya mazungumzo, barua pepe, au hata picha. Hii hutoa "usahihi na kumbukumbu ya kibinadamu" ikilinganishwa na mbinu za kawaida za kugawanya maandishi na kuingiza.
+Azure AI Search supports capabilities like **Structured RAG**, which excels at extracting and retrieving dense, structured information from large datasets like conversation histories, emails, or even images. This provides "superhuman precision and recall" compared to traditional text chunking and embedding approaches.
 
-## Kufanya Mawakala wa AI Kujiboresha
+## Kufanya Maajenti wa AI Kujiboresha
 
-Mfumo wa kawaida kwa mawakala wanaojiboresha unahusisha kuanzisha **"wakala wa maarifa"**. Wakala huyu tofauti huangalia mazungumzo kuu kati ya mtumiaji na wakala mkuu. Jukumu lake ni:
+A common pattern for self-improving agents involves introducing a **"knowledge agent"**. This separate agent observes the main conversation between the user and the primary agent. Its role is to:
 
-1. **Kutambua taarifa muhimu**: Kuamua ikiwa sehemu yoyote ya mazungumzo inafaa kuhifadhi kama maarifa ya jumla au mapendeleo maalum ya mtumiaji.
+1. **Identify valuable information**: Determine if any part of the conversation is worth saving as general knowledge or a specific user preference.
 
-2. **Kutoa na kufupisha**: Kuchambua maarifa muhimu au mapendeleo kutoka kwa mazungumzo.
+2. **Extract and summarize**: Distill the essential learning or preference from the conversation.
 
-3. **Kuhifadhi katika hifadhidata ya maarifa**: Kuhifadhi taarifa iliyotolewa, mara nyingi katika hifadhidata ya vector, ili iweze kurejeshwa baadaye.
+3. **Store in a knowledge base**: Persist this extracted information, often in a vector database, so it can be retrieved later.
 
-4. **Kuongeza maswali ya baadaye**: Wakati mtumiaji anaanzisha swali jipya, wakala wa maarifa hurejesha taarifa husika iliyohifadhiwa na kuiongeza kwenye ombi la mtumiaji, ikitoa muktadha muhimu kwa wakala mkuu (sawa na RAG).
+4. **Augment future queries**: When the user initiates a new query, the knowledge agent retrieves relevant stored information and appends it to the user's prompt, providing crucial context to the primary agent (similar to RAG).
 
-### Uboreshaji wa Kumbukumbu
+### Uboreshaji kwa Kumbukumbu
 
-• **Usimamizi wa Muda wa Kujibu**: Ili kuepuka kuchelewesha mwingiliano wa mtumiaji, modeli ya bei nafuu na ya haraka inaweza kutumika awali kuangalia haraka ikiwa taarifa ni muhimu kuhifadhi au kurejesha, na kutumia mchakato wa uchimbaji/urejeshaji wa hali ya juu tu inapohitajika.
+• **Latency Management**: To avoid slowing down user interactions, a cheaper, faster model can be used initially to quickly check if information is valuable to store or retrieve, only invoking the more complex extraction/retrieval process when necessary.
 
-• **Matengenezo ya Hifadhidata ya Maarifa**: Kwa hifadhidata ya maarifa inayokua, taarifa zinazotumika mara chache zinaweza kuhamishwa kwenye "hifadhi baridi" ili kudhibiti gharama.
+• **Knowledge Base Maintenance**: For a growing knowledge base, less frequently used information can be moved to "cold storage" to manage costs.
 
-## Una Maswali Zaidi Kuhusu Kumbukumbu ya Mawakala?
+## Una Maswali Zaidi Kuhusu Kumbukumbu za Maajenti?
 
-Jiunge na [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) ili kukutana na wanafunzi wengine, kuhudhuria masaa ya ofisi, na kupata majibu ya maswali yako kuhusu Mawakala wa AI.
+Join the [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.
 
 ---
 
-**Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+Tamko la kutokuwajibika:
+Nyaraka hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI Co-op Translator (https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali kumbuka kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokamilika. Nyaraka ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo chenye mamlaka. Kwa taarifa muhimu, inashauriwa kutumia tafsiri ya kitaalamu inayofanywa na mtu. Hatubebei jukumu kwa kutoelewana au tafsiri isiyo sahihi inayotokana na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

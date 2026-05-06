@@ -1,645 +1,298 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7120197753abacc827b64ac2d5d6966f",
-  "translation_date": "2025-11-13T14:35:00+00:00",
-  "source_file": "02-explore-agentic-frameworks/README.md",
-  "language_code": "my"
-}
--->
-[![AI Agent Frameworks ကိုလေ့လာခြင်း](../../../translated_images/lesson-2-thumbnail.c65f44c93b8558df4d5d407e29970e654629e614f357444a9c27c80feb54c79d.my.png)](https://youtu.be/ODwF-EZo_O8?si=1xoy_B9RNQfrYdF7)
+[![AI အေးဂျင့် ဖရေမ်ဝက်စ်များကို စူးစမ်းလေ့လာခြင်း](../../../translated_images/my/lesson-2-thumbnail.c65f44c93b8558df.webp)](https://youtu.be/ODwF-EZo_O8?si=1xoy_B9RNQfrYdF7)
 
-> _(ဤသင်ခန်းစာ၏ဗီဒီယိုကိုကြည့်ရန် အထက်ပါပုံကိုနှိပ်ပါ)_
+> _(အပေါ်က ပုံကို နှိပ်ပြီး ဒီသင်ခန်းစာရဲ့ ဗီဒီယိုကို ကြည့်ရှုပါ)_
 
-# AI Agent Frameworks ကိုလေ့လာပါ
+# AI အေးဂျင့် ဖရေမ်ဝက်စ်များကို စူးစမ်းလေ့လာခြင်း
 
-AI Agent Frameworks ဆိုသည်မှာ AI အေးဂျင့်များကို ဖန်တီးခြင်း၊ တင်သွင်းခြင်းနှင့် စီမံခန့်ခွဲခြင်းကို လွယ်ကူစေရန် ရည်ရွယ်ထားသော ဆော့ဖ်ဝဲပလက်ဖောင်းများဖြစ်သည်။ ဤ Frameworks များသည် ဖွံ့ဖြိုးတိုးတက်သော AI စနစ်များကို ဖန်တီးရာတွင် အဆင်ပြေစေသော အစိတ်အပိုင်းများ၊ အဆင့်မြှင့်တင်မှုများနှင့် ကိရိယာများကို ပံ့ပိုးပေးသည်။
+AI agent ဖရေမ်ဝက်စ်များသည် AI အေးဂျင့်များကို ဖန်တီးခြင်း၊ မိတ်ဆက်ခြင်းနှင့် စီမံခန့်ခွဲခြင်းကို လွယ်ကူစေသော ဆော့ဖ်ဝဲ ပလက်ဖောင်းများဖြစ်သည်။ ဤဖရေမ်ဝက်စ်များသည် ဖန်တီးသူများအား ကြိုတင်တည်ဆောက်ထားသော ပါတ်စ်တီများ၊ အမြင်သရုပ်ဖော်မှုများနှင့် ကိရိယာများကို ပံ့ပိုးပေးကာ ရုပ်ပိုင်းဆိုင်ရာရင်းနှီးသော AI စနစ်များကို တိုးတက်စွာ ဖွံ့ဖြိုးစေရန် အလွယ်တကူ အသုံးပြုနိုင်စေသည်။
 
-ဤ Frameworks များသည် AI အေးဂျင့် ဖွံ့ဖြိုးတိုးတက်မှုတွင် ရှိနေသော စိန်ခေါ်မှုများကို စံပြနည်းလမ်းများဖြင့် ဖြေရှင်းပေးခြင်းအားဖြင့် ဖွံ့ဖြိုးသူများကို သူတို့၏ အပလီကေးရှင်းများ၏ ထူးခြားသောအချက်များအပေါ် အာရုံစိုက်စေသည်။ ၎င်းတို့သည် AI စနစ်များကို ဖန်တီးရာတွင် အတိုင်းအတာကျယ်ကျယ်ဖြင့် အသုံးပြုနိုင်စေခြင်း၊ လွယ်ကူစေခြင်းနှင့် ထိရောက်မှုကို မြှင့်တင်ပေးသည်။
+ဤဖရေမ်ဝက်စ်များကြောင့် ဖန်တီးသူများသည် သုံးစွဲသူထူးခြားချက်များသို့ ဦးတည်၍ ကိုယ်ပိုင်လျှောက်လွှာများ၏ ထူးခြားသည့် အပိုင်းများကို အာရုံစိုက်နိုင်ပြီး AI အေးဂျင့် ဖွံ့ဖြိုးတိုးတက်ရေးနယ်ပယ်ရှိ ပုံမှန်စိန်ခေါ်မှုများကို စံသတ်မှတ်ထားသော နည်းလမ်းများဖြင့် ဖြေရှင်းနိုင်သည်။ ၎င်းတို့သည် စမတ်စနစ်များ ဖန်တီးရာတွင် စကေးလ်ပြုနိုင်ခြင်း၊ ရောက်ရှိနိုင်မှုနှင့် လုပ်ဆောင်ချက်ထိရောက်မှုကို မြှင့်တင်ပေးသည်။
 
-## အကျဉ်းချုပ်
+## မိတ်ဆက်
 
-ဤသင်ခန်းစာတွင် အောက်ပါအကြောင်းအရာများကို ဖော်ပြမည်ဖြစ်သည်-
+ဒီသင်ခန်းစာတွင် ဖော်ပြမည့် အကြောင်းအရာများမှာ -
 
-- AI Agent Frameworks ဆိုတာဘာလဲ၊ ဖွံ့ဖြိုးသူများအတွက် ဘာတွေကို အောင်မြင်စေသလဲ?
-- အဖွဲ့များသည် ၎င်းတို့၏ အေးဂျင့်များ၏ စွမ်းရည်များကို အလျင်အမြန် Prototype ပြုလုပ်ခြင်း၊ ပြန်လည်ပြင်ဆင်ခြင်းနှင့် တိုးတက်စေခြင်းအတွက် ဤ Frameworks များကို ဘယ်လိုအသုံးပြုနိုင်မလဲ?
-- Microsoft <a href="https://aka.ms/ai-agents/autogen" target="_blank">AutoGen</a>, <a href="https://aka.ms/ai-agents-beginners/semantic-kernel" target="_blank">Semantic Kernel</a>, နှင့် <a href="https://aka.ms/ai-agents-beginners/ai-agent-service" target="_blank">Azure AI Agent Service</a> တို့မှ ဖန်တီးထားသော Frameworks နှင့် Tools များအကြား ဘာတွေကွာခြားသလဲ?
-- Azure Ecosystem Tools များကို တိုက်ရိုက်ပေါင်းစည်းနိုင်မလား၊ သို့မဟုတ် Standalone Solutions လိုအပ်ပါသလား?
-- Azure AI Agents Service ဆိုတာဘာလဲ၊ ၎င်းက ကျွန်ုပ်တို့ကို ဘယ်လိုအကျိုးရှိစေသလဲ?
+- AI Agent Frameworks ဆိုတာဘာလဲ၊ ဖန်တီးသူများအား ဘာတွေ စွမ်းနိုင်လာစေသလဲ?
+- အသင်းများသည် ဒီအရာများကို အသုံးပြုကာ မျှော်မှန်းချက်အရှိဆုံး prototype များကို ဘယ်လို အလျင်အမြန် ဖန်တီး၊ တိုးတက်စေ၊ မြှင့်တင်နိုင်သလဲ?
+- Microsoft (<a href="https://aka.ms/ai-agents-beginners/ai-agent-service" target="_blank">Azure AI Agent Service</a> နှင့် <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/responses" target="_blank">Microsoft Agent Framework</a>) မှ ဖန်တီးထားသော ဖရေမ်ဝက်စ်များနှင့် ကိရိယာများ၏ ကွာခြားချက်များက ဘာလဲ?
+- ကျွန်ုပ်၏ ရှိပြီးသား Azure ပတ်ဝန်းကျင် ကိရိယာများကို တိုက်ရိုက် ပေါင်းစည်းနိုင်မလား, သီးခြား ဖြေရှင်းချက်များ လိုအပ်သလား?
+- Azure AI Agents service ဆိုတာ ဘာလဲ၊ ၎င်းက ကျွန်ုပ်ကို ဘယ်လို ကူညီပေးနေလဲ?
 
-## သင်ယူရမည့်ရည်မှန်းချက်များ
+## သင်ယူရမည့် ရည်မှန်းချက်များ
 
-ဤသင်ခန်းစာ၏ ရည်မှန်းချက်များမှာ-
+ဒီသင်ခန်းစာ၏ ရည်မှန်းချက်များမှာ -
 
-- AI Agent Frameworks ၏ AI ဖွံ့ဖြိုးတိုးတက်မှုတွင် အရေးပါမှုကို နားလည်စေခြင်း။
-- AI Agent Frameworks ကို အသုံးပြု၍ ထူးချွန်သော အေးဂျင့်များကို ဖန်တီးနိုင်စေခြင်း။
-- AI Agent Frameworks မှ ပံ့ပိုးပေးသော အဓိကစွမ်းရည်များကို နားလည်စေခြင်း။
-- AutoGen, Semantic Kernel, နှင့် Azure AI Agent Service တို့အကြား ကွာခြားချက်များကို နားလည်စေခြင်း။
+- AI ဖွံ့ဖြိုးရေးတွင် AI Agent Frameworks ၏ အခန်းကဏ္ဍကို နားလည်စေခြင်း။
+- ဉာဏ်ပညာရှင် agent များ ဖန်တီးရန် AI Agent Frameworks ကို မည်သို့ အသုံးချရမည်ကို သင်ကြားပေးခြင်း။
+- AI Agent Frameworks များက ပံ့ပိုးပေးသည့် အဓိက စွမ်းရည်များကို ဆွဲထုတ်ပြသခြင်း။
+- Microsoft Agent Framework နှင့် Azure AI Agent Service တို့၏ ကွာခြားချက်များကို ရှင်းလင်းပြသခြင်း။
 
-## AI Agent Frameworks ဆိုတာဘာလဲ၊ ဖွံ့ဖြိုးသူများအတွက် ဘာတွေကို အောင်မြင်စေသလဲ?
+## AI Agent Frameworks ဆိုတာဘာလဲ၊ ဖန်တီးသူများကို ဘာတွေ လုပ်နိုင်အောင် ပြုလုပ်ပေးသလဲ?
 
-ရိုးရာ AI Frameworks များသည် AI ကို သင့်အပလီကေးရှင်းများတွင် ပေါင်းစည်းရန် ကူညီပေးပြီး အောက်ပါနည်းလမ်းများဖြင့် အပလီကေးရှင်းများကို ပိုမိုကောင်းမွန်စေသည်-
+ရိုးရိုး AI ဖရေမ်ဝက်စ်များက သင့်လျှောက်လွှာများထဲသို့ AI ကို ထည့်သွင်းရန်နှင့် အခြားသော အချက်အလက်များနှင့် ပေါင်းစည်းရန် အောက်ပါနည်းလမ်းများဖြင့် ကူညီပေးနိုင်သည်။
 
-- **ပုဂ္ဂိုလ်ရေးအလိုက် ပြုလုပ်ခြင်း**: AI သည် အသုံးပြုသူ၏ အပြုအမူနှင့် အကြိုက်အနွေးများကို ခွဲခြားလေ့လာပြီး အကြံပြုချက်များ၊ အကြောင်းအရာများနှင့် အတွေ့အကြုံများကို ပုဂ္ဂိုလ်ရေးအလိုက် ပေးနိုင်သည်။
-ဥပမာ- Netflix ကဲ့သို့သော Streaming Services များသည် AI ကို အသုံးပြု၍ ကြည့်ရှုမှုမှတ်တမ်းအပေါ် အခြေခံပြီး ရုပ်ရှင်နှင့် ရုပ်သံအစီအစဉ်များကို အကြံပြုပေးသည်။
+- **ပုဂ္ဂိုလိကထူးခြားအတွေ့အကြုံ (Personalization)**: AI သည် သုံးစွဲသူ အပြုအမူနှင့် ကြိုက်နှစ်သက်မှုများကို विश्लेषणကာ ကိုယ့်လိုလိုက်ကြောင်း အကြံပြုချက်များ၊ အကြောင်းအရာများနှင့် အတွေ့အကြုံများကို ပေးနိုင်သည်။ ဥပမာ - Netflix ကဲ့သို့ စတရိမင်း ဝန်ဆောင်မှုများသည် ကြည့်ရှုမှတ်တမ်းအပေါ်မူတည်၍ ရုပ်ရှင်များနှင့် ရုပ်သံ အစီအစဉ်များကို အကြံပြုကာ သုံးစွဲသူ စိတ်၀င်စားမှုနှင့် စိတ်ကျေနပ်မှုကို မြှင့်တင်ပေးသည်။
+- **အလိုအလျောက်လုပ်ဆောင်ခြင်းနှင့် ထိရောက်မှု (Automation and Efficiency)**: AI သည် နာရက်ပြီးသော အလုပ်များကို အလိုအလျောက် ပြုလုပ်ပေးနိုင်ပြီး အလုပ်စဉ်များကို ရိုးရှင်းစေကာ လုပ်ငန်းဆောင်တာ ထိရောက်စေသည်။ ဥပမာ - ဖောက်သည်ဝန်ဆောင်မှု အက်ပ်များတွင် AI အားဖြင့် စွမ်းဆောင်သော chatbot များကို အသုံးပြု၍ ပုံမှန် မေးခွန်းများကို ကိုင်တွယ်ထားနိုင်သည်။ ၎င်းက တုံ့ပြန်ချိန်လျော့ပြီး လူဝန်ထမ်းများကို ပိုမိုရှုပ်ထွေးသော ကိစ္စများအတွက် အချိန်ပေးစေသည်။
+- **အသုံးပြုသူအတွေ့အကြုံတိုးတက်ရေး (Enhanced User Experience)**: AI သည် အသံ မှတ်လက်ခံခြင်း၊ သဘာဝဘာသာစကား အ Verarbeitung နှင့် ခန့်မှန်းရေး စာသားများ ကဲ့သို့သော ဉာဏ်ရည်ဆိုင်ရာ လက္ခဏာများဖြင့် အသုံးပြုသူအတွေ့အကြုံကို တိုးတက်စေသည်။ ဥပမာ - Siri နှင့် Google Assistant ကဲ့သို့သော virtual assistant များသည် အသံအမိန့်များကို နားလည်၍ တုံ့ပြန်ကာ အသုံးပြုသူများအတွက် စက်ဘက်ဖြင့် ဆက်သွယ်ရသည့် လမ်းကို လွယ်ကူစေသည်။
 
-- **အလိုအလျောက်လုပ်ဆောင်ခြင်းနှင့် ထိရောက်မှု**: AI သည် ထပ်တလဲလဲလုပ်ဆောင်ရသော အလုပ်များကို အလိုအလျောက်လုပ်ဆောင်ပေးခြင်း၊ အလုပ်လုပ်စဉ်များကို လွယ်ကူစေခြင်းနှင့် လုပ်ငန်းထိရောက်မှုကို မြှင့်တင်ပေးနိုင်သည်။
-ဥပမာ- Customer Service Apps များသည် AI Chatbots များကို အသုံးပြု၍ ပုံမှန်မေးခွန်းများကို ဖြေရှင်းပေးပြီး လူ့အေးဂျင့်များအတွက် အချိန်ကုန်သက်သာစေသည်။
+### အားလုံးကောင်းပါတယ်၊ ဒါဆို AI Agent Framework လိုအပ်ရတဲ့ အကြောင်းကဘာလဲ?
 
-- **အသုံးပြုသူအတွေ့အကြုံ မြှင့်တင်ခြင်း**: AI သည် အသုံးပြုသူအတွေ့အကြုံကို မြှင့်တင်ပေးနိုင်သည်။ ဥပမာ- Siri နှင့် Google Assistant ကဲ့သို့သော Virtual Assistants များသည် အသံအမိန့်များကို နားလည်ပြီး တုံ့ပြန်ပေးသည်။
+AI Agent framework များသည် ရိုးရှင်းသော AI ဖရေမ်ဝက်စ်များထက် ပိုမိုကိုယ်ပိုင်သော အရာတစ်ခုကို ကိုယ်စားပြုသည်။ ၎င်းတို့ကို ဖန်တီးထားသော ရည်ရွယ်ချက်မှာ အသုံးပြုသူများ၊ အခြား agent များနှင့် ပတ်ဝန်းကျင်နှင့် မျေးဆက်ပြီး သတ်မှတ်ထားသော ရည်မှန်းချက်များကို ပြည့်မှီစေသည့် ဉာဏ်ရည်မြင့် agent များ ဖန်တီးရန်ဖြစ်သည်။ ၎င်း agent များသည် ကိုယ်ပိုင်အလိုအလျောက်ပြုမူနိုင်ပြီး ဆုံးဖြတ်ချက်ချနိုင်ကာ ပြောင်းလဲလျင်မြန်သော အခြေအနေများအပေါ် မုခင်းပြောင်းလဲနိုင်သည်။ AI Agent Frameworks များက ပံ့ပိုးပေးနိုင်သည့် အဓိက စွမ်းရည်များကို ကြည့်ကြပါစို့ -
 
-### ဒါတွေကောင်းတယ်ဆိုပေမယ့် AI Agent Framework ဘာလို့လိုအပ်တာလဲ?
+- **Agent များအချင်းချင်း ပူးပေါင်းဆောင်ရွက်ခြင်းနှင့် ညှိနှိုင်းမှု**: အချင်းချင်း ဆက်သွယ်၍ ပူးပေါင်းဆောင်ရွက်နိုင်သည့် AI agent များ ဖန်တီးရန် အထောက်အကူပြုသည်။
+- **အလုပ်တာဝန်အလိုအလျောက်ဆောင်ရွက်ခြင်းနှင့် စီမံခန့်ခွဲမှု**: များစွာသော အဆင့်မြင့် အလုပ်စဉ်များကို အလိုအလျောက်ထိန်းချုပ်ခြင်း၊ အလုပ်အပ်နှံခြင်းနှင့် agent များအကြား ဒိုင်းနမစ်စီမံခန့်ခွဲမှုများအတွက် မက်ကနစ်များ ပေးသည်။
+- **အကြောင်းအရာနားလည်ခြင်းနှင့် ကိုက်ညီပြောင်းလဲမှု (Contextual Understanding and Adaptation)**: Agent များကို အခြေအနေကို နားလည်ရန်၊ ပတ်ဝန်းကျင်ပြောင်းလဲမှုများအပေါ် ကိုက်ညီရန်နှင့် အချိန်နှင့်တပြေးညီ အချက်အလက်များအပေါ် အခြေခံ၍ ဆုံးဖြတ်ချက်ချရန် စွမ်းရည်ပြုသည်။
 
-AI Agent Frameworks ဆိုသည်မှာ ရိုးရိုး AI Frameworks ထက် ပိုမိုကျယ်ပြန့်သော အရာတစ်ခုဖြစ်သည်။ ၎င်းတို့သည် အသုံးပြုသူများ၊ အခြားအေးဂျင့်များနှင့် ပတ်ဝန်းကျင်တို့နှင့် အပြန်အလှန်ဆက်သွယ်ပြီး သတ်မှတ်ထားသော ရည်မှန်းချက်များကို အောင်မြင်စေသော ထူးချွန်သော အေးဂျင့်များကို ဖန်တီးရန် ရည်ရွယ်ထားသည်။ ၎င်းတို့သည် ကိုယ်ပိုင်ဆုံးဖြတ်ချက်များကို ချမှတ်နိုင်ပြီး အခြေအနေပြောင်းလဲမှုများကို လိုက်လျောညီထွေဖြစ်စေသည်။ AI Agent Frameworks မှ ပံ့ပိုးပေးသော အဓိကစွမ်းရည်များကို ကြည့်ကြရအောင်-
+အကျဥ်းချုပ်အားဖြင့် agent များက သင့်အား ပိုပြီးလုပ်ဆောင်နိုင်စေပြီး အလိုအလျောက်လုပ်ဆောင်မှုကို နောက်ထပ်အဆင့်မြှင့်တင်ပေးကာ ပတ်ဝန်းကျင်အပေါ်မှ သင်ယူ၍ ကိုက်ညီနိုင်သော ပိုမို ဉာဏ်ရည်မြင့် စနစ်များကို ဖန်တီးနိုင်စေသည်။
 
-- **အေးဂျင့်များအကြား ပူးပေါင်းဆောင်ရွက်မှု**: အေးဂျင့်များစွာကို ဖန်တီးပြီး အတူတကွ အလုပ်လုပ်နိုင်စေခြင်း၊ ဆက်သွယ်နိုင်စေခြင်းနှင့် ရှုပ်ထွေးသော အလုပ်များကို ဖြေရှင်းနိုင်စေခြင်း။
-- **အလုပ်လုပ်စဉ်များကို အလိုအလျောက်လုပ်ဆောင်ခြင်း**: အလုပ်များကို အလိုအလျောက်လုပ်ဆောင်ရန် စနစ်များကို ပံ့ပိုးပေးခြင်း။
-- **အခြေအနေကို နားလည်ခြင်းနှင့် လိုက်လျောညီထွေဖြစ်ခြင်း**: အေးဂျင့်များကို အခြေအနေကို နားလည်စေခြင်း၊ အချိန်နှင့်အမျှ ပြောင်းလဲမှုများကို လိုက်လျောညီထွေဖြစ်စေခြင်း။
+## အေးဂျင့်၏ စွမ်းရည်များကို အလျင်အမြန် prototype ဖန်တီး၊ ထပ်လည်တိုးတက်စေ၊ ချပြင်ရန် ဘယ်လိုလုပ်ရမလဲ?
 
-အကျဉ်းချုပ်အားဖြင့် အေးဂျင့်များသည် ပိုမိုထိရောက်သော စနစ်များကို ဖန်တီးရန်၊ အလိုအလျောက်လုပ်ဆောင်မှုကို နောက်တစ်ဆင့်တိုးတက်စေရန် ကူညီပေးသည်။
+ဤနယ်ပယ်သည် မြန်မြန်ပြောင်းလဲနေသော်လည်း အများအားဖြင့် AI Agent Frameworks များတွင် ပေါင်းစည်းအသုံးများသော အချက်များ ရှိပြီး ၎င်းတို့က သင့်အား အလျင်အမြန် prototype ဖန်တီးခြင်းနှင့် iteration လုပ်ခြင်းကို ကူညီပေးနိုင်သည်။ ၎င်းတို့မှာ module components, collaborative tools, နှင့် real-time learning တို့ ဖြစ်သည်။ ယနေ့က အချက်များကို အောက်ပါအတိုင်း ရှင်းပြပါမည် -
 
-## အေးဂျင့်၏ စွမ်းရည်များကို အလျင်အမြန် Prototype ပြုလုပ်ခြင်း၊ ပြန်လည်ပြင်ဆင်ခြင်းနှင့် တိုးတက်စေခြင်း
+- **မော်ဂျူးလာပါက်ကွန် (Modular Components) ကို အသုံးပြုပါ**: AI SDK များတွင် AI နှင့် Memory connector များ၊ သဘာဝဘာသာစကား သို့မဟုတ် ကုဒ် plugin များဖြင့် function calling, prompt template များ အပါအဝင် ကြိုတင်တည်ဆောက်ထားသောပါတ်စ်များပါရှိသည်။
+- **ပူးပေါင်းဆောင်ရွက်ရေး ကိရိယာများကို အသုံးချပါ**: ထူးခြားသော ဖြစ်စဉ်နှင့် တာဝန်များရှိသော agent များကို ဒီဇိုင်းဆွဲကာ ပူးပေါင်းဆောင်ရွက်မှု workflow များကို စမ်းသပ်၊ ပြုပြင်ချိန်ညှိနိုင်သည်။
+- **အချိန်နဲ့တပြေးညီ သင်ယူပါ (Learn in Real-Time)**: Agent များသည် ဆက်သွယ်မှုများမှ သင်ယူကာ သူတို့၏ အပြုအမူကို ဒိုင်နမစ်စွာ ပြင်ဆင်နိုင်ရန် feedback loop များကို အကောင်အထည်ဖော်ပါ။
 
-ဤနယ်ပယ်သည် အလွန်မြန်ဆန်စွာ ပြောင်းလဲနေသော်လည်း AI Agent Frameworks များတွင် Prototype ပြုလုပ်ခြင်းနှင့် Iteration ပြုလုပ်ရာတွင် အထောက်အကူဖြစ်စေသော အချက်အချို့ရှိသည်-
+### မော်ဂျူးလာပါက်ကွန်များကို အသုံးပြုပါ
 
-- **Modular Components အသုံးပြုပါ**: AI SDK များတွင် AI နှင့် Memory connectors, natural language သို့မဟုတ် code plugins အသုံးပြု၍ function calling, prompt templates စသည့် အစိတ်အပိုင်းများပါဝင်သည်။
-- **ပူးပေါင်းဆောင်ရွက်မှု Tools များကို အသုံးပြုပါ**: အေးဂျင့်များကို သတ်မှတ်ထားသော အခန်းကဏ္ဍများနှင့် အလုပ်များဖြင့် ဒီဇိုင်းဆွဲပြီး ပူးပေါင်းဆောင်ရွက်မှုများကို စမ်းသပ်ပြီး ပြုပြင်နိုင်သည်။
-- **Real-Time Learning**: အေးဂျင့်များသည် အပြန်အလှန်ဆက်သွယ်မှုများမှ သင်ယူပြီး ၎င်းတို့၏ အပြုအမူကို အချိန်နှင့်အမျှ ပြောင်းလဲနိုင်သည်။
+Microsoft Agent Framework ကဲ့သို့သော SDK များတွင် AI connector များ၊ tool သတ်မှတ်ချက်များနှင့် agent စီမံခန့်ခွဲမှုကဲ့သို့ ကြိုတင်တည်ဆောက်ထားသော ပါတ်စ်တီများ ပါဝင်သည်။
 
-### Modular Components အသုံးပြုခြင်း
+**အသင်းများ ဘယ်လို အသုံးချနိုင်သလဲ**: အသင်းများသည် ၎င်းတို့ကို အစကနေတည်ဆောက်ရန် မလိုဘဲ အရေးကြီးသော ပတ္တိများကို မြန်ဆန်စွာစုစည်းကာ လက်တွေ့အသုံးပြုနိုင်သည့် prototype ကို အလွယ်တကူ ဖန်တီးနိုင်ပြီး စမ်းသပ်မှုနှင့် iteration ကို မြန်ဆန်စေသည်။
 
-Microsoft Semantic Kernel နှင့် LangChain ကဲ့သို့သော SDK များတွင် AI connectors, prompt templates, memory management စသည့် အစိတ်အပိုင်းများပါဝင်သည်။
+**လက်တွေ့တွင် ဘယ်လို အလုပ်လုပ်သလဲ**: သင်သည် အသုံးပြုသူ၏ ငြိမ်းချမ်းမှုမှ ထိပ်တန်း အချက်အလက်များကို မျက်နှာချင်းဆိုင် ထုတ်ယူရန် ကြိုတင်တည်ဆောက်ထားသော parser တစ်ခုကို အသုံးပြုနိုင်သည်၊ အချက်အလက်ကို သိမ်းဆည်း၊ ပြန်လည်ယူရန် memory module တစ်ခုကို အသုံးပြုနိုင်သည်၊ နှင့် အသုံးပြုသူနှင့် ဆက်သွယ်ရန် prompt generator တစ်ခုကို အသုံးပြုနိုင်သည် — ဤအားလုံးကို စကတ်ချွတ်ကင်းစွာ တည်ဆောက်ရန် မလိုဘဲ အသုံးပြုနိုင်သည်။
 
-**အဖွဲ့များအတွက် အသုံးဝင်ပုံ**: အဖွဲ့များသည် ဤအစိတ်အပိုင်းများကို အလွယ်တကူ စုပေါင်းပြီး အလုပ်လုပ်နိုင်သော Prototype တစ်ခုကို ဖန်တီးနိုင်သည်။
-
-**လက်တွေ့အသုံးပြုမှု**: User input မှ အချက်အလက်များကို ထုတ်ယူရန် pre-built parser ကို အသုံးပြုခြင်း၊ memory module ကို အသုံးပြု၍ အချက်အလက်များကို သိမ်းဆည်းခြင်းနှင့် ပြန်လည်ရယူခြင်း၊ prompt generator ကို အသုံးပြု၍ အသုံးပြုသူများနှင့် ဆက်သွယ်ခြင်း စသည်တို့ကို လုပ်ဆောင်နိုင်သည်။
-
-**ဥပမာကုဒ်**: Semantic Kernel Python နှင့် .Net ကို အသုံးပြု၍ AI Connector တစ်ခုကို အသုံးပြုသည့် ဥပမာကို ကြည့်ပါ-
+**ဥပမာကုဒ်**။ ပေါင်းဖော်ပြရရင် Microsoft Agent Framework ကို `AzureAIProjectAgentProvider` နှင့် ပေါင်းစပ်ကာ model ကို tool calling ဖြင့် အသုံးပြုရန် ဤဥပမာကို ကြည့်ပါ။
 
 ``` python
-# Semantic Kernel Python Example
+# Microsoft Agent Framework Python နမူနာ
 
 import asyncio
+import os
 from typing import Annotated
 
-from semantic_kernel.connectors.ai import FunctionChoiceBehavior
-from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion, AzureChatPromptExecutionSettings
-from semantic_kernel.contents import ChatHistory
-from semantic_kernel.functions import kernel_function
-from semantic_kernel.kernel import Kernel
-
-# Define a ChatHistory object to hold the conversation's context
-chat_history = ChatHistory()
-chat_history.add_user_message("I'd like to go to New York on January 1, 2025")
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
 
-# Define a sample plugin that contains the function to book travel
-class BookTravelPlugin:
-    """A Sample Book Travel Plugin"""
-
-    @kernel_function(name="book_flight", description="Book travel given location and date")
-    async def book_flight(
-        self, date: Annotated[str, "The date of travel"], location: Annotated[str, "The location to travel to"]
-    ) -> str:
-        return f"Travel was booked to {location} on {date}"
-
-# Create the Kernel
-kernel = Kernel()
-
-# Add the sample plugin to the Kernel object
-kernel.add_plugin(BookTravelPlugin(), plugin_name="book_travel")
-
-# Define the Azure OpenAI AI Connector
-chat_service = AzureChatCompletion(
-    deployment_name="YOUR_DEPLOYMENT_NAME", 
-    api_key="YOUR_API_KEY", 
-    endpoint="https://<your-resource>.azure.openai.com/",
-)
-
-# Define the request settings to configure the model with auto-function calling
-request_settings = AzureChatPromptExecutionSettings(function_choice_behavior=FunctionChoiceBehavior.Auto())
+# ခရီးသွားဘွတ်ကင်ချရန် နမူနာကိရိယာ စက်ရုပ်ရေးဆွဲပါ
+def book_flight(date: str, location: str) -> str:
+    """Book travel given location and date."""
+    return f"Travel was booked to {location} on {date}"
 
 
 async def main():
-    # Make the request to the model for the given chat history and request settings
-    # The Kernel contains the sample that the model will request to invoke
-    response = await chat_service.get_chat_message_content(
-        chat_history=chat_history, settings=request_settings, kernel=kernel
+    provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
+    agent = await provider.create_agent(
+        name="travel_agent",
+        instructions="Help the user book travel. Use the book_flight tool when ready.",
+        tools=[book_flight],
     )
-    assert response is not None
 
-    """
-    Note: In the auto function calling process, the model determines it can invoke the 
-    `BookTravelPlugin` using the `book_flight` function, supplying the necessary arguments. 
-    
-    For example:
-
-    "tool_calls": [
-        {
-            "id": "call_abc123",
-            "type": "function",
-            "function": {
-                "name": "BookTravelPlugin-book_flight",
-                "arguments": "{'location': 'New York', 'date': '2025-01-01'}"
-            }
-        }
-    ]
-
-    Since the location and date arguments are required (as defined by the kernel function), if the 
-    model lacks either, it will prompt the user to provide them. For instance:
-
-    User: Book me a flight to New York.
-    Model: Sure, I'd love to help you book a flight. Could you please specify the date?
-    User: I want to travel on January 1, 2025.
-    Model: Your flight to New York on January 1, 2025, has been successfully booked. Safe travels!
-    """
-
-    print(f"`{response}`")
-    # Example AI Model Response: `Your flight to New York on January 1, 2025, has been successfully booked. Safe travels! ✈️🗽`
-
-    # Add the model's response to our chat history context
-    chat_history.add_assistant_message(response.content)
+    response = await agent.run("I'd like to go to New York on January 1, 2025")
+    print(response)
+    # နမူနာ အထွက်: ၂၀၂၅ ခုနှစ် ဇန်နဝါရီ ၁ ရက်နေ့တွင် နယူးယော့ခ်သို့ သင်၏ လေယာဉ်ခရီးစဉ်ကို အောင်မြင်စွာစာရင်းသွင်းပြီးဖြစ်သည်။ ခရီးသွားရာ အေးချမ်းစေပါစေ! ✈️🗽
 
 
 if __name__ == "__main__":
     asyncio.run(main())
 ```
-```csharp
-// Semantic Kernel C# example
 
-using Microsoft.SemanticKernel;
-using Microsoft.SemanticKernel.ChatCompletion;
-using System.ComponentModel;
-using Microsoft.SemanticKernel.Connectors.AzureOpenAI;
+ဤဥပမာမှ သင်မြင်နိုင်သည်မှာ အသုံးပြုသူ၏ အစားထိုးထည့်သွင်းချက်မှ ကောက်ခြင်းဖြင့် origin, destination, နှင့် ရက်စွဲကဲ့သို့သော အချက်အလက်များကို ထုတ်ယူပေးသည့် ကြိုတင်တည်ဆောက်ထားသော parser ကို မည်သို့ အသုံးချနိုင်သည်ကို ဖြစ်ပါသည်။ ဤမော်ဂျူးလာနည်းပညာသည် သင်အား အဆင့်မြင့် လောဂျစ်များပေါ် အာရုံစိုက်ခွင့်ပြုသည်။
 
-ChatHistory chatHistory = [];
-chatHistory.AddUserMessage("I'd like to go to New York on January 1, 2025");
+### ပူးပေါင်းဆောင်ရွက်ရေး ကိရိယာများကို အသုံးချပါ
 
-var kernelBuilder = Kernel.CreateBuilder();
-kernelBuilder.AddAzureOpenAIChatCompletion(
-    deploymentName: "NAME_OF_YOUR_DEPLOYMENT",
-    apiKey: "YOUR_API_KEY",
-    endpoint: "YOUR_AZURE_ENDPOINT"
-);
-kernelBuilder.Plugins.AddFromType<BookTravelPlugin>("BookTravel"); 
-var kernel = kernelBuilder.Build();
+Microsoft Agent Framework ကဲ့သို့ ဖရေမျော်စ်များသည် အချင်းချင်းပူးပေါင်းဆောင်ရွက်နိုင်သော agent များကို ဖန်တီးဖို့ အထောက်အကူပြုသည်။
 
-var settings = new AzureOpenAIPromptExecutionSettings()
-{
-    FunctionChoiceBehavior = FunctionChoiceBehavior.Auto()
-};
+**အသင်းများ ဘယ်လို အသုံးချနိုင်သလဲ**: အသင်းများသည် တာဝန်များနှင့် အခန်းကဏ္ဍ သတ်မှတ်ထားသော agent များကို ဒီဇိုင်းဆွဲနိုင်ပြီး ပူးပေါင်းလုပ်ဆောင်မှု workflow များကို စမ်းသပ်၊ မှန်ကန်အောင် ပြင်ဆင်နိုင်သည်။
 
-var chatCompletion = kernel.GetRequiredService<IChatCompletionService>();
+**လက်တွေ့တွင် ဘယ်လို အလုပ်လုပ်သလဲ**: သင်သည် data retrieval, analysis, သို့မဟုတ် ဆုံးဖြတ်ချက်ချခြင်း ကဲ့သို့ အထူးပြု လုပ်ငန်းတာဝန်ရှိသည့် agent များကို တစ်စုချင်း ဖန်တီးနိုင်သည်။ ဤ agent များသည် ဆက်သွယ်မှုနှင့် အချက်အလက်မျှဝေမှုများဖြင့် ပူးပေါင်း၍ အသုံးပြုသူမေးခွန်းတစ်ခုကို ဖြေဆိုခြင်း သို့မဟုတ် တာဝန်တစ်ခုကို ပြီးမြောက်စေခြင်းကဲ့သို့ ရည်ရွယ်ချက်ပေါင်းတည်ချက်တူသော အလုံးစုံ အရေးယူမှုကို ရယူနိုင်သလို ဖြစ်စေသည်။
 
-var response = await chatCompletion.GetChatMessageContentAsync(chatHistory, settings, kernel);
-
-/*
-Behind the scenes, the model recognizes the tool to call, what arguments it already has (location) and (date)
-{
-
-"tool_calls": [
-    {
-        "id": "call_abc123",
-        "type": "function",
-        "function": {
-            "name": "BookTravelPlugin-book_flight",
-            "arguments": "{'location': 'New York', 'date': '2025-01-01'}"
-        }
-    }
-]
-*/
-
-Console.WriteLine(response.Content);
-chatHistory.AddMessage(response!.Role, response!.Content!);
-
-// Example AI Model Response: Your flight to New York on January 1, 2025, has been successfully booked. Safe travels! ✈️🗽
-
-// Define a plugin that contains the function to book travel
-public class BookTravelPlugin
-{
-    [KernelFunction("book_flight")]
-    [Description("Book travel given location and date")]
-    public async Task<string> BookFlight(DateTime date, string location)
-    {
-        return await Task.FromResult( $"Travel was booked to {location} on {date}");
-    }
-}
-```
-
-ဤဥပမာတွင် သင်သည် User Input မှ အချက်အလက်များကို ထုတ်ယူရန် pre-built parser ကို ဘယ်လိုအသုံးပြုနိုင်သည်ကို မြင်ရမည်။
-
-### ပူးပေါင်းဆောင်ရွက်မှု Tools များကို အသုံးပြုခြင်း
-
-CrewAI, Microsoft AutoGen, နှင့် Semantic Kernel ကဲ့သို့သော Frameworks များသည် အေးဂျင့်များစွာကို ဖန်တီးရန် အထောက်အကူဖြစ်စေသည်။
-
-**အဖွဲ့များအတွက် အသုံးဝင်ပုံ**: အဖွဲ့များသည် သတ်မှတ်ထားသော အခန်းကဏ္ဍများနှင့် အလုပ်များဖြင့် အေးဂျင့်များကို ဒီဇိုင်းဆွဲပြီး ပူးပေါင်းဆောင်ရွက်မှုများကို စမ်းသပ်ပြီး ပြုပြင်နိုင်သည်။
-
-**လက်တွေ့အသုံးပြုမှု**: အေးဂျင့်များသည် သတ်မှတ်ထားသော အခန်းကဏ္ဍများနှင့် အလုပ်များကို ဆောင်ရွက်ပြီး ပူးပေါင်းဆောင်ရွက်မှုများကို စမ်းသပ်နိုင်သည်။
-
-**ဥပမာကုဒ် (AutoGen)**:
+**ဥပမာကုဒ် (Microsoft Agent Framework)**:
 
 ```python
-# creating agents, then create a round robin schedule where they can work together, in this case in order
+# Microsoft Agent Framework ကို အသုံးပြုပြီး အလုပ်လုပ်မည့် အေးဂျင့်များ များစွာ ဖန်တီးနေသည်
 
-# Data Retrieval Agent
-# Data Analysis Agent
-# Decision Making Agent
+import os
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
-agent_retrieve = AssistantAgent(
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
+
+# ဒေတာ ဆွဲယူခြင်း အေးဂျင့်
+agent_retrieve = await provider.create_agent(
     name="dataretrieval",
-    model_client=model_client,
+    instructions="Retrieve relevant data using available tools.",
     tools=[retrieve_tool],
-    system_message="Use tools to solve tasks."
 )
 
-agent_analyze = AssistantAgent(
+# ဒေတာ ခွဲခြမ်းစိတ်ဖြာမှု အေးဂျင့်
+agent_analyze = await provider.create_agent(
     name="dataanalysis",
-    model_client=model_client,
+    instructions="Analyze the retrieved data and provide insights.",
     tools=[analyze_tool],
-    system_message="Use tools to solve tasks."
 )
 
-# conversation ends when user says "APPROVE"
-termination = TextMentionTermination("APPROVE")
-
-user_proxy = UserProxyAgent("user_proxy", input_func=input)
-
-team = RoundRobinGroupChat([agent_retrieve, agent_analyze, user_proxy], termination_condition=termination)
-
-stream = team.run_stream(task="Analyze data", max_turns=10)
-# Use asyncio.run(...) when running in a script.
-await Console(stream)
+# တစ်စီအလိုက် အေးဂျင့်များကို အလုပ်လုပ်ဆောင်ရန် run ဟု ခေါ်သည်
+retrieval_result = await agent_retrieve.run("Retrieve sales data for Q4")
+analysis_result = await agent_analyze.run(f"Analyze this data: {retrieval_result}")
+print(analysis_result)
 ```
 
-ဤကုဒ်တွင် အေးဂျင့်များသည် အလုပ်တစ်ခုကို ပူးပေါင်းဆောင်ရွက်ပြီး အလုပ်ကို အောင်မြင်စွာ ပြီးမြောက်စေသည်။
+မပြီးသောကုဒ်ပိုင်းတွင် သင်မြင်ရသောအတိုင်း အချက်အလက်များကို ခွဲခြမ်းစစ်ဆေးရန် အချို့သော agent များ ပူးပေါင်း၍ တာဝန်တစ်ခုကို ဆောင်ရွက်စေသည့် နည်းလမ်းကို တွေ့မြင်ရသည်။ Agent တစ်ဦးချင်းစီသည် အထူးပြု လုပ်ဆောင်ချက်တစ်ခုကို ပါဝင်ဆောင်ရွက်ပြီး တာဝန်ကို ရရှိရန် agent များကို ညှိနှိုင်းကာ လုပ်ဆောင်သည်။ အထူးပြု အခန်းကဏ္ဍများရှိ agent များကို ဖန်တီးခြင်းဖြင့် တာဝန်ထိထိရောက်ရောက်ဆောင်ရွက်နိုင်မှုကို တိုးတက်စေပါသည်။
 
-### Real-Time Learning
+### အချိန်နဲ့တပြေးညီ သင်ယူနိုင်စေရန်
 
-အဆင့်မြင့် Frameworks များသည် Real-Time Context နားလည်မှုနှင့် လိုက်လျောညီထွေဖြစ်မှုစွမ်းရည်များကို ပံ့ပိုးပေးသည်။
+တိုးတက်သော ဖရေမ်ဝက်စ်များသည် အချိန်နဲ့တပြေးညီ အကြောင်းအရာနားလည်မှုနှင့် ကိုက်ညီမှုအတွက် စွမ်းရည်များ ပံ့ပိုးပေးသည်။
 
-**အဖွဲ့များအတွက် အသုံးဝင်ပုံ**: အဖွဲ့များသည် အေးဂျင့်များကို အပြန်အလှန်ဆက်သွယ်မှုများမှ သင်ယူစေပြီး ၎င်းတို့၏ အပြုအမူကို အချိန်နှင့်အမျှ ပြောင်းလဲစေသည်။
+**အသင်းများ ဘယ်လို အသုံးချနိုင်သလဲ**: အသင်းများသည် agent များကို ဆက်သွယ်မှုများမှ သင်ယူကာ ၎င်းတို့၏ အပြုအမူများကို ဒိုင်နမစ်စွာ ပြင်ဆင်စေနိုင်သည့် feedback loop များကို အကောင်အထည်ဖော်နိုင်သည်၊ ၎င်းက အဆက်မပြတ် တိုးတက်မှုနှင့် စွမ်းရည်များကို ပြုပြင်တိုးတက်စေသည်။
 
-**လက်တွေ့အသုံးပြုမှု**: အေးဂျင့်များသည် အသုံးပြုသူမှ တုံ့ပြန်ချက်များ၊ ပတ်ဝန်းကျင်ဒေတာများနှင့် အလုပ်ရလဒ်များကို ချက်ချင်းသုံးသပ်ပြီး ၎င်းတို့၏ ဗဟုသုတအခြေခံကို ပြုပြင်နိုင်သည်။
+**လက်တွေ့တွင် ဘယ်လို အလုပ်လုပ်သလဲ**: Agent များသည် အသုံးပြုသူ feedback၊ ပတ်ဝန်းကျင်ဒေတာနှင့် တာဝန်အကောင်အထည်ဖော်မှုရလဒ်များကို ချွန်မြှင့်စစ်ဆေးကာ ၎င်းတို့၏ အသိပညာအစုံစု (knowledge base) ကို 업데이트လုပ်နိုင်သည်၊ ဆုံးဖြတ်ချက်ချနည်းလမ်းများကို ပြင်ဆင်နိုင်သည်၊ နှင့် မကြာခဏ ပိုမိုကောင်းမွန်လာစေရန် တိုးတက်စေသည်။ ၎င်း iteration ကျင့်စဉ်သည် agent များအား ပြောင်းလဲနေသော အခြေအနေများနှင့် အသုံးပြုသူ စိတ်ကြိုက်မှုများကို ကိုက်ညီစေနိုင်စေသည်။
 
-## AutoGen, Semantic Kernel နှင့် Azure AI Agent Service တို့အကြား ကွာခြားချက်များ
+## Microsoft Agent Framework နှင့် Azure AI Agent Service တို့၏ ကွာခြားချက်များက ဘာတွေလဲ?
 
-ဤ Frameworks များကို အမျိုးမျိုးသောနည်းလမ်းများဖြင့် နှိုင်းယှဉ်နိုင်သော်လည်း ၎င်းတို့၏ ဒီဇိုင်း၊ စွမ်းရည်များနှင့် ရည်ရွယ်ချက်များအပေါ် အဓိကအခြေခံချက်များကို ကြည့်ကြရအောင်-
+ဤနည်းလမ်းများကို နှိုင်းယှဉ်ရန်နည်းလမ်းများ များပြားသော်လည်း ၎င်းတို့၏ ဒီဇိုင်း၊ စွမ်းရည်နှင့် ရည်ရွယ်သုံးစွဲမှုများအရ အောက်ပါ အဓိက ကွာခြားချက်များကို ကြည့်ကြမည်။
 
-## AutoGen
+## Microsoft Agent Framework (MAF)
 
-AutoGen သည် Microsoft Research ၏ AI Frontiers Lab မှ ဖွံ့ဖြိုးတိုးတက်စေသော open-source Framework တစ်ခုဖြစ်သည်။ ၎င်းသည် event-driven, distributed *agentic* applications များအတွက် အထူးပြုထားသည်။
+Microsoft Agent Framework သည် `AzureAIProjectAgentProvider` ကို အသုံးပြုပြီး AI agent များ တည်ဆောက်ရေးအတွက် စဉ်ဆက်မပြတ် SDK တစ်ခုကို ပံ့ပိုးပေးသည်။ ၎င်းက ဖန်တီးသူများအား Azure OpenAI မော်ဒယ်များကို အသုံးပြု၍ tool calling, conversation management နှင့် Azure identity ဖြင့် အချက်အလုံချဲ့ထားသော လုံခြုံရေး စနစ်များဖြင့် agent များကို ဖန်တီးနိုင်စေသည်။
 
-AutoGen သည် အေးဂျင့်များကို အခြေခံထားပြီး ၎င်းတို့သည် ပတ်ဝန်းကျင်ကို သိမြင်နိုင်ခြင်း၊ ဆုံးဖြတ်ချက်ချနိုင်ခြင်းနှင့် သတ်မှတ်ထားသော ရည်မှန်းချက်များကို အောင်မြင်စေခြင်းတို့ကို လုပ်ဆောင်နိုင်သည်။
+**အသုံးပြုမှု ရောကြားမှုများ**: Tool အသုံးပြုခြင်း၊ များစွာသော အဆင့်ဆင့်လုပ်ငန်းစဉ်များနှင့် ဌာနဆက်သွယ်ရေးစနစ်များနှင့် ပေါင်းစည်းထားသည့် production-ready AI agent များ ဖန်တီးရန်။
 
-**အသုံးပြုမှုများ**: Code generation ကို အလိုအလျောက်လုပ်ဆောင်ခြင်း၊ ဒေတာခွဲခြမ်းစိတ်ဖြာခြင်းနှင့် စီမံကိန်းများအတွက် အေးဂျင့်များကို ဖန်တီးခြင်း။
+Microsoft Agent Framework ၏ အရေးကြီးသော အခြေခံ အယူအဆများမှာ -
 
-AutoGen ၏ အဓိကအချက်အချို့မှာ-
+- **Agents**။ Agent တစ်ခုကို `AzureAIProjectAgentProvider` မှတစ်ဆင့် ဖန်တီးပြီး အမည်၊ ညွှန်ကြားချက်များနှင့် ကိရိယာများဖြင့် ဖွဲ့စည်းသည်။ Agent သည် -
+  - **အသုံးပြုသူ မက်ဆေ့ချ်များကို ပrocess လုပ်ပြီး** Azure OpenAI မော်ဒယ်များကို အသုံးပြုကာ တုံ့ပြန်ချက်များ ဖန်တီးနိုင်သည်။
+  - **Tool များကို အလိုအလျောက် ခေါ်ယူနိုင်**၍ ဆက်သွယ်မှု အခြေအနေအပေါ် မူတည်၍ အရေးပါတဲ့ လုပ်ဆောင်ချက်များကို ဆောင်ရွက်နိုင်သည်။
+  - **စကားဝိုင်းအခြေအနေကို ပြန်လည် ထိန်းသိမ်းနိုင်**၍ များစွာသော အပြန်အလှန်ဆက်သွယ်မှုများအတွင်း conversation state ကို ဆက်လက် သိုလှောင်နိုင်သည်။
 
-- **အေးဂျင့်များ**: အေးဂျင့်သည် software entity တစ်ခုဖြစ်ပြီး-
-  - **Messages ဖြင့် ဆက်သွယ်ခြင်း**: Messages များသည် synchronous သို့မဟုတ် asynchronous ဖြစ်နိုင်သည်။
-  - **ကိုယ်ပိုင် state ကို ထိန်းသိမ်းခြင်း**: Messages များမှ state ကို ပြောင်းလဲနိုင်သည်။
-  - **Actions ဆောင်ရွက်ခြင်း**: Messages များမှ state ပြောင်းလဲမှုအပေါ် အခြေခံ၍ Actions များကို ဆောင်ရွက်သည်။
-
-    ```python
-    from autogen_agentchat.agents import AssistantAgent
-    from autogen_agentchat.messages import TextMessage
-    from autogen_ext.models.openai import OpenAIChatCompletionClient
-
-
-    class MyAgent(RoutedAgent):
-        def __init__(self, name: str) -> None:
-            super().__init__(name)
-            model_client = OpenAIChatCompletionClient(model="gpt-4o")
-            self._delegate = AssistantAgent(name, model_client=model_client)
-    
-        @message_handler
-        async def handle_my_message_type(self, message: MyMessageType, ctx: MessageContext) -> None:
-            print(f"{self.id.type} received message: {message.content}")
-            response = await self._delegate.on_messages(
-                [TextMessage(content=message.content, source="user")], ctx.cancellation_token
-            )
-            print(f"{self.id.type} responded: {response.chat_message.content}")
-    ```
+  Agent ဖန်တီးနည်းကို ပြသသည့် ကုဒ် အပိုင်းက ခုလောက်ပါ။
 
     ```python
-    
-    # main.py
-    runtime = SingleThreadedAgentRuntime()
-    await MyAgent.register(runtime, "my_agent", lambda: MyAgent())
+    import os
+    from agent_framework.azure import AzureAIProjectAgentProvider
+    from azure.identity import AzureCliCredential
 
-    runtime.start()  # Start processing messages in the background.
-    await runtime.send_message(MyMessageType("Hello, World!"), AgentId("my_agent", "default"))
-    ```
-
-    ```text
-    # Output from the console:
-    my_agent received message: Hello, World!
-    my_assistant received message: Hello, World!
-    my_assistant responded: Hello! How can I assist you today?
-    ```
-
-
-- **Multi agents**: AutoGen သည် အေးဂျင့်များစွာကို ဖန်တီးပြီး ပူးပေါင်းဆောင်ရွက်နိုင်စေသည်။
-
-    ```python
-    editor_description = "Editor for planning and reviewing the content."
-
-    # Example of declaring an Agent
-    editor_agent_type = await EditorAgent.register(
-    runtime,
-    editor_topic_type,  # Using topic type as the agent type.
-    lambda: EditorAgent(
-        description=editor_description,
-        group_chat_topic_type=group_chat_topic_type,
-        model_client=OpenAIChatCompletionClient(
-            model="gpt-4o-2024-08-06",
-            # api_key="YOUR_API_KEY",
-        ),
-        ),
+    provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
+    agent = await provider.create_agent(
+        name="my_agent",
+        instructions="You are a helpful assistant.",
     )
 
-    # remaining declarations shortened for brevity
+    response = await agent.run("Hello, World!")
+    print(response)
+    ```
 
-    # Group chat
-    group_chat_manager_type = await GroupChatManager.register(
-    runtime,
-    "group_chat_manager",
-    lambda: GroupChatManager(
-        participant_topic_types=[writer_topic_type, illustrator_topic_type, editor_topic_type, user_topic_type],
-        model_client=OpenAIChatCompletionClient(
-            model="gpt-4o-2024-08-06",
-            # api_key="YOUR_API_KEY",
-        ),
-        participant_descriptions=[
-            writer_description, 
-            illustrator_description, 
-            editor_description, 
-            user_description
-        ],
-        ),
+- **Tools**။ မျိုးစုံ အလုပ်များကို agent သည် အလိုအလျောက် ခေါ်ယူနိုင်သော Python function များအဖြစ် သတ်မှတ်နိုင်သည်။ Agent ဖန်တီးရာတွင် Tools များကို မှတ်ပုံတင်သည်။
+
+    ```python
+    def get_weather(location: str) -> str:
+        """Get the current weather for a location."""
+        return f"The weather in {location} is sunny, 72\u00b0F."
+
+    agent = await provider.create_agent(
+        name="weather_agent",
+        instructions="Help users check the weather.",
+        tools=[get_weather],
     )
     ```
 
+- **Multi-Agent Coordination**။ ခွဲခြမ်းပေးမှုများရှိသော အမျိုးမျိုးသော အထူးပြု agent များကို ဖန်တီးကာ ၎င်းတို့၏ အလုပ်ကို ညှိနှိုင်းနိုင်သည်။
 
-- **Agent Runtime**: Framework သည် အေးဂျင့်များအကြား ဆက်သွယ်မှုကို စီမံခန့်ခွဲပေးသည်။
-
-## Semantic Kernel + Agent Framework
-
-Semantic Kernel သည် Enterprise-ready AI Orchestration SDK တစ်ခုဖြစ်သည်။ ၎င်းတွင် AI နှင့် memory connectors, Agent Framework တို့ပါဝင်သည်။
-
-- **AI Connectors**: External AI Services နှင့် ဆက်သွယ်ရန် interface တစ်ခုဖြစ်သည်။
-
-  ```python
-  # Semantic Kernel Python
-  from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
-  from semantic_kernel.kernel import Kernel
-
-  kernel = Kernel()
-  kernel.add_service(
-    AzureChatCompletion(
-        deployment_name="your-deployment-name",
-        api_key="your-api-key",
-        endpoint="your-endpoint",
+    ```python
+    planner = await provider.create_agent(
+        name="planner",
+        instructions="Break down complex tasks into steps.",
     )
-  )
-  ```  
 
-    ```csharp
-    // Semantic Kernel C#
-    using Microsoft.SemanticKernel;
+    executor = await provider.create_agent(
+        name="executor",
+        instructions="Execute the planned steps using available tools.",
+        tools=[execute_tool],
+    )
 
-    // Create kernel
-    var builder = Kernel.CreateBuilder();
-    
-    // Add a chat completion service:
-    builder.Services.AddAzureOpenAIChatCompletion(
-        "your-resource-name",
-        "your-endpoint",
-        "your-resource-key",
-        "deployment-model");
-    var kernel = builder.Build();
+    plan = await planner.run("Plan a trip to Paris")
+    result = await executor.run(f"Execute this plan: {plan}")
     ```
 
-
-- **Plugins**: Application များအတွက် functions များကို encapsulate လုပ်ထားသည်။
-
-  ```python
-  from semantic_kernel.connectors.ai.open_ai.services.azure_chat_completion import AzureChatCompletion
-
-
-  async def main():
-      from semantic_kernel.functions import KernelFunctionFromPrompt
-      from semantic_kernel.kernel import Kernel
-
-      kernel = Kernel()
-      kernel.add_service(AzureChatCompletion())
-
-      user_input = input("User Input:> ")
-
-      kernel_function = KernelFunctionFromPrompt(
-          function_name="SummarizeText",
-          prompt="""
-          Summarize the provided unstructured text in a sentence that is easy to understand.
-          Text to summarize: {{$user_input}}
-          """,
-      )
-
-      response = await kernel_function.invoke(kernel=kernel, user_input=user_input)
-      print(f"Model Response: {response}")
-
-      """
-      Sample Console Output:
-
-      User Input:> I like dogs
-      Model Response: The text expresses a preference for dogs.
-      """
-
-
-  if __name__ == "__main__":
-    import asyncio
-    asyncio.run(main())
-  ```
-
-    ```csharp
-    var userInput = Console.ReadLine();
-
-    // Define semantic function inline.
-    string skPrompt = @"Summarize the provided unstructured text in a sentence that is easy to understand.
-                        Text to summarize: {{$userInput}}";
-    
-    // create the function from the prompt
-    KernelFunction summarizeFunc = kernel.CreateFunctionFromPrompt(
-        promptTemplate: skPrompt,
-        functionName: "SummarizeText"
-    );
-
-    //then import into the current kernel
-    kernel.ImportPluginFromFunctions("SemanticFunctions", [summarizeFunc]);
-
-    ```
-
-
-- **Native function**: Framework သည် native functions များကို တိုက်ရိုက်ခေါ်နိုင်သည်။
-
-    ```csharp
-    public class NativeFunctions {
-
-        [SKFunction, Description("Retrieve content from local file")]
-        public async Task<string> RetrieveLocalFile(string fileName, int maxSize = 5000)
-        {
-            string content = await File.ReadAllTextAsync(fileName);
-            if (content.Length <= maxSize) return content;
-            return content.Substring(0, maxSize);
-        }
-    }
-    
-    //Import native function
-    string plugInName = "NativeFunction";
-    string functionName = "RetrieveLocalFile";
-
-   //To add the functions to a kernel use the following function
-    kernel.ImportPluginFromType<NativeFunctions>();
-
-    ```
-
-
-- **Memory**: AI Apps များအတွက် context management ကို လွယ်ကူစေသည်။
-
-    ```csharp
-    var facts = new Dictionary<string,string>();
-    facts.Add(
-        "Azure Machine Learning; https://learn.microsoft.com/azure/machine-learning/",
-        @"Azure Machine Learning is a cloud service for accelerating and
-        managing the machine learning project lifecycle. Machine learning professionals,
-        data scientists, and engineers can use it in their day-to-day workflows"
-    );
-    
-    facts.Add(
-        "Azure SQL Service; https://learn.microsoft.com/azure/azure-sql/",
-        @"Azure SQL is a family of managed, secure, and intelligent products
-        that use the SQL Server database engine in the Azure cloud."
-    );
-    
-    string memoryCollectionName = "SummarizedAzureDocs";
-    
-    foreach (var fact in facts) {
-        await memoryBuilder.SaveReferenceAsync(
-            collection: memoryCollectionName,
-            description: fact.Key.Split(";")[1].Trim(),
-            text: fact.Value,
-            externalId: fact.Key.Split(";")[2].Trim(),
-            externalSourceName: "Azure Documentation"
-        );
-    }
-    ```
-
-ဒီအချက်တွေကို `SummarizedAzureDocs` ဆိုတဲ့ memory collection ထဲမှာ သိမ်းဆည်းထားပါတယ်။ ဒီဟာက အလွန်ရိုးရှင်းတဲ့ ဥပမာတစ်ခုဖြစ်ပေမယ့် LLM အတွက် memory ထဲမှာ အချက်အလက်တွေကို သိမ်းဆည်းပုံကို မြင်နိုင်ပါတယ်။
-
-ဒါဆိုရင် Semantic Kernel framework ရဲ့ အခြေခံတွေကို သိပြီးသားဖြစ်ရင်၊ Agent Framework အကြောင်းကို ဆက်လက်လေ့လာကြမယ်။
+- **Azure Identity Integration**। Framework သည် `AzureCliCredential` (သို့မဟုတ် `DefaultAzureCredential`) ကို အသုံးပြု၍ လုံခြုံစိတ်ချရသော keyless authentication ကို ပံ့ပိုးပေးသည်၊ ထိုကာလတွင် API key များကို ကိုင်တွယ်ရန် မလိုအပ်တော့ပေ။
 
 ## Azure AI Agent Service
 
-Azure AI Agent Service ဟာ Microsoft Ignite 2024 မှာ မိတ်ဆက်ခဲ့တဲ့ နောက်ဆုံးထည့်သွင်းထားတဲ့ feature တစ်ခုဖြစ်ပြီး၊ Llama 3, Mistral, Cohere စတဲ့ open-source LLMs ကို တိုက်ရိုက်ခေါ်ယူနိုင်တဲ့ flexible models တွေကို အသုံးပြုနိုင်စေပါတယ်။
+Azure AI Agent Service သည် Microsoft Ignite 2024 မှ တင်သွင်းခဲ့သော မိုဃ်းဆောင် အသစ်တစ်ခုဖြစ်သည်။ ၎င်းက Llama 3, Mistral, Cohere ကဲ့သို့သော open-source LLM များကို တိုက်ရိုက် ခေါ်ယူနိုင်သလို ပိုမို သေးငယ်နှင့် အလွယ်တကူ ချိန်ညှိနိုင်သည့် မော်ဒယ်များနှင့် ဖြန့်ချိနိုင်ရန် အဆင်ပြေစေသည်။
 
-Azure AI Agent Service ဟာ လုပ်ငန်းအသုံးပြုမှုအတွက် သင့်လျော်တဲ့ enterprise security mechanism တွေ၊ data storage method တွေကို ပိုမိုခိုင်မာစေပါတယ်။
+Azure AI Agent Service သည် စီးပွားရေးအဖွဲ့အစည်းများအတွက် လုံခြုံရေးစနစ်များနှင့် ဒေတာသိုလှောင်မှု နည်းလမ်းများကို မြင့်မားစွာ ပံ့ပိုးပေးသဖြင့် စီးပွားရေးအသုံးချမှုများအတွက် အထူးသင့်လျော်သည်။
 
-AutoGen နဲ့ Semantic Kernel စတဲ့ multi-agent orchestration frameworks တွေနဲ့ အလွယ်တကူ အလုပ်လုပ်နိုင်ပါတယ်။
+၎င်းသည် Microsoft Agent Framework နှင့် အကောင်းဆုံးပေါင်းစည်းနိုင်ပြီး agent များ တည်ဆောက်ခြင်းနှင့် ဖြန့်ချိခြင်းအတွက် အထောက်အပံ့ ပေးနိုင်သည်။
 
-ဒီ service ဟာ Public Preview အဆင့်မှာရှိပြီး Python နဲ့ C# ကို အသုံးပြုပြီး agent တွေကို ဖန်တီးနိုင်ပါတယ်။
+ဤဝန်ဆောင်မှုကို ယခု Public Preview အနေဖြင့် ရရှိနိုင်ပြီး agent များကို ဖန်တီးရန် Python နှင့် C# ကို ပံ့ပိုးပေးထားသည်။
 
-Semantic Kernel Python ကို အသုံးပြုပြီး user-defined plugin နဲ့ Azure AI Agent တစ်ခုကို ဖန်တီးနိုင်ပါတယ်။
+Azure AI Agent Service Python SDK ကို အသုံးပြုပြီး အသုံးပြုသူ သတ်မှတ်ထားသော tool တစ်ခုနှင့် agent တစ်ခုကို ဖန်တီးနည်း -
 
 ```python
 import asyncio
-from typing import Annotated
+from azure.identity import DefaultAzureCredential
+from azure.ai.projects import AIProjectClient
 
-from azure.identity.aio import DefaultAzureCredential
+# ကိရိယာလုပ်ဆောင်ချက်များကို သတ်မှတ်ပါ
+def get_specials() -> str:
+    """Provides a list of specials from the menu."""
+    return """
+    Special Soup: Clam Chowder
+    Special Salad: Cobb Salad
+    Special Drink: Chai Tea
+    """
 
-from semantic_kernel.agents import AzureAIAgent, AzureAIAgentSettings, AzureAIAgentThread
-from semantic_kernel.contents import ChatMessageContent
-from semantic_kernel.contents import AuthorRole
-from semantic_kernel.functions import kernel_function
-
-
-# Define a sample plugin for the sample
-class MenuPlugin:
-    """A sample Menu Plugin used for the concept sample."""
-
-    @kernel_function(description="Provides a list of specials from the menu.")
-    def get_specials(self) -> Annotated[str, "Returns the specials from the menu."]:
-        return """
-        Special Soup: Clam Chowder
-        Special Salad: Cobb Salad
-        Special Drink: Chai Tea
-        """
-
-    @kernel_function(description="Provides the price of the requested menu item.")
-    def get_item_price(
-        self, menu_item: Annotated[str, "The name of the menu item."]
-    ) -> Annotated[str, "Returns the price of the menu item."]:
-        return "$9.99"
+def get_item_price(menu_item: str) -> str:
+    """Provides the price of the requested menu item."""
+    return "$9.99"
 
 
 async def main() -> None:
-    ai_agent_settings = AzureAIAgentSettings.create()
+    credential = DefaultAzureCredential()
+    project_client = AIProjectClient.from_connection_string(
+        credential=credential,
+        conn_str="your-connection-string",
+    )
 
-    async with (
-        DefaultAzureCredential() as creds,
-        AzureAIAgent.create_client(
-            credential=creds,
-            conn_str=ai_agent_settings.project_connection_string.get_secret_value(),
-        ) as client,
-    ):
-        # Create agent definition
-        agent_definition = await client.agents.create_agent(
-            model=ai_agent_settings.model_deployment_name,
-            name="Host",
-            instructions="Answer questions about the menu.",
+    agent = project_client.agents.create_agent(
+        model="gpt-4o-mini",
+        name="Host",
+        instructions="Answer questions about the menu.",
+        tools=[get_specials, get_item_price],
+    )
+
+    thread = project_client.agents.create_thread()
+
+    user_inputs = [
+        "Hello",
+        "What is the special soup?",
+        "How much does that cost?",
+        "Thank you",
+    ]
+
+    for user_input in user_inputs:
+        print(f"# User: '{user_input}'")
+        message = project_client.agents.create_message(
+            thread_id=thread.id,
+            role="user",
+            content=user_input,
         )
-
-        # Create the AzureAI Agent using the defined client and agent definition
-        agent = AzureAIAgent(
-            client=client,
-            definition=agent_definition,
-            plugins=[MenuPlugin()],
+        run = project_client.agents.create_and_process_run(
+            thread_id=thread.id, agent_id=agent.id
         )
-
-        # Create a thread to hold the conversation
-        # If no thread is provided, a new thread will be
-        # created and returned with the initial response
-        thread: AzureAIAgentThread | None = None
-
-        user_inputs = [
-            "Hello",
-            "What is the special soup?",
-            "How much does that cost?",
-            "Thank you",
-        ]
-
-        try:
-            for user_input in user_inputs:
-                print(f"# User: '{user_input}'")
-                # Invoke the agent for the specified thread
-                response = await agent.get_response(
-                    messages=user_input,
-                    thread_id=thread,
-                )
-                print(f"# {response.name}: {response.content}")
-                thread = response.thread
-        finally:
-            await thread.delete() if thread else None
-            await client.agents.delete_agent(agent.id)
+        messages = project_client.agents.list_messages(thread_id=thread.id)
+        print(f"# Agent: {messages.data[0].content[0].text.value}")
 
 
 if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-### အဓိကအကြောင်းအရာများ
+### အခြေခံ အယူအဆများ
 
-Azure AI Agent Service ရဲ့ အဓိကအကြောင်းအရာတွေကတော့ -
+Azure AI Agent Service တွင် အောက်ပါ အခြေခံ အယူအဆများ ရှိသည် -
 
-- **Agent**. Azure AI Agent Service ဟာ Azure AI Foundry နဲ့ ပေါင်းစည်းထားပါတယ်။ AI Foundry အတွင်းမှာ AI Agent ဟာ "smart" microservice တစ်ခုအနေနဲ့ အသုံးပြုနိုင်ပြီး၊ မေးခွန်းတွေကို ဖြေဆိုခြင်း (RAG), လုပ်ဆောင်မှုတွေကို ပြုလုပ်ခြင်း, သို့မဟုတ် workflow တွေကို အလိုအလျောက်လုပ်ဆောင်ခြင်းတို့ကို ပြုလုပ်နိုင်ပါတယ်။ Generative AI models တွေကို tools တွေနဲ့ ပေါင်းစပ်ပြီး အချက်အလက်ရင်းမြစ်တွေကို access လုပ်နိုင်စေပါတယ်။ Agent ရဲ့ ဥပမာတစ်ခုကတော့ -
+- **Agent**။ Azure AI Agent Service သည် Microsoft Foundry နှင့် ပေါင်းစည်းထားသည်။ AI Foundry အတွင်းတွင် AI Agent သည် အသိပညာရှိ "smarts" microservice တစ်ခုအဖြစ် တည်ရှိပြီး RAG ဖြင့် မေးခွန်းများကို ဖြေဆိုခြင်း၊ လုပ်ဆောင်ချက်များ ကိုင်တွယ်ခြင်း သို့မဟုတ် အလုံးစုံ Workflow များကို အလိုအလျောက် ဆောင်ရွက်နိုင်သည်။ ၎င်းသည် generative AI မော်ဒယ်များ၏ အာဏာနှင့် ရှေ့ကွက်များကို တိုက်ရိုက် ပေါင်းစည်းကာ အပြင်လောက ဒေတာအရင်းမြစ်များနှင့် အသုံးပြု၍ အပြန်အလှန် ဆက်သွယ်နိုင်သည့် tools များကို အသုံးပြုသည်။ Agent ၏ ဥပမာကို အောက်ပါအတိုင်း ပြထားသည်။
 
     ```python
     agent = project_client.agents.create_agent(
@@ -651,9 +304,9 @@ Azure AI Agent Service ရဲ့ အဓိကအကြောင်းအရာ�
     )
     ```
 
-    ဒီဥပမာမှာ `gpt-4o-mini` model, `my-agent` ဆိုတဲ့နာမည်နဲ့ `You are helpful agent` ဆိုတဲ့ instruction တွေကို အသုံးပြုပြီး agent တစ်ခုကို ဖန်တီးထားပါတယ်။ ဒီ agent ဟာ code interpretation tasks တွေကို လုပ်ဆောင်နိုင်စေတဲ့ tools နဲ့ resources တွေကို ပေးထားပါတယ်။
+    ဤဥပမာတွင် agent တစ်ဦးကို `gpt-4o-mini` မော်ဒယ်ဖြင့် `my-agent` အမည်ဖြင့်၊ `You are helpful agent` ဟူသော ညွှန်ကြားချက်ဖြင့် ဖန်တီးထားသည်။ Agent သည် code interpretation လက်ရာများ ဆောင်ရွက်နိုင်ရန် tools နှင့် အရင်းအမြစ်များ ဖြင့် ပြည့်စုံသည်။
 
-- **Thread နဲ့ messages**. Thread ဟာ agent နဲ့ user အကြား စကားပြောခြင်း သို့မဟုတ် အပြန်အလှန်ဆက်သွယ်မှုကို ကိုယ်စားပြုပါတယ်။ Thread တွေကို စကားပြောမှုရဲ့ အဆင့်အတန်းကို track လုပ်ခြင်း, context အချက်အလက်တွေကို သိမ်းဆည်းခြင်း, interaction ရဲ့ state ကို စီမံခန့်ခွဲခြင်းတို့အတွက် အသုံးပြုနိုင်ပါတယ်။ Thread ရဲ့ ဥပမာတစ်ခုကတော့ -
+- **Thread နှင့် messages**။ Thread သည် အထူးထည့်ထားသည့် အယူအဆတစ်ခုဖြစ်သည်။ ၎င်းသည် agent နှင့် အသုံးပြုသူကြားရှိ စကားသံ သို့မဟုတ် ဆက်သွယ်မှုကို ကိုယ်စားပြုသည်။ Threads များကို စကားဝိုင်းတစ်ခု၏ တိုးတက်မှုကို သတင်းအချက်အလက် သိမ်းဆည်းရန်၊ context ကို မှတ်တမ်းတင်ရန်နှင့် အချိန်မီ အခြေအနေကို စီမံရန် အသုံးပြုနိုင်သည်။ Thread ၏ ဥပမာကို အောက်ပါအတိုင်း ပြထားသည်။
 
     ```python
     thread = project_client.agents.create_thread()
@@ -671,83 +324,76 @@ Azure AI Agent Service ရဲ့ အဓိကအကြောင်းအရာ�
     print(f"Messages: {messages}")
     ```
 
-    အရင် code မှာ thread တစ်ခုကို ဖန်တီးထားပါတယ်။ ထို့နောက် thread ကို message တစ်ခု ပို့ထားပါတယ်။ `create_and_process_run` ကို ခေါ်ပြီး agent ကို thread ပေါ်မှာ အလုပ်လုပ်ဖို့ တောင်းဆိုထားပါတယ်။ Messages တွေကို fetch လုပ်ပြီး agent ရဲ့ response ကို log လုပ်ထားပါတယ်။ Messages တွေက user နဲ့ agent အကြား စကားပြောမှုရဲ့ အဆင့်အတန်းကို ပြသပါတယ်။ Messages တွေဟာ text, image, file စတဲ့ အမျိုးအစားအမျိုးမျိုးဖြစ်နိုင်ပြီး၊ agent ရဲ့ အလုပ်ရလဒ်အနေနဲ့ ဥပမာ image သို့မဟုတ် text response တစ်ခုကို ရရှိနိုင်ပါတယ်။ Developer အနေနဲ့ ဒီအချက်အလက်တွေကို အသုံးပြုပြီး response ကို ဆက်လက် process လုပ်ခြင်း သို့မဟုတ် user ကို ပြသနိုင်ပါတယ်။
+    အထက်ပါကုဒ်တွင် thread တစ်ခုကို ဖန်တီးထားသည်။ ထိုနောက် ဖောင်းစရာ message တစ်ခုကို thread သို့ ပို့ထားသည်။ `create_and_process_run` ကို ခေါ်ယူခြင်းဖြင့် agent ကို thread တွင် လုပ်ဆောင်ရန် တောင်းဆိုထားသည်။ နောက်ဆုံးတွင် messages များကို ဆွဲယူလော့ဂ်ထုတ်ခြင်းဖြင့် agent ၏ တုံ့ပြန်ချက်ကို ကြည့်ရှုနိုင်သည်။ မက်ဆေ့့များသည် စကား, ပုံ သို့မဟုတ် ဖိုင် ကဲ့သို့ အမျိုးအစား အမျိုးမျိုးရှိနိုင်သည် ဆိုသည်မှာ agent ၏ လုပ်ဆောင်ချက်ရလဒ်အနေဖြင့် ပုံတစ်ပုံ သို့မဟုတ် စာသားတစ်ပိုဒ်ဖြစ်လာနိုင်သည်။ ဖန်တီးသူတစ်ဦးအနေဖြင့် သင်သည် ဤအချက်အလက်ကို အသုံးပြုကာ တုံ့ပြန်ချက်ကို ထပ်မံလုပ်ဆောင်ရန် သို့မဟုတ် အသုံးပြုသူထံ မိတ်ဆက်ပေးနိုင်သည်။
 
-- **အခြား AI frameworks တွေနဲ့ ပေါင်းစည်းမှု**. Azure AI Agent Service ဟာ AutoGen နဲ့ Semantic Kernel စတဲ့ frameworks တွေနဲ့ အလုပ်လုပ်နိုင်ပါတယ်။ ဒါဟာ app ရဲ့ အချို့ကို frameworks တစ်ခုမှာ ဖန်တီးပြီး Agent service ကို orchestrator အနေနဲ့ အသုံးပြုခြင်း သို့မဟုတ် အားလုံးကို Agent service မှာ ဖန်တီးနိုင်ပါတယ်။
+- **Microsoft Agent Framework နှင့် ပေါင်းစည်းနိုင်ခြင်း**။ Azure AI Agent Service သည် Microsoft Agent Framework နှင့် အတူ လက်တွဲအလုပ်လုပ်နိုင်ပြီး၊ သင်သည် `AzureAIProjectAgentProvider` ကို အသုံးပြုကာ agent များ ဖန်တီးပြီး Agent Service မှတဆင့် production အတွက် ဖြန့်ချိနိုင်သည်။
 
-**အသုံးပြုမှုများ**: Azure AI Agent Service ဟာ secure, scalable, flexible AI agent deployment လိုအပ်တဲ့ လုပ်ငန်းအသုံးပြုမှုအတွက် ဖန်တီးထားပါတယ်။
+**အသုံးပြုမှု ရောကြားမှုများ**: Azure AI Agent Service သည် လုံခြုံ, စကေးလ်ပြုနိုင်ပြီး အလွယ်တကူ ပြောင်းလဲနိုင်သော AI agent ဖြန့်ချိမှုကို လိုအပ်သည့် စီးပွားရေးအသုံးချမှုများအတွက် ရည်ရွယ်ထားသည်။
 
-## ဒီ frameworks တွေကြားက အဓိကကွာခြားချက်တွေကဘာလဲ?
+## ဤနည်းလမ်းများ၏ ကွာခြားချက်က ဘာလဲ?
 
-ဒီ frameworks တွေမှာ အချို့ overlap တွေရှိပေမယ့်၊ design, capabilities, target use cases အပေါ်မှာ အဓိကကွာခြားချက်တွေရှိပါတယ် -
+บางครั้ง overlap ရှိသော်လည်း ၎င်းတို့၏ ဒီဇိုင်း၊ စွမ်းရည်နှင့် ရည်ညွှန်းသုံးစွဲမှုများအရ အောက်ပါ အရေးကြီး ကွာခြားချက်များ ရှိသည်။
 
-- **AutoGen**: Multi-agent systems အပေါ် အဆင့်မြင့်သုတေသနလုပ်ငန်းတွေကို စမ်းသပ်ဖို့အတွက် အကောင်းဆုံးနေရာဖြစ်ပါတယ်။ Sophisticated multi-agent systems တွေကို prototype လုပ်ဖို့အတွက် အကောင်းဆုံးဖြစ်ပါတယ်။
-- **Semantic Kernel**: Enterprise agentic applications တွေကို ဖန်တီးဖို့ production-ready agent library ဖြစ်ပါတယ်။ Event-driven, distributed agentic applications တွေကို အဓိကထားပြီး multiple LLMs, SLMs, tools, single/multi-agent design patterns တွေကို enable လုပ်ပါတယ်။
-- **Azure AI Agent Service**: Azure Foundry မှာ agents တွေကို ဖန်တီးပြီး deploy လုပ်ဖို့ platform နဲ့ service ဖြစ်ပါတယ်။ Azure OpenAI, Azure AI Search, Bing Search, code execution စတဲ့ services တွေနဲ့ connection တွေကို ဖန်တီးပေးပါတယ်။
+- **Microsoft Agent Framework (MAF)**: Tool calling, conversation management နှင့် Azure identity ပေါင်းစပ်နိုင်သည့် agent များ ဖန်တီးရန် production-ready SDK တစ်ခုဖြစ်သည်။ Streamlined API တစ်ခုဖြင့် agent များကို ဖန်တီးရန် အဆင်ပြေသည်။
+- **Azure AI Agent Service**: Agents များအတွက် Foundry အတွင်းရှိ platform နှင့် deployment ဝန်ဆောင်မှုဖြစ်သည်။ Azure OpenAI, Azure AI Search, Bing Search နှင့် code execution နှင့် အချင်းချင်း ချိတ်ဆက်မှုများကို ပေါင်းစည်းထားသည်။
 
-## အသုံးပြုမှုများ
+ထိုနောက် သင် ဘယ်တစ်ခုကို ရွေးရမည်ကို မသေချာသေးလျှင် -
 
-အများဆုံးအသုံးပြုမှုအခြေအနေတွေကို ကြည့်ပြီး framework ရွေးချယ်ဖို့ အကူအညီပေးပါမယ် -
+### အသုံးပြုမှု မျိုးစုံ
 
-> Q: စမ်းသပ်ခြင်း, သင်ယူခြင်း, proof-of-concept agent applications တွေကို ဖန်တီးခြင်းလုပ်ဆောင်နေပြီး၊ အလျင်အမြန် ဖန်တီးပြီး စမ်းသပ်ချင်တယ်။
+ကျွန်ုပ်တို့သည် အောက်ပါ ရိုးရှင်းသော ကိစ္စများမှတဆင့် မိတ်ဆက်ပေးလိုသည် -
+
+> Q: production AI agent applications ဖန်တီးချင်ပြီး အစကို လျင်မြန်စတင်ချင်ပါတယ်
 >
-> A: AutoGen ဟာ ဒီအခြေအနေအတွက် အကောင်းဆုံးရွေးချယ်မှုဖြစ်ပါတယ်။ Event-driven, distributed agentic applications တွေကို အဓိကထားပြီး advanced multi-agent design patterns တွေကို support လုပ်ပါတယ်။
 
-> Q: AutoGen ဟာ Semantic Kernel နဲ့ Azure AI Agent Service ထက် ဒီအခြေအနေမှာ ဘာကြောင့် ပိုကောင်းတာလဲ?
+> A: Microsoft Agent Framework သည် အကောင်းဆုံးရွေးချယ်မှု ဖြစ်နိုင်သည်။ ၎င်းသည် `AzureAIProjectAgentProvider` မှတစ်ဆင့် ရိုးရှင်းသည့် Pythonic API ကို ပေးကာ tool များနှင့် ညွှန်ကြားချက်များဖြင့် agent များကို မကြာခဏ စာကြောင်းအနည်းငယ်ဖြင့် သတ်မှတ်နိုင်စေသည်။
+
+> Q: Azure Search နှင့် code execution ကဲ့သို့ Azure ပေါင်းစည်းမှုများနှင့် အတူ စီးပွားရေးအဆင့် deployment လိုအပ်ပါတယ်
 >
-> A: AutoGen ဟာ event-driven, distributed agentic applications တွေကို အဓိကထားပြီး code generation နဲ့ data analysis tasks တွေကို အလွယ်တကူ automate လုပ်နိုင်စေပါတယ်။ Complex multi-agent systems တွေကို အကျိုးရှိစွာ ဖန်တီးဖို့ လိုအပ်တဲ့ tools နဲ့ capabilities တွေကို ပေးထားပါတယ်။
+> A: Azure AI Agent Service သည် အကောင်းဆုံးသင့်လျော်ပါသည်။ ၎င်းသည် မော်ဒယ်များစွာ၊ Azure AI Search, Bing Search နှင့် Azure Functions များအတွက် built-in ချိတ်ဆက်မှုများပေးသည့် platform service တစ်ခုဖြစ်သည်။ Foundry Portal တွင် သင့် agent များကို အလွယ်တကူ တည်ဆောက်၍ ကျယ်ပြန့်စွာ ဖြန့်ချိနိုင်သည်။
 
-> Q: Azure AI Agent Service ဟာ ဒီအခြေအနေမှာလည်း အလုပ်လုပ်နိုင်မယ်ထင်တယ်၊ code generation tools တွေပါရှိတယ်လို့လား?
+> Q: ငါ မေးခွန်းရှုပ်နေဆဲ၊ တစ်ခုသာ ပေးပါ
 >
-> A: ဟုတ်ပါတယ်၊ Azure AI Agent Service ဟာ agents တွေအတွက် platform service ဖြစ်ပြီး၊ multiple models, Azure AI Search, Bing Search, Azure Functions စတဲ့ built-in capabilities တွေကို ပေးထားပါတယ်။ Foundry Portal မှာ agents တွေကို အလွယ်တကူ ဖန်တီးပြီး အကျိုးရှိစွာ deploy လုပ်နိုင်ပါတယ်။
+> A: Microsoft Agent Framework ဖြင့် သင်၏ agent များကို စတင်ဖန်တီးပြီး ထို့နောက် production တွင် ဖြန့်ချိရန်နှင့် စကေးလ်ထိန်းရန် လိုအပ်သည့်အချိန် တွင် Azure AI Agent Service ကို အသုံးပြုပါ။ ဤနည်းလမ်းသည် သင့် agent logic အပေါ် မြန်ဆန်စွာ iteration လုပ်နိုင်စေပြီး စီးပွားရေး deployment သို့ ရောက်ရှိရန် သေချာသော လမ်းကြောင်းတစ်ခုကို ပေးသည်။
 
-> Q: အခုထိမသေချာသေးဘူး၊ ရွေးချယ်မှုတစ်ခုပဲ ပြောပါ။
->
-> A: Semantic Kernel မှာ application ကို အရင်ဖန်တီးပြီး Azure AI Agent Service ကို အသုံးပြုပြီး agent ကို deploy လုပ်ဖို့ အကောင်းဆုံးရွေးချယ်မှုဖြစ်ပါတယ်။ ဒီနည်းလမ်းက multi-agent systems တွေကို Semantic Kernel မှာ ဖန်တီးနိုင်စေပြီး၊ agents တွေကို အလွယ်တကူ persist လုပ်နိုင်စေပါတယ်။ ထို့အပြင် Semantic Kernel မှာ AutoGen connector ပါရှိတဲ့အတွက်၊ frameworks နှစ်ခုကို အလွယ်တကူ ပေါင်းစည်းအသုံးပြုနိုင်ပါတယ်။
+ကျွန်ုပ်တို့ အောက်ပါ အရေးကြီး ကွာခြားချက်များကို ဇယားတစ်ခုဖြင့် အကျဉ်းချုပ်ပေးလိုက်သည် -
 
-## Frameworks တွေကြားက အဓိကကွာခြားချက်တွေကို ဇယားအနေနဲ့ အကျဉ်းချုပ်ပါမယ်:
-
-| Framework | အဓိကအာရုံစိုက်မှု | အဓိကအကြောင်းအရာ | အသုံးပြုမှုများ |
+| Framework | Focus | Core Concepts | Use Cases |
 | --- | --- | --- | --- |
-| AutoGen | Event-driven, distributed agentic applications | Agents, Personas, Functions, Data | Code generation, data analysis tasks |
-| Semantic Kernel | လူ့ဘာသာစကားနဲ့ ဆက်နွယ်မှုကို နားလည်ခြင်း၊ text content ဖန်တီးခြင်း | Agents, Modular Components, Collaboration | Natural language understanding, content generation |
+| Microsoft Agent Framework | Streamlined agent SDK with tool calling | Agents, Tools, Azure Identity | Building AI agents, tool use, multi-step workflows |
 | Azure AI Agent Service | Flexible models, enterprise security, Code generation, Tool calling | Modularity, Collaboration, Process Orchestration | Secure, scalable, and flexible AI agent deployment |
 
-## Azure ecosystem tools တွေကို တိုက်ရိုက်ပေါင်းစည်းနိုင်မလား၊ standalone solutions လိုအပ်မလား?
+## ကျွန်ုပ်၏ ရှိပြီးသား Azure ပတ်ဝန်းကျင် ကိရိယာများကို တိုက်ရိုက် ပေါင်းစည်းနိုင်မလား၊ သီးခြား ဖြေရှင်းချက်များ လိုအပ်သလား?
+The answer is yes, you can integrate your existing Azure ecosystem tools directly with Azure AI Agent Service especially, as it has been built to work seamlessly with other Azure services. You could for example integrate Bing, Azure AI Search, and Azure Functions. There's also deep integration with Microsoft Foundry.
 
-အဖြေကတော့ ဟုတ်ပါတယ်၊ Azure AI Agent Service ဟာ Azure ecosystem tools တွေနဲ့ တိုက်ရိုက်ပေါင်းစည်းနိုင်ပါတယ်။ Bing, Azure AI Search, Azure Functions စတဲ့ services တွေကို ပေါင်းစည်းနိုင်ပါတယ်။ Azure AI Foundry နဲ့လည်း အနက်ရှိုင်းစွာ ပေါင်းစည်းထားပါတယ်။
+The Microsoft Agent Framework also integrates with Azure services through `AzureAIProjectAgentProvider` and Azure identity, letting you call Azure services directly from your agent tools.
 
-AutoGen နဲ့ Semantic Kernel အတွက်လည်း Azure services တွေနဲ့ ပေါင်းစည်းနိုင်ပေမယ့်၊ code မှာ Azure services တွေကို ခေါ်ရပါမယ်။ Azure SDKs ကို အသုံးပြုပြီး agents တွေကနေ Azure services တွေနဲ့ interaction လုပ်နိုင်ပါတယ်။ ထို့အပြင် Azure AI Agent Service ကို AutoGen သို့မဟုတ် Semantic Kernel မှာ ဖန်တီးထားတဲ့ agents တွေကို orchestrator အနေနဲ့ အသုံးပြုနိုင်ပြီး Azure ecosystem ကို အလွယ်တကူ access လုပ်နိုင်ပါတယ်။
-
-## Sample Codes
+## နမူနာကုဒ်များ
 
 - Python: [Agent Framework](./code_samples/02-python-agent-framework.ipynb)
 - .NET: [Agent Framework](./code_samples/02-dotnet-agent-framework.md)
 
-## AI Agent Frameworks အကြောင်း မေးခွန်းများရှိပါသလား?
+## AI Agent Frameworks အကြောင်း ပိုမေးစရာများ ရှိသလား?
 
-[Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) ကို join လုပ်ပြီး အခြားလေ့လာသူတွေနဲ့ တွေ့ဆုံပါ၊ office hours တွေကို တက်ရောက်ပါ၊ AI Agents အကြောင်း မေးခွန်းတွေကို ဖြေရှင်းပါ။
+Join the [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.
 
-## References
+## ကိုးကားချက်များ
 
 - <a href="https://techcommunity.microsoft.com/blog/azure-ai-services-blog/introducing-azure-ai-agent-service/4298357" target="_blank">Azure Agent Service</a>
-- <a href="https://devblogs.microsoft.com/semantic-kernel/microsofts-agentic-ai-frameworks-autogen-and-semantic-kernel/" target="_blank">Semantic Kernel and AutoGen</a>
-- <a href="https://learn.microsoft.com/semantic-kernel/frameworks/agent/?pivots=programming-language-python" target="_blank">Semantic Kernel Python Agent Framework</a>
-- <a href="https://learn.microsoft.com/semantic-kernel/frameworks/agent/?pivots=programming-language-csharp" target="_blank">Semantic Kernel .Net Agent Framework</a>
+- <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/responses" target="_blank">Microsoft Agent Framework - Azure OpenAI Responses</a>
 - <a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent service</a>
-- <a href="https://techcommunity.microsoft.com/blog/educatordeveloperblog/using-azure-ai-agent-service-with-autogen--semantic-kernel-to-build-a-multi-agen/4363121" target="_blank">Using Azure AI Agent Service with AutoGen / Semantic Kernel to build a multi-agent's solution</a>
 
-## အရင်စာရင်း
+## ယခင် သင်ခန်းစာ
 
-[Introduction to AI Agents and Agent Use Cases](../01-intro-to-ai-agents/README.md)
+[AI Agents မိတ်ဆက်နှင့် သုံးစွဲမှုများ](../01-intro-to-ai-agents/README.md)
 
-## နောက်စာရင်း
+## နောက်ထပ် သင်ခန်းစာ
 
-[Understanding Agentic Design Patterns](../03-agentic-design-patterns/README.md)
+[Agentic Design Patterns ကို နားလည်ခြင်း](../03-agentic-design-patterns/README.md)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရ အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+သတိပေးချက်:
+ဤစာရွက်ကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားပါသော်လည်း၊ အလိုအလျောက်ပြန်ဆိုခြင်းများတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါရှိနိုင်သည်ကို ကျေးဇူးပြု၍ ထိုးထားပါ။ မူလစာရွက်ကို မူလဘာသာဖြင့်သာ သက်ဆိုင်ရာ တရားဝင် အရင်းအမြစ်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ပရော်ဖက်ရှင်နယ် ဘာသာပြန်သူကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုမှုကြောင့် ဖြစ်ပေါ်နိုင်သည့် နားမလည်မှုများ သို့မဟုတ် မှားယွင်းချက်များအတွက် ကျွန်ုပ်တို့အနေဖြင့် တာဝန်မခံပါ။
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

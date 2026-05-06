@@ -1,189 +1,182 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aff92c6f019b4627ca9399c6e3882e17",
-  "translation_date": "2025-09-18T15:48:31+00:00",
-  "source_file": "11-agentic-protocols/README.md",
-  "language_code": "sl"
-}
--->
 # Uporaba agentnih protokolov (MCP, A2A in NLWeb)
 
-[![Agentni protokoli](../../../translated_images/lesson-11-thumbnail.b6c742949cf1ce2aa0255968d287b31c99b51dfa9c9beaede7c3fbed90e8fcfb.sl.png)](https://youtu.be/X-Dh9R3Opn8)
+[![Agentni protokoli](../../../translated_images/sl/lesson-11-thumbnail.b6c742949cf1ce2a.webp)](https://youtu.be/X-Dh9R3Opn8)
 
-> _(Kliknite zgornjo sliko za ogled videa te lekcije)_
+> _(Kliknite na sliko zgoraj za ogled videoposnetka te lekcije)_
 
-Z naraščajočo uporabo AI agentov se povečuje potreba po protokolih, ki zagotavljajo standardizacijo, varnost in podpirajo odprte inovacije. V tej lekciji bomo obravnavali tri protokole, ki si prizadevajo za izpolnitev teh potreb - Model Context Protocol (MCP), Agent to Agent (A2A) in Natural Language Web (NLWeb).
+V rasti uporabe AI agentov raste tudi potreba po protokolih, ki zagotavljajo standardizacijo, varnost in podpirajo odprte inovacije. V tej lekciji bomo obravnavali 3 protokole, ki želijo zadostiti tej potrebi - Model Context Protocol (MCP), Agent to Agent (A2A) in Natural Language Web (NLWeb).
 
 ## Uvod
 
 V tej lekciji bomo obravnavali:
 
-• Kako **MCP** omogoča AI agentom dostop do zunanjih orodij in podatkov za izvedbo uporabniških nalog.
+• Kako **MCP** omogoča AI agentom dostop do zunanjih orodij in podatkov za dokončanje uporabnikovih nalog.
 
-• Kako **A2A** omogoča komunikacijo in sodelovanje med različnimi AI agenti.
+•  Kako **A2A** omogoča komunikacijo in sodelovanje med različnimi AI agenti.
 
-• Kako **NLWeb** prinaša vmesnike v naravnem jeziku na katero koli spletno stran, kar omogoča AI agentom odkrivanje in interakcijo z vsebino.
+• Kako **NLWeb** prinaša vmesnike v naravnem jeziku na katero koli spletno mesto ter omogoča AI agentom odkrivanje in interakcijo z vsebino.
 
 ## Cilji učenja
 
-• **Prepoznati** osnovni namen in prednosti MCP, A2A in NLWeb v kontekstu AI agentov.
+• **Prepoznati** glavni namen in prednosti MCP, A2A in NLWeb v kontekstu AI agentov.
 
-• **Razložiti**, kako vsak protokol olajša komunikacijo in interakcijo med LLM-ji, orodji in drugimi agenti.
+• **Razložiti** kako vsak protokol olajša komunikacijo in interakcijo med LLM-ji, orodji in drugimi agenti.
 
-• **Razumeti** različne vloge, ki jih ima vsak protokol pri gradnji kompleksnih agentnih sistemov.
+• **Prepoznati** različne vloge, ki jih vsak protokol igra pri gradnji kompleksnih agentnih sistemov.
 
 ## Model Context Protocol
 
-**Model Context Protocol (MCP)** je odprti standard, ki zagotavlja standardiziran način, kako aplikacije nudijo kontekst in orodja LLM-jem. To omogoča "univerzalni adapter" za različne vire podatkov in orodja, ki se lahko povežejo z AI agenti na dosleden način.
+The **Model Context Protocol (MCP)** je odprt standard, ki zagotavlja standardiziran način, da aplikacije zagotovijo kontekst in orodja LLM-jem. To omogoča "universal adaptor" do različnih virov podatkov in orodij, na katere se lahko AI agenti dosledno povežejo.
 
-Poglejmo si komponente MCP, prednosti v primerjavi z neposredno uporabo API-jev in primer, kako bi AI agenti lahko uporabili MCP strežnik.
+Poglejmo sestavine MCP, prednosti v primerjavi z neposredno uporabo API-jev in primer, kako bi AI agenti morda uporabili MCP strežnik.
 
-### Osnovne komponente MCP
+### Osnovne sestavine MCP
 
-MCP deluje na **odjemalec-strežnik arhitekturi**, njegove osnovne komponente pa so:
+MCP deluje na **arhitekturi odjemalec-strežnik** in osnovne sestavine so:
 
-• **Gostitelji** so aplikacije LLM (na primer urejevalnik kode, kot je VSCode), ki vzpostavijo povezave z MCP strežnikom.
+• **Hosts** so LLM aplikacije (na primer urejevalnik kode, kot je VSCode), ki vzpostavijo povezave do MCP strežnika.
 
-• **Odjemalci** so komponente znotraj gostiteljske aplikacije, ki vzdržujejo povezave ena-na-ena s strežniki.
+• **Clients** so komponente znotraj gostiteljske aplikacije, ki vzdržujejo ena-na-ena povezave s strežniki.
 
-• **Strežniki** so lahki programi, ki omogočajo specifične zmogljivosti.
+• **Servers** so lahki programi, ki ponujajo določene zmogljivosti.
 
-Protokol vključuje tri osnovne primitivne elemente, ki predstavljajo zmogljivosti MCP strežnika:
+V protokolu so trije osnovni elementi, ki so zmožnosti MCP strežnika:
 
-• **Orodja**: To so posamezna dejanja ali funkcije, ki jih AI agent lahko pokliče za izvedbo naloge. Na primer, vremenska storitev lahko ponudi orodje "pridobi vreme", ali pa e-trgovinski strežnik orodje "kupite izdelek". MCP strežniki oglašujejo ime, opis in shemo vhodov/izhodov vsakega orodja v svojem seznamu zmogljivosti.
+• **Tools**: To so ločena dejanja ali funkcije, ki jih lahko AI agent pokliče za izvedbo dejanja. Na primer, vremenska storitev bi lahko ponudila orodje "get weather", ali pa e-trgovina orodje "purchase product". MCP strežniki oglašujejo ime vsakega orodja, opis in vhodno/izhodno shemo v seznamu zmožnosti.
 
-• **Viri**: To so podatkovni elementi ali dokumenti, ki jih MCP strežnik lahko zagotovi, odjemalci pa jih lahko pridobijo po potrebi. Primeri vključujejo vsebino datotek, zapise v podatkovnih bazah ali dnevniške datoteke. Viri so lahko besedilni (kot koda ali JSON) ali binarni (kot slike ali PDF-ji).
+• **Resources**: To so podatkovni elementi ali dokumenti samo za branje, ki jih lahko MCP strežnik zagotovi, odjemalci pa jih lahko pridobijo na zahtevo. Primeri vključujejo vsebino datotek, zapise v podatkovni bazi ali dnevniške datoteke. Resources so lahko besedilo (na primer koda ali JSON) ali binarni podatki (na primer slike ali PDF-ji).
 
-• **Predloge**: To so vnaprej določene predloge, ki ponujajo predlagane pozive, kar omogoča bolj kompleksne delovne tokove.
+• **Prompts**: To so vnaprej določeni predlogi, ki zagotavljajo predlagane pozive, kar omogoča bolj kompleksne delovne tokove.
 
 ### Prednosti MCP
 
 MCP ponuja pomembne prednosti za AI agente:
 
-• **Dinamično odkrivanje orodij**: Agenti lahko dinamično prejmejo seznam razpoložljivih orodij od strežnika skupaj z opisi njihove funkcionalnosti. To je v nasprotju s tradicionalnimi API-ji, ki pogosto zahtevajo statično kodiranje za integracije, kar pomeni, da vsaka sprememba API-ja zahteva posodobitve kode. MCP ponuja pristop "enkratna integracija", kar vodi do večje prilagodljivosti.
+• **Dynamic Tool Discovery**: Agenti lahko dinamično prejmejo seznam razpoložljivih orodij s strežnika skupaj z opisi, kaj ta orodja počnejo. To je v nasprotju s tradicionalnimi API-ji, ki pogosto zahtevajo statično kodiranje integracij, kar pomeni, da vsaka sprememba API-ja zahteva posodobitve kode. MCP ponuja pristop "integrate once", ki vodi do večje prilagodljivosti.
 
-• **Interoperabilnost med LLM-ji**: MCP deluje z različnimi LLM-ji, kar omogoča fleksibilnost pri preklapljanju osnovnih modelov za oceno boljše zmogljivosti.
+• **Interoperability Across LLMs**: MCP deluje z različnimi LLM-ji, kar omogoča prilagodljivost pri zamenjavi osnovnih modelov za boljšo zmogljivost.
 
-• **Standardizirana varnost**: MCP vključuje standardizirano metodo avtentikacije, kar izboljša skalabilnost pri dodajanju dostopa do dodatnih MCP strežnikov. To je preprostejše kot upravljanje različnih ključev in vrst avtentikacije za različne tradicionalne API-je.
+• **Standardized Security**: MCP vključuje standardno metodo preverjanja pristnosti, kar izboljšuje skalabilnost pri dodajanju dostopa do dodatnih MCP strežnikov. To je preprostejše kot upravljanje različnih ključev in vrst preverjanja pristnosti za različne tradicionalne API-je.
 
 ### Primer MCP
 
-![MCP Diagram](../../../translated_images/mcp-diagram.e4ca1cbd551444a12e1f0eb300191a036ab01124fce71c864fe9cb7f4ac2a15d.sl.png)
+![Diagram MCP](../../../translated_images/sl/mcp-diagram.e4ca1cbd551444a1.webp)
 
-Predstavljajte si, da uporabnik želi rezervirati let z uporabo AI asistenta, ki temelji na MCP.
+Imagine a user wants to book a flight using an AI assistant powered by MCP.
 
-1. **Povezava**: AI asistent (MCP odjemalec) se poveže z MCP strežnikom, ki ga zagotavlja letalska družba.
+1. **Connection**: Pomočnik AI (the MCP client) se poveže z MCP strežnikom, ki ga nudi letalska družba.
 
-2. **Odkrivanje orodij**: Odjemalec vpraša MCP strežnik letalske družbe: "Katera orodja imate na voljo?" Strežnik odgovori z orodji, kot sta "iskanje letov" in "rezervacija letov".
+2. **Tool Discovery**: Odjemalec vpraša MCP strežnik letalske družbe: "Katere orodja imate na voljo?" Strežnik odgovori z orodji, kot so "search flights" in "book flights".
 
-3. **Uporaba orodja**: Nato uporabnik vpraša AI asistenta: "Prosim, poišči let iz Portlanda v Honolulu." AI asistent, ki uporablja svoj LLM, ugotovi, da mora poklicati orodje "iskanje letov" in posreduje ustrezne parametre (izvor, destinacija) MCP strežniku.
+3. **Tool Invocation**: Nato prosite AI asistenta: "Prosimo poišči let iz Portlanda v Honolulu." AI asistent, z uporabo svojega LLM, ugotovi, da mora poklicati orodje "search flights" in posredovati ustrezne parametre (origin, destination) MCP strežniku.
 
-4. **Izvedba in odgovor**: MCP strežnik, ki deluje kot ovojnica, izvede dejanski klic na notranji API za rezervacije letalske družbe. Nato prejme informacije o letu (npr. podatke v JSON obliki) in jih pošlje nazaj AI asistentu.
+4. **Execution and Response**: MCP strežnik, delujoč kot vmesnik, izvede dejanski klic na notranji rezervacijski API letalske družbe. Nato prejme informacije o letih (npr. JSON podatki) in jih pošlje nazaj AI asistentu.
 
-5. **Nadaljnja interakcija**: AI asistent predstavi možnosti letov. Ko uporabnik izbere let, asistent morda pokliče orodje "rezervacija letov" na istem MCP strežniku in zaključi rezervacijo.
+5. **Further Interaction**: AI asistent predstavi možnosti letov. Ko izberete let, asistent lahko pokliče orodje "book flight" na istem MCP strežniku in dokonča rezervacijo.
 
 ## Agent-to-Agent Protocol (A2A)
 
-Medtem ko MCP omogoča povezovanje LLM-jev z orodji, **Agent-to-Agent (A2A) protokol** gre korak dlje, saj omogoča komunikacijo in sodelovanje med različnimi AI agenti. A2A povezuje AI agente med različnimi organizacijami, okolji in tehnološkimi skladami za izvedbo skupne naloge.
+Medtem ko se MCP osredotoča na povezovanje LLM-jev z orodji, **Agent-to-Agent (A2A) protokol** naredi korak dlje tako, da omogoča komunikacijo in sodelovanje med različnimi AI agenti. A2A povezuje AI agente med različnimi organizacijami, okolji in tehnološkimi skladovnicami, da bi dokončali skupno nalogo.
 
-Preučili bomo komponente in prednosti A2A ter primer, kako bi ga lahko uporabili v naši aplikaciji za potovanja.
+Pregledali bomo sestavine in prednosti A2A ter primer, kako bi ga lahko uporabili v naši potovalni aplikaciji.
 
-### Osnovne komponente A2A
+### Osnovne sestavine A2A
 
-A2A se osredotoča na omogočanje komunikacije med agenti in njihovo sodelovanje pri izvedbi podnaloge uporabnika. Vsaka komponenta protokola prispeva k temu:
+A2A se osredotoča na omogočanje komunikacije med agenti in na to, da skupaj delajo za dokončanje podnaloge uporabnika. Vsaka sestavina protokola prispeva k temu:
 
-#### Kartica agenta
+#### Agentova kartica
 
-Podobno kot MCP strežnik deli seznam orodij, kartica agenta vsebuje:
-- Ime agenta.
-- **Opis splošnih nalog**, ki jih opravlja.
-- **Seznam specifičnih veščin** z opisi, ki pomagajo drugim agentom (ali celo človeškim uporabnikom) razumeti, kdaj in zakaj bi želeli poklicati tega agenta.
-- **Trenutni URL končne točke** agenta.
-- **Različico** in **zmogljivosti** agenta, kot so pretočni odgovori in potisna obvestila.
+Podobno kot MCP strežnik deli seznam orodij, Agentova kartica vsebuje:
+- Ime agenta .
+- A **opis splošnih nalog** ki jih opravlja.
+- A **seznam specifičnih veščin** z opisi, ki pomagajo drugim agentom (ali celo človeškim uporabnikom) razumeti, kdaj in zakaj bi želeli poklicati tega agenta.
+- Trenutni **Endpoint URL** agenta
+- **verzija** in **zmožnosti** agenta, kot so pretočni odgovori in potisna obvestila.
 
 #### Izvajalec agenta
 
-Izvajalec agenta je odgovoren za **posredovanje konteksta uporabniškega pogovora oddaljenemu agentu**, ki potrebuje ta kontekst za razumevanje naloge, ki jo je treba opraviti. V A2A strežniku agent uporablja svoj LLM za razčlenjevanje dohodnih zahtev in izvajanje nalog z uporabo svojih notranjih orodij.
+Izvajalec agenta je odgovoren za **posredovanje konteksta pogovora z uporabnikom do oddaljenega agenta**, saj oddaljeni agent potrebuje to, da razume nalogo, ki jo je treba izpolniti. Na A2A strežniku agent uporablja svoj Large Language Model (LLM) za razčlenjevanje dohodnih zahtev in izvajanje nalog z uporabo svojih notranjih orodij.
 
 #### Artefakt
 
-Ko oddaljeni agent zaključi zahtevano nalogo, se njegov izdelek ustvari kot artefakt. Artefakt **vsebuje rezultat dela agenta**, **opis opravljenega dela** in **besedilni kontekst**, ki se pošlje prek protokola. Ko je artefakt poslan, se povezava z oddaljenim agentom zapre, dokler ni ponovno potrebna.
+Ko oddaljeni agent zaključi zahtevano nalogo, se njegov izdelek zabeleži kot artefakt. Artefakt **vsebuje rezultat agentovega dela**, **opis opravljenega** in **besedilni kontekst**, ki se pošlje skozi protokol. Po pošiljanju artefakta se povezava z oddaljenim agentom zapre, dokler ni spet potrebna.
 
 #### Čakalna vrsta dogodkov
 
-Ta komponenta se uporablja za **upravljanje posodobitev in posredovanje sporočil**. To je še posebej pomembno v produkciji za agentne sisteme, da se prepreči zaprtje povezave med agenti pred dokončanjem naloge, zlasti kadar lahko čas dokončanja naloge traja dlje.
+Ta komponenta se uporablja za **ravnanje z posodobitvami in prenašanje sporočil**. V produkcijskem okolju je še posebej pomembna za agentne sisteme, da se prepreči zaprtje povezave med agenti preden je naloga zaključena, zlasti kadar dokončanje naloge lahko traja dlje časa.
 
 ### Prednosti A2A
 
-• **Izboljšano sodelovanje**: Omogoča agentom različnih ponudnikov in platform interakcijo, deljenje konteksta in sodelovanje, kar olajša avtomatizacijo med tradicionalno nepovezanimi sistemi.
+• **Enhanced Collaboration**: Omogoča agentom iz različnih ponudnikov in platform, da medsebojno sodelujejo, delijo kontekst in delajo skupaj, kar olajša brezhibno avtomatizacijo prek tradicionalno nepovezanih sistemov.
 
-• **Fleksibilnost pri izbiri modela**: Vsak A2A agent lahko odloči, kateri LLM bo uporabil za obdelavo svojih zahtev, kar omogoča optimizirane ali prilagojene modele za posameznega agenta, za razliko od povezave z enim samim LLM-jem v nekaterih scenarijih MCP.
+• **Model Selection Flexibility**: Vsak A2A agent se lahko odloči, kateri LLM bo uporabljal za obdelavo svojih zahtev, kar omogoča optimizirane ali prilagojene modele za posameznega agenta, v nasprotju z eno samo LLM povezavo v nekaterih MCP scenarijih.
 
-• **Vgrajena avtentikacija**: Avtentikacija je neposredno vključena v A2A protokol, kar zagotavlja robusten varnostni okvir za interakcije med agenti.
+• **Built-in Authentication**: Avtorizacija je integrirana neposredno v A2A protokol, kar zagotavlja robusten varnostni okvir za interakcije med agenti.
 
 ### Primer A2A
 
-![A2A Diagram](../../../translated_images/A2A-Diagram.8666928d648acc2687db4093d7b09ea2a595622f8fe18194a026ee55fc23af8e.sl.png)
+![A2A diagram](../../../translated_images/sl/A2A-Diagram.8666928d648acc26.webp)
 
 Razširimo naš scenarij rezervacije potovanja, tokrat z uporabo A2A.
 
-1. **Uporabniška zahteva večagentnemu sistemu**: Uporabnik komunicira z "Potovalnim agentom" A2A odjemalcem/agentom, morda z besedami: "Prosim, rezerviraj celotno potovanje v Honolulu za naslednji teden, vključno z leti, hotelom in najemom avtomobila."
+1. **User Request to Multi-Agent**: Uporabnik komunicira z A2A odjemalcem/agenta "Travel Agent", morda s prošnjo: "Prosimo rezervirajte celoten izlet v Honolulu za naslednji teden, vključno z leti, hotelom in najemom avtomobila".
 
-2. **Orkestracija s strani potovalnega agenta**: Potovalni agent prejme to kompleksno zahtevo. Uporabi svoj LLM za razmišljanje o nalogi in ugotovi, da mora komunicirati z drugimi specializiranimi agenti.
+2. **Orchestration by Travel Agent**: Travel Agent prejme to kompleksno zahtevo. Uporabi svoj LLM za razmislek o nalogi in ugotovi, da mora sodelovati z drugimi specializiranimi agenti.
 
-3. **Komunikacija med agenti**: Potovalni agent nato uporabi A2A protokol za povezavo z agenti, kot so "Letalski agent", "Hotelski agent" in "Agent za najem avtomobilov", ki jih ustvarijo različna podjetja.
+3. **Inter-Agent Communication**: Travel Agent nato uporabi A2A protokol za povezavo z downstream agenti, kot so "Airline Agent", "Hotel Agent" in "Car Rental Agent", ki jih ustvarijo različna podjetja.
 
-4. **Izvedba delegiranih nalog**: Potovalni agent pošlje specifične naloge tem specializiranim agentom (npr. "Poišči lete v Honolulu," "Rezerviraj hotel," "Najemi avto"). Vsak od teh specializiranih agentov, ki uporablja svoje LLM-je in svoja orodja (ki so lahko MCP strežniki sami), opravi svoj specifični del rezervacije.
+4. **Delegated Task Execution**: Travel Agent pošlje specifične naloge tem specializiranim agentom (npr. "Find flights to Honolulu", "Book a hotel", "Rent a car"). Vsak od teh specializiranih agentov, ki poganja svoj LLM in uporablja svoja orodja (ki so lahko sami MCP strežniki), opravi svoj del rezervacije.
 
-5. **Konsolidiran odgovor**: Ko vsi specializirani agenti zaključijo svoje naloge, potovalni agent združi rezultate (podrobnosti o letu, potrditev hotela, rezervacija avtomobila) in pošlje celovit, pogovorni odgovor nazaj uporabniku.
+5. **Consolidated Response**: Ko vsi downstream agenti zaključijo svoje naloge, Travel Agent združi rezultate (podrobnosti o letu, potrdilo o hotelu, rezervacijo najema avtomobila) in pošlje celovit, v slogu klepeta oblikovan odgovor nazaj uporabniku.
 
-## Natural Language Web (NLWeb)
+## Naravni jezikovni splet (NLWeb)
 
-Spletne strani so že dolgo primarni način za dostop do informacij in podatkov prek interneta.
+Spletna mesta so že dolgo glavni način, kako uporabniki dostopajo do informacij in podatkov po internetu.
 
-Poglejmo si različne komponente NLWeb, prednosti NLWeb in primer, kako NLWeb deluje v naši aplikaciji za potovanja.
+Poglejmo različne sestavine NLWeb, prednosti NLWeb in primer, kako NLWeb deluje na naši potovalni aplikaciji.
 
 ### Komponente NLWeb
 
-- **NLWeb aplikacija (osnovna storitvena koda)**: Sistem, ki obdeluje vprašanja v naravnem jeziku. Povezuje različne dele platforme za ustvarjanje odgovorov. Lahko si ga predstavljate kot **motor, ki poganja funkcije naravnega jezika** na spletni strani.
+- **NLWeb Application (Core Service Code)**: Sistem, ki obdeluje vprašanja v naravnem jeziku. Povezuje različne dele platforme za ustvarjanje odgovorov. Lahko ga razumete kot **stroj, ki poganja funkcije v naravnem jeziku** spletnega mesta.
 
-- **NLWeb protokol**: To je **osnovni nabor pravil za interakcijo v naravnem jeziku** s spletno stranjo. Odgovore pošilja v JSON formatu (pogosto z uporabo Schema.org). Njegov namen je ustvariti preprosto osnovo za "AI splet", podobno kot je HTML omogočil deljenje dokumentov na spletu.
+- **NLWeb Protocol**: To je **osnovni nabor pravil za interakcijo v naravnem jeziku** s spletnim mestom. Vrača odgovore v formatu JSON (pogosto z uporabo Schema.org). Njegov namen je ustvariti preprosto osnovo za "AI Web", na enak način kot je HTML omogočil deljenje dokumentov na spletu.
 
-- **MCP strežnik (Model Context Protocol končna točka)**: Vsaka NLWeb nastavitev deluje tudi kot **MCP strežnik**. To pomeni, da lahko **deli orodja (kot je metoda "vprašaj") in podatke** z drugimi AI sistemi. V praksi to omogoča, da vsebina in zmogljivosti spletne strani postanejo del širšega "ekosistema agentov."
+- **MCP Server (Model Context Protocol Endpoint)**: Vsaka NLWeb namestitev deluje tudi kot **MCP strežnik**. To pomeni, da lahko **deli orodja (kot je metoda "ask") in podatke** z drugimi AI sistemi. V praksi to naredi vsebino in zmogljivosti spletnega mesta uporabne za AI agente, kar omogoča, da splet postane del širšega "ekosistema agentov".
 
-- **Modeli vdelave**: Ti modeli se uporabljajo za **pretvorbo vsebine spletne strani v numerične predstavitve, imenovane vektorji** (vdelave). Ti vektorji zajemajo pomen na način, ki ga računalniki lahko primerjajo in iščejo. Shranjeni so v posebni podatkovni bazi, uporabniki pa lahko izberejo, kateri model vdelave želijo uporabiti.
+- **Embedding Models**: Ti modeli se uporabljajo za **pretvorbo vsebine spletnega mesta v številčne predstavitve, imenovane vektorji** (embeddings). Ti vektorji zajamejo pomen na način, ki ga računalniki lahko primerjajo in iščejo. Shranjeni so v posebni podatkovni bazi, uporabniki pa lahko izberejo, kateri embedding model želijo uporabljati.
 
-- **Vektorska podatkovna baza (mehanizem za iskanje)**: Ta podatkovna baza **shrani vdelave vsebine spletne strani**. Ko nekdo postavi vprašanje, NLWeb preveri vektorsko podatkovno bazo, da hitro najde najbolj relevantne informacije. Ponuja hiter seznam možnih odgovorov, razvrščenih po podobnosti. NLWeb deluje z različnimi sistemi za shranjevanje vektorjev, kot so Qdrant, Snowflake, Milvus, Azure AI Search in Elasticsearch.
+- **Vector Database (Retrieval Mechanism)**: Ta baza podatkov **shranjuje vektorje vsebine spletnega mesta**. Ko nekdo postavi vprašanje, NLWeb preveri vektorsko bazo, da hitro najde najbolj relevantne informacije. Dobi hiter seznam možnih odgovorov, razvrščenih po podobnosti. NLWeb deluje z različnimi sistemi za shranjevanje vektorjev, kot so Qdrant, Snowflake, Milvus, Azure AI Search in Elasticsearch.
 
-### NLWeb po primeru
+### Primer NLWeb
 
-![NLWeb](../../../translated_images/nlweb-diagram.c1e2390b310e5fe4b245b86690ac6c49c26e355da5ab124128c8675d58cc9b07.sl.png)
+![NLWeb](../../../translated_images/sl/nlweb-diagram.c1e2390b310e5fe4.webp)
 
-Razmislimo o naši spletni strani za rezervacijo potovanj, tokrat pa jo poganja NLWeb.
+Razmislimo znova o našem spletnem mestu za rezervacijo potovanj, tokrat, ko ga poganja NLWeb.
 
-1. **Vnos podatkov**: Obstoječi katalogi izdelkov spletne strani (npr. seznam letov, opisi hotelov, turistični paketi) so oblikovani z uporabo Schema.org ali naloženi prek RSS virov. Orodja NLWeb vnesejo te strukturirane podatke, ustvarijo vdelave in jih shranijo v lokalno ali oddaljeno vektorsko podatkovno bazo.
+1. **Data Ingestion**: Obstoječi katalogi izdelkov na spletnem mestu za potovanja (npr. seznam letov, opisi hotelov, turistični paketi) so formatirani z uporabo Schema.org ali naloženi prek RSS virov. Orodja NLWeb uvozijo te strukturirane podatke, ustvarijo embeddings in jih shranijo v lokalno ali oddaljeno vektorsko bazo podatkov.
 
-2. **Vprašanje v naravnem jeziku (človek)**: Uporabnik obišče spletno stran in namesto navigacije po menijih vpiše v pogovorni vmesnik: "Poišči mi družinam prijazen hotel v Honoluluju z bazenom za naslednji teden."
+2. **Natural Language Query (Human)**: Uporabnik obišče spletno mesto in namesto brskanja po menijih vpiše v klepetalni vmesnik: "Najdi mi družinam prijazen hotel v Honolulu z bazenom za naslednji teden".
 
-3. **Obdelava NLWeb**: NLWeb aplikacija prejme to vprašanje. Pošlje vprašanje LLM-ju za razumevanje in hkrati išče v svoji vektorski podatkovni bazi za relevantne opise hotelov.
+3. **NLWeb Processing**: NLWeb aplikacija prejme to poizvedbo. Pošlje poizvedbo LLM-ju za razumevanje in hkrati išče v svoji vektorski bazi podatkov ustrezne sezname hotelov.
 
-4. **Natančni rezultati**: LLM pomaga interpretirati rezultate iskanja iz podatkovne baze, identificira najboljše ujemanje glede na kriterije "družinam prijazen," "bazen" in "Honolulu" ter oblikuje odgovor v naravnem jeziku. Ključno je, da se odgovor nanaša na dejanske hotele iz kataloga spletne strani, s čimer se izogne izmišljenim informacijam.
+4. **Accurate Results**: LLM pomaga interpretirati rezultate iskanja iz baze, prepoznati najboljše ujemanje na podlagi meril "prijazen družinam", "bazen" in "Honolulu" ter nato oblikuje odgovor v naravnem jeziku. Ključno je, da se odgovor nanaša na dejanske hotele iz kataloga spletnega mesta in se izogne izmišljenim informacijam.
 
-5. **Interakcija z AI agentom**: Ker NLWeb deluje kot MCP strežnik, se lahko z NLWeb instanco te spletne strani poveže tudi zunanji AI potovalni agent. AI agent lahko nato uporabi metodo `ask` MCP za neposredno poizvedbo na spletni strani: `ask("Ali obstajajo veganske restavracije v Honoluluju, ki jih priporoča hotel?")`. NLWeb instanca to obdela, izkoristi svojo podatkovno bazo informacij o restavracijah (če je naložena) in vrne strukturiran JSON odgovor.
+5. **AI Agent Interaction**: Ker NLWeb deluje kot MCP strežnik, se lahko zunanji AI potovalni agent poveže z NLWeb instanco tega spletnega mesta. AI agent bi lahko nato uporabil MCP metodo `ask` za neposredno poizvedovanje spletnega mesta: `ask("Are there any vegan-friendly restaurants in the Honolulu area recommended by the hotel?")`. NLWeb instanca bi to obdelala, izkoriščajoč svojo bazo podatkov z informacijami o restavracijah (če je naložena), in vrnila strukturiran JSON odgovor.
 
 ### Imate več vprašanj o MCP/A2A/NLWeb?
 
-Pridružite se [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord), kjer se lahko srečate z drugimi učenci, udeležite uradnih ur in dobite odgovore na vprašanja o AI agentih.
+Pridružite se [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) za srečanje z drugimi učenci, udeležbo v urah za vprašanja in odgovore ter da dobite odgovore na vprašanja o AI agentih.
 
 ## Viri
 
 - [MCP za začetnike](https://aka.ms/mcp-for-beginners)  
-- [MCP dokumentacija](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic-kernel/semantic_kernel/connectors/mcp)
-- [NLWeb Repo](https://github.com/nlweb-ai/NLWeb)
-- [Vodiči za Semantic Kernel](https://learn.microsoft.com/semantic-kernel/)
+- [MCP Documentation](https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme)
+- [Repozitorij NLWeb](https://github.com/nlweb-ai/NLWeb)
+- [Microsoft Agent Framework](https://aka.ms/ai-agents-beginners/agent-framewrok)
 
 ---
 
-**Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna napačna razumevanja ali napačne interpretacije, ki bi nastale zaradi uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+Izjava o omejitvi odgovornosti:
+Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,63 +1,55 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "43069833a0412210ad5c3cc93d9c2146",
-  "translation_date": "2025-09-18T14:38:00+00:00",
-  "source_file": "07-planning-design/README.md",
-  "language_code": "mr"
-}
--->
-[![Planning Design Pattern](../../../translated_images/lesson-7-thumbnail.f7163ac557bea1236242cc86b178c3f1bbf5eb07b87f9cd7c256b366e32bcbb6.mr.png)](https://youtu.be/kPfJ2BrBCMY?si=9pYpPXp0sSbK91Dr)
+[![योजना डिझाइन पॅटर्न](../../../translated_images/mr/lesson-7-thumbnail.f7163ac557bea123.webp)](https://youtu.be/kPfJ2BrBCMY?si=9pYpPXp0sSbK91Dr)
 
-> _(वरील प्रतिमेवर क्लिक करून या धड्याचा व्हिडिओ पहा)_
+> _(वरील प्रतिमा क्लिक करून या धड्याचे व्हिडिओ पहा)_
 
 # नियोजन डिझाइन
 
 ## परिचय
 
-या धड्यात आपण शिकणार आहोत:
+हा धडा खालील गोष्टींचा समावेश करेल
 
-* स्पष्ट एकूण उद्दिष्ट निश्चित करणे आणि जटिल कार्याचे व्यवस्थापनीय कार्यांमध्ये विभाजन करणे.
-* संरचित आउटपुटचा उपयोग करून अधिक विश्वासार्ह आणि मशीन-वाचनीय प्रतिसाद मिळवणे.
-* गतिशील कार्ये आणि अनपेक्षित इनपुट हाताळण्यासाठी इव्हेंट-ड्रिव्हन दृष्टिकोन लागू करणे.
+* एक स्पष्ट एकूण उद्दिष्ट परिभाषित करणे आणि गुंतागुंतीच्या कार्याला हाताळण्यायोग्य उपकार्यात विभाजित करणे.
+* अधिक विश्वसनीय आणि मशीन-वाचनीय प्रतिसादांसाठी संरचित आउटपुटचा लाभ घेणे.
+* गतिशील कार्ये आणि अनपेक्षित इनपुट हाताळण्यासाठी इव्हेंट-चालित पद्धत लागू करणे.
 
 ## शिकण्याची उद्दिष्टे
 
-हा धडा पूर्ण केल्यानंतर, तुम्हाला खालील गोष्टींची समज होईल:
+हा धडा पूर्ण केल्यानंतर, आपण खालील बाबींची समज मिळवाल:
 
-* AI एजंटसाठी एकूण उद्दिष्ट ओळखणे आणि निश्चित करणे, ज्यामुळे त्याला काय साध्य करायचे आहे हे स्पष्टपणे समजेल.
-* जटिल कार्याचे व्यवस्थापनीय उपकार्यांमध्ये विभाजन करणे आणि त्यांना तर्कसंगत क्रमात आयोजित करणे.
-* एजंट्सना योग्य साधने (उदा. शोध साधने किंवा डेटा विश्लेषण साधने) प्रदान करणे, ती कधी आणि कशी वापरायची हे ठरवणे आणि उद्भवणाऱ्या अनपेक्षित परिस्थिती हाताळणे.
-* उपकार्यांचे परिणाम मूल्यांकन करणे, कार्यक्षमता मोजणे आणि अंतिम आउटपुट सुधारण्यासाठी कृतींवर पुनरावृत्ती करणे.
+* एआय एजंटसाठी एकूण उद्दिष्ट ओळखणे आणि सेट करणे, जेणेकरून त्याला स्पष्टपणे कळेल काय साध्य करायचे आहे.
+* गुंतागुंतीच्या कार्याला हाताळण्यायोग्य उपकार्यात विभाजित करणे आणि त्यांना तर्कसंगत क्रमात आयोजित करणे.
+* एजंट्सना योग्य साधने (उदा., शोध साधने किंवा डेटा विश्लेषण साधने) प्रदान करणे, कोणत्या वेळी आणि कसे वापरायचे हे ठरवणे, आणि उद्भवणाऱ्या अनपेक्षित परिस्थिती हाताळणे.
+* उपकार्यातील परिणामांचे मूल्यांकन करणे, कामगिरीचे मापन करणे, आणि अंतिम आउटपुट सुधारण्यासाठी कृतींमध्ये पुनरावृत्ती करणे.
 
-## एकूण उद्दिष्ट निश्चित करणे आणि कार्याचे विभाजन करणे
+## एकूण उद्दिष्ट परिभाषित करणे आणि कार्य विभाजित करणे
 
-![उद्दिष्टे आणि कार्ये निश्चित करणे](../../../translated_images/defining-goals-tasks.d70439e19e37c47ac76c48b209a4eb515bea5b8a5207f6b2e7b5e597f09ccf6a.mr.png)
+![उद्दिष्टे आणि कार्य परिभाषित करणे](../../../translated_images/mr/defining-goals-tasks.d70439e19e37c47a.webp)
 
-बहुतेक वास्तविक-जगातील कार्ये एका चरणात हाताळण्यासाठी खूप जटिल असतात. AI एजंटला त्याच्या नियोजन आणि कृतींना मार्गदर्शन करण्यासाठी संक्षिप्त उद्दिष्ट आवश्यक असते. उदाहरणार्थ, खालील उद्दिष्ट विचार करा:
+अधिकांश वास्तविक जगातील कार्ये एका पावलात हाताळण्यास खूप गुंतागुंतीची असतात. एआय एजंटला त्याच्या नियोजन आणि कृती मार्गदर्शित करण्यासाठी संक्षिप्त उद्दिष्टाची गरज असते. उदाहरणार्थ, खालील उद्दिष्ट विचार करा:
 
-    "3 दिवसांचा प्रवासाचा कार्यक्रम तयार करा."
+    "3 दिवसांचे प्रवासाचे आराखडा तयार करा."
 
-हे सांगणे सोपे असले तरी, त्याला अजून स्पष्टता आवश्यक आहे. उद्दिष्ट जितके स्पष्ट असेल तितके एजंट (आणि कोणतेही मानवी सहकारी) योग्य परिणाम साध्य करण्यावर लक्ष केंद्रित करू शकतात, जसे की फ्लाइट पर्याय, हॉटेल शिफारसी आणि क्रियाकलापांच्या सूचनांसह एक व्यापक कार्यक्रम तयार करणे.
+जरी हे विधान साधे वाटले तरी त्यात अजून सुधारणा आवश्यक असते. उद्दिष्ट जितके स्पष्ट असेल, तितके एजंट (आणि कोणतेही मानवी सहकारी) योग्य निकाल साध्य करण्यावर लक्ष केंद्रित करू शकतील, जसे की फ्लाइट पर्याय, हॉटेल शिफारसी आणि उपक्रमांच्या सूचना असलेला सर्वसमावेशक आराखडा तयार करणे.
 
-### कार्याचे विभाजन
+### कार्य विभाजन
 
-मोठी किंवा गुंतागुंतीची कार्ये लहान, उद्दिष्ट-केंद्रित उपकार्यांमध्ये विभाजित केल्यास अधिक व्यवस्थापनीय होतात. प्रवासाच्या कार्यक्रमाच्या उदाहरणासाठी, तुम्ही उद्दिष्ट खालीलप्रमाणे विभाजित करू शकता:
+मोठी किंवा सखोल कार्ये छोटे, उद्दिष्टाभिमुख उपकार्यांमध्ये विभागली गेल्यावर अधिक हाताळण्यायोग्य बनतात.
+प्रवासाच्या आराखड्याच्या उदाहरणासाठी, आपण उद्दिष्ट पुढीलप्रमाणे विभाजित करू शकता:
 
-* फ्लाइट बुकिंग
-* हॉटेल बुकिंग
+* फ्लाइट आरक्षण
+* हॉटेल आरक्षण
 * कार भाड्याने घेणे
-* वैयक्तिकरण
+* वैयक्तिकीकरण
 
-प्रत्येक उपकार्य समर्पित एजंट्स किंवा प्रक्रियांद्वारे हाताळले जाऊ शकते. एक एजंट सर्वोत्तम फ्लाइट डील शोधण्यात तज्ज्ञ असू शकतो, तर दुसरा हॉटेल बुकिंगवर लक्ष केंद्रित करतो, इत्यादी. समन्वयक किंवा "डाउनस्ट्रीम" एजंट नंतर या परिणामांना एकत्र करून अंतिम वापरकर्त्यासाठी एक सुसंगत कार्यक्रम तयार करू शकतो.
+प्रत्येक उपकार्य नंतर समर्पित एजंट्स किंवा प्रक्रियांद्वारे हाताळता येते. एक एजंट सर्वोत्तम फ्लाइट डील शोधण्यात विशेषज्ञ असू शकतो, दुसरा हॉटेल बुकिंगवर लक्ष केंद्रित करतो, आणि असे पुढे. एक समन्वयक किंवा “डाउनस्ट्रीम” एजंट नंतर या परिणामांना एकसंध आराखड्यात संकलित करून अंतिम वापरकर्त्यापर्यंत पोहोचवू शकतो.
 
-या मॉड्यूलर दृष्टिकोनामुळे टप्प्याटप्प्याने सुधारणा करणे शक्य होते. उदाहरणार्थ, तुम्ही खाद्य शिफारसी किंवा स्थानिक क्रियाकलापांच्या सूचनांसाठी विशेष एजंट्स जोडू शकता आणि वेळोवेळी कार्यक्रम अधिक परिष्कृत करू शकता.
+हा मॉड्यूलर दृष्टिकोन तसेच क्रमिक सुधारणा करण्यासही परवानगी देतो. उदाहरणार्थ, आपण अन्नाच्या शिफारसींसाठी किंवा स्थानिक उपक्रम सुचविणाऱ्या विशेष एजंट्स जोडू शकता आणि कालानुक्रमे आराखडा अधिक परिपूर्ण करू शकता.
 
 ### संरचित आउटपुट
 
-मोठ्या भाषा मॉडेल्स (LLMs) संरचित आउटपुट (उदा. JSON) तयार करू शकतात जे डाउनस्ट्रीम एजंट्स किंवा सेवांसाठी पार्स आणि प्रक्रिया करणे सोपे असते. हे विशेषतः मल्टी-एजंट संदर्भात उपयुक्त आहे, जिथे आम्ही नियोजन आउटपुट प्राप्त झाल्यानंतर या कार्यांवर कृती करू शकतो. 
+Large Language Models (LLMs) संरचित आउटपुट (उदा., JSON) तयार करू शकतात जे डाउनस्ट्रीम एजंट्स किंवा सेवांसाठी पार्स आणि प्रक्रिया करण्यास सोपे असते. हे विशेषतः बहु-एजंट संदर्भात उपयुक्त आहे, जिथे नियोजन आउटपुट प्राप्त झाल्यानंतर आपण हे कार्य अंमलात आणू शकतो.
 
-द्रुत आढावा घेण्यासाठी खालील Python कोड स्निपेट एक साधा नियोजन एजंट उद्दिष्ट उपकार्यांमध्ये विभाजित करून संरचित योजना तयार करत असल्याचे दाखवते:
+The following Python snippet demonstrates a simple planning agent decomposing a goal into subtasks and generating a structured plan:
 
 ```python
 from pydantic import BaseModel
@@ -67,9 +59,8 @@ import json
 import os
 from typing import Optional
 from pprint import pprint
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-from autogen_ext.models.azure import AzureAIChatCompletionClient
-from azure.core.credentials import AzureKeyCredential
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
 class AgentEnum(str, Enum):
     FlightBooking = "flight_booking"
@@ -80,35 +71,22 @@ class AgentEnum(str, Enum):
     DefaultAgent = "default_agent"
     GroupChatManager = "group_chat_manager"
 
-# Travel SubTask Model
+# प्रवास उपकार्य मॉडेल
 class TravelSubTask(BaseModel):
     task_details: str
-    assigned_agent: AgentEnum  # we want to assign the task to the agent
+    assigned_agent: AgentEnum  # आम्हाला हे कार्य एजंटला नियुक्त करायचे आहे
 
 class TravelPlan(BaseModel):
     main_task: str
     subtasks: List[TravelSubTask]
     is_greeting: bool
 
-client = AzureAIChatCompletionClient(
-    model="gpt-4o-mini",
-    endpoint="https://models.inference.ai.azure.com",
-    # To authenticate with the model you will need to generate a personal access token (PAT) in your GitHub settings.
-    # Create your PAT token by following instructions here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
-    credential=AzureKeyCredential(os.environ["GITHUB_TOKEN"]),
-    model_info={
-        "json_output": False,
-        "function_calling": True,
-        "vision": True,
-        "family": "unknown",
-    },
-)
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
 
-# Define the user message
-messages = [
-    SystemMessage(content="""You are an planner agent.
+# वापरकर्त्याचा संदेश परिभाषित करा
+system_prompt = """You are a planner agent.
     Your job is to decide which agents to run based on the user's request.
-                      Provide your response in JSON format with the following structure:
+    Provide your response in JSON format with the following structure:
 {'main_task': 'Plan a family trip from Singapore to Melbourne.',
  'subtasks': [{'assigned_agent': 'flight_booking',
                'task_details': 'Book round-trip flights from Singapore to '
@@ -119,45 +97,27 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(
-        content="Create a travel plan for a family of 2 kids from Singapore to Melboune", source="user"),
-]
+    - DefaultAgent: For handling general requests"""
 
-response = await client.create(messages=messages, extra_create_args={"response_format": 'json_object'})
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
 
-response_content: Optional[str] = response.content if isinstance(
-    response.content, str) else None
-if response_content is None:
-    raise ValueError("Response content is not a valid JSON string" )
+response = client.create_response(input=user_message, instructions=system_prompt)
 
+response_content = response.output_text
 pprint(json.loads(response_content))
-
-# # Ensure the response content is a valid JSON string before loading it
-# response_content: Optional[str] = response.content if isinstance(
-#     response.content, str) else None
-# if response_content is None:
-#     raise ValueError("Response content is not a valid JSON string")
-
-# # Print the response content after loading it as JSON
-# pprint(json.loads(response_content))
-
-# Validate the response content with the MathReasoning model
-# TravelPlan.model_validate(json.loads(response_content))
 ```
 
 ### मल्टी-एजंट ऑर्केस्ट्रेशनसह नियोजन एजंट
 
-या उदाहरणात, एक सेमॅंटिक राउटर एजंट वापरकर्त्याचा विनंती प्राप्त करतो (उदा., "माझ्या प्रवासासाठी मला हॉटेल योजना हवी आहे.").
+या उदाहरणात, एक Semantic Router Agent वापरकर्त्याचा विनंती प्राप्त करतो (उदा., "मला माझ्या प्रवासासाठी हॉटेल योजना हवी आहे.").
 
 नियोजक नंतर:
 
-* हॉटेल योजना प्राप्त करतो: नियोजक वापरकर्त्याचा संदेश घेतो आणि सिस्टम प्रॉम्प्ट (उपलब्ध एजंट तपशीलांसह) आधारित संरचित प्रवास योजना तयार करतो.
-* एजंट्स आणि त्यांच्या साधनांची यादी करतो: एजंट रजिस्ट्रीत एजंट्सची यादी असते (उदा., फ्लाइट, हॉटेल, कार भाड्याने घेणे आणि क्रियाकलाप) आणि त्यांनी ऑफर केलेल्या फंक्शन्स किंवा साधनांसह.
-* योजना संबंधित एजंट्सकडे पाठवतो: उपकार्यांच्या संख्येवर अवलंबून, नियोजक संदेश थेट समर्पित एजंटकडे (सिंगल-टास्क परिस्थितीसाठी) पाठवतो किंवा मल्टी-एजंट सहकार्यासाठी ग्रुप चॅट मॅनेजरद्वारे समन्वय साधतो.
-* परिणामाचा सारांश तयार करतो: शेवटी, नियोजक स्पष्टतेसाठी तयार केलेल्या योजनेचा सारांश तयार करतो.
-
-खालील Python कोड नमुना या चरणांचे चित्रण करतो:
+* हॉटेल योजना प्राप्त करतो: नियोजक वापरकर्त्याचा संदेश घेतो आणि सिस्टम प्रॉम्प्टच्या (उपलब्ध एजंट तपशीलांसह) आधारे एक संरचित प्रवास आराखडा तयार करतो.
+* एजंट आणि त्यांच्या साधनांची यादी करतो: एजंट रजिस्ट्रीमध्ये एजंटांची यादी असते (उदा., फ्लाइट, हॉटेल, कार भाड्याने घेणे, आणि उपक्रमांसाठी) तसेच ते कोणत्या फंक्शन्स किंवा साधने ऑफर करतात ते नमूद असते.
+* आराखडा संबंधित एजंटकडे मार्गदर्शित करतो: उपकार्यांच्या संख्येनुसार, नियोजक संदेश थेट समर्पित एजंटकडे पाठवू शकतो (एकल-कार्य परिस्थितीसाठी) किंवा बहु-एजंट सहकार्याकरिता गट चॅट व्यवस्थापकाद्वारे समन्वय करू शकतो.
+* परिणाम सारांशित करतो: शेवटी, नियोजक स्पष्टतेसाठी तयार केलेला आराखडा सारांशित करतो.
+खालील Python कोड नमुना या टप्प्यांचे प्रदर्शन करतो:
 
 ```python
 
@@ -175,11 +135,11 @@ class AgentEnum(str, Enum):
     DefaultAgent = "default_agent"
     GroupChatManager = "group_chat_manager"
 
-# Travel SubTask Model
+# प्रवास उपकार्य मॉडेल
 
 class TravelSubTask(BaseModel):
     task_details: str
-    assigned_agent: AgentEnum # we want to assign the task to the agent
+    assigned_agent: AgentEnum # आम्हाला हे कार्य एजंटला नियुक्त करायचे आहे
 
 class TravelPlan(BaseModel):
     main_task: str
@@ -189,25 +149,18 @@ import json
 import os
 from typing import Optional
 
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-from autogen_ext.models.openai import AzureOpenAIChatCompletionClient
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
-# Create the client with type-checked environment variables
+# क्लायंट तयार करा
 
-client = AzureOpenAIChatCompletionClient(
-    azure_deployment=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
-    model=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
-    api_version=os.getenv("AZURE_OPENAI_API_VERSION"),
-    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-)
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
 
 from pprint import pprint
 
-# Define the user message
+# वापरकर्त्याचा संदेश परिभाषित करा
 
-messages = [
-    SystemMessage(content="""You are an planner agent.
+system_prompt = """You are a planner agent.
     Your job is to decide which agents to run based on the user's request.
     Below are the available agents specialized in different tasks:
     - FlightBooking: For booking flights and providing flight information
@@ -215,24 +168,20 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(content="Create a travel plan for a family of 2 kids from Singapore to Melbourne", source="user"),
-]
+    - DefaultAgent: For handling general requests"""
 
-response = await client.create(messages=messages, extra_create_args={"response_format": TravelPlan})
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
 
-# Ensure the response content is a valid JSON string before loading it
+response = client.create_response(input=user_message, instructions=system_prompt)
 
-response_content: Optional[str] = response.content if isinstance(response.content, str) else None
-if response_content is None:
-    raise ValueError("Response content is not a valid JSON string")
+response_content = response.output_text
 
-# Print the response content after loading it as JSON
+# JSON म्हणून लोड केल्यानंतर प्रतिक्रियेची सामग्री छापा
 
 pprint(json.loads(response_content))
 ```
 
-वरील कोडमधून मिळालेला आउटपुट खालीलप्रमाणे आहे आणि तुम्ही नंतर `assigned_agent` कडे रूट करून अंतिम वापरकर्त्यासाठी प्रवास योजना सारांशित करू शकता.
+खालील भाग मागील कोडचे आउटपुट आहे आणि आपण हा संरचित आउटपुट `assigned_agent` कडे मार्गदर्शित करण्यासाठी आणि अंतिम वापरकर्त्यास प्रवास आराखडा सारांशित करण्यासाठी वापरू शकता.
 
 ```json
 {
@@ -263,21 +212,22 @@ pprint(json.loads(response_content))
 }
 ```
 
-वरील कोड नमुन्यासह एक उदाहरण नोटबुक [येथे](07-autogen.ipynb) उपलब्ध आहे.
+मागील कोड नमुन्यासह एक उदाहरण नोटबुक [इथे](07-python-agent-framework.ipynb) उपलब्ध आहे.
 
-### पुनरावृत्ती नियोजन
+### पुनरावर्ती नियोजन
 
-काही कार्यांसाठी परत-परत किंवा पुनर्नियोजन आवश्यक असते, जिथे एका उपकार्याचा परिणाम पुढील उपकार्यावर परिणाम करतो. उदाहरणार्थ, जर एजंट फ्लाइट बुक करताना अनपेक्षित डेटा स्वरूप शोधतो, तर त्याला हॉटेल बुकिंगवर जाण्यापूर्वी त्याची रणनीती बदलावी लागेल.
+काही कार्यांना परस्पर संवाद किंवा पुन्हा नियोजनाची गरज असते, जिथे एका उपकार्याचा परिणाम पुढील उपकार्याला प्रभावित करतो. उदाहरणार्थ, जर एजंटाने उड्डाणे बुक करताना अनपेक्षित डेटा फॉरमॅट आढळला, तर अगोदरच ठरवलेली धोरणे बदलून हॉटेल बुकिंगकडे प्रस्थान करण्यापूर्वी त्याला अनुकूल करण्याची गरज असू शकते.
 
-याशिवाय, वापरकर्त्याचा अभिप्राय (उदा. एखाद्या व्यक्तीने त्यांना लवकर फ्लाइट हवे असल्याचे ठरवले) आंशिक पुनर्नियोजन ट्रिगर करू शकतो. हा गतिशील, पुनरावृत्ती दृष्टिकोन सुनिश्चित करतो की अंतिम समाधान वास्तविक-जगातील अडचणी आणि विकसित होणाऱ्या वापरकर्ता प्राधान्यांशी जुळते.
+याशिवाय, वापरकर्त्याचे अभिप्राय (उदा., मानवी वापरकर्त्याने आधीच्या उड्डाणाला प्राधान्य देण्याचा निर्णय घेतल्यास) आंशिक पुनर्नियोजन ट्रिगर करू शकतो. ही गतिशील, पुनरावर्ती पद्धत अंतिम सोल्यूशन वास्तविक जगातील निर्बंध आणि बदलणाऱ्या वापरकर्त्यांच्या प्राधान्यांच्या अनुरूप राहून देते.
 
-उदा. नमुना कोड:
+उदा. नमुना कोड
 
 ```python
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-#.. same as previous code and pass on the user history, current plan
-messages = [
-    SystemMessage(content="""You are a planner agent to optimize the
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
+#.. मागील कोडप्रमाणेच आणि वापरकर्त्याचा इतिहास व सध्याची योजना पुढे पाठवा
+
+system_prompt = """You are a planner agent to optimize the
     Your job is to decide which agents to run based on the user's request.
     Below are the available agents specialized in different tasks:
     - FlightBooking: For booking flights and providing flight information
@@ -285,32 +235,35 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(content="Create a travel plan for a family of 2 kids from Singapore to Melbourne", source="user"),
-    AssistantMessage(content=f"Previous travel plan - {TravelPlan}", source="assistant")
-]
-# .. re-plan and send the tasks to respective agents
+    - DefaultAgent: For handling general requests"""
+
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
+
+response = client.create_response(
+    input=user_message,
+    instructions=system_prompt,
+    context=f"Previous travel plan - {TravelPlan}",
+)
+# .. पुन्हा योजना आखा आणि कार्ये संबंधित एजंटांना पाठवा
 ```
 
-अधिक व्यापक नियोजनासाठी Magnetic One तपासा, जटिल कार्ये सोडवण्यासाठी.
+अधिक सर्वसमावेशक नियोजनासाठी आणि गुंतागुंतीच्या कार्यांसाठी उपाय शोधण्यासाठी Magentic One चा <a href="https://www.microsoft.com/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks" target="_blank">ब्लॉगपोस्ट</a> पहा.
 
 ## सारांश
 
-या लेखात आपण पाहिले की कसे एक नियोजक तयार करता येतो जो उपलब्ध एजंट्सची निवड करून कार्य विशिष्ट योजना तयार करतो आणि ही कार्ये संबंधित एजंट्सकडे सोपवतो. असे गृहीत धरले जाते की एजंट्सकडे कार्य पूर्ण करण्यासाठी आवश्यक फंक्शन्स/साधनांपर्यंत प्रवेश आहे. एजंट्स व्यतिरिक्त, तुम्ही रिफ्लेक्शन, सारांशकार, आणि राउंड रॉबिन चॅट यासारख्या इतर पॅटर्न्स समाविष्ट करून अधिक सानुकूलित करू शकता.
+या लेखात आपण असा एक उदाहरण पाहिला आहे ज्यात आपण उपलब्ध एजंट्स डायनॅमिकली निवडणारा एक प्लॅनर तयार करू शकतो. नियोजकाचा आउटपुट कार्यांना विभाजित करतो आणि एजंट्सना कार्यसोपान असाइन करतो जेणेकरून ते अंमलात आणले जाऊ शकतील. असे गृहित धरले जाते की एजंट्सकडे त्या कार्यासाठी आवश्यक फंक्शन्स/साधनांचा प्रवेश आहे. एजंट्सच्या जोडण्याव्यतिरिक्त आपण अधिक सानुकूलता देण्यासाठी प्रतिबिंबन, सारांशकार, आणि राउंड रॉबिन चॅट सारख्या इतर पॅटर्न्स देखील समाविष्ट करू शकता.
 
 ## अतिरिक्त संसाधने
 
-AutoGen Magnetic One - जटिल कार्ये सोडवण्यासाठी एक सामान्यत: मल्टी-एजंट प्रणाली आहे आणि अनेक आव्हानात्मक एजंटिक बेंचमार्कवर प्रभावी परिणाम साध्य केले आहेत. संदर्भ:
+Magentic One - गुंतागुंतीच्या कार्यांसाठी समस्या सोडवणारी एक जनरलिस्ट मल्टी-एजंट सिस्टिम आहे आणि अनेक आव्हानात्मक एजंटिक बेंचमार्कवर प्रभावी निकाल मिळविला आहे. संदर्भ: <a href="https://www.microsoft.com/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks" target="_blank">Magentic One</a>. या अंमलबजावणीत ऑर्केस्ट्रेटर कार्य-विशिष्ट आराखडे तयार करतो आणि उपलब्ध एजंट्सना ही कार्ये वाटप करतो. नियोजनाशिवाय, ऑर्केस्ट्रेटर कार्याची प्रगती मॉनिटर करण्यासाठी ट्रॅकिंग मेकॅनिझमचा वापरही करतो आणि आवश्यकतेनुसार पुनर्नियोजन करतो.
 
-. या अंमलबजावणीत ऑर्केस्ट्रेटर कार्य-विशिष्ट योजना तयार करतो आणि ही कार्ये उपलब्ध एजंट्सकडे सोपवतो. नियोजनाशिवाय ऑर्केस्ट्रेटर प्रगतीचे निरीक्षण करण्यासाठी ट्रॅकिंग यंत्रणा देखील वापरतो आणि आवश्यक असल्यास पुनर्नियोजन करतो.
+### नियोजन डिझाइन पॅटर्नबद्दल आणखी प्रश्न आहेत का?
 
-### नियोजन डिझाइन पॅटर्नबद्दल अधिक प्रश्न आहेत?
-
-[Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) मध्ये सामील व्हा, इतर शिकणाऱ्यांशी भेटा, ऑफिस तासांमध्ये सहभागी व्हा आणि तुमचे AI एजंट्स संबंधित प्रश्न विचारून उत्तर मिळवा.
+इतर शिकणाऱ्यांशी भेटण्यासाठी, ऑफिस तासांना उपस्थित राहण्यासाठी आणि आपल्या AI एजंट्सच्या प्रश्नांची उत्तरे मिळवण्यासाठी [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) मध्ये सामील व्हा.
 
 ## मागील धडा
 
-[विश्वसनीय AI एजंट्स तयार करणे](../06-building-trustworthy-agents/README.md)
+[विश्वसनीय AI एजंट तयार करणे](../06-building-trustworthy-agents/README.md)
 
 ## पुढील धडा
 
@@ -318,5 +271,7 @@ AutoGen Magnetic One - जटिल कार्ये सोडवण्या�
 
 ---
 
-**अस्वीकरण**:  
-हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून भाषांतरित करण्यात आला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात ठेवा की स्वयंचलित भाषांतरांमध्ये त्रुटी किंवा अचूकतेचा अभाव असू शकतो. मूळ भाषेतील दस्तऐवज हा अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी भाषांतराची शिफारस केली जाते. या भाषांतराचा वापर करून निर्माण होणाऱ्या कोणत्याही गैरसमज किंवा चुकीच्या अर्थासाठी आम्ही जबाबदार राहणार नाही.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+अस्वीकरण:
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला गेला आहे. आम्ही अचूकतेसाठी प्रयत्न करतो, परंतु कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये त्रुटी किंवा चुकीचे अर्थ असू शकतात. मूळ दस्तऐवज त्याच्या मूळ भाषेत अधिकृत स्रोत म्हणून विचारात घेतला पाहिजे. महत्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवादाची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवलेल्या कोणत्याही गैरसमजुतीसाठी किंवा चुकीच्या अर्थासाठी आम्ही जबाबदार नाही.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

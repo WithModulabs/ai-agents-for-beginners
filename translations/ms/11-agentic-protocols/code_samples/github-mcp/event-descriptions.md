@@ -1,197 +1,186 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d3b0e20122a974cc2fae7f889400bbc",
-  "translation_date": "2025-08-29T18:39:46+00:00",
-  "source_file": "11-agentic-protocols/code_samples/github-mcp/event-descriptions.md",
-  "language_code": "ms"
-}
--->
-## Nama Acara: Bina aplikasi berasaskan kod anda dengan Azure AI Agent Service (Tawaran EMEA/US)
+## Event Name: Bina aplikasi berasaskan kod anda dengan Azure AI Agent Service (tawaran EMEA/AS)
 
-## Penerangan
+## Description
 
-Azure AI Agent Service adalah gabungan perkhidmatan dan SDK yang memudahkan pembangunan penyelesaian AI yang kukuh. Dalam sesi ini, anda akan belajar cara membina agen AI berasaskan kod anda sendiri dengan Azure yang boleh menjawab soalan, melakukan analisis data, dan mengintegrasikan sumber data luaran. Anda juga akan meneroka seni bina yang lebih kompleks, termasuk beberapa agen yang bekerjasama.
+Azure AI Agent Service adalah gabungan lancar antara perkhidmatan dan SDK yang memudahkan pembangunan penyelesaian AI yang mantap. Dalam sesi ini, anda akan belajar bagaimana membina agen AI berasaskan kod anda sendiri dengan Azure yang dapat menjawab soalan, melakukan analisis data, dan menggabungkan sumber data luaran. Anda juga akan meneroka seni bina yang lebih kompleks, termasuk beberapa agen yang bekerja bersama-sama.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25325/>
 
 ---
 
-## Nama Acara: Transformasi Proses Perniagaan dengan AI Multi-Agen menggunakan Semantic Kernel
+## Event Name: Mengubah Proses Perniagaan dengan AI Multi-Agen menggunakan Semantic Kernel
 
-## Penerangan
+## Description
 
-Temui kekuatan sistem AI multi-agen melalui demonstrasi langsung dan pembelajaran praktikal dengan corak seperti sembang kumpulan, refleksi, pemilih, dan swarm. Manfaatkan Kerangka Proses Semantic Kernel untuk mengautomasi dan meningkatkan skala proses perniagaan kritikal, daripada sokongan pelanggan hingga pengurusan projek menggunakan Python.
+Terokai kuasa sistem AI multi-agen melalui demonstrasi langsung dan pembelajaran praktikal dengan corak termasuk sembang kumpulan, refleksi, pemilih, dan kawanan. Manfaatkan Rangka Kerja Proses Semantic Kernel untuk mengautomasikan dan mengskala proses perniagaan kritikal, dari sokongan pelanggan hingga pengurusan projek menggunakan Python.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25313/>
 
 ---
 
-## Nama Acara: Membina Aplikasi Agen dengan AutoGen v0.4
+## Event Name: Membangun Aplikasi Agentik dengan AutoGen v0.4
 
-## Penerangan
+## Description
 
-Mulakan untuk membina agen dan pasukan multi-agen menggunakan AutoGen v0.4. Kami akan memberikan gambaran keseluruhan seni bina AutoGen v0.4 yang baru dan membimbing anda cara membina pasukan multi-agen dengan antara muka pengguna berasaskan web.
+Mulakan untuk membina agen dan pasukan multi-agen menggunakan AutoGen v0.4. Kami akan membincangkan gambaran keseluruhan seni bina AutoGen v0.4 yang baru dan membimbing anda bagaimana membina pasukan multi-agen dengan antara muka pengguna berasaskan web.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25327/>
 
 ---
 
-## Nama Acara: Prototip Agen AI dengan Model GitHub
+## Event Name: Memprototipkan Agen AI dengan Model GitHub
 
-## Penerangan
+## Description
 
-Terima kasih kepada Model GitHub, semua yang anda perlukan untuk membina Agen AI pertama anda adalah akaun GitHub! Model GitHub termasuk model yang kuat seperti OpenAI gpt-4o, DeepSeek-R1, Llama-3.1, dan banyak lagi, sedia untuk dicuba di playground atau dalam kod anda.  
-Dalam sesi ini, kami akan menunjukkan cara menyambung ke Model GitHub dari Python, dan kemudian membina agen menggunakan pakej Python popular seperti PydanticAI, AutoGen, dan Semantic Kernel.  
-Anda boleh mengikuti secara langsung di GitHub Codespaces, atau mencuba contoh sendiri pada bila-bila masa selepas sesi.
+Terima kasih kepada Model GitHub, yang anda perlukan untuk membina Agen AI pertama anda hanyalah akaun GitHub! Model GitHub termasuk model berkuasa seperti OpenAI gpt-4o, DeepSeek-R1, Llama-3.1, dan banyak lagi, siap untuk dicuba di taman permainan atau dalam kod anda. Dalam sesi ini, kami akan menunjukkan cara untuk menyambung ke Model GitHub dari Python, kemudian membina agen menggunakan pakej Python popular seperti PydanticAI, AutoGen, dan Semantic Kernel. Anda boleh mengikuti secara langsung di GitHub Codespaces, atau cuba contoh-contoh itu sendiri bila-bila masa selepas sesi.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25481/>
 
 ---
 
-## Nama Acara: Membina agen dengan pelbagai model dari katalog model Azure AI
+## Event Name: Membangun agen dengan tentera model dari katalog model Azure AI
 
-## Penerangan
+## Description
 
-Katalog model Azure AI menawarkan pelbagai model dengan kemahiran dan keupayaan yang berbeza. Walaupun menggunakan model siap pakai untuk memulakan, apabila pembangun menggunakan aliran kerja yang lebih canggih, mereka boleh memanfaatkan model khusus untuk menyelesaikan tugas dalam kerangka pilihan mereka. Dalam pembentangan ini, kami akan membincangkan tawaran katalog model, dan cara anda boleh membina agen yang menggunakan pelbagai model - sambil memastikan kos tetap rendah.
+Katalog model Azure AI menawarkan pelbagai jenis model, dengan kemahiran dan keupayaan yang berbeza. Walaupun menggunakan model siap untuk memulakan, apabila pembangun menggunakan aliran kerja yang lebih canggih, mereka boleh memanfaatkan model khusus untuk memudahkan kerja dalam rangka kerja pilihan mereka. Dalam pembentangan ini, kami membincangkan tawaran katalog model, dan bagaimana anda boleh membina agen yang bertugas di atas tentera model - tanpa membebankan kos yang tinggi.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25328/>
 
 ---
 
-## Nama Acara: API Multi-Agen dengan LangGraph dan Azure Cosmos DB
+## Event Name: API Multi-Agen dengan LangGraph dan Azure Cosmos DB
 
-## Penerangan
+## Description
 
-Kebangkitan aplikasi AI multi-agen sedang mengubah cara kita membina sistem pintar - tetapi bagaimana anda merancangnya untuk skalabiliti dan prestasi dunia nyata? Dalam sesi ini, kami akan menyelami aplikasi multi-agen gred produksi yang dibina dengan LangGraph untuk orkestrasi agen, FastAPI untuk lapisan API, dan Azure Cosmos DB sebagai tulang belakang untuk pengurusan keadaan, penyimpanan vektor, dan data transaksi.  
+Kebangkitan aplikasi AI multi-agen telah mengubah cara kita membina sistem pintar - tetapi bagaimana anda mereka bentuknya untuk skalabiliti dan prestasi dunia nyata? Dalam sesi ini, kita akan menyelami aplikasi multi-agen tahap pengeluaran yang dibina dengan LangGraph untuk orkestrasi agen, FastAPI untuk lapisan API, dan Azure Cosmos DB sebagai tulang belakang untuk pengurusan keadaan, penyimpanan vektor, dan data transaksi.
 
-Melalui panduan kod terperinci, anda akan melihat cara merancang dan melaksanakan aliran kerja yang didorong oleh agen yang mengintegrasikan penghasilan yang diperkaya dengan pengambilan (RAG), ketekalan memori, dan peralihan keadaan dinamik. Kami akan membincangkan:  
+Melalui penerangan kod secara terperinci, anda akan melihat bagaimana mereka dan melaksanakan aliran kerja yang dipandu agen yang mengintegrasi secara lancar penjanaan dengan pengambilan data (RAG), ketahanan memori, dan peralihan keadaan dinamik. Kami akan membincangkan:
 
-- Kerjasama agen dengan LangGraph untuk penaakulan berstruktur  
-- Penyimpanan sejarah sembang masa nyata menggunakan Azure Cosmos DB - pangkalan data yang sama yang menggerakkan sejarah sembang dalam ChatGPT, aplikasi agen AI yang paling pesat berkembang dalam sejarah  
-- Carian vektor untuk pengambilan pengetahuan dengan sokongan embedding asli Cosmos DB  
-- Keupayaan async FastAPI untuk memastikan interaksi responsif dan skalabel  
-
-Pada akhir sesi ini, anda akan mempunyai pelan tindakan yang jelas untuk membina dan melancarkan aplikasi multi-agen yang skalabel dan berasaskan awan yang memanfaatkan kuasa AI moden dan infrastruktur awan. Sama ada anda seorang jurutera AI, arkitek awan, atau pembangun Python, ceramah ini akan melengkapkan anda dengan pandangan praktikal dan corak yang telah diuji untuk membina aplikasi yang dikuasakan AI generasi seterusnya.
+Kolaborasi agen dengan LangGraph untuk penalaran berstruktur
+Penyimpanan sejarah sembang masa nyata menggunakan Azure Cosmos DB - pangkalan data yang sama yang menggerakkan sejarah sembang dalam ChatGPT, aplikasi agen AI pertumbuhan terpantas dalam sejarah
+Carian vektor untuk pengambilan pengetahuan dengan sokongan embedding asli Cosmos DB
+Keupayaan async FastAPI untuk mengekalkan interaksi responsif dan skalabil
+Menjelang akhir sesi ini, anda akan memiliki pelan jelas untuk membina dan menyebarkan aplikasi multi-agen asli awan yang boleh diskalakan yang memanfaatkan kuasa AI moden dan infrastruktur awan. Sama ada anda seorang jurutera AI, arkitek awan, atau pembangun Python, ceramah ini akan membekalkan anda dengan pandangan praktikal dan corak teruji untuk membina generasi seterusnya aplikasi diperkasakan AI.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25314/>
 
 ---
 
-## Nama Acara: Agen AI Pertama Anda dalam JS dengan Azure AI Agent Service
+## Event Name: Agen AI Pertama Anda dalam JS dengan Azure AI Agent Service
 
-## Penerangan
+## Description
 
-Belajar cara membina agen AI pertama anda menggunakan JavaScript SDK untuk Azure AI Agent Service, platform yang diurus sepenuhnya yang memudahkan pembangunan. Anda akan melihat cara menyediakannya, menyambungkan alat seperti Azure AI Search, dan melancarkan agen soal jawab yang ringkas. Dengan demo langsung, anda akan menemui cara pemanggilan alat automatik dan pengurusan keadaan mempermudahkan proses. Sesi ini sesuai untuk pemula, memberikan langkah praktikal dan petua untuk memulakan perjalanan agen AI anda dengan yakin.
+Pelajari cara membina agen AI pertama anda menggunakan SDK JavaScript untuk Azure AI Agent Service, platform yang dikendalikan sepenuhnya yang memudahkan pembangunan. Anda akan melihat cara menyediakan, menyambungkan alat seperti Azure AI Search, dan mengedarkan agen penjawab soalan mudah. Dengan demonstrasi langsung, anda akan mengetahui bagaimana pemanggilan alat automatik dan pengurusan keadaan memudahkan proses ini. Sesuai untuk pemula, sesi ini memberikan langkah praktikal dan petua untuk memulakan perjalanan agen AI anda dengan yakin.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25381/>
 
 ---
 
-## Nama Acara: Prompting adalah Skrip Baru: Temui GenAIScript
+## Event Name: Prompting adalah Pengganti Skrip Baru: Kenali GenAIScript
 
-## Penerangan
+## Description
 
-jQuery pernah memudahkan pembangunan web dengan mengabstrakkan kerumitan, membolehkan pembangun fokus pada pembangunan daripada bergelut dengan keanehan pelayar. Hari ini, pembangunan AI menghadapi cabaran yang serupa. Corak baru sentiasa muncul dan mengikuti perkembangan boleh menjadi membebankan, terutamanya apabila alat AI—terutamanya yang bersifat agen—menjadi lebih kuat dan kompleks. Bagaimana jika anda boleh memanfaatkan keupayaan AI terkini untuk mengautomasi tugas menggunakan abstraksi JavaScript yang mudah dan biasa?  
-Masukkan GenAIScript—cara untuk mengintegrasikan AI ke dalam aliran kerja anda dengan mudah, merawat prompt seperti potongan kod yang boleh digunakan semula. Dalam ceramah ini, kami akan meneroka bagaimana GenAIScript menjadikan agen automasi AI terasa semudah menulis JavaScript, membantu anda menyelaraskan kerja berulang tanpa memerlukan kepakaran AI yang mendalam.
+jQuery pernah memudahkan pembangunan web dengan menyembunyikan kerumitan, membolehkan pembangun menumpukan pada pembangunan dan bukan berjuang dengan keanehan pelayar. Hari ini, pembangunan AI menghadapi cabaran serupa. Corak baru muncul secara berterusan dan mengikutinya boleh menjadi membebankan, terutamanya apabila alat AI—terutamanya yang berasaskan agen—menjadi lebih berkuasa dan kompleks. Bagaimana jika anda boleh memanfaatkan keupayaan AI terkini untuk mengautomasikan tugasan menggunakan abstraksi JavaScript yang mudah dan biasa? Masuk GenAIScript—cara mengintegrasikan AI ke dalam aliran kerja anda dengan mudah, melayan arahan seperti potongan kod yang boleh digunakan semula. Dalam ceramah ini, kita akan meneroka bagaimana GenAIScript menjadikan agen automasi AI terasa semudah menulis JavaScript, membantu anda memperkemas kerja berulang tanpa perlu kepakaran mendalam dalam AI.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25441/>
 
 ---
 
-## Nama Acara: Agen yang diperkaya pengetahuan dengan LlamaIndex.TS
+## Event Name: Agen diperkaya pengetahuan dengan LlamaIndex.TS
 
-## Penerangan
+## Description
 
-LlamaIndex terkenal kerana memudahkan pembinaan Penghasilan yang Diperkaya dengan Pengambilan (RAG), tetapi kerangka kami juga memudahkan pembinaan agen dan sistem multi-agen! Dalam sesi ini, kami akan memperkenalkan Workflows, blok asas kami untuk membina sistem agen, dan membina agen yang menggunakan RAG dan alat lain.
+LlamaIndex terkenal kerana memudahkan pembinaan Penjanaan Diperkaya Pengambilan (RAG), tetapi rangka kerja kami juga memudahkan pembinaan agen dan sistem multi-agen! Dalam sesi ini kami akan memperkenalkan Workflows, blok binaan asas kami untuk membina sistem agentik, dan membina agen yang menggunakan RAG dan alat lain.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25440/>
 
 ---
 
-## Nama Acara: Agen AI untuk Java menggunakan Azure AI Foundry dan GitHub Copilot
+## Event Name: Agen AI untuk Java menggunakan Microsoft Foundry dan GitHub Copilot
 
-## Penerangan
+## Description
 
-Dalam sesi ini, kami akan menunjukkan cara menyematkan keupayaan Agen AI yang maju ke dalam aplikasi Java anda menggunakan Azure AI Foundry, termasuk menetapkan matlamat projek dan bereksperimen dengan model serta melancarkan penyelesaian siap produksi dengan selamat pada skala. Sepanjang perjalanan, anda akan belajar bagaimana GitHub Copilot (dalam IntelliJ, VS Code, dan Eclipse) dapat mempermudah penulisan kod dan penciptaan prompt, sementara amalan terbaik dalam pemilihan model, penalaan halus, dan aliran kerja agen memastikan pembangunan yang bertanggungjawab dan cekap. Sama ada anda baru dalam Agen AI atau mencari teknik pembangunan agen yang maju, sesi ini akan melengkapkan anda untuk memberikan pengalaman tahap seterusnya dengan alat yang sudah anda kenal.
+Dalam sesi ini kami akan menunjukkan cara menyematkan keupayaan Agen AI lanjutan ke dalam aplikasi Java anda menggunakan Microsoft Foundry, termasuk menetapkan matlamat projek dan bereksperimen dengan model serta menyebarkan penyelesaian berskala pengeluaran secara selamat. Sepanjang jalan, anda akan belajar bagaimana GitHub Copilot (dalam IntelliJ, VS Code dan Eclipse) dapat memperkemas penulisan kod dan penciptaan arahan, manakala amalan terbaik dalam pemilihan model, penalaan halus, dan aliran kerja agentik memastikan pembangunan yang bertanggungjawab dan cekap. Sama ada anda baru dalam Agen AI atau mencari teknik bina agen lanjutan, sesi ini akan membekalkan anda untuk menyampaikan pengalaman tahap seterusnya dengan peralatan yang anda sudah biasa.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25336/>
 
 ---
 
-## Nama Acara: Membina Agen AI Java menggunakan LangChain4j dan Sesi Dinamik
+## Event Name: Membangun Agen AI Java menggunakan LangChain4j dan Sesi Dinamik
 
-## Penerangan
+## Description
 
-Buka potensi Agen AI dalam aplikasi Java anda dengan menggabungkan LangChain4j dengan sesi dinamik Azure Container Apps (ACA) yang disambungkan ke perkhidmatan Azure AI. Sesi ini memaparkan contoh praktikal membina agen yang mampu berinteraksi dengan persekitaran jauh, termasuk pengurusan fail. Belajar cara menentukan alat khusus, mengintegrasikannya ke dalam aliran kerja agen, dan memanfaatkan infrastruktur Azure yang skalabel untuk melancarkan penyelesaian pintar dan dinamik.
+Buka potensi Agen AI dalam aplikasi Java anda dengan menggabungkan LangChain4j bersama sesi dinamik Azure Container Apps (ACA) yang disambungkan ke perkhidmatan Azure AI. Sesi ini memaparkan contoh praktikal membina agen yang mampu berinteraksi dengan persekitaran jauh, termasuk pengurusan fail. Pelajari cara mendefinisikan alat khusus, mengintegrasikannya ke dalam aliran kerja agen, dan memanfaatkan infrastruktur Azure yang boleh diskalakan untuk menyebarkan penyelesaian pintar dan dinamik.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25337/>
 
 ---
 
-## Nama Acara: Agen AI yang Tidak Bertanggungjawab
+## Event Name: Agen AI Tidak Bertanggungjawab
 
-## Penerangan
+## Description
 
-Sertai kami semasa kami meneroka potensi risiko agen AI dan menangani cabaran menyematkan amalan AI yang boleh dipercayai ke dalam platform AI perbualan! Sesi ini menyelami contoh agen AI yang tidak bertanggungjawab—memaparkan contoh kegagalan model yang mengejutkan, jailbreak yang bersifat musuh, dan risiko lain yang merosakkan kepercayaan dan pematuhan.  
+Sertai kami untuk meneroka potensi risiko agen AI dan menangani cabaran menyematkan amalan AI yang boleh dipercayai ke dalam platform AI perbualan! Sesi ini menyelami contoh agen AI tidak bertanggungjawab—memperlihatkan contoh kegagalan model yang mengejutkan, jailbreak adversarial, dan risiko lain yang meruntuhkan kepercayaan dan pematuhan.
 
-Kami akan meneroka alat terkini Microsoft untuk AI yang boleh dipercayai, termasuk penapis kandungan, strategi red teaming, dan penilaian—menampilkan demo langsung agen AI yang berkelakuan secara bertanggungjawab dan tidak bertanggungjawab dengan cara yang tidak akan anda percaya.  
+Kami akan meneroka alat termaju Microsoft untuk AI yang boleh dipercayai, termasuk penapis kandungan, strategi red teaming, dan penilaian—menampilkan demo langsung agen AI yang berkelakuan baik dan tidak bertanggungjawab dengan cara yang anda pasti sukar percaya.
 
-🔥 Apa yang akan anda pelajari:  
-✅ Cara mengenal pasti dan mengurangkan risiko AI sebelum ia dieksploitasi  
-✅ Cara melancarkan Azure AI Content Safety untuk mengesan dan mengurangkan tingkah laku berisiko  
-✅ Rahsia untuk menjadikan agen AI boleh dipercayai  
+🔥 Apa yang anda akan peroleh:
+✅ Cara mengesan dan mengurangkan risiko AI sebelum ia dieksploitasi
+✅ Cara menggunakan Azure AI Content Safety untuk mengesan dan mengurangkan tingkah laku berisiko
+✅ Rahsia menjadikan agen AI boleh dipercayai
 
-Bersiaplah untuk sesi yang penuh dengan drama AI berisiko tinggi, dan strategi penting untuk memastikan AI anda berada di sisi sejarah yang betul. Jangan hanya membina AI—bina AI yang bermakna!
+Bersedia untuk sesi penuh dengan sorotan, drama AI berisiko tinggi, dan strategi penting untuk memastikan AI anda berada di sisi sejarah yang betul. Jangan hanya bina AI—bina AI yang bermakna!
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25388/>
 
 ---
 
-## Nama Acara: Bina aplikasi berasaskan kod anda dengan Azure AI Agent Service (.NET)
+## Event Name: Bina aplikasi berasaskan kod anda dengan Azure AI Agent Service (.NET)
 
-## Penerangan
+## Description
 
-Azure AI Agent Service adalah gabungan perkhidmatan dan SDK yang memudahkan pembangunan penyelesaian AI yang kukuh. Dalam sesi ini, anda akan belajar cara membina agen AI berasaskan kod anda sendiri dengan Azure dan C# yang boleh menjawab soalan, melakukan analisis data, dan mengintegrasikan sumber data luaran. Anda juga akan meneroka seni bina yang lebih kompleks, termasuk beberapa agen yang bekerjasama.
+Azure AI Agent Service adalah gabungan lancar antara perkhidmatan dan SDK yang memudahkan pembangunan penyelesaian AI yang mantap. Dalam sesi ini, anda akan belajar bagaimana membina agen AI berasaskan kod anda sendiri dengan Azure dan C# yang dapat menjawab soalan, melakukan analisis data, dan menggabungkan sumber data luaran. Anda juga akan meneroka seni bina yang lebih kompleks, termasuk beberapa agen yang bekerja bersama-sama.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25370/>
 
 ---
 
-## Nama Acara: Agen AI + .NET Aspire
+## Event Name: Agen AI + .NET Aspire
 
-## Penerangan
+## Description
 
-Dalam sesi ini, kami akan berkongsi beberapa perkembangan paling menarik pada platform .NET berkaitan Agen. Temui status semasa .NET, termasuk ciri dan peningkatan barunya. Terokai keupayaan Agen AI yang kuat. Dan kami akan melakukan penulisan kod langsung dengan Agen dan .NET Aspire.
+Dalam sesi ini kami akan berkongsi beberapa perkembangan paling menarik di platform .NET berkaitan Agen. Terokai status terkini .NET, termasuk ciri-ciri dan penambahbaikan baru. Terokai keupayaan Agen AI yang berkuasa. Dan kami akan melakukan pengekodan langsung dengan Agen dan .NET Aspire.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25332/>
 
 ---
 
-## Nama Acara: Semantic Kernel dengan C# untuk membina aplikasi AI multi-agen yang dikuasakan oleh Azure Cosmos
+## Event Name: Semantic Kernel dengan C# untuk membina aplikasi AI multi-agen menggunakan Azure Cosmos
 
-## Penerangan
+## Description
 
-Kami akan membimbing anda melalui aplikasi multi-agen dalam C# yang dibina di atas kerangka Semantic Kernel. Anda akan memahami konsep di sebalik aplikasi agen, memahami butiran dan nuansa pelaksanaan, dan belajar cara mengintegrasikan Azure Cosmos DB sebagai pangkalan data untuk pelbagai kegunaan.
+Kami akan membimbing anda melalui aplikasi multi-agen dalam C# yang dibina di atas rangka kerja Semantic Kernel. Anda akan memahami konsep aplikasi agentik, memahami butiran dan nuansa pelaksanaan, dan belajar bagaimana mengintegrasikan Azure Cosmos DB sebagai pangkalan data untuk pelbagai kes penggunaan.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25455/>
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, harap maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, disyorkan penggunaan terjemahan manusia profesional. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

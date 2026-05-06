@@ -1,85 +1,76 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "19c4dab375acbc733855cc7f2f04edbc",
-  "translation_date": "2025-10-02T11:15:24+00:00",
-  "source_file": "14-microsoft-agent-framework/README.md",
-  "language_code": "mr"
-}
--->
-# Microsoft Agent Framework शोधत आहे
+# मायक्रोसॉफ्ट एजंट फ्रेमवर्कची ओळख
 
-![Agent Framework](../../../translated_images/lesson-14-thumbnail.90df0065b9d234ee60be9ae59b754cb9c827569fcf52099caffc6f0e8e556bba.mr.png)
+![Agent Framework](../../../translated_images/mr/lesson-14-thumbnail.90df0065b9d234ee.webp)
 
 ### परिचय
 
-या धड्यात आपण शिकणार आहोत:
+हा धडा खालील विषयांचा आढावा घेईल:
 
-- Microsoft Agent Framework समजून घेणे: मुख्य वैशिष्ट्ये आणि मूल्य  
-- Microsoft Agent Framework चे मुख्य संकल्पना शोधणे
-- MAF आणि Semantic Kernel आणि AutoGen ची तुलना: स्थलांतर मार्गदर्शक
+- मायक्रोसॉफ्ट एजंट फ्रेमवर्क समजून घेणे: प्रमुख वैशिष्ट्ये आणि मूल्य  
+- मायक्रोसॉफ्ट एजंट फ्रेमवर्कच्या मुख्य संकल्पनांचा अन्वेषण
+- प्रगत MAF नमुने: वर्कफ्लोज, मिडलवेयर, आणि मेमोरी
 
-## शिकण्याची उद्दिष्टे
+## शिक्षणाचे उद्दिष्टे
 
-हा धडा पूर्ण केल्यानंतर, तुम्हाला खालील गोष्टी करता येतील:
+हा धडा पूर्ण केल्यावर, तुम्हाला खालील गोष्टी माहित असतील:
 
-- Microsoft Agent Framework वापरून उत्पादनासाठी तयार AI एजंट तयार करणे
-- तुमच्या Agentic Use Cases साठी Microsoft Agent Framework ची मुख्य वैशिष्ट्ये लागू करणे
-- विद्यमान Agentic फ्रेमवर्क आणि साधनांचे स्थलांतर आणि एकत्रीकरण करणे  
+- मायक्रोसॉफ्ट एजंट फ्रेमवर्क वापरून उत्पादनासाठी तयार एआय एजंट तयार करण्याची पद्धत
+- मायक्रोसॉफ्ट एजंट फ्रेमवर्कचे मुख्य वैशिष्ट्ये तुमच्या एजंटिक वापर प्रकरणांवर लागू करणे
+- प्रगत नमुने जसे की वर्कफ्लोज, मिडलवेयर, आणि निरीक्षणाचा वापर करणे
 
-## कोड नमुने 
+## कोड नमुने
 
-[Microsoft Agent Framework (MAF)](https://aka.ms/ai-agents-beginners/agent-framewrok) साठी कोड नमुने या रिपॉझिटरीमध्ये `xx-python-agent-framework` आणि `xx-dotnet-agent-framework` फाइल्समध्ये उपलब्ध आहेत.
+[Microsoft Agent Framework (MAF)](https://aka.ms/ai-agents-beginners/agent-framewrok) साठी कोड नमुने या संचिकामध्ये `xx-python-agent-framework` आणि `xx-dotnet-agent-framework` फाइल्समध्ये मिळू शकतात.
 
-## Microsoft Agent Framework समजून घेणे
+## मायक्रोसॉफ्ट एजंट फ्रेमवर्क समजून घेणे
 
-![Framework Intro](../../../translated_images/framework-intro.077af16617cf130c0f80f555dbb43cb1066503eaf5a9cc0aa9be67b47722dd52.mr.png)
+![Framework Intro](../../../translated_images/mr/framework-intro.077af16617cf130c.webp)
 
-[Microsoft Agent Framework (MAF)](https://aka.ms/ai-agents-beginners/agent-framewrok) हे Semantic Kernel आणि AutoGen मधील अनुभव आणि शिकवणुकीवर आधारित आहे. हे उत्पादन आणि संशोधन वातावरणातील विविध प्रकारच्या Agentic Use Cases हाताळण्यासाठी लवचिकता प्रदान करते, ज्यामध्ये समाविष्ट आहे:
+[Microsoft Agent Framework (MAF)](https://aka.ms/ai-agents-beginners/agent-framewrok) मायक्रोसॉफ्टचा एकसंध फ्रेमवर्क आहे जे एआय एजंट तयार करण्यासाठी वापरले जाते. हे उत्पादन आणि संशोधन वातावरणातील विविध एजंटिक वापर प्रकरणे हाताळण्यासाठी लवचिकता देते, ज्यात समाविष्ट आहे:
 
-- **Sequential Agent orchestration** जिथे चरण-दर-चरण कार्यप्रवाह आवश्यक असतो.
-- **Concurrent orchestration** जिथे एजंट्स एकाच वेळी कार्य पूर्ण करतात.
-- **Group chat orchestration** जिथे एजंट्स एकत्रितपणे एका कार्यावर सहयोग करतात.
-- **Handoff Orchestration** जिथे एजंट्स उपकार्ये पूर्ण झाल्यावर कार्य एकमेकांना हस्तांतरित करतात.
-- **Magnetic Orchestration** जिथे व्यवस्थापक एजंट कार्य सूची तयार करतो आणि उपएजंट्सचे समन्वय हाताळतो.
+- **क्रमिक एजंट संयोजन** ज्यामध्ये टप्प्याटप्प्याने वर्कफ्लोज आवश्यक असतात.
+- **समानकालीन संयोजन** जिथे एजंट्सना एकाच वेळी कार्य पूर्ण करावं लागते.
+- **गट चॅट संयोजन** जिथे एजंट्स एकाच कार्यावर एकत्र काम करू शकतात.
+- **हँडऑफ संयोजन** जिथे एजंट्स उपकार्य पूर्ण करताना एकमेकांना कार्य हस्तांतरीत करतात.
+- **मॅग्नेटिक संयोजन** जिथे एक व्यवस्थापक एजंट कार्यांची यादी तयार करतो, बदलतो आणि उप-एजंट्सना समन्वयित करतो.
 
-उत्पादनात AI एजंट्स वितरित करण्यासाठी, MAF मध्ये खालील वैशिष्ट्ये समाविष्ट आहेत:
+उत्पादनात एआय एजंट प्रदान करण्यासाठी, MAF मध्ये खालील वैशिष्ट्ये देखील आहेत:
 
-- **Observability** OpenTelemetry चा वापर करून, जिथे AI एजंटची प्रत्येक क्रिया, साधन वापर, ऑर्केस्ट्रेशन चरण, विचार प्रक्रिया आणि Azure AI Foundry डॅशबोर्डद्वारे कार्यप्रदर्शन निरीक्षण समाविष्ट आहे.
-- **Security** Azure AI Foundry वर एजंट्स होस्ट करून, ज्यामध्ये भूमिका-आधारित प्रवेश, खाजगी डेटा हाताळणी आणि अंगभूत सामग्री सुरक्षा यासारखे सुरक्षा नियंत्रण समाविष्ट आहे.
-- **Durability** एजंट थ्रेड्स आणि कार्यप्रवाह थांबवणे, पुन्हा सुरू करणे आणि त्रुटींपासून पुनर्प्राप्त करणे शक्य आहे, ज्यामुळे दीर्घकालीन प्रक्रिया सक्षम होते.
-- **Control** जिथे मानवी हस्तक्षेप कार्यप्रवाह समर्थित आहेत, जिथे कार्ये मानवी मंजुरीसाठी चिन्हांकित केली जातात.
+- **निरीक्षणीयता** OpenTelemetry चा उपयोग करून जिथे एआय एजंटच्या प्रत्येक क्रियेला ट्रेस केले जाते, ज्यात साधन वापर, संयोजन टप्पे, विचारप्रक्रिया आणि मायक्रोसॉफ्ट फाउंड्री डॅशबोर्ड्सद्वारे कामगिरीचे निरीक्षण यांचा समावेश आहे.
+- **सुरक्षा** मायक्रोसॉफ्ट फाउंड्रीवर नैसर्गिकरित्या एजंट होस्ट करून, ज्यात भूमिका आधारित प्रवेश, खाजगी डेटा हाताळणी आणि अंगभूत सामग्री सुरक्षेसारख्या सुरक्षा नियंत्रणांचा समावेश आहे.
+- **टिकाऊपणा** जिथे एजंट थ्रेड्स आणि वर्कफ्लोज थांबू, सुरू करू आणि चुका सुधारू शकतात, ज्यामुळे अधिक लांब चालणारे प्रक्रिया शक्य होतात.
+- **नियंत्रण** मानवी हस्तक्षेपासह वर्कफ्लोजसाठी समर्थन जिथे कार्यांना मानवी मंजुरी आवश्यक असल्याचे चिन्हांकन केले जाते.
 
-Microsoft Agent Framework हे इंटरऑपरेबल असण्यावर देखील लक्ष केंद्रित करते:
+मायक्रोसॉफ्ट एजंट फ्रेमवर्क खालील बाबींवरही लक्ष केंद्रीत करते:
 
-- **Cloud-agnostic** - एजंट्स कंटेनरमध्ये, ऑन-प्रेमिस आणि विविध क्लाउड्समध्ये चालवता येतात.
-- **Provider-agnostic** - एजंट्स तुमच्या पसंतीच्या SDK च्या माध्यमातून तयार करता येतात, ज्यामध्ये Azure OpenAI आणि OpenAI समाविष्ट आहे.
-- **Open Standards चे एकत्रीकरण** - एजंट्स Agent-to-Agent (A2A) आणि Model Context Protocol (MCP) सारख्या प्रोटोकॉलचा वापर करून इतर एजंट्स आणि साधने शोधू शकतात आणि वापरू शकतात.
-- **Plugins आणि Connectors** - Microsoft Fabric, SharePoint, Pinecone आणि Qdrant सारख्या डेटा आणि मेमरी सेवांशी कनेक्शन स्थापित करता येते.
+- **क्लाउड-स्वतंत्र** - एजंट्स कंटेनरमध्ये, ऑन-प्रिम, आणि विविध क्लाउड्समध्ये चालू शकतात.
+- **प्रदाता-स्वतंत्र** - एजंट्स तुमच्या प्राधान्यित SDK जसे की Azure OpenAI आणि OpenAI वापरून तयार करता येतात.
+- **मुक्त मानके समाकलित करणे** - एजंट्स Agent-to-Agent(A2A) आणि Model Context Protocol (MCP) सारख्या प्रोटोकॉल्स वापरून इतर एजंट्स आणि साधने शोधू आणि वापरू शकतात.
+- **प्लगइन्स आणि कनेक्टर्स** - मायक्रोसॉफ्ट फॅब्रिक, शेअरपॉइंट, पाइनकोन आणि क्युड्रंट यांसारख्या डेटा आणि मेमरी सेवा कनेक्ट करता येतात.
 
-आता Microsoft Agent Framework च्या मुख्य संकल्पनांवर या वैशिष्ट्यांचा कसा उपयोग केला जातो ते पाहूया.
+चला पाहूया कसे या वैशिष्ट्यांचा मायक्रोसॉफ्ट एजंट फ्रेमवर्कच्या काही मुख्य संकल्पनांवर उपयोग केला जातो.
 
-## Microsoft Agent Framework च्या मुख्य संकल्पना
+## मायक्रोसॉफ्ट एजंट फ्रेमवर्कच्या मुख्य संकल्पना
 
 ### एजंट्स
 
-![Agent Framework](../../../translated_images/agent-components.410a06daf87b4fefdce3760875b50526d01dd22a2ddd8a21e92da95beb82f84d.mr.png)
+![Agent Framework](../../../translated_images/mr/agent-components.410a06daf87b4fef.webp)
 
 **एजंट तयार करणे**
 
-एजंट तयार करणे हे अनुमान सेवा (LLM Provider), AI एजंटने अनुसरण करण्यासाठी निर्देशांचा संच आणि नियुक्त `name` परिभाषित करून केले जाते:
+एजंट तयार करणे म्हणजे इन्फरन्स सेवा (LLM प्रदाता), एआय एजंटसाठी पाळावयाच्या सूचनांचा संच, आणि एक वाटप केलेले `नाव` यांचे निर्धारण करणे:
 
 ```python
 agent = AzureOpenAIChatClient(credential=AzureCliCredential()).create_agent( instructions="You are good at recommending trips to customers based on their preferences.", name="TripRecommender" )
 ```
 
-वरील उदाहरणात `Azure OpenAI` वापरले आहे, परंतु एजंट्स विविध सेवांचा वापर करून तयार करता येतात, ज्यामध्ये `Azure AI Foundry Agent Service` समाविष्ट आहे:
+वरील कोड `Azure OpenAI` वापरत आहे परंतु एजंट विविध सेवांचा वापर करून तयार करता येतात ज्यामध्ये `Microsoft Foundry Agent Service` देखील आहे:
 
 ```python
 AzureAIAgentClient(async_credential=credential).create_agent( name="HelperAgent", instructions="You are a helpful assistant." ) as agent
 ```
 
-OpenAI `Responses`, `ChatCompletion` APIs
+OpenAI चे `Responses`, `ChatCompletion` API
 
 ```python
 agent = OpenAIResponsesClient().create_agent( name="WeatherBot", instructions="You are a helpful weather assistant.", )
@@ -89,7 +80,13 @@ agent = OpenAIResponsesClient().create_agent( name="WeatherBot", instructions="Y
 agent = OpenAIChatClient().create_agent( name="HelpfulAssistant", instructions="You are a helpful assistant.", )
 ```
 
-किंवा A2A प्रोटोकॉल वापरून रिमोट एजंट्स:
+किंवा [MiniMax](https://platform.minimaxi.com/), जे मोठ्या संदर्भ विंडोज (204K टोकनपर्यंत) सह OpenAI-सुसंगत API प्रदान करते:
+
+```python
+agent = OpenAIChatClient(base_url="https://api.minimax.io/v1", api_key=os.environ["MINIMAX_API_KEY"], model_id="MiniMax-M2.7").create_agent( name="HelpfulAssistant", instructions="You are a helpful assistant.", )
+```
+
+किंवा A2A प्रोटोकॉल वापरून रिमोट एजंट:
 
 ```python
 agent = A2AAgent( name=agent_card.name, description=agent_card.description, agent_card=agent_card, url="https://your-a2a-agent-host" )
@@ -97,7 +94,7 @@ agent = A2AAgent( name=agent_card.name, description=agent_card.description, agen
 
 **एजंट चालवणे**
 
-एजंट्स `.run` किंवा `.run_stream` पद्धतींचा वापर करून चालवले जातात, जे नॉन-स्ट्रीमिंग किंवा स्ट्रीमिंग प्रतिसादांसाठी असतात.
+एजंट्स `.run` किंवा `.run_stream` पद्धतीने गैर-स्ट्रीमिंग अथवा स्ट्रीमिंग प्रतिसादांसाठी चालवले जातात.
 
 ```python
 result = await agent.run("What are good places to visit in Amsterdam?")
@@ -111,19 +108,19 @@ async for update in agent.run_stream("What are the good places to visit in Amste
 
 ```
 
-प्रत्येक एजंट रनमध्ये `max_tokens`, एजंटला कॉल करता येणारी `tools`, आणि एजंटसाठी वापरलेले `model` यासारख्या पॅरामीटर्स सानुकूलित करण्याचे पर्याय असू शकतात.
+प्रत्येक एजंट रनमध्ये एजंट वापरले जाणारे `max_tokens`, कॉल करू शकणारी `tools`, आणि वापरले जाणारे `model` यांसारख्या परिमाणांची सानुकूलता देखील असू शकते.
 
-हे उपयोगकर्ता कार्य पूर्ण करण्यासाठी विशिष्ट मॉडेल्स किंवा साधने आवश्यक असलेल्या प्रकरणांमध्ये उपयुक्त आहे.
+हे त्या परिस्थितींमध्ये उपयुक्त आहे जिथे विशिष्ट मॉडेल किंवा साधन वापरणे आवश्यक आहे.
 
-**साधने**
+**साधने (Tools)**
 
-साधने एजंट परिभाषित करताना परिभाषित केली जाऊ शकतात:
+एजंट तयार करत असताना साधने परिभाषित केली जाऊ शकतात:
 
 ```python
 def get_attractions( location: Annotated[str, Field(description="The location to get the top tourist attractions for")], ) -> str: """Get the top tourist attractions for a given location.""" return f"The top attractions for {location} are." 
 
 
-# When creating a ChatAgent directly 
+# ChatAgent थेट तयार करताना
 
 agent = ChatAgent( chat_client=OpenAIChatClient(), instructions="You are a helpful assistant", tools=[get_attractions]
 
@@ -133,53 +130,53 @@ agent = ChatAgent( chat_client=OpenAIChatClient(), instructions="You are a helpf
 
 ```python
 
-result1 = await agent.run( "What's the best place to visit in Seattle?", tools=[get_attractions] # Tool provided for this run only )
+result1 = await agent.run( "What's the best place to visit in Seattle?", tools=[get_attractions] # फक्त या रनसाठी उपकरण प्रदान केले आहे )
 ```
 
 **एजंट थ्रेड्स**
 
-एजंट थ्रेड्स मल्टी-टर्न संभाषण हाताळण्यासाठी वापरले जातात. थ्रेड्स तयार करण्यासाठी खालील पद्धती वापरल्या जातात:
+एजंट थ्रेड्स बहु-परतावा संभाषण हाताळण्यासाठी वापरल्या जातात. थ्रेड तयार करता येतो:
 
-- `get_new_thread()` वापरून, ज्यामुळे थ्रेड वेळोवेळी जतन केला जाऊ शकतो.
-- एजंट चालवताना स्वयंचलितपणे थ्रेड तयार करणे, ज्यामुळे थ्रेड चालू रन दरम्यानच टिकतो.
+- `get_new_thread()` वापरून ज्यामुळे थ्रेड वेळोवेळी जतन केली जाऊ शकते
+- एजंट चालवताना आपोआप थ्रेड तयार होत असतो आणि तो केवळ सध्याच्या रनसाठी टिकतो.
 
-थ्रेड तयार करण्यासाठी कोड खालीलप्रमाणे आहे:
+थ्रेड तयार करण्यासाठी कोड असे दिसतो:
 
 ```python
-# Create a new thread. 
-thread = agent.get_new_thread() # Run the agent with the thread. 
+# नवीन थ्रेड तयार करा.
+thread = agent.get_new_thread() # थ्रेडसह एजंट चालवा.
 response = await agent.run("Hello, I am here to help you book travel. Where would you like to go?", thread=thread)
 
 ```
 
-त्यानंतर थ्रेड नंतरच्या वापरासाठी संग्रहित करण्यासाठी सिरीयलाइझ करता येतो:
+त्यानंतर थ्रेड नंतरच्या वापरासाठी सिरीअलाइझ केली जाऊ शकते:
 
 ```python
-# Create a new thread. 
+# एक नवीन थ्रेड तयार करा.
 thread = agent.get_new_thread() 
 
-# Run the agent with the thread. 
+# थ्रेडसह एजंट चालवा.
 
 response = await agent.run("Hello, how are you?", thread=thread) 
 
-# Serialize the thread for storage. 
+# संग्रहासाठी थ्रेड सीरियलाईज करा.
 
 serialized_thread = await thread.serialize() 
 
-# Deserialize the thread state after loading from storage. 
+# संग्रहातून लोड केल्यानंतर थ्रेडची स्थिती डीसीरियलाईज करा.
 
 resumed_thread = await agent.deserialize_thread(serialized_thread)
 ```
 
-**एजंट मिडलवेअर**
+**एजंट मिडलवेयर**
 
-एजंट्स साधने आणि LLMs शी संवाद साधून वापरकर्त्याची कार्ये पूर्ण करतात. काही परिस्थितींमध्ये, या संवादांमध्ये काही क्रिया अंमलात आणणे किंवा ट्रॅक करणे आवश्यक असते. एजंट मिडलवेअर यासाठी सक्षम करते:
+एजंट साधने आणि LLM शी संवाद साधून वापरकर्त्याच्या कार्य पूर्ण करतात. काही परिस्थितींमध्ये, संवादातील क्रिया ट्रॅक किंवा अंमलात आणण्यासाठी मिडलवेयर वापरतो. एजंट मिडलवेयरद्वारे हे शक्य होते:
 
-*Function Middleware*
+*फंक्शन मिडलवेयर*
 
-हे मिडलवेअर एजंट आणि त्याने कॉल करावयाच्या फंक्शन/साधन यामधील क्रिया अंमलात आणण्यास परवानगी देते. उदाहरणार्थ, तुम्हाला फंक्शन कॉलवर काही लॉगिंग करायचे असल्यास हे वापरले जाऊ शकते.
+हा मिडलवेयर एजंट आणि फंक्शन/टूल यांच्यातील क्रियेच्या दरम्यान एक क्रिया करण्यास परवानगी देतो. उदाहरणार्थ, फंक्शन कॉलवर काही लॉगिंग करणे.
 
-खालील कोडमध्ये `next` परिभाषित करते की पुढील मिडलवेअर किंवा वास्तविक फंक्शन कॉल केले जावे.
+खालिल कोडमध्ये `next` हा पुनरावृत्ती मिडलवेयर किंवा प्रत्यक्ष फंक्शन सांगतो की कोणाला कॉल करायचे.
 
 ```python
 async def logging_function_middleware(
@@ -187,21 +184,21 @@ async def logging_function_middleware(
     next: Callable[[FunctionInvocationContext], Awaitable[None]],
 ) -> None:
     """Function middleware that logs function execution."""
-    # Pre-processing: Log before function execution
+    # पूर्व-प्रक्रिया: फंक्शन अंमलबजावणीपूर्वी लॉग करा
     print(f"[Function] Calling {context.function.name}")
 
-    # Continue to next middleware or function execution
+    # पुढील मिडलवेअर किंवा फंक्शन अंमलबजावणीसाठी पुढे जा
     await next(context)
 
-    # Post-processing: Log after function execution
+    # नंतर-प्रक्रिया: फंक्शन अंमलबजावणी नंतर लॉग करा
     print(f"[Function] {context.function.name} completed")
 ```
 
-*Chat Middleware*
+*चॅट मिडलवेयर*
 
-हे मिडलवेअर एजंट आणि LLM दरम्यानच्या विनंत्यांमध्ये क्रिया अंमलात आणण्यास किंवा लॉग करण्यास परवानगी देते.
+हा मिडलवेयर एजंट आणि LLM दरम्यानच्या विनंत्यांमध्ये एक क्रिया अंमलात आणण्याची किंवा लॉगिंग करण्याची परवानगी देतो.
 
-यामध्ये AI सेवेला पाठवले जाणारे `messages` यासारखी महत्त्वाची माहिती समाविष्ट आहे.
+यामध्ये AI सेवा कडे पाठवले जाणारे `messages` यांसारखे महत्त्वाचे माहिती असते.
 
 ```python
 async def logging_chat_middleware(
@@ -209,39 +206,39 @@ async def logging_chat_middleware(
     next: Callable[[ChatContext], Awaitable[None]],
 ) -> None:
     """Chat middleware that logs AI interactions."""
-    # Pre-processing: Log before AI call
+    # पूर्व प्रक्रिया: AI कॉल करण्यापूर्वी लॉग करा
     print(f"[Chat] Sending {len(context.messages)} messages to AI")
 
-    # Continue to next middleware or AI service
+    # पुढील मिडलवेअर किंवा AI सेवेकडे पुढे जा
     await next(context)
 
-    # Post-processing: Log after AI response
+    # पोस्ट-प्रोसेसिंग: AI प्रतिसादानंतर लॉग करा
     print("[Chat] AI response received")
 
 ```
 
 **एजंट मेमरी**
 
-`Agentic Memory` धड्यात कव्हर केल्याप्रमाणे, मेमरी एजंटला विविध संदर्भांवर कार्य करण्यास सक्षम करण्यासाठी महत्त्वाचा घटक आहे. MAF मध्ये विविध प्रकारच्या मेमरी ऑफर केल्या जातात:
+`Agentic Memory` धड्यात सांगितल्याप्रमाणे, मेमरी एजंटला विविध संदर्भांवर ऑपरेट करण्यास मदत करणारा महत्त्वाचा घटक आहे. MAF मध्ये वेगवेगळ्या प्रकारच्या मेमरीज दिल्या आहेत:
 
-*In-Memory Storage*
+*इन-मेमरी स्टोरेज*
 
-हे मेमरी थ्रेड्समध्ये अनुप्रयोग रनटाइम दरम्यान संग्रहित केले जाते.
+या मेमरीचा संग्रह थ्रेड्समध्ये अनुप्रयोगाच्या रनटाइम दरम्यान होतो.
 
 ```python
-# Create a new thread. 
-thread = agent.get_new_thread() # Run the agent with the thread. 
+# एक नवीन थ्रेड तयार करा.
+thread = agent.get_new_thread() # थ्रेडसह एजंट चालवा.
 response = await agent.run("Hello, I am here to help you book travel. Where would you like to go?", thread=thread)
 ```
 
-*Persistent Messages*
+*सतत असलेली संदेशे*
 
-ही मेमरी विविध सत्रांमध्ये संभाषण इतिहास संग्रहित करण्यासाठी वापरली जाते. ती `chat_message_store_factory` वापरून परिभाषित केली जाते:
+ही मेमरी विविध सत्रांदरम्यान संभाषण इतिहास जतन करण्यासाठी वापरली जाते. हे `chat_message_store_factory` वापरून परिभाषित केले जाते:
 
 ```python
 from agent_framework import ChatMessageStore
 
-# Create a custom message store
+# सानुकूल संदेश संग्रह तयार करा
 def create_message_store():
     return ChatMessageStore()
 
@@ -253,14 +250,14 @@ agent = ChatAgent(
 
 ```
 
-*Dynamic Memory*
+*डायनामिक मेमरी*
 
-ही मेमरी एजंट्स चालवण्यापूर्वी संदर्भात जोडली जाते. या मेमरी बाह्य सेवांमध्ये संग्रहित केल्या जाऊ शकतात, जसे की mem0:
+ही मेमरी एजंट चालवण्याच्या आधी संदर्भात जोडली जाते. ही मेमरी बाह्य सेवांमध्ये जसे mem0 मध्ये साठवली जाऊ शकते:
 
 ```python
 from agent_framework.mem0 import Mem0Provider
 
-# Using Mem0 for advanced memory capabilities
+# प्रगत स्मृती क्षमतांसाठी Mem0 वापरणे
 memory_provider = Mem0Provider(
     api_key="your-mem0-api-key",
     user_id="user_123",
@@ -275,9 +272,9 @@ agent = ChatAgent(
 
 ```
 
-**एजंट Observability**
+**एजंट निरीक्षणीयता**
 
-विश्वसनीय आणि देखभाल करण्यायोग्य Agentic Systems तयार करण्यासाठी Observability महत्त्वाचे आहे. MAF OpenTelemetry सह एकत्रित होते जे चांगल्या निरीक्षणासाठी ट्रेसिंग आणि मीटर प्रदान करते.
+एजंट प्रणाली विश्वसनीय आणि देखभाल करण्यायोग्य बनवण्यासाठी निरीक्षणीयता महत्त्वाची आहे. MAF OpenTelemetry सह समाकलित आहे ज्यामुळे ट्रेसिंग आणि मीटरिंगद्वारे चांगली निरीक्षणीयता मिळते.
 
 ```python
 from agent_framework.observability import get_tracer, get_meter
@@ -285,29 +282,29 @@ from agent_framework.observability import get_tracer, get_meter
 tracer = get_tracer()
 meter = get_meter()
 with tracer.start_as_current_span("my_custom_span"):
-    # do something
+    # काहीतरी करा
     pass
 counter = meter.create_counter("my_custom_counter")
 counter.add(1, {"key": "value"})
 ```
 
-### कार्यप्रवाह
+### वर्कफ्लोज
 
-MAF कार्यप्रवाह ऑफर करते जे कार्य पूर्ण करण्यासाठी पूर्व-परिभाषित चरण आहेत आणि त्या चरणांमध्ये AI एजंट्स घटक म्हणून समाविष्ट आहेत.
+MAF वर्कफ्लोज ऑफर करते ज्या पूर्वनिर्धारित टप्प्यांमधून कार्य पूर्ण करण्यात मदत करतात आणि त्या टप्प्यांमध्ये एआय एजंट घटक म्हणून असतात.
 
-कार्यप्रवाह विविध घटकांनी बनलेले असतात जे चांगले नियंत्रण प्रवाह सक्षम करतात. कार्यप्रवाह **मल्टी-एजंट ऑर्केस्ट्रेशन** आणि **चेकपॉइंटिंग** सक्षम करतात जे कार्यप्रवाह स्थिती जतन करतात.
+वर्कफ्लोज विविध घटकांनी बनलेले असतात जे नियंत्रण प्रवाहास मदत करतात. वर्कफ्लोज अनेक एजंटांचे संयोजन आणि वर्कफ्लोजची स्थिती जतन करणे (checkpointing) सक्षम करतात.
 
-कार्यप्रवाहाचे मुख्य घटक आहेत:
+वर्तमान घटक:
 
-**Executors**
+**कार्यकारिणी (Executors)**
 
-Executors इनपुट संदेश प्राप्त करतात, त्यांना नियुक्त कार्ये करतात आणि नंतर आउटपुट संदेश तयार करतात. हे कार्यप्रवाह मोठ्या कार्याच्या पूर्णतेकडे पुढे नेतो. Executors हे AI एजंट किंवा सानुकूल लॉजिक असू शकतात.
+कार्यकारिणी इनपुट संदेश प्राप्त करतात, दिलेले कार्य पार पाडतात, आणि आउटपुट संदेश तयार करतात. हे मोठ्या कार्याकडे वर्कफ्लोला पुढे घेऊन जातं. कार्यकारिणी AI एजंट किंवा सानुकूल लॉजिक असू शकतात.
 
-**Edges**
+**कडा (Edges)**
 
-Edges कार्यप्रवाहातील संदेशांचा प्रवाह परिभाषित करण्यासाठी वापरले जातात. हे खालीलप्रमाणे असू शकतात:
+वर्कफ्लोजमधील संदेशांचे प्रवाह ठरवण्यासाठी कडा वापरल्या जातात. यामध्ये असू शकतात:
 
-*Direct Edges* - Executors दरम्यान साधे एक-ते-एक कनेक्शन:
+*थेट कडा* - एक ते एक साधे कनेक्शन कार्यकारिणी दरम्यान:
 
 ```python
 from agent_framework import WorkflowBuilder
@@ -318,76 +315,45 @@ builder.set_start_executor(source_executor)
 workflow = builder.build()
 ```
 
-*Conditional Edges* - विशिष्ट अट पूर्ण झाल्यानंतर सक्रिय होतात. उदाहरणार्थ, हॉटेलच्या खोल्या उपलब्ध नसल्यास, एक Executor इतर पर्याय सुचवू शकतो.
+*परिस्थितीनुसार कडा* - काही अटी पूर्ण झाल्यावर सक्रिय होणाऱ्या कडा. उदाहरणार्थ, जेव्हा हॉटेलच्या खोल्या उपलब्ध नसतात तेव्हा इतर पर्याय सुचविणे.
 
-*Switch-case Edges* - परिभाषित अटींनुसार संदेश वेगवेगळ्या Executors कडे रूट करतात. उदाहरणार्थ, प्रवासी ग्राहकाला प्राधान्य प्रवेश असल्यास त्यांची कार्ये दुसऱ्या कार्यप्रवाहाद्वारे हाताळली जातील.
+*स्विच-केस कडा* - निश्चित अटींवर आधारित संदेश वेगवेगळ्या कार्यकारिणीकडे पाठवतात. उदाहरणार्थ, प्रवासी ग्राहकाना प्राधान्य प्रवेश असल्यास त्यांचे कार्य वेगळी वर्कफ्लोजद्वारे हाताळले जातील.
 
-*Fan-out Edges* - एक संदेश अनेक लक्ष्यांकडे पाठवतात.
+*फॅन-आऊट कडा* - एक संदेश अनेक लक्ष्यांकडे पाठवणे.
 
-*Fan-in Edges* - वेगवेगळ्या Executors कडून अनेक संदेश गोळा करतात आणि एका लक्ष्याकडे पाठवतात.
+*फॅन-इन कडा* - वेगवेगळ्या कार्यकारिणीकडून अनेक संदेश गोळा करणे आणि एका लक्ष्याला पाठवणे.
 
-**Events**
+**घटना (Events)**
 
-कार्यप्रवाहांमध्ये चांगले निरीक्षण प्रदान करण्यासाठी, MAF कार्यप्रवाहाच्या अंमलबजावणीसाठी अंगभूत इव्हेंट्स ऑफर करते, ज्यामध्ये समाविष्ट आहे:
+वर्कफ्लोजच्या कार्यशीलतेत चांगली निरीक्षणीयता मिळवण्यासाठी, MAFमध्ये अंतर्भूत कार्यान्वयन घटना आहेत ज्यात समाविष्ट आहे:
 
-- `WorkflowStartedEvent`  - कार्यप्रवाह अंमलबजावणी सुरू होते
-- `WorkflowOutputEvent` - कार्यप्रवाह आउटपुट तयार करतो
-- `WorkflowErrorEvent` - कार्यप्रवाह त्रुटीला सामोरे जातो
-- `ExecutorInvokeEvent`  - Executor प्रक्रिया सुरू करतो
-- `ExecutorCompleteEvent`  -  Executor प्रक्रिया पूर्ण करतो
-- `RequestInfoEvent` - विनंती जारी केली जाते
+- `WorkflowStartedEvent` - वर्कफ्लोची कार्यवाही सुरू झाली
+- `WorkflowOutputEvent` - वर्कफ्लो उत्पन्न संदेश निर्माण करतो
+- `WorkflowErrorEvent` - वर्कफ्लोमध्ये त्रुटी आली
+- `ExecutorInvokeEvent` - कार्यकारिणी प्रक्रिया सुरू करते
+- `ExecutorCompleteEvent` - कार्यकारिणी प्रक्रिया पूर्ण करते
+- `RequestInfoEvent` - एक विनंती जारी केली गेली
 
-## इतर फ्रेमवर्कमधून स्थलांतर (Semantic Kernel आणि AutoGen)
+## प्रगत MAF नमुने
 
-### MAF आणि Semantic Kernel मधील फरक
+वरील विभाग मायक्रोसॉफ्ट एजंट फ्रेमवर्कच्या मुख्य संकल्पना समजावतात. जसे तुम्ही अधिक जटिल एजंट तयार करत जाता, पुढील प्रगत नमुने विचारात घ्या:
 
-**सोपे एजंट तयार करणे**
+- **मिडलवेयर संयोजन**: अनेक मिडलवेयर हँडलर (लॉगिंग, प्रमाणीकरण, दरमर्यादा) फंक्शन आणि चॅट मिडलवेयर वापरून साखळीने जोडणे जेणेकरून एजंट वर्तनावर सूक्ष्म नियंत्रण मिळेल.
+- **वर्कफ्लो चेकपॉइंटिंग**: वर्कफ्लोच्या घटनांचा आणि सिरीअलायझेशनचा वापर करून लांब चालणाऱ्या एजंट प्रक्रियेची स्थिती जतन करणे आणि पुन्हा सुरू करणे.
+- **डायनामिक टूल निवड**: RAG टूल वर्णनांवर आधारित उपकरणांची निवड MAFच्या टूल नोंदणीसह संयोजित करून प्रत्येक क्वेरीसाठी संबंधित टूल्स सादर करणे.
+- **बहु-एजंट हँडऑफ**: वर्कफ्लो कड्या आणि परिस्थितिनुसार मार्गदर्शन वापरून विशेषीकृत एजंट्स दरम्यान कार्य हस्तांतरणाचे संयोजन करणे.
 
-Semantic Kernel प्रत्येक एजंटसाठी Kernel instance तयार करण्यावर अवलंबून असते. MAF मुख्य प्रदात्यांसाठी विस्तार वापरून एक सोपी पद्धत वापरते.
+## कोड नमुने
 
-```python
-agent = AzureOpenAIChatClient(credential=AzureCliCredential()).create_agent( instructions="You are good at reccomending trips to customers based on their preferences.", name="TripRecommender" )
-```
+मायक्रोसॉफ्ट एजंट फ्रेमवर्कसाठी कोड नमुने या संचिकेमध्ये `xx-python-agent-framework` आणि `xx-dotnet-agent-framework` फाइल्समध्ये उपलब्ध आहेत.
 
-**एजंट थ्रेड तयार करणे**
+## मायक्रोसॉफ्ट एजंट फ्रेमवर्कबाबत अजून प्रश्न आहेत का?
 
-Semantic Kernel मध्ये थ्रेड्स मॅन्युअली तयार करणे आवश्यक आहे. MAF मध्ये, एजंटला थेट थ्रेड नियुक्त केले जाते.
-
-```python
-thread = agent.get_new_thread() # Run the agent with the thread. 
-```
-
-**साधन नोंदणी**
-
-Semantic Kernel मध्ये, साधने Kernel मध्ये नोंदवली जातात आणि नंतर Kernel एजंटला पास केली जाते. MAF मध्ये, साधने एजंट तयार करताना थेट नोंदवली जातात.
-
-```python
-agent = ChatAgent( chat_client=OpenAIChatClient(), instructions="You are a helpful assistant", tools=[get_attractions]
-```
-
-### MAF आणि AutoGen मधील फरक
-
-**Teams vs Workflows**
-
-AutoGen मध्ये एजंट्ससाठी इव्हेंट-ड्रिव्हन क्रियाकलापासाठी `Teams` इव्हेंट स्ट्रक्चर आहे. MAF मध्ये `Workflows` वापरले जातात जे ग्राफ-आधारित आर्किटेक्चरद्वारे डेटा Executors कडे रूट करतात.
-
-**साधन तयार करणे**
-
-AutoGen `FunctionTool` वापरते जे एजंट्ससाठी फंक्शन्स कॉल करण्यासाठी तयार करते. MAF @ai_function वापरते जे समान प्रकारे कार्य करते परंतु प्रत्येक फंक्शनसाठी स्कीम्स स्वयंचलितपणे ओळखते.
-
-**एजंट वर्तन**
-
-AutoGen मध्ये एजंट्स डीफॉल्टनुसार सिंगल-टर्न एजंट्स असतात, जोपर्यंत `max_tool_iterations` उच्च सेट केले जात नाही. MAF मध्ये `ChatAgent` डीफॉल्टनुसार मल्टी-टर्न आहे, म्हणजे तो वापरकर्त्याचे कार्य पूर्ण होईपर्यंत साधने कॉल करत राहील.
-
-## कोड नमुने 
-
-Microsoft Agent Framework साठी कोड नमुने या रिपॉझिटरीमध्ये `xx-python-agent-framework` आणि `xx-dotnet-agent-framework` फाइल्समध्ये उपलब्ध आहेत.
-
-## Microsoft Agent Framework बद्दल अधिक प्रश्न आहेत?
-
-[Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) मध्ये सामील व्हा, इतर शिकणाऱ्यांशी भेटा, ऑफिस तासांमध्ये सहभागी व्हा आणि तुमचे AI एजंट्स संबंधित प्रश्न विचारून उत्तर मिळवा.
+इतर शिकणाऱ्यांना भेटण्यासाठी, ऑफिस अवर्समध्ये सहभागी होण्यासाठी आणि तुमच्या एआय एजंट प्रश्नांची उत्तरे मिळवण्यासाठी [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) मध्ये सहभागी व्हा.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **अस्वीकरण**:  
-हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून भाषांतरित करण्यात आला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी कृपया लक्षात ठेवा की स्वयंचलित भाषांतरांमध्ये त्रुटी किंवा अचूकतेचा अभाव असू शकतो. मूळ भाषेतील दस्तऐवज हा अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी भाषांतराची शिफारस केली जाते. या भाषांतराचा वापर करून निर्माण होणाऱ्या कोणत्याही गैरसमज किंवा चुकीच्या अर्थासाठी आम्ही जबाबदार राहणार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील आहोत, परंतु कृपया लक्षात ठेवा की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेच्या त्रुटी असू शकतात. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवादाची शिफारस केली जाते. या अनुवादाच्या वापराबद्दल उद्भवणाऱ्या कोणत्याही गैरसमज किंवा चुकीच्या अर्थलागीसाठी आम्ही जबाबदार नाही.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,126 +1,118 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d71524fe83a23829ae7a23b4031aaac8",
-  "translation_date": "2025-11-13T13:35:21+00:00",
-  "source_file": "03-agentic-design-patterns/README.md",
-  "language_code": "sw"
-}
--->
-[![Jinsi ya Kubuni Mawakala wa AI Wazuri](../../../translated_images/lesson-3-thumbnail.1092dd7a8f1074a5b26e35aa8f810814e05a22fed1765c20c14b2b508c7ae379.sw.png)](https://youtu.be/m9lM8qqoOEA?si=4KimounNKvArQQ0K)
+[![Jinsi ya Kubuni Wakala Bora wa AI](../../../translated_images/sw/lesson-3-thumbnail.1092dd7a8f1074a5.webp)](https://youtu.be/m9lM8qqoOEA?si=4KimounNKvArQQ0K)
 
 > _(Bonyeza picha hapo juu kutazama video ya somo hili)_
-# Kanuni za Ubunifu wa Mawakala wa AI
+# Kanuni za Ubunifu za Wakala wa AI
 
 ## Utangulizi
 
-Kuna njia nyingi za kufikiria kuhusu kujenga Mifumo ya Mawakala wa AI. Kwa kuwa kutokuwa na uhakika ni kipengele na si kasoro katika ubunifu wa Generative AI, mara nyingine ni vigumu kwa wahandisi kujua wapi pa kuanzia. Tumetengeneza seti ya Kanuni za Ubunifu wa UX zinazozingatia binadamu ili kuwezesha watengenezaji kujenga mifumo ya mawakala inayozingatia wateja ili kutatua mahitaji yao ya kibiashara. Kanuni hizi za ubunifu si muundo wa lazima bali ni sehemu ya kuanzia kwa timu zinazofafanua na kujenga uzoefu wa mawakala.
+Kuna njia nyingi za kufikiria kuhusu ujenzi wa Mifumo ya Wakala ya AI. Kutoeleweka mara nyingi ni sifa na sio hitilafu katika muundo wa Generative AI, hivyo mara nyingi ni vigumu kwa wahandisi kujua wapi hata waanze. Tumeunda seti ya Kanuni za Ubunifu zinazomlenga binadamu (UX) ili kuwezesha watengenezaji kujenga mifumo ya wakala inayomlenga mteja kutatua mahitaji yao ya kibiashara. Kanuni hizi za ubunifu sio usanifu wa kupangilia tu bali ni hatua ya mwanzo kwa timu zinazoelezea na kujenga uzoefu wa wakala.
 
-Kwa ujumla, mawakala wanapaswa:
+Kwa ujumla, wakala wanapaswa:
 
-- Kuongeza na kupanua uwezo wa binadamu (kufikiria kwa pamoja, kutatua matatizo, otomatiki, nk.)
-- Kujaza mapengo ya maarifa (kunipa maarifa ya haraka kuhusu nyanja za maarifa, tafsiri, nk.)
-- Kuwezesha na kusaidia ushirikiano kwa njia tunazopendelea kufanya kazi na wengine
-- Kutufanya tuwe toleo bora zaidi la sisi wenyewe (mfano, kocha wa maisha/msimamizi wa kazi, kutusaidia kujifunza ustahimilivu wa kihisia na ujuzi wa kutafakari, kujenga ustahimilivu, nk.)
+- Kupanua na kupanua uwezo wa binadamu (kutengeneza mawazo, kutatua matatizo, automatisering, n.k.)
+- Kujaza mapengo ya maarifa (nipe muhtasari wa nyanja za maarifa, tafsiri, n.k.)
+- Kuwezesha na kuunga mkono ushirikiano kwa njia tunazopendelea kufanya kazi na wengine
+- Kutufanya tuwe toleo bora zetu (kwa mfano, kocha wa maisha/meneja wa kazi, kutusaidia kujifunza udhibiti wa hisia na ustahimilivu, kujenga ustahimilivu, n.k.)
 
-## Somo Hili Litashughulikia
+## Somo Hili Litajumuisha
 
-- Kanuni za Ubunifu wa Mawakala ni nini
-- Miongozo ya kufuata wakati wa kutekeleza kanuni hizi za ubunifu
-- Mifano ya kutumia kanuni za ubunifu
+- Kanuni za Ubunifu za Wakala ni zipi
+- Ni miongozo gani ya kufuata wakati wa kutekeleza kanuni hizi za ubunifu
+- Ni mifano gani ya kutumia kanuni za ubunifu
 
 ## Malengo ya Kujifunza
 
-Baada ya kukamilisha somo hili, utaweza:
+Baada ya kumaliza somo hili, utaweza:
 
-1. Kuelezea Kanuni za Ubunifu wa Mawakala ni nini
-2. Kuelezea miongozo ya kutumia Kanuni za Ubunifu wa Mawakala
-3. Kuelewa jinsi ya kujenga wakala kwa kutumia Kanuni za Ubunifu wa Mawakala
+1. Elezea ni nini Kanuni za Ubunifu za Wakala zinavyojumuisha
+2. Elezea miongozo ya kutumia Kanuni za Ubunifu za Wakala
+3. Elewa jinsi ya kujenga wakala kwa kutumia Kanuni za Ubunifu za Wakala
 
-## Kanuni za Ubunifu wa Mawakala
+## Kanuni za Ubunifu za Wakala
 
-![Kanuni za Ubunifu wa Mawakala](../../../translated_images/agentic-design-principles.1cfdf8b6d3cc73c2b738951ee7b2043e224441d98babcf654be69d866120f93a.sw.png)
+![Agentic Design Principles](../../../translated_images/sw/agentic-design-principles.1cfdf8b6d3cc73c2.webp)
 
 ### Wakala (Eneo)
 
-Hii ni mazingira ambayo wakala hufanya kazi. Kanuni hizi zinaelekeza jinsi tunavyobuni mawakala kwa kushiriki katika ulimwengu wa kimwili na wa kidijitali.
+Hili ndilo mazingira ambayo wakala hufanya kazi. Kanuni hizi zinaelekeza jinsi tunavyobuni wakala kwa kushiriki katika ulimwengu wa kimwili na wa dijiti.
 
-- **Kuunganisha, si kupunguza** – kusaidia kuunganisha watu na watu wengine, matukio, na maarifa yanayoweza kutekelezwa ili kuwezesha ushirikiano na muunganisho.
-- Mawakala husaidia kuunganisha matukio, maarifa, na watu.
-- Mawakala huleta watu karibu zaidi. Hawajabuniwa kuchukua nafasi au kudharau watu.
-- **Kupatikana kwa urahisi lakini mara nyingine kuwa wasioonekana** – wakala hufanya kazi kwa kiasi kikubwa nyuma ya pazia na hutusukuma tu inapofaa na inafaa.
-  - Wakala ni rahisi kupatikana na kufikiwa na watumiaji walioidhinishwa kwenye kifaa chochote au jukwaa lolote.
-  - Wakala huunga mkono pembejeo na matokeo ya njia nyingi (sauti, maandishi, nk.).
-  - Wakala anaweza kubadilika kwa urahisi kati ya mbele na nyuma; kati ya kuwa proaktif na reaktif, kulingana na hisia zake za mahitaji ya mtumiaji.
-  - Wakala anaweza kufanya kazi kwa njia isiyoonekana, lakini mchakato wake wa nyuma na ushirikiano na Mawakala wengine ni wazi na unadhibitiwa na mtumiaji.
+- **Kunaunganisha, sio kukandamiza** – kusaidia kuunganisha watu na watu wengine, matukio, na maarifa yanayoweza kuchukuliwa hatua ili kuwezesha ushirikiano na muunganiko.
+- Wakala husaidia kuunganisha matukio, maarifa, na watu.
+- Wakala huleta watu karibu zaidi. Yamelengwa si kubadilisha au kudharau watu.
+- **Inapatikana kwa urahisi lakini wakati mwingine isiyoonekana** – wakala kwa ujumla hufanya kazi nyuma ya pazia na hutupunguza tu tunapofaa na inapofaa.
+  - Wakala inapatikana kwa urahisi na inaweza kugunduliwa na watumiaji wenye idhini kwenye kifaa au jukwaa lolote.
+  - Wakala inasaidia pembejeo na pato za multimodal (sauti, sauti ya mdomo, maandishi, n.k.).
+  - Wakala inaweza kubadilika kwa urahisi kati ya mbele na nyuma; kati ya inayoanzisha na inayojibu, kulingana na uchunguzi wake wa mahitaji ya mtumiaji.
+  - Wakala inaweza kufanya kazi kwa muundo usioonekana, lakini mchakato wake wa nyuma na ushirikiano na Wakala wengine ni wazi na unaweza kudhibitiwa na mtumiaji.
 
 ### Wakala (Wakati)
 
-Hii ni jinsi wakala hufanya kazi kwa muda. Kanuni hizi zinaelekeza jinsi tunavyobuni mawakala wanaoshirikiana katika historia, sasa, na siku zijazo.
+Hili ndilo jinsi wakala anavyofanya kazi kwa muda. Kanuni hizi zinaelekeza jinsi tunavyobuni wakala wanaoshirikiana katika zama za zamani, sasa, na za baadaye.
 
-- **Zamani**: Kutafakari historia inayojumuisha hali na muktadha.
-  - Wakala hutoa matokeo yanayofaa zaidi kwa msingi wa uchambuzi wa data tajiri ya kihistoria zaidi ya tukio, watu, au hali pekee.
-  - Wakala huunda muunganisho kutoka kwa matukio ya zamani na kutafakari kikamilifu kumbukumbu ili kushiriki katika hali za sasa.
-- **Sasa**: Kusukuma zaidi kuliko kutoa taarifa.
-  - Wakala hujumuisha mbinu kamili ya kushirikiana na watu. Wakati tukio linatokea, Wakala huenda zaidi ya taarifa ya kawaida au fomu nyingine ya kawaida. Wakala anaweza kurahisisha mtiririko au kutoa vidokezo vya kidinamik ili kuelekeza umakini wa mtumiaji kwa wakati sahihi.
-  - Wakala hutoa taarifa kulingana na muktadha wa mazingira, mabadiliko ya kijamii na kitamaduni, na inayolingana na nia ya mtumiaji.
-  - Ushirikiano wa wakala unaweza kuwa wa hatua kwa hatua, ukibadilika/kukua kwa ugumu ili kuwawezesha watumiaji kwa muda mrefu.
-- **Siku zijazo**: Kubadilika na kuendelea.
-  - Wakala hubadilika kwa vifaa, majukwaa, na njia mbalimbali.
-  - Wakala hubadilika kulingana na tabia ya mtumiaji, mahitaji ya ufikivu, na ni rahisi kubinafsishwa.
-  - Wakala huundwa na hubadilika kupitia ushirikiano wa mtumiaji unaoendelea.
+- **Zamani**: Kutafakari historia ambayo inajumuisha hali na muktadha.
+  - Wakala hutoa matokeo yaliyohusiana zaidi kwa msingi wa uchambuzi wa data ya kihistoria tajiri zaidi zaidi ya tukio pekee, watu, au hali.
+  - Wakala huunda uhusiano kutoka kwa matukio ya zamani na kwa ufanisi hutafakari kumbukumbu ili kushirikiana na hali za sasa.
+- **Sasa**: Kuhamasisha zaidi kuliko kutangazia.
+  - Wakala unaelezea njia pana ya kuingiliana na watu. Wakati tukio linapotokea, Wakala hupanuka zaidi ya taarifa ya kudumu au aina nyingine ya rasmi ya kudumu. Wakala inaweza kurahisisha mtiririko au kuzalisha kwa nguvu ishara za kuongoza umakini wa mtumiaji kwa wakati sahihi.
+  - Wakala hutoa taarifa kulingana na muktadha wa mazingira, mabadiliko ya kijamii na kitamaduni na zilizobinafsishwa kwa nia ya mtumiaji.
+  - Mwingiliano na Wakala unaweza kuwa wa hatua kwa hatua, unaokua/kuongezeka katika ugumu ili kuwawezesha watumiaji kwa muda mrefu.
+- **Baadaye**: Kubadilika na kuendelea.
+  - Wakala hubadilika kwa vifaa mbalimbali, majukwaa, na modaliti.
+  - Wakala hubadilika kwa tabia za mtumiaji, mahitaji ya upatikanaji, na unaweza kubinafsishwa kwa uhuru.
+  - Wakala huundwa na hubadilika kupitia mwingiliano endelevu wa mtumiaji.
 
 ### Wakala (Msingi)
 
-Hizi ni vipengele muhimu katika msingi wa muundo wa wakala.
+Hizi ndizo vitu muhimu katika kiini cha muundo wa wakala.
 
-- **Kubali kutokuwa na uhakika lakini jenga uaminifu**.
-  - Kiwango fulani cha kutokuwa na uhakika wa Wakala kinatarajiwa. Kutokuwa na uhakika ni kipengele muhimu cha muundo wa wakala.
+- **Kubali kutokuwa na uhakika lakini ujenge uaminifu**.
+  - Kiwango fulani cha kutokuwa na uhakika kwa Wakala kinatarajiwa. Kutokuwa na uhakika ni kipengele muhimu cha muundo wa wakala.
   - Uaminifu na uwazi ni tabaka za msingi za muundo wa Wakala.
-  - Binadamu wanadhibiti wakati Wakala uko wazi/kufungwa na hali ya Wakala inaonekana wazi wakati wote.
+  - Watu wanadhibiti lini Wakala iko juu/imezimwa na hali ya Wakala inaonekana wazi kila wakati.
 
 ## Miongozo ya Kutekeleza Kanuni Hizi
 
-Unapotumia kanuni za ubunifu zilizotangulia, tumia miongozo ifuatayo:
+Unapotumia kanuni za ubunifu zilizotajwa hapo juu, tumia miongozo ifuatayo:
 
-1. **Uwazi**: Mjulishe mtumiaji kwamba AI inahusika, jinsi inavyofanya kazi (ikiwemo matendo ya zamani), na jinsi ya kutoa maoni na kurekebisha mfumo.
-2. **Udhibiti**: Mruhusu mtumiaji kubinafsisha, kubainisha mapendeleo na kubinafsisha, na kuwa na udhibiti wa mfumo na sifa zake (ikiwemo uwezo wa kusahau).
-3. **Uthabiti**: Lenga uzoefu thabiti, wa njia nyingi kwenye vifaa na sehemu za mwisho. Tumia vipengele vya UI/UX vinavyofahamika inapowezekana (mfano, ikoni ya kipaza sauti kwa ushirikiano wa sauti) na punguza mzigo wa kiakili wa mteja kadri inavyowezekana (mfano, lengo la majibu mafupi, msaada wa kuona, na maudhui ya 'Jifunze Zaidi').
+1. **Uwazi**: Mjulisha mtumiaji kwamba AI inahusishwa, jinsi inavyofanya kazi (pamoja na hatua za zamani), na jinsi ya kutoa maoni na kubadilisha mfumo.
+2. **Udhibiti**: Muwezeshe mtumiaji kubinafsisha, kubainisha mapendeleo na kubinafsisha, na kuwa na udhibiti juu ya mfumo na tabia zake (ikiwa ni pamoja na uwezo wa kusahau).
+3. **Ulinganifu**: Lenga uzoefu wa kudumu, wa multimodal across devices and endpoints. Tumia vipengele vya UI/UX vinavyofahamika pale inapowezekana (kwa mfano, ikoni ya kipaza sauti kwa mwingiliano wa sauti) na punguza mzigo wa kifikra wa mteja kadri uwezavyo (kwa mfano, lenga majibu mafupi, vifaa vya kuona, na yaliyomo ya 'Jifunze Zaidi').
 
-## Jinsi ya Kubuni Wakala wa Kusafiri kwa Kutumia Kanuni na Miongozo Hii
+## Jinsi ya Kubuni Wakala wa Usafiri ukitumia Kanuni na Miongozo Hizi
 
-Fikiria unabuni Wakala wa Kusafiri, hapa kuna jinsi unavyoweza kufikiria kutumia Kanuni za Ubunifu na Miongozo:
+Fikiria unabuni Wakala wa Usafiri, hapa ni jinsi unavyoweza kufikiria kutumia Kanuni za Ubunifu na Miongozo:
 
-1. **Uwazi** – Mjulishe mtumiaji kwamba Wakala wa Kusafiri ni Wakala unaotumia AI. Toa maelekezo ya msingi kuhusu jinsi ya kuanza (mfano, ujumbe wa "Habari", mifano ya maelekezo). Andika wazi hili kwenye ukurasa wa bidhaa. Onyesha orodha ya maelekezo ambayo mtumiaji ameuliza hapo awali. Eleza wazi jinsi ya kutoa maoni (alama ya juu na chini, kitufe cha Tuma Maoni, nk.). Eleza wazi ikiwa Wakala ana vizuizi vya matumizi au mada.
-2. **Udhibiti** – Hakikisha ni wazi jinsi mtumiaji anavyoweza kurekebisha Wakala baada ya kuundwa na vitu kama Maelekezo ya Mfumo. Mruhusu mtumiaji kuchagua jinsi Wakala anavyotoa maelezo, mtindo wake wa uandishi, na maelezo yoyote kuhusu mada ambazo Wakala hapaswi kuzungumzia. Ruhusu mtumiaji kutazama na kufuta faili au data yoyote inayohusiana, maelekezo, na mazungumzo ya zamani.
-3. **Uthabiti** – Hakikisha ikoni za Shiriki Maelekezo, ongeza faili au picha, na tag mtu au kitu ni za kawaida na zinazotambulika. Tumia ikoni ya kipande cha karatasi kuonyesha kupakia/kushiriki faili na Wakala, na ikoni ya picha kuonyesha kupakia michoro.
+1. **Uwazi** – Mjulisha mtumiaji kwamba Wakala wa Usafiri ni Wakala mwenye uwezo wa AI. Toa maagizo ya msingi juu ya jinsi ya kuanza (kwa mfano, ujumbe wa "Hello", mifano ya maswali). Andika wazi hili kwenye ukurasa wa bidhaa. Onyesha orodha ya maswali mtumiaji ameuliza hapo awali. Fafanua wazi jinsi ya kutoa maoni (thumbs up na down, kitufe cha Tuma Maoni, n.k.). Elezea wazi ikiwa Wakala ana vikwazo vya matumizi au mada.
+2. **Udhibiti** – Hakikisha ni wazi jinsi mtumiaji anavyoweza kubadilisha Wakala baada ya kuundwa kwa vitu kama Amri ya Mfumo. Muwezeshe mtumiaji kuchagua kiwango cha ufasaha wa mazungumzo ya Wakala, mtindo wake wa uandishi, na tahadhari zozote kuhusu mambo Wakala asiyezungumze. Mruhusu mtumiaji kuangalia na kufuta faili au data yoyote inayohusiana, maswali, na mazungumzo ya zamani.
+3. **Ulinganifu** – Hakikisha ikon za Kushiriki Ombi, kuongeza faili au picha na kumtaja mtu au kitu zinaonekana za kawaida na zinatambulika. Tumia ikoni ya clip ya karatasi kuonyesha upakiaji/kushiriki faili na Wakala, na ikoni ya picha kuonyesha upakiaji wa grafiki.
 
-## Sampuli za Nambari
+## Sampuli za Msimbo
 
-- Python: [Muundo wa Wakala](./code_samples/03-python-agent-framework.ipynb)
-- .NET: [Muundo wa Wakala](./code_samples/03-dotnet-agent-framework.md)
+- Python: [Agent Framework](./code_samples/03-python-agent-framework.ipynb)
+- .NET: [Agent Framework](./code_samples/03-dotnet-agent-framework.md)
 
-## Una Maswali Zaidi Kuhusu Mifumo ya Ubunifu wa Mawakala wa AI?
 
-Jiunge na [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) ili kukutana na wanafunzi wengine, kuhudhuria masaa ya ofisi, na kupata majibu ya maswali yako kuhusu Mawakala wa AI.
+## Una Maswali Zaidi kuhusu Mifumo ya Ubunifu wa Wakala wa AI?
 
-## Rasilimali za Ziada
+Jiunge na [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) kutafuta wajumbe wengine wa kujifunza, kuhudhuria masaa ya ofisi na kupata majibu ya maswali yako kuhusu Wakala wa AI.
 
-- <a href="https://openai.com" target="_blank">Mbinu za Kusimamia Mifumo ya AI ya Mawakala | OpenAI</a>
+## Rasilimali Zaidi
+
+- <a href="https://openai.com" target="_blank">Mazoezi ya Kusimamia Mifumo ya Wakala ya AI | OpenAI</a>
 - <a href="https://microsoft.com" target="_blank">Mradi wa HAX Toolkit - Microsoft Research</a>
-- <a href="https://responsibleaitoolbox.ai" target="_blank">Responsible AI Toolbox</a>
+- <a href="https://responsibleaitoolbox.ai" target="_blank">Responsibl AI Toolbox</a>
 
-## Somo la Awali
+## Somo lililotangulia
 
-[Kuchunguza Mifumo ya Mawakala](../02-explore-agentic-frameworks/README.md)
+[Exploring Agentic Frameworks](../02-explore-agentic-frameworks/README.md)
 
-## Somo Lijalo
+## Somo lijalo
 
-[Muundo wa Matumizi ya Zana](../04-tool-use/README.md)
+[Tool Use Design Pattern](../04-tool-use/README.md)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+Tamko la kutokuwa na dhamana:
+Nyaraka hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Nyaraka ya awali kwa lugha yake ya asili inapaswa kuzingatiwa kama chanzo chenye mamlaka. Kwa taarifa za muhimu, inashauriwa kutafuta tafsiri ya kitaalamu inayofanywa na mtafsiri wa binadamu. Hatuwajibiki kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

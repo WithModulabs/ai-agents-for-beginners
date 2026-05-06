@@ -1,156 +1,148 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d3b0e20122a974cc2fae7f889400bbc",
-  "translation_date": "2025-08-29T18:34:13+00:00",
-  "source_file": "11-agentic-protocols/code_samples/github-mcp/event-descriptions.md",
-  "language_code": "fi"
-}
--->
-## Tapahtuman nimi: Rakenna koodipohjainen sovelluksesi Azure AI Agent Servicen avulla (EMEA/US-tarjonta)
+## Tapahtuman nimi: Rakenna koodipohjainen sovelluksesi Azure AI Agent Servicen avulla (EMEA/US offering)
 
 ## Kuvaus
 
-Azure AI Agent Service yhdistää saumattomasti palvelun ja SDK:n, mikä yksinkertaistaa tehokkaiden tekoälyratkaisujen kehittämistä. Tässä sessiossa opit rakentamaan oman koodipohjaisen tekoälyagentin Azurella, joka voi vastata kysymyksiin, analysoida dataa ja integroida ulkoisia tietolähteitä. Lisäksi tutustut monimutkaisempiin arkkitehtuureihin, joissa useat agentit toimivat yhdessä.
+Azure AI Agent Service on saumaton yhdistelmä palvelua ja SDK:ta, joka yksinkertaistaa vankkojen, tekoälyä hyödyntävien ratkaisujen kehittämistä. Tässä sessiossa opit rakentamaan oman koodipohjaisen AI-agentin Azuren avulla, joka voi vastata kysymyksiin, suorittaa data-analyysiä ja integroida ulkoisia tietolähteitä. Tutkit myös monimutkaisempia arkkitehtuureja, mukaan lukien useiden agenttien yhteistyö.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25325/>
 
 ---
 
-## Tapahtuman nimi: Liiketoimintaprosessien muokkaaminen monen agentin tekoälyllä Semantic Kernelin avulla
+## Tapahtuman nimi: Liiketoimintaprosessien muuttaminen moniagenttisella tekoälyllä Semantic Kernelin avulla
 
 ## Kuvaus
 
-Tutustu monen agentin tekoälyjärjestelmien voimaan live-demojen ja käytännön oppimisen kautta. Käymme läpi malleja, kuten ryhmäkeskustelu, reflektio, valitsin ja parvi. Hyödynnä Semantic Kernel Process Frameworkia automatisoidaksesi ja skaalataksesi kriittisiä liiketoimintaprosesseja, kuten asiakastukea ja projektinhallintaa Pythonilla.
+Tutustu moniagenttisten tekoälyjärjestelmien voimaan live-esitysten ja käytännön harjoitusten kautta hyödyntäen malleja kuten group-chat, reflection, selector, and swarm. Hyödynnä Semantic Kernel Process Frameworkia automatisoidaksesi ja skaalaillaksesi keskeisiä liiketoimintaprosesseja, asiakastuesta projektinhallintaan Pythonin avulla
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25313/>
 
 ---
 
-## Tapahtuman nimi: Agenttipohjaisten sovellusten rakentaminen AutoGen v0.4:llä
+## Tapahtuman nimi: Agenttimaisten sovellusten rakentaminen AutoGen v0.4:llä
 
 ## Kuvaus
 
-Aloita agenttien ja monen agentin tiimien rakentaminen AutoGen v0.4:llä. Käymme läpi uuden AutoGen v0.4 -arkkitehtuurin yleiskatsauksen ja opastamme, kuinka rakentaa monen agentin tiimi verkkopohjaisella käyttöliittymällä.
+Aloittaminen agenttien ja moniagenttitiimien rakentamiseen AutoGen v0.4:n avulla. Käymme läpi uuden AutoGen v0.4 -arkkitehtuurin yleiskatsauksen ja opastamme, kuinka rakentaa moniagenttitiimi web-pohjaisella käyttöliittymällä.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25327/>
 
 ---
 
-## Tapahtuman nimi: Tekoälyagenttien prototyyppaus GitHub-mallien avulla
+## Tapahtuman nimi: AI-agenttien prototypointi GitHub Modelsin avulla
 
 ## Kuvaus
 
-GitHub-mallien ansiosta tarvitset vain GitHub-tilin rakentaaksesi ensimmäisen tekoälyagenttisi! GitHub-mallit sisältävät tehokkaita malleja, kuten OpenAI gpt-4o, DeepSeek-R1, Llama-3.1 ja monia muita, jotka ovat valmiita kokeiltavaksi joko leikkikentällä tai koodissasi. Tässä sessiossa näytämme, kuinka yhdistää GitHub-malleihin Pythonilla ja rakentaa agentteja suosittujen Python-pakettien, kuten PydanticAI, AutoGen ja Semantic Kernel, avulla. Voit seurata mukana livenä GitHub Codespacesissa tai kokeilla esimerkkejä itse milloin tahansa session jälkeen.
+Kiitos GitHub Modelsin, ensimmäisen AI-agenttisi rakentamiseen tarvitset vain GitHub-tilin! GitHub Models sisältää tehokkaita malleja kuten OpenAI gpt-4o, DeepSeek-R1, Llama-3.1 ja monia muita, valmiina kokeiltavaksi playgroundissa tai omassa koodissasi.
+Tässä sessiossa demonstroimme, miten yhdistää GitHub Modelsiin Pythonista ja sen jälkeen rakennetaan agentteja käyttäen suosittuja Python-paketteja kuten PydanticAI, AutoGen ja Semantic Kernel.
+Voit seurata live-esitystä GitHub Codespacesissa tai kokeilla esimerkkejä itse milloin tahansa session jälkeen.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25481/>
 
 ---
 
-## Tapahtuman nimi: Agenttien rakentaminen Azure AI -mallikatalogin malliarmeijalla
+## Tapahtuman nimi: Agenttien rakentaminen armeijalla malleja Azure AI -mallikatalogista
 
 ## Kuvaus
 
-Azure AI -mallikatalogi tarjoaa laajan valikoiman malleja, joilla on erilaisia taitoja ja kykyjä. Vaikka valmis malli voi auttaa alkuun, kehittäjät voivat hyödyntää erikoistuneita malleja monimutkaisemmissa työnkuluissa. Tässä esityksessä käymme läpi mallikatalogin tarjonnan ja kuinka voit rakentaa agentteja, jotka hyödyntävät malliarmeijaa - ilman suuria kustannuksia.
+Azure AI -mallikatalogi tarjoaa laajan valikoiman malleja, joilla on erilaisia taitoja ja kyvykkyyksiä. Alkuun pääsemiseksi voi käyttää valmiita malleja, mutta kehittäjät voivat edetessään käyttää erikoistuneita malleja tehtävän suorittamiseen omassa suosikkikehyksessään. Tässä esityksessä käymme läpi mallikatalogin tarjonnan ja miten voit rakentaa agentteja, jotka toimivat suuren malliarmeijan päällä – ilman, että se maksaa omaisuutta.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25328/>
 
 ---
 
-## Tapahtuman nimi: Monen agentin API LangGraphilla ja Azure Cosmos DB:llä
+## Tapahtuman nimi: Moniagentti-API LangGraphilla ja Azure Cosmos DB:llä
 
 ## Kuvaus
 
-Monen agentin tekoälysovellusten nousu muuttaa tapaa, jolla rakennamme älykkäitä järjestelmiä - mutta miten ne suunnitellaan todellisen maailman skaalautuvuuden ja suorituskyvyn tarpeisiin? Tässä sessiossa sukellamme tuotantotason monen agentin sovellukseen, joka on rakennettu LangGraphilla agenttien orkestrointiin, FastAPI:lla API-kerrokseen ja Azure Cosmos DB:llä tilanhallinnan, vektorivarastoinnin ja transaktionaalisen datan selkärankana.
+Moniagenttisten tekoälysovellusten nousu muuttaa tapaa, jolla rakennamme älykkäitä järjestelmiä – mutta kuinka arkkitehdit niistä todellisen maailman skaalausta ja suorituskykyä varten? Tässä sessiossa sukellamme syvälle tuotantotasoiseen moniagenttiseen sovellukseen, joka on rakennettu LangGraphilla agenttien orkestrointiin, FastAPI:lla API-kerrokseen ja Azure Cosmos DB:llä tilanhallinnan, vektoritallennuksen ja transaktionaalisten tietojen selkärankana.
 
-Koodikatsauksen kautta näet, kuinka suunnitella ja toteuttaa agenttipohjainen työnkulku, joka integroi saumattomasti hakuun perustuvan generoinnin (RAG), muistin säilyttämisen ja dynaamiset tilasiirtymät. Käymme läpi:
+Yksityiskohtaisen koodikävelyn kautta näet, miten suunnitella ja toteuttaa agenttivetoista työnkulkua, joka saumattomasti integroi retrieval-augmented generationin (RAG), muistin pysyvyyden ja dynaamiset tilasiirtymät. Käsittelemme:
 
-- Agenttien yhteistyö LangGraphilla rakenteelliseen päättelyyn
-- Reaaliaikainen keskusteluhistorian tallennus Azure Cosmos DB:llä - sama tietokanta, joka tukee ChatGPT:n keskusteluhistoriaa, historian nopeimmin kasvavaa tekoälyagenttisovellusta
-- Vektorihaku tiedonhakuun Cosmos DB:n natiivien upotusten tuella
-- FastAPI:n asynkroniset ominaisuudet vuorovaikutusten pitämiseksi responsiivisina ja skaalautuvina
-
-Session lopussa sinulla on selkeä toimintasuunnitelma oman skaalautuvan, pilvipohjaisen monen agentin sovelluksen rakentamiseen ja käyttöönottoon, joka hyödyntää modernin tekoälyn ja pilvi-infrastruktuurin voimaa. Olitpa tekoälyinsinööri, pilviarkkitehti tai Python-kehittäjä, tämä esitys antaa sinulle käytännön näkemyksiä ja testattuja malleja seuraavan sukupolven tekoälypohjaisten sovellusten rakentamiseen.
+Agenttien yhteistyö LangGraphin avulla rakenteellista päättelyä varten
+Reaaliaikainen keskusteluhistorian tallennus Azure Cosmos DB:hen - sama tietokanta, joka ylläpitää ChatGPT:n keskusteluhistoriaa, historian nopeimmin kasvavaa AI-agenttisovellusta
+Vektorihaut tiedon hakua varten Cosmos DB:n natiivien upotusten (embeddings) tuen avulla
+FastAPI:n asynkroniset ominaisuudet vuorovaikutusten pitämiseksi reagoivina ja skaalaavina
+Session loppuun mennessä sinulla on selkeä suunnitelma omien skaalautuvien, pilviympäristöön sopivien moniagenttisovellusten rakentamiseen ja käyttöönottoon, jotka hyödyntävät modernin tekoälyn ja pilvinfrastruktuurin tehoa. Olitpa sitten AI-insinööri, pilviarkkitehti tai Python-kehittäjä, tämä puhe antaa sinulle käytännönläheisiä oivalluksia ja kokeiltuja malleja seuraavan sukupolven tekoälyä hyödyntävien sovellusten rakentamiseen
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25314/>
 
 ---
 
-## Tapahtuman nimi: Ensimmäinen tekoälyagenttisi JS:llä Azure AI Agent Servicen avulla
+## Tapahtuman nimi: Ensimmäinen AI-agenttisi JS:llä Azure AI Agent Servicen avulla
 
 ## Kuvaus
 
-Opi rakentamaan ensimmäinen tekoälyagenttisi JavaScript SDK:lla Azure AI Agent Servicelle, täysin hallitulle alustalle, joka tekee kehittämisestä helppoa. Näet, kuinka se asennetaan, yhdistetään työkaluihin, kuten Azure AI Search, ja otetaan käyttöön yksinkertainen kysymys-vastaus-agentti. Live-demossa opit, kuinka automaattinen työkalujen kutsuminen ja hallittu tila yksinkertaistavat prosessia. Täydellinen aloittelijoille, tämä sessio tarjoaa käytännön askeleita ja vinkkejä tekoälyagenttien rakentamisen aloittamiseen luottavaisin mielin.
+Opettele rakentamaan ensimmäinen AI-agenttisi käyttämällä Azure AI Agent Servicen JavaScript SDK:ta, täysin hallittua alustaa, joka tekee kehittämisestä helppoa. Näet, miten asetat sen, yhdistät työkaluja kuten Azure AI Searchin ja otat käyttöön yksinkertaisen kysymys-vastaus-agentin. Live-demon avulla opit, miten automaattinen työkalukutsujen hallinta ja hallittu tila yksinkertaistavat prosessia. Täydellinen aloittelijoille, tämä sessio antaa käytännön askeleet ja vinkit AI-agenttimatkan aloittamiseen luottavaisin mielin.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25381/>
 
 ---
 
-## Tapahtuman nimi: Kehotus on uusi skriptaus: Tutustu GenAIScriptiin
+## Tapahtuman nimi: Prompttaus on uusi skriptaus: Tutustu GenAIScriptiin
 
 ## Kuvaus
 
-jQuery teki aikoinaan verkkokehityksestä helpompaa abstraktoimalla monimutkaisuuksia, jolloin kehittäjät pystyivät keskittymään rakentamiseen selainten ongelmien sijaan. Tänä päivänä tekoälykehitys kohtaa samanlaisen haasteen. Uusia malleja syntyy jatkuvasti, ja mukana pysyminen voi olla ylivoimaista, erityisesti kun tekoälytyökalut - erityisesti agenttipohjaiset - muuttuvat yhä tehokkaammiksi ja monimutkaisemmiksi. Entä jos voisit hyödyntää huippuluokan tekoälyominaisuuksia automatisoidaksesi tehtäviä yksinkertaisilla, tutuilla JavaScript-abstraktioilla? Esittelyssä GenAIScript - tapa integroida tekoäly työnkulkuusi vaivattomasti, käsitellen kehotuksia kuin uudelleenkäytettäviä koodinpätkiä. Tässä esityksessä tutkimme, kuinka GenAIScript tekee tekoälyautomaatiosta yhtä intuitiivista kuin JavaScriptin kirjoittaminen, auttaen sinua virtaviivaistamaan toistuvia tehtäviä ilman syvällistä tekoälyosaamista.
+jQuery sai aikoinaan web-kehityksen helpommaksi abstrahoimalla monimutkaisuuksia, jolloin kehittäjät saattoivat keskittyä rakentamiseen sen sijaan, että taistelisivat selainten omituisuuksien kanssa. Nykyään tekoälykehitys kohtaa samanlaisen haasteen. Uusia malleja syntyy jatkuvasti, ja pysyminen niiden tahdissa voi olla ylivoimaista, etenkin kun tekoälytyökalut—erityisesti agenttimaiset—muuttuvat yhä tehokkaammiksi ja monimutkaisemmaksi. Entä jos voisit hyödyntää huipputeknologiaa automatisoidaksesi tehtäviä yksinkertaisilla, tuntemilla JavaScript-abstraktioilla? Tässä tulee GenAIScript—tapa integroida tekoäly työskentelytapaasi vaivattomasti, käsitellen kehotteita kuin uudelleenkäytettäviä koodinpätkiä. Tässä puheessa tutkimme, miten GenAIScript tekee tekoälyautomaatiosta yhtä intuitiivista kuin JavaScriptin kirjoittamisen, auttaen sinua tehostamaan toistuvaa työtä ilman syvällistä tekoälyosaamista.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25441/>
 
 ---
 
-## Tapahtuman nimi: Tiedolla täydennetyt agentit LlamaIndex.TS:llä
+## Tapahtuman nimi: Tietoa täydentävät agentit LlamaIndex.TS:llä
 
 ## Kuvaus
 
-LlamaIndex tunnetaan siitä, että se tekee hakuun perustuvan generoinnin (RAG) rakentamisesta helppoa, mutta kehyksemme tekevät myös agenttien ja monen agentin järjestelmien rakentamisesta vaivatonta! Tässä sessiossa esittelemme Workflowsin, perusrakennuspalikkamme agenttipohjaisten järjestelmien rakentamiseen, ja rakennamme agentin, joka käyttää RAG:ia ja muita työkaluja.
+LlamaIndex tunnetaan siitä, että se tekee Retrieval-Augmented Generationin (RAG) rakentamisesta helppoa, mutta kehyksemme tekevät myös agenttien ja moniagenttijärjestelmien rakentamisesta helppoa! Tässä sessiossa esittelemme Workflowsin, perustavan rakennuspalikkamme agenttimaisten järjestelmien rakentamiseen, ja rakennamme agentin, joka käyttää RAG:ia ja muita työkaluja.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25440/>
 
 ---
 
-## Tapahtuman nimi: Tekoälyagentit Javalle Azure AI Foundryn ja GitHub Copilotin avulla
+## Tapahtuman nimi: AI-agentit Javalle Microsoft Foundryn ja GitHub Copilotin avulla
 
 ## Kuvaus
 
-Tässä sessiossa näytämme, kuinka upottaa kehittyneitä tekoälyagenttien ominaisuuksia Java-sovelluksiisi Azure AI Foundryn avulla, mukaan lukien projektitavoitteiden asettaminen, mallien kokeilu ja tuotantovalmiiden ratkaisujen turvallinen käyttöönotto laajassa mittakaavassa. Matkan varrella opit, kuinka GitHub Copilot (IntelliJ:ssä, VS Code:ssa ja Eclipsessä) voi virtaviivaistaa koodausta ja kehotusten luomista, samalla kun parhaat käytännöt mallin valinnassa, hienosäädössä ja agenttipohjaisissa työnkuluissa varmistavat vastuullisen ja tehokkaan kehityksen. Olitpa uusi tekoälyagenteissa tai etsimässä kehittyneitä agenttirakennustekniikoita, tämä sessio varustaa sinut tarjoamaan seuraavan tason kokemuksia jo tuntemillasi työkaluilla.
+Tässä sessiossa näytämme, miten upottaa edistyneitä AI-agenttikyvykkyyksiä Java-sovelluksiisi Microsoft Foundryn avulla, mukaan lukien projektitavoitteiden asettaminen, mallien kokeilu ja tuotantovalmiiden ratkaisujen turvallinen käyttöönotto laajassa mittakaavassa. Matkan varrella opit, miten GitHub Copilot (IntelliJissä, VS Codessa ja Eclipseissä) voi sujuvoittaa koodausta ja kehotteiden luomista, ja miten parhaat käytännöt mallien valinnassa, hienosäädössä ja agenttimaisissa työnkuluissa varmistavat vastuullisen ja tehokkaan kehityksen. Olitpa uusi AI-agenttien parissa tai etsit edistyneitä agenttirakennustekniikoita, tämä sessio antaa sinulle valmiudet tarjota seuraavan tason kokemuksia tutuilla työkaluillasi.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25336/>
 
 ---
 
-## Tapahtuman nimi: Java-tekoälyagenttien rakentaminen LangChain4j:llä ja dynaamisilla sessioilla
+## Tapahtuman nimi: Java AI-agenttien rakentaminen LangChain4j:n ja Dynamic Sessionsin avulla
 
 ## Kuvaus
 
-Hyödynnä tekoälyagenttien potentiaalia Java-sovelluksissasi yhdistämällä LangChain4j Azure Container Apps (ACA) -dynaamisiin sessioihin, jotka ovat yhteydessä Azure AI -palveluihin. Tässä sessiossa esitellään käytännön esimerkki agentin rakentamisesta, joka pystyy vuorovaikuttamaan etäympäristön kanssa, mukaan lukien tiedostonhallinta. Opit määrittelemään räätälöityjä työkaluja, integroimaan ne agenttien työnkulkuihin ja hyödyntämään Azuren skaalautuvaa infrastruktuuria älykkäiden, dynaamisten ratkaisujen käyttöönottoon.
+Avaa AI-agenttien potentiaali Java-sovelluksissasi yhdistämällä LangChain4j Azure Container Appsin (ACA) dynaamisiin istuntoihin, jotka on yhdistetty Azure AI -palveluihin. Tämä sessio esittelee käytännön esimerkin agentin rakentamisesta, joka kykenee vuorovaikuttamaan etäympäristön kanssa, mukaan lukien tiedostojen hallinta. Opi määrittelemään mukautettuja työkaluja, integroimaan ne agenttityönkulkuihin ja hyödyntämään Azuren skaalautuvaa infrastruktuuria älykkäiden, dynaamisten ratkaisujen käyttöönotossa.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25337/>
 
 ---
 
-## Tapahtuman nimi: Vastuuttomat tekoälyagentit
+## Tapahtuman nimi: Vastuuttomat AI-agentit
 
 ## Kuvaus
 
-Liity mukaan tutkimaan tekoälyagenttien mahdollisia riskejä ja kohtaamaan haaste luotettavien tekoälykäytäntöjen sisällyttämisestä keskustelupohjaisiin tekoälyalustoihin! Tässä sessiossa sukellamme syvälle vastuuttomien tekoälyagenttien esimerkkeihin - esittelemme hämmästyttäviä mallivirheitä, haitallisia jailbreak-tilanteita ja muita riskejä, jotka heikentävät luottamusta ja vaatimustenmukaisuutta.
+Liity seuraamme, kun tutkimme AI-agenttien potentiaalisia riskejä ja tartumme haasteeseen upottaa luotettavia tekoälykäytäntöjä keskusteleviin AI-alustoihin! Tämä sessio sukeltaa syvälle vastuuttomien AI-agenttien esimerkkeihin—esitellen hämmästyttäviä esimerkkejä mallien epäonnistumisista, adversariaalisista jailbreakeistä ja muista riskeistä, jotka rapauttavat luottamusta ja vaatimustenmukaisuutta.
 
-Tutustumme Microsoftin huipputyökaluihin luotettavaa tekoälyä varten, mukaan lukien sisällönsuodattimet, punatiimistrategiat ja arvioinnit - sisältäen live-demot tekoälyagenteista, jotka käyttäytyvät sekä vastuullisesti että vastuuttomasti tavoilla, joita et usko.
+Tutkimme Microsoftin huipputason työkaluja luotettavalle tekoälylle, mukaan lukien sisällönsuodattimet, red teaming -strategiat ja arvioinnit—sisältäen live-demoja AI-agenteista, jotka käyttäytyvät sekä vastuullisesti että vastuuttomasti tavoilla, joita et usko.
 
 🔥 Mitä saat mukaasi:
-✅ Kuinka tunnistaa ja lieventää tekoälyriskejä ennen kuin niitä voidaan hyödyntää
-✅ Kuinka ottaa käyttöön Azure AI Content Safety riskikäyttäytymisen havaitsemiseksi ja lieventämiseksi
-✅ Salainen resepti tekoälyagenttien luotettavuuden varmistamiseksi
+✅ Miten tunnistaa ja lieventää tekoälyn riskejä ennen kuin niitä voidaan hyödyntää
+✅ Miten ottaa käyttöön Azure AI Content Safety havaitsemaan ja lieventämään riskikäyttäytymistä
+✅ Salaisuus AI-agenttien luotettavaksi tekemiseen
 
-Valmistaudu sessioon, joka on täynnä hypeä, korkeiden panosten tekoälydraamaa ja välttämättömiä strategioita tekoälysi pitämiseksi historian oikealla puolella. Älä vain rakenna tekoälyä - rakenna tekoälyä, jolla on merkitystä!
+Valmistaudu sessioon, joka on täynnä kohua, korkean panoksen tekoälydraamaa ja pakollisia strategioita pitääksesi tekoälysi historian oikealla puolella. Älä pelkästään rakenna tekoälyä—rakenna tekoälyä, jolla on merkitystä!
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25388/>
@@ -161,34 +153,36 @@ Valmistaudu sessioon, joka on täynnä hypeä, korkeiden panosten tekoälydraama
 
 ## Kuvaus
 
-Azure AI Agent Service yhdistää saumattomasti palvelun ja SDK:n, mikä yksinkertaistaa tehokkaiden tekoälyratkaisujen kehittämistä. Tässä sessiossa opit rakentamaan oman koodipohjaisen tekoälyagentin Azurella ja C#:lla, joka voi vastata kysymyksiin, analysoida dataa ja integroida ulkoisia tietolähteitä. Lisäksi tutustut monimutkaisempiin arkkitehtuureihin, joissa useat agentit toimivat yhdessä.
+Azure AI Agent Service on saumaton yhdistelmä palvelua ja SDK:ta, joka yksinkertaistaa vankkojen, tekoälyä hyödyntävien ratkaisujen kehittämistä. Tässä sessiossa opit rakentamaan oman koodipohjaisen AI-agentin Azurella ja C#:lla, joka voi vastata kysymyksiin, suorittaa data-analyysiä ja integroida ulkoisia tietolähteitä. Tutkit myös monimutkaisempia arkkitehtuureja, mukaan lukien useiden agenttien yhteistyö.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25370/>
 
 ---
 
-## Tapahtuman nimi: Tekoälyagentit + .NET Aspire
+## Tapahtuman nimi: AI-agentit + .NET Aspire
 
 ## Kuvaus
 
-Tässä sessiossa jaamme joitakin .NET-alustan jännittävimmistä kehityksistä liittyen agenteihin. Tutustu .NET:n nykytilaan, mukaan lukien sen uudet ominaisuudet ja parannukset. Tutki tehokkaita tekoälyagenttien ominaisuuksia. Lisäksi teemme live-koodausta agenttien ja .NET Aspiren kanssa.
+Tässä sessiossa jaamme joitain jännittävimmistä kehityssuunnista .NET-alustalla liittyen agenteihin. Tutustu .NETin nykytilaan, mukaan lukien sen uudet ominaisuudet ja parannukset. Tutki tehokkaita AI-agenttikyvykkyyksiä. Ja teemme myös live-koodausta agenteilla ja .NET Aspirella.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25332/>
 
 ---
 
-## Tapahtuman nimi: Semantic Kernel ja C# monen agentin tekoälysovellusten rakentamiseen Azure Cosmosin avulla
+## Tapahtuman nimi: Semantic Kernel C#:lla moniagenttisten tekoälysovellusten rakentamiseen Azure Cosmosin voimin
 
 ## Kuvaus
 
-Käymme läpi monen agentin sovelluksen C#:lla, joka on rakennettu Semantic Kernel -kehyksen päälle. Ymmärrät agenttipohjaisten sovellusten taustalla olevat käsitteet, toteutuksen yksityiskohdat ja vivahteet sekä opit integroimaan Azure Cosmos DB:n tietokantana eri käyttötarkoituksiin.
+Käymme läpi C#:lla tehdyn moniagenttisen sovelluksen, joka on rakennettu Semantic Kernel -kehyksen päälle. Ymmärrät agenttimaisten sovellusten taustalla olevat käsitteet, toteutuksen yksityiskohdat ja nyanssit, ja opit, miten integroida Azure Cosmos DB tietokantana eri käyttötapauksiin.
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25455/>
 
 ---
 
-**Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+Vastuuvapauslauseke:
+Tämä asiakirja on käännetty tekoälypohjaisella käännöspalvelulla Co-op Translator (https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulee pitää määräävänä lähteenä. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme vastaa tästä käännöksestä aiheutuvista väärinymmärryksistä tai virheellisistä tulkinnoista.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,37 +1,28 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d71524fe83a23829ae7a23b4031aaac8",
-  "translation_date": "2025-11-13T12:45:56+00:00",
-  "source_file": "03-agentic-design-patterns/README.md",
-  "language_code": "sv"
-}
--->
-[![Hur man designar bra AI-agenter](../../../translated_images/lesson-3-thumbnail.1092dd7a8f1074a5b26e35aa8f810814e05a22fed1765c20c14b2b508c7ae379.sv.png)](https://youtu.be/m9lM8qqoOEA?si=4KimounNKvArQQ0K)
+[![Hur man utformar bra AI-agenter](../../../translated_images/sv/lesson-3-thumbnail.1092dd7a8f1074a5.webp)](https://youtu.be/m9lM8qqoOEA?si=4KimounNKvArQQ0K)
 
-> _(Klicka på bilden ovan för att se videon av denna lektion)_
+> _(Klicka på bilden ovan för att se videon till den här lektionen)_
 # Principer för agentisk AI-design
 
 ## Introduktion
 
-Det finns många sätt att tänka kring att bygga agentiska AI-system. Eftersom tvetydighet är en funktion och inte en bugg i designen av generativ AI, kan det ibland vara svårt för ingenjörer att veta var de ska börja. Vi har skapat en uppsättning användarcentrerade UX-designprinciper för att möjliggöra för utvecklare att bygga kundcentrerade agentiska system som löser deras affärsbehov. Dessa designprinciper är inte en föreskrivande arkitektur utan snarare en utgångspunkt för team som definierar och bygger agentupplevelser.
+Det finns många sätt att tänka kring uppbyggnaden av agentiska AI-system. Eftersom tvetydighet är en egenskap snarare än ett fel i design av generativ AI kan det ibland vara svårt för ingenjörer att veta var de ska börja. Vi har skapat en uppsättning människocentrerade UX-designprinciper för att möjliggöra för utvecklare att bygga kundcentrerade agentiska system för att lösa deras affärsbehov. Dessa designprinciper är inte en föreskrivande arkitektur utan snarare en startpunkt för team som definierar och bygger agentupplevelser.
 
-Generellt sett bör agenter:
+Generellt bör agenter:
 
-- Bredda och skala mänskliga förmågor (idéutveckling, problemlösning, automatisering, etc.)
-- Fylla kunskapsluckor (hjälpa mig att komma ikapp inom kunskapsområden, översättning, etc.)
+- Utvidga och skala mänskliga förmågor (idéutveckling, problemlösning, automatisering osv.)
+- Fyll i kunskapsluckor (ge mig snabb uppdatering om kunskapsdomäner, översättning osv.)
 - Underlätta och stödja samarbete på de sätt vi som individer föredrar att arbeta med andra
-- Göra oss till bättre versioner av oss själva (t.ex. livscoach/uppgiftsmästare, hjälpa oss att lära oss emotionell reglering och mindfulness, bygga motståndskraft, etc.)
+- Göra oss till bättre versioner av oss själva (t.ex. livscoach/uppgiftsledare, hjälpa oss att lära oss emotionell reglering och mindfulness-färdigheter, bygga resiliens osv.)
 
-## Denna lektion kommer att täcka
+## Den här lektionen kommer att täcka
 
-- Vad är de agentiska designprinciperna
-- Vilka riktlinjer bör följas vid implementering av dessa designprinciper
-- Exempel på användning av designprinciperna
+- Vad Agentiska designprinciper är
+- Vilka riktlinjer som bör följas vid implementering av dessa designprinciper
+- Några exempel på att använda designprinciperna
 
 ## Lärandemål
 
-Efter att ha genomfört denna lektion kommer du att kunna:
+Efter att ha slutfört den här lektionen kommer du att kunna:
 
 1. Förklara vad de agentiska designprinciperna är
 2. Förklara riktlinjerna för att använda de agentiska designprinciperna
@@ -39,76 +30,77 @@ Efter att ha genomfört denna lektion kommer du att kunna:
 
 ## De agentiska designprinciperna
 
-![Agentiska designprinciper](../../../translated_images/agentic-design-principles.1cfdf8b6d3cc73c2b738951ee7b2043e224441d98babcf654be69d866120f93a.sv.png)
+![Agentic Design Principles](../../../translated_images/sv/agentic-design-principles.1cfdf8b6d3cc73c2.webp)
 
-### Agent (Plats)
+### Agent (Space)
 
-Detta är miljön där agenten verkar. Dessa principer informerar hur vi designar agenter för att engagera sig i fysiska och digitala världar.
+Detta är miljön där agenten verkar. Dessa principer informerar hur vi designar agenter för att engagera sig i den fysiska och digitala världen.
 
-- **Koppla samman, inte kollapsa** – hjälp till att koppla människor till andra människor, händelser och användbar kunskap för att möjliggöra samarbete och anslutning.
+- **Connecting, not collapsing** – hjälp till att koppla samman människor med andra människor, händelser och handlingsbar kunskap för att möjliggöra samarbete och kontakt.
 - Agenter hjälper till att koppla samman händelser, kunskap och människor.
-- Agenter för människor närmare varandra. De är inte designade för att ersätta eller förminska människor.
-- **Lättillgänglig men ibland osynlig** – agenten verkar till stor del i bakgrunden och ger oss endast en knuff när det är relevant och lämpligt.
-  - Agenten är lätt att upptäcka och tillgänglig för auktoriserade användare på alla enheter eller plattformar.
-  - Agenten stödjer multimodala in- och utgångar (ljud, röst, text, etc.).
-  - Agenten kan sömlöst växla mellan förgrund och bakgrund; mellan proaktiv och reaktiv, beroende på dess avkänning av användarens behov.
-  - Agenten kan verka i osynlig form, men dess bakgrundsprocessväg och samarbete med andra agenter är transparenta och kontrollerbara av användaren.
+- Agenter för människor närmare varandra. De är inte utformade för att ersätta eller förminska människor.
+- **Easily accessible yet occasionally invisible** – agenten fungerar i stort sett i bakgrunden och ger bara en knuff när det är relevant och lämpligt.
+  - Agenten är lätt att hitta och komma åt för auktoriserade användare på vilken enhet eller plattform som helst.
+  - Agenten stödjer multimodala in- och utdata (ljud, röst, text osv.).
+  - Agenten kan sömlöst växla mellan förgrund och bakgrund; mellan proaktiv och reaktiv, beroende på dess uppfattning av användarens behov.
+  - Agenten kan fungera i osynlig form, men dess bakgrundsprocessväg och samarbete med andra agenter är transparenta för och kontrollerbara av användaren.
 
-### Agent (Tid)
+### Agent (Time)
 
-Detta är hur agenten verkar över tid. Dessa principer informerar hur vi designar agenter som interagerar över det förflutna, nuet och framtiden.
+Detta är hur agenten fungerar över tid. Dessa principer informerar hur vi designar agenter som interagerar över dåtid, nutid och framtid.
 
-- **Förflutet**: Reflektera över historik som inkluderar både tillstånd och kontext.
-  - Agenten tillhandahåller mer relevanta resultat baserat på analys av rikare historiska data bortom endast händelsen, människor eller tillstånd.
-  - Agenten skapar kopplingar från tidigare händelser och reflekterar aktivt över minnet för att engagera sig i aktuella situationer.
-- **Nu**: Knuffa mer än notifiera.
-  - Agenten förkroppsligar ett omfattande tillvägagångssätt för att interagera med människor. När en händelse inträffar går agenten bortom statisk notifiering eller annan statisk formalitet. Agenten kan förenkla flöden eller dynamiskt generera ledtrådar för att rikta användarens uppmärksamhet vid rätt tillfälle.
-  - Agenten levererar information baserat på kontextuell miljö, sociala och kulturella förändringar och anpassat till användarens intention.
-  - Agentens interaktion kan vara gradvis, utvecklas/växa i komplexitet för att stärka användare på lång sikt.
-- **Framtid**: Anpassa och utvecklas.
+- **Past**: Reflektera över historia som inkluderar både tillstånd och kontext.
+  - Agenten ger mer relevanta resultat baserat på analys av rikare historiska data bortom endast händelsen, människorna eller tillstånden.
+  - Agenten skapar kopplingar från tidigare händelser och reflekterar aktivt över minnet för att engagera sig i nuvarande situationer.
+- **Now**: Knuffa mer än att bara notifiera.
+  - Agenten förkroppsligar ett omfattande tillvägagångssätt för att interagera med människor. När en händelse inträffar går agenten bortom statisk avisering eller annan statisk formalitet. Agenten kan förenkla flöden eller dynamiskt generera ledtrådar för att rikta användarens uppmärksamhet vid rätt tillfälle.
+  - Agenten levererar information baserat på kontextuell miljö, sociala och kulturella förändringar och anpassad efter användarens avsikt.
+  - Agentinteraktionen kan vara gradvis och utvecklas/växa i komplexitet för att stärka användare över tid.
+- **Future**: Anpassa sig och utvecklas.
   - Agenten anpassar sig till olika enheter, plattformar och modaliteter.
-  - Agenten anpassar sig till användarbeteende, tillgänglighetsbehov och är fritt anpassningsbar.
+  - Agenten anpassar sig efter användarbeteende, tillgänglighetsbehov och är fritt anpassningsbar.
   - Agenten formas av och utvecklas genom kontinuerlig användarinteraktion.
 
-### Agent (Kärna)
+### Agent (Core)
 
-Dessa är de centrala elementen i kärnan av en agents design.
+Detta är nyckelelementen i kärnan av en agents design.
 
-- **Omfamna osäkerhet men etablera förtroende**.
-  - En viss nivå av osäkerhet hos agenten är att förvänta. Osäkerhet är ett nyckelelement i agentdesign.
+- **Embrace uncertainty but establish trust**.
+  - En viss nivå av agentosäkerhet är förväntad. Osäkerhet är ett nyckelelement i agentdesign.
   - Förtroende och transparens är grundläggande lager i agentdesign.
-  - Människor har kontroll över när agenten är på/av och agentens status är tydligt synlig hela tiden.
+  - Människor kontrollerar när agenten är på/av och agentens status är tydligt synlig hela tiden.
 
 ## Riktlinjer för att implementera dessa principer
 
-När du använder de tidigare designprinciperna, följ dessa riktlinjer:
+När du använder de tidigare designprinciperna, använd följande riktlinjer:
 
-1. **Transparens**: Informera användaren om att AI är involverad, hur den fungerar (inklusive tidigare handlingar) och hur man ger feedback och modifierar systemet.
-2. **Kontroll**: Ge användaren möjlighet att anpassa, specificera preferenser och personalisera, samt ha kontroll över systemet och dess attribut (inklusive möjligheten att glömma).
-3. **Konsekvens**: Sträva efter konsekventa, multimodala upplevelser över enheter och slutpunkter. Använd välbekanta UI/UX-element där det är möjligt (t.ex. mikrofonikon för röstinteraktion) och minska kundens kognitiva belastning så mycket som möjligt (t.ex. sträva efter kortfattade svar, visuella hjälpmedel och "Läs mer"-innehåll).
+1. **Transparens**: Informera användaren om att AI är involverat, hur det fungerar (inklusive tidigare åtgärder) och hur man ger feedback och modifierar systemet.
+2. **Kontroll**: Möjliggör för användaren att anpassa, ange preferenser och personalisera, samt ha kontroll över systemet och dess attribut (inklusive möjligheten att "glömma").
+3. **Konsistens**: Sträva efter konsekventa, multimodala upplevelser över enheter och slutpunkter. Använd välkända UI/UX-element där det är möjligt (t.ex. mikrofonikonen för röstinteraktion) och minska kundens kognitiva belastning så mycket som möjligt (t.ex. sikta på kortfattade svar, visuella hjälpmedel och "Läs mer"-innehåll).
 
 ## Hur man designar en reseagent med dessa principer och riktlinjer
 
-Föreställ dig att du designar en reseagent, här är hur du kan tänka kring att använda designprinciperna och riktlinjerna:
+Föreställ dig att du designar en reseagent, så här skulle du kunna tänka kring användningen av designprinciperna och riktlinjerna:
 
-1. **Transparens** – Informera användaren om att reseagenten är en AI-driven agent. Ge några grundläggande instruktioner om hur man kommer igång (t.ex. ett "Hej"-meddelande, exempel på frågor). Dokumentera detta tydligt på produktsidan. Visa listan över frågor som användaren har ställt tidigare. Gör det tydligt hur man ger feedback (tummen upp och ner, Skicka feedback-knapp, etc.). Klargör om agenten har användnings- eller ämnesbegränsningar.
-2. **Kontroll** – Se till att det är tydligt hur användaren kan ändra agenten efter att den har skapats, med saker som systemprompten. Ge användaren möjlighet att välja hur detaljerad agenten är, dess skrivstil och eventuella begränsningar för vad agenten inte bör prata om. Tillåt användaren att visa och radera eventuella associerade filer eller data, frågor och tidigare konversationer.
-3. **Konsekvens** – Se till att ikonerna för Dela fråga, lägga till en fil eller bild och tagga någon eller något är standard och igenkännbara. Använd gemklammerikonen för att indikera filuppladdning/delning med agenten och en bildikon för att indikera uppladdning av grafik.
+1. **Transparens** – Låt användaren veta att reseagenten är en AI-aktiverad agent. Ge några grundläggande instruktioner om hur man kommer igång (t.ex. ett "Hej"-meddelande, exempelpromptar). Dokumentera detta tydligt på produktsidan. Visa listan över prompts som en användare har efterfrågat tidigare. Gör det tydligt hur man ger feedback (tummen upp och tummen ner, Knappen Skicka feedback osv.). Redogör tydligt om agenten har användnings- eller ämnesbegränsningar.
+2. **Kontroll** – Se till att det är tydligt hur användaren kan modifiera agenten efter att den skapats med saker som Systemprompt. Gör det möjligt för användaren att välja hur utförlig agenten är, dess skrivstil och eventuella förbehåll för vad agenten inte bör prata om. Tillåt användaren att visa och ta bort associerade filer eller data, prompts och tidigare konversationer.
+3. **Konsistens** – Se till att ikonerna för Dela prompt, lägga till en fil eller ett foto och att tagga någon eller något är standardiserade och igenkännbara. Använd gem-ikonen för att indikera filuppladdning/delning med agenten, och en bildikon för att indikera grafikuppladdning.
 
-## Exempelkoder
+## Kodexempel
 
 - Python: [Agent Framework](./code_samples/03-python-agent-framework.ipynb)
 - .NET: [Agent Framework](./code_samples/03-dotnet-agent-framework.md)
 
-## Har du fler frågor om agentiska AI-designmönster?
 
-Gå med i [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) för att träffa andra elever, delta i öppet hus och få svar på dina frågor om AI-agenter.
+## Har du fler frågor om agentiska designmönster för AI?
+
+Gå med i [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) för att träffa andra deltagare, delta i kontorstider och få dina frågor om AI-agenter besvarade.
 
 ## Ytterligare resurser
 
-- <a href="https://openai.com" target="_blank">Praxis för styrning av agentiska AI-system | OpenAI</a>
-- <a href="https://microsoft.com" target="_blank">HAX Toolkit Project - Microsoft Research</a>
-- <a href="https://responsibleaitoolbox.ai" target="_blank">Responsible AI Toolbox</a>
+- <a href="https://openai.com" target="_blank">Riktlinjer för styrning av agentiska AI-system | OpenAI</a>
+- <a href="https://microsoft.com" target="_blank">HAX Toolkit-projektet - Microsoft Research</a>
+- <a href="https://responsibleaitoolbox.ai" target="_blank">Ansvarsfull AI-verktygslåda</a>
 
 ## Föregående lektion
 
@@ -121,6 +113,6 @@ Gå med i [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) för att 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Ansvarsfriskrivning:
+Detta dokument har översatts med hjälp av AI-översättningstjänsten Co-op Translator (https://github.com/Azure/co-op-translator). Vi strävar efter noggrannhet, men var medveten om att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet i dess ursprungliga språkversion bör anses vara den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

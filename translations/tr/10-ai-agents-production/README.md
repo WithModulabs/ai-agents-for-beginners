@@ -1,92 +1,89 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cdfd0acc8592c1af14f8637833450375",
-  "translation_date": "2025-08-29T13:10:45+00:00",
-  "source_file": "10-ai-agents-production/README.md",
-  "language_code": "tr"
-}
--->
 # Üretimde AI Ajanları: Gözlemlenebilirlik ve Değerlendirme
 
-[![Üretimde AI Ajanları](../../../translated_images/lesson-10-thumbnail.2b79a30773db093e0b4fb47aaa618069e0afb4745fad4836526cf51df87f9ac9.tr.png)](https://youtu.be/l4TP6IyJxmQ?si=reGOyeqjxFevyDq9)
+[![Üretimde AI Ajanları](../../../translated_images/tr/lesson-10-thumbnail.2b79a30773db093e.webp)](https://youtu.be/l4TP6IyJxmQ?si=reGOyeqjxFevyDq9)
 
-AI ajanları deneysel prototiplerden gerçek dünya uygulamalarına geçerken, davranışlarını anlamak, performanslarını izlemek ve çıktıları sistematik olarak değerlendirmek önemli hale gelir.
+AI ajanları deneysel prototiplerden gerçek dünya uygulamalarına doğru ilerledikçe, davranışlarını anlamak, performanslarını izlemek ve çıktıları sistematik olarak değerlendirmek önem kazanır.
 
 ## Öğrenme Hedefleri
 
-Bu dersi tamamladıktan sonra şunları öğreneceksiniz:
-- Ajan gözlemlenebilirliği ve değerlendirme ile ilgili temel kavramlar
-- Ajanların performansını, maliyetlerini ve etkinliğini artırma teknikleri
-- AI ajanlarınızı sistematik olarak nasıl ve ne şekilde değerlendireceğiniz
-- AI ajanlarını üretime alırken maliyetleri nasıl kontrol edeceğiniz
-- AutoGen ile oluşturulan ajanları nasıl enstrüman edeceğiniz
+Bu dersi tamamladıktan sonra şunları bilecek/anlayacaksınız:
+- Ajan gözlemlenebilirliği ve değerlendirmesinin temel kavramları
+- Ajanların performansını, maliyetlerini ve etkinliğini iyileştirme teknikleri
+- AI ajanlarınızı neyin ve nasıl sistematik olarak değerlendireceğiniz
+- AI ajanlarını üretime dağıtırken maliyetleri nasıl kontrol edeceğiniz
+- Microsoft Agent Framework ile oluşturulmuş ajanları nasıl enstrümante edeceğiniz
 
-Amaç, "kara kutu" ajanlarınızı şeffaf, yönetilebilir ve güvenilir sistemlere dönüştürmek için gerekli bilgiyi sağlamaktır.
+Amaç, "kara kutu" ajanlarınızı şeffaf, yönetilebilir ve güvenilir sistemlere dönüştürmek için gerekli bilgiyle donatmaktır.
 
-_**Not:** Güvenli ve güvenilir AI ajanları dağıtmak önemlidir. [Güvenilir AI Ajanları Oluşturma](./06-building-trustworthy-agents/README.md) dersine göz atmayı unutmayın._
+_**Not:** Güvenli ve güvenilir AI Ajanları dağıtmak önemlidir. Ayrıca [Güvenilir AI Ajanları Oluşturma](./06-building-trustworthy-agents/README.md) dersine göz atın._
 
-## İzler ve Aralıklar
+## İzler ve Span'lar
 
-[Langfuse](https://langfuse.com/) veya [Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry) gibi gözlemlenebilirlik araçları genellikle ajan çalıştırmalarını izler ve aralıklar olarak temsil eder.
+Gözlemlenebilirlik araçları, örneğin [Langfuse](https://langfuse.com/) veya [Microsoft Foundry](https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry), genellikle ajan çalıştırmalarını izler ve span'lar olarak temsil eder.
 
-- **İz**: Bir ajan görevinin başlangıçtan bitişe kadar olan tam sürecini temsil eder (örneğin, bir kullanıcı sorgusunu işleme).
-- **Aralıklar**: İz içindeki bireysel adımlardır (örneğin, bir dil modeli çağırma veya veri alma).
+- **İz (Trace)**, bir ajan görevini baştan sona (ör. bir kullanıcı sorgusunu işleme) temsil eder.
+- **Span'lar** iz içindeki bireysel adımlardır (ör. bir dil modelini çağırma veya veri getirme gibi).
 
-![Langfuse'deki İz Ağacı](https://langfuse.com/images/cookbook/example-autogen-evaluation/trace-tree.png)
+![Langfuse'ta iz ağacı](https://langfuse.com/images/cookbook/example-autogen-evaluation/trace-tree.png)
+<!-- Image URL retained for illustration purposes -->
 
-Gözlemlenebilirlik olmadan, bir AI ajanı "kara kutu" gibi hissedilebilir - iç durumu ve mantığı opaktır, bu da sorunları teşhis etmeyi veya performansı optimize etmeyi zorlaştırır. Gözlemlenebilirlik ile ajanlar "cam kutulara" dönüşür, bu da güven oluşturmak ve doğru şekilde çalıştıklarından emin olmak için hayati önem taşır.
+Gözlemlenebilirlik olmadan, bir AI ajanı "kara kutu" gibi gelebilir — iç durumu ve muhakemesi opak olur, bu da sorunları teşhis etmeyi veya performansı optimize etmeyi zorlaştırır. Gözlemlenebilirlikle ajanlar "cam kutular" haline gelir; bu, güven oluşturmak ve beklenen şekilde çalıştıklarından emin olmak için hayati bir şeffaflık sağlar. 
 
-## Üretim Ortamlarında Gözlemlenebilirliğin Önemi
+## Gözlemlenebilirliğin Üretim Ortamlarında Neden Önemli Olduğu
 
-AI ajanlarını üretim ortamlarına taşımak, yeni bir dizi zorluk ve gereksinim getirir. Gözlemlenebilirlik artık "olsa iyi olur" değil, kritik bir yetenek haline gelir:
+AI ajanlarını üretim ortamlarına taşımak yeni zorluklar ve gereksinimler getirir. Gözlemlenebilirlik artık "iyi olur" seviyesinde değil, kritik bir yetenektir:
 
-*   **Hata Ayıklama ve Kaynak Analizi**: Bir ajan başarısız olduğunda veya beklenmedik bir çıktı ürettiğinde, gözlemlenebilirlik araçları hatanın kaynağını belirlemek için gerekli izleri sağlar. Bu, birden fazla LLM çağrısı, araç etkileşimleri ve koşullu mantık içerebilen karmaşık ajanlar için özellikle önemlidir.
-*   **Gecikme ve Maliyet Yönetimi**: AI ajanları genellikle token veya çağrı başına ücretlendirilen LLM'lere ve diğer harici API'lere dayanır. Gözlemlenebilirlik, bu çağrıların hassas bir şekilde izlenmesini sağlar ve aşırı yavaş veya pahalı işlemleri belirlemeye yardımcı olur. Bu, ekiplerin istemleri optimize etmesine, daha verimli modeller seçmesine veya iş akışlarını yeniden tasarlamasına olanak tanır, böylece operasyonel maliyetler yönetilir ve iyi bir kullanıcı deneyimi sağlanır.
-*   **Güven, Güvenlik ve Uyumluluk**: Birçok uygulamada, ajanların güvenli ve etik bir şekilde davranmasını sağlamak önemlidir. Gözlemlenebilirlik, ajan eylemleri ve kararlarının bir denetim izini sağlar. Bu, istem enjeksiyonunu, zararlı içerik üretimini veya kişisel olarak tanımlanabilir bilgilerin (PII) yanlış kullanılmasını tespit etmek ve hafifletmek için kullanılabilir. Örneğin, bir ajanın neden belirli bir yanıt verdiğini veya belirli bir aracı kullandığını anlamak için izleri inceleyebilirsiniz.
-*   **Sürekli İyileştirme Döngüleri**: Gözlemlenebilirlik verileri, iteratif bir geliştirme sürecinin temelini oluşturur. Ajanların gerçek dünyada nasıl performans gösterdiğini izleyerek, ekipler iyileştirme alanlarını belirleyebilir, modelleri ince ayar yapmak için veri toplayabilir ve değişikliklerin etkisini doğrulayabilir. Bu, çevrimiçi değerlendirmeden elde edilen üretim içgörülerinin çevrimdışı deney ve iyileştirmeyi bilgilendirdiği bir geri bildirim döngüsü oluşturur ve ajan performansında kademeli iyileşmelere yol açar.
+*   **Hata Ayıklama ve Kök Neden Analizi**: Bir ajan başarısız olduğunda veya beklenmeyen bir çıktı ürettiğinde, gözlemlenebilirlik araçları hatanın kaynağını belirlemek için gereken izleri sağlar. Bu, birden çok LLM çağrısı, araç etkileşimleri ve koşullu mantık içerebilen karmaşık ajanlarda özellikle önemlidir.
+*   **Gecikme ve Maliyet Yönetimi**: AI ajanları sıklıkla token başına veya çağrı başına faturalandırılan LLM'ler ve diğer harici API'lere dayanır. Gözlemlenebilirlik bu çağrıların hassas takibini sağlar, aşırı yavaş veya pahalı işlemleri tespit etmeye yardımcı olur. Bu, ekiplerin prompt'ları optimize etmesini, daha verimli modeller seçmesini veya operasyonel maliyetleri yönetmek ve iyi bir kullanıcı deneyimi sağlamak için iş akışlarını yeniden tasarlamasını mümkün kılar.
+*   **Güven, Güvenlik ve Uyumluluk**: Birçok uygulamada, ajanların güvenli ve etik davranmasını sağlamak önemlidir. Gözlemlenebilirlik ajan eylemlerinin ve kararlarının bir denetleme izini sağlar. Bu, prompt enjeksiyonu, zararlı içerik üretimi veya kişisel olarak tanımlanabilir bilgilerin (PII) yanlış kullanımı gibi sorunları tespit etmek ve hafifletmek için kullanılabilir. Örneğin, bir ajanın belirli bir yanıtı neden verdiğini veya belirli bir aracı neden kullandığını anlamak için izleri inceleyebilirsiniz.
+*   **Sürekli İyileştirme Döngüleri**: Gözlemlenebilirlik verileri yinelemeli geliştirme sürecinin temelidir. Ajanların gerçek dünyadaki performansını izleyerek ekipler iyileştirme alanlarını belirleyebilir, modelleri ince ayar için veri toplayabilir ve yapılan değişikliklerin etkisini doğrulayabilir. Bu, üretim görüşlerinin (çevrimiçi değerlendirmeden) çevrimdışı deneylere ve geliştirmelere bilgi sağlayan bir geri bildirim döngüsü oluşturur; sonuç olarak ajan performansı kademeli olarak iyileşir.
 
-## İzlenmesi Gereken Temel Metrikler
+## İzlenecek Temel Metrikler
 
-Ajan davranışını izlemek ve anlamak için bir dizi metrik ve sinyal izlenmelidir. Belirli metrikler ajanın amacına bağlı olarak değişebilirken, bazıları evrensel olarak önemlidir.
+Ajan davranışını izlemek ve anlamak için çeşitli metrik ve sinyaller takip edilmelidir. Belirli metrikler ajanın amacına göre değişebilir, ancak bazıları evrensel olarak önemlidir.
 
-İşte gözlemlenebilirlik araçlarının izlediği en yaygın metriklerden bazıları:
+Gözlemlenebilirlik araçlarının izlediği en yaygın metriklerden bazıları şunlardır:
 
-**Gecikme:** Ajan ne kadar hızlı yanıt veriyor? Uzun bekleme süreleri kullanıcı deneyimini olumsuz etkiler. Ajan çalıştırmalarını izleyerek görevler ve bireysel adımlar için gecikmeyi ölçmelisiniz. Örneğin, tüm model çağrıları için 20 saniye süren bir ajan, daha hızlı bir model kullanılarak veya model çağrıları paralel olarak çalıştırılarak hızlandırılabilir.
+**Gecikme:** Ajan ne kadar hızlı yanıt veriyor? Uzun bekleme süreleri kullanıcı deneyimini olumsuz etkiler. Ajan çalıştırmalarını izleyerek görevler ve bireysel adımlar için gecikmeyi ölçmelisiniz. Örneğin, tüm model çağrıları için 20 saniye alan bir ajan, daha hızlı bir model kullanılarak veya model çağrılarını paralel çalıştırarak hızlandırılabilir.
 
-**Maliyetler:** Ajan çalıştırma başına maliyet nedir? AI ajanları, token başına ücretlendirilen LLM çağrılarına veya harici API'lere dayanır. Sık araç kullanımı veya birden fazla istem maliyetleri hızla artırabilir. Örneğin, bir ajan, marjinal kalite iyileştirmesi için bir LLM'yi beş kez çağırıyorsa, maliyetin haklı olup olmadığını değerlendirmeli veya çağrı sayısını azaltmalı ya da daha ucuz bir model kullanmalısınız. Gerçek zamanlı izleme, beklenmedik artışları (örneğin, aşırı API döngülerine neden olan hatalar) belirlemeye de yardımcı olabilir.
+**Maliyetler:** Bir ajan çalıştırmasının maliyeti nedir? AI ajanları token başına faturalandırılan LLM çağrılarına veya harici API'lere dayanır. Sık araç kullanımı veya birden fazla prompt hızla maliyetleri artırabilir. Örneğin, bir ajan marjinal kalite iyileştirmesi için bir LLM'yi beş kez çağırıyorsa, maliyetin haklı olup olmadığını veya çağrı sayısını azaltıp daha ucuz bir model kullanıp kullanamayacağınızı değerlendirmeniz gerekir. Gerçek zamanlı izleme ayrıca beklenmedik artışları tespit etmeye yardımcı olabilir (örn. aşırı API döngülerine neden olan hatalar).
 
-**İstek Hataları:** Ajan kaç isteği başarısız oldu? Bu, API hatalarını veya başarısız araç çağrılarını içerebilir. Ajanınızı üretimde bu hatalara karşı daha sağlam hale getirmek için geri dönüşler veya yeniden denemeler ayarlayabilirsiniz. Örneğin, LLM sağlayıcı A çalışmıyorsa, yedek olarak LLM sağlayıcı B'ye geçebilirsiniz.
+**İstek Hataları:** Ajan kaç istekte başarısız oldu? Bu, API hatalarını veya başarısız araç çağrılarını içerebilir. Üretimde ajanın bunlara karşı daha dayanıklı olması için geri dönüşler veya yeniden denemeler ayarlayabilirsiniz. Örn. LLM sağlayıcısı A kapalıysa, yedek olarak LLM sağlayıcısı B'ye geçersiniz.
 
-**Kullanıcı Geri Bildirimi:** Doğrudan kullanıcı değerlendirmeleri değerli içgörüler sağlar. Bu, açık derecelendirmeleri (👍beğen/👎beğenme, ⭐1-5 yıldız) veya metinsel yorumları içerebilir. Tutarlı olumsuz geri bildirimler, ajanın beklendiği gibi çalışmadığının bir işareti olarak sizi uyarmalıdır.
+**Kullanıcı Geri Bildirimi:** Doğrudan kullanıcı değerlendirmelerini uygulamak değerli içgörüler sağlar. Bu, açık değerlendirmeleri içerebilir (beğeni/beğenmeme, 1-5 yıldız gibi) veya metinsel yorumlar. Tutarlı olumsuz geri bildirimler, ajanın beklendiği gibi çalışmadığına işaret eder.
 
-**Dolaylı Kullanıcı Geri Bildirimi:** Kullanıcı davranışları, açık derecelendirmeler olmadan bile dolaylı geri bildirim sağlar. Bu, hemen soru yeniden biçimlendirme, tekrarlanan sorgular veya yeniden deneme düğmesine tıklama gibi davranışları içerebilir. Örneğin, kullanıcıların aynı soruyu tekrar tekrar sorduğunu görüyorsanız, bu ajanın beklendiği gibi çalışmadığının bir işaretidir.
+**Dolaylı Kullanıcı Geri Bildirimi:** Kullanıcı davranışları, açık değerlendirme olmasa bile dolaylı geri bildirim sağlar. Bu, anında soruyu yeniden ifade etme, tekrar eden sorgular veya bir yeniden dene düğmesine tıklama gibi davranışları içerebilir. Örn. kullanıcıların aynı soruyu tekrar tekrar sorduğunu görüyorsanız, bu ajanının beklendiği gibi çalışmadığının bir işaretidir.
 
-**Doğruluk:** Ajan ne sıklıkla doğru veya istenen çıktılar üretiyor? Doğruluk tanımları değişir (örneğin, problem çözme doğruluğu, bilgi alma doğruluğu, kullanıcı memnuniyeti). İlk adım, ajanın başarısının nasıl göründüğünü tanımlamaktır. Doğruluğu otomatik kontroller, değerlendirme puanları veya görev tamamlama etiketleri aracılığıyla izleyebilirsiniz. Örneğin, izleri "başarılı" veya "başarısız" olarak işaretlemek.
+**Doğruluk:** Ajan ne sıklıkla doğru veya istenen çıktılar üretiyor? Doğruluk tanımları değişkenlik gösterir (örn. problem çözme doğruluğu, bilgi alma doğruluğu, kullanıcı memnuniyeti). İlk adım, ajanın başarı kriterinin ne olduğunu tanımlamaktır. Doğruluğu otomatik kontroller, değerlendirme puanları veya görev tamamlama etiketleriyle izleyebilirsiniz. Örneğin, izleri "başarılı" veya "başarısız" olarak işaretlemek.
 
-**Otomatik Değerlendirme Metrikleri:** Otomatik değerlendirmeler de ayarlayabilirsiniz. Örneğin, bir LLM'yi ajanın çıktısını puanlamak için kullanabilirsiniz, örneğin, yardımcı olup olmadığı, doğru olup olmadığı gibi. Ayrıca, ajanın farklı yönlerini puanlamanıza yardımcı olan birkaç açık kaynak kütüphanesi vardır. Örneğin, [RAGAS](https://docs.ragas.io/) RAG ajanları için veya [LLM Guard](https://llm-guard.com/) zararlı dil veya istem enjeksiyonunu tespit etmek için.
+**Otomatik Değerlendirme Metrikleri:** Otomatik eval'ler de kurabilirsiniz. Örneğin, bir LLM'yi ajanın çıktısını yardımcı olup olmadığı, doğru olup olmadığı gibi ölçmek için puanlama amacıyla kullanabilirsiniz. Ajana ilişkin farklı yönleri puanlamanıza yardımcı olan birkaç açık kaynak kütüphane de vardır. Örn. RAG ajanları için [RAGAS](https://docs.ragas.io/) veya zararlı dil ya da prompt enjeksiyonunu tespit etmek için [LLM Guard](https://llm-guard.com/).
 
-Pratikte, bu metriklerin bir kombinasyonu bir AI ajanın sağlığını en iyi şekilde kapsar. Bu bölümün [örnek not defterinde](./code_samples/10_autogen_evaluation.ipynb), bu metriklerin gerçek örneklerde nasıl göründüğünü göstereceğiz, ancak önce tipik bir değerlendirme iş akışının nasıl göründüğünü öğreneceğiz.
+Uygulamada, bu metriklerin bir kombinasyonu AI ajanının sağlığını en iyi şekilde kapsar. Bu bölümün [örnek defterinde](./code_samples/10-expense_claim-demo.ipynb) bu metriklerin gerçek örneklerde nasıl göründüğünü göstereceğiz ancak önce tipik bir değerlendirme iş akışının nasıl göründüğünü öğreneceğiz.
 
-## Ajanınızı Enstrüman Edin
+## Ajanınızı Araçlandırın
 
-İzleme verilerini toplamak için kodunuzu enstrüman etmeniz gerekecek. Amaç, ajan kodunu izler ve metrikler yayacak şekilde enstrüman etmek ve bunları bir gözlemlenebilirlik platformu tarafından yakalanabilir, işlenebilir ve görselleştirilebilir hale getirmektir.
+İzleme verilerini toplamak için kodunuzu enstrümante etmeniz gerekir. Amaç, gözlemlenebilirlik platformu tarafından yakalanabilecek, işlenebilecek ve görselleştirilebilecek izler ve metrikler yayacak şekilde ajan kodunu araçlandırmaktır.
 
-**OpenTelemetry (OTel):** [OpenTelemetry](https://opentelemetry.io/) LLM gözlemlenebilirliği için endüstri standardı olarak ortaya çıkmıştır. Telemetri verilerini oluşturmak, toplamak ve dışa aktarmak için bir dizi API, SDK ve araç sağlar.
+**OpenTelemetry (OTel):** [OpenTelemetry](https://opentelemetry.io/) LLM gözlemlenebilirliği için endüstri standardı olarak öne çıkmıştır. Telemetri verisi üretmek, toplamak ve dışa aktarmak için bir dizi API, SDK ve araç sağlar. 
 
-Mevcut ajan çerçevelerini saran ve OpenTelemetry aralıklarını bir gözlemlenebilirlik aracına dışa aktarmayı kolaylaştıran birçok enstrümantasyon kütüphanesi vardır. Aşağıda, [OpenLit enstrümantasyon kütüphanesi](https://github.com/openlit/openlit) ile bir AutoGen ajanını enstrüman etme örneği verilmiştir:
+Mevcut ajan çerçevelerini saran ve OpenTelemetry span'larını bir gözlemlenebilirlik aracına kolayca aktarmayı sağlayan birçok enstrümantasyon kütüphanesi vardır. Microsoft Agent Framework, OpenTelemetry ile yerel olarak entegre olur. Aşağıda bir MAF ajanını araçlandırmaya ilişkin bir örnek bulunmaktadır:
 
 ```python
-import openlit
+from agent_framework.observability import get_tracer, get_meter
 
-openlit.init(tracer = langfuse._otel_tracer, disable_batch = True)
+tracer = get_tracer()
+meter = get_meter()
+
+with tracer.start_as_current_span("agent_run"):
+    # Ajanın yürütülmesi otomatik olarak izlenir
+    pass
 ```
 
-Bu bölümdeki [örnek not defteri](./code_samples/10_autogen_evaluation.ipynb), AutoGen ajanınızı nasıl enstrüman edeceğinizi gösterecektir.
+Bu bölümdeki [örnek defter](./code_samples/10-expense_claim-demo.ipynb), MAF ajanınızı nasıl enstrümante edeceğinizi gösterecektir.
 
-**Manuel Aralık Oluşturma:** Enstrümantasyon kütüphaneleri iyi bir temel sağlar, ancak genellikle daha ayrıntılı veya özel bilgilere ihtiyaç duyulan durumlar vardır. Manuel olarak aralıklar oluşturabilir ve özel uygulama mantığı ekleyebilirsiniz. Daha da önemlisi, otomatik veya manuel olarak oluşturulan aralıkları özel özniteliklerle (etiketler veya meta veriler olarak da bilinir) zenginleştirebilirsiniz. Bu öznitelikler, hata ayıklama veya analiz için yararlı olabilecek iş spesifik verileri, ara hesaplamaları veya herhangi bir bağlamı içerebilir, örneğin `user_id`, `session_id` veya `model_version`.
+**Elle Span Oluşturma:** Enstrümantasyon kütüphaneleri iyi bir temel sağlar, ancak daha ayrıntılı veya özel bilgiye ihtiyaç duyulan durumlar sıkça ortaya çıkar. Özel uygulama mantığı eklemek için elle span'lar oluşturabilirsiniz. Daha da önemlisi, otomatik veya elle oluşturulmuş span'ları özel özniteliklerle (etiketler veya meta veriler olarak da bilinir) zenginleştirebilirsiniz. Bu öznitelikler işe özgü verileri, ara hesaplamaları veya hata ayıklama ya da analiz için yararlı olabilecek herhangi bir bağlamı içerebilir; örneğin `user_id`, `session_id` veya `model_version`.
 
-[Langfuse Python SDK](https://langfuse.com/docs/sdk/python/sdk-v3) ile izler ve aralıklar manuel olarak oluşturma örneği:
+Span ve izleri elle oluşturma örneği için [Langfuse Python SDK](https://langfuse.com/docs/sdk/python/sdk-v3) ile:
 
 ```python
 from langfuse import get_client
@@ -98,91 +95,84 @@ span = langfuse.start_span(name="my-span")
 span.end()
 ```
 
-## Ajan Değerlendirme
+## Ajan Değerlendirmesi
 
-Gözlemlenebilirlik bize metrikler sağlar, ancak değerlendirme, bu verileri analiz etme (ve testler yapma) sürecidir; bir AI ajanın ne kadar iyi performans gösterdiğini ve nasıl geliştirilebileceğini belirler. Başka bir deyişle, bu izler ve metriklere sahip olduğunuzda, ajanı nasıl değerlendireceğiniz ve kararlar alacağınız sorusuna yanıt verir.
+Gözlemlenebilirlik bize metrikler sağlar, ancak değerlendirme bu verileri (ve testleri) analiz ederek bir AI ajanın ne kadar iyi performans gösterdiğini ve nasıl geliştirilebileceğini belirleme sürecidir. Başka bir deyişle, bu izler ve metrikler elinizde olduğunda, ajanın yargılanması ve kararlar alınması için bunları nasıl kullanırsınız?
 
-Düzenli değerlendirme önemlidir çünkü AI ajanları genellikle deterministik değildir ve gelişebilir (güncellemeler veya model davranışındaki kaymalar yoluyla) – değerlendirme olmadan, "akıllı ajanın" işini iyi yapıp yapmadığını veya gerilediğini bilemezsiniz.
+Düzenli değerlendirme önemlidir çünkü AI ajanları genellikle deterministik değildir ve güncellemeler veya model davranışındaki kaymalarla evrilebilir — değerlendirme olmadan "akıllı ajanın" gerçekten işini iyi yapıp yapmadığını veya gerileme yaşayıp yaşamadığını bilemezsiniz.
 
-AI ajanları için iki değerlendirme kategorisi vardır: **çevrimdışı değerlendirme** ve **çevrimiçi değerlendirme**. Her ikisi de değerlidir ve birbirini tamamlar. Genellikle çevrimdışı değerlendirme ile başlarız, çünkü bu, herhangi bir ajanı dağıtmadan önce gerekli minimum adımdır.
+AI ajanları için iki değerlendirme kategorisi vardır: **çevrimiçi değerlendirme** ve **çevrimdışı değerlendirme**. Her ikisi de değerlidir ve birbirini tamamlar. Genellikle herhangi bir ajan dağıtımından önce asgari gerekli adım olduğu için çevrimdışı değerlendirme ile başlarız.
 
 ### Çevrimdışı Değerlendirme
 
-![Langfuse'deki Veri Kümesi Öğeleri](https://langfuse.com/images/cookbook/example-autogen-evaluation/example-dataset.png)
+![Langfuse'ta veri kümesi öğeleri](https://langfuse.com/images/cookbook/example-autogen-evaluation/example-dataset.png)
 
-Bu, ajanın kontrollü bir ortamda, genellikle test veri kümeleri kullanılarak, canlı kullanıcı sorguları olmadan değerlendirilmesini içerir. Beklenen çıktıyı veya doğru davranışı bildiğiniz, özenle seçilmiş veri kümeleri kullanırsınız ve ardından ajanı bunlar üzerinde çalıştırırsınız.
+Bu, ajanı kontrollü bir ortamda, genellikle canlı kullanıcı sorguları yerine test veri kümeleri kullanarak değerlendirmeyi içerir. Beklenen çıktı veya doğru davranışın bilindiği küratörlü veri kümelerini kullanırsınız ve ardından ajanınızı bunlar üzerinde çalıştırırsınız.
 
-Örneğin, bir matematik kelime problemi ajanı oluşturduysanız, bilinen cevaplara sahip [test veri kümesi](https://huggingface.co/datasets/gsm8k) olarak 100 problem kullanabilirsiniz. Çevrimdışı değerlendirme genellikle geliştirme sırasında yapılır (ve CI/CD süreçlerinin bir parçası olabilir) ve iyileştirmeleri kontrol etmek veya gerilemelere karşı koruma sağlamak için kullanılır. Avantajı, **tekrarlanabilir olması ve doğru bir şekilde doğruluk metrikleri elde edebilmenizdir, çünkü doğru yanıtlar elinizde vardır**. Ayrıca kullanıcı sorgularını simüle edebilir ve ajanın yanıtlarını ideal yanıtlarla karşılaştırabilir veya yukarıda açıklanan otomatik metrikleri kullanabilirsiniz.
+Örneğin, bir matematik metin problemi ajanı oluşturduysanız, bilinen cevapları olan 100 problemden oluşan bir [test veri kümesine](https://huggingface.co/datasets/gsm8k) sahip olabilirsiniz. Çevrimdışı değerlendirme genellikle geliştirme sırasında (ve CI/CD boru hatlarının bir parçası olabilir) iyileştirmeleri kontrol etmek veya gerilemelere karşı koruma sağlamak için yapılır. Avantajı, zemindeki gerçek sonuçlara sahip olduğunuz için **tekrarlanabilir olması ve net doğruluk metrikleri alabilmenizdir**. Ayrıca kullanıcı sorgularını simüle ederek ajanın yanıtlarını ideal cevaplarla karşılaştırabilir veya yukarıda açıklandığı gibi otomatik metrikler kullanabilirsiniz.
 
-Çevrimdışı değerlendirmenin temel zorluğu, test veri kümenizin kapsamlı ve güncel kalmasını sağlamaktır – ajan sabit bir test setinde iyi performans gösterebilir, ancak üretimde çok farklı sorgularla karşılaşabilir. Bu nedenle, test setlerini yeni uç durumlar ve gerçek dünya senaryolarını yansıtan örneklerle güncel tutmalısınız. Küçük "duman testi" vakaları ve daha büyük değerlendirme setlerinin bir karışımı faydalıdır: hızlı kontroller için küçük setler ve daha geniş performans metrikleri için daha büyük setler.
+Çevrimdışı değerlendirmenin temel zorluğu, test veri kümenizin kapsamlı ve alakalı kalmasını sağlamaktır — ajan sabit bir test kümesinde iyi performans gösterebilir ancak üretimde çok farklı sorgularla karşılaşabilir. Bu nedenle, test setlerini gerçek dünya senaryolarını yansıtan yeni uç durumlar ve örneklerle güncel tutmalısınız​. Küçük "smoke test" örnekleri ile daha geniş değerlendirme setlerinin bir karışımı faydalıdır: hızlı kontroller için küçük setler ve daha geniş performans ölçümleri için büyük setler​.
 
 ### Çevrimiçi Değerlendirme 
 
-![Gözlemlenebilirlik Metrikleri Genel Görünümü](https://langfuse.com/images/cookbook/example-autogen-evaluation/dashboard.png)
+![Gözlemlenebilirlik metrikleri genel bakışı](https://langfuse.com/images/cookbook/example-autogen-evaluation/dashboard.png)
 
-Bu, ajanın canlı, gerçek dünya ortamında, yani üretimdeki gerçek kullanım sırasında değerlendirilmesini ifade eder. Çevrimiçi değerlendirme, ajanın gerçek kullanıcı etkileşimlerindeki performansını sürekli olarak izlemeyi ve sonuçları analiz etmeyi içerir.
+Bu, ajanı canlı, gerçek dünya ortamında, yani üretimde gerçek kullanım sırasında değerlendirmeyi ifade eder. Çevrimiçi değerlendirme, ajan performansını gerçek kullanıcı etkileşimlerinde izlemeyi ve sonuçları sürekli olarak analiz etmeyi içerir.
 
-Örneğin, başarı oranlarını, kullanıcı memnuniyet puanlarını veya canlı trafik üzerindeki diğer metrikleri izleyebilirsiniz. Çevrimiçi değerlendirmenin avantajı, **laboratuvar ortamında tahmin edemeyeceğiniz şeyleri yakalamasıdır** – zamanla model kaymasını gözlemleyebilir (ajanın etkinliği giriş desenleri değiştikçe azalırsa) ve test verilerinizde olmayan beklenmedik sorguları veya durumları yakalayabilirsiniz. Bu, ajanın gerçek dünyada nasıl davrandığının gerçek bir resmini sağlar.
+Örneğin, canlı trafikte başarı oranlarını, kullanıcı memnuniyeti puanlarını veya diğer metrikleri izleyebilirsiniz. Çevrimiçi değerlendirmenin avantajı, **laboratuvar ortamında tahmin edemeyebileceğiniz durumları yakalaması**dır — ajanınızın etkinliği zaman içinde giriş desenleri değiştikçe model kaymasını gözlemleyebilir ve test verilerinizde olmayan beklenmedik sorguları ya da durumları tespit edebilirsiniz​. Bu, ajanın vahşi doğada nasıl davrandığına dair gerçek bir tablo sunar.
 
-Çevrimiçi değerlendirme genellikle dolaylı ve doğrudan kullanıcı geri bildirimlerini toplamayı içerir ve mümkünse gölge testleri veya A/B testleri çalıştırmayı (ajanın yeni bir versiyonunun eski versiyonla karşılaştırılması için paralel olarak çalıştırılması) içerebilir. Zorluk, canlı etkileşimler için güvenilir etiketler veya puanlar almak zor olabilir – kullanıcı geri bildirimlerine veya aşağı akış metriklerine (örneğin, kullanıcı sonucu tıklayıp tıklamadı mı) güvenebilirsiniz.
+Çevrimiçi değerlendirme genellikle tartışıldığı gibi açık ve kapanışsız kullanıcı geri bildirimlerini toplama ve ayrıca gölge testleri veya A/B testleri yürütmeyi içerebilir (yeni bir ajan sürümü karşılaştırma amacıyla paralel olarak çalıştırılır). Zorluk, canlı etkileşimler için güvenilir etiketler veya puanlar elde etmenin zor olabilmesidir — kullanıcı geri bildirimlerine veya kullanıcıların sonucu tıklayıp tıklamadığı gibi sonraki adım metriklerine güvenebilirsiniz.
 
 ### İkisini Birleştirme
 
-Çevrimiçi ve çevrimdışı değerlendirmeler birbirini dışlamaz; oldukça tamamlayıcıdırlar. Çevrimiçi izleme içgörüleri (örneğin, ajanın kötü performans gösterdiği yeni tür kullanıcı sorguları) çevrimdışı test veri kümelerini artırmak ve iyileştirmek için kullanılabilir. Tersine, çevrimdışı testlerde iyi performans gösteren ajanlar daha güvenle dağıtılabilir ve çevrimiçi olarak izlenebilir.
+Çevrimiçi ve çevrimdışı değerlendirmeler birbirini dışlamaz; birbirlerini tamamlarlar. Çevrimiçi izlemeden elde edilen içgörüler (örn. ajanın kötü performans gösterdiği yeni kullanıcı sorgusu türleri) çevrimdışı test veri kümelerini artırmak ve iyileştirmek için kullanılabilir. Tersine, çevrimdışı testlerde iyi performans gösteren ajanlar daha güvenle dağıtılabilir ve çevrimiçi olarak izlenebilir.
 
-Aslında, birçok ekip bir döngü benimser:
+Aslında birçok ekip bir döngü benimser:
 
-_çevrimdışı değerlendir -> dağıt -> çevrimiçi izle -> yeni hata vakalarını topla -> çevrimdışı veri kümesine ekle -> ajanı iyileştir -> tekrarla_.
+_değerlendir çevrimdışı -> dağıt -> çevrimiçi izle -> yeni hata vakalarını topla -> çevrimdışı veri kümesine ekle -> ajanı iyileştir -> tekrarla_.
 
 ## Yaygın Sorunlar
 
-AI ajanlarını üretime alırken çeşitli zorluklarla karşılaşabilirsiniz. İşte bazı yaygın sorunlar ve olası çözümleri:
+AI ajanlarını üretime dağıtırken çeşitli zorluklarla karşılaşabilirsiniz. İşte bazı yaygın sorunlar ve olası çözümleri:
 
 | **Sorun**    | **Olası Çözüm**   |
 | ------------- | ------------------ |
-| AI Ajanı görevleri tutarlı bir şekilde yerine getiremiyor | - AI Ajanına verilen istemi iyileştirin; hedefleri netleştirin.<br>- Görevleri alt görevlere bölmek ve bunları birden fazla ajan tarafından ele almak faydalı olabilir. |
-| AI Ajanı sürekli döngülere giriyor  | - Ajanın süreci ne zaman durduracağını bilmesi için açık sonlandırma şartları ve koşulları sağlayın. |
+| AI Ajanı görevleri tutarlı bir şekilde gerçekleştirmiyor | - AI Ajanına verilen prompt'u iyileştirin; hedefleri net bir şekilde belirtin.<br>- Görevleri alt görevlere bölmenin ve bunları birden çok ajan tarafından ele almanın yardımcı olup olmayacağını belirleyin. |
+| AI Ajanı sürekli döngülere giriyor  | - Ajanın işlemi ne zaman durduracağını bilmesi için net sonlandırma şartları ve koşulları sağlayın.<br>- Muhakeme ve planlama gerektiren karmaşık görevler için muhakeme görevlerinde uzmanlaşmış daha büyük bir model kullanın. |
+| AI Ajanının araç çağrıları iyi performans göstermiyor   | - Aracın çıktısını ajan sisteminin dışında test edin ve doğrulayın.<br>- Tanımlanan parametreleri, promptları ve araç isimlendirmesini iyileştirin.  |
+| Çok Ajanlı sistem tutarlı performans göstermiyor | - Her ajana verilen promptları daha spesifik ve birbirinden ayırt edici olacak şekilde geliştirin.<br>- Hangi ajanın doğru olduğuna karar vermek için "yönlendirme" veya kontrolör ajanı kullanarak hiyerarşik bir sistem kurun. |
 
-## AI Ajanlarının Üretimde Karşılaştığı Sorunlar
+Bu sorunların birçoğu, gözlemlenebilirlik devredeyken daha etkili bir şekilde tespit edilebilir. Daha önce tartıştığımız izler ve metrikler, ajan iş akışında problemin tam olarak nerede olduğunu belirlemeye yardımcı olarak hata ayıklamayı ve optimizasyonu çok daha verimli hale getirir.
 
-AI ajanlarını üretime alırken karşılaşabileceğiniz bazı yaygın sorunlar ve bunları çözmek için öneriler:
+## Maliyetleri Yönetme
+Here are some strategies to manage the costs of deploying AI agents to production:
 
-| **Sorun**                                   | **Çözüm Önerileri**                                                                                     |
-|---------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| Ajanın çıktıları tutarsız veya hatalı       | - Ajanın çıktısını gözden geçirin ve iyileştirme fırsatlarını belirleyin.<br>- Daha büyük bir model kullanmayı düşünün. |
-| Karmaşık görevlerde performans yetersiz     | - Karmaşık görevler için akıl yürütme görevlerine özel bir model kullanın.                              |
-| AI Ajan araç çağrıları iyi performans göstermiyor | - Aracın çıktısını ajan sistemi dışında test edin ve doğrulayın.<br>- Tanımlı parametreleri, istemleri ve araç adlarını iyileştirin. |
-| Çoklu Ajan sistemi tutarlı çalışmıyor       | - Her bir ajana verilen istemleri net ve birbirinden farklı olacak şekilde düzenleyin.<br>- Hangi ajanın doğru olduğunu belirlemek için bir "yönlendirme" veya kontrol ajanı kullanarak hiyerarşik bir sistem oluşturun. |
+**Daha Küçük Modellerin Kullanımı:** Küçük Dil Modelleri (SLMs) belirli ajan tabanlı kullanım durumlarında iyi performans gösterebilir ve maliyetleri önemli ölçüde azaltır. Daha önce bahsedildiği gibi, performansı belirlemek ve daha büyük modellerle karşılaştırmak için bir değerlendirme sistemi kurmak, bir SLM'in kullanım durumunuzda ne kadar iyi performans göstereceğini anlamanın en iyi yoludur. Niyet sınıflandırması veya parametre çıkarımı gibi daha basit görevler için SLM'leri kullanmayı, daha karmaşık muhakeme gerektiren görevler içinse daha büyük modelleri ayırmayı düşünün.
 
-Bu sorunların çoğu, gözlemlenebilirlik sağlandığında daha etkili bir şekilde tespit edilebilir. Daha önce tartıştığımız izleme ve metrikler, ajan iş akışında sorunların tam olarak nerede meydana geldiğini belirlemeye yardımcı olur ve hata ayıklama ile optimizasyonu çok daha verimli hale getirir.
+**Yönlendirici Model Kullanımı:** Benzer bir strateji, çeşitli model ve boyutlar kullanmaktır. İstekleri karmaşıklığa göre en uygun modellere yönlendirmek için bir LLM/SLM veya sunucusuz fonksiyon kullanabilirsiniz. Bu, doğru görevlerde performansı sağlarken maliyetleri azaltmaya da yardımcı olacaktır. Örneğin, basit sorguları daha küçük, daha hızlı modellere yönlendirin ve yalnızca karmaşık akıl yürütme görevleri için pahalı büyük modelleri kullanın.
 
-## Maliyet Yönetimi
+**Yanıtları Önbellekleme:** Yaygın istekleri ve görevleri tespit etmek ve yanıtları ajan tabanlı sisteminizden geçmeden önce sağlamak, benzer isteklerin hacmini azaltmanın iyi bir yoludur. Bir isteğin önbelleğe alınmış isteklere ne kadar benzediğini daha temel AI modelleri kullanarak belirleyen bir akış bile uygulayabilirsiniz. Bu strateji, sık sorulan sorular veya yaygın iş akışları için maliyetleri önemli ölçüde azaltabilir.
 
-AI ajanlarını üretime alırken maliyetleri yönetmek için bazı stratejiler:
+## Bunun pratikte nasıl çalıştığını görelim
 
-**Daha Küçük Modeller Kullanmak:** Küçük Dil Modelleri (SLM'ler), belirli ajan kullanım durumlarında iyi performans gösterebilir ve maliyetleri önemli ölçüde azaltır. Daha önce belirtildiği gibi, performansı daha büyük modellerle karşılaştırmak ve değerlendirmek için bir sistem oluşturmak, SLM'nin kullanım durumunuzda ne kadar iyi performans göstereceğini anlamanın en iyi yoludur. Örneğin, niyet sınıflandırması veya parametre çıkarımı gibi daha basit görevler için SLM'leri kullanmayı, daha karmaşık akıl yürütme görevleri için ise daha büyük modelleri saklamayı düşünebilirsiniz.
+In the [bu bölümün örnek not defteri](./code_samples/10-expense_claim-demo.ipynb), we’ll see examples of how we can use observability tools to monitor and evaluate our agent.
 
-**Yönlendirme Modeli Kullanmak:** Benzer bir strateji, farklı boyutlarda ve çeşitlilikte modeller kullanmaktır. Talepleri karmaşıklığa göre en uygun modellere yönlendirmek için bir LLM/SLM veya sunucusuz bir işlev kullanabilirsiniz. Bu, maliyetleri düşürürken doğru görevlerde performansı da garanti eder. Örneğin, basit sorguları daha küçük ve hızlı modellere yönlendirin ve yalnızca karmaşık akıl yürütme görevleri için pahalı büyük modelleri kullanın.
 
-**Yanıtları Önbelleğe Almak:** Yaygın istekleri ve görevleri belirlemek ve bunların yanıtlarını ajan sisteminizden geçmeden önce sağlamak, benzer isteklerin hacmini azaltmanın iyi bir yoludur. Daha temel AI modelleri kullanarak bir isteğin önbelleğe alınmış isteklere ne kadar benzediğini belirlemek için bir akış bile uygulayabilirsiniz. Bu strateji, sıkça sorulan sorular veya yaygın iş akışları için maliyetleri önemli ölçüde azaltabilir.
+### Üretimdeki AI Ajanları hakkında daha fazla sorunuz mu var?
 
-## Bunu Pratikte Nasıl Uygulayabiliriz?
-
-Bu bölümün [örnek not defterinde](./code_samples/10_autogen_evaluation.ipynb), ajanlarımızı izlemek ve değerlendirmek için gözlemlenebilirlik araçlarını nasıl kullanabileceğimize dair örnekler göreceğiz.
-
-### AI Ajanları Hakkında Daha Fazla Sorunuz mu Var?
-
-[Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) topluluğuna katılarak diğer öğrenenlerle tanışabilir, ofis saatlerine katılabilir ve AI ajanlarıyla ilgili sorularınıza yanıt alabilirsiniz.
+Diğer öğrenenlerle tanışmak, ofis saatlerine katılmak ve AI Ajanlarınızla ilgili sorularınıza yanıt bulmak için [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) sunucusuna katılın.
 
 ## Önceki Ders
 
-[Metakognisyon Tasarım Deseni](../09-metacognition/README.md)
+[Metabiliş Tasarım Deseni](../09-metacognition/README.md)
 
 ## Sonraki Ders
 
-[Ajan Protokolleri](../11-agentic-protocols/README.md)
+[Ajan Tabanlı Protokoller](../11-agentic-protocols/README.md)
 
 ---
 
-**Feragatname**:  
-Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) adlı yapay zeka çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belgenin kendi dilindeki hali, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+Feragatname:
+Bu belge, yapay zeka çeviri hizmeti Co-op Translator (https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilindeki hâliyle yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel bir insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan herhangi bir yanlış anlama veya yanlış yorumlamadan sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

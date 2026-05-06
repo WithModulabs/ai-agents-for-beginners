@@ -1,53 +1,44 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "498802b4c3c3cc486b86f27a12cebb34",
-  "translation_date": "2025-08-29T23:41:52+00:00",
-  "source_file": "06-building-trustworthy-agents/README.md",
-  "language_code": "uk"
-}
--->
-[![Довірені AI-агенти](../../../translated_images/lesson-6-thumbnail.a58ab36c099038d4f786c2b0d5d6e89f41f4c2ecc05ab10b67bced2695eeb218.uk.png)](https://youtu.be/iZKkMEGBCUQ?si=Q-kEbcyHUMPoHp8L)
+[![Надійні агенти ШІ](../../../translated_images/uk/lesson-6-thumbnail.a58ab36c099038d4.webp)](https://youtu.be/iZKkMEGBCUQ?si=Q-kEbcyHUMPoHp8L)
 
 > _(Натисніть на зображення вище, щоб переглянути відео цього уроку)_
 
-# Створення довірених AI-агентів
+# Побудова надійних агентів ШІ
 
-## Вступ
+## Introduction
 
-Цей урок охоплює:
+This lesson will cover:
 
-- Як створювати та розгортати безпечних і ефективних AI-агентів.
-- Важливі аспекти безпеки при розробці AI-агентів.
-- Як забезпечити конфіденційність даних і користувачів під час розробки AI-агентів.
+- How to build and deploy safe and effective AI Agents
+- Important security considerations when developing AI Agents.
+- How to maintain data and user privacy when developing AI Agents.
 
-## Цілі навчання
+## Learning Goals
 
-Після завершення цього уроку ви знатимете, як:
+After completing this lesson, you will know how to:
 
-- Визначати та зменшувати ризики при створенні AI-агентів.
-- Реалізовувати заходи безпеки для належного управління даними та доступом.
-- Створювати AI-агентів, які зберігають конфіденційність даних і забезпечують якісний користувацький досвід.
+- Identify and mitigate risks when creating AI Agents.
+- Implement security measures to ensure that data and access are properly managed.
+- Create AI Agents that maintain data privacy and provide a quality user experience.
 
-## Безпека
+## Safety
 
-Спочатку розглянемо створення безпечних агентних додатків. Безпека означає, що AI-агент виконує свої функції відповідно до задуму. Як розробники агентних додатків, ми маємо методи та інструменти для максимізації безпеки:
+Let's first look at building safe agentic applications. Safety means that the AI agent performs as designed. As builders of agentic applications, we have methods and tools to maximize safety:
 
-### Створення фреймворку системних повідомлень
+### Building a System Message Framework
 
-Якщо ви коли-небудь створювали AI-додаток із використанням великих мовних моделей (LLMs), ви знаєте, наскільки важливо розробити надійний системний запит або системне повідомлення. Ці запити встановлюють мета-правила, інструкції та керівні принципи для взаємодії LLM із користувачем і даними.
+If you have ever built an AI application using Large Language Models (LLMs), you know the importance of designing a robust system prompt or system message. These prompts establish the meta rules, instructions, and guidelines for how the LLM will interact with the user and data.
 
-Для AI-агентів системний запит ще важливіший, оскільки вони потребують дуже конкретних інструкцій для виконання завдань, які ми для них розробили.
+For AI Agents, the system prompt is even more important as the AI Agents will need highly specific instructions to complete the tasks we have designed for them.
 
-Щоб створювати масштабовані системні запити, ми можемо використовувати фреймворк системних повідомлень для створення одного або кількох агентів у нашому додатку:
+To create scalable system prompts, we can use a system message framework for building one or more agents in our application:
 
-![Створення фреймворку системних повідомлень](../../../translated_images/system-message-framework.3a97368c92d11d6814577b03cd128ec8c71a5fd1e26f341835cfa5df59ae87ae.uk.png)
+![Побудова структури системних повідомлень](../../../translated_images/uk/system-message-framework.3a97368c92d11d68.webp)
 
-#### Крок 1: Створіть мета-системне повідомлення
+#### Step 1: Create a Meta System Message 
 
-Мета-запит буде використовуватися LLM для генерації системних запитів для агентів, яких ми створюємо. Ми розробляємо його як шаблон, щоб ефективно створювати кілька агентів за потреби.
+The meta prompt will be used by an LLM to generate the system prompts for the agents we create. We design it as a template so that we can efficiently create multiple agents if needed.
 
-Ось приклад мета-системного повідомлення, яке ми можемо надати LLM:
+Here is an example of a meta system message we would give to the LLM:
 
 ```plaintext
 You are an expert at creating AI agent assistants. 
@@ -56,21 +47,21 @@ information that you will use to provide a system prompt for.
 To create the system prompt, be descriptive as possible and provide a structure that a system using an LLM can better understand the role and responsibilities of the AI assistant. 
 ```
 
-#### Крок 2: Створіть базовий запит
+#### Step 2: Create a basic prompt
 
-Наступний крок — створити базовий запит для опису AI-агента. Ви повинні включити роль агента, завдання, які він виконуватиме, та інші його обов’язки.
+The next step is to create a basic prompt to describe the AI Agent. You should include the role of the agent, the tasks the agent will complete, and any other responsibilities of the agent.
 
-Ось приклад:
+Here is an example:
 
 ```plaintext
 You are a travel agent for Contoso Travel that is great at booking flights for customers. To help customers you can perform the following tasks: lookup available flights, book flights, ask for preferences in seating and times for flights, cancel any previously booked flights and alert customers on any delays or cancellations of flights.  
 ```
 
-#### Крок 3: Надання базового системного повідомлення LLM
+#### Step 3: Provide Basic System Message to LLM
 
-Тепер ми можемо оптимізувати це системне повідомлення, надавши мета-системне повідомлення як системне повідомлення разом із нашим базовим системним повідомленням.
+Now we can optimize this system message by providing the meta system message as the system message and our basic system message.
 
-Це створить системне повідомлення, яке краще підходить для керування нашими AI-агентами:
+This will produce a system message that is better designed for guiding our AI agents:
 
 ```markdown
 **Company Name:** Contoso Travel  
@@ -122,98 +113,105 @@ This AI assistant is designed to streamline the flight booking process for custo
 
 ```
 
-#### Крок 4: Ітерація та вдосконалення
+#### Step 4: Iterate and Improve
 
-Цінність цього фреймворку системних повідомлень полягає в тому, щоб спростити створення системних повідомлень для кількох агентів, а також покращувати їх із часом. Рідко буває, що системне повідомлення працює ідеально з першого разу для всього випадку використання. Можливість вносити невеликі зміни та вдосконалення, змінюючи базове системне повідомлення та пропускаючи його через систему, дозволяє порівнювати та оцінювати результати.
+The value of this system message framework is to be able to scale creating system messages from multiple agents easier as well as improving your system messages over time. It is rare you will have a system message that works the first time for your complete use case. Being able to make small tweaks and improvements by changing the basic system message and running it through the system will allow you to compare and evaluate results.
 
-## Розуміння загроз
+## Understanding Threats
 
-Щоб створювати довірені AI-агенти, важливо розуміти та зменшувати ризики й загрози для вашого AI-агента. Розгляньмо деякі з можливих загроз для AI-агентів і способи їх уникнення.
+To build trustworthy AI agents, it is important to understand and mitigate the risks and threats to your AI agent. Let's look at only some of the different threats to AI agents and how you can better plan and prepare for them.
 
-![Розуміння загроз](../../../translated_images/understanding-threats.89edeada8a97fc0f7053558567d5dd27c0c333b74e47fffdde490fa6777a4c17.uk.png)
+![Розуміння загроз](../../../translated_images/uk/understanding-threats.89edeada8a97fc0f.webp)
 
-### Завдання та інструкції
+### Task and Instruction
 
-**Опис:** Зловмисники намагаються змінити інструкції або цілі AI-агента через запити або маніпуляцію вхідними даними.
+**Опис:** Зловмисники намагаються змінити інструкції або цілі агента ШІ шляхом підказування або маніпулювання вхідними даними.
 
-**Запобігання:** Виконуйте перевірки та фільтрацію вхідних даних, щоб виявляти потенційно небезпечні запити до їх обробки AI-агентом. Оскільки ці атаки зазвичай вимагають частих взаємодій із агентом, обмеження кількості кроків у розмові є ще одним способом запобігання таким атакам.
+**Пом'якшення**: Виконуйте перевірки валідації та фільтри вхідних даних, щоб виявляти потенційно небезпечні підкази до їх обробки агентом ШІ. Оскільки ці атаки зазвичай потребують частої взаємодії з агентом, обмеження кількості ходів у розмові — ще один спосіб запобігти таким типам атак.
 
-### Доступ до критичних систем
+### Access to Critical Systems
 
-**Опис:** Якщо AI-агент має доступ до систем і сервісів, які зберігають конфіденційні дані, зловмисники можуть скомпрометувати зв’язок між агентом і цими сервісами. Це можуть бути прямі атаки або непрямі спроби отримати інформацію про ці системи через агента.
+**Опис**: Якщо агент ШІ має доступ до систем і сервісів, які зберігають конфіденційні дані, зловмисники можуть скомпрометувати комунікацію між агентом і цими сервісами. Це можуть бути прямі атаки або непрямі спроби здобути інформацію про ці системи через агента.
 
-**Запобігання:** AI-агенти повинні мати доступ до систем лише за необхідності, щоб запобігти таким атакам. Зв’язок між агентом і системою також має бути захищеним. Реалізація автентифікації та контролю доступу є ще одним способом захисту цієї інформації.
+**Пом'якшення**: Агентам ШІ слід надавати доступ до систем лише за принципом необхідності, щоб запобігти таким типам атак. Комунікація між агентом і системою також має бути захищеною. Впровадження автентифікації та контролю доступу — ще один спосіб захисту цієї інформації.
 
-### Перевантаження ресурсів і сервісів
+### Resource and Service Overloading
 
-**Опис:** AI-агенти можуть отримувати доступ до різних інструментів і сервісів для виконання завдань. Зловмисники можуть використовувати цю можливість для атак на ці сервіси, надсилаючи велику кількість запитів через AI-агента, що може призвести до збоїв у системі або високих витрат.
+**Опис:** Агенти ШІ можуть звертатися до різних інструментів і сервісів для виконання завдань. Зловмисники можуть використати цю здатність для атаки на ці сервіси, надсилаючи велику кількість запитів через агента ШІ, що може призвести до відмов у роботі систем або високих витрат.
 
-**Запобігання:** Реалізуйте політики для обмеження кількості запитів, які AI-агент може надсилати до сервісу. Обмеження кількості кроків у розмові та запитів до вашого AI-агента є ще одним способом запобігання таким атакам.
+**Пом'якшення:** Впровадьте політики для обмеження кількості запитів, які агент ШІ може надсилати до сервісу. Обмеження кількості ходів розмови та запитів до вашого агента ШІ — ще один спосіб запобігти таким типам атак.
 
-### Отруєння бази знань
+### Knowledge Base Poisoning
 
-**Опис:** Цей тип атаки не спрямований безпосередньо на AI-агента, а на базу знань та інші сервіси, які використовує AI-агент. Це може включати пошкодження даних або інформації, яку AI-агент використовуватиме для виконання завдання, що призводить до упереджених або небажаних відповідей користувачеві.
+**Опис:** Цей тип атаки не спрямований безпосередньо на агента ШІ, а на базу знань та інші сервіси, які агент ШІ використовуватиме. Це може включати корупцію даних або інформації, яку агент ШІ використовуватиме для виконання завдання, що призведе до упереджених або небажаних відповідей для користувача.
 
-**Запобігання:** Регулярно перевіряйте дані, які AI-агент використовуватиме у своїх робочих процесах. Переконайтеся, що доступ до цих даних є захищеним і змінюється лише довіреними особами, щоб уникнути такого типу атак.
+**Пом'якшення:** Регулярно перевіряйте дані, які агент ШІ використовуватиме у своїх робочих процесах. Забезпечте, щоб доступ до цих даних був захищеним і змінювався лише довіреними особами, щоб уникнути цього типу атаки.
 
-### Каскадні помилки
+### Cascading Errors
 
-**Опис:** AI-агенти отримують доступ до різних інструментів і сервісів для виконання завдань. Помилки, спричинені зловмисниками, можуть призвести до збоїв інших систем, до яких підключений AI-агент, що робить атаку більш масштабною та складною для усунення.
+**Опис:** Агенти ШІ звертаються до різних інструментів і сервісів для виконання завдань. Помилки, спричинені зловмисниками, можуть призвести до відмов інших систем, з якими пов'язаний агент ШІ, через що атака стає ширшою і складнішою для усунення.
 
-**Запобігання:** Один із методів уникнення цього — дозволити AI-агенту працювати в обмеженому середовищі, наприклад, виконувати завдання в контейнері Docker, щоб запобігти прямим атакам на систему. Створення механізмів резервування та логіки повторних спроб у разі, якщо певні системи відповідають помилкою, є ще одним способом запобігання масштабним збоям системи.
+**Пом'якшення**: Один із методів уникнути цього — запускати агента ШІ в обмеженому середовищі, наприклад, виконувати завдання в контейнері Docker, щоб запобігти прямим атакам на систему. Створення механізмів резервного відновлення та логіки повторних спроб при отриманні помилки від певних систем — ще один спосіб уникнути масштабних збоїв.
 
-## Людина в процесі
+## Human-in-the-Loop
 
-Ще один ефективний спосіб створення довірених систем AI-агентів — це використання підходу "людина в процесі". Це створює потік, у якому користувачі можуть надавати зворотний зв’язок агентам під час їх роботи. Користувачі фактично виступають як агенти в багатокомпонентній системі, надаючи схвалення або припиняючи виконання процесу.
+Another effective way to build trustworthy AI Agent systems is using a Human-in-the-loop. This creates a flow where users are able to provide feedback to the Agents during the run. Users essentially act as agents in a multi-agent system and by providing approval or termination of the running process.
 
-![Людина в процесі](../../../translated_images/human-in-the-loop.5f0068a678f62f4fc8373d5b78c4c22f35d9e4da35c93f66c3b634c1774eff34.uk.png)
+![Людина в циклі](../../../translated_images/uk/human-in-the-loop.5f0068a678f62f4f.webp)
 
-Ось приклад коду з використанням AutoGen, який демонструє, як реалізується ця концепція:
+Here is a code snippet using the Microsoft Agent Framework to show how this concept is implemented:
 
 ```python
+import os
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
-# Create the agents.
-model_client = OpenAIChatCompletionClient(model="gpt-4o-mini")
-assistant = AssistantAgent("assistant", model_client=model_client)
-user_proxy = UserProxyAgent("user_proxy", input_func=input)  # Use input() to get user input from console.
+# Створити провайдера з затвердженням за участю людини
+provider = AzureAIProjectAgentProvider(
+    credential=AzureCliCredential(),
+)
 
-# Create the termination condition which will end the conversation when the user says "APPROVE".
-termination = TextMentionTermination("APPROVE")
+# Створити агента з кроком затвердження за участю людини
+response = provider.create_response(
+    input="Write a 4-line poem about the ocean.",
+    instructions="You are a helpful assistant. Ask for user approval before finalizing.",
+)
 
-# Create the team.
-team = RoundRobinGroupChat([assistant, user_proxy], termination_condition=termination)
-
-# Run the conversation and stream to the console.
-stream = team.run_stream(task="Write a 4-line poem about the ocean.")
-# Use asyncio.run(...) when running in a script.
-await Console(stream)
-
+# Користувач може переглянути й затвердити відповідь
+print(response.output_text)
+user_input = input("Do you approve? (APPROVE/REJECT): ")
+if user_input == "APPROVE":
+    print("Response approved.")
+else:
+    print("Response rejected. Revising...")
 ```
 
-## Висновок
+## Conclusion
 
-Створення довірених AI-агентів вимагає ретельного дизайну, надійних заходів безпеки та постійної ітерації. Реалізуючи структуровані системи мета-запитів, розуміючи потенційні загрози та застосовуючи стратегії їх запобігання, розробники можуть створювати AI-агентів, які є безпечними та ефективними. Крім того, впровадження підходу "людина в процесі" забезпечує відповідність AI-агентів потребам користувачів, мінімізуючи ризики. У міру розвитку AI підтримка проактивного підходу до безпеки, конфіденційності та етичних міркувань буде ключем до зміцнення довіри та надійності в системах, керованих AI.
+Building trustworthy AI agents requires careful design, robust security measures, and continuous iteration. By implementing structured meta prompting systems, understanding potential threats, and applying mitigation strategies, developers can create AI agents that are both safe and effective. Additionally, incorporating a human-in-the-loop approach ensures that AI agents remain aligned with user needs while minimizing risks. As AI continues to evolve, maintaining a proactive stance on security, privacy, and ethical considerations will be key to fostering trust and reliability in AI-driven systems.
 
-### Маєте додаткові запитання щодо створення довірених AI-агентів?
+### Got More Questions about Building Trustworthy AI Agents?
 
-Приєднуйтесь до [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord), щоб поспілкуватися з іншими учнями, відвідати години консультацій і отримати відповіді на ваші запитання щодо AI-агентів.
+Join the [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.
 
-## Додаткові ресурси
+## Additional Resources
 
-- <a href="https://learn.microsoft.com/azure/ai-studio/responsible-use-of-ai-overview" target="_blank">Огляд відповідального використання AI</a>  
-- <a href="https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai" target="_blank">Оцінка генеративних AI-моделей і AI-додатків</a>  
-- <a href="https://learn.microsoft.com/azure/ai-services/openai/concepts/system-message?context=%2Fazure%2Fai-studio%2Fcontext%2Fcontext&tabs=top-techniques" target="_blank">Системні повідомлення для безпеки</a>  
-- <a href="https://blogs.microsoft.com/wp-content/uploads/prod/sites/5/2022/06/Microsoft-RAI-Impact-Assessment-Template.pdf?culture=en-us&country=us" target="_blank">Шаблон оцінки ризиків</a>  
+- <a href="https://learn.microsoft.com/azure/ai-studio/responsible-use-of-ai-overview" target="_blank">Огляд відповідального ШІ</a>
+- <a href="https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai" target="_blank">Оцінювання генеративних моделей ШІ та застосунків на основі ШІ</a>
+- <a href="https://learn.microsoft.com/azure/ai-services/openai/concepts/system-message?context=%2Fazure%2Fai-studio%2Fcontext%2Fcontext&tabs=top-techniques" target="_blank">Системні повідомлення безпеки</a>
+- <a href="https://blogs.microsoft.com/wp-content/uploads/prod/sites/5/2022/06/Microsoft-RAI-Impact-Assessment-Template.pdf?culture=en-us&country=us" target="_blank">Шаблон оцінки ризиків</a>
 
-## Попередній урок
+## Previous Lesson
 
 [Agentic RAG](../05-agentic-rag/README.md)
 
-## Наступний урок
+## Next Lesson
 
-[Планування: шаблон дизайну](../07-planning-design/README.md)
+[Planning Design Pattern](../07-planning-design/README.md)
 
 ---
 
-**Відмова від відповідальності**:  
-Цей документ був перекладений за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ на його рідній мові слід вважати авторитетним джерелом. Для критичної інформації рекомендується професійний людський переклад. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникають внаслідок використання цього перекладу.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+Відмова від відповідальності:
+Цей документ перекладено за допомогою сервісу машинного перекладу на основі ШІ [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, просимо врахувати, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ мовою оригіналу слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується скористатися професійним людським перекладом. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

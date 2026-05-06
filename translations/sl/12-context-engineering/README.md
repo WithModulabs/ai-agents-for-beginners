@@ -1,173 +1,164 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cb7e50f471905ce6fdb92a30269a7a98",
-  "translation_date": "2025-09-04T10:31:58+00:00",
-  "source_file": "12-context-engineering/README.md",
-  "language_code": "sl"
-}
--->
 # Inženiring konteksta za AI agente
 
-[![Inženiring konteksta](../../../translated_images/lesson-12-thumbnail.ed19c94463e774d43dfb7dacda2cd436740b2f84d61aa778849335dbca162dff.sl.png)](https://youtu.be/F5zqRV7gEag)
+[![Inženiring konteksta](../../../translated_images/sl/lesson-12-thumbnail.ed19c94463e774d4.webp)](https://youtu.be/F5zqRV7gEag)
 
 > _(Kliknite zgornjo sliko za ogled videoposnetka te lekcije)_
 
-Razumevanje kompleksnosti aplikacije, za katero gradite AI agenta, je ključno za ustvarjanje zanesljivega sistema. Graditi moramo AI agente, ki učinkovito upravljajo informacije za reševanje kompleksnih potreb, ki presegajo zgolj inženiring pozivov.
+Razumevanje kompleksnosti aplikacije, za katero gradite AI agenta, je pomembno za izdelavo zanesljivega agenta. Potrebujemo ustvariti AI agente, ki učinkovito upravljajo informacije, da lahko naslovijo kompleksne potrebe, ki presegajo oblikovanje pozivov.
 
-V tej lekciji bomo raziskali, kaj je inženiring konteksta in kakšno vlogo ima pri gradnji AI agentov.
+V tej lekciji si bomo ogledali, kaj je inženiring konteksta in njegovo vlogo pri gradnji AI agentov.
 
 ## Uvod
 
-Ta lekcija bo obravnavala:
+This lesson will cover:
 
-• **Kaj je inženiring konteksta** in zakaj se razlikuje od inženiringa pozivov.
+• **Kaj je inženiring konteksta** in zakaj se razlikuje od oblikovanja pozivov.
 
-• **Strategije za učinkovit inženiring konteksta**, vključno s pisanjem, izbiranjem, stiskanjem in izolacijo informacij.
+• **Strategije za učinkoviti inženiring konteksta**, vključno s tem, kako pisati, izbirati, stiskati in izolirati informacije.
 
-• **Pogoste napake pri delu s kontekstom**, ki lahko zmotijo vašega AI agenta, in kako jih odpraviti.
+• **Pogoste napake v kontekstu**, ki lahko podrejo vašega AI agenta, in kako jih odpraviti.
 
 ## Cilji učenja
 
-Po zaključku te lekcije boste razumeli, kako:
+Po končani lekciji boste razumeli, kako:
 
-• **Definirati inženiring konteksta** in ga razlikovati od inženiringa pozivov.
+• **Opredeliti inženiring konteksta** in ga razlikovati od oblikovanja pozivov.
 
-• **Prepoznati ključne komponente konteksta** v aplikacijah z velikimi jezikovnimi modeli (LLM).
+• **Prepoznati ključne komponente konteksta** v aplikacijah velikih jezikovnih modelov (LLM).
 
-• **Uporabiti strategije za pisanje, izbiro, stiskanje in izolacijo konteksta**, da izboljšate delovanje agenta.
+• **Uporabiti strategije za pisanje, izbiro, kompresijo in izolacijo konteksta**, da izboljšate delovanje agenta.
 
-• **Prepoznati pogoste napake pri delu s kontekstom**, kot so zastrupitev, motnje, zmeda in konflikti, ter implementirati tehnike za njihovo odpravo.
+• **Prepoznati pogoste napake v kontekstu** kot so zastrupitev, distrakcija, zmeda in neskladje, ter uvesti tehnike za ublažitev.
 
 ## Kaj je inženiring konteksta?
 
-Za AI agente je kontekst tisti, ki usmerja načrtovanje agenta pri izvajanju določenih dejanj. Inženiring konteksta je praksa zagotavljanja, da ima AI agent prave informacije za izvedbo naslednjega koraka naloge. Ker je kontekstno okno omejeno po velikosti, moramo kot graditelji agentov razviti sisteme in procese za dodajanje, odstranjevanje in stiskanje informacij v kontekstnem oknu.
+Za AI agente je kontekst to, kar usmerja načrtovanje agenta pri izvajanju določenih dejanj. Inženiring konteksta je praksa zagotavljanja, da ima AI agent pravilne informacije za dokončanje naslednjega koraka naloge. Okno konteksta je omejeno v velikosti, zato moramo kot graditelji agentov zgraditi sisteme in procese za upravljanje dodajanja, odstranjevanja in stiskanja informacij v oknu konteksta.
 
-### Inženiring pozivov proti inženiringu konteksta
+### Oblikovanje pozivov proti inženiringu konteksta
 
-Inženiring pozivov se osredotoča na en sam nabor statičnih navodil za učinkovito usmerjanje AI agentov z določenimi pravili. Inženiring konteksta pa se ukvarja z upravljanjem dinamičnega nabora informacij, vključno z začetnim pozivom, da se zagotovi, da ima AI agent skozi čas vse potrebne informacije. Glavna ideja inženiringa konteksta je, da ta proces postane ponovljiv in zanesljiv.
+Oblikovanje pozivov se osredotoča na en nabor statičnih navodil, s katerimi učinkovito vodimo AI agente po naboru pravil.  Inženiring konteksta pa je način upravljanja dinamičnega nabora informacij, vključno z začetnim pozivom, da se zagotovi, da ima AI agent skozi čas, kar potrebuje. Glavna ideja inženiringa konteksta je narediti ta proces ponovljiv in zanesljiv.
 
 ### Vrste konteksta
 
-[![Vrste konteksta](../../../translated_images/context-types.fc10b8927ee43f06c12a0238692eb2703063a01c544cd7981108ff97ba32fbde.sl.png)](https://youtu.be/F5zqRV7gEag)
+[![Vrste konteksta](../../../translated_images/sl/context-types.fc10b8927ee43f06.webp)](https://youtu.be/F5zqRV7gEag)
 
-Pomembno je vedeti, da kontekst ni le ena stvar. Informacije, ki jih AI agent potrebuje, lahko prihajajo iz različnih virov, in na nas je, da zagotovimo dostop do teh virov:
+Pomembno je zapomniti si, da kontekst ni le ena sama stvar. Informacije  ki jih AI agent potrebuje lahko prihajajo iz različnih virov in na nas je, da zagotovimo agentu dostop do teh virov:
 
-Vrste konteksta, ki jih AI agent morda potrebuje za upravljanje, vključujejo:
+The types of context an AI agent might need to manage include:
 
-• **Navodila:** To so kot "pravila" agenta – pozivi, sistemska sporočila, primeri z malo poskusi (prikaz, kako nekaj narediti) in opisi orodij, ki jih lahko uporablja. Tukaj se osredotočenost inženiringa pozivov združuje z inženiringom konteksta.
+• **Navodila:** To so nekakšna "pravila" – pozivi, sistemska sporočila, few-shot primeri (ki AI pokažejo, kako nekaj narediti) in opisi orodij, ki jih lahko uporablja. Tu se fokus oblikovanja pozivov združi z inženiringom konteksta.
 
-• **Znanje:** To vključuje dejstva, informacije, pridobljene iz baz podatkov, ali dolgoročne spomine, ki jih je agent pridobil. To vključuje integracijo sistema za pridobivanje informacij (RAG), če agent potrebuje dostop do različnih virov znanja in baz podatkov.
+• **Znanje:** To zajema dejstva, informacije pridobljene iz baz podatkov ali dolgoročne spomine, ki jih je agent zbral. Sem spada tudi integracija sistema Retrieval Augmented Generation (RAG), če agent potrebuje dostop do različnih skladišč znanja in baz podatkov.
 
-• **Orodja:** To so definicije zunanjih funkcij, API-jev in MCP strežnikov, ki jih agent lahko pokliče, skupaj s povratnimi informacijami (rezultati), ki jih dobi z njihovo uporabo.
+• **Orodja:** To so opisi zunanjih funkcij, API-jev in MCP Servers, ki jih agent lahko kliče, skupaj s povratnimi informacijami (rezultati), ki jih dobi z njihovo uporabo.
 
-• **Zgodovina pogovorov:** Potekajoči dialog z uporabnikom. Sčasoma ti pogovori postanejo daljši in bolj zapleteni, kar pomeni, da zavzamejo več prostora v kontekstnem oknu.
+• **Zgodovina pogovora:** Trenuten dialog z uporabnikom. Sčasoma ti pogovori postanejo daljši in bolj zapleteni, kar pomeni, da zavzemajo prostor v oknu konteksta.
 
-• **Uporabniške preference:** Informacije, pridobljene o uporabnikovih željah ali neodobravanjih skozi čas. Te se lahko shranijo in uporabijo pri sprejemanju ključnih odločitev za pomoč uporabniku.
+• **Uporabniške preference:** Informacije, pridobljene o uporabnikovih všečkih ali nevšečnostih skozi čas. Te se lahko shranijo in uporabijo pri sprejemanju pomembnih odločitev za pomoč uporabniku.
 
 ## Strategije za učinkovit inženiring konteksta
 
 ### Strategije načrtovanja
 
-[![Najboljše prakse inženiringa konteksta](../../../translated_images/best-practices.f4170873dc554f58e86de090732bfa260d20c0937b577254e70bedf49442fedf.sl.png)](https://youtu.be/F5zqRV7gEag)
+[![Context Engineering Best Practices](../../../translated_images/sl/best-practices.f4170873dc554f58.webp)](https://youtu.be/F5zqRV7gEag)
 
 Dober inženiring konteksta se začne z dobrim načrtovanjem. Tukaj je pristop, ki vam bo pomagal začeti razmišljati o tem, kako uporabiti koncept inženiringa konteksta:
 
-1. **Določite jasne rezultate** – Rezultati nalog, ki bodo dodeljene AI agentom, morajo biti jasno opredeljeni. Odgovorite na vprašanje: "Kako bo svet videti, ko bo AI agent končal svojo nalogo?" Z drugimi besedami, kakšno spremembo, informacijo ali odgovor naj uporabnik dobi po interakciji z AI agentom.
-
-2. **Zemljevid konteksta** – Ko določite rezultate AI agenta, morate odgovoriti na vprašanje: "Katere informacije potrebuje AI agent za dokončanje te naloge?" Tako lahko začnete mapirati kontekst, kje se te informacije nahajajo.
-
-3. **Ustvarite kontekstne tokove** – Ko veste, kje so informacije, morate odgovoriti na vprašanje: "Kako bo agent pridobil te informacije?" To lahko storite na različne načine, vključno z RAG, uporabo MCP strežnikov in drugih orodij.
+1. **Opredelite jasne rezultate** - Rezultati nalog, ki jih bodo AI agenti opravljali, naj bodo jasno opredeljeni. Odgovorite na vprašanje - "Kako bo svet izgledal, ko bo AI agent dokončal svojo nalogo?" Z drugimi besedami, kakšna sprememba, informacija ali odgovor naj bi imel uporabnik po interakciji z AI agentom.
+2. **Narišite kontekst** - Ko ste opredelili rezultate AI agenta, morate odgovoriti na vprašanje "Katere informacije AI agent potrebuje, da dokonča to nalogo?". Tako lahko začnete mapirati kontekst, kje so te informacije lahko locirane.
+3. **Ustvarite kontekstne cevovode** - Zdaj ko veste, kje so informacije, morate odgovoriti na vprašanje "Kako bo agent dobil te informacije?". To je mogoče narediti na različne načine, vključno z RAG, uporabo MCP strežnikov in drugimi orodji.
 
 ### Praktične strategije
 
-Načrtovanje je pomembno, vendar ko informacije začnejo pritekati v kontekstno okno agenta, moramo imeti praktične strategije za njihovo upravljanje:
+Načrtovanje je pomembno, vendar ko se informacije začnejo pretakati v agentovo okno konteksta, potrebujemo praktične strategije za upravljanje:
 
 #### Upravljanje konteksta
 
-Medtem ko bodo nekatere informacije samodejno dodane v kontekstno okno, je inženiring konteksta bolj aktiven pristop k tem informacijam, kar lahko storimo z nekaj strategijami:
+While some information will be added to the context window automatically, context engineering is about taking a more active role of this information which can be done by a few strategies:
 
-1. **Agentov beležnik**  
-   To omogoča AI agentu, da si zapisuje pomembne informacije o trenutnih nalogah in interakcijah z uporabnikom med eno sejo. Beležnik naj obstaja zunaj kontekstnega okna v datoteki ali objektu izvajanja, ki ga lahko agent kasneje pridobi med to sejo, če je potrebno.
+ 1. **Delovni zvezek agenta**
+ This allows for an AI Agent to takes notes of relevant information about the current tasks and user interactions during a single session. This should exist outside of the context window in a file or runtime object that the agent can later retrieve during this session if needed.
 
-2. **Spomini**  
-   Beležniki so dobri za upravljanje informacij zunaj kontekstnega okna ene seje. Spomini omogočajo agentom shranjevanje in pridobivanje pomembnih informacij skozi več sej. To lahko vključuje povzetke, uporabniške preference in povratne informacije za izboljšave v prihodnosti.
+ 2. **Spomini**
+ Scratchpads are good for managing information outside of the context window of a single session. Memories enable agents to store and retrieve relevant information across multiple sessions. This could include summaries, user preferences and feedback for improvements in the future.
 
-3. **Stiskanje konteksta**  
-   Ko kontekstno okno raste in se približuje svoji meji, lahko uporabimo tehnike, kot sta povzemanje in obrezovanje. To vključuje ohranjanje le najpomembnejših informacij ali odstranjevanje starejših sporočil.
-
-4. **Sistemi z več agenti**  
-   Razvoj sistema z več agenti je oblika inženiringa konteksta, saj ima vsak agent svoje kontekstno okno. Načrtovanje, kako se ta kontekst deli in prenaša med različnimi agenti, je še ena pomembna naloga pri gradnji teh sistemov.
-
-5. **Peskovniški okolji**  
-   Če agent potrebuje zagon kode ali obdelavo velike količine informacij v dokumentu, to lahko zavzame veliko število žetonov za obdelavo rezultatov. Namesto da bi vse to shranili v kontekstnem oknu, lahko agent uporabi peskovniško okolje, ki lahko zažene to kodo in prebere le rezultate ter druge pomembne informacije.
-
-6. **Objekti stanja izvajanja**  
-   To se izvaja z ustvarjanjem vsebnikov informacij za upravljanje situacij, ko agent potrebuje dostop do določenih informacij. Pri kompleksni nalogi bi to omogočilo agentu shranjevanje rezultatov vsakega podkoraka, kar omogoča, da kontekst ostane povezan le s tem specifičnim podkorakom.
-
+ 3. **Stiskanje konteksta**
+  Once the context window grows and is nearing its limit, techniques such as summarization and trimming can be used. This includes either keeping only the most relevant information or removing older messages.
+  
+ 4. **Sistemi z več agenti**
+  Developing multi-agent system is a form of context engineering because each agent has its own context window. How that context is shared and passed to different agents is another thing to plan out when building these systems.
+  
+ 5. **Sandbox okolja**
+  If an agent needs to run some code or process large amounts of information in a document, this can take a large amount of tokens to process the results. Instead of having this all stored in the context window, the agent can use a sandbox environment that is able to run this code and only read the results and other relevant information.
+  
+ 6. **Objekti stanja pri izvajanju**
+   This is done by creating containers of information to manage situations when the Agent needs to have access to certain information. For a complex task, this would enable an Agent to store the results of each subtask step by step, allowing the context to remain connected only to that specific subtask.
+  
 ### Primer inženiringa konteksta
 
-Recimo, da želimo, da AI agent **"Rezervira potovanje v Pariz."**
+Let's say we want an AI agent to **"Rezerviraj mi potovanje v Pariz."**
 
-• Preprost agent, ki uporablja le inženiring pozivov, bi morda odgovoril: **"V redu, kdaj želite iti v Pariz?"**. Obdelal bi le vaše neposredno vprašanje v trenutku, ko ste ga postavili.
+• A simple  agent using only prompt engineering might just respond: **"V redu, kdaj bi radi šli v Pariz?**". It only processed your direct question at the time that the user asked.
 
-• Agent, ki uporablja strategije inženiringa konteksta, bi naredil veliko več. Preden bi sploh odgovoril, bi njegov sistem morda:
+• An agent using  the context engineering strategies covered would do much more. Before even responding, its system might:
 
-  ◦ **Preveril vaš koledar** za razpoložljive datume (pridobivanje podatkov v realnem času).
+  ◦ **Preveri vaš koledar** for available dates (retrieving real-time data).
 
-  ◦ **Priklical pretekle potovalne preference** (iz dolgoročnega spomina), kot so vaša najljubša letalska družba, proračun ali ali imate raje neposredne lete.
+  ◦ **Upošteva pretekle potovalne preference** (from long-term memory) like your preferred airline, budget, or whether you prefer direct flights.
 
-  ◦ **Prepoznal razpoložljiva orodja** za rezervacijo letov in hotelov.
+  ◦ **Ugotovi razpoložljiva orodja** for flight and hotel booking.
 
-- Nato bi lahko primer odgovora bil: "Hej [Vaše ime]! Vidim, da ste prosti prvi teden oktobra. Naj poiščem neposredne lete v Pariz z [Najljubša letalska družba] v okviru vašega običajnega proračuna [Proračun]?" Ta bogatejši, kontekstno zavedni odgovor prikazuje moč inženiringa konteksta.
+- Then, an example response could be:  "Hey [Your Name]! I see you're free the first week of October. Shall I look for direct flights to Pariz on [Preferred Airline] within your usual budget of [Budget]?". This richer, context-aware response demonstrates the power of context engineering.
 
-## Pogoste napake pri delu s kontekstom
+## Pogoste napake konteksta
 
 ### Zastrupitev konteksta
 
-**Kaj je to:** Ko halucinacija (napačne informacije, ki jih ustvari LLM) ali napaka vstopi v kontekst in se večkrat sklicuje nanjo, kar povzroči, da agent zasleduje nemogoče cilje ali razvije nesmiselne strategije.
+**Kaj je:** Ko halucinacija (napačna informacija, ki jo ustvari LLM) ali napaka vstopi v kontekst in se nanjo večkrat sklicuje, zaradi česar agent zasleduje nemogoče cilje ali razvije nesmiselne strategije.
 
-**Kaj storiti:** Uvedite **validacijo konteksta** in **karanteno**. Validirajte informacije, preden jih dodate v dolgoročni spomin. Če zaznate morebitno zastrupitev, začnite nove kontekstne niti, da preprečite širjenje napačnih informacij.
+**Kaj storiti:** Uvedite **validacijo konteksta** in **karanteno**. Pred dodajanjem informacij v dolgoročni spomin potrdite informacije. Če je zazdeta potencialna zastrupitev, začnite s svežimi nitmi konteksta, da preprečite širjenje napačnih informacij.
 
-**Primer rezervacije potovanja:** Vaš agent halucinira **neposreden let iz majhnega lokalnega letališča v oddaljeno mednarodno mesto**, ki dejansko ne ponuja mednarodnih letov. Ta neobstoječa podrobnost leta se shrani v kontekst. Kasneje, ko agenta prosite za rezervacijo, še naprej poskuša najti vozovnice za to nemogočo pot, kar vodi do ponavljajočih se napak.
+**Primer rezervacije potovanja:** Vaš agent halucinira **direktni let z majhnega lokalnega letališča v oddaljeno mednarodno mesto**, ki v resnici ne ponuja mednarodnih letov. Ta neobstoječa podrobnost leta se shrani v kontekst. Kasneje, ko prosite agenta, naj rezervira, vztraja pri iskanju kart za to nemogočo linijo in povzroča ponavljajoče se napake.
 
-**Rešitev:** Uvedite korak, ki **validira obstoj letov in poti z API-jem v realnem času** _preden_ dodate podrobnosti leta v delovni kontekst agenta. Če validacija ne uspe, se napačne informacije "dajo v karanteno" in se ne uporabljajo več.
+**Rešitev:** Uvedite korak, ki **validira obstoj letov in poti z realnočasovnim API-jem** _before_ adding the flight detail to the agent's working context. Če validacija ne uspe, se napačna informacija "karanteni" in se ne uporablja naprej.
 
-### Motnje v kontekstu
+### Context Distraction
 
-**Kaj je to:** Ko kontekst postane tako obsežen, da se model preveč osredotoči na nakopičeno zgodovino namesto na to, kar se je naučil med usposabljanjem, kar vodi do ponavljajočih se ali neuporabnih dejanj. Modeli lahko začnejo delati napake, še preden je kontekstno okno polno.
+**Kaj je:** Ko kontekst postane tako velik, da se model preveč osredotoči na zbrano zgodovino namesto na to, kar se je naučil med treniranjem, kar vodi v ponavljajoča ali neuporabna dejanja. Modeli lahko začnejo delati napake še preden je okno konteksta polno.
 
-**Kaj storiti:** Uporabite **povzemanje konteksta**. Občasno stisnite nakopičene informacije v krajše povzetke, pri čemer ohranite pomembne podrobnosti in odstranite odvečno zgodovino. To pomaga "ponastaviti" osredotočenost.
+**Kaj storiti:** Use **povzemanje konteksta**. Periodično stisnite zbrano informacijo v krajše povzetke, pri čemer ohranite pomembne podrobnosti in odstranite redundantno zgodovino. To pomaga "ponastaviti" osredotočenost.
 
-**Primer rezervacije potovanja:** Dolgo časa razpravljate o različnih sanjskih destinacijah, vključno s podrobnim opisom vašega pohodniškega potovanja pred dvema letoma. Ko končno rečete: **"Najdi mi poceni let za naslednji mesec,"** se agent zatakne v starih, nepomembnih podrobnostih in vas še naprej sprašuje o pohodniški opremi ali preteklih itinerarjih, namesto da bi se osredotočil na vašo trenutno zahtevo.
+**Travel Booking Example:** You've been discussing various dream travel destinations for a long time, including a detailed recounting of your backpacking trip from two years ago. When you finally ask to **"najdi mi poceni let za** **naslednji mesec****,"** the agent gets bogged down in the old, irrelevant details and keeps asking about your backpacking gear or past itineraries, neglecting your current request.
 
-**Rešitev:** Po določenem številu korakov ali ko kontekst postane prevelik, naj agent **povzame najnovejše in najpomembnejše dele pogovora** – osredotočene na vaše trenutne datume potovanja in destinacijo – ter uporabi ta strnjen povzetek za naslednji klic LLM, pri čemer zavrže manj pomembno zgodovino pogovora.
+**Rešitev:** Po določenem številu menjav ali ko kontekst preraste, bi moral agent **povzetek najbolj nedavnih in relevantnih delov pogovora** – osredotočiti se na vaše trenutne datume potovanja in destinacijo – ter uporabiti ta stisnjen povzetek za naslednji LLM klic, zavreči manj relevantni zgodovinski klepet.
 
-### Zmeda v kontekstu
+### Context Confusion
 
-**Kaj je to:** Ko nepotreben kontekst, pogosto v obliki preveč razpoložljivih orodij, povzroči, da model generira napačne odgovore ali pokliče nepomembna orodja. Manjši modeli so še posebej dovzetni za to.
+**Kaj je:** Ko nepotreben kontekst, pogosto v obliki prevelikega števila razpoložljivih orodij, povzroči, da model ustvari slabe odgovore ali kliče nepovezana orodja. Manjši modeli so še posebej dovzetni za to.
 
-**Kaj storiti:** Uvedite **upravljanje nabora orodij** z uporabo tehnik RAG. Shranite opise orodij v vektorsko bazo podatkov in izberite _le_ najpomembnejša orodja za vsako specifično nalogo. Raziskave kažejo, da je omejitev izbire orodij na manj kot 30 učinkovita.
+**Kaj storiti:** Uvedite **upravljanje nabora orodij** z uporabo tehnik RAG. Shranite opise orodij v vektorsko bazo podatkov in izberite _samo_ najbolj relevantna orodja za vsako specifično nalogo. Raziskave kažejo, da je smiselno omejiti izbor orodij na manj kot 30.
 
-**Primer rezervacije potovanja:** Vaš agent ima dostop do ducatov orodij: `book_flight`, `book_hotel`, `rent_car`, `find_tours`, `currency_converter`, `weather_forecast`, `restaurant_reservations` itd. Ko vprašate, **"Kateri je najboljši način za premikanje po Parizu?"**, se agent zaradi velikega števila orodij zmede in poskuša poklicati `book_flight` _znotraj_ Pariza ali `rent_car`, čeprav imate raje javni prevoz, ker se opisi orodij lahko prekrivajo ali pa preprosto ne more razločiti najboljšega.
+**Primer rezervacije potovanja:** Vaš agent ima dostop do desetin orodij: `book_flight`, `book_hotel`, `rent_car`, `find_tours`, `currency_converter`, `weather_forecast`, `restaurant_reservations`, itd. Ko vprašate, **"Kakšen je najboljši način premikanja po Parizu?"**, se agent zaradi velikega števila orodij zmede in poskuša poklicati `book_flight` _znotraj_ Pariza ali `rent_car`, čeprav raje javni prevoz, ker se opisi orodij lahko prekrivajo ali pa preprosto ne zmore razločiti najboljšega.
 
-**Rešitev:** Uporabite **RAG za opise orodij**. Ko vprašate o premikanju po Parizu, sistem dinamično pridobi _le_ najpomembnejša orodja, kot sta `rent_car` ali `public_transport_info`, glede na vaše vprašanje, in predstavi osredotočen "nabor orodij" LLM-ju.
+**Rešitev:** Uporabite **RAG nad opisi orodij**. Ko vprašate o premikanju po Parizu, sistem dinamično poišče _samo_ najbolj relevantna orodja kot so `rent_car` ali `public_transport_info` na podlagi vašega poizvedka in predstavi osredotočeno "nabiranje" orodij LLM-ju.
 
-### Konflikt v kontekstu
+### Context Clash
 
-**Kaj je to:** Ko v kontekstu obstajajo nasprotujoče si informacije, kar vodi do nedoslednega razmišljanja ali slabih končnih odgovorov. To se pogosto zgodi, ko informacije prispejo v fazah, starejše napačne predpostavke pa ostanejo v kontekstu.
+**Kaj je:** Ko v kontekstu obstajajo protislovne informacije, kar vodi do nedoslednega sklepanja ali slabih končnih odgovorov. To se pogosto zgodi, ko informacije prispejo v obdobjih, in zgodnje napačne predpostavke ostanejo v kontekstu.
 
-**Kaj storiti:** Uporabite **obrezovanje konteksta** in **odlaganje**. Obrezovanje pomeni odstranjevanje zastarelih ali nasprotujočih si informacij, ko prispejo nove podrobnosti. Odlaganje omogoča modelu ločen "beležnik" za obdelavo informacij, ne da bi obremenjeval glavni kontekst.
+**Kaj storiti:** Uporabite **obrezovanje konteksta** in **offloading**. Obrezovanje pomeni odstranjevanje zastarelih ali protislovnih informacij, ko prispejo nove podrobnosti. Offloading daje modelu ločen delovni prostor ("scratchpad") za obdelavo informacij brez zapolnjevanja glavnega konteksta.
 
-**Primer rezervacije potovanja:** Sprva poveste agentu, **"Želim leteti v ekonomskem razredu."** Kasneje v pogovoru si premislite in rečete, **"Pravzaprav, za to potovanje želim poslovni razred."** Če obe navodili ostaneta v kontekstu, lahko agent prejme nasprotujoče si rezultate iskanja ali se zmede, katero željo naj upošteva.
+**Primer rezervacije potovanja:** Sprva agentu poveste, **"Želim leteti v ekonomski razred."** Kasneje v pogovoru spremenite mnenje in rečete, **"Pravzaprav za to potovanje pojdimo v poslovni razred."** Če oboji navodili ostaneta v kontekstu, se agent lahko zmoti pri iskanju ali pa ne ve, katero preferenco dati prednost.
 
-**Rešitev:** Uvedite **obrezovanje konteksta**. Ko novo navodilo nasprotuje staremu, se starejše navodilo odstrani ali izrecno preglasi v kontekstu. Alternativno lahko agent uporabi **beležnik**, da uskladi nasprotujoče si preference, preden se odloči, s čimer zagotovi, da le končna, dosledna navodila usmerjajo njegova dejanja.
+**Rešitev:** Uvedite **obrezovanje konteksta**. Ko novo navodilo nasprotuje staremu, se starejše navodilo odstrani ali eksplicitno nadomesti v kontekstu. Alternativno lahko agent uporabi **scratchpad**, da uskladi protislovne preference, preden odloči, kar zagotavlja, da le končno, dosledno navodilo vodi njegove ukrepe.
 
 ## Imate več vprašanj o inženiringu konteksta?
 
-Pridružite se [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord), da se povežete z drugimi učenci, obiščete uradne ure in dobite odgovore na svoja vprašanja o AI agentih.
+Join the [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.
 
 ---
 
-**Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovno človeško prevajanje. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Izjava o omejitvi odgovornosti**:
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v izvirnem jeziku velja za avtoritativni vir. Pri ključnih informacijah priporočamo strokovni (človeški) prevod. Ne odgovarjamo za morebitne nesporazume ali napačne razlage, ki bi izhajale iz uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

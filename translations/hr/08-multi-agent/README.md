@@ -1,191 +1,187 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1a008c204051cba8d0e253b75f261c41",
-  "translation_date": "2025-08-29T23:01:37+00:00",
-  "source_file": "08-multi-agent/README.md",
-  "language_code": "hr"
-}
--->
-[![Višestruki dizajn agenata](../../../translated_images/lesson-8-thumbnail.278a3e4a59137d625df92de3f885d2da2a92b1f7017abba25a99fb25edd83a55.hr.png)](https://youtu.be/V6HpE9hZEx0?si=A7K44uMCqgvLQVCa)
+[![Dizajnerski obrasci za više agenata](../../../translated_images/hr/lesson-8-thumbnail.278a3e4a59137d62.webp)](https://youtu.be/V6HpE9hZEx0?si=A7K44uMCqgvLQVCa)
 
-> _(Kliknite na sliku iznad za pregled videa ove lekcije)_
+> _(Kliknite gornju sliku za pregled videa ove lekcije)_
 
-# Obrasci dizajna višestrukih agenata
+# Dizajnerski obrasci za više agenata
 
-Čim počnete raditi na projektu koji uključuje više agenata, morat ćete razmotriti obrazac dizajna višestrukih agenata. Međutim, možda neće biti odmah jasno kada prijeći na višestruke agente i koje su prednosti.
+As soon as you start working on a project that involves multiple agents, you will need to consider the multi-agent design pattern. However, it might not be immediately clear when to switch to multi-agents and what the advantages are.
 
-## Uvod
+## Introduction
 
-U ovoj lekciji nastojimo odgovoriti na sljedeća pitanja:
+In this lesson, we're looking to answer the following questions:
 
-- Koji su scenariji u kojima su višestruki agenti primjenjivi?
-- Koje su prednosti korištenja višestrukih agenata u odnosu na jednog agenta koji obavlja više zadataka?
-- Koji su osnovni elementi za implementaciju obrasca dizajna višestrukih agenata?
-- Kako možemo imati pregled nad interakcijama između višestrukih agenata?
+- What are the scenarios where multi-agents are applicable to?
+- What are the advantages of using multi-agents over just one singular agent doing multiple tasks?
+- What are the building blocks of implementing the multi-agent design pattern?
+- How do we have visibility to how the multiple agents are interacting with each other?
 
-## Ciljevi učenja
+## Learning Goals
 
-Nakon ove lekcije trebali biste moći:
+After this lesson, you should be able to:
 
-- Identificirati scenarije u kojima su višestruki agenti primjenjivi.
-- Prepoznati prednosti korištenja višestrukih agenata u odnosu na jednog agenta.
-- Razumjeti osnovne elemente za implementaciju obrasca dizajna višestrukih agenata.
+- Identify scenarios where multi-agents are applicable
+- Recognize the advantages of using multi-agents over a singular agent.
+- Comprehend the building blocks of implementing the multi-agent design pattern.
 
-Šira slika?
+What's the bigger picture?
 
-*Višestruki agenti su obrazac dizajna koji omogućuje da više agenata surađuje kako bi postigli zajednički cilj.*
+*Multi agents are a design pattern that allows multiple agents to work together to achieve a common goal*.
 
-Ovaj obrazac se široko koristi u raznim područjima, uključujući robotiku, autonomne sustave i distribuirano računalstvo.
+This pattern is widely used in various fields, including robotics, autonomous systems, and distributed computing.
 
-## Scenariji u kojima su višestruki agenti primjenjivi
+## Scenarios Where Multi-Agents Are Applicable
 
-Koji su to scenariji u kojima je korisno koristiti višestruke agente? Odgovor je da postoji mnogo scenarija u kojima je primjena višestrukih agenata korisna, posebno u sljedećim slučajevima:
+So what scenarios are a good use case for using multi-agents? The answer is that there are many scenarios where employing multiple agents is beneficial especially in the following cases:
 
-- **Veliki radni zadaci**: Veliki radni zadaci mogu se podijeliti na manje zadatke i dodijeliti različitim agentima, omogućujući paralelnu obradu i brže dovršavanje. Primjer za to je obrada velike količine podataka.
-- **Složeni zadaci**: Složeni zadaci, poput velikih radnih zadataka, mogu se razložiti na manje podzadatke i dodijeliti različitim agentima, od kojih svaki specijalizira određeni aspekt zadatka. Dobar primjer za to su autonomna vozila gdje različiti agenti upravljaju navigacijom, otkrivanjem prepreka i komunikacijom s drugim vozilima.
-- **Raznolika stručnost**: Različiti agenti mogu imati raznoliku stručnost, omogućujući im da se učinkovitije bave različitim aspektima zadatka nego jedan agent. Primjer za to je zdravstvena skrb gdje agenti mogu upravljati dijagnostikom, planovima liječenja i praćenjem pacijenata.
+- **Large workloads**: Large workloads can be divided into smaller tasks and assigned to different agents, allowing for parallel processing and faster completion. An example of this is in the case of a large data processing task.
+- **Complex tasks**: Complex tasks, like large workloads, can be broken down into smaller subtasks and assigned to different agents, each specializing in a specific aspect of the task. A good example of this is in the case of autonomous vehicles where different agents manage navigation, obstacle detection, and communication with other vehicles.
+- **Diverse expertise**: Different agents can have diverse expertise, allowing them to handle different aspects of a task more effectively than a single agent. For this case, a good example is in the case of healthcare where agents can manage diagnostics, treatment plans, and patient monitoring.
 
-## Prednosti korištenja višestrukih agenata u odnosu na jednog agenta
+## Advantages of Using Multi-Agents Over a Singular Agent
 
-Sustav s jednim agentom može dobro funkcionirati za jednostavne zadatke, ali za složenije zadatke korištenje višestrukih agenata može donijeti nekoliko prednosti:
+A single agent system could work well for simple tasks, but for more complex tasks, using multiple agents can provide several advantages:
 
-- **Specijalizacija**: Svaki agent može biti specijaliziran za određeni zadatak. Nedostatak specijalizacije kod jednog agenta znači da imate agenta koji može raditi sve, ali se može zbuniti kada se suoči sa složenim zadatkom. Na primjer, može završiti radeći zadatak za koji nije najbolje prilagođen.
-- **Skalabilnost**: Lakše je skalirati sustave dodavanjem više agenata nego preopterećivanjem jednog agenta.
-- **Otpornost na greške**: Ako jedan agent zakaže, drugi mogu nastaviti funkcionirati, osiguravajući pouzdanost sustava.
+- **Specialization**: Each agent can be specialized for a specific task. Lack of specialization in a single agent means you have an agent that can do everything but might get confused on what to do when faced with a complex task. It might for example end up doing a task that it is not best suited for.
+- **Scalability**: It is easier to scale systems by adding more agents rather than overloading a single agent.
+- **Fault Tolerance**: If one agent fails, others can continue functioning, ensuring system reliability.
 
-Uzmimo primjer: rezervacija putovanja za korisnika. Sustav s jednim agentom morao bi upravljati svim aspektima procesa rezervacije putovanja, od pronalaženja letova do rezervacije hotela i iznajmljivanja automobila. Da bi to postigao, agent bi morao imati alate za upravljanje svim tim zadacima. To bi moglo dovesti do složenog i monolitnog sustava koji je teško održavati i skalirati. Sustav s višestrukim agentima, s druge strane, mogao bi imati različite agente specijalizirane za pronalaženje letova, rezervaciju hotela i iznajmljivanje automobila. To bi sustav učinilo modularnijim, lakšim za održavanje i skalabilnim.
+Let's take an example, let's book a trip for a user. A single agent system would have to handle all aspects of the trip booking process, from finding flights to booking hotels and rental cars. To achieve this with a single agent, the agent would need to have tools for handling all these tasks. This could lead to a complex and monolithic system that is difficult to maintain and scale. A multi-agent system, on the other hand, could have different agents specialized in finding flights, booking hotels, and rental cars. This would make the system more modular, easier to maintain, and scalable.
 
-Usporedimo to s turističkom agencijom vođenom kao obiteljski posao naspram turističke agencije vođene kao franšiza. Obiteljski posao imao bi jednog agenta koji upravlja svim aspektima procesa rezervacije putovanja, dok bi franšiza imala različite agente koji upravljaju različitim aspektima procesa rezervacije putovanja.
+Compare this to a travel bureau run as a mom-and-pop store versus a travel bureau run as a franchise. The mom-and-pop store would have a single agent handling all aspects of the trip booking process, while the franchise would have different agents handling different aspects of the trip booking process.
 
-## Osnovni elementi za implementaciju obrasca dizajna višestrukih agenata
+## Building Blocks of Implementing the Multi-Agent Design Pattern
 
-Prije nego što možete implementirati obrazac dizajna višestrukih agenata, morate razumjeti osnovne elemente koji čine taj obrazac.
+Before you can implement the multi-agent design pattern, you need to understand the building blocks that make up the pattern.
 
-Uzmimo konkretan primjer rezervacije putovanja za korisnika. U ovom slučaju, osnovni elementi uključuju:
+Let's make this more concrete by again looking at the example of booking a trip for a user. In this case, the building blocks would include:
 
-- **Komunikacija agenata**: Agenti za pronalaženje letova, rezervaciju hotela i iznajmljivanje automobila moraju komunicirati i dijeliti informacije o korisnikovim preferencijama i ograničenjima. Morate odlučiti o protokolima i metodama za ovu komunikaciju. Konkretno, to znači da agent za pronalaženje letova mora komunicirati s agentom za rezervaciju hotela kako bi osigurao da je hotel rezerviran za iste datume kao i let. To znači da agenti moraju dijeliti informacije o korisnikovim datumima putovanja, što znači da morate odlučiti *koji agenti dijele informacije i kako ih dijele*.
-- **Mehanizmi koordinacije**: Agenti moraju koordinirati svoje radnje kako bi osigurali da su korisnikove preferencije i ograničenja ispunjeni. Korisnička preferencija mogla bi biti da žele hotel blizu zračne luke, dok bi ograničenje moglo biti da su automobili za iznajmljivanje dostupni samo na zračnoj luci. To znači da agent za rezervaciju hotela mora koordinirati s agentom za rezervaciju automobila kako bi osigurao da su korisnikove preferencije i ograničenja ispunjeni. To znači da morate odlučiti *kako agenti koordiniraju svoje radnje*.
-- **Arhitektura agenata**: Agenti moraju imati unutarnju strukturu za donošenje odluka i učenje iz svojih interakcija s korisnikom. To znači da agent za pronalaženje letova mora imati unutarnju strukturu za donošenje odluka o tome koje letove preporučiti korisniku. To znači da morate odlučiti *kako agenti donose odluke i uče iz svojih interakcija s korisnikom*. Primjeri kako agent uči i poboljšava se mogli bi biti da agent za pronalaženje letova koristi model strojnog učenja za preporuku letova korisniku na temelju njihovih prošlih preferencija.
-- **Pregled interakcija višestrukih agenata**: Morate imati pregled nad interakcijama između višestrukih agenata. To znači da morate imati alate i tehnike za praćenje aktivnosti i interakcija agenata. To bi moglo biti u obliku alata za zapisivanje i praćenje, alata za vizualizaciju i mjernih podataka o izvedbi.
-- **Obrasci višestrukih agenata**: Postoje različiti obrasci za implementaciju sustava višestrukih agenata, poput centraliziranih, decentraliziranih i hibridnih arhitektura. Morate odlučiti o obrascu koji najbolje odgovara vašem slučaju.
-- **Čovjek u petlji**: U većini slučajeva imat ćete čovjeka u petlji i morate uputiti agente kada tražiti ljudsku intervenciju. To bi moglo biti u obliku korisnika koji traži određeni hotel ili let koji agenti nisu preporučili ili traži potvrdu prije rezervacije leta ili hotela.
+- **Agent Communication**: Agents for finding flights, booking hotels, and rental cars need to communicate and share information about the user's preferences and constraints. You need to decide on the protocols and methods for this communication. What this means concretely is that the agent for finding flights needs to communicate with the agent for booking hotels to ensure that the hotel is booked for the same dates as the flight. That means that the agents need to share information about the user's travel dates, meaning that you need to decide *which agents are sharing info and how they are sharing info*.
+- **Coordination Mechanisms**: Agents need to coordinate their actions to ensure that the user's preferences and constraints are met. A user preference could be that they want a hotel close to the airport whereas a constraint could be that rental cars are only available at the airport. This means that the agent for booking hotels needs to coordinate with the agent for booking rental cars to ensure that the user's preferences and constraints are met. This means that you need to decide *how the agents are coordinating their actions*.
+- **Agent Architecture**: Agents need to have the internal structure to make decisions and learn from their interactions with the user. This means that the agent for finding flights needs to have the internal structure to make decisions about which flights to recommend to the user. This means that you need to decide *how the agents are making decisions and learning from their interactions with the user*. Examples of how an agent learns and improves could be that the agent for finding flights could use a machine learning model to recommend flights to the user based on their past preferences.
+- **Visibility into Multi-Agent Interactions**: You need to have visibility into how the multiple agents are interacting with each other. This means that you need to have tools and techniques for tracking agent activities and interactions. This could be in the form of logging and monitoring tools, visualization tools, and performance metrics.
+- **Multi-Agent Patterns**: There are different patterns for implementing multi-agent systems, such as centralized, decentralized, and hybrid architectures. You need to decide on the pattern that best fits your use case.
+- **Human in the loop**: In most cases, you will have a human in the loop and you need to instruct the agents when to ask for human intervention. This could be in the form of a user asking for a specific hotel or flight that the agents have not recommended or asking for confirmation before booking a flight or hotel.
 
-## Pregled interakcija višestrukih agenata
+## Visibility into Multi-Agent Interactions
 
-Važno je da imate pregled nad interakcijama između višestrukih agenata. Ovaj pregled je ključan za otklanjanje grešaka, optimizaciju i osiguranje učinkovitosti cjelokupnog sustava. Da biste to postigli, morate imati alate i tehnike za praćenje aktivnosti i interakcija agenata. To bi moglo biti u obliku alata za zapisivanje i praćenje, alata za vizualizaciju i mjernih podataka o izvedbi.
+It's important that you have visibility into how the multiple agents are interacting with each other. This visibility is essential for debugging, optimizing, and ensuring the overall system's effectiveness. To achieve this, you need to have tools and techniques for tracking agent activities and interactions. This could be in the form of logging and monitoring tools, visualization tools, and performance metrics.
 
-Na primjer, u slučaju rezervacije putovanja za korisnika, mogli biste imati nadzornu ploču koja prikazuje status svakog agenta, korisnikove preferencije i ograničenja te interakcije između agenata. Ova nadzorna ploča mogla bi prikazivati korisnikove datume putovanja, letove koje preporučuje agent za letove, hotele koje preporučuje agent za hotele i automobile koje preporučuje agent za iznajmljivanje automobila. To bi vam dalo jasan pregled kako agenti međusobno djeluju i jesu li korisnikove preferencije i ograničenja ispunjeni.
+For example, in the case of booking a trip for a user, you could have a dashboard that shows the status of each agent, the user's preferences and constraints, and the interactions between agents. This dashboard could show the user's travel dates, the flights recommended by the flight agent, the hotels recommended by the hotel agent, and the rental cars recommended by the rental car agent. This would give you a clear view of how the agents are interacting with each other and whether the user's preferences and constraints are being met.
 
-Pogledajmo detaljnije svaki od ovih aspekata.
+Let's look at each of these aspects more in detail.
 
-- **Alati za zapisivanje i praćenje**: Želite zapisivati svaku radnju koju poduzme agent. Unos zapisa mogao bi sadržavati informacije o agentu koji je poduzeo radnju, poduzetoj radnji, vremenu kada je radnja poduzeta i ishodu radnje. Ove informacije mogu se koristiti za otklanjanje grešaka, optimizaciju i više.
-- **Alati za vizualizaciju**: Alati za vizualizaciju mogu vam pomoći da vidite interakcije između agenata na intuitivniji način. Na primjer, mogli biste imati grafikon koji prikazuje tok informacija između agenata. To bi vam moglo pomoći da identificirate uska grla, neučinkovitosti i druge probleme u sustavu.
-- **Mjerni podaci o izvedbi**: Mjerni podaci o izvedbi mogu vam pomoći da pratite učinkovitost sustava višestrukih agenata. Na primjer, mogli biste pratiti vrijeme potrebno za dovršavanje zadatka, broj dovršenih zadataka po jedinici vremena i točnost preporuka koje daju agenti. Ove informacije mogu vam pomoći da identificirate područja za poboljšanje i optimizirate sustav.
+- **Logging and Monitoring Tools**: You want to have logging done for each action taken by an agent. A log entry could store information on the agent that took the action, the action taken, the time the action was taken, and the outcome of the action. This information can then be used for debugging, optimizing and more.
 
-## Obrasci višestrukih agenata
+- **Visualization Tools**: Visualization tools can help you see the interactions between agents in a more intuitive way. For example, you could have a graph that shows the flow of information between agents. This could help you identify bottlenecks, inefficiencies, and other issues in the system.
 
-Pogledajmo konkretne obrasce koje možemo koristiti za stvaranje aplikacija s višestrukim agentima. Evo nekoliko zanimljivih obrazaca koje vrijedi razmotriti:
+- **Performance Metrics**: Performance metrics can help you track the effectiveness of the multi-agent system. For example, you could track the time taken to complete a task, the number of tasks completed per unit of time, and the accuracy of the recommendations made by the agents. This information can help you identify areas for improvement and optimize the system.
 
-### Grupni chat
+## Multi-Agent Patterns
 
-Ovaj obrazac je koristan kada želite stvoriti aplikaciju za grupni chat u kojoj više agenata može međusobno komunicirati. Tipični slučajevi upotrebe za ovaj obrazac uključuju timsku suradnju, korisničku podršku i društvene mreže.
+Let's dive into some concrete patterns we can use to create multi-agent apps. Here are some interesting patterns worth considering:
 
-U ovom obrascu, svaki agent predstavlja korisnika u grupnom chatu, a poruke se razmjenjuju između agenata koristeći protokol za razmjenu poruka. Agenti mogu slati poruke u grupni chat, primati poruke iz grupnog chata i odgovarati na poruke drugih agenata.
+### Group chat
 
-Ovaj obrazac može se implementirati koristeći centraliziranu arhitekturu gdje se sve poruke usmjeravaju kroz centralni poslužitelj ili decentraliziranu arhitekturu gdje se poruke razmjenjuju izravno.
+This pattern is useful when you want to create a group chat application where multiple agents can communicate with each other. Typical use cases for this pattern include team collaboration, customer support, and social networking.
 
-![Grupni chat](../../../translated_images/multi-agent-group-chat.ec10f4cde556babd7b450fd01e1a0fac1f9788c27d3b9e54029377bb1bdd1db6.hr.png)
+In this pattern, each agent represents a user in the group chat, and messages are exchanged between agents using a messaging protocol. The agents can send messages to the group chat, receive messages from the group chat, and respond to messages from other agents.
 
-### Predaja zadatka
+This pattern can be implemented using a centralized architecture where all messages are routed through a central server, or a decentralized architecture where messages are exchanged directly.
 
-Ovaj obrazac je koristan kada želite stvoriti aplikaciju u kojoj više agenata može predavati zadatke jedni drugima.
+![Grupni chat](../../../translated_images/hr/multi-agent-group-chat.ec10f4cde556babd.webp)
 
-Tipični slučajevi upotrebe za ovaj obrazac uključuju korisničku podršku, upravljanje zadacima i automatizaciju tijeka rada.
+### Hand-off
 
-U ovom obrascu, svaki agent predstavlja zadatak ili korak u tijeku rada, a agenti mogu predavati zadatke drugim agentima na temelju unaprijed definiranih pravila.
+This pattern is useful when you want to create an application where multiple agents can hand off tasks to each other.
 
-![Predaja zadatka](../../../translated_images/multi-agent-hand-off.4c5fb00ba6f8750a0754bf29d49fa19d578080c61da40416df84d866bcdd87a3.hr.png)
+Typical use cases for this pattern include customer support, task management, and workflow automation.
 
-### Kolaborativno filtriranje
+In this pattern, each agent represents a task or a step in a workflow, and agents can hand off tasks to other agents based on predefined rules.
 
-Ovaj obrazac je koristan kada želite stvoriti aplikaciju u kojoj više agenata može surađivati kako bi korisnicima dali preporuke.
+![Predaja zadatka](../../../translated_images/hr/multi-agent-hand-off.4c5fb00ba6f8750a.webp)
 
-Zašto biste željeli da više agenata surađuje? Zato što svaki agent može imati različitu stručnost i može doprinijeti procesu preporuka na različite načine.
+### Collaborative filtering
 
-Uzmimo primjer gdje korisnik želi preporuku za najbolju dionicu za kupnju na burzi.
+This pattern is useful when you want to create an application where multiple agents can collaborate to make recommendations to users.
 
-- **Industrijski stručnjak**: Jedan agent mogao bi biti stručnjak za određenu industriju.
-- **Tehnička analiza**: Drugi agent mogao bi biti stručnjak za tehničku analizu.
-- **Fundamentalna analiza**: Treći agent mogao bi biti stručnjak za fundamentalnu analizu. Suradnjom, ovi agenti mogu korisniku pružiti sveobuhvatniju preporuku.
+Why you would want multiple agents to collaborate is because each agent can have different expertise and can contribute to the recommendation process in different ways.
 
-![Preporuka](../../../translated_images/multi-agent-filtering.d959cb129dc9f60826916f0f12fe7a8339b532f5f236860afb8f16b63ea10dc2.hr.png)
+Let's take an example where a user wants a recommendation on the best stock to buy on the stock market.
 
-## Scenarij: Proces povrata novca
+- **Industry expert**:. One agent could be an expert in a specific industry.
+- **Technical analysis**: Another agent could be an expert in technical analysis.
+- **Fundamental analysis**: and another agent could be an expert in fundamental analysis. By collaborating, these agents can provide a more comprehensive recommendation to the user.
 
-Razmotrimo scenarij u kojem korisnik pokušava dobiti povrat novca za proizvod. U ovom procesu može biti uključeno dosta agenata, ali podijelimo ih na agente specifične za ovaj proces i opće agente koji se mogu koristiti u drugim procesima.
+![Preporuka](../../../translated_images/hr/multi-agent-filtering.d959cb129dc9f608.webp)
 
-**Agenti specifični za proces povrata novca**:
+## Scenario: Refund process
 
-Slijede neki agenti koji bi mogli biti uključeni u proces povrata novca:
+Consider a scenario where a customer is trying to get a refund for a product, there can be quite a few agents involved in this process but let's divide it up between agents specific for this process and general agents that can be used in other processes.
 
-- **Agent korisnika**: Ovaj agent predstavlja korisnika i odgovoran je za pokretanje procesa povrata novca.
-- **Agent prodavatelja**: Ovaj agent predstavlja prodavatelja i odgovoran je za obradu povrata novca.
-- **Agent plaćanja**: Ovaj agent predstavlja proces plaćanja i odgovoran je za povrat korisnikove uplate.
-- **Agent za rješavanje problema**: Ovaj agent predstavlja proces rješavanja problema i odgovoran je za rješavanje svih problema koji se pojave tijekom procesa povrata novca.
-- **Agent za usklađenost**: Ovaj agent predstavlja proces usklađenosti i odgovoran je za osiguranje da proces povrata novca bude u skladu s propisima i politikama.
+**Agents specific for the refund process**:
 
-**Opći agenti**:
+Following are some agents that could be involved in the refund process:
 
-Ovi agenti mogu se koristiti u drugim dijelovima vašeg poslovanja.
+- **Customer agent**: This agent represents the customer and is responsible for initiating the refund process.
+- **Seller agent**: This agent represents the seller and is responsible for processing the refund.
+- **Payment agent**: This agent represents the payment process and is responsible for refunding the customer's payment.
+- **Resolution agent**: This agent represents the resolution process and is responsible for resolving any issues that arise during the refund process.
+- **Compliance agent**: This agent represents the compliance process and is responsible for ensuring that the refund process complies with regulations and policies.
 
-- **Agent za dostavu**: Ovaj agent predstavlja proces dostave i odgovoran je za dostavu proizvoda natrag prodavatelju. Ovaj agent može se koristiti i za proces povrata novca i za opću dostavu proizvoda, primjerice nakon kupnje.
-- **Agent za povratne informacije**: Ovaj agent predstavlja proces povratnih informacija i odgovoran je za prikupljanje povratnih informacija od korisnika. Povratne informacije mogu se prikupljati u bilo kojem trenutku, ne samo tijekom procesa povrata novca.
-- **Agent za eskalaciju**: Ovaj agent predstavlja proces eskalacije i odgovoran je za eskalaciju problema na višu razinu podrške. Ova vrsta agenta može se koristiti u bilo kojem procesu gdje je potrebno eskalirati problem.
-- **Agent za obavijesti**: Ovaj agent predstavlja proces obavijesti i odgovoran je za slanje obavijesti korisniku u različitim fazama procesa povrata novca.
-- **Agent za analitiku**: Ovaj agent predstavlja proces analitike i odgovoran je za analizu podataka povezanih s procesom povrata novca.
-- **Agent za reviziju**: Ovaj agent predstavlja proces revizije i odgovoran je za reviziju procesa povrata novca kako bi se osiguralo da se provodi ispravno.
-- **Agent za izvještavanje**: Ovaj agent predstavlja proces izvještavanja i odgovoran je za generiranje izvještaja o procesu povrata novca.
-- **Agent za znanje**: Ovaj agent predstavlja proces znanja i odgovoran je za održavanje baze znanja informacija povezanih s procesom povrata novca. Ovaj agent može biti informiran i o povratima i o drugim dijelovima vašeg poslovanja.
-- **Agent za sigurnost**: Ovaj agent predstavlja proces sigurnosti i odgovoran je za osiguranje sigurnosti procesa povrata novca.
-- **Agent za kvalitetu**: Ovaj agent predstavlja proces kvalitete i odgovoran je za osiguranje kvalitete procesa povrata novca.
+**General agents**:
 
-Naveden je priličan broj agenata, kako specifičnih za proces povrata novca, tako i općih agenata koji se mogu koristiti u drugim dijelovima vašeg poslovanja. Nadamo se da vam ovo daje ideju kako možete odlučiti koje agente koristiti u svom sustavu višestrukih agenata.
+These agents can be used by other parts of your business.
 
-## Zadatak
-Dizajnirajte sustav s više agenata za proces korisničke podrške. Identificirajte agente uključene u proces, njihove uloge i odgovornosti te kako međusobno komuniciraju. Razmotrite i specifične agente za proces korisničke podrške i opće agente koji se mogu koristiti u drugim dijelovima vašeg poslovanja.
+- **Shipping agent**: This agent represents the shipping process and is responsible for shipping the product back to the seller. This agent can be used both for the refund process and for general shipping of a product via a purchase for example.
+- **Feedback agent**: This agent represents the feedback process and is responsible for collecting feedback from the customer. Feedback could be had at any time and not just during the refund process.
+- **Escalation agent**: This agent represents the escalation process and is responsible for escalating issues to a higher level of support. You can use this type of agent for any process where you need to escalate an issue.
+- **Notification agent**: This agent represents the notification process and is responsible for sending notifications to the customer at various stages of the refund process.
+- **Analytics agent**: This agent represents the analytics process and is responsible for analyzing data related to the refund process.
+- **Audit agent**: This agent represents the audit process and is responsible for auditing the refund process to ensure that it is being carried out correctly.
+- **Reporting agent**: This agent represents the reporting process and is responsible for generating reports on the refund process.
+- **Knowledge agent**: This agent represents the knowledge process and is responsible for maintaining a knowledge base of information related to the refund process. This agent could be knowledgeable both on refunds and other parts of your business.
+- **Security agent**: This agent represents the security process and is responsible for ensuring the security of the refund process.
+- **Quality agent**: This agent represents the quality process and is responsible for ensuring the quality of the refund process.
 
-> Razmislite prije nego što pročitate sljedeće rješenje, možda će vam trebati više agenata nego što mislite.
+There's quite a few agents listed previously both for the specific refund process but also for the general agents that can be used in other parts of your business. Hopefully this gives you an idea on how you can decide on which agents to use in your multi-agent system.
 
-> TIP: Razmislite o različitim fazama procesa korisničke podrške i također uzmite u obzir agente potrebne za bilo koji sustav.
+## Assignment
+
+Design a multi-agent system for a customer support process. Identify the agents involved in the process, their roles and responsibilities, and how they interact with each other. Consider both agents specific to the customer support process and general agents that can be used in other parts of your business.
+> Razmislite prije nego pročitate sljedeće rješenje, možda će vam trebati više agenata nego što mislite.
+> SAVJET: Razmislite o različitim fazama procesa korisničke podrške i također razmotrite agente potrebne za bilo koji sustav.
 
 ## Rješenje
 
 [Rješenje](./solution/solution.md)
 
-## Provjera znanja
+## Provjere znanja
 
-Pitanje: Kada biste trebali razmotriti korištenje sustava s više agenata?
+Question: Kada biste trebali razmotriti upotrebu više agenata?
 
 - [ ] A1: Kada imate mali opseg posla i jednostavan zadatak.
-- [ ] A2: Kada imate veliki opseg posla.
+- [ ] A2: Kada imate veliki opseg posla
 - [ ] A3: Kada imate jednostavan zadatak.
 
 [Kviz rješenja](./solution/solution-quiz.md)
 
 ## Sažetak
 
-U ovoj lekciji smo razmotrili dizajnerski obrazac s više agenata, uključujući scenarije u kojima su primjenjivi, prednosti korištenja više agenata u odnosu na jednog agenta, osnovne elemente implementacije dizajnerskog obrasca s više agenata te kako imati uvid u međusobnu interakciju više agenata.
+U ovoj lekciji razmotrili smo dizajnerski obrazac s više agenata, uključujući scenarije u kojima je primjenjiv, prednosti korištenja više agenata umjesto jednog, osnovne elemente implementacije tog obrasca i načine da dobijete uvid u međusobnu interakciju agenata.
 
-### Imate li dodatnih pitanja o dizajnerskom obrascu s više agenata?
+### Imate li još pitanja o obrascu dizajna s više agenata?
 
-Pridružite se [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) kako biste se povezali s drugim učenicima, sudjelovali u uredskim satima i dobili odgovore na svoja pitanja o AI agentima.
+Pridružite se [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) kako biste upoznali druge polaznike, sudjelovali na konzultacijama i dobili odgovore na pitanja o AI agentima.
 
 ## Dodatni resursi
 
+- <a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Dokumentacija Microsoft Agent Frameworka</a>
+- <a href="https://www.analyticsvidhya.com/blog/2024/10/agentic-design-patterns/" target="_blank">Dizajnerski obrasci za agente</a>
+
+
 ## Prethodna lekcija
 
-[Dizajn planiranja](../07-planning-design/README.md)
+[Planiranje dizajna](../07-planning-design/README.md)
 
 ## Sljedeća lekcija
 
@@ -193,5 +189,7 @@ Pridružite se [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) kako
 
 ---
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Odricanje odgovornosti**:
+Ovaj dokument je preveden pomoću AI usluge prevođenja [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na svom izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,132 +1,148 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cdd28bc00816d2773bb2b5968d782abc",
-  "translation_date": "2025-11-11T11:20:53+00:00",
-  "source_file": "01-intro-to-ai-agents/README.md",
-  "language_code": "da"
-}
--->
-[![Intro til AI-agenter](../../../translated_images/lesson-1-thumbnail.d21b2c34b32d35bbc7f1b4a40a81b031970b6076b4e0c59fb006cf818cac5d4a.da.png)](https://youtu.be/3zgm60bXmQk?si=QA4CW2-cmul5kk3D)
+[![Intro til AI-agenter](../../../translated_images/da/lesson-1-thumbnail.d21b2c34b32d35bb.webp)](https://youtu.be/3zgm60bXmQk?si=QA4CW2-cmul5kk3D)
 
 > _(Klik på billedet ovenfor for at se videoen til denne lektion)_
 
-# Introduktion til AI-agenter og anvendelsesområder
+# Introduktion til AI-agenter og agentbrugssager
 
-Velkommen til kurset "AI-agenter for begyndere"! Dette kursus giver grundlæggende viden og praktiske eksempler på, hvordan man bygger AI-agenter.
+Velkommen til kurset **AI-agenter for begyndere**! Dette kursus giver dig den grundlæggende viden — og fungerende kode — til at begynde at bygge AI-agenter fra bunden.
 
-Deltag i <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Discord-fællesskabet</a> for at møde andre lærende og AI-agentbyggere og stille spørgsmål om kurset.
+Kom og sig hej i <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Discord-fællesskabet</a> — det er fyldt med lærende og AI-byggere, der gerne svarer på spørgsmål.
 
-For at starte dette kursus begynder vi med at få en bedre forståelse af, hvad AI-agenter er, og hvordan vi kan bruge dem i de applikationer og arbejdsgange, vi udvikler.
+Inden vi kaster os ud i at bygge, lad os sikre, at vi faktisk forstår, hvad en AI-agent *er*, og hvornår det giver mening at bruge en.
+
+---
 
 ## Introduktion
 
 Denne lektion dækker:
 
-- Hvad er AI-agenter, og hvilke forskellige typer agenter findes der?
-- Hvilke anvendelsesområder er bedst egnet til AI-agenter, og hvordan kan de hjælpe os?
-- Hvad er nogle af de grundlæggende byggesten, når man designer agentbaserede løsninger?
+- Hvad AI-agenter er, og de forskellige typer der findes
+- Hvilke slags opgaver AI-agenter egner sig bedst til
+- De grundlæggende byggesten, du bruger, når du designer en agentbaseret løsning
 
 ## Læringsmål
-Efter at have gennemført denne lektion, bør du kunne:
 
-- Forstå AI-agentkonceptet og hvordan det adskiller sig fra andre AI-løsninger.
-- Anvende AI-agenter mest effektivt.
-- Produktivt designe agentbaserede løsninger for både brugere og kunder.
+Når du er færdig med denne lektion, bør du kunne:
+
+- Forklare, hvad en AI-agent er, og hvordan den er forskellig fra en almindelig AI-løsning
+- Vide, hvornår det giver mening at bruge en AI-agent (og hvornår ikke)
+- Skitsere et grundlæggende agentbaseret løsningsdesign for et virkelighedsproblem
+
+---
 
 ## Definition af AI-agenter og typer af AI-agenter
 
 ### Hvad er AI-agenter?
 
-AI-agenter er **systemer**, der gør det muligt for **Large Language Models (LLMs)** at **udføre handlinger** ved at udvide deres kapaciteter gennem adgang til **værktøjer** og **viden**.
+Her er en simpel måde at tænke på det:
 
-Lad os bryde denne definition ned i mindre dele:
+> **AI-agenter er systemer, der lader store sprogmodeller (LLMs) *faktisk gøre ting* — ved at give dem værktøjer og viden til at handle på verden, ikke bare svare på forespørgsler.**
 
-- **System** - Det er vigtigt at tænke på agenter som et system af mange komponenter og ikke bare som en enkelt komponent. På det grundlæggende niveau består komponenterne i en AI-agent af:
-  - **Miljø** - Det definerede rum, hvor AI-agenten opererer. For eksempel, hvis vi havde en rejsebooking-AI-agent, kunne miljøet være det rejsebookingsystem, som AI-agenten bruger til at udføre opgaver.
-  - **Sensorer** - Miljøer har information og giver feedback. AI-agenter bruger sensorer til at indsamle og fortolke denne information om miljøets aktuelle tilstand. I eksemplet med rejsebooking-agenten kan rejsebookingsystemet give information som hoteltilgængelighed eller flypriser.
-  - **Aktuatorer** - Når AI-agenten modtager miljøets aktuelle tilstand, bestemmer agenten, hvilken handling der skal udføres for at ændre miljøet. For rejsebooking-agenten kunne det være at booke et ledigt værelse til brugeren.
+Lad os uddybe det lidt:
 
-![Hvad er AI-agenter?](../../../translated_images/what-are-ai-agents.1ec8c4d548af601a3a78c6c02e5c355d19c06a4a74fe93e3609a1d08e8c15689.da.png)
+- **System** — En AI-agent er ikke bare én ting. Det er en samling dele, der arbejder sammen. I sin kerne har hver agent tre dele:
+  - **Miljø** — Det rum agenten arbejder i. For en rejsebooking-agent ville det være bookingsystemet selv.
+  - **Sensorer** — Hvordan agenten læser den aktuelle tilstand i sit miljø. Vores rejseagent kunne tjekke hoteltilgængelighed eller flypriser.
+  - **Aktuatorer** — Hvordan agenten handler. Rejseagenten kunne booke et værelse, sende en bekræftelse eller annullere en reservation.
 
-**Large Language Models** - Konceptet med agenter eksisterede før oprettelsen af LLMs. Fordelen ved at bygge AI-agenter med LLMs er deres evne til at fortolke menneskesprog og data. Denne evne gør det muligt for LLMs at fortolke miljøinformation og definere en plan for at ændre miljøet.
+![Hvad er AI-agenter?](../../../translated_images/da/what-are-ai-agents.1ec8c4d548af601a.webp)
 
-**Udføre handlinger** - Uden for AI-agent-systemer er LLMs begrænset til situationer, hvor handlingen er at generere indhold eller information baseret på en brugers prompt. Inden for AI-agent-systemer kan LLMs udføre opgaver ved at fortolke brugerens anmodning og bruge værktøjer, der er tilgængelige i deres miljø.
+- **Store sprogmodeller** — Agenter fandtes før LLM’er, men LLM’er er det, der gør moderne agenter så kraftfulde. De kan forstå naturligt sprog, ræsonnere om kontekst og omsætte en uklar brugerforespørgsel til en konkret handlingsplan.
 
-**Adgang til værktøjer** - Hvilke værktøjer LLM har adgang til, defineres af 1) det miljø, det opererer i, og 2) udvikleren af AI-agenten. For vores rejseagenteksempel er agentens værktøjer begrænset af de operationer, der er tilgængelige i bookingsystemet, og/eller udvikleren kan begrænse agentens værktøjsadgang til fly.
+- **Udfør handlinger** — Uden et agentsystem genererer en LLM bare tekst. Inde i et agentsystem kan LLM faktisk *udføre* trin — søge i en database, kalde en API, sende en besked.
 
-**Hukommelse+Viden** - Hukommelse kan være kortsigtet i konteksten af samtalen mellem brugeren og agenten. Langsigtet, uden for den information, der leveres af miljøet, kan AI-agenter også hente viden fra andre systemer, tjenester, værktøjer og endda andre agenter. I rejseagenteksemplet kunne denne viden være information om brugerens rejsepræferencer, der findes i en kundedatabase.
+- **Adgang til værktøjer** — Hvilke værktøjer agenten kan bruge, afhænger af (1) det miljø, den kører i, og (2) hvad udvikleren har valgt at give den. En rejseagent kan måske søge efter fly, men ikke redigere kundeoplysninger — det handler om, hvad du forbinder.
 
-### De forskellige typer agenter
+- **Hukommelse + viden** — Agenter kan have korttidshukommelse (den aktuelle samtale) og langtidshukommelse (en kundedatabase, tidligere interaktioner). Rejseagenten kan "huske", at du foretrækker sæder ved vinduet.
 
-Nu hvor vi har en generel definition af AI-agenter, lad os se på nogle specifikke agenttyper og hvordan de kunne anvendes til en rejsebooking-AI-agent.
+---
 
-| **Agenttype**                 | **Beskrivelse**                                                                                                                       | **Eksempel**                                                                                                                                                                                                                   |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Simple Reflex Agents**      | Udfører øjeblikkelige handlinger baseret på foruddefinerede regler.                                                                 | Rejseagenten fortolker konteksten af en e-mail og videresender rejseklager til kundeservice.                                                                                                                          |
-| **Model-Based Reflex Agents** | Udfører handlinger baseret på en model af verden og ændringer i den model.                                                           | Rejseagenten prioriterer ruter med betydelige prisændringer baseret på adgang til historiske prisdata.                                                                                                             |
-| **Goal-Based Agents**         | Skaber planer for at opnå specifikke mål ved at fortolke målet og bestemme handlinger for at nå det.                                  | Rejseagenten booker en rejse ved at bestemme nødvendige rejsearrangementer (bil, offentlig transport, fly) fra den aktuelle placering til destinationen.                                                                                |
-| **Utility-Based Agents**      | Overvejer præferencer og afvejer kompromiser numerisk for at bestemme, hvordan mål opnås.                                            | Rejseagenten maksimerer nytteværdi ved at afveje bekvemmelighed mod omkostninger, når der bookes rejser.                                                                                                                                          |
-| **Learning Agents**           | Forbedrer sig over tid ved at reagere på feedback og justere handlinger derefter.                                                    | Rejseagenten forbedrer sig ved at bruge kundefeedback fra efter-rejse-undersøgelser til at foretage justeringer af fremtidige bookinger.                                                                                                               |
-| **Hierarchical Agents**       | Har flere agenter i et hierarkisk system, hvor højere niveau-agenter opdeler opgaver i delopgaver, som lavere niveau-agenter udfører. | Rejseagenten aflyser en rejse ved at opdele opgaven i delopgaver (for eksempel aflysning af specifikke bookinger) og lade lavere niveau-agenter udføre dem og rapportere tilbage til den højere niveau-agent.                                     |
-| **Multi-Agent Systems (MAS)** | Agenter udfører opgaver uafhængigt, enten samarbejdende eller konkurrerende.                                                         | Samarbejdende: Flere agenter booker specifikke rejsetjenester som hoteller, fly og underholdning. Konkurrerende: Flere agenter administrerer og konkurrerer om en delt hotelbookingkalender for at booke kunder ind på hotellet. |
+### De forskellige typer AI-agenter
 
-## Hvornår skal man bruge AI-agenter?
+Ikke alle agenter er bygget ens. Her er en oversigt over de vigtigste typer med en rejsebooking-agent som eksempel:
 
-I det tidligere afsnit brugte vi rejseagentens anvendelsesområde til at forklare, hvordan de forskellige typer agenter kan bruges i forskellige scenarier for rejsebooking. Vi vil fortsætte med at bruge denne applikation gennem hele kurset.
+| **Agenttype** | **Hvad den gør** | **Rejseagenteksempel** |
+|---|---|---|
+| **Simple refleksagenter** | Følger hårdkodede regler — ingen hukommelse, ingen planlægning. | Ser en klage-mail → videresender den til kundeservice. Det er det. |
+| **Model-baserede refleksagenter** | Holder en intern model af verden og opdaterer den løbende. | Sporer historiske flypriser og markerer ruter, der pludselig bliver dyre. |
+| **Målorienterede agenter** | Har et mål og finder ud af, hvordan det nås trin for trin. | Booker en hel rejse (fly, bil, hotel) fra din nuværende lokation for at få dig til destinationen. |
+| **Nyttebaserede agenter** | Finder ikke bare *en* løsning — finder den *bedste* ved at veje fordele og ulemper. | Afvejer omkostninger mod bekvemmelighed for at finde den rejse, der scorer højest på dine præferencer. |
+| **Lærende agenter** | Bliver bedre over tid ved at lære af feedback. | Justerer fremtidige bookinganbefalinger baseret på spørgeskemasvar efter rejsen. |
+| **Hierarkiske agenter** | En overordnet agent opdeler arbejdet i delopgaver og delegerer til lavere-niveau agenter. | En "annuller tur"-anmodning opdeles i: annuller fly, annuller hotel, annuller billeje — hver håndteres af en under-agent. |
+| **Multi-agent systemer (MAS)** | Flere uafhængige agenter arbejder sammen (eller konkurrerer). | Samarbejdende: separate agenter håndterer hoteller, fly og underholdning. Konkurrerende: flere agenter konkurrerer om at finde hotelværelser til den bedste pris. |
 
-Lad os se på de typer anvendelsesområder, som AI-agenter er bedst egnet til:
+---
 
-![Hvornår skal man bruge AI-agenter?](../../../translated_images/when-to-use-ai-agents.54becb3bed74a479f5caca9c951132ce81d482a6704bcd22e5a600dbabc9434e.da.png)
+## Hvornår skal man bruge AI-agenter
 
-- **Åbne problemer** - giver LLM mulighed for at bestemme nødvendige trin for at fuldføre en opgave, fordi det ikke altid kan hardcodes i en arbejdsgang.
-- **Flertrinsprocesser** - opgaver, der kræver en vis kompleksitet, hvor AI-agenten skal bruge værktøjer eller information over flere trin i stedet for enkeltstående hentning.  
-- **Forbedring over tid** - opgaver, hvor agenten kan forbedre sig over tid ved at modtage feedback fra enten sit miljø eller brugere for at levere bedre nytteværdi.
+Bare fordi du *kan* bruge en AI-agent, betyder det ikke, at du altid *skal*. Her er situationerne, hvor agenter virkelig kommer til deres ret:
 
-Vi dækker flere overvejelser om brugen af AI-agenter i lektionen om opbygning af pålidelige AI-agenter.
+![Hvornår skal man bruge AI-agenter?](../../../translated_images/da/when-to-use-ai-agents.54becb3bed74a479.webp)
 
-## Grundlæggende om agentbaserede løsninger
+- **Åbne problemstillinger** — Når trinnene til at løse et problem ikke kan programmeres på forhånd. Du har brug for, at LLM’en selv finder vej dynamisk.
+- **Flertrinsprocesser** — Opgaver der kræver brug af værktøjer over flere trin, ikke bare et enkelt opslag eller generering.
+- **Forbedring over tid** — Når du ønsker systemet skal blive klogere baseret på brugerfeedback eller miljøsignaler.
+
+Vi vil dykke dybere ned i, hvornår (og hvornår *ikke*) man skal bruge AI-agenter i lektionen **At bygge pålidelige AI-agenter** senere i kurset.
+
+---
+
+## Grundlæggende for agentbaserede løsninger
 
 ### Agentudvikling
 
-Det første skridt i designet af et AI-agent-system er at definere værktøjer, handlinger og adfærd. I dette kursus fokuserer vi på at bruge **Azure AI Agent Service** til at definere vores agenter. Det tilbyder funktioner som:
+Det første, du gør, når du bygger en agent, er at definere *hvad den kan gøre* — dens værktøjer, handlinger og adfærd.
 
-- Valg af åbne modeller som OpenAI, Mistral og Llama
-- Brug af licenserede data gennem udbydere som Tripadvisor
-- Brug af standardiserede OpenAPI 3.0-værktøjer
+I dette kursus bruger vi **Azure AI Agent Service** som vores primære platform. Den understøtter:
 
-### Agentbaserede mønstre
+- Åbne modeller som OpenAI, Mistral og Llama
+- Licenserede data fra udbydere som Tripadvisor
+- Standardiserede OpenAPI 3.0-værktøjsdefinitioner
 
-Kommunikation med LLMs sker gennem prompts. Givet den semi-autonome natur af AI-agenter er det ikke altid muligt eller nødvendigt manuelt at gentage prompten til LLM efter en ændring i miljøet. Vi bruger **agentbaserede mønstre**, der giver os mulighed for at prompt LLM over flere trin på en mere skalerbar måde.
+### Agentmønstre
 
-Dette kursus er opdelt i nogle af de nuværende populære agentbaserede mønstre.
+Du kommunikerer med LLM’er gennem prompts. Med agenter kan du ikke altid håndbygge hver prompt manuelt — agenten skal kunne handle på tværs af mange trin. Her kommer **agentmønstre** ind i billedet. Det er genanvendelige strategier til at promptstyre og orkestrere LLM’er på en mere skalerbar, pålidelig måde.
 
-### Agentbaserede frameworks
+Dette kursus er struktureret om de mest almindelige og nyttige agentmønstre.
 
-Agentbaserede frameworks giver udviklere mulighed for at implementere agentbaserede mønstre gennem kode. Disse frameworks tilbyder skabeloner, plugins og værktøjer til bedre samarbejde mellem AI-agenter. Disse fordele giver muligheder for bedre synlighed og fejlfinding af AI-agent-systemer.
+### Agentframeworks
 
-I dette kursus vil vi udforske det forskningsdrevne AutoGen-framework og det produktionsklare Agent-framework fra Semantic Kernel.
+Agentframeworks giver udviklere færdige skabeloner, værktøjer og infrastruktur til at bygge agenter. De gør det lettere at:
 
-## Eksempelkoder
+- Forbinde værktøjer og funktioner
+- Observere, hvad agenten gør (og fejlfinde, når noget går galt)
+- Samarbejde på tværs af flere agenter
 
-- Python: [Agent Framework](./code_samples/01-python-agent-framework.ipynb)
-- .NET: [Agent Framework](./code_samples/01-dotnet-agent-framework.md)
+I dette kursus fokuserer vi på **Microsoft Agent Framework (MAF)** til at bygge produktionsklare agenter.
 
-## Har du flere spørgsmål om AI-agenter?
+---
 
-Deltag i [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) for at møde andre lærende, deltage i kontortid og få svar på dine spørgsmål om AI-agenter.
+## Kodeeksempler
+
+Klar til at se det i praksis? Her er kodeeksemplerne til denne lektion:
+
+- 🐍 Python: [Agent Framework](./code_samples/01-python-agent-framework.ipynb)
+- 🔷 .NET: [Agent Framework](./code_samples/01-dotnet-agent-framework.md)
+
+---
+
+## Har du spørgsmål?
+
+Deltag i [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) for at komme i kontakt med andre lærende, deltage i office hours, og få svar på dine AI-agent-spørgsmål fra fællesskabet.
+
+---
 
 ## Forrige lektion
 
-[Kursusopsætning](../00-course-setup/README.md)
+[Opsætning af kursus](../00-course-setup/README.md)
 
 ## Næste lektion
 
-[Udforskning af agentbaserede frameworks](../02-explore-agentic-frameworks/README.md)
+[Udforskning af agentframeworks](../02-explore-agentic-frameworks/README.md)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi stræber efter nøjagtighed, skal du være opmærksom på, at automatiske oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritiske oplysninger anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,33 +1,24 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aff92c6f019b4627ca9399c6e3882e17",
-  "translation_date": "2025-09-18T15:35:18+00:00",
-  "source_file": "11-agentic-protocols/README.md",
-  "language_code": "ro"
-}
--->
-# Utilizarea Protocoalelor Agentice (MCP, A2A și NLWeb)
+# Utilizarea protocoalelor agentice (MCP, A2A și NLWeb)
 
-[![Protocoale Agentice](../../../translated_images/lesson-11-thumbnail.b6c742949cf1ce2aa0255968d287b31c99b51dfa9c9beaede7c3fbed90e8fcfb.ro.png)](https://youtu.be/X-Dh9R3Opn8)
+[![Agentic Protocols](../../../translated_images/ro/lesson-11-thumbnail.b6c742949cf1ce2a.webp)](https://youtu.be/X-Dh9R3Opn8)
 
-> _(Click pe imaginea de mai sus pentru a viziona videoclipul acestei lecții)_
+> _(Faceți clic pe imaginea de mai sus pentru a viziona videoclipul acestei lecții)_
 
-Pe măsură ce utilizarea agenților AI crește, la fel crește și necesitatea unor protocoale care să asigure standardizarea, securitatea și să sprijine inovația deschisă. În această lecție, vom aborda 3 protocoale care încearcă să răspundă acestei nevoi - Model Context Protocol (MCP), Agent to Agent (A2A) și Natural Language Web (NLWeb).
+Pe măsură ce utilizarea agenților AI crește, crește și necesitatea unor protocoale care să asigure standardizare, securitate și să susțină inovația deschisă. În această lecție, vom aborda 3 protocoale care caută să răspundă acestei nevoi - Model Context Protocol (MCP), Agent to Agent (A2A) și Natural Language Web (NLWeb).
 
 ## Introducere
 
 În această lecție, vom acoperi:
 
-• Cum **MCP** permite agenților AI să acceseze instrumente și date externe pentru a îndeplini sarcinile utilizatorului.
+• Cum **MCP** permite agenților AI să acceseze instrumente și date externe pentru a îndeplini sarcinile utilizatorilor.
 
 • Cum **A2A** facilitează comunicarea și colaborarea între diferiți agenți AI.
 
-• Cum **NLWeb** aduce interfețe de limbaj natural pe orice site web, permițând agenților AI să descopere și să interacționeze cu conținutul.
+• Cum **NLWeb** aduce interfețe în limbaj natural pe orice site web, permițând agenților AI să descopere și să interacționeze cu conținutul.
 
-## Obiective de Învățare
+## Obiectivele de învățare
 
-• **Identificarea** scopului principal și beneficiilor MCP, A2A și NLWeb în contextul agenților AI.
+• **Identificarea** scopului principal și beneficiile MCP, A2A și NLWeb în contextul agenților AI.
 
 • **Explicarea** modului în care fiecare protocol facilitează comunicarea și interacțiunea între LLM-uri, instrumente și alți agenți.
 
@@ -35,155 +26,157 @@ Pe măsură ce utilizarea agenților AI crește, la fel crește și necesitatea 
 
 ## Model Context Protocol
 
-**Model Context Protocol (MCP)** este un standard deschis care oferă o modalitate standardizată pentru aplicații de a furniza context și instrumente către LLM-uri. Acest lucru permite un "adaptor universal" pentru diferite surse de date și instrumente la care agenții AI se pot conecta într-un mod consistent.
+**Model Context Protocol (MCP)** este un standard deschis care oferă o modalitate standardizată pentru aplicații de a furniza context și instrumente către LLM-uri. Aceasta permite un "adaptor universal" către diferite surse de date și instrumente la care agenții AI se pot conecta într-un mod consistent.
 
-Să analizăm componentele MCP, beneficiile comparativ cu utilizarea directă a API-urilor și un exemplu despre cum agenții AI ar putea utiliza un server MCP.
+Să privim componentele MCP, beneficiile sale comparativ cu utilizarea directă a API-urilor și un exemplu de cum ar putea agenții AI să folosească un server MCP.
 
-### Componentele de Bază ale MCP
+### Componentele de bază MCP
 
-MCP funcționează pe o **arhitectură client-server**, iar componentele de bază sunt:
+MCP operează pe o **arhitectură client-server** iar componentele de bază sunt:
 
-• **Hosts** sunt aplicații LLM (de exemplu, un editor de cod precum VSCode) care inițiază conexiunile către un server MCP.
+• **Hosts** sunt aplicații LLM (de exemplu un editor de cod precum VSCode) care inițiază conexiunile către un server MCP.
 
-• **Clients** sunt componente din cadrul aplicației gazdă care mențin conexiuni unu-la-unu cu serverele.
+• **Clients** sunt componente din cadrul aplicației host care mențin conexiuni unu-la-unu cu serverele.
 
 • **Servers** sunt programe ușoare care expun capabilități specifice.
 
-Protocolul include trei primitive de bază, care sunt capabilitățile unui server MCP:
+Incluse în protocol sunt trei primitive principale, care sunt capabilitățile unui server MCP:
 
-• **Tools**: Acestea sunt acțiuni sau funcții discrete pe care un agent AI le poate apela pentru a efectua o acțiune. De exemplu, un serviciu meteo ar putea expune un instrument "get weather", sau un server de e-commerce ar putea expune un instrument "purchase product". Serverele MCP promovează numele fiecărui instrument, descrierea și schema de intrare/ieșire în lista lor de capabilități.
+• **Tools (Instrumente)**: Acestea sunt acțiuni sau funcții discrete pe care un agent AI le poate invoca pentru a efectua o acțiune. De exemplu, un serviciu meteo ar putea expune un instrument "obține vremea", sau un server de e-commerce ar putea expune un instrument "achiziționează produs". Serverele MCP publică numele fiecărui instrument, descrierea și schema de intrare/ieșire în listarea capabilităților.
 
-• **Resources**: Acestea sunt elemente de date sau documente doar pentru citire pe care un server MCP le poate furniza, iar clienții le pot recupera la cerere. Exemple includ conținutul fișierelor, înregistrările din baze de date sau fișierele jurnal. Resursele pot fi text (cum ar fi cod sau JSON) sau binare (cum ar fi imagini sau PDF-uri).
+• **Resources (Resurse)**: Acestea sunt elemente de date sau documente disponibile doar pentru citire pe care un server MCP le poate furniza, iar clientul le poate obține la cerere. Exemple includ conținutul fișierelor, înregistrări din baze de date sau fișiere de jurnal. Resursele pot fi text (de exemplu cod sau JSON) sau binare (de exemplu imagini sau PDF-uri).
 
-• **Prompts**: Acestea sunt șabloane predefinite care oferă sugestii de prompturi, permițând fluxuri de lucru mai complexe.
+• **Prompts (Indicații)**: Sunt șabloane predefinite care oferă indicații sugerate, permițând fluxuri de lucru mai complexe.
 
 ### Beneficiile MCP
 
 MCP oferă avantaje semnificative pentru agenții AI:
 
-• **Descoperirea Dinamică a Instrumentelor**: Agenții pot primi dinamic o listă de instrumente disponibile de la un server, împreună cu descrieri ale funcțiilor acestora. Acest lucru contrastează cu API-urile tradiționale, care necesită adesea codificare statică pentru integrare, ceea ce înseamnă că orice modificare a API-ului necesită actualizări de cod. MCP oferă o abordare "integrează o dată", ducând la o adaptabilitate mai mare.
+• **Descoperire Dinamică a Instrumentelor**: Agenții pot primi dinamic o listă cu instrumentele disponibile de la un server împreună cu descrierile acestora. Acest lucru contrastează cu API-urile tradiționale, care de multe ori necesită cod statitc pentru integrare, ceea ce înseamnă că orice modificare a API-ului necesită actualizări de cod. MCP oferă o abordare „integrează o dată”, conducând la o adaptabilitate mai mare.
 
-• **Interoperabilitate între LLM-uri**: MCP funcționează cu diferite LLM-uri, oferind flexibilitate pentru a schimba modelele de bază pentru evaluarea performanței.
+• **Interoperabilitate între diferite LLM-uri**: MCP funcționează peste diferite modele LLM, oferind flexibilitate de a schimba modelele de bază pentru a evalua performanțe mai bune.
 
-• **Securitate Standardizată**: MCP include o metodă standard de autentificare, îmbunătățind scalabilitatea atunci când se adaugă acces la servere MCP suplimentare. Acest lucru este mai simplu decât gestionarea diferitelor chei și tipuri de autentificare pentru diverse API-uri tradiționale.
+• **Securitate Standardizată**: MCP include o metodă standard de autentificare, îmbunătățind scalabilitatea când se adaugă acces la servere MCP suplimentare. Acest lucru este mai simplu decât gestionarea diferitelor chei și tipuri de autentificare pentru diverse API-uri tradiționale.
 
 ### Exemplu MCP
 
-![Diagrama MCP](../../../translated_images/mcp-diagram.e4ca1cbd551444a12e1f0eb300191a036ab01124fce71c864fe9cb7f4ac2a15d.ro.png)
+![MCP Diagram](../../../translated_images/ro/mcp-diagram.e4ca1cbd551444a1.webp)
 
-Imaginează-ți că un utilizator dorește să rezerve un zbor folosind un asistent AI alimentat de MCP.
+Imaginați-vă că un utilizator dorește să rezerve un zbor folosind un asistent AI alimentat de MCP.
 
-1. **Conexiune**: Asistentul AI (clientul MCP) se conectează la un server MCP furnizat de o companie aeriană.
+1. **Conectare**: Asistentul AI (client MCP) se conectează la un server MCP furnizat de o companie aeriană.
 
-2. **Descoperirea Instrumentelor**: Clientul întreabă serverul MCP al companiei aeriene, "Ce instrumente aveți disponibile?" Serverul răspunde cu instrumente precum "search flights" și "book flights".
+2. **Descoperire instrument**: Clientul întreabă serverul MCP al companiei aeriene: „Ce instrumente aveți disponibile?” Serverul răspunde cu instrumente precum „căutare zboruri” și „rezervare zbor”.
 
-3. **Invocarea Instrumentului**: Apoi, utilizatorul îi cere asistentului AI, "Te rog să cauți un zbor de la Portland la Honolulu." Asistentul AI, folosindu-se de LLM-ul său, identifică că trebuie să apeleze instrumentul "search flights" și transmite parametrii relevanți (origine, destinație) către serverul MCP.
+3. **Invocare instrument**: Utilizatorul cere asistentului AI: „Te rog, caută un zbor de la Portland la Honolulu.” Asistentul AI, folosindu-și LLM-ul, identifică că trebuie să invoce instrumentul „căutare zboruri” și transmite parametrii relevanți (origine, destinație) serverului MCP.
 
-4. **Execuție și Răspuns**: Serverul MCP, acționând ca un wrapper, face apelul real către API-ul intern de rezervări al companiei aeriene. Apoi primește informațiile despre zbor (de exemplu, date JSON) și le trimite înapoi asistentului AI.
+4. **Executare și răspuns**: Serverul MCP, funcționând ca un înveliș, efectuează apelul real la API-ul intern de rezervări al companiei aeriene. Primește informațiile despre zbor (de exemplu date JSON) și le trimite înapoi asistentului AI.
 
-5. **Interacțiune Ulterioară**: Asistentul AI prezintă opțiunile de zbor. Odată ce selectezi un zbor, asistentul ar putea invoca instrumentul "book flight" pe același server MCP, finalizând rezervarea.
+5. **Interacțiune ulterioară**: Asistentul AI prezintă opțiunile de zbor. Odată ce utilizatorul selectează un zbor, asistentul poate invoca instrumentul „rezervă zbor” pe același server MCP, finalizând rezervarea.
 
-## Protocolul Agent-to-Agent (A2A)
+## Protocolul Agent-la-Agent (A2A)
 
-În timp ce MCP se concentrează pe conectarea LLM-urilor la instrumente, **Agent-to-Agent (A2A)** duce lucrurile mai departe, permițând comunicarea și colaborarea între diferiți agenți AI. A2A conectează agenți AI din diferite organizații, medii și stive tehnologice pentru a îndeplini o sarcină comună.
+În timp ce MCP se concentrează pe conectarea LLM-urilor la instrumente, **protocolul Agent-to-Agent (A2A)** face un pas mai departe, permițând comunicarea și colaborarea între diferiți agenți AI. A2A conectează agenți AI din organizații, medii și stive tehnologice diferite pentru a îndeplini o sarcină comună.
 
-Vom examina componentele și beneficiile A2A, împreună cu un exemplu despre cum ar putea fi aplicat în aplicația noastră de călătorie.
+Vom examina componentele și beneficiile A2A, împreună cu un exemplu de aplicare în aplicația noastră de călătorie.
 
-### Componentele de Bază ale A2A
+### Componentele de bază A2A
 
-A2A se concentrează pe facilitarea comunicării între agenți și pe colaborarea acestora pentru a îndeplini o sub-sarcină a utilizatorului. Fiecare componentă a protocolului contribuie la acest lucru:
+A2A se concentrează pe facilitarea comunicării între agenți și pe colaborarea acestora pentru a îndeplini o sub-sarcină a utilizatorului. Fiecare componentă a protocolului contribuie la acest scop:
 
 #### Agent Card
 
-Similar modului în care un server MCP împărtășește o listă de instrumente, un Agent Card conține:
-- Numele agentului.
+Similar modului în care un server MCP comunică o listă de instrumente, un Agent Card conține:
+- Numele Agentului.
 - O **descriere a sarcinilor generale** pe care le îndeplinește.
-- O **listă de abilități specifice** cu descrieri pentru a ajuta alți agenți (sau chiar utilizatorii umani) să înțeleagă când și de ce ar dori să apeleze acel agent.
-- **URL-ul endpoint-ului curent** al agentului.
-- **Versiunea** și **capabilitățile** agentului, cum ar fi răspunsurile în streaming și notificările push.
+- O **listă de abilități specifice** cu descrieri pentru a ajuta alți agenți (sau chiar utilizatori umani) să înțeleagă când și de ce să invoce acel agent.
+- **URL-ul Endpoint curent** al agentului.
+- **Versiunea** și **capabilitățile** agentului, precum răspunsuri în streaming și notificări push.
 
 #### Agent Executor
 
-Agent Executor este responsabil pentru **transmiterea contextului conversației utilizatorului către agentul remote**, astfel încât agentul remote să înțeleagă sarcina care trebuie îndeplinită. Într-un server A2A, un agent folosește propriul său LLM pentru a analiza cererile primite și a executa sarcini folosind propriile instrumente interne.
+Agent Executor este responsabil pentru **transmiterea contextului conversației utilizatorului către agentul de la distanță**, agentul de la distanță având nevoie de aceste informații pentru a înțelege sarcina ce trebuie îndeplinită. Într-un server A2A, un agent folosește propriul său Model de Limbaj (LLM) pentru a interpreta solicitările și a executa sarcinile folosind propriile sale instrumente interne.
 
 #### Artifact
 
-Odată ce un agent remote a finalizat sarcina solicitată, produsul său de lucru este creat sub forma unui artifact. Un artifact **conține rezultatul muncii agentului**, o **descriere a ceea ce a fost finalizat** și **contextul textului** care este transmis prin protocol. După ce artifactul este trimis, conexiunea cu agentul remote este închisă până când este necesară din nou.
+Când agentul de la distanță finalizează sarcina solicitată, rezultatul său este generat sub forma unui artifact. Un artifact **conține rezultatul muncii agentului**, o **descriere a ceea ce a fost realizat** și **contextul textual** transmis prin protocol. După expedierea artifactului, conexiunea cu agentul de la distanță este închisă până la următoarea nevoie de utilizare.
 
 #### Event Queue
 
-Această componentă este utilizată pentru **gestionarea actualizărilor și transmiterea mesajelor**. Este deosebit de importantă în producție pentru sistemele agentice, pentru a preveni închiderea conexiunii între agenți înainte ca o sarcină să fie finalizată, mai ales când timpii de finalizare pot fi mai lungi.
+Această componentă este folosită pentru **gestionarea actualizărilor și transmiterea mesajelor**. Este deosebit de importantă în producție pentru sistemele agentice, pentru a preveni închiderea conexiunii între agenți înainte ca o sarcină să fie finalizată, mai ales când timpul de finalizare poate fi mai mare.
 
 ### Beneficiile A2A
 
-• **Colaborare Îmbunătățită**: Permite agenților din diferiți furnizori și platforme să interacționeze, să împărtășească context și să lucreze împreună, facilitând automatizarea fără probleme între sisteme tradițional deconectate.
+• **Colaborare îmbunătățită**: Permite agenților din diferiți furnizori și platforme să interacționeze, să împărtășească context și să lucreze împreună, facilitând automatizarea fluidă peste sisteme tradițional separate.
 
-• **Flexibilitate în Selectarea Modelului**: Fiecare agent A2A poate decide ce LLM folosește pentru a răspunde cererilor, permițând modele optimizate sau ajustate pentru fiecare agent, spre deosebire de o conexiune unică LLM în unele scenarii MCP.
+• **Flexibilitate în alegerea modelului**: Fiecare agent A2A poate decide ce LLM utilizează pentru a servi cererile sale, permițând modele optimizate sau ajustate pentru fiecare agent, spre deosebire de o conexiune unică LLM în unele scenarii MCP.
 
-• **Autentificare Integrată**: Autentificarea este integrată direct în protocolul A2A, oferind un cadru de securitate robust pentru interacțiunile între agenți.
+• **Autentificare integrată**: Autentificarea este integrată direct în protocolul A2A, oferind un cadru de securitate robust pentru interacțiunile agenților.
 
 ### Exemplu A2A
 
-![Diagrama A2A](../../../translated_images/A2A-Diagram.8666928d648acc2687db4093d7b09ea2a595622f8fe18194a026ee55fc23af8e.ro.png)
+![A2A Diagram](../../../translated_images/ro/A2A-Diagram.8666928d648acc26.webp)
 
-Să extindem scenariul nostru de rezervare de călătorii, dar de această dată folosind A2A.
+Să dezvoltăm scenariul nostru de rezervare călătorii, dar de data aceasta folosind A2A.
 
-1. **Cererea Utilizatorului către Multi-Agent**: Un utilizator interacționează cu un "Agent de Călătorii" client/agent A2A, poate spunând: "Te rog să rezervi o întreagă excursie la Honolulu pentru săptămâna viitoare, inclusiv zboruri, un hotel și o mașină de închiriat".
+1. **Cererea utilizatorului către multi-agent**: Un utilizator interacționează cu un client/agent A2A "Agent de Călătorie", poate spunând: „Rezervă, te rog, o excursie completă la Honolulu pentru săptămâna viitoare, inclusiv zboruri, hotel și mașină închiriată”.
 
-2. **Orchestrarea de către Agentul de Călătorii**: Agentul de Călătorii primește această cerere complexă. Folosește LLM-ul său pentru a raționa despre sarcină și a determina că trebuie să interacționeze cu alți agenți specializați.
+2. **Orchestrarea de către Agentul de Călătorie**: Agentul de Călătorie primește această cerere complexă. Folosește LLM-ul său pentru a raționa despre sarcină și stabilește că trebuie să interacționeze cu alți agenți specializați.
 
-3. **Comunicare între Agenți**: Agentul de Călătorii folosește protocolul A2A pentru a se conecta la agenți downstream, cum ar fi un "Agent Aerian," un "Agent Hotelier" și un "Agent de Închirieri Auto" creați de diferite companii.
+3. **Comunicare inter-agent**: Agentul de Călătorie folosește protocolul A2A pentru a se conecta la agenții downstream, precum „Agentul Companiei Aeriene”, „Agentul Hotelului” și „Agentul Închirieri Auto” creați de diferite companii.
 
-4. **Executarea Sarcinilor Delegată**: Agentul de Călătorii trimite sarcini specifice acestor agenți specializați (de exemplu, "Găsește zboruri către Honolulu," "Rezervă un hotel," "Închiriază o mașină"). Fiecare dintre acești agenți specializați, rulând propriile LLM-uri și utilizând propriile instrumente (care ar putea fi servere MCP în sine), își îndeplinește partea specifică a rezervării.
+4. **Executare delegată a sarcinilor**: Agentul de Călătorie trimite sarcini specifice acestor agenți specializați (de ex., „Găsește zboruri către Honolulu”, „Rezervă un hotel”, „Închiriază o mașină”). Fiecare agent specializat, rulând propriile LLM-uri și folosind propriile instrumente (care pot fi ele însele servere MCP), își realizează partea specifică din rezervare.
 
-5. **Răspuns Consolidat**: Odată ce toți agenții downstream își finalizează sarcinile, Agentul de Călătorii compilează rezultatele (detalii despre zbor, confirmarea hotelului, rezervarea mașinii de închiriat) și trimite un răspuns cuprinzător, în stil chat, înapoi utilizatorului.
+5. **Răspuns consolidat**: După ce toți agenții downstream finalizează sarcinile, Agentul de Călătorie compilează rezultatele (detalii zbor, confirmare hotel, rezervare mașină) și trimite un răspuns complet de tip chat către utilizator.
 
 ## Natural Language Web (NLWeb)
 
-Site-urile web au fost mult timp modalitatea principală prin care utilizatorii accesează informații și date pe internet.
+Site-urile web au fost mult timp principalul mod pentru utilizatori de a accesa informații și date pe internet.
 
-Să analizăm diferitele componente ale NLWeb, beneficiile NLWeb și un exemplu despre cum funcționează NLWeb, analizând aplicația noastră de călătorie.
+Să analizăm componentele diferite ale NLWeb, beneficiile sale și un exemplu de lucru cu aplicația noastră de călătorie.
 
 ### Componentele NLWeb
 
-- **Aplicația NLWeb (Codul Serviciului de Bază)**: Sistemul care procesează întrebările în limbaj natural. Conectează diferitele părți ale platformei pentru a crea răspunsuri. Poți să-l consideri **motorul care alimentează funcțiile de limbaj natural** ale unui site web.
+- **Aplicația NLWeb (Codul serviciului de bază)**: Sistemul care procesează întrebările în limbaj natural. Leagă părțile diferite ale platformei pentru a genera răspunsuri. Poate fi considerat **motorul care alimentează funcționalitățile în limbaj natural** ale unui site.
 
-- **Protocolul NLWeb**: Acesta este un **set de reguli de bază pentru interacțiunea în limbaj natural** cu un site web. Trimite răspunsuri în format JSON (adesea folosind Schema.org). Scopul său este de a crea o fundație simplă pentru "AI Web," în același mod în care HTML a făcut posibilă partajarea documentelor online.
+- **Protocolul NLWeb**: Este un **set simplu de reguli pentru interacțiunea în limbaj natural** cu un site web. Trimite răspunsuri în format JSON (adesea folosind Schema.org). Scopul său este de a crea o bază simplă pentru „web-ul AI”, în aceeași manieră în care HTML a permis partajarea documentelor online.
 
-- **Server MCP (Endpoint Model Context Protocol)**: Fiecare configurare NLWeb funcționează și ca un **server MCP**. Acest lucru înseamnă că poate **partaja instrumente (cum ar fi metoda "ask") și date** cu alte sisteme AI. În practică, acest lucru face ca conținutul și abilitățile site-ului să fie utilizabile de agenții AI, permițând site-ului să devină parte a ecosistemului mai larg de agenți.
+- **Server MCP (Endpoint Model Context Protocol)**: Fiecare configurare NLWeb funcționează și ca un **server MCP**. Aceasta înseamnă că poate **partaja instrumente (cum ar fi metoda „ask”) și date** cu alte sisteme AI. În practică, aceasta face conținutul și capacitățile site-ului utilizabile de agenți AI, permițând site-ului să devină parte din ecosistemul mai larg de agenți.
 
-- **Modele de Embedding**: Aceste modele sunt utilizate pentru **convertirea conținutului site-ului web în reprezentări numerice numite vectori** (embedding-uri). Acești vectori capturează semnificația într-un mod pe care computerele îl pot compara și căuta. Sunt stocați într-o bază de date specială, iar utilizatorii pot alege ce model de embedding doresc să folosească.
+- **Modele de embedding**: Aceste modele sunt folosite pentru a **converti conținutul site-ului în reprezentări numerice numite vectori (embedding-uri)**. Acești vectori surprind semnificația într-un mod comparabil și căutabil de către calculatoare. Sunt stocați într-o bază de date specială, iar utilizatorii pot alege modelul de embedding pe care doresc să îl folosească.
 
-- **Baza de Date Vectorială (Mecanism de Recuperare)**: Această bază de date **stochează embedding-urile conținutului site-ului web**. Când cineva pune o întrebare, NLWeb verifică baza de date vectorială pentru a găsi rapid cele mai relevante informații. Oferă o listă rapidă de răspunsuri posibile, clasificate după similaritate. NLWeb funcționează cu diferite sisteme de stocare vectorială, cum ar fi Qdrant, Snowflake, Milvus, Azure AI Search și Elasticsearch.
+- **Baza de date vectorială (mecanism de căutare)**: Această bază de date **stochează embedding-urile conținutului site-ului**. Când cineva pune o întrebare, NLWeb verifică baza de date vectorială pentru a găsi rapid cele mai relevante informații. Returnează o listă rapidă de răspunsuri posibile, clasificate după similaritate. NLWeb funcționează cu sisteme diferite de stocare vectorială, precum Qdrant, Snowflake, Milvus, Azure AI Search și Elasticsearch.
 
-### NLWeb prin Exemplu
+### NLWeb prin exemplu
 
-![NLWeb](../../../translated_images/nlweb-diagram.c1e2390b310e5fe4b245b86690ac6c49c26e355da5ab124128c8675d58cc9b07.ro.png)
+![NLWeb](../../../translated_images/ro/nlweb-diagram.c1e2390b310e5fe4.webp)
 
-Să luăm în considerare din nou site-ul nostru de rezervări de călătorii, dar de această dată alimentat de NLWeb.
+Să luăm din nou site-ul nostru de rezervări de călătorii, de data aceasta alimentat de NLWeb.
 
-1. **Ingestia Datelor**: Cataloagele de produse existente ale site-ului de călătorii (de exemplu, listele de zboruri, descrierile hotelurilor, pachetele turistice) sunt formate folosind Schema.org sau încărcate prin feed-uri RSS. Instrumentele NLWeb preiau aceste date structurate, creează embedding-uri și le stochează într-o bază de date vectorială locală sau remote.
+1. **Ingestia datelor**: Cataloagele existente de produse ale site-ului (de exemplu listări de zboruri, descrieri de hoteluri, pachete turistice) sunt formate folosind Schema.org sau încărcate prin feed-uri RSS. Instrumentele NLWeb preiau aceste date structurate, creează embedding-uri și le stochează într-o bază de date vectorială locală sau remote.
 
-2. **Interogare în Limbaj Natural (Uman)**: Un utilizator vizitează site-ul și, în loc să navigheze prin meniuri, introduce într-o interfață de chat: "Găsește-mi un hotel prietenos cu familiile în Honolulu, cu piscină, pentru săptămâna viitoare".
+2. **Interogare în limbaj natural (uman)**: Un utilizator vizitează site-ul și, în loc să navigheze prin meniuri, tastează într-o interfață de chat: „Găsește-mi un hotel potrivit pentru familii în Honolulu cu piscină pentru săptămâna viitoare”.
 
-3. **Procesarea NLWeb**: Aplicația NLWeb primește această interogare. Trimite interogarea către un LLM pentru înțelegere și, simultan, caută în baza sa de date vectorială pentru listele relevante de hoteluri.
+3. **Procesarea NLWeb**: Aplicația NLWeb primește această întrebare. O trimite către un LLM pentru interpretare și simultan caută în baza sa vectorială pentru listări relevante de hoteluri.
 
-4. **Rezultate Precise**: LLM-ul ajută la interpretarea rezultatelor căutării din baza de date, identifică cele mai bune potriviri pe baza criteriilor "prietenos cu familiile," "piscină" și "Honolulu," și apoi formatează un răspuns în limbaj natural. Esențial, răspunsul se referă la hoteluri reale din catalogul site-ului, evitând informațiile inventate.
+4. **Rezultate de înaltă precizie**: LLM-ul ajută la interpretarea rezultatelor căutării din baza de date, identifică cele mai bune potriviri bazate pe criteriile „potrivite pentru familii”, „piscină” și „Honolulu” și apoi construiește un răspuns în limbaj natural. Esențial, răspunsul se referă la hoteluri reale din catalogul site-ului, evitând informații inventate.
 
-5. **Interacțiunea cu Agenții AI**: Deoarece NLWeb servește ca un server MCP, un agent AI extern de călătorii ar putea, de asemenea, să se conecteze la instanța NLWeb a acestui site. Agentul AI ar putea apoi să folosească metoda `ask` MCP pentru a interoga direct site-ul: `ask("Există restaurante prietenoase cu veganii în zona Honolulu recomandate de hotel?")`. Instanța NLWeb ar procesa acest lucru, utilizând baza sa de date cu informații despre restaurante (dacă sunt încărcate), și ar returna un răspuns structurat JSON.
+5. **Interacțiune agent AI**: Deoarece NLWeb servește ca server MCP, un agent AI extern de călătorie ar putea să se conecteze la instanța NLWeb a acestui site. Agentul AI ar putea apoi folosi metoda MCP `ask` pentru a interoga direct site-ul: `ask("Există restaurante vegane recomandate în zona Honolulu de către hotel?")`. Instanța NLWeb ar procesa aceasta, folosind baza sa de date cu informații despre restaurante (dacă este încărcată), și ar returna un răspuns structurat JSON.
 
-### Ai mai multe întrebări despre MCP/A2A/NLWeb?
+### Aveți mai multe întrebări despre MCP/A2A/NLWeb?
 
-Alătură-te [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) pentru a te întâlni cu alți cursanți, a participa la ore de consultanță și a obține răspunsuri la întrebările tale despre agenții AI.
+Alăturați-vă canalului [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) pentru a întâlni alți cursanți, a participa la orele de consultanță și pentru a primi răspunsuri la întrebările despre agenții AI.
 
 ## Resurse
 
 - [MCP pentru Începători](https://aka.ms/mcp-for-beginners)  
-- [Documentația MCP](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic-kernel/semantic_kernel/connectors/mcp)
+- [Documentație MCP](https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme)
 - [Repo NLWeb](https://github.com/nlweb-ai/NLWeb)
-- [Ghiduri Semantic Kernel](https://learn.microsoft.com/semantic-kernel/)
+- [Microsoft Agent Framework](https://aka.ms/ai-agents-beginners/agent-framewrok)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+Acest document a fost tradus utilizând serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autorizată. Pentru informații critice, se recomandă tradiucerea profesională realizată de un traducător uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea în urma utilizării acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

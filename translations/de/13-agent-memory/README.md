@@ -1,160 +1,170 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d2c9703548140bafa2d6a77406552542",
-  "translation_date": "2025-10-03T14:08:36+00:00",
-  "source_file": "13-agent-memory/README.md",
-  "language_code": "de"
-}
--->
-# Speicher für KI-Agenten
-[![Agentenspeicher](../../../translated_images/lesson-13-thumbnail.959e3bc52d210c64a614a3bece6b170a2c472138dc0a14c7fbde07306ef95ae7.de.png)](https://youtu.be/QrYbHesIxpw?si=qNYW6PL3fb3lTPMk)
+# Speicher für KI-Agenten 
+[![Agentenspeicher](../../../translated_images/de/lesson-13-thumbnail.959e3bc52d210c64.webp)](https://youtu.be/QrYbHesIxpw?si=qNYW6PL3fb3lTPMk)
 
-Wenn es um die einzigartigen Vorteile der Erstellung von KI-Agenten geht, werden hauptsächlich zwei Dinge diskutiert: die Fähigkeit, Werkzeuge aufzurufen, um Aufgaben zu erledigen, und die Fähigkeit, sich im Laufe der Zeit zu verbessern. Speicher bildet die Grundlage für die Entwicklung selbstverbessernder Agenten, die bessere Erlebnisse für unsere Nutzer schaffen können.
+When discussing the unique benefits of creating AI Agents, two things are mainly discussed: the ability to call tools to complete tasks and the ability to improve over time. Memory is at the foundation of creating self-improving agent that can create better experiences for our users.
 
-In dieser Lektion werden wir uns ansehen, was Speicher für KI-Agenten bedeutet und wie wir ihn verwalten und für unsere Anwendungen nutzen können.
+In this lesson, we will look at what memory is for AI Agents and how we can manage it and use it for the benefit of our applications.
 
 ## Einführung
 
-Diese Lektion behandelt:
+This lesson will cover:
 
-• **Verständnis des Speichers von KI-Agenten**: Was Speicher ist und warum er für Agenten unverzichtbar ist.
+• **Understanding AI Agent Memory**: What memory is and why it's essential for agents.
 
-• **Implementierung und Speicherung von Speicher**: Praktische Methoden, um Speicherfunktionen in Ihre KI-Agenten einzubauen, mit Fokus auf Kurzzeit- und Langzeitspeicher.
+• **Implementing and Storing Memory**: Practical methods for adding memory capabilities to your AI agents, focusing on short-term and long-term memory.
 
-• **Selbstverbesserung von KI-Agenten**: Wie Speicher es Agenten ermöglicht, aus vergangenen Interaktionen zu lernen und sich im Laufe der Zeit zu verbessern.
+• **Making AI Agents Self-Improving**: How memory enables agents to learn from past interactions and improve over time.
 
-## Lernziele
+## Available Implementations
 
-Nach Abschluss dieser Lektion werden Sie wissen, wie man:
+This lesson includes two comprehensive notebook tutorials:
 
-• **Zwischen verschiedenen Arten von KI-Agenten-Speicher unterscheidet**, einschließlich Arbeits-, Kurzzeit- und Langzeitspeicher sowie spezialisierter Formen wie Persona- und episodischer Speicher.
+• **[13-agent-memory.ipynb](./13-agent-memory.ipynb)**: Implements memory using Mem0 and Azure AI Search with Microsoft Agent Framework
 
-• **Kurzzeit- und Langzeitspeicher für KI-Agenten implementiert und verwaltet** mit dem Semantic Kernel Framework, unter Nutzung von Tools wie Mem0 und Whiteboard-Speicher sowie der Integration mit Azure AI Search.
+• **[13-agent-memory-cognee.ipynb](./13-agent-memory-cognee.ipynb)**: Implements structured memory using Cognee, automatically building knowledge graph backed by embeddings, visualizing graph, and intelligent retrieval
 
-• **Die Prinzipien hinter selbstverbessernden KI-Agenten versteht** und wie robuste Speicherverwaltungssysteme zu kontinuierlichem Lernen und Anpassung beitragen.
+## Learning Goals
 
-## Verständnis des Speichers von KI-Agenten
+After completing this lesson, you will know how to:
 
-Im Kern bezieht sich **Speicher für KI-Agenten auf Mechanismen, die es ihnen ermöglichen, Informationen zu behalten und abzurufen**. Diese Informationen können spezifische Details über ein Gespräch, Nutzerpräferenzen, vergangene Aktionen oder sogar erlernte Muster umfassen.
+• **Differentiate between various types of AI agent memory**, including working, short-term, and long-term memory, as well as specialized forms like persona and episodic memory.
 
-Ohne Speicher sind KI-Anwendungen oft zustandslos, was bedeutet, dass jede Interaktion von vorne beginnt. Dies führt zu einer repetitiven und frustrierenden Nutzererfahrung, bei der der Agent den vorherigen Kontext oder die Präferenzen "vergisst".
+• **Implement and manage short-term and long-term memory for AI agents** using Microsoft Agent Framework, leveraging tools like Mem0, Cognee, Whiteboard memory, and integrating with Azure AI Search.
 
-### Warum ist Speicher wichtig?
+• **Understand the principles behind self-improving AI agents** and how robust memory management systems contribute to continuous learning and adaptation.
 
-Die Intelligenz eines Agenten hängt stark von seiner Fähigkeit ab, vergangene Informationen abzurufen und zu nutzen. Speicher ermöglicht es Agenten, folgende Eigenschaften zu entwickeln:
+## Understanding AI Agent Memory
 
-• **Reflexion**: Lernen aus vergangenen Aktionen und Ergebnissen.
+At its core, **memory for AI agents refers to the mechanisms that allow them to retain and recall information**. This information can be specific details about a conversation, user preferences, past actions, or even learned patterns.
 
-• **Interaktivität**: Kontext über ein laufendes Gespräch hinweg aufrechterhalten.
+Without memory, AI applications are often stateless, meaning each interaction starts from scratch. This leads to a repetitive and frustrating user experience where the agent "forgets" previous context or preferences.
 
-• **Proaktivität und Reaktivität**: Bedürfnisse antizipieren oder angemessen auf Basis historischer Daten reagieren.
+### Why is Memory Important?
 
-• **Autonomie**: Unabhängiger arbeiten, indem gespeichertes Wissen genutzt wird.
+an agent's intelligence is deeply tied to its ability to recall and utilize past information. Memory allows agents to be:
 
-Das Ziel der Implementierung von Speicher ist es, Agenten **zuverlässiger und leistungsfähiger** zu machen.
+• **Reflective**: Learning from past actions and outcomes.
 
-### Arten von Speicher
+• **Interactive**: Maintaining context over an ongoing conversation.
 
-#### Arbeitsgedächtnis
+• **Proactive and Reactive**: Anticipating needs or responding appropriately based on historical data.
 
-Stellen Sie sich dies wie ein Stück Notizpapier vor, das ein Agent während einer einzelnen, laufenden Aufgabe oder eines Denkprozesses verwendet. Es hält unmittelbare Informationen, die für den nächsten Schritt benötigt werden.
+• **Autonomous**: Operating more independently by drawing on stored knowledge.
 
-Für KI-Agenten erfasst das Arbeitsgedächtnis oft die relevantesten Informationen aus einem Gespräch, auch wenn die vollständige Chat-Historie lang oder gekürzt ist. Es konzentriert sich darauf, Schlüsselaspekte wie Anforderungen, Vorschläge, Entscheidungen und Aktionen zu extrahieren.
+The goal of implementing memory is to make agents more **reliable and capable**.
 
-**Beispiel für Arbeitsgedächtnis**
+### Types of Memory
 
-In einem Reisebuchungs-Agenten könnte das Arbeitsgedächtnis die aktuelle Anfrage des Nutzers erfassen, wie "Ich möchte eine Reise nach Paris buchen". Diese spezifische Anforderung wird im unmittelbaren Kontext des Agenten gehalten, um die aktuelle Interaktion zu steuern.
+#### Working Memory
 
-#### Kurzzeitgedächtnis
+Think of this as a piece of scratch paper an agent uses during a single, ongoing task or thought process. It holds immediate information needed to compute the next step.
 
-Diese Art von Speicher behält Informationen für die Dauer eines einzelnen Gesprächs oder einer Sitzung. Es ist der Kontext des aktuellen Chats, der es dem Agenten ermöglicht, auf vorherige Gesprächsbeiträge zurückzugreifen.
+For AI agents, working memory often captures the most relevant information from a conversation, even if the full chat history is long or truncated. It focuses on extracting key elements like requirements, proposals, decisions, and actions.
 
-**Beispiel für Kurzzeitgedächtnis**
+**Working Memory Example**
 
-Wenn ein Nutzer fragt: "Wie viel würde ein Flug nach Paris kosten?" und anschließend sagt: "Was ist mit der Unterkunft dort?", stellt das Kurzzeitgedächtnis sicher, dass der Agent weiß, dass "dort" sich auf "Paris" bezieht, innerhalb desselben Gesprächs.
+In a travel booking agent, working memory might capture the user's current request, such as "I want to book a trip to Paris". This specific requirement is held in the agent's immediate context to guide the current interaction.
 
-#### Langzeitgedächtnis
+#### Short Term Memory
 
-Dies sind Informationen, die über mehrere Gespräche oder Sitzungen hinweg bestehen bleiben. Es ermöglicht Agenten, Nutzerpräferenzen, historische Interaktionen oder allgemeines Wissen über längere Zeiträume hinweg zu speichern. Dies ist wichtig für die Personalisierung.
+This type of memory retains information for the duration of a single conversation or session. It's the context of the current chat, allowing the agent to refer back to previous turns in the dialogue.
 
-**Beispiel für Langzeitgedächtnis**
+**Short Term Memory Example**
 
-Ein Langzeitgedächtnis könnte speichern, dass "Ben gerne Ski fährt und Outdoor-Aktivitäten mag, Kaffee mit Bergblick bevorzugt und aufgrund einer früheren Verletzung fortgeschrittene Skipisten vermeiden möchte". Diese Informationen, die aus früheren Interaktionen gelernt wurden, beeinflussen Empfehlungen in zukünftigen Reiseplanungs-Sitzungen und machen sie hochgradig personalisiert.
+If a user asks, "How much would a flight to Paris cost?" and then follows up with "What about accommodation there?", short-term memory ensures the agent knows "there" refers to "Paris" within the same conversation.
 
-#### Persona-Speicher
+#### Long Term Memory
 
-Dieser spezialisierte Speicher hilft einem Agenten, eine konsistente "Persönlichkeit" oder "Rolle" zu entwickeln. Er ermöglicht es dem Agenten, Details über sich selbst oder seine beabsichtigte Rolle zu speichern, wodurch Interaktionen flüssiger und fokussierter werden.
+This is information that persists across multiple conversations or sessions. It allows agents to remember user preferences, historical interactions, or general knowledge over extended periods. This is important for personalization.
 
-**Beispiel für Persona-Speicher**
+**Long Term Memory Example**
 
-Wenn der Reiseagent als "Experte für Ski-Planung" konzipiert ist, könnte der Persona-Speicher diese Rolle verstärken und seine Antworten so beeinflussen, dass sie dem Ton und Wissen eines Experten entsprechen.
+A long-term memory might store that "Ben enjoys skiing and outdoor activities, likes coffee with a mountain view, and wants to avoid advanced ski slopes due to a past injury". This information, learned from previous interactions, influences recommendations in future travel planning sessions, making them highly personalized.
 
-#### Workflow-/Episodenspeicher
+#### Persona Memory
 
-Dieser Speicher speichert die Abfolge von Schritten, die ein Agent während einer komplexen Aufgabe unternimmt, einschließlich Erfolgen und Misserfolgen. Es ist wie das Erinnern an spezifische "Episoden" oder vergangene Erfahrungen, um daraus zu lernen.
+This specialized memory type helps an agent develop a consistent "personality" or "persona". It allows the agent to remember details about itself or its intended role, making interactions more fluid and focused.
 
-**Beispiel für episodischen Speicher**
+**Persona Memory Example**
+If the travel agent is designed to be an "expert ski planner," persona memory might reinforce this role, influencing its responses to align with an expert's tone and knowledge.
 
-Wenn der Agent versucht hat, einen bestimmten Flug zu buchen, dies jedoch aufgrund von Nichtverfügbarkeit scheiterte, könnte der episodische Speicher diesen Misserfolg aufzeichnen, sodass der Agent alternative Flüge ausprobieren oder den Nutzer bei einem erneuten Versuch besser über das Problem informieren kann.
+#### Workflow/Episodic Memory
 
-#### Entitätenspeicher
+This memory stores the sequence of steps an agent takes during a complex task, including successes and failures. It's like remembering specific "episodes" or past experiences to learn from them.
 
-Hierbei geht es darum, spezifische Entitäten (wie Personen, Orte oder Dinge) und Ereignisse aus Gesprächen zu extrahieren und zu speichern. Dies ermöglicht es dem Agenten, ein strukturiertes Verständnis der besprochenen Schlüsselelemente aufzubauen.
+**Episodic Memory Example**
 
-**Beispiel für Entitätenspeicher**
+If the agent attempted to book a specific flight but it failed due to unavailability, episodic memory could record this failure, allowing the agent to try alternative flights or inform the user about the issue in a more informed way during a subsequent attempt.
 
-Aus einem Gespräch über eine vergangene Reise könnte der Agent "Paris", "Eiffelturm" und "Abendessen im Restaurant Le Chat Noir" als Entitäten extrahieren. In einer zukünftigen Interaktion könnte der Agent sich an "Le Chat Noir" erinnern und anbieten, dort eine neue Reservierung vorzunehmen.
+#### Entity Memory
 
-#### Strukturierter RAG (Retrieval Augmented Generation)
+This involves extracting and remembering specific entities (like people, places, or things) and events from conversations. It allows the agent to build a structured understanding of key elements discussed.
 
-Während RAG eine umfassendere Technik ist, wird "strukturierter RAG" als eine leistungsstarke Speichertechnologie hervorgehoben. Es extrahiert dichte, strukturierte Informationen aus verschiedenen Quellen (Gesprächen, E-Mails, Bildern) und nutzt sie, um Präzision, Abruf und Geschwindigkeit bei Antworten zu verbessern. Im Gegensatz zu klassischem RAG, das ausschließlich auf semantischer Ähnlichkeit basiert, arbeitet strukturierter RAG mit der inhärenten Struktur von Informationen.
+**Entity Memory Example**
 
-**Beispiel für strukturierten RAG**
+From a conversation about a past trip, the agent might extract "Paris," "Eiffel Tower," and "dinner at Le Chat Noir restaurant" as entities. In a future interaction, the agent could recall "Le Chat Noir" and offer to make a new reservation there.
 
-Anstatt nur Schlüsselwörter abzugleichen, könnte strukturierter RAG Flugdaten (Ziel, Datum, Uhrzeit, Fluggesellschaft) aus einer E-Mail analysieren und sie strukturiert speichern. Dies ermöglicht präzise Abfragen wie "Welchen Flug habe ich am Dienstag nach Paris gebucht?"
+#### Structured RAG (Retrieval Augmented Generation)
 
-## Implementierung und Speicherung von Speicher
+While RAG is a broader technique, "Structured RAG" is highlighted as a powerful memory technology. It extracts dense, structured information from various sources (conversations, emails, images) and uses it to enhance precision, recall, and speed in responses. Unlike classic RAG that relies solely on semantic similarity, Structured RAG works with the inherent structure of information.
 
-Die Implementierung von Speicher für KI-Agenten umfasst einen systematischen Prozess der **Speicherverwaltung**, der das Generieren, Speichern, Abrufen, Integrieren, Aktualisieren und sogar das "Vergessen" (oder Löschen) von Informationen einschließt. Das Abrufen ist dabei ein besonders wichtiger Aspekt.
+**Structured RAG Example**
 
-### Spezialisierte Speicher-Tools
+Instead of just matching keywords, Structured RAG could parse flight details (destination, date, time, airline) from an email and store them in a structured way. This allows precise queries like "What flight did I book to Paris on Tuesday?"
 
-Eine Möglichkeit, den Speicher eines Agenten zu speichern und zu verwalten, ist die Nutzung spezialisierter Tools wie Mem0. Mem0 fungiert als persistente Speicherschicht, die es Agenten ermöglicht, relevante Interaktionen abzurufen, Nutzerpräferenzen und faktischen Kontext zu speichern und aus Erfolgen und Misserfolgen im Laufe der Zeit zu lernen. Die Idee dahinter ist, zustandslose Agenten in zustandsbehaftete zu verwandeln.
+## Implementing and Storing Memory
 
-Es funktioniert durch eine **zweiphasige Speicherpipeline: Extraktion und Aktualisierung**. Zunächst werden Nachrichten, die einem Agenten-Thread hinzugefügt werden, an den Mem0-Dienst gesendet, der ein Large Language Model (LLM) verwendet, um die Gesprächshistorie zusammenzufassen und neue Erinnerungen zu extrahieren. Anschließend bestimmt eine LLM-gesteuerte Aktualisierungsphase, ob diese Erinnerungen hinzugefügt, modifiziert oder gelöscht werden sollen, und speichert sie in einem hybriden Datenspeicher, der Vektor-, Graph- und Schlüssel-Wert-Datenbanken umfassen kann. Dieses System unterstützt auch verschiedene Speicherarten und kann Graph-Speicher für die Verwaltung von Beziehungen zwischen Entitäten integrieren.
+Implementing memory for AI agents involves a systematic process of **memory management**, which includes generating, storing, retrieving, integrating, updating, and even "forgetting" (or deleting) information. Retrieval is a particularly crucial aspect.
 
-### Speicherung von Speicher mit RAG
+### Specialized Memory Tools
 
-Neben spezialisierten Speicher-Tools wie Mem0 können Sie robuste Suchdienste wie **Azure AI Search als Backend für die Speicherung und das Abrufen von Erinnerungen** nutzen, insbesondere für strukturierten RAG.
+#### Mem0
 
-Dies ermöglicht es Ihnen, die Antworten Ihres Agenten mit Ihren eigenen Daten zu untermauern und so relevantere und genauere Antworten zu gewährleisten. Azure AI Search kann verwendet werden, um nutzerspezifische Reiseerinnerungen, Produktkataloge oder andere domänenspezifische Kenntnisse zu speichern.
+One way to store and manage agent memory is using specialized tools like Mem0. Mem0 works as a persistent memory layer, allowing agents to recall relevant interactions, store user preferences and factual context, and learn from successes and failures over time. The idea here is that stateless agents turn into stateful ones.
 
-Azure AI Search unterstützt Funktionen wie **strukturierter RAG**, das sich durch die Extraktion und das Abrufen dichter, strukturierter Informationen aus großen Datensätzen wie Gesprächshistorien, E-Mails oder sogar Bildern auszeichnet. Dies bietet "übermenschliche Präzision und Abruf" im Vergleich zu traditionellen Ansätzen wie Textchunking und Einbettung.
+It works through a **two-phase memory pipeline: extraction and update**. First, messages added to an agent's thread are sent to the Mem0 service, which uses a Large Language Model (LLM) to summarize conversation history and extract new memories. Subsequently, an LLM-driven update phase determines whether to add, modify, or delete these memories, storing them in a hybrid data store that can include vector, graph, and key-value databases. This system also supports various memory types and can incorporate graph memory for managing relationships between entities.
 
-## Selbstverbesserung von KI-Agenten
+#### Cognee
 
-Ein häufiges Muster für selbstverbessernde Agenten besteht darin, einen **"Wissensagenten"** einzuführen. Dieser separate Agent beobachtet das Hauptgespräch zwischen dem Nutzer und dem primären Agenten. Seine Aufgabe ist es:
+Another powerful approach is using **Cognee**, an open-source semantic memory for AI agents that transforms structured and unstructured data into queryable knowledge graphs backed by embeddings. Cognee provides a **dual-store architecture** combining vector similarity search with graph relationships, enabling agents to understand not just what information is similar, but how concepts relate to each other.
 
-1. **Wertvolle Informationen identifizieren**: Feststellen, ob ein Teil des Gesprächs als allgemeines Wissen oder spezifische Nutzerpräferenz gespeichert werden sollte.
+It excels at **hybrid retrieval** that blends vector similarity, graph structure, and LLM reasoning - from raw chunk lookup to graph-aware question answering. The system maintains **living memory** that evolves and grows while remaining queryable as one connected graph, supporting both short-term session context and long-term persistent memory.
 
-2. **Extrahieren und zusammenfassen**: Die wesentlichen Erkenntnisse oder Präferenzen aus dem Gespräch destillieren.
+The Cognee notebook tutorial ([13-agent-memory-cognee.ipynb](./13-agent-memory-cognee.ipynb)) demonstrates building this unified memory layer, with practical examples of ingesting diverse data sources, visualizing the knowledge graph, and querying with different search strategies tailored to specific agent needs.
 
-3. **In einer Wissensdatenbank speichern**: Diese extrahierten Informationen dauerhaft speichern, oft in einer Vektordatenbank, damit sie später abgerufen werden können.
+### Storing Memory with RAG
 
-4. **Zukünftige Abfragen erweitern**: Wenn der Nutzer eine neue Anfrage stellt, ruft der Wissensagent relevante gespeicherte Informationen ab und fügt sie der Anfrage des Nutzers hinzu, um dem primären Agenten entscheidenden Kontext zu liefern (ähnlich wie RAG).
+Beyond specialized memory tools like mem0 , you can leverage robust search services like **Azure AI Search as a backend for storing and retrieving memories**, especially for structured RAG.
 
-### Optimierungen für Speicher
+This allows you to ground your agent's responses with your own data, ensuring more relevant and accurate answers. Azure AI Search can be used to store user-specific travel memories, product catalogs, or any other domain-specific knowledge.
 
-• **Latenzmanagement**: Um die Nutzerinteraktionen nicht zu verlangsamen, kann zunächst ein günstigeres, schnelleres Modell verwendet werden, um schnell zu prüfen, ob Informationen wertvoll sind, um gespeichert oder abgerufen zu werden. Der komplexere Extraktions-/Abrufprozess wird nur bei Bedarf ausgelöst.
+Azure AI Search supports capabilities like **Structured RAG**, which excels at extracting and retrieving dense, structured information from large datasets like conversation histories, emails, or even images. This provides "superhuman precision and recall" compared to traditional text chunking and embedding approaches.
 
-• **Wissensdatenbank-Wartung**: Für eine wachsende Wissensdatenbank können weniger häufig genutzte Informationen in "Cold Storage" verschoben werden, um Kosten zu verwalten.
+## Making AI Agents Self-Improve
 
-## Noch Fragen zum Agentenspeicher?
+A common pattern for self-improving agents involves introducing a **"knowledge agent"**. This separate agent observes the main conversation between the user and the primary agent. Its role is to:
 
-Treten Sie dem [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) bei, um sich mit anderen Lernenden auszutauschen, Sprechstunden zu besuchen und Ihre Fragen zu KI-Agenten beantwortet zu bekommen.
+1. **Identify valuable information**: Determine if any part of the conversation is worth saving as general knowledge or a specific user preference.
+
+2. **Extract and summarize**: Distill the essential learning or preference from the conversation.
+
+3. **Store in a knowledge base**: Persist this extracted information, often in a vector database, so it can be retrieved later.
+
+4. **Augment future queries**: When the user initiates a new query, the knowledge agent retrieves relevant stored information and appends it to the user's prompt, providing crucial context to the primary agent (similar to RAG).
+
+### Optimizations for Memory
+
+• **Latency Management**: To avoid slowing down user interactions, a cheaper, faster model can be used initially to quickly check if information is valuable to store or retrieve, only invoking the more complex extraction/retrieval process when necessary.
+
+• **Knowledge Base Maintenance**: For a growing knowledge base, less frequently used information can be moved to "cold storage" to manage costs.
+
+## Got More Questions About Agent Memory?
+
+Treten Sie dem [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) bei, um andere Lernende zu treffen, an Office Hours teilzunehmen und Antworten auf Ihre Fragen zu KI-Agenten zu erhalten.
 
 ---
 
-**Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+Haftungsausschluss:
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ausgangssprache ist als maßgebliche Quelle zu betrachten. Bei kritischen Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Verwendung dieser Übersetzung entstehen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

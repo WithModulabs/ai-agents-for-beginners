@@ -1,51 +1,42 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7e92870dc0843e13d4dabc620c09d2d9",
-  "translation_date": "2025-07-12T08:17:58+00:00",
-  "source_file": "02-explore-agentic-frameworks/azure-ai-foundry-agent-creation.md",
-  "language_code": "pa"
-}
--->
-# Azure AI Agent Service Development
+# Azure AI Agent ਸੇਵਾ ਵਿਕਾਸ
 
-ਇਸ ਅਭਿਆਸ ਵਿੱਚ, ਤੁਸੀਂ [Azure AI Foundry portal](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst) ਵਿੱਚ Azure AI Agent ਸੇਵਾ ਦੇ ਟੂਲਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ Flight Booking ਲਈ ਇੱਕ ਏਜੰਟ ਬਣਾਉਂਦੇ ਹੋ। ਇਹ ਏਜੰਟ ਯੂਜ਼ਰਾਂ ਨਾਲ ਗੱਲਬਾਤ ਕਰ ਸਕਦਾ ਹੈ ਅਤੇ ਉਡਾਣਾਂ ਬਾਰੇ ਜਾਣਕਾਰੀ ਦੇ ਸਕਦਾ ਹੈ।
+ਇਸ ਵਿਆਯਾਮ ਵਿੱਚ, ਤੁਸੀਂ [Microsoft Foundry ਪੋਰਟਲ](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst) ਵਿੱਚ Azure AI Agent ਸੇਵਾ ਟੂਲਜ਼ ਦੀ ਵਰਤੋਂ ਕਰਕੇ Flight Booking ਲਈ ਇੱਕ ਏਜੰਟ ਬਣਾਉਂਦੇ ਹੋ। ਇਹ ਏਜੰਟ ਵਰਤੋਂਕਾਰਾਂ ਨਾਲ ਗੱਲਬਾਤ ਕਰਕੇ ਉਡਾਣਾਂ ਬਾਰੇ ਜਾਣਕਾਰੀ ਉਪਲਬਧ ਕਰਵਾ سکےਗਾ।
 
-## Prerequisites
+## ਤਿਆਰੀ ਲੋੜਾਂ
 
-ਇਸ ਅਭਿਆਸ ਨੂੰ ਪੂਰਾ ਕਰਨ ਲਈ, ਤੁਹਾਨੂੰ ਹੇਠ ਲਿਖੀਆਂ ਚੀਜ਼ਾਂ ਦੀ ਲੋੜ ਹੈ:
+ਇਸ ਕਸਰਤ ਨੂੰ ਪੂਰਾ ਕਰਨ ਲਈ, ਤੁਹਾਡੇ ਕੋਲ ਇਹ ਚੀਜ਼ਾਂ ਲੋੜੀਂਦੀਆਂ ਹਨ:
 1. ਇੱਕ Azure ਖਾਤਾ ਜਿਸ ਵਿੱਚ ਸਰਗਰਮ ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਹੋਵੇ। [ਮੁਫ਼ਤ ਖਾਤਾ ਬਣਾਓ](https://azure.microsoft.com/free/?WT.mc_id=academic-105485-koreyst)।
-2. ਤੁਹਾਨੂੰ Azure AI Foundry ਹੱਬ ਬਣਾਉਣ ਦੀ ਅਨੁਮਤੀ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ ਜਾਂ ਤੁਹਾਡੇ ਲਈ ਪਹਿਲਾਂ ਹੀ ਇੱਕ ਬਣਾਇਆ ਹੋਇਆ ਹੋਵੇ।
-    - ਜੇ ਤੁਹਾਡਾ ਰੋਲ Contributor ਜਾਂ Owner ਹੈ, ਤਾਂ ਤੁਸੀਂ ਇਸ ਟਿਊਟੋਰਿਯਲ ਵਿੱਚ ਦਿੱਤੇ ਕਦਮਾਂ ਦੀ ਪਾਲਣਾ ਕਰ ਸਕਦੇ ਹੋ।
+2. ਤੁਹਾਡੇ ਕੋਲ Microsoft Foundry ਹੱਬ ਬਣਾਉਣ ਦੀ ਇਜਾਜ਼ਤ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ ਜਾਂ ਕੋਈ ਤੁਹਾਡੇ ਲਈ ਹੁੰਬ ਬਣਾਇਆ ਹੋਵੇ।
+    - ਜੇ ਤੁਹਾਡੇ ਭੂਮਿਕਾ Contributor ਜਾਂ Owner ਹੈ, ਤਾਂ ਤੁਸੀਂ ਇਸ ਟਿਊਟੋਰੀਅਲ ਵਿੱਚ ਦਿੱਤੇ ਕਦਮ ਅਨੁਸਰਣ ਕਰ ਸਕਦੇ ਹੋ।
 
-## Create an Azure AI Foundry hub
+## ਇੱਕ Microsoft Foundry ਹੱਬ ਬਣਾਓ
 
-> [!NOTE] Azure AI Foundry ਨੂੰ ਪਹਿਲਾਂ Azure AI Studio ਕਿਹਾ ਜਾਂਦਾ ਸੀ।
+> **ਨੋਟ:** Microsoft Foundry ਪਹਿਲਾਂ Azure AI Studio ਦੇ ਨਾਮ ਨਾਲ ਜਾਣਿਆ ਜਾਂਦਾ ਸੀ।
 
-1. Azure AI Foundry ਹੱਬ ਬਣਾਉਣ ਲਈ [Azure AI Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst) ਬਲੌਗ ਪੋਸਟ ਵਿੱਚ ਦਿੱਤੀਆਂ ਹਦਾਇਤਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ।
-2. ਜਦੋਂ ਤੁਹਾਡਾ ਪ੍ਰੋਜੈਕਟ ਬਣ ਜਾਵੇ, ਤਾਂ ਕੋਈ ਵੀ ਟਿਪਸ ਬੰਦ ਕਰੋ ਅਤੇ Azure AI Foundry ਪੋਰਟਲ ਵਿੱਚ ਪ੍ਰੋਜੈਕਟ ਪੇਜ ਨੂੰ ਵੇਖੋ, ਜੋ ਹੇਠਾਂ ਦਿੱਤੀ ਤਸਵੀਰ ਵਾਂਗ ਲੱਗਣਾ ਚਾਹੀਦਾ ਹੈ:
+1. Microsoft Foundry ਦੇ [ਬਲੌਗ ਪੋਸਟ](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst) ਵਿੱਚ ਦਿੱਤੀ ਗਈ ਹਿਦਾਇਤਾਂ ਦਾ ਪਾਲਣ ਕਰਕੇ ਇੱਕ Microsoft Foundry ਹੱਬ ਬਣਾਓ।
+2. ਜਦੋਂ ਤੁਹਾਡੇ ਪ੍ਰੋਜੈਕਟ ਬਣ ਜਾਵੇ, ਦਿਖਾਈ ਦੇ ਰਹੀਆਂ ਕਿਸੇ ਵੀ ਟਿਪਸ ਨੂੰ ਬੰਦ ਕਰੋ ਅਤੇ Microsoft Foundry ਪੋਰਟਲ ਵਿਚ ਪ੍ਰੋਜੈਕਟ ਸਫ਼ਾ ਦੀ ਸਮੀਖਿਆ ਕਰੋ, ਜੋ ਕਿ ਹੇਠਾਂ ਦੀ ਤਸਵੀਰ ਵਰਗਾ ਲੱਗੇਗਾ:
 
-    ![Azure AI Foundry Project](../../../translated_images/azure-ai-foundry.88d0c35298348c2fca620668d9b567b50b18dfe94fd2251e0793a28d4d60854e.pa.png)
+    ![Microsoft Foundry Project](../../../translated_images/pa/azure-ai-foundry.88d0c35298348c2f.webp)
 
-## Deploy a model
+## ਮਾਡਲ ਤਾਇਨਾਤ ਕਰੋ
 
-1. ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ ਦੇ ਖੱਬੇ ਪੈਨ ਵਿੱਚ, **My assets** ਸੈਕਸ਼ਨ ਵਿੱਚ, **Models + endpoints** ਪੇਜ ਚੁਣੋ।
-2. **Models + endpoints** ਪੇਜ ਵਿੱਚ, **Model deployments** ਟੈਬ ਵਿੱਚ, **+ Deploy model** ਮੀਨੂ ਵਿੱਚੋਂ **Deploy base model** ਚੁਣੋ।
-3. ਸੂਚੀ ਵਿੱਚੋਂ `gpt-4o-mini` ਮਾਡਲ ਖੋਜੋ, ਫਿਰ ਇਸਨੂੰ ਚੁਣੋ ਅਤੇ ਪੁਸ਼ਟੀ ਕਰੋ।
+1. ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ ਦੀ ਖਬਰੇਂ ਸੈਕਸ਼ਨ ਵਿੱਚ, ਖੱਬੇ ਪਾਸੇ ਵਾਲੇ ਪੈਨ ਵਿੱਚ, **My assets** ਹਿੱਸੇ ਵਿੱਚ, **Models + endpoints** ਪੇਜ ਚੁਣੋ।
+2. **Models + endpoints** ਸਫ਼ੇ 'ਤੇ, **Model deployments** ਟੈਬ ਵਿੱਚ, **+ Deploy model** ਮੇਨੂ ਵਿੱਚੋਂ, **Deploy base model** ਚੁਣੋ।
+3. ਸੂਚੀ ਵਿੱਚੋਂ `gpt-4o-mini` ਮਾਡਲ ਨੂੰ ਖੋਜੋ ਅਤੇ ਇਸ ਨੂੰ ਚੁਣੋ ਅਤੇ ਪੁਸ਼ਟੀ ਕਰੋ।
 
-    > [!NOTE] TPM ਘਟਾਉਣ ਨਾਲ ਤੁਹਾਡੇ ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਵਿੱਚ ਉਪਲਬਧ ਕੋਟਾ ਦੀ ਬੇਹੱਦ ਵਰਤੋਂ ਤੋਂ ਬਚਿਆ ਜਾ ਸਕਦਾ ਹੈ।
+    > **ਨੋਟ**: TPM ਘਟਾਉਣਾ ਸਹਾਇਤਾ ਕਰਦਾ ਹੈ ਤਾਂ ਜੋ ਤੁਸੀਂ ਆਪਣੀ ਵਰਤ ਰਹੀ ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਵਿੱਚ ਉਪਲਬਧ ਕੋਟਾ ਬਹੁਤ ਜ਼ਿਆਦਾ ਨਾ ਵਰਤੋਂ।
 
-    ![Model Deployed](../../../translated_images/model-deployment.3749c53fb81e18fdc2da5beb872441b4a5f86a2d1206c5a9999a4997f78e4b7a.pa.png)
+    ![Model Deployed](../../../translated_images/pa/model-deployment.3749c53fb81e18fd.webp)
 
-## Create an agent
+## ਏਜੰਟ ਬਣਾਓ
 
-ਹੁਣ ਜਦੋਂ ਤੁਸੀਂ ਮਾਡਲ ਡਿਪਲੋਇ ਕੀਤਾ ਹੈ, ਤੁਸੀਂ ਇੱਕ ਏਜੰਟ ਬਣਾਉਣ ਲਈ ਤਿਆਰ ਹੋ। ਏਜੰਟ ਇੱਕ ਗੱਲਬਾਤੀ AI ਮਾਡਲ ਹੁੰਦਾ ਹੈ ਜੋ ਯੂਜ਼ਰਾਂ ਨਾਲ ਇੰਟਰੈਕਟ ਕਰ ਸਕਦਾ ਹੈ।
+ਹੁਣ ਜਦੋਂ ਤੁਸੀਂ ਇੱਕ ਮਾਡਲ ਤਾਇਨਾਤ ਕਰ ਚੁੱਕੇ ਹੋ, ਤੁਸੀਂ ਇੱਕ ਏਜੰਟ ਬਣਾਉਂਦੇ ਹੋ ਸਕਦੇ ਹੋ। ਏਜੰਟ ਇੱਕ ਗੱਲਬਾਤੀ AI ਮਾਡਲ ਹੁੰਦਾ ਹੈ ਜੋ ਵਰਤੋਂਕਾਰਾਂ ਨਾਲ ਗੱਲਬਾਤ ਕਰਨ ਲਈ ਵਰਤਿਆ ਜਾ ਸਕਦਾ ਹੈ।
 
-1. ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ ਦੇ ਖੱਬੇ ਪੈਨ ਵਿੱਚ, **Build & Customize** ਸੈਕਸ਼ਨ ਵਿੱਚ, **Agents** ਪੇਜ ਚੁਣੋ।
-2. ਨਵਾਂ ਏਜੰਟ ਬਣਾਉਣ ਲਈ **+ Create agent** 'ਤੇ ਕਲਿੱਕ ਕਰੋ। **Agent Setup** ਡਾਇਲਾਗ ਬਾਕਸ ਵਿੱਚ:
-    - ਏਜੰਟ ਲਈ ਕੋਈ ਨਾਮ ਦਿਓ, ਜਿਵੇਂ `FlightAgent`।
-    - ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਸੀਂ ਪਹਿਲਾਂ ਬਣਾਇਆ ਹੋਇਆ `gpt-4o-mini` ਮਾਡਲ ਡਿਪਲੋਇਮੈਂਟ ਚੁਣਿਆ ਹੋਇਆ ਹੈ।
-    - **Instructions** ਵਿੱਚ ਉਹ ਪ੍ਰੰਪਟ ਦਿਓ ਜੋ ਤੁਸੀਂ ਏਜੰਟ ਨੂੰ ਫਾਲੋ ਕਰਵਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ। ਉਦਾਹਰਨ ਵਜੋਂ:
+1. ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ ਦੀ ਖਬਰੇਂ ਸੈਕਸ਼ਨ ਵਿੱਚ, ਖੱਬੇ ਪਾਸੇ ਵਾਲੇ ਪੈਨ ਵਿੱਚ, **Build & Customize** ਹਿੱਸੇ ਵਿੱਚ, **Agents** ਪੇਜ ਚੁਣੋ।
+2. ਇੱਕ ਨਵਾਂ ਏਜੰਟ ਬਣਾਉਣ ਲਈ **+ Create agent** 'ਤੇ ਕਲਿੱਕ ਕਰੋ। **Agent Setup** ਡਾਇਲਾਗ ਬਾਕਸ ਵਿੱਚ:
+    - ਏਜੰਟ ਲਈ ਇੱਕ ਨਾਮ ਦਿਓ, ਜਿਵੇਂ ਕਿ `FlightAgent`।
+    - ਪਿਛਲੇ ਬਣਾਏ ਹੋਏ `gpt-4o-mini` ਮਾਡਲ ਤਾਇਨਾਤ ਨੂੰ ਚੁਣਿਆ ਹੋਇਆ ਹੋਵੇ।
+    - ਏਜੰਟ ਨੂੰ ਅਨੁਸਾਰ ਅਗੇ ਦਿੱਤੇ ਪ੍ਰਾਂਪਟ ਮੁਤਾਬਕ **Instructions** ਸੈੱਟ ਕਰੋ। ਇਹਾਂ ਇੱਕ ਉਦਾਹਰਨ ਹੈ:
     ```
     You are FlightAgent, a virtual assistant specialized in handling flight-related queries. Your role includes assisting users with searching for flights, retrieving flight details, checking seat availability, and providing real-time flight status. Follow the instructions below to ensure clarity and effectiveness in your responses:
 
@@ -73,41 +64,45 @@ CO_OP_TRANSLATOR_METADATA:
     
     ```
 > [!NOTE]
-> ਵਧੇਰੇ ਵਿਸਥਾਰ ਵਾਲੇ ਪ੍ਰੰਪਟ ਲਈ, ਤੁਸੀਂ [ਇਸ ਰਿਪੋਜ਼ਿਟਰੀ](https://github.com/ShivamGoyal03/RoamMind) ਨੂੰ ਵੇਖ ਸਕਦੇ ਹੋ।
+> ਵਿਸਥਾਰਪੂਰਕ ਪ੍ਰਾਂਪਟ ਲਈ, ਤੁਸੀਂ ਇਸ [ਰਿਪੋਜ਼ਿਟਰੀ](https://github.com/ShivamGoyal03/RoamMind) ਨੂੰ ਵੇਖ ਸਕਦੇ ਹੋ।
+    
+> ਇਸ ਤੋਂ علاوہ, ਤੁਸੀਂ ਏਜੰਟ ਦੀ ਸਮਰੱਥਾ ਵਧਾਉਣ ਲਈ **Knowledge Base** ਅਤੇ **Actions** ਵੀ ਜੋੜ ਸਕਦੇ ਹੋ, ਜਿਨ੍ਹਾਂ ਨਾਲ ਵਰਤੋਂਕਾਰ ਦੀਆਂ ਬੇਨਤੀਆਂ ਦੇ ਅਧਾਰ 'ਤੇ ਹੋਰ ਜਾਣਕਾਰੀ ਦਿੱਤੀ ਜਾ ਸਕਦੀ ਹੈ ਅਤੇ ਆਟੋਮੇਟਿਕ ਕੰਮ ਕਰਵਾਏ ਜਾ ਸਕਦੇ ਹਨ। ਇਸ ਕਸਰਤ ਲਈ, ਤੁਸੀਂ ਇਹ ਕਦਮ ਛੱਡ ਸਕਦੇ ਹੋ।
+    
+![Agent Setup](../../../translated_images/pa/agent-setup.9bbb8755bf5df672.webp)
 
-> ਇਸ ਤੋਂ ਇਲਾਵਾ, ਤੁਸੀਂ ਏਜੰਟ ਦੀ ਸਮਰੱਥਾ ਵਧਾਉਣ ਲਈ **Knowledge Base** ਅਤੇ **Actions** ਵੀ ਸ਼ਾਮਲ ਕਰ ਸਕਦੇ ਹੋ, ਜੋ ਯੂਜ਼ਰ ਦੀਆਂ ਬੇਨਤੀਆਂ ਦੇ ਅਧਾਰ 'ਤੇ ਹੋਰ ਜਾਣਕਾਰੀ ਦੇਣ ਅਤੇ ਆਟੋਮੇਟਿਕ ਕੰਮ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦੇ ਹਨ। ਇਸ ਅਭਿਆਸ ਲਈ, ਤੁਸੀਂ ਇਹ ਕਦਮ ਛੱਡ ਸਕਦੇ ਹੋ।
+3. ਇੱਕ ਨਵਾਂ multi-AI ਏਜੰਟ ਬਣਾਉਣ ਲਈ ਸਿਰਫ **New Agent** 'ਤੇ ਕਲਿੱਕ ਕਰੋ। ਨਵਾਂ ਬਣਾਇਆ ਗਿਆ ਏਜੰਟ ਆਗਲੇ Agents ਪੇਜ 'ਤੇ ਦਰਸਾਇਆ ਜਾਵੇਗਾ।
 
-![Agent Setup](../../../translated_images/agent-setup.9bbb8755bf5df672c712a9aaed6482305d32a4986742e6b21faf59485f25c50a.pa.png)
+## ਏਜੰਟ ਟੈਸਟ ਕਰੋ
 
-3. ਨਵਾਂ multi-AI ਏਜੰਟ ਬਣਾਉਣ ਲਈ ਸਿਰਫ **New Agent** 'ਤੇ ਕਲਿੱਕ ਕਰੋ। ਨਵਾਂ ਬਣਾਇਆ ਗਿਆ ਏਜੰਟ Agents ਪੇਜ 'ਤੇ ਦਿਖਾਈ ਦੇਵੇਗਾ।
+ਏਜੰਟ ਬਣਾਉਣ ਤੋਂ ਬਾਅਦ, ਤੁਸੀਂ ਇਸ ਨੂੰ ਟੈਸਟ ਕਰ ਸਕਦੇ ਹੋ ਕਿ ਇਹ Microsoft Foundry ਪੋਰਟਲ ਪਲੇਗ੍ਰਾਊਂਡ ਵਿੱਚ ਵਰਤੋਂਕਾਰ ਦੇ ਸਵਾਲਾਂ ਦਾ ਕਿੱਦਾਂ ਜਵਾਬ ਦਿੰਦਾ ਹੈ।
 
-## Test the agent
+1. ਆਪਣੇ ਏਜੰਟ ਲਈ **Setup** ਪੈਨ ਦੇ ਸਿਰਲੇਖ ਵਿਖੇ, **Try in playground** ਚੁਣੋ।
+2. **Playground** ਪੈਨ ਵਿੱਚ, ਤੁਸੀਂ ਚੈਟ ਵਿੰਡੋ ਵਿੱਚ ਸਵਾਲ ਲਿਖ ਕੇ ਏਜੰਟ ਨਾਲ ਗੱਲਬਾਤ ਕਰ ਸਕਦੇ ਹੋ। ਉਦਾਹਰਨ ਵਜੋਂ, ਤੁਸੀਂ ਏਜੰਟ ਨੂੰ 28 ਤਾਰੀਖ ਨੂੰ ਸਿਅਟਲ ਤੋਂ ਨਿਊਯਾਰਕ ਲਈ ਉਡਾਣਾਂ ਖੋਜਣ ਲਈ ਕਹਿ ਸਕਦੇ ਹੋ।
 
-ਏਜੰਟ ਬਣਾਉਣ ਤੋਂ ਬਾਅਦ, ਤੁਸੀਂ ਇਸਨੂੰ Azure AI Foundry ਪੋਰਟਲ ਦੇ playground ਵਿੱਚ ਟੈਸਟ ਕਰ ਸਕਦੇ ਹੋ ਕਿ ਇਹ ਯੂਜ਼ਰ ਦੇ ਸਵਾਲਾਂ ਦਾ ਕਿਵੇਂ ਜਵਾਬ ਦਿੰਦਾ ਹੈ।
+    > **ਨੋਟ**: ਇਸ ਕਸਰਤ ਵਿੱਚ ਕੋਈ ਰੀਅਲ-ਟਾਈਮ ਡੇਟਾ ਵਰਤੀ ਨਹੀਂ ਜਾ ਰਹੀ, ਇਸ ਲਈ ਏਜੰਟ ਦਾ ਜਵਾਬ ਸਹੀ ਨਾ ਹੋਵੇ। ਇਸ ਦਾ ਮਕਸਦ ਏਜੰਟ ਦੀ ਸਮਝ ਅਤੇ ਦਿੱਤੀਆਂ ਨਿਰਦੇਸ਼ਾਂ ਦੇ ਅਧਾਰ 'ਤੇ ਵਰਤੋਂਕਾਰ ਦੇ ਸਵਾਲਾਂ ਨੂੰ ਜਵਾਬ ਦੇਣ ਦੀ ਸਮਰੱਥਾ ਨੂੰ ਟੈਸਟ ਕਰਨਾ ਹੈ।
 
-1. ਆਪਣੇ ਏਜੰਟ ਲਈ **Setup** ਪੈਨ ਦੇ ਸਿਰਲੇਖ 'ਤੇ, **Try in playground** ਚੁਣੋ।
-2. **Playground** ਪੈਨ ਵਿੱਚ, ਤੁਸੀਂ ਚੈਟ ਵਿੰਡੋ ਵਿੱਚ ਸਵਾਲ ਲਿਖ ਕੇ ਏਜੰਟ ਨਾਲ ਗੱਲਬਾਤ ਕਰ ਸਕਦੇ ਹੋ। ਉਦਾਹਰਨ ਵਜੋਂ, ਤੁਸੀਂ ਏਜੰਟ ਨੂੰ 28 ਤਾਰੀਖ ਨੂੰ Seattle ਤੋਂ New York ਲਈ ਉਡਾਣਾਂ ਖੋਜਣ ਲਈ ਕਹਿ ਸਕਦੇ ਹੋ।
+    ![Agent Playground](../../../translated_images/pa/agent-playground.dc146586de715010.webp)
 
-    > [!NOTE] ਏਜੰਟ ਸਹੀ ਜਵਾਬ ਨਾ ਦੇ ਸਕੇ, ਕਿਉਂਕਿ ਇਸ ਅਭਿਆਸ ਵਿੱਚ ਕੋਈ ਰੀਅਲ-ਟਾਈਮ ਡੇਟਾ ਵਰਤਿਆ ਨਹੀਂ ਜਾ ਰਿਹਾ। ਮਕਸਦ ਏਜੰਟ ਦੀ ਸਮਝ ਅਤੇ ਦਿੱਤੀਆਂ ਹਦਾਇਤਾਂ ਦੇ ਅਧਾਰ 'ਤੇ ਯੂਜ਼ਰ ਦੇ ਸਵਾਲਾਂ ਦਾ ਜਵਾਬ ਦੇਣ ਦੀ ਯੋਗਤਾ ਦੀ ਜਾਂਚ ਕਰਨਾ ਹੈ।
+3. ਏਜੰਟ ਟੈਸਟ ਕਰਨ ਤੋਂ ਬਾਅਦ, ਤੁਸੀਂ ਹੋਰ ਇਰਾਦੇ, ਟਰੇਨਿੰਗ ਡੇਟਾ ਅਤੇ ਕਾਰਵਾਈਆਂ ਜੋੜ ਕੇ ਉਸਦੀ ਸਮਰੱਥਾ ਨੂੰ ਵਧਾ ਸਕਦੇ ਹੋ।
 
-    ![Agent Playground](../../../translated_images/agent-playground.dc146586de71501011798b919ae595f4d4facf8c3a5f53e0107e7b80fc2418d1.pa.png)
+## ਸਰੋਤ ਸਾਫ਼ ਕਰੋ
 
-3. ਏਜੰਟ ਦੀ ਟੈਸਟਿੰਗ ਤੋਂ ਬਾਅਦ, ਤੁਸੀਂ ਇਸਨੂੰ ਹੋਰ intents, training data, ਅਤੇ actions ਸ਼ਾਮਲ ਕਰਕੇ ਹੋਰ ਕਸਟਮਾਈਜ਼ ਕਰ ਸਕਦੇ ਹੋ ਤਾਂ ਜੋ ਇਸ ਦੀ ਸਮਰੱਥਾ ਵਧੇ।
+ਜਦੋਂ ਤੁਸੀਂ ਏਜੰਟ ਦੀ ਜਾਂਚ ਕਰ ਲੈਂਦੇ ਹੋ, ਤਾਂ ਵਾਧੂ ਖਰਚੇ ਟਲਾਉਣ ਲਈ ਉਸ ਨੂੰ ਮਿਟਾ ਸਕਦੇ ਹੋ।
+1. [Azure ਪੋਰਟਲ](https://portal.azure.com) ਖੋਲ੍ਹੋ ਅਤੇ ਉਸ ਰਿਸੋর্স ਗਰੁੱਪ ਦੇ ਕਾਰਜ ਦੇਖੋ ਜਿੱਥੇ ਤੁਸੀਂ ਇਸ ਕਸਰਤ ਲਈ ਹੱਬ ਦੇ ਸਰੋਤ ਤਾਇਨਾਤ ਕੀਤੇ ਸਨ।
+2. ਟੂਲਬਾਰ ਵਿੱਚੋਂ **Delete resource group** ਚੁਣੋ।
+3. ਰਿਸੋর্স ਗਰੁੱਪ ਦਾ ਨਾਮ ਦਿਓ ਅਤੇ ਇਸਨੂੰ ਮਿਟਾਉਣ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ।
 
-## Clean up resources
+## ਸਰੋਤ
 
-ਜਦੋਂ ਤੁਸੀਂ ਏਜੰਟ ਦੀ ਟੈਸਟਿੰਗ ਮੁਕੰਮਲ ਕਰ ਲਵੋ, ਤਾਂ ਵਾਧੂ ਖਰਚੇ ਤੋਂ ਬਚਣ ਲਈ ਇਸਨੂੰ ਹਟਾ ਸਕਦੇ ਹੋ।
-1. [Azure portal](https://portal.azure.com) ਖੋਲ੍ਹੋ ਅਤੇ ਉਸ resource group ਦੀ ਸਮੱਗਰੀ ਵੇਖੋ ਜਿੱਥੇ ਤੁਸੀਂ ਇਸ ਅਭਿਆਸ ਵਿੱਚ ਵਰਤੇ ਗਏ ਹੱਬ ਰਿਸੋਰਸ ਡਿਪਲੋਇ ਕੀਤੇ ਹਨ।
-2. ਟੂਲਬਾਰ 'ਤੇ, **Delete resource group** ਚੁਣੋ।
-3. resource group ਦਾ ਨਾਮ ਦਿਓ ਅਤੇ ਪੁਸ਼ਟੀ ਕਰੋ ਕਿ ਤੁਸੀਂ ਇਸਨੂੰ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ।
-
-## Resources
-
-- [Azure AI Foundry documentation](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst)
-- [Azure AI Foundry portal](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst)
-- [Getting Started with Azure AI Studio](https://techcommunity.microsoft.com/blog/educatordeveloperblog/getting-started-with-azure-ai-studio/4095602?WT.mc_id=academic-105485-koreyst)
-- [Fundamentals of AI agents on Azure](https://learn.microsoft.com/en-us/training/modules/ai-agent-fundamentals/?WT.mc_id=academic-105485-koreyst)
+- [Microsoft Foundry ਦਸਤਾਵੇਜ਼](https://learn.microsoft.com/en-us/azure/ai-studio/?WT.mc_id=academic-105485-koreyst)
+- [Microsoft Foundry ਪੋਰਟਲ](https://ai.azure.com/?WT.mc_id=academic-105485-koreyst)
+- [Azure AI Studio ਨਾਲ ਸ਼ੁਰੂਆਤ](https://techcommunity.microsoft.com/blog/educatordeveloperblog/getting-started-with-azure-ai-studio/4095602?WT.mc_id=academic-105485-koreyst)
+- [Azure 'ਤੇ AI ਏਜੰਟ ਦੀਆਂ ਬੁਨਿਆਦਾਂ](https://learn.microsoft.com/en-us/training/modules/ai-agent-fundamentals/?WT.mc_id=academic-105485-koreyst)
 - [Azure AI Discord](https://aka.ms/AzureAI/Discord)
 
-**ਅਸਵੀਕਾਰੋਪਣ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਅਤ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ਅਸਵੀਕਾਰੋਪੱਤਰ**:
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਅਤ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਵਿੱਚ ਰੱਖੋ ਕਿ ਸਵੈਚਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਿਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਮੂਲ ਦਸਤਾਵੇਜ਼ ਨੂੰ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਗੰਭੀਰ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਿਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉੱਪਜਣ ਵਾਲੀ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਭ੍ਰਮ ਲਈ ਜਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

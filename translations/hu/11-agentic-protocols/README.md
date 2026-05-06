@@ -1,162 +1,182 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aff92c6f019b4627ca9399c6e3882e17",
-  "translation_date": "2025-09-18T15:27:02+00:00",
-  "source_file": "11-agentic-protocols/README.md",
-  "language_code": "hu"
-}
--->
 # Agentikus protokollok használata (MCP, A2A és NLWeb)
 
-[![Agentikus protokollok](../../../translated_images/lesson-11-thumbnail.b6c742949cf1ce2aa0255968d287b31c99b51dfa9c9beaede7c3fbed90e8fcfb.hu.png)](https://youtu.be/X-Dh9R3Opn8)
+[![Agentikus protokollok](../../../translated_images/hu/lesson-11-thumbnail.b6c742949cf1ce2a.webp)](https://youtu.be/X-Dh9R3Opn8)
 
-> _(Kattints a fenti képre a leckéhez tartozó videó megtekintéséhez)_
+> _(Kattintson a fenti képre a lecke videójának megtekintéséhez)_
 
-Ahogy az AI ügynökök használata növekszik, úgy nő az igény olyan protokollokra, amelyek biztosítják a szabványosítást, a biztonságot és támogatják a nyílt innovációt. Ebben a leckében három protokollt vizsgálunk meg, amelyek ezt a célt szolgálják: Model Context Protocol (MCP), Agent to Agent (A2A) és Natural Language Web (NLWeb).
+Ahogy az AI ügynökök használata növekszik, úgy nő az igény az olyan protokollokra, amelyek biztosítják a szabványosítást, a biztonságot és támogatják a nyílt innovációt. Ebben a leckében 3 protokollt fogunk áttekinteni, amelyek ezt az igényt kívánják kielégíteni – Model Context Protocol (MCP), Agent to Agent (A2A) és Natural Language Web (NLWeb).
 
 ## Bevezetés
 
-Ebben a leckében az alábbiakat tárgyaljuk:
+Ebben a leckében áttekintjük:
 
 • Hogyan teszi lehetővé az **MCP**, hogy az AI ügynökök külső eszközökhöz és adatokhoz férjenek hozzá a felhasználói feladatok elvégzéséhez.
 
-• Hogyan biztosítja az **A2A** az AI ügynökök közötti kommunikációt és együttműködést.
+• Hogyan teszi lehetővé az **A2A** az eltérő AI ügynökök közötti kommunikációt és együttműködést.
 
-• Hogyan hozza el az **NLWeb** a természetes nyelvi interfészeket bármely weboldalra, lehetővé téve az AI ügynökök számára, hogy felfedezzék és interakcióba lépjenek a tartalommal.
+• Hogyan hozza el az **NLWeb** a természetes nyelvű felületeket bármely weboldalra, lehetővé téve az AI ügynökök számára a tartalom felfedezését és interakcióját.
 
 ## Tanulási célok
 
 • **Azonosítani** az MCP, A2A és NLWeb alapvető célját és előnyeit az AI ügynökök kontextusában.
 
-• **Elmagyarázni**, hogyan segíti mindegyik protokoll az LLM-ek, eszközök és más ügynökök közötti kommunikációt és interakciót.
+• **Megmagyarázni**, hogyan segíti elő mindegyik protokoll a kommunikációt és az interakciót LLM-ek, eszközök és más ügynökök között.
 
-• **Felismerni**, hogy milyen külön szerepeket töltenek be ezek a protokollok az összetett ügynöki rendszerek építésében.
+• **Felül ismerni** az egyes protokollok különböző szerepét összetett ügynökrendszerek építésében.
 
 ## Model Context Protocol
 
-A **Model Context Protocol (MCP)** egy nyílt szabvány, amely szabványosított módot biztosít az alkalmazások számára, hogy kontextust és eszközöket biztosítsanak az LLM-ek számára. Ez lehetővé teszi egy "univerzális adaptert" különböző adatforrásokhoz és eszközökhöz, amelyhez az AI ügynökök konzisztens módon csatlakozhatnak.
+A **Model Context Protocol (MCP)** egy nyílt szabvány, amely szabványosított módot biztosít az alkalmazások számára, hogy kontextust és eszközöket szolgáltassanak LLM-eknek. Ez lehetővé tesz egy "univerzális adaptert" különböző adattípusokhoz és eszközökhöz, amelyhez az AI ügynökök konzisztensen tudnak csatlakozni.
 
-Nézzük meg az MCP összetevőit, az API közvetlen használatához képest nyújtott előnyöket, és egy példát arra, hogyan használhatnak az AI ügynökök egy MCP szervert.
+Nézzük meg az MCP összetevőit, az előnyöket a közvetlen API használathoz képest, és egy példát arra, hogyan használhatják az AI ügynökök az MCP szervert.
 
-### MCP alapvető összetevői
+### MCP alapkomponensek
 
-Az MCP **kliens-szerver architektúrán** működik, és az alapvető összetevői a következők:
+Az MCP **kliens-szerver architektúrán** alapul, és az alapkomponensei:
 
-• **Hostok**: Olyan LLM alkalmazások (például egy kódszerkesztő, mint a VSCode), amelyek kapcsolatot kezdeményeznek egy MCP szerverrel.
+• **Hostok** azok az LLM alkalmazások (például egy kódszerkesztő, mint a VSCode), amelyek elindítják a kapcsolatokat egy MCP szerverhez.
 
-• **Kliensek**: Az alkalmazáson belüli komponensek, amelyek egy-egy kapcsolatot tartanak fenn a szerverekkel.
+• **Klienseik** a host alkalmazáson belüli komponensek, amelyek egy-egy kapcsolatot tartanak fenn a szerverekkel.
 
-• **Szerverek**: Könnyű programok, amelyek specifikus képességeket biztosítanak.
+• **Szerverek** könnyű programok, amelyek konkrét képességeket tesznek elérhetővé.
 
-A protokoll három alapvető primitívet tartalmaz, amelyek az MCP szerver képességei:
+A protokoll tartalmaz három alapvető primitívet, amelyek egy MCP szerver képességei:
 
-• **Eszközök**: Ezek diszkrét műveletek vagy funkciók, amelyeket egy AI ügynök hívhat meg egy művelet végrehajtásához. Például egy időjárási szolgáltatás kínálhat egy "get weather" eszközt, vagy egy e-kereskedelmi szerver egy "purchase product" eszközt. Az MCP szerverek hirdetik az egyes eszközök nevét, leírását és bemeneti/kimeneti sémáját a képességek listájában.
+• **Eszközök (Tools)**: Ezek önálló műveletek vagy függvények, amelyeket egy AI ügynök hívhat meg egy művelet végrehajtására. Például egy időjárás-szolgáltatás kínálhat „időjárás lekérése” eszközt, vagy egy e-kereskedelmi szerver "termék vásárlása" eszközt. Az MCP szerverek minden eszköz nevét, leírását és bemeneti/kimeneti sémáját hirdetik a képességlistában.
 
-• **Erőforrások**: Ezek csak olvasható adatokat vagy dokumentumokat jelentenek, amelyeket egy MCP szerver biztosíthat, és amelyeket a kliensek igény szerint lekérhetnek. Példák: fájltartalom, adatbázis-rekordok vagy naplófájlok. Az erőforrások lehetnek szövegesek (például kód vagy JSON) vagy binárisak (például képek vagy PDF-ek).
+• **Erőforrások (Resources)**: Ezek olvasható adat elemek vagy dokumentumok, amelyeket egy MCP szerver szolgáltathat, és az ügyfelek igény szerint kérhetik le őket. Példák: fájl tartalom, adatbázis rekordok vagy naplófájlok. Az erőforrások lehetnek szövegesek (például kód vagy JSON) vagy binárisak (például képek vagy PDF-ek).
 
-• **Promptok**: Ezek előre definiált sablonok, amelyek javasolt promptokat biztosítanak, lehetővé téve összetettebb munkafolyamatokat.
+• **Kezdőlapok (Prompts)**: Előre definiált sablonok, amelyek javasolt promptokat adnak, lehetővé téve komplexebb munkafolyamatokat.
 
-### MCP előnyei
+### Az MCP előnyei
 
-Az MCP jelentős előnyöket kínál az AI ügynökök számára:
+Az MCP jelentős előnyöket nyújt az AI ügynökök számára:
 
-• **Dinamikus eszközfelfedezés**: Az ügynökök dinamikusan kaphatnak listát a szerver által elérhető eszközökről, valamint azok leírásáról. Ez szemben áll a hagyományos API-kkal, amelyek gyakran statikus kódolást igényelnek az integrációkhoz, ami azt jelenti, hogy bármilyen API-változás kódfrissítést igényel. Az MCP egy "egyszeri integráció" megközelítést kínál, ami nagyobb alkalmazkodóképességet eredményez.
+• **Dinamikus Eszközfelismerés**: Az ügynökök dinamikusan megkaphatják egy szerver elérhető eszközeinek listáját azok leírásaival együtt. Ez ellentétben áll a hagyományos API-kkal, amelyek tipikusan statikus kódolást igényelnek az integrációkhoz, így bármilyen API változás kódmódosítást követel meg. Az MCP egy "egyszer integráld" megközelítést kínál, ami nagyobb alkalmazkodóképességet eredményez.
 
-• **Interoperabilitás az LLM-ek között**: Az MCP különböző LLM-ekkel működik, rugalmasságot biztosítva a fő modellek cseréjéhez a jobb teljesítmény érdekében.
+• **Interoperabilitás Különböző LLM-ek Között**: Az MCP különböző LLM-eket támogat, lehetővé téve a modellek könnyű cseréjét jobb teljesítmény elérése érdekében.
 
-• **Szabványosított biztonság**: Az MCP szabványos hitelesítési módszert tartalmaz, javítva a skálázhatóságot, amikor további MCP szerverekhez való hozzáférést adunk hozzá. Ez egyszerűbb, mint különböző kulcsok és hitelesítési típusok kezelése a hagyományos API-k esetében.
+• **Szabványosított Biztonság**: Az MCP tartalmaz egy szabványos hitelesítési módszert, ami megkönnyíti az új MCP szerverekhez való hozzáférések skálázását. Ez egyszerűbb, mint különböző kulcsok és hitelesítési típusok kezelése a hagyományos API-k esetén.
 
 ### MCP példa
 
-![MCP Diagram](../../../translated_images/mcp-diagram.e4ca1cbd551444a12e1f0eb300191a036ab01124fce71c864fe9cb7f4ac2a15d.hu.png)
+![MCP Diagram](../../../translated_images/hu/mcp-diagram.e4ca1cbd551444a1.webp)
 
-Képzeljük el, hogy egy felhasználó repülőjegyet szeretne foglalni egy MCP által működtetett AI asszisztens segítségével.
+Képzeljük el, hogy egy felhasználó szeretne repülőjegyet foglalni egy MCP által támogatott AI asszisztens segítségével.
 
-1. **Kapcsolat**: Az AI asszisztens (az MCP kliens) csatlakozik egy légitársaság által biztosított MCP szerverhez.
+1. **Kapcsolat**: Az AI asszisztens (az MCP kliens) kapcsolódik egy MCP szerverhez, amelyet egy légitársaság biztosít.
 
-2. **Eszközfelfedezés**: A kliens megkérdezi a légitársaság MCP szerverét: "Milyen eszközök állnak rendelkezésre?" A szerver válaszol olyan eszközökkel, mint "search flights" és "book flights".
+2. **Eszközfelismerés**: A kliens megkérdezi a légitársaság MCP szerverét: "Milyen eszközök érhetőek el nálatok?" A szerver válaszul eszközöket küld, mint például „járatok keresése” és „járat foglalása”.
 
-3. **Eszköz meghívása**: Ezután megkérdezed az AI asszisztenst: "Kérlek, keress egy repülőjáratot Portlandből Honoluluba." Az AI asszisztens, az LLM segítségével, azonosítja, hogy meg kell hívnia a "search flights" eszközt, és átadja a releváns paramétereket (kiindulási hely, célállomás) az MCP szervernek.
+3. **Eszköz meghívás**: Ezután a felhasználó megkéri az AI asszisztenst: „Kérlek, keresd meg a Portland–Honolulu járatokat.” Az AI asszisztens LLM-jével felismerteti, hogy meg kell hívja a „járatok keresése” eszközt, és átadja a megfelelő paramétereket (indulási hely, célállomás) az MCP szervernek.
 
-4. **Végrehajtás és válasz**: Az MCP szerver, mint egy wrapper, ténylegesen hívja a légitársaság belső foglalási API-ját. Ezután megkapja a járatinformációkat (például JSON adatokat), és visszaküldi az AI asszisztensnek.
+4. **Végrehajtás és válasz**: Az MCP szerver, csomagolóként működve, ténylegesen meghívja a légitársaság belső foglalási API-ját. Ezután megkapja a járatok információit (pl. JSON adatot) és visszaküldi az AI asszisztensnek.
 
-5. **További interakció**: Az AI asszisztens bemutatja a járatopciókat. Miután kiválasztasz egy járatot, az asszisztens meghívhatja a "book flight" eszközt ugyanazon MCP szerveren, befejezve a foglalást.
+5. **További interakció**: Az AI asszisztens bemutatja a járatlehetőségeket. Amikor a felhasználó kiválaszt egy járatot, az asszisztens a „járat foglalása” eszközt is meghívhatja ugyanazon MCP szerveren, ezzel befejezve a foglalást.
 
-## Agent-to-Agent Protocol (A2A)
+## Agent-to-Agent Protokoll (A2A)
 
-Míg az MCP az LLM-ek és eszközök összekapcsolására összpontosít, az **Agent-to-Agent (A2A) protokoll** egy lépéssel tovább megy, lehetővé téve a különböző AI ügynökök közötti kommunikációt és együttműködést. Az A2A összekapcsolja az AI ügynököket különböző szervezetek, környezetek és technológiai stackek között, hogy közösen teljesítsenek egy feladatot.
+Míg az MCP az LLM-eket köti össze eszközökkel, addig az **Agent-to-Agent (A2A) protokoll** továbblép azzal, hogy lehetővé teszi a különböző AI ügynökök közötti kommunikációt és együttműködést. Az A2A összekapcsolja az AI ügynököket különböző szervezetek, környezetek és technológiai platformok között egy közös feladat elvégzéséhez.
 
-Vizsgáljuk meg az A2A összetevőit és előnyeit, valamint egy példát arra, hogyan alkalmazható a mi utazási alkalmazásunkban.
+Áttekintjük az A2A komponenseit és előnyeit, valamint egy példát arra, hogyan alkalmazható ez az utazási alkalmazásunkban.
 
-### A2A alapvető összetevői
+### A2A alapkomponensek
 
-Az A2A az ügynökök közötti kommunikációt és együttműködést helyezi előtérbe, hogy egy felhasználói részfeladatot elvégezzenek. A protokoll minden összetevője hozzájárul ehhez:
+Az A2A az ügynökök közti kommunikációt és a feladatmegosztásban való együttműködést támogatja. A protokoll minden komponense ebben segít:
 
-#### Ügynökkártya
+#### Ügynök kártya (Agent Card)
 
-Hasonlóan ahhoz, ahogy egy MCP szerver megosztja az eszközök listáját, egy ügynökkártya tartalmazza:
+Hasonlóan ahhoz, hogy egy MCP szerver megosztja az elérhető eszközök listáját, az Ügynök Kártya tartalmazza:
 - Az ügynök nevét.
-- **Általános feladatok leírását**, amelyeket elvégez.
-- **Specifikus készségek listáját** leírásokkal, hogy más ügynökök (vagy akár emberi felhasználók) megértsék, mikor és miért érdemes az ügynököt hívni.
+- A **végzett általános feladatok** leírását.
+- Egy **specifikus képességek listáját** leírásokkal, amelyek segítenek más ügynököknek (vagy akár emberi felhasználóknak) megérteni, mikor és miért érdemes az adott ügynökhöz fordulni.
 - Az ügynök **aktuális végpont URL-jét**.
-- Az ügynök **verzióját** és **képességeit**, például streaming válaszokat és push értesítéseket.
+- Az **ügynök verzióját** és **képességeit**, például streaming válaszokat és push értesítéseket.
 
-#### Ügynökvégrehajtó
+#### Ügynök Végrehajtó (Agent Executor)
 
-Az ügynökvégrehajtó felelős azért, hogy **átadja a felhasználói chat kontextusát a távoli ügynöknek**, amelynek szüksége van erre, hogy megértse a végrehajtandó feladatot. Egy A2A szerverben az ügynök saját Nagy Nyelvi Modelljét (LLM) használja a bejövő kérések elemzésére és a feladatok végrehajtására saját belső eszközeivel.
+Az Ügynök Végrehajtó felelős az **aktuális felhasználói chat kontextus átadásáért a távoli ügynöknek**, amely ehhez szükséges a kiosztott feladat megértéshez. Egy A2A szerveren egy ügynök a saját Nagy Nyelvi Modelljét (LLM-jét) használja a bejövő kérések értelmezésére és a feladatok végrehajtására saját belső eszközeivel.
 
-#### Artefaktum
+#### Műtárgy (Artifact)
 
-Miután egy távoli ügynök elvégezte a kért feladatot, munkájának eredménye artefaktumként jön létre. Az artefaktum **tartalmazza az ügynök munkájának eredményét**, egy **leírást arról, hogy mi készült el**, és a **szöveges kontextust**, amelyet a protokollon keresztül küldtek. Az artefaktum elküldése után a kapcsolat a távoli ügynökkel lezárul, amíg újra szükség nem lesz rá.
+Miután a távoli ügynök végrehajtotta a kért feladatot, az eredményt egy műtárgy formájában hozza létre. A műtárgy **tartalmazza az ügynök munkájának eredményét**, a **végrehajtott tevékenység leírását**, valamint a **szöveges kontextust**, amely átadásra kerül a protokollon keresztül. A műtárgy elküldése után a kapcsolat a távoli ügynökkel lezárul, amíg újra szükség nem lesz rá.
 
-#### Eseménysor
+#### Esemény sor (Event Queue)
 
-Ez az összetevő **frissítések kezelésére és üzenetek továbbítására** szolgál. Különösen fontos a termelésben az ügynöki rendszerek számára, hogy megakadályozza az ügynökök közötti kapcsolat lezárását, mielőtt egy feladat befejeződik, különösen akkor, ha a feladat végrehajtási ideje hosszabb lehet.
+Ez a komponens az **frissítések kezelésére és üzenetek továbbítására** szolgál. Kiemelten fontos a termelésben használatos ügynökrendszerek számára, hogy megakadályozza a kapcsolatok idő előtti záródását a feladat befejezése előtt, különösen amikor a feladatok végrehajtása hosszabb időt vehet igénybe.
 
-### A2A előnyei
+### Az A2A előnyei
 
-• **Fokozott együttműködés**: Lehetővé teszi különböző gyártók és platformok ügynökei számára, hogy interakcióba lépjenek, megosszák a kontextust és együtt dolgozzanak, megkönnyítve a zökkenőmentes automatizálást a hagyományosan elkülönült rendszerek között.
+• **Fokozott együttműködés**: Lehetővé teszi, hogy különböző szállítók és platformok ügynökei interakcióba lépjenek, megosszák a kontextust és együtt dolgozzanak, zökkenőmentes automatizálást érve el hagyományosan elszigetelt rendszerek között.
 
-• **Modellválasztási rugalmasság**: Minden A2A ügynök eldöntheti, hogy melyik LLM-et használja a kérések kiszolgálására, lehetővé téve az optimalizált vagy finomhangolt modellek használatát ügynökönként, ellentétben az egyetlen LLM kapcsolattal néhány MCP esetben.
+• **Modellválasztási rugalmasság**: Minden A2A ügynök maga döntheti el, melyik LLM-et használja a kérés kiszolgálására, lehetővé téve egyedi vagy finomhangolt modellek alkalmazását ügynökönként, ellentétben az egyetlen LLM kapcsolatú MCP esetekkel.
 
-• **Beépített hitelesítés**: A hitelesítés közvetlenül az A2A protokollba van integrálva, robusztus biztonsági keretet biztosítva az ügynökök közötti interakciókhoz.
+• **Beépített hitelesítés**: A hitelesítés közvetlenül az A2A protokoll része, erős biztonsági keretet nyújtva az ügynökök közötti interakciókhoz.
 
 ### A2A példa
 
-![A2A Diagram](../../../translated_images/A2A-Diagram.8666928d648acc2687db4093d7b09ea2a595622f8fe18194a026ee55fc23af8e.hu.png)
+![A2A Diagram](../../../translated_images/hu/A2A-Diagram.8666928d648acc26.webp)
 
-Bővítsük ki az utazási foglalási forgatókönyvet, de ezúttal az A2A használatával.
+Fejlesszük tovább utazási foglalási példánkat, de most A2A használatával.
 
-1. **Felhasználói kérés több ügynökhöz**: Egy felhasználó interakcióba lép egy "Utazási Ügynök" A2A kliens/ügynökkel, például így: "Kérlek, foglalj egy teljes utazást Honoluluba jövő hétre, beleértve a repülőjegyeket, egy szállodát és egy bérautót."
+1. **Felhasználói kérés több ügynöknek**: Egy felhasználó egy "Utazási Ügynök" nevű A2A klienssel/ügynökkel kommunikál, például így: „Foglalj nekem egy egész utat Honolulu-ba a jövő hétre, beleértve járatokat, szállást és bérautót.”
 
-2. **Orkesztráció az Utazási Ügynök által**: Az Utazási Ügynök megkapja ezt az összetett kérést. Az LLM segítségével elemzi a feladatot, és meghatározza, hogy más specializált ügynökökkel kell interakcióba lépnie.
+2. **Az Utazási Ügynök koordinálása**: Az Utazási Ügynök megkapja ezt az összetett kérést. LLM-jét használva végiggondolja a feladatot, és megállapítja, hogy más specializált ügynökökkel kell kommunikálnia.
 
-3. **Ügynökök közötti kommunikáció**: Az Utazási Ügynök az A2A protokollt használja, hogy kapcsolatba lépjen alárendelt ügynökökkel, például egy "Légitársasági Ügynökkel", egy "Szállodai Ügynökkel" és egy "Autókölcsönző Ügynökkel", amelyeket különböző cégek hoztak létre.
+3. **Ügynökök közti kommunikáció**: Az Utazási Ügynök az A2A protokollt alkalmazva csatlakozik downstream ügynökökhöz, mint például egy „Légitársaság Ügynök”, „Szálloda Ügynök” és „Autókölcsönző Ügynök”, amelyek különböző cégekhez tartoznak.
 
-4. **Feladatok delegálása**: Az Utazási Ügynök specifikus feladatokat küld ezeknek a specializált ügynököknek (például "Keress járatokat Honoluluba", "Foglalj szállodát", "Bérelj autót"). Mindegyik specializált ügynök, saját LLM-eket futtatva és saját eszközeit használva (amelyek maguk is MCP szerverek lehetnek), elvégzi a foglalás specifikus részét.
+4. **Feladat delegálása**: Az Utazási Ügynök konkrét feladatokat (pl. „Keress járatokat Honolulu-ba”, „Foglalj szállást”, „Kölcsönözz autót”) küld ezeknek a specializált ügynököknek, akik saját LLM-eket és eszközöket használnak (akár maguk is MCP szerverek lehetnek) a foglalás egyes részeinek elvégzésére.
 
-5. **Összesített válasz**: Miután az összes alárendelt ügynök elvégezte a feladatát, az Utazási Ügynök összeállítja az eredményeket (járatinformációk, szállodai visszaigazolás, autókölcsönzési foglalás), és egy átfogó, chat-stílusú választ küld vissza a felhasználónak.
+5. **Konszolidált válasz**: Miután az összes downstream ügynök befejezte a feladatait, az Utazási Ügynök összegyűjti az eredményeket (járatszámítás, szállodai visszaigazolás, autókölcsönzés), és részletes, csevegés-szerű választ küld vissza a felhasználónak.
 
-## Natural Language Web (NLWeb)
+## Természetes Nyelvű Web (NLWeb)
 
-A weboldalak régóta az elsődleges módjai annak, hogy a felhasználók információkhoz és adatokhoz férjenek hozzá az interneten.
+A weboldalak régóta a fő módját jelentik az interneten elérhető információk és adatok használatának.
 
-Nézzük meg az NLWeb különböző összetevőit, az NLWeb előnyeit és egy példát arra, hogyan működik az NLWeb az utazási alkalmazásunkban.
+Nézzük meg az NLWeb különböző komponenseit, az NLWeb előnyeit és egy példát arra, hogyan működik az NLWeb az utazási alkalmazásunkban.
 
 ### Az NLWeb összetevői
 
-- **NLWeb alkalmazás (alapszolgáltatás kódja)**: Az a rendszer, amely feldolgozza a természetes nyelvi kérdéseket. Összekapcsolja a platform különböző részeit, hogy válaszokat hozzon létre. Gondolj rá úgy, mint a weboldal természetes nyelvi funkcióit működtető **motorra**.
+- **NLWeb alkalmazás (Core Service Code)**: A rendszer, amely feldolgozza a természetes nyelvű kérdéseket. Kapcsolja a platform különböző részeit a válaszok elkészítéséhez. Úgy tekinthetünk rá, mint a **weboldal természetes nyelvű funkcióinak motorjára**.
 
-- **NLWeb protokoll**: Ez egy **alapvető szabályrendszer a természetes nyelvi interakcióhoz** egy weboldallal. JSON formátumban küld vissza válaszokat (gyakran Schema.org használatával). Célja, hogy egyszerű alapot teremtsen az "AI Web"-hez, ugyanúgy, ahogy a HTML lehetővé tette az online dokumentumok megosztását.
+- **NLWeb protokoll**: Ez egy **egyszerű szabályrendszer a természetes nyelvű interakcióhoz** egy weboldallal. JSON formátumban (gyakran Schema.org használatával) küldi vissza a válaszokat. Célja, hogy egyszerű alapot teremtsen az „AI Web” számára, ugyanúgy, ahogy a HTML tette lehetővé a dokumentumok online megosztását.
 
-- **MCP szerver (Model Context Protocol végpont)**: Minden NLWeb beállítás egyben **MCP szerverként** is működik. Ez azt jelenti, hogy **eszközöket (például egy "ask" metódust) és adatokat** oszthat meg más AI rendszerekkel. Gyakorlatban ez lehetővé teszi, hogy a weboldal tartalma és képességei az AI ügynökök számára is elérhetők legyenek, így a weboldal a szélesebb "ügynöki ökoszisztéma" részévé válik.
+- **MCP szerver (Model Context Protocol végpont)**: Minden NLWeb beállítás egyben egy **MCP szerverként** is működik. Ez azt jelenti, hogy **eszközöket (például `ask` metódust) és adatokat** oszthat meg más AI rendszerekkel. Gyakorlatban ez azt jelenti, hogy a weboldal tartalma és képességei elérhetővé válnak AI ügynökök számára, így a webhely része lesz a „ügynök ökoszisztémának”.
 
-- **Beágyazási modellek**: Ezeket a modelleket arra használják, hogy **a weboldal tartalmát numerikus reprezentációkká, azaz vektorokká alakítsák** (beágyazások). Ezek a vektorok olyan jelentést hordoznak, amelyet a számítógépek össze tudnak hasonlítani és keresni. Egy speciális adatbázisban tárolják őket, és a felhasználók kiválaszthatják, hogy melyik beágyazási modellt szeretnék használni.
+- **Beágyazási modellek (Embedding Models)**: Ezeket a modelleket arra használják, hogy a weboldal tartalmát olyan numerikus ábrázolásokká (vektorokká, embeddings) alakítsák, amelyek számítógéppel összehasonlíthatók és kereshetők. Ezeket egy speciális adatbázisban tárolják, és a felhasználók választhatnak, melyik beágyazási modellt szeretnék használni.
 
-- **Vektoradatbázis (visszakeresési mechanizmus)**: Ez az adatbázis **a weboldal tartalmának beágyazásait tárolja**. Amikor valaki kérdést tesz fel, az NLWeb ellenőrzi a vektoradatbázist, hogy gyorsan megtalálja a legrelevánsabb információkat. Gyors listát ad a lehetséges válaszokról, hasonl
+- **Vektor adatbázis (kereső mechanizmus)**: Ez az adatbázis tárolja a weboldal tartalmának beágyazásait. Amikor valaki kérdez, az NLWeb ezt a vektor adatbázist használja, hogy gyorsan megtalálja a legrelevánsabb információkat. Gyors válaszlehetőségeket ad, amelyeket hasonlóság alapján rangsorol. Az NLWeb különféle vektortároló rendszerekkel működik, például Qdrant, Snowflake, Milvus, Azure AI Search és Elasticsearch.
+
+### NLWeb példa
+
+![NLWeb](../../../translated_images/hu/nlweb-diagram.c1e2390b310e5fe4.webp)
+
+Vegyük újra az utazási foglaló weboldalunkat, de most NLWeb által támogatva.
+
+1. **Adatfeltöltés**: Az utazási weboldal meglévő termékkatalógusai (pl. járatlisták, szállodai leírások, túra csomagok) Schema.org szerint vannak formázva vagy RSS feedeken keresztül betöltve. Az NLWeb eszközei feldolgozzák ezt a strukturált adatot, létrehozzák a beágyazásokat, és eltárolják ezeket helyi vagy távoli vektor adatbázisban.
+
+2. **Természetes nyelvű lekérdezés (ember)**: Egy felhasználó meglátogatja a weboldalt, és a menük böngészése helyett a csevegőfelületen beírja: „Találj számomra családbarát szállodát Honolulu-ban medencével a jövő hétre.”
+
+3. **NLWeb feldolgozás**: Az NLWeb alkalmazás megkapja a lekérdezést. Elküldi az LLM-nek megértésre, egyidejűleg lekérdezve a vektor adatbázist a releváns szállodákért.
+
+4. **Pontosságos találatok**: Az LLM segít értelmezni az adatbázisból jövő keresési eredményeket, azonosítja a legjobb találatokat olyan kritériumok alapján, mint „családbarát”, „medence” és „Honolulu”, majd természetes nyelvű választ formáz. Fontos, hogy a válasz valódi szállodákra hivatkozik, nem kitalált információra.
+
+5. **AI ügynök interakció**: Mivel az NLWeb MCP szerverként is működik, egy külső AI utazási ügynök is csatlakozhat ehhez a weboldal NLWeb példányához. Az AI ügynök használhatja az `ask` MCP metódust, hogy közvetlenül kérdezzen: `ask("Ajánlottak a szálloda környékén vegánbarát éttermeket?")`. Az NLWeb feldolgozza ezt a lekérdezést, kihasználva az éttermek adatbázisát (amennyiben az betöltött), és struktúrált JSON választ küld.
+
+### További kérdése van MCP/A2A/NLWeb-ről?
+
+Csatlakozzon a [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) közösséghez, ahol találkozhat más tanulókkal, részt vehet irodai órákon és választ kaphat AI ügynökökkel kapcsolatos kérdéseire.
+
+## Források
+
+- [MCP kezdőknek](https://aka.ms/mcp-for-beginners)  
+- [MCP dokumentáció](https://learn.microsoft.com/python/api/overview/azure/ai-projects-readme)
+- [NLWeb tárház](https://github.com/nlweb-ai/NLWeb)
+- [Microsoft Agent Framework](https://aka.ms/ai-agents-beginners/agent-framewrok)
 
 ---
 
-**Felelősség kizárása**:  
-Ez a dokumentum az AI fordítási szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális, emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Felelősség kizárása**:
+Ezt a dokumentumot az AI fordítási szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti, anyanyelvi dokumentum tekinthető a hiteles forrásnak. Kritikus információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

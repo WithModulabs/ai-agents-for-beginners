@@ -1,84 +1,72 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5f54aa3f419865e5d58bcfddb1d3198",
-  "translation_date": "2025-10-03T16:00:15+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "lt"
-}
--->
 # AGENTS.md
 
 ## Projekto apžvalga
 
-Šiame saugykloje pateikiamas kursas „AI agentai pradedantiesiems“ – išsamus edukacinis kursas, mokantis visko, ko reikia norint sukurti AI agentus. Kursą sudaro daugiau nei 15 pamokų, apimančių pagrindus, dizaino šablonus, sistemas ir AI agentų diegimą gamyboje.
+Šis saugyklos projektas „AI Agents for Beginners“ yra išsamus mokomasis kursas, mokantis visų pagrindų, reikalingų AI agentų kūrimui. Kursas susideda iš daugiau nei 15 pamokų, aprėpiančių pagrindus, dizaino šablonus, karkasus ir AI agentų gamybinį diegimą.
 
 **Pagrindinės technologijos:**
 - Python 3.12+
-- Jupyter Notebooks interaktyviam mokymuisi
-- AI sistemos: Semantic Kernel, AutoGen, Microsoft Agent Framework (MAF)
-- Azure AI paslaugos: Azure AI Foundry, Azure AI Agent Service
-- GitHub Models Marketplace (galimas nemokamas planas)
+- Jupyter užrašų knygelės interaktyviam mokymuisi
+- AI karkasai: Microsoft Agent Framework (MAF)
+- Azure AI paslaugos: Microsoft Foundry, Azure AI Foundry Agent Service V2
 
 **Architektūra:**
-- Pamokų struktūra (00–15+ katalogai)
-- Kiekviena pamoka apima: README dokumentaciją, kodo pavyzdžius (Jupyter Notebooks) ir vaizdus
-- Daugiakalbė palaikymo sistema per automatizuotą vertimo sistemą
-- Keli sistemos pasirinkimai kiekvienai pamokai (Semantic Kernel, AutoGen, Azure AI Agent Service)
+- Pagal pamokas struktūrizuota (katalogai 00-15+)
+- Kiekviena pamoka turi: README dokumentaciją, kodo pavyzdžius (Jupyter užrašų knygelės) ir paveikslėlius
+- Daugialypė kalbų palaikymas per automatizuotą vertimo sistemą
+- Viena Python užrašų knygelė kiekvienai pamokai, naudojant Microsoft Agent Framework
 
-## Nustatymo komandos
+## Sąrankos komandos
 
-### Būtinos sąlygos
-- Python 3.12 ar naujesnė versija
-- GitHub paskyra (GitHub Models – nemokamas planas)
-- Azure prenumerata (neprivaloma, Azure AI paslaugoms)
+### Reikalavimai
+- Python 3.12 arba naujesnė versija
+- Azure prenumerata (Azure AI Foundry)
+- Įdiegta ir autentifikuota Azure CLI (`az login`)
 
-### Pradinis nustatymas
+### Pradinė sąranka
 
-1. **Klonuokite arba „forkinkite“ saugyklą:**
+1. **Klonuoti arba forkinti saugyklą:**
    ```bash
    gh repo fork microsoft/ai-agents-for-beginners --clone
-   # OR
+   # ARBA
    git clone https://github.com/microsoft/ai-agents-for-beginners.git
    cd ai-agents-for-beginners
    ```
 
-2. **Sukurkite ir aktyvuokite Python virtualią aplinką:**
+2. **Sukurti ir aktyvuoti Python virtualią aplinką:**
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  # Windows sistemoje: venv\Scripts\activate
    ```
 
-3. **Įdiekite priklausomybes:**
+3. **Įdiegti priklausomybes:**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Nustatykite aplinkos kintamuosius:**
+4. **Nustatyti aplinkos kintamuosius:**
    ```bash
    cp .env.example .env
-   # Edit .env with your API keys and endpoints
+   # Redaguokite .env su savo API raktas ir galiniais taškais
    ```
 
+### Būtini aplinkos kintamieji
 
-### Reikalingi aplinkos kintamieji
+Skirta **Azure AI Foundry** (būtina):
+- `AZURE_AI_PROJECT_ENDPOINT` - Azure AI Foundry projekto galinė taško nuoroda
+- `AZURE_AI_MODEL_DEPLOYMENT_NAME` - Modelio diegimo pavadinimas (pvz., gpt-4o)
 
-GitHub Models (nemokamas planas):
-- `GITHUB_TOKEN` – asmeninis prieigos raktas iš GitHub
+Skirta **Azure AI Search** (Pamoka 05 - RAG):
+- `AZURE_SEARCH_SERVICE_ENDPOINT` - Azure AI Search galinė taško nuoroda
+- `AZURE_SEARCH_API_KEY` - Azure AI Search API raktas
 
-Azure AI paslaugoms (neprivaloma):
-- `PROJECT_ENDPOINT` – Azure AI Foundry projekto galinis taškas
-- `AZURE_OPENAI_API_KEY` – Azure OpenAI API raktas
-- `AZURE_OPENAI_ENDPOINT` – Azure OpenAI galinio taško URL
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` – pokalbių modelio diegimo pavadinimas
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` – įterpimų diegimo pavadinimas
-- Papildoma Azure konfigūracija, pateikta `.env.example` faile
+Autentifikacija: paleiskite `az login` prieš vykdant užrašų knygeles (naudoja `AzureCliCredential`).
 
-## Kūrimo darbo eiga
+## Vystymo darbo eiga
 
-### Jupyter Notebooks paleidimas
+### Jupyter užrašų knygelių paleidimas
 
-Kiekviena pamoka apima kelis Jupyter Notebooks skirtingoms sistemoms:
+Kiekviena pamoka turi kelias Jupyter užrašų knygeles skirtingiems karkasams:
 
 1. **Paleiskite Jupyter:**
    ```bash
@@ -87,50 +75,33 @@ Kiekviena pamoka apima kelis Jupyter Notebooks skirtingoms sistemoms:
 
 2. **Eikite į pamokos katalogą** (pvz., `01-intro-to-ai-agents/code_samples/`)
 
-3. **Atidarykite ir vykdykite Notebooks:**
-   - `*-semantic-kernel.ipynb` – naudojant Semantic Kernel sistemą
-   - `*-autogen.ipynb` – naudojant AutoGen sistemą
-   - `*-python-agent-framework.ipynb` – naudojant Microsoft Agent Framework (Python)
-   - `*-dotnet-agent-framework.ipynb` – naudojant Microsoft Agent Framework (.NET)
-   - `*-azureaiagent.ipynb` – naudojant Azure AI Agent Service
+3. **Atidarykite ir vykdykite užrašų knygeles:**
+   - `*-python-agent-framework.ipynb` - naudojant Microsoft Agent Framework (Python)
+   - `*-dotnet-agent-framework.ipynb` - naudojant Microsoft Agent Framework (.NET)
 
-### Darbas su skirtingomis sistemomis
+### Darbas su Microsoft Agent Framework
 
-**Semantic Kernel + GitHub Models:**
-- Galimas nemokamas planas su GitHub paskyra
-- Tinka mokymuisi ir eksperimentavimui
-- Failų šablonas: `*-semantic-kernel*.ipynb`
-
-**AutoGen + GitHub Models:**
-- Galimas nemokamas planas su GitHub paskyra
-- Daugiagentės orkestracijos galimybės
-- Failų šablonas: `*-autogen.ipynb`
-
-**Microsoft Agent Framework (MAF):**
-- Naujausia Microsoft sistema
-- Galima Python ir .NET
-- Failų šablonas: `*-agent-framework.ipynb`
-
-**Azure AI Agent Service:**
-- Reikalinga Azure prenumerata
-- Funkcijos, paruoštos gamybai
-- Failų šablonas: `*-azureaiagent.ipynb`
+**Microsoft Agent Framework + Azure AI Foundry:**
+- Reikalauja Azure prenumeratos
+- Naudoja `AzureAIProjectAgentProvider` Agent Service V2 (agentai matomi Foundry portale)
+- Gamybai paruoštas su integruota stebėsena
+- Failų šablonas: `*-python-agent-framework.ipynb`
 
 ## Testavimo instrukcijos
 
-Tai edukacinė saugykla su pavyzdiniu kodu, o ne gamybos kodu su automatizuotais testais. Norėdami patikrinti savo nustatymus ir pakeitimus:
+Tai mokomoji saugykla su pavyzdiniu kodu, o ne gamybinis kodas su automatizuotais testais. Norint patikrinti sąranką ir pakeitimus:
 
 ### Rankinis testavimas
 
-1. **Testuokite Python aplinką:**
+1. **Patikrinkite Python aplinką:**
    ```bash
-   python --version  # Should be 3.12+
-   pip list | grep -E "(autogen|semantic-kernel|azure-ai)"
+   python --version  # Turėtų būti 3.12 ar naujesnė
+   pip list | grep -E "(agent-framework|azure-ai|azure-identity)"
    ```
 
-2. **Testuokite Notebook vykdymą:**
+2. **Patikrinkite užrašų knygelių vykdymą:**
    ```bash
-   # Convert notebook to script and run (tests imports)
+   # Konvertuoti užrašų knygelę į skriptą ir paleisti (testuoja importus)
    jupyter nbconvert --to script <lesson-folder>/code_samples/<notebook>.ipynb --stdout | python
    ```
 
@@ -139,13 +110,12 @@ Tai edukacinė saugykla su pavyzdiniu kodu, o ne gamybos kodu su automatizuotais
    python -c "import os; from dotenv import load_dotenv; load_dotenv(); print('✓ GITHUB_TOKEN' if os.getenv('GITHUB_TOKEN') else '✗ GITHUB_TOKEN missing')"
    ```
 
+### Atskirų užrašų knygelių paleidimas
 
-### Atskirų Notebooks vykdymas
-
-Atidarykite Notebooks Jupyter ir vykdykite langelius nuosekliai. Kiekvienas Notebook yra savarankiškas ir apima:
-- Importo teiginius
+Atidarykite užrašų knygeles Jupyter ir vykdykite langelius paeiliui. Kiekviena užrašų knygelė yra savarankiška ir apima:
+- Importavimo sakinius
 - Konfigūracijos įkėlimą
-- Agentų įgyvendinimo pavyzdžius
+- Pavyzdinius agentų įgyvendinimus
 - Tikėtinus rezultatus markdown langeliuose
 
 ## Kodo stilius
@@ -153,16 +123,16 @@ Atidarykite Notebooks Jupyter ir vykdykite langelius nuosekliai. Kiekvienas Note
 ### Python konvencijos
 
 - **Python versija**: 3.12+
-- **Kodo stilius**: laikykitės standartinių Python PEP 8 konvencijų
-- **Notebooks**: naudokite aiškius markdown langelius, kad paaiškintumėte koncepcijas
-- **Importai**: grupuokite pagal standartinę biblioteką, trečiųjų šalių ir vietinius importus
+- **Kodo stilius**: laikytis Python PEP 8 standartų
+- **Užrašų knygelės**: naudoti aiškius markdown langelius koncepcijų paaiškinimui
+- **Importai**: grupuoti pagal standartinę biblioteką, trečiųjų šalių ir vietinius importus
 
-### Jupyter Notebook konvencijos
+### Jupyter užrašų knygelių konvencijos
 
-- Prieš kodo langelius įtraukite aprašomuosius markdown langelius
-- Pridėkite rezultatų pavyzdžius Notebooks kaip nuorodą
-- Naudokite aiškius kintamųjų pavadinimus, atitinkančius pamokos koncepcijas
-- Išlaikykite Notebook vykdymo tvarką linijinę (langelis 1 → 2 → 3...)
+- Prieš kodo langelius pridėti aprašomuosius markdown langelius
+- Įtraukti pavyzdinius rezultatus užrašų knygelėse kaip nuorodą
+- Naudoti aiškius kintamųjų pavadinimus, atitinkančius pamokos temas
+- Išlaikyti linijinę vykdymo seką (langelis 1 → 2 → 3...)
 
 ### Failų organizavimas
 
@@ -170,182 +140,173 @@ Atidarykite Notebooks Jupyter ir vykdykite langelius nuosekliai. Kiekvienas Note
 <lesson-number>-<lesson-name>/
 ├── README.md                     # Lesson documentation
 ├── code_samples/
-│   ├── <number>-semantic-kernel.ipynb
-│   ├── <number>-autogen.ipynb
 │   ├── <number>-python-agent-framework.ipynb
-│   └── <number>-azureaiagent.ipynb
+│   └── <number>-dotnet-agent-framework.ipynb  (optional)
 └── images/
     └── *.png
 ```
-
 
 ## Kūrimas ir diegimas
 
 ### Dokumentacijos kūrimas
 
 Ši saugykla naudoja Markdown dokumentacijai:
-- README.md failai kiekviename pamokos kataloge
+- README.md failai kiekviename pamokos aplanke
 - Pagrindinis README.md saugyklos šaknyje
-- Automatinė vertimo sistema per GitHub Actions
+- Automatizuota vertimo sistema per GitHub Actions
 
-### CI/CD procesas
+### CI/CD kanalas
 
-Esantis `.github/workflows/`:
+Yra ` .github/workflows/` kataloge:
 
-1. **co-op-translator.yml** – automatinis vertimas į daugiau nei 50 kalbų
-2. **welcome-issue.yml** – pasveikina naujus problemų kūrėjus
-3. **welcome-pr.yml** – pasveikina naujus „pull request“ prisidėtojus
+1. **co-op-translator.yml** - automatinis vertimas į >50 kalbų
+2. **welcome-issue.yml** - pasveikina sukurtus issues
+3. **welcome-pr.yml** - pasveikina pull request autorius
 
 ### Diegimas
 
-Tai edukacinė saugykla – nėra diegimo proceso. Vartotojai:
-1. „Forkinkite“ arba klonuokite saugyklą
-2. Vykdykite Notebooks lokaliai arba GitHub Codespaces
-3. Mokykitės modifikuodami ir eksperimentuodami su pavyzdžiais
+Tai mokomoji saugykla – nėra diegimo proceso. Vartotojai:
+1. Forkina arba klonina saugyklą
+2. Vykdo užrašų knygeles vietoje arba GitHub Codespaces
+3. Mokosi keisdami ir eksperimentuodami su pavyzdžiais
 
-## „Pull Request“ gairės
+## Pull Request gairės
 
-### Prieš pateikimą
+### Prieš teikiant
 
-1. **Testuokite savo pakeitimus:**
-   - Vykdykite paveiktus Notebooks pilnai
-   - Patikrinkite, ar visi langeliai vykdomi be klaidų
-   - Įsitikinkite, kad rezultatai yra tinkami
+1. **Išbandyti pakeitimus:**
+   - Kompleksiškai paleisti paveiktas užrašų knygeles
+   - Užtikrinti, kad visi langeliai vykdomi be klaidų
+   - Patikrinti, kad rezultatai yra tinkami
 
 2. **Dokumentacijos atnaujinimai:**
-   - Atnaujinkite README.md, jei pridedate naujas koncepcijas
-   - Pridėkite komentarus Notebooks sudėtingam kodui
-   - Įsitikinkite, kad markdown langeliai paaiškina tikslą
+   - Atnaujinti README.md, jei pridedama naujų koncepcijų
+   - Komentuoti sudėtingą kodą užrašų knygelėse
+   - Užtikrinti, kad markdown langeliai paaiškintų paskirtį
 
 3. **Failų pakeitimai:**
-   - Venkite įtraukti `.env` failų (naudokite `.env.example`)
-   - Neįtraukite `venv/` ar `__pycache__/` katalogų
-   - Išlaikykite Notebook rezultatus, kai jie demonstruoja koncepcijas
-   - Pašalinkite laikinus failus ir atsarginius Notebooks (`*-backup.ipynb`)
+   - Nevykdyti `.env` failų (naudokite `.env.example`)
+   - Nevykdyti `venv/` ar `__pycache__/` katalogų
+   - Išlaikyti užrašų knygelių rezultatus, kai demonstruoja koncepcijas
+   - Pašalinti laikinuosius failus ir atsargines kopijas (`*-backup.ipynb`)
 
 ### PR pavadinimo formatas
 
-Naudokite aprašomuosius pavadinimus:
+Naudokite aprašomą pavadinimą:
 - `[Lesson-XX] Pridėti naują pavyzdį <koncepcijai>`
-- `[Fix] Ištaisyti klaidą pamokos-XX README`
-- `[Update] Patobulinti kodo pavyzdį pamokoje-XX`
-- `[Docs] Atnaujinti nustatymo instrukcijas`
+- `[Fix] Ištaisyti rašybos klaidą lesson-XX README`
+- `[Update] Patobulinti kodo pavyzdį lesson-XX`
+- `[Docs] Atnaujinti sąrankos instrukcijas`
 
 ### Reikalingi patikrinimai
 
-- Notebooks turi būti vykdomi be klaidų
+- Užrašų knygelės turi vykdyti be klaidų
 - README failai turi būti aiškūs ir tikslūs
-- Laikykitės esamų kodo šablonų saugykloje
-- Išlaikykite nuoseklumą su kitomis pamokomis
+- Laikytis esamų kodo šablonų saugykloje
+- Išlaikyti vienodumą su kitomis pamokomis
 
 ## Papildomos pastabos
 
-### Dažniausios problemos
+### Dažnos problemos
 
 1. **Python versijos neatitikimas:**
-   - Įsitikinkite, kad naudojate Python 3.12+
-   - Kai kurios paketai gali neveikti su senesnėmis versijomis
-   - Naudokite `python3 -m venv`, kad aiškiai nurodytumėte Python versiją
+   - Naudoti Python 3.12 arba naujesnę versiją
+   - Kai kurios pakuotės gali neveikti su senesnėmis versijomis
+   - Naudoti `python3 -m venv` aiškiai nurodant versiją
 
 2. **Aplinkos kintamieji:**
-   - Visada sukurkite `.env` iš `.env.example`
-   - Neįtraukite `.env` failo (jis yra `.gitignore`)
-   - GitHub raktas turi turėti tinkamus leidimus
+   - Visada kurti `.env` iš `.env.example`
+   - Nevykdyti `.env` failo (jis įtrauktas į `.gitignore`)
+   - GitHub tokenui reikalingos tinkamos leidimai
 
-3. **Paketų konfliktai:**
-   - Naudokite šviežią virtualią aplinką
-   - Įdiekite iš `requirements.txt`, o ne atskirų paketų
-   - Kai kurie Notebooks gali reikalauti papildomų paketų, nurodytų jų markdown langeliuose
+3. **Pakuočių konfliktai:**
+   - Naudoti naują virtualią aplinką
+   - Diegti pagal `requirements.txt`, o ne pavienes pakuotes
+   - Kai kurios užrašų knygelės gali reikalauti papildomų pakuočių, nurodytų markdown langeliuose
 
 4. **Azure paslaugos:**
-   - Azure AI paslaugoms reikalinga aktyvi prenumerata
-   - Kai kurios funkcijos yra specifinės regionui
-   - Nemokamo plano apribojimai taikomi GitHub Models
+   - Azure AI paslaugoms reikia aktyvios prenumeratos
+   - Kai kurios funkcijos yra priklausomos nuo regiono
+   - GitHub Models taikomi nemokamo lygio apribojimai
 
 ### Mokymosi kelias
 
-Rekomenduojama pamokų seka:
-1. **00-course-setup** – pradėkite nuo aplinkos nustatymo
-2. **01-intro-to-ai-agents** – supraskite AI agentų pagrindus
-3. **02-explore-agentic-frameworks** – sužinokite apie skirtingas sistemas
-4. **03-agentic-design-patterns** – pagrindiniai dizaino šablonai
-5. Tęskite numeruotas pamokas nuosekliai
+Rekomenduojama tvarka pamokų eigoje:
+1. **00-course-setup** - Pradėkite nuo sąrankos
+2. **01-intro-to-ai-agents** - Sužinokite AI agentų pagrindus
+3. **02-explore-agentic-frameworks** - Sužinokite apie skirtingus karkasus
+4. **03-agentic-design-patterns** - Pagrindiniai dizaino šablonai
+5. Toliau sekti pagal numeruojamas pamokas iš eilės
 
-### Sistemos pasirinkimas
+### Karkaso pasirinkimas
 
-Pasirinkite sistemą pagal savo tikslus:
-- **Mokymasis/Prototipavimas**: Semantic Kernel + GitHub Models (nemokamas)
-- **Daugiagentės sistemos**: AutoGen
-- **Naujausios funkcijos**: Microsoft Agent Framework (MAF)
-- **Diegimas gamyboje**: Azure AI Agent Service
+Pasirinkite karkasą pagal tikslus:
+- **Visoms pamokoms**: Microsoft Agent Framework (MAF) su `AzureAIProjectAgentProvider`
+- **Agentai registruojasi serverio pusėje** Azure AI Foundry Agent Service V2 ir matomi Foundry portale
 
-### Pagalbos gavimas
+### Pagalba
 
-- Prisijunkite prie [Azure AI Foundry Community Discord](https://aka.ms/ai-agents/discord)
-- Peržiūrėkite pamokų README failus, kad gautumėte konkrečią pagalbą
-- Patikrinkite pagrindinį [README.md](./README.md) dėl kurso apžvalgos
-- Žiūrėkite [Course Setup](./00-course-setup/README.md) dėl detalių nustatymo instrukcijų
+- Prisijunkite prie [Microsoft Foundry Community Discord](https://aka.ms/ai-agents/discord)
+- Peržiūrėkite pamokų README failus dėl konkrečių nurodymų
+- Patikrinkite pagrindinį [README.md](./README.md) kursų apžvalgai
+- Žr. [Course Setup](./00-course-setup/README.md) dėl detalių sąrankos instrukcijų
 
-### Prisidėjimas
+### Kūrimas
 
-Tai atviras edukacinis projektas. Prisidėjimai laukiami:
-- Tobulinkite kodo pavyzdžius
-- Taisykite klaidas ar netikslumus
-- Pridėkite paaiškinančius komentarus
-- Siūlykite naujas pamokų temas
-- Verskite į papildomas kalbas
+Tai atviras mokomasis projektas. Kviečiame prisidėti:
+- Tobulinti kodo pavyzdžius
+- Taisyti rašybos klaidas ar klaidas
+- Pridėti paaiškinančius komentarus
+- Siūlyti naujas pamokų temas
+- Versti į kitas kalbas
 
 Žiūrėkite [GitHub Issues](https://github.com/microsoft/ai-agents-for-beginners/issues) dėl esamų poreikių.
 
 ## Projekto specifinis kontekstas
 
-### Daugiakalbė palaikymo sistema
+### Daugialypė kalbų palaikymas
 
 Ši saugykla naudoja automatizuotą vertimo sistemą:
-- Palaikoma daugiau nei 50 kalbų
-- Vertimai saugomi `/translations/<lang-code>/` kataloguose
-- GitHub Actions darbo eiga tvarko vertimo atnaujinimus
+- Palaikoma >50 kalbų
+- Vertimai saugomi `/translations/<kalbos-kodas>/` kataloguose
+- Vertimo atnaujinimus valdo GitHub Actions darbo eiga
 - Šaltinio failai yra anglų kalba saugyklos šaknyje
 
 ### Pamokų struktūra
 
-Kiekviena pamoka laikosi nuoseklaus šablono:
-1. Vaizdo įrašo miniatiūra su nuoroda
-2. Rašytinis pamokos turinys (README.md)
-3. Kodo pavyzdžiai keliomis sistemomis
-4. Mokymosi tikslai ir būtinos sąlygos
-5. Papildomi mokymosi ištekliai su nuorodomis
+Kiekviena pamoka turi nuoseklų modelį:
+1. Vaizdo miniatiūra su nuoroda
+2. Rašytinė pamokos medžiaga (README.md)
+3. Kodo pavyzdžiai keliems karkasams
+4. Mokymosi tikslai ir reikalavimai
+5. Papildomos mokymosi medžiagos nuorodos
 
-### Kodo pavyzdžių pavadinimai
+### Kodo pavyzdžių vardai
 
-Formatas: `<pamokos-numeris>-<sistemos-pavadinimas>.ipynb`
-- `04-semantic-kernel.ipynb` – Pamoka 4, Semantic Kernel
-- `07-autogen.ipynb` – Pamoka 7, AutoGen
-- `14-python-agent-framework.ipynb` – Pamoka 14, MAF Python
-- `14-dotnet-agent-framework.ipynb` – Pamoka 14, MAF .NET
+Formatas: `<pamokos-numeris>-python-agent-framework.ipynb`
+- `01-python-agent-framework.ipynb` - 1 pamoka, MAF Python
+- `14-sequential.ipynb` - 14 pamoka, MAF pažangūs šablonai
 
 ### Specialūs katalogai
 
-- `translated_images/` – lokalizuoti vaizdai vertimams
-- `images/` – originalūs vaizdai anglų turiniui
-- `.devcontainer/` – VS Code kūrimo konteinerio konfigūracija
-- `.github/` – GitHub Actions darbo eigos ir šablonai
+- `translated_images/` - lokalizuoti paveikslėliai vertimams
+- `images/` - originalūs paveikslėliai anglų kalbai
+- `.devcontainer/` - VS Code vystymo konteinerio konfigūracija
+- `.github/` - GitHub Actions darbo eigos ir šablonai
 
 ### Priklausomybės
 
-Pagrindiniai paketai iš `requirements.txt`:
-- `autogen-agentchat`, `autogen-core`, `autogen-ext` – AutoGen sistema
-- `semantic-kernel` – Semantic Kernel sistema
-- `agent-framework` – Microsoft Agent Framework
-- `azure-ai-inference`, `azure-ai-projects` – Azure AI paslaugos
-- `azure-search-documents` – Azure AI Search integracija
-- `chromadb` – Vektorinė duomenų bazė RAG pavyzdžiams
-- `chainlit` – Pokalbių UI sistema
-- `browser_use` – Naršyklės automatizavimas agentams
-- `mcp[cli]` – Model Context Protocol palaikymas
-- `mem0ai` – Atminties valdymas agentams
+Svarbios pakuotės iš `requirements.txt`:
+- `agent-framework` - Microsoft Agent Framework
+- `a2a-sdk` - Agent-to-Agent protokolo palaikymas
+- `azure-ai-inference`, `azure-ai-projects` - Azure AI paslaugos
+- `azure-identity` - Azure autentifikacija (AzureCliCredential)
+- `azure-search-documents` - Azure AI Search integracija
+- `mcp[cli]` - Model Context Protocol palaikymas
 
 ---
 
-**Atsakomybės atsisakymas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės apribojimas**:
+Šis dokumentas išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, atkreipkite dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Esant svarbiai informacijai, rekomenduojama kreiptis į profesionalius žmonių vertėjus. Mes neatsakome už bet kokius nesusipratimus ar klaidingus aiškinimus, kilusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

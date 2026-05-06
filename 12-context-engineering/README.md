@@ -154,4 +154,4 @@ Let's say we want an AI agent to **"Book me a trip to Paris."**
 
 ## Got More Questions About Context Engineering?
 
-Join the [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.
+Join the [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.

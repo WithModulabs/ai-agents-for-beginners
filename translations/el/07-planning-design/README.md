@@ -1,64 +1,55 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "43069833a0412210ad5c3cc93d9c2146",
-  "translation_date": "2025-09-18T14:57:44+00:00",
-  "source_file": "07-planning-design/README.md",
-  "language_code": "el"
-}
--->
-[![Σχεδιασμός Προγραμματισμού](../../../translated_images/lesson-7-thumbnail.f7163ac557bea1236242cc86b178c3f1bbf5eb07b87f9cd7c256b366e32bcbb6.el.png)](https://youtu.be/kPfJ2BrBCMY?si=9pYpPXp0sSbK91Dr)
+[![Planning Design Pattern](../../../translated_images/el/lesson-7-thumbnail.f7163ac557bea123.webp)](https://youtu.be/kPfJ2BrBCMY?si=9pYpPXp0sSbK91Dr)
 
-> _(Κάντε κλικ στην εικόνα παραπάνω για να δείτε το βίντεο αυτού του μαθήματος)_
+> _(Κάντε κλικ στην παραπάνω εικόνα για να δείτε το βίντεο αυτής της ενότητας)_
 
 # Σχεδιασμός Προγραμματισμού
 
 ## Εισαγωγή
 
-Αυτό το μάθημα καλύπτει:
+Αυτή η ενότητα θα καλύψει
 
-* Τον καθορισμό ενός σαφούς συνολικού στόχου και τη διάσπαση μιας σύνθετης εργασίας σε διαχειρίσιμες υπο-εργασίες.
-* Την αξιοποίηση δομημένης εξόδου για πιο αξιόπιστες και αναγνώσιμες από μηχανές απαντήσεις.
-* Την εφαρμογή μιας προσέγγισης βασισμένης σε γεγονότα για τη διαχείριση δυναμικών εργασιών και απρόβλεπτων εισόδων.
+* Τον ορισμό ενός σαφούς συνολικού στόχου και το σπάσιμο μιας πολύπλοκης εργασίας σε διαχειρίσιμες εργασίες.
+* Την αξιοποίηση δομημένης εξόδου για πιο αξιόπιστες και μηχανικά αναγνώσιμες απαντήσεις.
+* Την εφαρμογή μιας προσέγγισης βασισμένης σε γεγονότα για την αντιμετώπιση δυναμικών εργασιών και απροσδόκητων εισόδων.
 
 ## Στόχοι Μάθησης
 
-Μετά την ολοκλήρωση αυτού του μαθήματος, θα έχετε κατανοήσει:
+Μετά την ολοκλήρωση αυτής της ενότητας, θα έχετε κατανόηση σχετικά με:
 
-* Πώς να προσδιορίσετε και να θέσετε έναν συνολικό στόχο για έναν AI agent, διασφαλίζοντας ότι γνωρίζει ξεκάθαρα τι πρέπει να επιτευχθεί.
-* Πώς να διασπάσετε μια σύνθετη εργασία σε διαχειρίσιμες υπο-εργασίες και να τις οργανώσετε σε μια λογική ακολουθία.
-* Πώς να εξοπλίσετε τους agents με τα κατάλληλα εργαλεία (π.χ., εργαλεία αναζήτησης ή ανάλυσης δεδομένων), να αποφασίσετε πότε και πώς θα χρησιμοποιηθούν και να διαχειριστείτε απρόβλεπτες καταστάσεις που προκύπτουν.
-* Πώς να αξιολογήσετε τα αποτελέσματα των υπο-εργασιών, να μετρήσετε την απόδοση και να επαναλάβετε τις ενέργειες για τη βελτίωση του τελικού αποτελέσματος.
+* Την αναγνώριση και τον καθορισμό ενός συνολικού στόχου για έναν AI πράκτορα, εξασφαλίζοντας ότι γνωρίζει σαφώς τι πρέπει να επιτευχθεί.
+* Τη διάσπαση μιας πολύπλοκης εργασίας σε διαχειρίσιμα υπο-εργασίες και την οργάνωσή τους σε λογική ακολουθία.
+* Το εξοπλισμό των πρακτόρων με τα κατάλληλα εργαλεία (π.χ., εργαλεία αναζήτησης ή εργαλεία ανάλυσης δεδομένων), το πότε και πώς χρησιμοποιούνται, και την αντιμετώπιση απροσδόκητων καταστάσεων που προκύπτουν.
+* Την αξιολόγηση των αποτελεσμάτων των υπο-εργασιών, τη μέτρηση απόδοσης και την επανάληψη ενεργειών για τη βελτίωση της τελικής εξόδου.
 
-## Καθορισμός του Συνολικού Στόχου και Διάσπαση μιας Εργασίας
+## Ορισμός του Συνολικού Στόχου και Σπάσιμο μίας Εργασίας
 
-![Καθορισμός Στόχων και Εργασιών](../../../translated_images/defining-goals-tasks.d70439e19e37c47ac76c48b209a4eb515bea5b8a5207f6b2e7b5e597f09ccf6a.el.png)
+![Defining Goals and Tasks](../../../translated_images/el/defining-goals-tasks.d70439e19e37c47a.webp)
 
-Οι περισσότερες εργασίες στον πραγματικό κόσμο είναι πολύ σύνθετες για να αντιμετωπιστούν σε ένα μόνο βήμα. Ένας AI agent χρειάζεται έναν συνοπτικό στόχο για να καθοδηγήσει τον προγραμματισμό και τις ενέργειές του. Για παράδειγμα, σκεφτείτε τον στόχο:
+Οι περισσότερες εργασίες στον πραγματικό κόσμο είναι πολύπλοκες για να αντιμετωπιστούν με ένα μόνο βήμα. Ένας AI πράκτορας χρειάζεται έναν σαφή και συνοπτικό στόχο για να καθοδηγεί τον σχεδιασμό και τις ενέργειές του. Για παράδειγμα, εξετάστε τον στόχο:
 
-    "Δημιουργήστε ένα ταξιδιωτικό πρόγραμμα για 3 ημέρες."
+    "Δημιουργία προγράμματος ταξιδιού 3 ημερών."
 
-Παρόλο που είναι απλό να διατυπωθεί, χρειάζεται περαιτέρω διευκρίνιση. Όσο πιο σαφής είναι ο στόχος, τόσο καλύτερα μπορεί ο agent (και οι ανθρώπινοι συνεργάτες) να επικεντρωθούν στην επίτευξη του σωστού αποτελέσματος, όπως η δημιουργία ενός ολοκληρωμένου προγράμματος με επιλογές πτήσεων, προτάσεις ξενοδοχείων και δραστηριότητες.
+Αν και είναι απλό να διατυπωθεί, χρειάζεται ακόμη βελτίωση. Όσο πιο σαφής είναι ο στόχος, τόσο καλύτερα μπορεί ο πράκτορας (και οποιοιδήποτε συνεργάτες) να εστιάσουν στην επίτευξη του σωστού αποτελέσματος, όπως η δημιουργία ενός ολοκληρωμένου πλάνου με επιλογές πτήσεων, προτάσεις ξενοδοχείων και προτάσεις δραστηριοτήτων.
 
-### Διάσπαση Εργασιών
+### Διάσπαση της Εργασίας
 
-Οι μεγάλες ή περίπλοκες εργασίες γίνονται πιο διαχειρίσιμες όταν διασπώνται σε μικρότερες, προσανατολισμένες σε στόχους υπο-εργασίες. 
-Για το παράδειγμα του ταξιδιωτικού προγράμματος, μπορείτε να διασπάσετε τον στόχο σε:
+Οι μεγάλες ή περίπλοκες εργασίες γίνονται πιο διαχειρίσιμες όταν χωρίζονται σε μικρότερους, προσανατολισμένους στόχους υπο-εργασίες.  
+Στο παράδειγμα του προγράμματος ταξιδιού, μπορείτε να διασπάσετε τον στόχο σε:
 
-* Κράτηση Πτήσεων
-* Κράτηση Ξενοδοχείων
-* Ενοικίαση Αυτοκινήτου
+* Κράτηση Πτήσεων  
+* Κράτηση Ξενοδοχείου  
+* Ενοικίαση Αυτοκινήτου  
 * Εξατομίκευση
 
-Κάθε υπο-εργασία μπορεί στη συνέχεια να αντιμετωπιστεί από εξειδικευμένους agents ή διαδικασίες. Ένας agent μπορεί να ειδικεύεται στην αναζήτηση των καλύτερων προσφορών πτήσεων, ένας άλλος να επικεντρώνεται στις κρατήσεις ξενοδοχείων, κ.ο.κ. Ένας συντονιστικός ή "downstream" agent μπορεί στη συνέχεια να συνθέσει αυτά τα αποτελέσματα σε ένα συνεκτικό πρόγραμμα για τον τελικό χρήστη.
+Κάθε υπο-εργασία μπορεί στη συνέχεια να αντιμετωπιστεί από αφιερωμένους πράκτορες ή διαδικασίες. Ένας πράκτορας μπορεί να ειδικεύεται στην αναζήτηση των καλύτερων προσφορών πτήσεων, άλλος επικεντρώνεται στις κρατήσεις ξενοδοχείων κ.ο.κ. Ένας συντονιστής ή “κατώτερος” πράκτορας μπορεί να συνθέσει αυτά τα αποτελέσματα σε ένα συνεκτικό πρόγραμμα για τον τελικό χρήστη.
 
-Αυτή η αρθρωτή προσέγγιση επιτρέπει επίσης σταδιακές βελτιώσεις. Για παράδειγμα, μπορείτε να προσθέσετε εξειδικευμένους agents για προτάσεις φαγητού ή τοπικές δραστηριότητες και να βελτιώσετε το πρόγραμμα με την πάροδο του χρόνου.
+Αυτή η μονάδα προσέγγισης επιτρέπει επίσης σταδιακές βελτιώσεις. Για παράδειγμα, μπορείτε να προσθέσετε εξειδικευμένους πράκτορες για Προτάσεις Φαγητού ή Τοπικές Δραστηριότητες και να βελτιώσετε το πρόγραμμα με την πάροδο του χρόνου.
 
 ### Δομημένη Έξοδος
 
-Τα Large Language Models (LLMs) μπορούν να δημιουργήσουν δομημένη έξοδο (π.χ. JSON) που είναι ευκολότερη για downstream agents ή υπηρεσίες να αναλύσουν και να επεξεργαστούν. Αυτό είναι ιδιαίτερα χρήσιμο σε ένα περιβάλλον πολλαπλών agents, όπου μπορούμε να ενεργοποιήσουμε αυτές τις εργασίες αφού ληφθεί η έξοδος του προγραμματισμού. Δείτε μια γρήγορη επισκόπηση.
+Τα Μεγάλα Μοντέλα Γλώσσας (LLMs) μπορούν να παράγουν δομημένη έξοδο (π.χ. JSON) που είναι πιο εύκολη στην ανάλυση και επεξεργασία από κατώτερους πράκτορες ή υπηρεσίες. Αυτό είναι ιδιαίτερα χρήσιμο σε περιβάλλον πολλαπλών πρακτόρων, όπου μπορούμε να εκτελέσουμε αυτές τις εργασίες μετά την παραλαβή της εξόδου σχεδιασμού.
 
-Το παρακάτω απόσπασμα Python δείχνει έναν απλό προγραμματιστικό agent που διασπά έναν στόχο σε υπο-εργασίες και δημιουργεί ένα δομημένο σχέδιο:
+Το ακόλουθο απόσπασμα κώδικα Python παρουσιάζει έναν απλό πράκτορα σχεδιασμού που διασπά έναν στόχο σε υπο-εργασίες και δημιουργεί ένα δομημένο πλάνο:
 
 ```python
 from pydantic import BaseModel
@@ -68,9 +59,8 @@ import json
 import os
 from typing import Optional
 from pprint import pprint
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-from autogen_ext.models.azure import AzureAIChatCompletionClient
-from azure.core.credentials import AzureKeyCredential
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
 class AgentEnum(str, Enum):
     FlightBooking = "flight_booking"
@@ -81,35 +71,22 @@ class AgentEnum(str, Enum):
     DefaultAgent = "default_agent"
     GroupChatManager = "group_chat_manager"
 
-# Travel SubTask Model
+# Μοντέλο Υποεργασίας Ταξιδιού
 class TravelSubTask(BaseModel):
     task_details: str
-    assigned_agent: AgentEnum  # we want to assign the task to the agent
+    assigned_agent: AgentEnum  # θέλουμε να αναθέσουμε την εργασία στον πράκτορα
 
 class TravelPlan(BaseModel):
     main_task: str
     subtasks: List[TravelSubTask]
     is_greeting: bool
 
-client = AzureAIChatCompletionClient(
-    model="gpt-4o-mini",
-    endpoint="https://models.inference.ai.azure.com",
-    # To authenticate with the model you will need to generate a personal access token (PAT) in your GitHub settings.
-    # Create your PAT token by following instructions here: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
-    credential=AzureKeyCredential(os.environ["GITHUB_TOKEN"]),
-    model_info={
-        "json_output": False,
-        "function_calling": True,
-        "vision": True,
-        "family": "unknown",
-    },
-)
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
 
-# Define the user message
-messages = [
-    SystemMessage(content="""You are an planner agent.
+# Ορίζουμε το μήνυμα χρήστη
+system_prompt = """You are a planner agent.
     Your job is to decide which agents to run based on the user's request.
-                      Provide your response in JSON format with the following structure:
+    Provide your response in JSON format with the following structure:
 {'main_task': 'Plan a family trip from Singapore to Melbourne.',
  'subtasks': [{'assigned_agent': 'flight_booking',
                'task_details': 'Book round-trip flights from Singapore to '
@@ -120,45 +97,27 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(
-        content="Create a travel plan for a family of 2 kids from Singapore to Melboune", source="user"),
-]
+    - DefaultAgent: For handling general requests"""
 
-response = await client.create(messages=messages, extra_create_args={"response_format": 'json_object'})
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
 
-response_content: Optional[str] = response.content if isinstance(
-    response.content, str) else None
-if response_content is None:
-    raise ValueError("Response content is not a valid JSON string" )
+response = client.create_response(input=user_message, instructions=system_prompt)
 
+response_content = response.output_text
 pprint(json.loads(response_content))
-
-# # Ensure the response content is a valid JSON string before loading it
-# response_content: Optional[str] = response.content if isinstance(
-#     response.content, str) else None
-# if response_content is None:
-#     raise ValueError("Response content is not a valid JSON string")
-
-# # Print the response content after loading it as JSON
-# pprint(json.loads(response_content))
-
-# Validate the response content with the MathReasoning model
-# TravelPlan.model_validate(json.loads(response_content))
 ```
+  
+### Πράκτορας Σχεδιασμού με Πολλαπλή Ορχήστρωση Πρακτόρων
 
-### Προγραμματιστικός Agent με Ορχήστρωση Πολλαπλών Agents
+Σε αυτό το παράδειγμα, ένας Πράκτορας Διαχείρισης Νοημάτων (Semantic Router Agent) λαμβάνει ένα αίτημα χρήστη (π.χ., "Χρειάζομαι πρόγραμμα ξενοδοχείου για το ταξίδι μου.").
 
-Σε αυτό το παράδειγμα, ένας Semantic Router Agent λαμβάνει ένα αίτημα χρήστη (π.χ., "Χρειάζομαι ένα σχέδιο ξενοδοχείου για το ταξίδι μου.").
+Ο σχεδιαστής στη συνέχεια:
 
-Ο προγραμματιστής στη συνέχεια:
-
-* Λαμβάνει το Σχέδιο Ξενοδοχείου: Ο προγραμματιστής παίρνει το μήνυμα του χρήστη και, βάσει ενός συστημικού prompt (συμπεριλαμβανομένων των διαθέσιμων λεπτομερειών agent), δημιουργεί ένα δομημένο ταξιδιωτικό σχέδιο.
-* Καταγράφει Agents και τα Εργαλεία τους: Το μητρώο agents περιέχει μια λίστα με agents (π.χ., για πτήσεις, ξενοδοχεία, ενοικίαση αυτοκινήτων και δραστηριότητες) μαζί με τις λειτουργίες ή τα εργαλεία που προσφέρουν.
-* Κατευθύνει το Σχέδιο στους Αντίστοιχους Agents: Ανάλογα με τον αριθμό των υπο-εργασιών, ο προγραμματιστής είτε στέλνει το μήνυμα απευθείας σε έναν εξειδικευμένο agent (για σενάρια μίας εργασίας) είτε συντονίζει μέσω ενός διαχειριστή ομαδικής συνομιλίας για συνεργασία πολλαπλών agents.
-* Συνοψίζει το Αποτέλεσμα: Τέλος, ο προγραμματιστής συνοψίζει το παραγόμενο σχέδιο για σαφήνεια.
-
-Το παρακάτω δείγμα κώδικα Python απεικονίζει αυτά τα βήματα:
+* Παραλαμβάνει το Πρόγραμμα Ξενοδοχείου: Ο σχεδιαστής παίρνει το μήνυμα του χρήστη και, βάσει ενός συστημικού προτροπής (που περιλαμβάνει διαθέσιμες πληροφορίες πρακτόρων), δημιουργεί ένα δομημένο πρόγραμμα ταξιδιού.
+* Καταγράφει τους Πράκτορες και τα Εργαλεία τους: Το μητρώο πρακτόρων περιέχει λίστα πρακτόρων (π.χ. για πτήση, ξενοδοχείο, ενοικίαση αυτοκινήτου και δραστηριότητες) μαζί με τις λειτουργίες ή τα εργαλεία που προσφέρουν.
+* Δρομολογεί το Πρόγραμμα στους Αντίστοιχους Πράκτορες: Ανάλογα με τον αριθμό των υπο-εργασιών, ο σχεδιαστής είτε στέλνει απευθείας το μήνυμα σε αφιερωμένο πράκτορα (για περιπτώσεις μεμονωμένων εργασιών), είτε συντονίζει μέσω ενός διαχειριστή ομαδικής συνομιλίας για συνεργασία πολλαπλών πρακτόρων.
+* Συνοψίζει το Αποτέλεσμα: Τέλος, ο σχεδιαστής συνοψίζει το παραγόμενο πρόγραμμα για σαφήνεια.  
+Το ακόλουθο δείγμα κώδικα Python απεικονίζει αυτά τα βήματα:
 
 ```python
 
@@ -176,11 +135,11 @@ class AgentEnum(str, Enum):
     DefaultAgent = "default_agent"
     GroupChatManager = "group_chat_manager"
 
-# Travel SubTask Model
+# Μοντέλο Υποεργασίας Ταξιδιού
 
 class TravelSubTask(BaseModel):
     task_details: str
-    assigned_agent: AgentEnum # we want to assign the task to the agent
+    assigned_agent: AgentEnum # θέλουμε να αναθέσουμε την εργασία στον πράκτορα
 
 class TravelPlan(BaseModel):
     main_task: str
@@ -190,25 +149,18 @@ import json
 import os
 from typing import Optional
 
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-from autogen_ext.models.openai import AzureOpenAIChatCompletionClient
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
-# Create the client with type-checked environment variables
+# Δημιουργήστε τον πελάτη
 
-client = AzureOpenAIChatCompletionClient(
-    azure_deployment=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
-    model=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
-    api_version=os.getenv("AZURE_OPENAI_API_VERSION"),
-    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-)
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
 
 from pprint import pprint
 
-# Define the user message
+# Ορίστε το μήνυμα του χρήστη
 
-messages = [
-    SystemMessage(content="""You are an planner agent.
+system_prompt = """You are a planner agent.
     Your job is to decide which agents to run based on the user's request.
     Below are the available agents specialized in different tasks:
     - FlightBooking: For booking flights and providing flight information
@@ -216,24 +168,20 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(content="Create a travel plan for a family of 2 kids from Singapore to Melbourne", source="user"),
-]
+    - DefaultAgent: For handling general requests"""
 
-response = await client.create(messages=messages, extra_create_args={"response_format": TravelPlan})
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
 
-# Ensure the response content is a valid JSON string before loading it
+response = client.create_response(input=user_message, instructions=system_prompt)
 
-response_content: Optional[str] = response.content if isinstance(response.content, str) else None
-if response_content is None:
-    raise ValueError("Response content is not a valid JSON string")
+response_content = response.output_text
 
-# Print the response content after loading it as JSON
+# Εκτυπώστε το περιεχόμενο της απόκρισης μετά τη φόρτωσή του ως JSON
 
 pprint(json.loads(response_content))
 ```
-
-Ακολουθεί η έξοδος από τον προηγούμενο κώδικα και μπορείτε στη συνέχεια να χρησιμοποιήσετε αυτή τη δομημένη έξοδο για να κατευθύνετε στον `assigned_agent` και να συνοψίσετε το ταξιδιωτικό σχέδιο για τον τελικό χρήστη.
+  
+Ακολουθεί η έξοδος από τον προηγούμενο κώδικα και μπορείτε να χρησιμοποιήσετε αυτή τη δομημένη έξοδο για δρομολόγηση στον `assigned_agent` και να συνοψίσετε το πρόγραμμα ταξιδιού στον τελικό χρήστη.
 
 ```json
 {
@@ -263,22 +211,23 @@ pprint(json.loads(response_content))
     ]
 }
 ```
+  
+Παράδειγμα σημειωματάριου με το προηγούμενο δείγμα κώδικα είναι διαθέσιμο [εδώ](07-python-agent-framework.ipynb).
 
-Ένα παράδειγμα notebook με τον προηγούμενο κώδικα είναι διαθέσιμο [εδώ](07-autogen.ipynb).
+### Επαναληπτικός Σχεδιασμός
 
-### Επαναληπτικός Προγραμματισμός
+Ορισμένες εργασίες απαιτούν "πάνω-κάτω" αλληλεπίδραση ή επανασχεδιασμό, όπου το αποτέλεσμα μιας υπο-εργασίας επηρεάζει την επόμενη. Για παράδειγμα, αν ο πράκτορας ανακαλύψει έναν απρόβλεπτο τύπο δεδομένων κατά την κράτηση πτήσεων, μπορεί να χρειαστεί να προσαρμόσει τη στρατηγική του πριν προχωρήσει στις κρατήσεις ξενοδοχείων.
 
-Ορισμένες εργασίες απαιτούν μια διαδικασία δοκιμής και επανασχεδιασμού, όπου το αποτέλεσμα μιας υπο-εργασίας επηρεάζει την επόμενη. Για παράδειγμα, αν ο agent ανακαλύψει ένα απρόσμενο μορφότυπο δεδομένων κατά την κράτηση πτήσεων, μπορεί να χρειαστεί να προσαρμόσει τη στρατηγική του πριν προχωρήσει στις κρατήσεις ξενοδοχείων.
-
-Επιπλέον, η ανατροφοδότηση από τον χρήστη (π.χ., ένας άνθρωπος που αποφασίζει ότι προτιμά μια νωρίτερη πτήση) μπορεί να προκαλέσει έναν μερικό επανασχεδιασμό. Αυτή η δυναμική, επαναληπτική προσέγγιση διασφαλίζει ότι η τελική λύση ευθυγραμμίζεται με τους πραγματικούς περιορισμούς και τις εξελισσόμενες προτιμήσεις του χρήστη.
+Επιπλέον, τα σχόλια του χρήστη (π.χ. ένας άνθρωπος που αποφασίζει ότι προτιμά μια νωρίτερη πτήση) μπορούν να ενεργοποιήσουν μερικό επανασχεδιασμό. Αυτή η δυναμική, επαναληπτική προσέγγιση εξασφαλίζει ότι η τελική λύση ευθυγραμμίζεται με τους περιορισμούς του πραγματικού κόσμου και τις εξελισσόμενες προτιμήσεις του χρήστη.
 
 π.χ. δείγμα κώδικα
 
 ```python
-from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
-#.. same as previous code and pass on the user history, current plan
-messages = [
-    SystemMessage(content="""You are a planner agent to optimize the
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
+#.. το ίδιο με τον προηγούμενο κώδικα και να μεταδώσει το ιστορικό χρήστη, το τρέχον πλάνο
+
+system_prompt = """You are a planner agent to optimize the
     Your job is to decide which agents to run based on the user's request.
     Below are the available agents specialized in different tasks:
     - FlightBooking: For booking flights and providing flight information
@@ -286,38 +235,43 @@ messages = [
     - CarRental: For booking cars and providing car rental information
     - ActivitiesBooking: For booking activities and providing activity information
     - DestinationInfo: For providing information about destinations
-    - DefaultAgent: For handling general requests""", source="system"),
-    UserMessage(content="Create a travel plan for a family of 2 kids from Singapore to Melbourne", source="user"),
-    AssistantMessage(content=f"Previous travel plan - {TravelPlan}", source="assistant")
-]
-# .. re-plan and send the tasks to respective agents
-```
+    - DefaultAgent: For handling general requests"""
 
-Για πιο ολοκληρωμένο προγραμματισμό, δείτε το Magnetic One για την επίλυση σύνθετων εργασιών.
+user_message = "Create a travel plan for a family of 2 kids from Singapore to Melbourne"
+
+response = client.create_response(
+    input=user_message,
+    instructions=system_prompt,
+    context=f"Previous travel plan - {TravelPlan}",
+)
+# .. να επανασχεδιάσει και να στείλει τις εργασίες στους αντίστοιχους πράκτορες
+```
+  
+Για πιο ολοκληρωμένο σχεδιασμό, δείτε το Magnetic One <a href="https://www.microsoft.com/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks" target="_blank">Blogpost</a> για επίλυση πολύπλοκων εργασιών.
 
 ## Περίληψη
 
-Σε αυτό το άρθρο εξετάσαμε ένα παράδειγμα για το πώς μπορούμε να δημιουργήσουμε έναν προγραμματιστή που μπορεί να επιλέξει δυναμικά τους διαθέσιμους agents που έχουν οριστεί. Η έξοδος του Προγραμματιστή διασπά τις εργασίες και αναθέτει τους agents ώστε να μπορούν να εκτελεστούν. Υποτίθεται ότι οι agents έχουν πρόσβαση στις λειτουργίες/εργαλεία που απαιτούνται για την εκτέλεση της εργασίας. Εκτός από τους agents, μπορείτε να συμπεριλάβετε άλλα μοτίβα όπως αναστοχασμό, συνοψιστή και κυκλική συνομιλία για περαιτέρω προσαρμογή.
+Στο κείμενο αυτό εξετάσαμε ένα παράδειγμα για το πώς μπορούμε να δημιουργήσουμε έναν σχεδιαστή ικανό να επιλέγει δυναμικά τους διαθέσιμους πράκτορες που έχουν οριστεί. Η έξοδος του σχεδιαστή διασπά τις εργασίες και εκχωρεί τους πράκτορες ώστε να εκτελεστούν. Υποτίθεται ότι οι πράκτορες έχουν πρόσβαση σε λειτουργίες/εργαλεία που απαιτούνται για την εκτέλεση της εργασίας. Επιπλέον των πρακτόρων, μπορείτε να συμπεριλάβετε άλλα πρότυπα όπως αναστοχασμό, συνοψιστή και περιστρεφόμενη συνομιλία για περαιτέρω παραμετροποίηση.
 
 ## Πρόσθετοι Πόροι
 
-AutoGen Magnetic One - Ένα γενικό σύστημα πολλαπλών agents για την επίλυση σύνθετων εργασιών που έχει επιτύχει εντυπωσιακά αποτελέσματα σε πολλαπλά απαιτητικά benchmarks. Αναφορά:
+Magentic One - Ένα γενικευμένο σύστημα πολλαπλών πρακτόρων για την επίλυση πολύπλοκων εργασιών που έχει επιτύχει εντυπωσιακά αποτελέσματα σε πολλαπλά απαιτητικά benchmarks πράκτορων. Αναφορά: <a href="https://www.microsoft.com/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks" target="_blank">Magentic One</a>. Σ’ αυτή την υλοποίηση, ο ορχηστρωτής δημιουργεί συγκεκριμένα πλάνα εργασιών και αναθέτει αυτές τις εργασίες στους διαθέσιμους πράκτορες. Επιπλέον του σχεδιασμού, ο ορχηστρωτής χρησιμοποιεί επίσης μηχανισμό παρακολούθησης για την παρακολούθηση της προόδου της εργασίας και επανασχεδιάζει εάν απαιτείται.
 
-. Σε αυτή την υλοποίηση, ο ορχηστρωτής δημιουργεί σχέδιο ειδικό για την εργασία και αναθέτει αυτές τις εργασίες στους διαθέσιμους agents. Εκτός από τον προγραμματισμό, ο ορχηστρωτής χρησιμοποιεί επίσης έναν μηχανισμό παρακολούθησης για την παρακολούθηση της προόδου της εργασίας και επανασχεδιάζει όταν απαιτείται.
+### Έχετε Περισσότερες Ερωτήσεις σχετικά με το Σχεδιαστικό Πρότυπο Προγραμματισμού;
 
-### Έχετε Περισσότερες Ερωτήσεις σχετικά με το Σχεδιαστικό Μοτίβο Προγραμματισμού;
+Εγγραφείτε στο [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) για να συναντήσετε άλλους μαθητές, να παρακολουθήσετε ώρες γραφείου και να λάβετε απαντήσεις στις ερωτήσεις σας για τους AI Πράκτορες.
 
-Εγγραφείτε στο [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) για να συναντήσετε άλλους μαθητές, να παρακολουθήσετε ώρες γραφείου και να λάβετε απαντήσεις στις ερωτήσεις σας σχετικά με τους AI Agents.
+## Προηγούμενη Ενότητα
 
-## Προηγούμενο Μάθημα
+[Δημιουργώντας Αξιόπιστους AI Πράκτορες](../06-building-trustworthy-agents/README.md)
 
-[Δημιουργία Αξιόπιστων AI Agents](../06-building-trustworthy-agents/README.md)
+## Επόμενη Ενότητα
 
-## Επόμενο Μάθημα
-
-[Μοτίβο Σχεδιασμού Πολλαπλών Agents](../08-multi-agent/README.md)
+[Πρότυπο Σχεδιασμού Πολλαπλών Πρακτόρων](../08-multi-agent/README.md)
 
 ---
 
-**Αποποίηση ευθύνης**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που καταβάλλουμε προσπάθειες για ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτοματοποιημένες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα θα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή εσφαλμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Αποποίηση ευθυνών**:
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που προσπαθούμε για ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτόματες μεταφράσεις μπορεί να περιέχουν λάθη ή ανακρίβειες. Το αρχικό έγγραφο στη γλώσσα του θα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για οποιεσδήποτε παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

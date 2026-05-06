@@ -1,168 +1,301 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7120197753abacc827b64ac2d5d6966f",
-  "translation_date": "2025-11-13T14:52:10+00:00",
-  "source_file": "02-explore-agentic-frameworks/README.md",
-  "language_code": "ta"
-}
--->
-[![AI முகவர் கட்டமைப்புகளை ஆராய்வது](../../../translated_images/lesson-2-thumbnail.c65f44c93b8558df4d5d407e29970e654629e614f357444a9c27c80feb54c79d.ta.png)](https://youtu.be/ODwF-EZo_O8?si=1xoy_B9RNQfrYdF7)
+[![AI ஏஜென்ட் கட்டமைப்புகளை ஆராய்தல்](../../../translated_images/ta/lesson-2-thumbnail.c65f44c93b8558df.webp)](https://youtu.be/ODwF-EZo_O8?si=1xoy_B9RNQfrYdF7)
 
-> _(மேலே உள்ள படத்தை கிளிக் செய்து இந்த பாடத்தின் வீடியோவைப் பாருங்கள்)_
+> _(மேலே உள்ள படத்தை கிளிக் செய்து இந்த பாடத்தின் வீடியோவை காணவும்)_
 
-# AI முகவர் கட்டமைப்புகளை ஆராயுங்கள்
+# AI எஏஜென்ட் கட்டமைப்புகளை ஆராயுங்கள்
 
-AI முகவர் கட்டமைப்புகள் என்பது AI முகவர்களை உருவாக்க, பரப்ப, மற்றும் நிர்வகிக்க எளிதாக்க வடிவமைக்கப்பட்ட மென்பொருள் தளங்கள் ஆகும். இந்த கட்டமைப்புகள், சிக்கலான AI அமைப்புகளை உருவாக்குவதற்கான முன்னோட்ட கூறுகள், சுருக்கங்கள் மற்றும் கருவிகளை வழங்குவதன் மூலம் டெவலப்பர்களுக்கு உதவுகின்றன.
+AI ஏஜென்ட் கட்டமைப்புகள் AI ஏஜென்ட்களை உருவாக்குவது, நடைமுறைப்படுத்துவது மற்றும் நிர்வகிப்பதை எளிதாக்க வடிவமைக்கப்பட்ட மென்பொருள் தளங்கள் ஆகும். இந்த கட்டமைப்புகள் உருவாக்குநர்களுக்கு முன்-உருவாக்கப்பட்ட கூறுகள்,抽象化ங்கள் மற்றும் கருவிகள் ஆகியவைகளை வழங்கி, சிக்கலான AI அமைப்புகளை உருவாக்குவதற்கான செயல்முறைகளை சீரமைக்கின்றன.
 
-இந்த கட்டமைப்புகள், AI முகவர் மேம்பாட்டில் பொதுவான சவால்களுக்கு நிலையான அணுகுமுறைகளை வழங்குவதன் மூலம், டெவலப்பர்கள் தங்கள் பயன்பாடுகளின் தனித்துவமான அம்சங்களில் கவனம் செலுத்த உதவுகின்றன. அவை AI அமைப்புகளை உருவாக்குவதில் அளவளாவல், அணுகல் மற்றும் திறனை மேம்படுத்துகின்றன.
+இந்த கட்டமைப்புகள் AI ஏஜென்ட் வளர்ச்சியில் பொதுவான சவால்களில் நிலையான அணுகுமுறைகளை வழங்குவதன் மூலம் உருவாக்குநர்கள் தங்களின் பயன்பாடுகளின் தனித்துவமான அம்சங்கள் மீது கவனம் செலுத்த உதவுகின்றன. அவை AI அமைப்புகளை கட்டமைப்பதில் அளவீடுபார்வை, அணுகல் மற்றும் செயல்திறனை மேம்படுத்துகின்றன.
 
 ## அறிமுகம் 
 
-இந்த பாடத்தில் நீங்கள் கற்றுக்கொள்ளப்போகிறீர்கள்:
+இந்த பாடத்தில் கையாளப்படுவது:
 
-- AI முகவர் கட்டமைப்புகள் என்ன? அவை டெவலப்பர்களுக்கு என்ன சாதிக்க உதவுகின்றன?
-- குழுக்கள், தங்கள் முகவர்களின் திறன்களை விரைவாக மாதிரி வடிவமைக்க, திருத்த, மற்றும் மேம்படுத்த எப்படி பயன்படுத்த முடியும்?
-- Microsoft <a href="https://aka.ms/ai-agents/autogen" target="_blank">AutoGen</a>, <a href="https://aka.ms/ai-agents-beginners/semantic-kernel" target="_blank">Semantic Kernel</a>, மற்றும் <a href="https://aka.ms/ai-agents-beginners/ai-agent-service" target="_blank">Azure AI Agent Service</a> ஆகியவற்றால் உருவாக்கப்பட்ட கட்டமைப்புகள் மற்றும் கருவிகளுக்கு இடையேயான வேறுபாடுகள் என்ன?
-- Azure சூழலமைப்பு கருவிகளை நேரடியாக ஒருங்கிணைக்க முடியுமா அல்லது தனித்துவமான தீர்வுகள் தேவைப்படுமா?
-- Azure AI Agents சேவை என்ன? இது என்ன உதவுகிறது?
+- AI ஏஜென்ட் கட்டமைப்புகள் என்ன மற்றும் அவை உருவாக்குநர்களுக்கு என்ன சாதிக்க அனுமதிக்கின்றன?
+- குழுக்கள் இவற்றை எப்படி விரைவாக சோதனை மாதிரி உருவாக்க, iteration செய்ய மற்றும் அவர்களின் ஏஜென்டின் திறன்களை மேம்படுத்த பயன்படுத்தலாம்?
+- Microsoft உருவாக்கிய கட்டமைப்புகள் மற்றும் கருவிகள் ( <a href="https://aka.ms/ai-agents-beginners/ai-agent-service" target="_blank">Azure AI Agent Service</a> மற்றும் <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/responses" target="_blank">Microsoft Agent Framework</a> )க்கிடையில் என்ன வேறுபாடுகள் உள்ளன?
+- என்னுடைய தற்போதைய Azure சூழல் கருவிகளை நேரடியாக ஒருங்கிணைக்கலாமா, அல்லது தனித்தனி தீர்வுகள் தேவையா?
+- Azure AI Agents சேவை என்பது என்ன மற்றும் இது எப்படி உதவுகிறது?
 
 ## கற்றல் இலக்குகள்
 
-இந்த பாடத்தின் இலக்குகள்:
+இந்த பாடத்தின் இலக்குகள் உங்களுக்கு உதவுவதற்காக:
 
-- AI முகவர் கட்டமைப்புகளின் AI மேம்பாட்டில் உள்ள பங்கு.
-- AI முகவர் கட்டமைப்புகளை பயன்படுத்தி புத்திசாலி முகவர்களை உருவாக்குவது எப்படி.
-- AI முகவர் கட்டமைப்புகள் வழங்கும் முக்கிய திறன்கள்.
-- AutoGen, Semantic Kernel, மற்றும் Azure AI Agent Service ஆகியவற்றின் வேறுபாடுகள்.
+- AI வளர்ச்சியில் AI ஏஜென்ட் கட்டமைப்புகளின் பங்கைக் समझ करना.
+- புத்திசாலி ஏஜென்ட்களை கட்டமைக்க AI ஏஜென்ட் கட்டமைப்புகளை எவ்வாறு பயன்படுத்துவது நிகழ்த்துவது.
+- AI ஏஜென்ட் கட்டமைப்புகள் மூலம் இயல்பான முக்கிய திறன்கள்.
+- Microsoft Agent Framework மற்றும் Azure AI Agent Service ஆகியவற்றிற்கிடையிலான வேறுபாடுகள்.
 
-## AI முகவர் கட்டமைப்புகள் என்ன? அவை டெவலப்பர்களுக்கு என்ன செய்ய உதவுகின்றன?
+## AI ஏஜென்ட் கட்டமைப்புகள் என்ன மற்றும் அவை உருவாக்குநர்களை என்ன செய்ய அனுமதிக்கின்றன?
 
-சாதாரண AI கட்டமைப்புகள் உங்கள் பயன்பாடுகளில் AI ஐ ஒருங்கிணைக்க உதவுகின்றன மற்றும் கீழே உள்ள வழிகளில் அவற்றை மேம்படுத்துகின்றன:
+பாரம்பரிய AI கட்டமைப்புகள் உங்கள் செயலிகளில் AI ஐ ஒருங்கிணைக்க மற்றும் அவற்றை மேம்படுத்த பின்வரும் முறையில் உதவலாம்:
 
-- **தனிப்பயனாக்கம்**: AI பயனர் நடத்தை மற்றும் விருப்பங்களை பகுப்பாய்வு செய்து தனிப்பயன் பரிந்துரைகள், உள்ளடக்கம் மற்றும் அனுபவங்களை வழங்க முடியும்.
-உதாரணம்: Netflix போன்ற ஸ்ட்ரீமிங் சேவைகள், பார்வை வரலாற்றின் அடிப்படையில் திரைப்படங்கள் மற்றும் நிகழ்ச்சிகளை பரிந்துரைக்க AI ஐ பயன்படுத்துகின்றன, இது பயனர் ஈடுபாடு மற்றும் திருப்தியை மேம்படுத்துகிறது.
-- **தானியக்கமும் திறனும்**: AI மீண்டும் மீண்டும் செய்யப்படும் பணிகளை தானியக்கமாக்க, வேலைகளை சீரமைக்க மற்றும் செயல்திறனை மேம்படுத்த முடியும்.
-உதாரணம்: வாடிக்கையாளர் சேவை பயன்பாடுகள் பொதுவான கேள்விகளை கையாள AI இயக்கம் கொண்ட சாட்பாட்களை பயன்படுத்துகின்றன, பதிலளிக்கும் நேரத்தை குறைத்து, மனித முகவர்களுக்கு சிக்கலான பிரச்சினைகளுக்கு நேரத்தை விடுகின்றன.
-- **பயனர் அனுபவத்தை மேம்படுத்துதல்**: AI குரல் அங்கீகாரம், இயற்கை மொழி செயலாக்கம் மற்றும் முன்னறிவிப்பு உரை போன்ற புத்திசாலி அம்சங்களை வழங்குவதன் மூலம் மொத்த பயனர் அனுபவத்தை மேம்படுத்த முடியும்.
-உதாரணம்: Siri மற்றும் Google Assistant போன்ற மெய்நிகர் உதவியாளர்கள், குரல் கட்டளைகளை புரிந்து, பதிலளிக்க AI ஐ பயன்படுத்துகின்றன, இது பயனர்களுக்கு தங்கள் சாதனங்களுடன் தொடர்பு கொள்ள எளிதாக்குகிறது.
+- **தனிப்பயன்பாடு**: AI பயனர் நடத்தைகள் மற்றும் விருப்பங்களை பகுப்பாய்வு செய்து தனிப்பயனான பரிந்துரைகள், உள்ளடக்கம் மற்றும் அனுபவங்களை வழங்க முடியும்.
+Example: Netflix போன்ற ஸ்ட்ரீமிங் சேவைகள் பார்க்கும் முன்னகர்வின் அடிப்படையில் திரைப்படங்கள் மற்றும் நிகழ்ச்சிகளை பரிந்துரைக்கும், இது பயனர் ஈடுபாடு மற்றும் திருப்தியை உயர்த்துகிறது.
+- **தானமயமிடல் மற்றும் திறன்**: AI மீளுருமாற்றான பணிகளை தானாகச் செய்ய, வேலைநடவடிக்கைகளை எளிதாக்க மற்றும் செயல்பாட்டு திறனைக் மேம்படுத்த முடியும்.
+Example: வாடிக்கையாளர் சேவை செயலிகள் சாதாரண கேள்விகளைக் கையாள AI-சேதிகை அடிப்படையிலான聊天பாட்கள் பயன்படுத்தி பதிலளிக்கும் நேரத்தை குறைத்து, மனித ஏஜென்ட்களைக் கடினமான பிரச்னைகளுக்கு விடுவிக்கின்றன.
+- **மேம்பட்ட பயனர் அனுபவம்**: AI குரல் அறிதல், இயற்கை மொழி இயங்கியல், மற்றும் முன்னறிவிப்பு படைப்பழக்கங்கள் போன்ற புத்திசாலி அம்சங்களை வழங்குவதன் மூலம் மொத்த பயனர் அனுபவத்தை மேம்படுத்த முடியும்.
+Example: Siri மற்றும் Google Assistant போன்ற மெய்நிகர் உதவியாளர்கள் குரல் கட்டளைகளை புரிந்து பதிலளிக்க AI ஐ பயன்படுத்தி, பயனர்களுக்கு சாதனங்களை எளிதாக பயன்படுத்த உதவுகின்றன.
 
-### இது எல்லாம் அருமையாக இருக்கிறது, ஆனால் ஏன் AI முகவர் கட்டமைப்புகள் தேவை?
+### இது எல்லாம் நன்றாகத் தெரிகிறது, அப்படியானால் நாம் AI Agent Framework அத்தை ஏன் தேவை?
 
-AI முகவர் கட்டமைப்புகள் சாதாரண AI கட்டமைப்புகளை விட அதிகமாக ஒன்றை பிரதிநிதித்துவப்படுத்துகின்றன. அவை பயனர்களுடன், பிற முகவர்களுடன் மற்றும் சூழலுடன் தொடர்பு கொள்ளும் புத்திசாலி முகவர்களை உருவாக்க வடிவமைக்கப்பட்டவை. இந்த முகவர்கள் தன்னாட்சி நடத்தை, முடிவுகளை எடுப்பது மற்றும் மாறும் சூழலுக்கு ஏற்ப மாறுதல் காட்ட முடியும். AI முகவர் கட்டமைப்புகள் வழங்கும் முக்கிய திறன்களை பார்ப்போம்:
+AI ஏஜென்ட் கட்டமைப்புகள் வெறும் AI கட்டமைப்புகளைவிட வேறுபட்டவை. அவை பயனர்களுடன், மற்ற ஏஜென்ட்களுடன் மற்றும் சுற்றுப்புறத்துடன் தொடர்பு கொண்டு குறிப்பிட்ட நோக்கங்களை அடையக் கூடிய புத்திசாலி ஏஜென்ட்களை உருவாக்க அனுமதிக்க வடிவமைக்கப்பட்டுள்ளன. இந்த ஏஜென்ட்கள் சுயாதீன நடத்தை காட்டு, முடிவெடுக்க மற்றும் மாறும் சூழ்நிலைகளுக்கு தக்கமாறு சம்பந்தப்படக் கூடியவையாக இருக்கலாம். AI ஏஜென்ட் கட்டமைப்புகள் மூலம் கிடைக்கும் சில முக்கிய திறன்களை நோக்கலாம்:
 
-- **முகவர் ஒத்துழைப்பு மற்றும் ஒருங்கிணைப்பு**: பல AI முகவர்களை உருவாக்கி, ஒருங்கிணைத்து, மற்றும் தொடர்பு கொண்டு சிக்கலான பணிகளை தீர்க்க உதவுகிறது.
-- **பணி தானியக்கமும் மேலாண்மையும்**: பல படிகள் கொண்ட வேலைகளை தானியக்கமாக்க, பணி ஒதுக்கீடு செய்ய மற்றும் முகவர்களிடையே மாறும் பணி மேலாண்மையை வழங்குகிறது.
-- **சூழல் புரிதலும் மாறுபாடும்**: முகவர்களுக்கு சூழலை புரிந்து, மாறும் சூழலுக்கு ஏற்ப மாறுதல் காட்டி, நேரடி தகவலின் அடிப்படையில் முடிவுகளை எடுக்கும் திறனை வழங்குகிறது.
+- **ஏஜென்ட் ஒத்துழைப்பு மற்றும் ஒருங்கிணைப்பு**: பல AI ஏஜென்ட்களை உருவாக்கி அவை ஒன்றாகவே பணியாற்றி, தொடர்பு கொண்டு, சிக்கலான பணிகளை தீர்க்க ஒருங்கிணைக்க முடியும்.
+- **பணி தானியங்கி மற்றும் நிர்வகிப்பு**: பலபடி வேலைநடவடிக்கைகள் தானியக்கமாக செயல்படுத்துவது, பணிகளை வேகம் பகிர்தல் மற்றும் ஏஜென்ட்களிடையே திடீர் பணியாளர்ப் பிரிவு உள்ளிட்ட機能களை வழங்குகிறது.
+- **சூழன சார்ந்த புரிதலும் தமிழீடாமையும்**: ஏஜென்ட்களுக்கு சூழலை புரிந்துகொள்ளும் திறன், மாறும் சூழல்களுக்கு ஏற்ப தகுதிசெய்யும் திறன் மற்றும் நேரடி தகவலின் அடிப்படையில் முடிவெடுத்தல் ஆகியவற்றை வழங்குகிறது.
 
-சுருக்கமாக, முகவர்கள் உங்களுக்கு அதிகம் செய்ய உதவுகின்றன, தானியக்கத்தை அடுத்த நிலைக்கு கொண்டு செல்ல, மற்றும் சூழலிலிருந்து கற்றுக்கொண்டு மாறும் புத்திசாலி அமைப்புகளை உருவாக்க.
-இந்த தகவல்கள் `SummarizedAzureDocs` என்ற நினைவக சேகரத்தில் சேமிக்கப்படுகின்றன. இது மிகவும் எளிமையான உதாரணமாகும், ஆனால் LLM பயன்படுத்துவதற்காக தகவல்களை நினைவகத்தில் எப்படி சேமிக்கலாம் என்பதை நீங்கள் பார்க்கலாம்.
+மொத்தத்தில், ஏஜென்ட்கள் உங்களுக்குக் கிட்டத்தட்டு செயல்களை செய்யக்கூடியவையாக இருக்கும்; தானியக்கத்தை மேலும் உயர்த்த, சுற்றுப்புறத்திலிருந்து கற்பித்துக்கொள்ளக்கூடிய மற்றும் ஏற்பரியமான அமைப்புகளை உருவாக்க முடியும்.
 
-இது Semantic Kernel framework இன் அடிப்படைகள். Agent Framework பற்றி என்ன?
+## ஏஜென்டின் திறன்களை விரைவாக prototype செய்ய, iteration செய்ய மற்றும் மேம்படுத்தஎப்படி?
 
-## Azure AI Agent Service
+இது விரைவாக மாறும் துறையாக இருந்தாலும், பெரும்பாலான AI ஏஜென்ட் கட்டமைப்புகளில் சில பொதுவான அந்தஸ்துகள் உள்ளன, அவை module கூறுகள், ஒத்துழைப்பு கருவிகள் மற்றும் நேரடி கற்றல் ஆகியவையாகும். இவற்றைப் பற்றி பார்ப்போம்:
 
-Azure AI Agent Service என்பது Microsoft Ignite 2024 இல் அறிமுகப்படுத்தப்பட்ட சமீபத்திய சேவை. இது Llama 3, Mistral, Cohere போன்ற திறந்த மூல LLMக்களை நேரடியாக அழைக்கும் மாதிரிகளைப் பயன்படுத்தி AI ஏஜென்ட்களை உருவாக்கவும், பரப்பவும் அனுமதிக்கிறது.
+- **தொகுதி கூறுகளைப் பயன்படுத்தவும்**: AI SDKகள் முன்னதாக உருவாக்கப்பட்ட கூறுகளை வழங்குகின்றன—உதாரணமாக AI மற்றும் Memory இணைப்பிகள், இயற்கை மொழி அல்லது கோட் பிளக்-இன்களைப் பயன்படுத்தி function calling, prompt templates மற்றும் மேலும் பல.
+- **ஒத்துழைப்பு கருவிகளைப் பயன்படுத்தவும்**: குறிப்பிட்ட பங்கு மற்றும் பணிகள் கொண்ட ஏஜென்ட்களை வடிவமைக்க, அவை ஒத்துழைப்பு பணிவழிகாட்டியைக் சோதித்து மேம்படுத்த அனுமதிக்கவும்.
+- **நேரத்தில் கற்றுக்கொள்ளவும்**: ஏஜென்ட்கள் இடையிலான தொடர்புகளில் இருந்து கற்று, அவர்களின் நடத்தை தானாகவே சேர்ந்துகொள்ளும் feedback loop-களை செயல்படுத்தவும்.
 
-Azure AI Agent Service வலுவான நிறுவன பாதுகாப்பு முறைகள் மற்றும் தரவுகளை சேமிக்கும் முறைகளை வழங்குகிறது, இது நிறுவன பயன்பாடுகளுக்கு ஏற்றதாக உள்ளது.
+### தொகுதி கூறுகளைப் பயன்படுத்தவும்
 
-இது AutoGen மற்றும் Semantic Kernel போன்ற பல ஏஜென்ட் ஒருங்கிணைப்பு frameworks உடன் நேரடியாக வேலை செய்கிறது.
+Microsoft Agent Framework போன்ற SDKகள் AI இணைப்பிகள், கருவி வரையறைகள் மற்றும் ஏஜென்ட் நிர்வகிப்பு போன்ற முன்-உருவாக்கப்பட்ட கூறுகளை வழங்குகின்றன.
 
-இந்த சேவை தற்போது Public Preview நிலையில் உள்ளது மற்றும் Python மற்றும் C# மூலம் ஏஜென்ட்களை உருவாக்க ஆதரிக்கிறது.
+**குழுக்கள் இதனை எப்படி பயன்படுத்தலாம்**: குழுக்கள் அவை பயன்படுத்தி புதிதாக இருந்து தொடங்காமல் இவ்வாறு கூறுகளை வேகமாக சேர்த்து ஒரு செயல்பாட்டு prototype உருவாக்க முடியும், இது விரைவான பரிசோதனை மற்றும் iteration ஐ அனுமதிக்கிறது.
 
-Semantic Kernel Python பயன்படுத்தி, நாங்கள் ஒரு பயனர் வரையறுக்கப்பட்ட plugin உடன் Azure AI Agent உருவாக்கலாம்:
+**பயிற்றில் இது எப்படி வேலை செய்கிறது**: பயனர் உள்ளீட்டிலிருந்து தகவலை எடுக்க ஒரு முன்-உருவாக்கப்பட்ட parser, தரவை சேமித்து மீட்டெடுக்கும் memory module, மற்றும் பயனர்களுடன் தொடர்பு கொள்ள prompt generator போன்றவற்றைப் பயன்படுத்தலாம், இவை அனைத்தும் ஆரம்பத்திலிருந்து உருவாக்க வேண்டிய அவசியம் இல்லாமல்.
 
-```python
+**உதாரண குறியீடு**. Microsoft Agent Framework ஐ `AzureAIProjectAgentProvider` உடன் பயன்படுத்தி மாடல் பயனர் உள்ளீட்டுக்கு tool calling மூலம் பதிலளிக்க எவ்வாறு செய்யலாம் என்பதைப் பார்க்கலாம்:
+
+``` python
+# Microsoft முகவர் கட்டமைப்பு பைதான் எடுத்துக்காட்டு
+
 import asyncio
+import os
 from typing import Annotated
 
-from azure.identity.aio import DefaultAzureCredential
-
-from semantic_kernel.agents import AzureAIAgent, AzureAIAgentSettings, AzureAIAgentThread
-from semantic_kernel.contents import ChatMessageContent
-from semantic_kernel.contents import AuthorRole
-from semantic_kernel.functions import kernel_function
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
 
-# Define a sample plugin for the sample
-class MenuPlugin:
-    """A sample Menu Plugin used for the concept sample."""
-
-    @kernel_function(description="Provides a list of specials from the menu.")
-    def get_specials(self) -> Annotated[str, "Returns the specials from the menu."]:
-        return """
-        Special Soup: Clam Chowder
-        Special Salad: Cobb Salad
-        Special Drink: Chai Tea
-        """
-
-    @kernel_function(description="Provides the price of the requested menu item.")
-    def get_item_price(
-        self, menu_item: Annotated[str, "The name of the menu item."]
-    ) -> Annotated[str, "Returns the price of the menu item."]:
-        return "$9.99"
+# பயணத்தை முன்பதிவு செய்ய மாதிரி கருவி செயல்பாட்டை வரையறு
+def book_flight(date: str, location: str) -> str:
+    """Book travel given location and date."""
+    return f"Travel was booked to {location} on {date}"
 
 
-async def main() -> None:
-    ai_agent_settings = AzureAIAgentSettings.create()
+async def main():
+    provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
+    agent = await provider.create_agent(
+        name="travel_agent",
+        instructions="Help the user book travel. Use the book_flight tool when ready.",
+        tools=[book_flight],
+    )
 
-    async with (
-        DefaultAzureCredential() as creds,
-        AzureAIAgent.create_client(
-            credential=creds,
-            conn_str=ai_agent_settings.project_connection_string.get_secret_value(),
-        ) as client,
-    ):
-        # Create agent definition
-        agent_definition = await client.agents.create_agent(
-            model=ai_agent_settings.model_deployment_name,
-            name="Host",
-            instructions="Answer questions about the menu.",
-        )
-
-        # Create the AzureAI Agent using the defined client and agent definition
-        agent = AzureAIAgent(
-            client=client,
-            definition=agent_definition,
-            plugins=[MenuPlugin()],
-        )
-
-        # Create a thread to hold the conversation
-        # If no thread is provided, a new thread will be
-        # created and returned with the initial response
-        thread: AzureAIAgentThread | None = None
-
-        user_inputs = [
-            "Hello",
-            "What is the special soup?",
-            "How much does that cost?",
-            "Thank you",
-        ]
-
-        try:
-            for user_input in user_inputs:
-                print(f"# User: '{user_input}'")
-                # Invoke the agent for the specified thread
-                response = await agent.get_response(
-                    messages=user_input,
-                    thread_id=thread,
-                )
-                print(f"# {response.name}: {response.content}")
-                thread = response.thread
-        finally:
-            await thread.delete() if thread else None
-            await client.agents.delete_agent(agent.id)
+    response = await agent.run("I'd like to go to New York on January 1, 2025")
+    print(response)
+    # எடுத்துக்காட்டு வெளியீடு: உங்கள் 2025 ஜனவரி 1-ந் தேதி நியூயார்க்கிற்கு விமானம் வெற்றிகரமாக முன்பதிவு செய்யப்பட்டுள்ளது. பாதுகாப்பான பயணம்! ✈️🗽
 
 
 if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-### முக்கிய கருத்துக்கள்
+இந்த உதாரணத்திலிருந்து நீங்கள் பார்க்கக்கூடியது, பயனர் உள்ளீட்டிலிருந்து முக்கிய தகவல்களை எடுக்க முன்-உருவாக்கப்பட்ட parser ஐ எப்படி பயன்படுத்தலாம் என்பதுதான் — உதாரணமாக ஒரு விமானம் முன்பதிவு கோரிக்கையின் ஆரம்பப்புள்ளி, ஏற்கும் இடம் மற்றும் திகதி போன்றவை. இந்த தொகுதி அணுகுமுறை உங்களுக்கு உயர் நிலை லாஜிக்கில் கவனம் செலுத்த அனுமதிக்கிறது.
 
-Azure AI Agent Service இன் முக்கிய கருத்துக்கள்:
+### ஒத்துழைப்பு கருவிகளைப் பயன்படுத்தவும்
 
-- **Agent**. Azure AI Agent Service, Azure AI Foundry உடன் ஒருங்கிணைக்கிறது. AI Foundry இல், AI Agent என்பது "smart" மைக்ரோசர்வீஸ் ஆக செயல்படுகிறது, இது கேள்விகளுக்கு பதிலளிக்க (RAG), செயல்களைச் செய்ய அல்லது workflows ஐ முழுமையாக தானியங்கமாக்க பயன்படுத்தப்படுகிறது. இது உருவாக்கும் AI மாதிரிகளின் சக்தியை உண்மையான தரவூற்று ஆதாரங்களை அணுகவும், தொடர்பு கொள்ளவும் அனுமதிக்கும் கருவிகளுடன் இணைத்து சாதிக்கிறது. ஏஜென்ட்டின் ஒரு உதாரணம் இங்கே:
+Microsoft Agent Framework போன்ற கட்டமைப்புகள் ஒன்றாக செயல்படக்கூடிய பல ஏஜென்ட்களை உருவாக்க உதவுகின்றன.
+
+**குழுக்கள் இதனை எப்படி பயன்படுத்தலாம்**: குழுக்கள் குறிப்பிட்ட பணி மற்றும் வேறுபடுத்தப்பட்ட பங்களிப்பு கொண்ட ஏஜென்ட்களை வடிவமைக்கலாம், இது ஒத்துழைப்பு பணிவழிகளை சோதித்து செதுக்குவதற்கு மற்றும் மொத்த அமைப்பின் செயல்திறனை மேம்படுத்த உதவும்.
+
+**பயிற்றில் இது எப்படி வேலை செய்கிறது**: தரவு மீட்டெடுப்பு, பகுப்பாய்வு அல்லது முடிவெடுத்தல் போன்ற குறிப்பிட்ட செயல்பாடுகளைச் செய்வதில் ஒவ்வொரு ஏஜென்டுக்கும் சிறப்பு பொறுப்பு அமைக்க—a team of agents உருவாக்கலாம். இவை தகவலைப் பகிர்ந்து மற்றும் தொடர்பு கொண்டு ஒரு பொதிக் குறிக்கோளை எட்டலாம், உதாரணமாக பயனர் கேள்விக்கிக்குப் பதிலளித்தல் அல்லது ஒரு பணியை முடிக்குதல்.
+
+**உதாரணக் குறியீடு (Microsoft Agent Framework)**:
+
+```python
+# மைக்ரோசாஃப்ட் ஏஜென்ட் கட்டமைப்பைப் பயன்படுத்தி ஒரே நேரத்தில் ஒன்றுசேர்ந்து செயல்படும் பல ஏஜெண்ட்களை உருவாக்குதல்
+
+import os
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
+
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
+
+# தரவு மீட்டெடுக்கும் ஏஜெண்ட்
+agent_retrieve = await provider.create_agent(
+    name="dataretrieval",
+    instructions="Retrieve relevant data using available tools.",
+    tools=[retrieve_tool],
+)
+
+# தரவு பகுப்பாய்வு ஏஜெண்ட்
+agent_analyze = await provider.create_agent(
+    name="dataanalysis",
+    instructions="Analyze the retrieved data and provide insights.",
+    tools=[analyze_tool],
+)
+
+# ஒரு பணியில் பின்பற்றிச் செயல்படுத்தப்படும் ஏஜெண்ட்கள்
+retrieval_result = await agent_retrieve.run("Retrieve sales data for Q4")
+analysis_result = await agent_analyze.run(f"Analyze this data: {retrieval_result}")
+print(analysis_result)
+```
+
+முந்தைய குறியீட்டில் நீங்கள் பார்க்கும் 것은 பல ஏஜென்ட்கள் ஒன்றாக இணைந்து தரவை பகுப்பாய்வு செய்யும் பணியை எவ்வாறு உருவாக்குவது என்பது. ஒவ்வொரு ஏஜென்டும் ஒரு குறிப்பிட்ட செயல்பாடு செய்யும், மற்றும் அனுகூலமான முடிவை அடைய ஏஜென்ட்களை ஒருங்கிணைத்து அந்தப் பணி செயல்படுத்தப்படுகிறது. சிறப்பு பங்கு கொண்ட கொடுப்பனவுக்கான ஏஜென்ட்களை உருவாக்குவதன் மூலம் பணித்திறன் மற்றும் செயல்திறன் உயர்க்கும்.
+
+### நேரத்தில் கற்றுக்கொள்ளுதல்
+
+மேம்பட்ட கட்டமைப்புகள் நேரடி சூழல் புரிதலும் அதற்கேற்ற தகுதிசெய்தல்களையும் வழங்குவதற்கான திறன்களை வழங்குகின்றன.
+
+**குழுக்கள் இதனை எப்படி பயன்படுத்தலாம்**: குழுக்கள் өмнைய பேச்சுவார்த்தையிலிருந்து பயிற்சி பெறுவதற்கும், பிறருடனான தொடர்புகளில் இருந்து திருத்தி நடத்தை மாற்றுவதற்கும் feedback loop-களை செயல்படுத்தலாம், இதனால் திறன்கள் தொடர்ந்து மேம்பட்டு செழித்தடையும்.
+
+**பயிற்றில் இது எப்படி வேலை செய்கிறது**: ஏஜென்ட்கள் பயனர் பின்னூட்டம், சுற்றுப்புற தரவு மற்றும் பணியின் முடிவுகளை பகுப்பாய்வு செய்து தங்களின் அறிவுத்தொகுப்பை புதுப்பித்து, முடிவெடுத்தல் ஆல்கொரிதங்களைக் সংশுத்தி காலதாமதத்தில்மேலும் செயல்திறனை மேம்படுத்த முடியும். இந்த நிகழ்ச்சி கற்றல் செயல்முறை ஏஜென்ட்களை மாறும் நிலைகளுக்கு மற்றும் பயனர் விருப்பங்களுக்கு ஏற்ப ஒழுங்குபடுத்துவதால் மொத்த அமைப்பின் பயன்திறனை உயர்த்தும்.
+
+## Microsoft Agent Framework மற்றும் Azure AI Agent Service ஆகியவற்றிற்கிடையிலான வேறுபாடுகள் என்ன?
+
+இந்த அணுகுமுறைகளை ஒப்பீடு செய்ய பல வழிகள் உள்ளன, ஆனால் அவற்றின் வடிவமைப்பு, திறன்கள் மற்றும் குறிக்கப்பட்ட பயன்பாட்டு வழக்குகள் என சில முக்கிய வேறுபாடுகளைப் பார்ப்போம்:
+
+## Microsoft Agent Framework (MAF)
+
+Microsoft Agent Framework `AzureAIProjectAgentProvider` என்பதைப் பயன்படுத்தி AI ஏஜென்ட்களை உருவாக்குவதற்கான ஒரு சீரமைக்கப்பட்ட SDK ஐ வழங்குகிறது. இது உருவாக்குநர்களுக்கு Azure OpenAI மாடல்களை கொண்டு கருவி அழைப்பு, உரையாடல் நிர்வாகம் மற்றும் Azure identity மூலம் நிறுவனத் தரத்தின் பாதுகாப்பு ஆகியவற்றை பயன்படுத்துகின்ற ஏஜென்ட்களை உருவாக்க அனுமதிக்கிறது.
+
+**பயன்பாட்டு வழக்குகள்**: கருவி பயன்பாடு, பல்அடுக்கு பணிநடவடிக்கைகள் மற்றும் நிறுவன ஒருங்கிணைப்பு السينாரியோக்களுக்கு தயாரான உற்பத்தி-நிலையை உருவாக்குதல்.
+
+Microsoft Agent Framework இன் சில முக்கிய மூலக் கருத்துகள் இவை:
+
+- **Agents**. ஒரு ஏஜென்ட் `AzureAIProjectAgentProvider` மூலம் உருவாக்கப்பட்டு பெயர், அறிவுறுத்தல்கள் மற்றும் கருவிகள் கொண்டு கட்டமைக்கப்படுகிறது. அவை:
+  - **பயனர் செய்திகளைக் கடைசியாக செயலாக்கி** Azure OpenAI மாடல்களை பயன்படுத்தி பதில்கள் உருவாக்க முடியும்.
+  - **கருவிகளை அழைக்க** உரையாடல் சூழலின் அடிப்படையில் தானாகவே செயல்படலாம்.
+  - **பல இடையிலான தொடர்புகளில் உரையாடல் நிலையை பராமரிக்க** முடியும்.
+
+  ஏஜென்ட் உருவாக்க எவ்வாறு ஒரு குறியீட்டு துண்டு காண்பிக்கப்படுகிறது:
+
+    ```python
+    import os
+    from agent_framework.azure import AzureAIProjectAgentProvider
+    from azure.identity import AzureCliCredential
+
+    provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
+    agent = await provider.create_agent(
+        name="my_agent",
+        instructions="You are a helpful assistant.",
+    )
+
+    response = await agent.run("Hello, World!")
+    print(response)
+    ```
+
+- **Tools**. கட்டமைப்பு ஏஜென்டு தானாக கூலக்கூடிய Python functions ஆக கருவிகளை வரையறுக்க ஆதரவு வழங்குகிறது. ஏஜென்டு உருவாக்கும்போது கருவிகள் பதிவு செய்யப்படுகின்றன:
+
+    ```python
+    def get_weather(location: str) -> str:
+        """Get the current weather for a location."""
+        return f"The weather in {location} is sunny, 72\u00b0F."
+
+    agent = await provider.create_agent(
+        name="weather_agent",
+        instructions="Help users check the weather.",
+        tools=[get_weather],
+    )
+    ```
+
+- **பல-ஏஜென்ட் ஒருங்கிணைப்பு**. வெவ்வேறு சிறப்பிற்குரிய பணிகளைக் கொண்ட பல ஏஜென்ட்களை உருவாக்கி அவற்றின் பணிகளை ஒருங்கிணைக்க முடியும்:
+
+    ```python
+    planner = await provider.create_agent(
+        name="planner",
+        instructions="Break down complex tasks into steps.",
+    )
+
+    executor = await provider.create_agent(
+        name="executor",
+        instructions="Execute the planned steps using available tools.",
+        tools=[execute_tool],
+    )
+
+    plan = await planner.run("Plan a trip to Paris")
+    result = await executor.run(f"Execute this plan: {plan}")
+    ```
+
+- **Azure Identity ஒருங்கிணைப்பு**. இந்த கட்டமைப்பு பாதுகாப்பான, API சாவிகளைக் கையாள தேவையில்லாமல் `AzureCliCredential` (அல்லது `DefaultAzureCredential`) பயன்படுத்தி keyless அங்கீகாரம் வழங்குகிறது.
+
+## Azure AI Agent Service
+
+Azure AI Agent Service என்பது Microsoft Ignite 2024 இல் அறிமுகப்படுத்தப்பட்ட சமீபத்திய சேவையாகும். இது Llama 3, Mistral, Cohere போன்ற திறந்த மூல LLMகளை நேரடியாக அழைக்கிக்கொள்வதுபோல திறமையான மாடல்களை வழங்கி, உள்ளமைக்கலான மற்றும் விரிவான ஏஜென்ட்களை உருவாக்கவும் நடைமுறைப்படுத்தவும் இடைமுகம் தருகிறது.
+
+Azure AI Agent Service நிறுவனத் தர பாதுகாப்பு முறைகள் மற்றும் தரவுத் 저장ுக்களை வலுப்படுத்துகிறது, அதனால் இது நிறுவன பயன்பாடுகளுக்கு உடன்படக்கூடியதாக இருக்கும்.
+
+இது Microsoft Agent Framework உடன் சிறப்பாக இணைந்து ஏஜென்ட்களை கட்டமைக்கவும் வெளியிடவும் உதவுகிறது.
+
+இந்த சேவை தற்போது பப்ளிக் முன்னோக்கு நிலை (Public Preview) இல் உள்ளது மற்றும் ஏஜென்ட்களை உருவாக்க Python மற்றும் C# ஐ ஆதரிக்கிறது.
+
+Azure AI Agent Service Python SDK ஐப் பயன்படுத்தி, பயனர்-வரையறுக்கப்பட்ட கருவியுடன் ஒரு ஏஜென்டை நாம் உருவாக்க முடியும்:
+
+```python
+import asyncio
+from azure.identity import DefaultAzureCredential
+from azure.ai.projects import AIProjectClient
+
+# கருவி செயல்பாடுகளை வரையறு
+def get_specials() -> str:
+    """Provides a list of specials from the menu."""
+    return """
+    Special Soup: Clam Chowder
+    Special Salad: Cobb Salad
+    Special Drink: Chai Tea
+    """
+
+def get_item_price(menu_item: str) -> str:
+    """Provides the price of the requested menu item."""
+    return "$9.99"
+
+
+async def main() -> None:
+    credential = DefaultAzureCredential()
+    project_client = AIProjectClient.from_connection_string(
+        credential=credential,
+        conn_str="your-connection-string",
+    )
+
+    agent = project_client.agents.create_agent(
+        model="gpt-4o-mini",
+        name="Host",
+        instructions="Answer questions about the menu.",
+        tools=[get_specials, get_item_price],
+    )
+
+    thread = project_client.agents.create_thread()
+
+    user_inputs = [
+        "Hello",
+        "What is the special soup?",
+        "How much does that cost?",
+        "Thank you",
+    ]
+
+    for user_input in user_inputs:
+        print(f"# User: '{user_input}'")
+        message = project_client.agents.create_message(
+            thread_id=thread.id,
+            role="user",
+            content=user_input,
+        )
+        run = project_client.agents.create_and_process_run(
+            thread_id=thread.id, agent_id=agent.id
+        )
+        messages = project_client.agents.list_messages(thread_id=thread.id)
+        print(f"# Agent: {messages.data[0].content[0].text.value}")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+### முக்கியக் கருத்துக்கள்
+
+Azure AI Agent Service இன் கீழ்க்காணும் முக்கியக் கருத்துக்களைக் கொண்டுள்ளது:
+
+- **Agent**. Azure AI Agent Service Microsoft Foundry உடன் இணைகிறது. AI Foundry இல், ஒரு AI ஏஜென்ட் "அறிவெழுச்சி"முள்ள மைக்ரோசேவையாக செயல்பட்டு கேள்விகளுக்கு பதிலளிக்க (RAG), செயல்களை நடாத்த அல்லது முழுமையாக வேலைநடவடிக்கைகளை தானாகச் செய்வதற்கும் பயன்படுகிறது. இது உருவாக்குபவர்களுக்கு ஜெனரேட்டிவு AI மாடல்களின் சக்தியையும், உண்மையான தரவுத் தொழில்நுட்பத்துடன் இணைந்து அணுக மற்றும் தொடர்பு கொள்ளும் கருவிகளையும் ஒன்றிணைப்பதன் மூலம் சாதிக்கப்படுகிறது. உதாரணமாக ஒரு ஏஜென்ட்:
 
     ```python
     agent = project_client.agents.create_agent(
@@ -174,9 +307,9 @@ Azure AI Agent Service இன் முக்கிய கருத்துக�
     )
     ```
 
-    இந்த உதாரணத்தில், `gpt-4o-mini` என்ற மாதிரியுடன், `my-agent` என்ற பெயருடன், மற்றும் `You are helpful agent` என்ற வழிகாட்டுதலுடன் ஒரு ஏஜென்ட் உருவாக்கப்படுகிறது. இந்த ஏஜென்ட் குறியீடு விளக்கம் பணிகளைச் செய்ய கருவிகள் மற்றும் வளங்களுடன் சீரமைக்கப்பட்டுள்ளது.
+    இந்த உதாரணத்தில், `gpt-4o-mini` மாடலைப் பயன்படுத்தி `my-agent` என்ற பெயரில் மற்றும் `You are helpful agent` என்ற அறிவுறுத்தலுடன் ஒரு ஏஜென்ட் உருவாக்கப்படுகின்றது. அந்த ஏஜென்ட் குறியீட்டு விளக்கம் பணிகளை செயற்படுத்த தேவையான கருவிகள் மற்றும் வளங்களுடன் உபகரணப்படுத்தப்படுகிறது.
 
-- **Thread மற்றும் Messages**. Thread என்பது மற்றொரு முக்கிய கருத்து. இது ஏஜென்ட் மற்றும் பயனர் இடையேயான உரையாடல் அல்லது தொடர்பை பிரதிநிதித்துவப்படுத்துகிறது. Threads உரையாடலின் முன்னேற்றத்தை கண்காணிக்க, சூழல் தகவல்களை சேமிக்க, மற்றும் தொடர்பின் நிலையை நிர்வகிக்க பயன்படுத்தப்படலாம். Thread இன் ஒரு உதாரணம் இங்கே:
+- **Thread and messages**. thread என்பது ஒரு முக்கியக் கருத்து. அது ஒரு ஏஜென்ட் மற்றும் பயனரின் இடையேயான உரையாடல் அல்லது தொடர்பை பிரதிபலிக்கிறது. Threads உரையாடலின் முன்னேற்றத்தை பின்தொடர, சூழல் தகவல்களை சேமிக்க, மற்றும் தொடர்பின் நிலையை நிர்வகிக்க பயன்படுத்தப்படலாம். thread இன் உதாரணம்:
 
     ```python
     thread = project_client.agents.create_thread()
@@ -194,89 +327,76 @@ Azure AI Agent Service இன் முக்கிய கருத்துக�
     print(f"Messages: {messages}")
     ```
 
-    முந்தைய குறியீட்டில், ஒரு Thread உருவாக்கப்படுகிறது. அதன் பிறகு, Thread க்கு ஒரு Message அனுப்பப்படுகிறது. `create_and_process_run` ஐ அழைப்பதன் மூலம், Thread இல் ஏஜென்ட் பணிகளைச் செய்ய கேட்கப்படுகிறது. இறுதியாக, Messages பெறப்பட்டு, ஏஜென்ட்டின் பதிலைப் பார்க்க பதிவு செய்யப்படுகிறது. Messages பயனர் மற்றும் ஏஜென்ட் இடையேயான உரையாடலின் முன்னேற்றத்தை குறிக்கின்றன. Messages பல வகைகளாக இருக்கலாம், உதாரணமாக Text, Image, அல்லது File போன்றவை, அதாவது ஏஜென்ட்டின் வேலை Text பதில் அல்லது Image போன்றவற்றை உருவாக்கியிருக்கலாம். ஒரு Developer ஆக, நீங்கள் இந்த தகவலை மேலும் செயல்படுத்த அல்லது பயனருக்கு வழங்க பயன்படுத்தலாம்.
+    முந்தைய குறியீட்டில், ஒரு thread உருவாக்கப்படுகிறது. அதன் பிறகு, threadக்கு ஒரு செய்தி அனுப்பப்படுகிறது. `create_and_process_run` ஐ அழிப்பதன் மூலம், thread இல் ஏஜென்டிடம் பணியைச் செய்ய கேட்கப்படுகிறது. இறுதியில், messages அறியப்படுகின்றன மற்றும் ஏஜென்டின் பதிலைப் பார்க்க பதிவு செய்யப்படுகின்றன. messages அவை உரையின் வகையில், படம் அல்லது கோப்பு போன்ற வெவ்வேறு வகைகளில் இருக்கக்கூடியவை என்பது முக்கியம் — உதாரணமாக ஏஜென்ட் ஒரு படத்தை அல்லது உரையை வெளியிட்டிருக்கலாம். ஒரு உருவாக்குநராக, நீங்கள் இதன் மூலம் கிடைக்கும் தகவல்களை மேலும் செயலாக்க அல்லது பயனருக்கு வழங்க முடியும்.
 
-- **மற்ற AI frameworks உடன் ஒருங்கிணைக்கிறது**. Azure AI Agent Service, AutoGen மற்றும் Semantic Kernel போன்ற frameworks உடன் தொடர்பு கொள்ள முடியும், அதாவது நீங்கள் உங்கள் பயன்பாட்டின் ஒரு பகுதியை இந்த frameworks இல் உருவாக்கலாம், உதாரணமாக Agent Service ஐ ஒருங்கிணைப்பாளராக பயன்படுத்தலாம் அல்லது அனைத்தையும் Agent Service இல் உருவாக்கலாம்.
+- **Microsoft Agent Framework உடன் ஒருங்கிணைப்பு**. Azure AI Agent Service Microsoft Agent Framework உடன் வெற்றிகரமாக இணைகிறது, அதாவது `AzureAIProjectAgentProvider` பயன்படுத்தி ஏஜென்ட்களை கட்டமைத்து அவற்றை Agent Service மூலம் உற்பத்தி சூழலுக்குத் தரவிறக்க முடியும்.
 
-**பயன்பாட்டு வழிகள்**: Azure AI Agent Service, பாதுகாப்பான, அளவளாவிய மற்றும் நெகிழ்வான AI ஏஜென்ட் பரப்புதலுக்கு வடிவமைக்கப்பட்டுள்ளது.
+**பயன்பாட்டு வழக்குகள்**: பாதுகாப்பான, அளவளாவிய மற்றும் நெகிழ்வான AI ஏஜென்ட் வெளியீடுகளை தேவைப்படும் நிறுவன பயன்பாடுகளுக்காக Azure AI Agent Service வடிவமைக்கப்பட்டுள்ளது.
 
-## இந்த frameworks க்கு என்ன வித்தியாசம்?
+## இந்த அணுகுமுறைகளுக்கிடையிலான வேறுபாடு என்ன?
+ 
+ஒத்திசையும் பகுதிகளும் இருப்பது போலத் தெரியலாம், ஆனால் அவற்றின் வடிவமைப்பு, திறன்கள் மற்றும் குறிக்கப்பட்ட பயன்பாட்டு வழக்குகளின்படி சில முக்கிய வேறுபாடுகள் உள்ளன:
+ 
+- **Microsoft Agent Framework (MAF)**: கருவி அழைப்பு கொண்ட ஏஜென்டுகளை உருவாக்க ஒரு தயாரான SDK. இது ஏஜென்ட்களை உருவாக்குவதற்கான சீரமைக்கப்பட்ட APIஐ வழங்குகிறது, உரையாடல் நிர்வாகம் மற்றும் Azure identity ஒருங்கிணைப்பையும் கொண்டுள்ளது.
+- **Azure AI Agent Service**: Agents-காக Azure Foundry இல் ஒரு தளம் மற்றும் வெளியீட்டு சேவை. இது Azure OpenAI, Azure AI Search, Bing Search மற்றும் கோட் செயலாக்கம் போன்ற சேவைகளுடன் உள்ளமைக்கப்பட்ட இணைப்பு வசதிகளை வழங்குகிறது.
+ 
+Still not sure which one to choose?
 
-இந்த frameworks க்கு இடையில் நிறைய ஒற்றுமை உள்ளது போல தோன்றுகிறது, ஆனால் அவற்றின் வடிவமைப்பு, திறன்கள் மற்றும் இலக்கு பயன்பாட்டு வழிகளில் சில முக்கிய வித்தியாசங்கள் உள்ளன:
-
-- **AutoGen**: பல ஏஜென்ட் அமைப்புகள் பற்றிய முன்னணி ஆராய்ச்சியில் கவனம் செலுத்தும் ஒரு பரிசோதனை framework. சிக்கலான பல ஏஜென்ட் அமைப்புகளை பரிசோதிக்கவும், உருவாக்கவும் சிறந்த இடம்.
-- **Semantic Kernel**: நிறுவன ஏஜென்டிக் பயன்பாடுகளை உருவாக்க தயாராக இருக்கும் ஏஜென்ட் நூலகம். நிகழ்வு சார்ந்த, பகிர்ந்தளிக்கப்பட்ட ஏஜென்டிக் பயன்பாடுகளில் கவனம் செலுத்துகிறது, பல LLMs மற்றும் SLMs, கருவிகள் மற்றும் ஒற்றை/பல ஏஜென்ட் வடிவமைப்பு முறைகளை இயக்குகிறது.
-- **Azure AI Agent Service**: Azure Foundry இல் ஏஜென்ட்களுக்கான ஒரு தளம் மற்றும் பரப்பல் சேவை. Azure OpenAI, Azure AI Search, Bing Search மற்றும் code execution போன்ற சேவைகளுடன் இணைப்புகளை உருவாக்க வழங்குகிறது.
-
-இன்னும் எந்த framework ஐ தேர்வு செய்வது என்று தெரியவில்லையா?
-
-### பயன்பாட்டு வழிகள்
-
-சில பொதுவான பயன்பாட்டு வழிகளைப் பார்த்து உங்களுக்கு உதவ முயற்சிக்கலாம்:
-
-> Q: நான் பரிசோதிக்கிறேன், கற்றுக்கொள்கிறேன் மற்றும் proof-of-concept ஏஜென்ட் பயன்பாடுகளை உருவாக்குகிறேன், மேலும் விரைவாக உருவாக்கவும், பரிசோதிக்கவும் விரும்புகிறேன்
+### Use Cases
+ 
+சில பொதுவான பயன்பாட்டு வழக்குகளைப் பார்த்து உங்களுக்கு உதவுகிறோமா என்று பார்ப்போம்:
+ 
+> Q: I'm building production AI agent applications and want to get started quickly
 >
 
->A: AutoGen இந்த சூழலுக்கு நல்ல தேர்வாக இருக்கும், ஏனெனில் இது நிகழ்வு சார்ந்த, பகிர்ந்தளிக்கப்பட்ட ஏஜென்டிக் பயன்பாடுகளில் கவனம் செலுத்துகிறது மற்றும் மேம்பட்ட பல ஏஜென்ட் வடிவமைப்பு முறைகளை ஆதரிக்கிறது.
+> A: The Microsoft Agent Framework is a great choice. It provides a simple, Pythonic API via `AzureAIProjectAgentProvider` that lets you define agents with tools and instructions in just a few lines of code.
 
-> Q: இந்த பயன்பாட்டு வழிக்கான Semantic Kernel மற்றும் Azure AI Agent Service க்கு AutoGen ஏன் சிறந்த தேர்வாகும்?
+>Q: I need enterprise-grade deployment with Azure integrations like Search and code execution
 >
-> A: AutoGen குறிப்பாக நிகழ்வு சார்ந்த, பகிர்ந்தளிக்கப்பட்ட ஏஜென்டிக் பயன்பாடுகளுக்காக வடிவமைக்கப்பட்டுள்ளது, இது code generation மற்றும் data analysis பணிகளுக்கு ஏற்றதாக உள்ளது. இது சிக்கலான பல ஏஜென்ட் அமைப்புகளை திறமையாக உருவாக்க தேவையான கருவிகள் மற்றும் திறன்களை வழங்குகிறது.
-
->Q: Azure AI Agent Service இங்கே வேலை செய்யக்கூடும் போல தோன்றுகிறது, இது code generation மற்றும் பலவற்றுக்கு கருவிகளை கொண்டுள்ளது?
-
+> A: Azure AI Agent Service is the best fit. It's a platform service that provides built-in capabilities for multiple models, Azure AI Search, Bing Search and Azure Functions. It makes it easy to build your agents in the Foundry Portal and deploy them at scale.
+ 
+> Q: I'm still confused, just give me one option
 >
-> A: ஆம், Azure AI Agent Service என்பது ஏஜென்ட்களுக்கான ஒரு தள சேவை மற்றும் பல மாதிரிகள், Azure AI Search, Bing Search மற்றும் Azure Functions ஆகியவற்றுக்கான built-in திறன்களை சேர்க்கிறது. Foundry Portal இல் உங்கள் ஏஜென்ட்களை உருவாக்கவும், அளவளாவிய அளவில் பரப்பவும் இது எளிதாக்குகிறது.
+> A: Start with the Microsoft Agent Framework to build your agents, and then use Azure AI Agent Service when you need to deploy and scale them in production. This approach lets you iterate quickly on your agent logic while having a clear path to enterprise deployment.
+ 
+Let's summarize the key differences in a table:
 
-> Q: நான் இன்னும் குழப்பத்தில் இருக்கிறேன், ஒரு தேர்வை மட்டும் சொல்லுங்கள்
->
-> A: உங்கள் பயன்பாட்டை முதலில் Semantic Kernel இல் உருவாக்கி, பின்னர் Azure AI Agent Service ஐ பயன்படுத்தி உங்கள் ஏஜென்ட்டை பரப்புவது ஒரு சிறந்த தேர்வாக இருக்கும். இந்த அணுகுமுறை உங்கள் ஏஜென்ட்களை எளிதாக நிலைத்திருக்க அனுமதிக்கிறது, மேலும் Semantic Kernel இல் பல ஏஜென்ட் அமைப்புகளை உருவாக்கும் சக்தியைப் பயன்படுத்துகிறது. கூடுதலாக, Semantic Kernel இல் AutoGen உடன் ஒரு connector உள்ளது, இது இரண்டு frameworks ஐ ஒன்றாக பயன்படுத்த எளிதாக்குகிறது.
-
-வித்தியாசங்களை ஒரு அட்டவணையில் சுருக்குவோம்:
-
-| Framework | கவனம் | முக்கிய கருத்துக்கள் | பயன்பாட்டு வழிகள் |
+| Framework | Focus | Core Concepts | Use Cases |
 | --- | --- | --- | --- |
-| AutoGen | நிகழ்வு சார்ந்த, பகிர்ந்தளிக்கப்பட்ட ஏஜென்டிக் பயன்பாடுகள் | Agents, Personas, Functions, Data | Code generation, data analysis tasks |
-| Semantic Kernel | மனிதர்களைப் போன்ற உரை உள்ளடக்கத்தை புரிந்து கொள்ளுதல் மற்றும் உருவாக்குதல் | Agents, Modular Components, Collaboration | இயற்கை மொழி புரிதல், உள்ளடக்க உருவாக்கம் |
-| Azure AI Agent Service | நெகிழ்வான மாதிரிகள், நிறுவன பாதுகாப்பு, Code generation, Tool calling | Modularity, Collaboration, Process Orchestration | பாதுகாப்பான, அளவளாவிய மற்றும் நெகிழ்வான AI ஏஜென்ட் பரப்பல் |
+| Microsoft Agent Framework | Streamlined agent SDK with tool calling | Agents, Tools, Azure Identity | Building AI agents, tool use, multi-step workflows |
+| Azure AI Agent Service | Flexible models, enterprise security, Code generation, Tool calling | Modularity, Collaboration, Process Orchestration | Secure, scalable, and flexible AI agent deployment |
 
-இந்த frameworks க்கு ஏற்ற பயன்பாட்டு வழிகள் என்ன?
+## Can I integrate my existing Azure ecosystem tools directly, or do I need standalone solutions?
+The answer is yes, you can integrate your existing Azure ecosystem tools directly with Azure AI Agent Service especially, as it has been built to work seamlessly with other Azure services. You could for example integrate Bing, Azure AI Search, and Azure Functions. There's also deep integration with Microsoft Foundry.
 
-## நான் Azure ecosystem கருவிகளை நேரடியாக ஒருங்கிணைக்க முடியுமா, அல்லது தனித்துவமான தீர்வுகள் தேவைப்படுமா?
+The Microsoft Agent Framework also integrates with Azure services through `AzureAIProjectAgentProvider` and Azure identity, letting you call Azure services directly from your agent tools.
 
-பதில் ஆம், நீங்கள் Azure AI Agent Service உடன் உங்கள் Azure ecosystem கருவிகளை நேரடியாக ஒருங்கிணைக்க முடியும், ஏனெனில் இது மற்ற Azure சேவைகளுடன் எளிதாக வேலை செய்ய உருவாக்கப்பட்டுள்ளது. உதாரணமாக Bing, Azure AI Search, மற்றும் Azure Functions ஐ ஒருங்கிணைக்கலாம். Azure AI Foundry உடன் ஆழமான ஒருங்கிணைப்பு உள்ளது.
+## மாதிரி குறியீடுகள்
 
-AutoGen மற்றும் Semantic Kernel க்கான, Azure சேவைகளை உங்கள் code இல் அழைக்க இது தேவைப்படலாம். மற்றொரு ஒருங்கிணைப்பு வழி Azure SDKs ஐ பயன்படுத்தி Azure சேவைகளுடன் உங்கள் ஏஜென்ட்களை தொடர்பு கொள்ளும். கூடுதலாக, Azure AI Agent Service ஐ AutoGen அல்லது Semantic Kernel இல் உருவாக்கப்பட்ட ஏஜென்ட்களுக்கு ஒருங்கிணைப்பாளராக பயன்படுத்தலாம், இது Azure ecosystem ஐ எளிதாக அணுக அனுமதிக்கும்.
+- Python: [ஏஜெண்ட் ஃப்ரேம்வொர்க்](./code_samples/02-python-agent-framework.ipynb)
+- .NET: [ஏஜெண்ட் ஃப்ரேம்வொர்க்](./code_samples/02-dotnet-agent-framework.md)
 
-## உதாரண குறியீடுகள்
+## AI ஏஜென்ட் ஃப்ரேம்வொர்க்கள் பற்றிப் பற்றி இன்னும் கேள்விகள் உள்ளதா?
 
-- Python: [Agent Framework](./code_samples/02-python-agent-framework.ipynb)
-- .NET: [Agent Framework](./code_samples/02-dotnet-agent-framework.md)
+மற்ற பயில்பவர்களுடன் சந்திய, அலுவலக நேரங்களில் கலந்துகொண்டு உங்கள் AI ஏஜெண்ட் கேள்விகளுக்கு பதில்கள் பெற [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) இல் சேருங்கள்.
 
-## AI Agent Frameworks பற்றி மேலும் கேள்விகள் உள்ளதா?
+## ஆதாரங்கள்
 
-[Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) இல் சேர்ந்து மற்ற பயிற்சியாளர்களை சந்திக்கவும், office hours இல் பங்கேற்கவும், மற்றும் உங்கள் AI Agents கேள்விகளுக்கு பதில் பெறவும்.
-
-## குறிப்புகள்
-
-- <a href="https://techcommunity.microsoft.com/blog/azure-ai-services-blog/introducing-azure-ai-agent-service/4298357" target="_blank">Azure Agent Service</a>
-- <a href="https://devblogs.microsoft.com/semantic-kernel/microsofts-agentic-ai-frameworks-autogen-and-semantic-kernel/" target="_blank">Semantic Kernel and AutoGen</a>
-- <a href="https://learn.microsoft.com/semantic-kernel/frameworks/agent/?pivots=programming-language-python" target="_blank">Semantic Kernel Python Agent Framework</a>
-- <a href="https://learn.microsoft.com/semantic-kernel/frameworks/agent/?pivots=programming-language-csharp" target="_blank">Semantic Kernel .Net Agent Framework</a>
-- <a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent service</a>
-- <a href="https://techcommunity.microsoft.com/blog/educatordeveloperblog/using-azure-ai-agent-service-with-autogen--semantic-kernel-to-build-a-multi-agen/4363121" target="_blank">Using Azure AI Agent Service with AutoGen / Semantic Kernel to build a multi-agent's solution</a>
+- <a href="https://techcommunity.microsoft.com/blog/azure-ai-services-blog/introducing-azure-ai-agent-service/4298357" target="_blank">Azure ஏஜென்ட் சேவை</a>
+- <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/responses" target="_blank">Microsoft Agent Framework - Azure OpenAI பதில்கள்</a>
+- <a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI ஏஜென்ட் சேவை</a>
 
 ## முந்தைய பாடம்
 
-[AI Agents மற்றும் Agent பயன்பாட்டு வழிகள் அறிமுகம்](../01-intro-to-ai-agents/README.md)
+[AI ஏஜென்ட்கள் மற்றும் ஏஜெண்ட் பயன்பாட்டு வழக்குகளுக்கான அறிமுகம்](../01-intro-to-ai-agents/README.md)
 
 ## அடுத்த பாடம்
 
-[Agentic Design Patterns புரிதல்](../03-agentic-design-patterns/README.md)
+[ஏஜென்டிக் வடிவமைப்பு மாதிரிகளைப் புரிந்துகொள்ளுதல்](../03-agentic-design-patterns/README.md)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**புறக்குறிப்பு**:  
-இந்த ஆவணம் AI மொழிபெயர்ப்பு சேவை [Co-op Translator](https://github.com/Azure/co-op-translator) பயன்படுத்தி மொழிபெயர்க்கப்பட்டுள்ளது. நாங்கள் துல்லியத்திற்காக முயற்சிக்கிறோம், ஆனால் தானியங்கி மொழிபெயர்ப்புகளில் பிழைகள் அல்லது தவறுகள் இருக்கக்கூடும் என்பதை கவனத்தில் கொள்ளவும். அதன் தாய்மொழியில் உள்ள மூல ஆவணம் அதிகாரப்பூர்வ ஆதாரமாக கருதப்பட வேண்டும். முக்கியமான தகவல்களுக்கு, தொழில்முறை மனித மொழிபெயர்ப்பு பரிந்துரைக்கப்படுகிறது. இந்த மொழிபெயர்ப்பைப் பயன்படுத்துவதால் ஏற்படும் எந்த தவறான புரிதல்கள் அல்லது தவறான விளக்கங்களுக்கு நாங்கள் பொறுப்பல்ல.
+மறுப்பு:
+இந்த ஆவணம் AI மொழிபெயர்ப்பு சேவையாகிய [Co-op Translator](https://github.com/Azure/co-op-translator) மூலம் மொழிபெயர்க்கப்பட்டுள்ளது. நாங்கள் துல்லியத்திற்காக முயற்சித்தாலும், தானியங்கி மொழிபெயர்ப்புகளில் பிழைகள் அல்லது தவறுகள் இருக்கக்கூடும் என்பதை தயவுசெய்து கவனிக்கவும். மூல ஆவணம் அதன் சொந்த மொழியில் அதிகாரப்பூர்வ ஆதாரமாக கருதப்பட வேண்டும். முக்கியமான தகவல்களுக்கு, தொழில்முறை மனித மொழிபெயர்ப்பை பரிந்துரைக்கிறோம். இந்த மொழிபெயர்ப்பைப் பயன்படுத்துவதனால் ஏற்படும் எந்தவொரு தவறான புரிதலுக்கும் அல்லது தவறான விளக்கத்திற்கும் நாங்கள் பொறுப்பேற்கமாட்டோம்.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

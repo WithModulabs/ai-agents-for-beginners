@@ -1,96 +1,93 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d7c3b7bd1b3528074d8b6a7c5ad33b6f",
-  "translation_date": "2025-11-18T18:04:09+00:00",
-  "source_file": "04-tool-use/README.md",
-  "language_code": "sw"
-}
--->
-[![Jinsi ya Kubuni Mawakala wa AI Wazuri](../../../translated_images/lesson-4-thumbnail.546162853cb3daffd64edd92014f274103f76360dfb39fc6e6ee399494da38fd.sw.png)](https://youtu.be/vieRiPRx-gI?si=cEZ8ApnT6Sus9rhn)
+[![Jinsi ya Kubuni Wakala Bora wa AI](../../../translated_images/sw/lesson-4-thumbnail.546162853cb3daff.webp)](https://youtu.be/vieRiPRx-gI?si=cEZ8ApnT6Sus9rhn)
 
-> _(Bofya picha hapo juu ili kutazama video ya somo hili)_
+> _(Bonyeza picha hapo juu kutazama video ya somo hili)_
 
-# Muundo wa Matumizi ya Zana
+# Mfano wa Ubunifu wa Matumizi ya Zana
 
-Zana ni za kuvutia kwa sababu zinawapa mawakala wa AI uwezo mpana zaidi. Badala ya wakala kuwa na seti ndogo ya vitendo anavyoweza kutekeleza, kwa kuongeza zana, wakala sasa anaweza kutekeleza vitendo mbalimbali. Katika sura hii, tutachunguza Muundo wa Matumizi ya Zana, ambao unaelezea jinsi mawakala wa AI wanaweza kutumia zana maalum kufanikisha malengo yao.
+Zana ni za kuvutia kwa sababu huruhusu mawakala wa AI kuwa na uwezo mpana zaidi. Badala ya wakala kuwa na seti ndogo ya vitendo anavyoweza kufanya, kwa kuongeza zana, wakala sasa anaweza kufanya vitendo vingi. Katika sura hii, tutaangalia Mfano wa Ubunifu wa Matumizi ya Zana, unaoelezea jinsi mawakala wa AI wanavyoweza kutumia zana maalum kufikia malengo yao.
 
 ## Utangulizi
 
 Katika somo hili, tunatafuta kujibu maswali yafuatayo:
 
-- Muundo wa matumizi ya zana ni nini?
-- Ni hali gani za matumizi ambapo unaweza kutumika?
-- Ni vipengele/vijengo gani vinavyohitajika kutekeleza muundo huu?
-- Ni mambo gani maalum ya kuzingatia wakati wa kutumia Muundo wa Matumizi ya Zana kujenga mawakala wa AI wanaoaminika?
+- Nini maana ya mfano wa ubunifu wa matumizi ya zana?
+- Ni matumizi gani yanayoweza kutumika?
+- Ni vipengele/miundo gani vinavyohitajika kutekeleza mfano wa ubunifu?
+- Ni mambo gani maalum yanayozingatiwa wakati wa kutumia Mfano wa Ubunifu wa Matumizi ya Zana kuunda mawakala wa AI wa kuaminika?
 
 ## Malengo ya Kujifunza
 
-Baada ya kukamilisha somo hili, utaweza:
+Baada ya kumaliza somo hili, utaweza:
 
-- Kufafanua Muundo wa Matumizi ya Zana na madhumuni yake.
-- Kutambua hali za matumizi ambapo Muundo wa Matumizi ya Zana unafaa.
-- Kuelewa vipengele muhimu vinavyohitajika kutekeleza muundo huu.
-- Kutambua mambo ya kuzingatia ili kuhakikisha uaminifu wa mawakala wa AI wanaotumia muundo huu.
+- Kutoa ufafanuzi wa Mfano wa Ubunifu wa Matumizi ya Zana na kusudi lake.
+- Kutambua matumizi ambapo Mfano wa Ubunifu wa Matumizi ya Zana unaweza kutumika.
+- Kuelewa vipengele muhimu vinavyohitajika kutekeleza mfano wa ubunifu.
+- Kutambua mambo yanayozingatiwa kuhakikisha kuaminika kwa mawakala wa AI wanaotumia mfano huu wa ubunifu.
 
-## Muundo wa Matumizi ya Zana ni nini?
+## Nini maana ya Mfano wa Ubunifu wa Matumizi ya Zana?
 
-**Muundo wa Matumizi ya Zana** unalenga kuwapa LLMs uwezo wa kuingiliana na zana za nje ili kufanikisha malengo maalum. Zana ni msimbo unaoweza kutekelezwa na wakala ili kutekeleza vitendo. Zana inaweza kuwa kazi rahisi kama kikokotoo, au ombi la API kwa huduma ya mtu wa tatu kama kutafuta bei ya hisa au utabiri wa hali ya hewa. Katika muktadha wa mawakala wa AI, zana zimeundwa kutekelezwa na mawakala kwa kujibu **miito ya kazi inayotokana na modeli**.
+**Mfano wa Ubunifu wa Matumizi ya Zana** unalenga kutoa uwezo kwa LLMs kuingiliana na zana za nje kufanikisha malengo maalum. Zana ni msimbo unaoweza kutekelezwa na wakala kufanya vitendo. Zana inaweza kuwa kazi rahisi kama kalkuleta, au simu ya API kwa huduma ya mtu wa tatu kama kutafuta bei za hisa au taarifa za hali ya hewa. Katika muktadha wa mawakala wa AI, zana zimeundwa kutekelezwa na mawakala kama majibu kwa **miito ya kazi inayozalishwa na mfano**.
 
-## Ni hali gani za matumizi ambapo unaweza kutumika?
+## Ni matumizi gani yanayoweza kutumika?
 
-Mawakala wa AI wanaweza kutumia zana kukamilisha kazi ngumu, kupata taarifa, au kufanya maamuzi. Muundo wa matumizi ya zana mara nyingi hutumika katika hali zinazohitaji mwingiliano wa nguvu na mifumo ya nje, kama vile hifadhidata, huduma za wavuti, au wakalimani wa msimbo. Uwezo huu ni muhimu kwa hali mbalimbali za matumizi ikiwa ni pamoja na:
+Mawakala wa AI wanaweza kutumia zana kukamilisha kazi ngumu, kupata taarifa, au kufanya maamuzi. Mfano wa matumizi ya zana mara nyingi hutumika katika hali zinazohitaji mwingiliano wa moja kwa moja na mifumo ya nje, kama hifadhidata, huduma za wavuti, au tafsiri za msimbo. Uwezo huu ni muhimu kwa matumizi tofauti ikiwemo:
 
-- **Upatikanaji wa Taarifa kwa Njia ya Nguvu:** Mawakala wanaweza kuuliza API za nje au hifadhidata kupata data ya kisasa (mfano, kuuliza hifadhidata ya SQLite kwa uchambuzi wa data, kupata bei za hisa au taarifa za hali ya hewa).
-- **Utekelezaji na Tafsiri ya Msimbo:** Mawakala wanaweza kutekeleza msimbo au maandiko kutatua matatizo ya kihisabati, kuunda ripoti, au kufanya simulizi.
-- **Uendeshaji wa Kazi za Kiotomatiki:** Kuendesha kazi za kurudia au za hatua nyingi kwa kuunganisha zana kama ratiba za kazi, huduma za barua pepe, au njia za data.
-- **Huduma kwa Wateja:** Mawakala wanaweza kuingiliana na mifumo ya CRM, majukwaa ya tiketi, au hifadhidata za maarifa kutatua maswali ya watumiaji.
-- **Uundaji na Uhariri wa Maudhui:** Mawakala wanaweza kutumia zana kama wakaguzi wa sarufi, muhtasari wa maandishi, au tathmini za usalama wa maudhui kusaidia kazi za uundaji wa maudhui.
+- **Kupata Taarifa kwa Muda Halisi:** Mawakala wanaweza kuuliza API za nje au hifadhidata kupata data mpya (mfano, kuuliza hifadhidata ya SQLite kwa uchambuzi wa data, kupata bei za hisa au taarifa ya hali ya hewa).
+- **Utekelezaji na Tafsiri ya Msimbo:** Mawakala wanaweza kutekeleza msimbo au vitendo kutatua matatizo ya kihisabati, kuunda ripoti, au kufanya majaribio ya maonyesho.
+- **Umezaji wa Mzunguko wa Kazi:** Kuendesha moja kwa moja mizunguko ya kazi inayojirudia au yenye hatua nyingi kwa kuingiza zana kama mpangaji wa kazi, huduma za barua pepe, au mabomba ya data.
+- **Msaada kwa Wateja:** Mawakala wanaweza kuingiliana na mifumo ya CRM, majukwaa ya tiketi, au misingi ya maarifa kutatua maswali ya watumiaji.
+- **Uundaji na Uhariri wa Maudhui:** Mawakala wanaweza kutumia zana kama wachunguzi wa sarufi, muhtasari wa maandishi, au wakaguzi wa usalama wa maudhui kusaidia katika kazi za uundaji wa maudhui.
 
-## Ni vipengele/vijengo gani vinavyohitajika kutekeleza muundo wa matumizi ya zana?
+## Ni vipengele/miundo gani vinavyohitajika kutekeleza mfano wa matumizi ya zana?
 
-Vipengele hivi vinamwezesha wakala wa AI kutekeleza kazi mbalimbali. Hebu tuangalie vipengele muhimu vinavyohitajika kutekeleza Muundo wa Matumizi ya Zana:
+Miundo hii ya msingi huruhusu wakala wa AI kutekeleza majukumu mengi. Tazama vipengele muhimu vinavyohitajika kutekeleza Mfano wa Ubunifu wa Matumizi ya Zana:
 
-- **Mifumo ya Kazi/Zana:** Maelezo ya kina ya zana zinazopatikana, ikiwa ni pamoja na jina la kazi, madhumuni, vigezo vinavyohitajika, na matokeo yanayotarajiwa. Mifumo hii inamwezesha LLM kuelewa zana zipi zinapatikana na jinsi ya kuunda maombi sahihi.
-- **Mantiki ya Utekelezaji wa Kazi:** Inasimamia jinsi na wakati zana zinavyotumiwa kulingana na nia ya mtumiaji na muktadha wa mazungumzo. Hii inaweza kujumuisha moduli za kupanga, mifumo ya kuelekeza, au mtiririko wa masharti unaoamua matumizi ya zana kwa njia ya nguvu.
-- **Mfumo wa Kushughulikia Ujumbe:** Vipengele vinavyosimamia mtiririko wa mazungumzo kati ya maingizo ya mtumiaji, majibu ya LLM, miito ya zana, na matokeo ya zana.
-- **Muundo wa Kuunganisha Zana:** Miundombinu inayounganisha wakala na zana mbalimbali, iwe ni kazi rahisi au huduma za nje zenye ugumu.
-- **Ushughulikiaji wa Makosa na Uthibitishaji:** Mifumo ya kushughulikia kushindwa kwa utekelezaji wa zana, kuthibitisha vigezo, na kusimamia majibu yasiyotarajiwa.
-- **Usimamizi wa Hali:** Hufuatilia muktadha wa mazungumzo, mwingiliano wa zana za awali, na data ya kudumu ili kuhakikisha uthabiti katika mwingiliano wa hatua nyingi.
+- **Mifumo ya Kazi/Zana:** Maelezo ya kina ya zana zinazopatikana, ikijumuisha jina la kazi, kusudi, vigezo vinavyohitajika, na matokeo yanayotarajiwa. Mifumo hii huruhusu LLM kuelewa zana zipi zinapatikana na jinsi ya kuunda maombi sahihi.
 
-Sasa, hebu tuangalie kwa undani zaidi kuhusu Miito ya Kazi/Zana.
+- **Mantiki ya Utekelezaji wa Kazi:** Inasimamia vipi na lini zana zinaitwa kulingana na nia ya mtumiaji na muktadha wa mazungumzo. Hii inaweza kujumuisha moduli za mipango, mbinu za kuelekeza, au mtiririko wa masharti unaoamua matumizi ya zana kwa kasi.
 
-### Miito ya Kazi/Zana
+- **Mfumo wa Usimamizi wa Meseji:** Vipengele vinavyosimamia mtiririko wa mazungumzo kati ya ingizo za mtumiaji, majibu ya LLM, miito ya zana, na matokeo ya zana.
 
-Miito ya kazi ni njia kuu tunayotumia kuwezesha LLMs kuingiliana na zana. Mara nyingi utaona 'Kazi' na 'Zana' zikitumika kwa kubadilishana kwa sababu 'kazi' (sehemu za msimbo unaoweza kutumika tena) ni 'zana' ambazo mawakala hutumia kutekeleza kazi. Ili msimbo wa kazi utekelezwe, LLM lazima linganishe ombi la mtumiaji na maelezo ya kazi. Ili kufanya hivyo, mfumo unaoelezea maelezo ya kazi zote zinazopatikana hutumwa kwa LLM. LLM kisha huchagua kazi inayofaa zaidi kwa kazi hiyo na kurudisha jina lake na hoja zake. Kazi iliyochaguliwa inatekelezwa, majibu yake yanarudishwa kwa LLM, ambayo hutumia taarifa hiyo kujibu ombi la mtumiaji.
+- **Mfumo wa Kuunganisha Zana:** Miundombinu inayounganisha wakala na zana mbalimbali, iwe ni kazi rahisi au huduma za nje zenye ugumu.
 
-Kwa watengenezaji kutekeleza miito ya kazi kwa mawakala, utahitaji:
+- **Usimamizi wa Makosa na Uhakiki:** Mifumo ya kushughulikia kushindwa kwa utekelezaji wa zana, kuthibitisha vigezo, na kusimamia majibu yasiyotarajiwa.
 
-1. Modeli ya LLM inayounga mkono miito ya kazi
-2. Mfumo unaoelezea maelezo ya kazi
-3. Msimbo wa kila kazi iliyoelezewa
+- **Usimamizi wa Hali:** Kufuata muktadha wa mazungumzo, mwingiliano wa awali na zana, na data ya kudumu kuhakikisha uthabiti katika mazungumzo yenye mzunguko mwingi.
 
-Hebu tutumie mfano wa kupata muda wa sasa katika jiji fulani kuonyesha:
+Sasa, tutaangalia kwa undani zaidi Kuitwa kwa Kazi/Zana.
+ 
+### Kuitwa kwa Kazi/Zana
 
-1. **Anzisha LLM inayounga mkono miito ya kazi:**
+Kuitwa kwa kazi ni njia kuu tunayowezesha Mifano Mikubwa ya Lugha (LLMs) kuingiliana na zana. Mara nyingi utaona 'Kazi' na 'Zana' zikitumika kwa kubadilishana kwa sababu 'kazi' (vipande vya msimbo vinavyoweza kutumika tena) ni 'zana' mawakala hutumia kutekeleza majukumu. Ili msimbo wa kazi uitwe, LLM lazima ilinganishe ombi la mtumiaji dhidi ya maelezo ya kazi. Kufanya hivyo, muundo unaoelezea kazi zote zilizopo hutumwa kwa LLM. LLM kisha huchagua kazi inayofaa zaidi kwa jukumu na kurudisha jina na hoja zake. Kazi iliyochaguliwa huitwa, jibu lake hutumwa tena kwa LLM, ambayo hutumia habari hiyo kujibu ombi la mtumiaji.
 
-    Sio kila modeli inaunga mkono miito ya kazi, kwa hivyo ni muhimu kuhakikisha kwamba LLM unayotumia inafanya hivyo. <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/function-calling" target="_blank">Azure OpenAI</a> inaunga mkono miito ya kazi. Tunaweza kuanza kwa kuanzisha mteja wa Azure OpenAI.
+Kwa watengenezaji kutekeleza kuitwa kwa kazi kwa mawakala, utahitaji:
+
+1. Mfano wa LLM unaounga mkono kuitwa kwa kazi
+2. Muundo wenye maelezo ya kazi
+3. Msimbo wa kila kazi iliyoelezwa
+
+Tuchukulie mfano wa kupata wakati wa sasa katika jiji kufafanua:
+
+1. **anzisha LLM inayounga mkono kuitwa kwa kazi:**
+
+    Sio modeli zote zinaounga mkono kuitwa kwa kazi, hivyo ni muhimu kuangalia kuwa LLM unayotumia ina uwezo huo. <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/function-calling" target="_blank">Azure OpenAI</a> inaunga mkono kuitwa kwa kazi. Tunaweza kuanza kwa kuanzisha mteja wa Azure OpenAI.
 
     ```python
-    # Initialize the Azure OpenAI client
+    # Anzisha mteja wa Azure OpenAI
     client = AzureOpenAI(
-        azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT"), 
+        azure_endpoint = os.getenv("AZURE_AI_PROJECT_ENDPOINT"), 
         api_key=os.getenv("AZURE_OPENAI_API_KEY"),  
         api_version="2024-05-01-preview"
     )
     ```
 
-1. **Unda Mfumo wa Kazi:**
+1. **Tengeneza Muundo wa Kazi:**
 
-    Kisha tutafafanua mfumo wa JSON unaojumuisha jina la kazi, maelezo ya kazi hiyo, na majina na maelezo ya vigezo vya kazi. Tutachukua mfumo huu na kuupitisha kwa mteja aliyeundwa awali, pamoja na ombi la mtumiaji la kutafuta muda huko San Francisco. Jambo muhimu la kuzingatia ni kwamba **mwito wa zana** ndio unarudishwa, **sio** jibu la mwisho la swali. Kama ilivyoelezwa awali, LLM inarudisha jina la kazi iliyochaguliwa kwa kazi hiyo, na hoja zitakazopitishwa kwake.
+    Ifuatayo, tutaelezea muundo wa JSON unaoelezea jina la kazi, maelezo ya kazi inayofanywa, na majina na maelezo ya vigezo vya kazi.
+    Kisha tutachukua muundo huu na kuutumia kwa mteja aliyezalishwa awali, pamoja na ombi la mtumiaji kupata wakati huko San Francisco. Kile kinachopaswa kuzingatiwa ni kwamba **mwito wa zana** ndiyo yanayorejeshwa, **si** jibu kamili la swali. Kama ilivyosemwa awali, LLM hurudisha jina la kazi iliyoichagua kwa jukumu na hoja zitakazotumiwa.
 
     ```python
-    # Function description for the model to read
+    # Maelezo ya kazi kwa mfano kusoma
     tools = [
         {
             "type": "function",
@@ -114,10 +111,10 @@ Hebu tutumie mfano wa kupata muda wa sasa katika jiji fulani kuonyesha:
    
     ```python
   
-    # Initial user message
+    # Ujumbe wa mwanzo wa mtumiaji
     messages = [{"role": "user", "content": "What's the current time in San Francisco"}] 
   
-    # First API call: Ask the model to use the function
+    # Kauri ya kwanza ya API: Muulize modeli kutumia kazi
       response = client.chat.completions.create(
           model=deployment_name,
           messages=messages,
@@ -125,7 +122,7 @@ Hebu tutumie mfano wa kupata muda wa sasa katika jiji fulani kuonyesha:
           tool_choice="auto",
       )
   
-      # Process the model's response
+      # Chakata jibu la modeli
       response_message = response.choices[0].message
       messages.append(response_message)
   
@@ -140,9 +137,10 @@ Hebu tutumie mfano wa kupata muda wa sasa katika jiji fulani kuonyesha:
     ChatCompletionMessage(content=None, role='assistant', function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_pOsKdUlqvdyttYB67MOj434b', function=Function(arguments='{"location":"San Francisco"}', name='get_current_time'), type='function')])
     ```
   
-1. **Msimbo wa kazi unaohitajika kutekeleza kazi:**
+1. **Msimbo wa kazi unahitajika kutekeleza jukumu:**
 
-    Sasa kwa kuwa LLM imechagua kazi gani inahitaji kutekelezwa, msimbo unaotekeleza kazi hiyo unahitaji kuandikwa na kutekelezwa. Tunaweza kutekeleza msimbo wa kupata muda wa sasa kwa Python. Pia tutahitaji kuandika msimbo wa kutoa jina na hoja kutoka kwa response_message ili kupata matokeo ya mwisho.
+    Sasa LLM imeshachagua ni kazi gani inapaswa kutekelezwa, msimbo unaotekeleza jukumu lazima uandikwe na utekelezwe.
+    Tunaweza kutekeleza msimbo wa kupata wakati wa sasa kwa Python. Pia tutahitaji kuandika msimbo wa kutoa jina na hoja kutoka kwa response_message kupata matokeo ya mwisho.
 
     ```python
       def get_current_time(location):
@@ -164,7 +162,7 @@ Hebu tutumie mfano wa kupata muda wa sasa katika jiji fulani kuonyesha:
     ```
 
      ```python
-     # Handle function calls
+     # Shughulikia simu za kazi
       if response_message.tool_calls:
           for tool_call in response_message.tool_calls:
               if tool_call.function.name == "get_current_time":
@@ -184,7 +182,7 @@ Hebu tutumie mfano wa kupata muda wa sasa katika jiji fulani kuonyesha:
       else:
           print("No tool calls were made by the model.")  
   
-      # Second API call: Get the final response from the model
+      # Simu ya pili ya API: Pata jibu la mwisho kutoka kwa mfano
       final_response = client.chat.completions.create(
           model=deployment_name,
           messages=messages,
@@ -199,88 +197,79 @@ Hebu tutumie mfano wa kupata muda wa sasa katika jiji fulani kuonyesha:
       The current time in San Francisco is 09:24 AM.
      ```
 
-Miito ya Kazi iko katikati ya muundo wa matumizi ya zana kwa mawakala, hata hivyo kuitekeleza kutoka mwanzo inaweza kuwa changamoto wakati mwingine. Kama tulivyojifunza katika [Somo la 2](../../../02-explore-agentic-frameworks) mifumo ya mawakala hutupatia vijengo vilivyotengenezwa tayari kutekeleza matumizi ya zana.
+Kuitwa kwa Kazi kunatilia mkazo maumbile ya matumizi ya zana kwa wakala wengi, ingawa kutekeleza kutoka mwanzo kunaweza kuwa changamoto mara nyingine.
+Kama tulivyojifunza katika [Somo la 2](../../../02-explore-agentic-frameworks) mifumo ya agentic hutupatia miundo ya tayari kutekeleza matumizi ya zana.
+ 
+## Mifano ya Matumizi ya Zana kwa Mifumo Agentic
 
-## Mifano ya Matumizi ya Zana na Mifumo ya Mawakala
+Hapa kuna mifano ya jinsi unavyoweza kutekeleza Mfano wa Ubunifu wa Matumizi ya Zana ukitumia mifumo tofauti ya agentic:
 
-Hapa kuna mifano ya jinsi unavyoweza kutekeleza Muundo wa Matumizi ya Zana kwa kutumia mifumo tofauti ya mawakala:
+### Mfumo wa Microsoft Agent
 
-### Semantic Kernel
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Microsoft Agent Framework</a> ni mfumo wa AI wazi wa kuunda mawakala wa AI. Unarahisisha mchakato wa kuitwa kwa kazi kwa kuruhusu udeuzi wa zana kama kazi za Python zenye alama ya `@tool`. Mfumo husimamia mawasiliano ya kuelea kati ya mfano na msimbo wako. Pia hutoa upatikanaji wa zana zilizoandaliwa kabla kama Tafutaji la Faili na Tafsiri ya Msimbo kupitia `AzureAIProjectAgentProvider`.
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Semantic Kernel</a> ni mfumo wa AI wa chanzo huria kwa watengenezaji wa .NET, Python, na Java wanaofanya kazi na LLMs. Unarahisisha mchakato wa kutumia miito ya kazi kwa kuelezea moja kwa moja kazi zako na vigezo vyake kwa modeli kupitia mchakato unaoitwa <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">kuweka katika muundo wa serial</a>. Pia hushughulikia mawasiliano ya kurudi na kurudi kati ya modeli na msimbo wako. Faida nyingine ya kutumia mfumo wa mawakala kama Semantic Kernel ni kwamba inakuruhusu kufikia zana zilizotengenezwa tayari kama <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py" target="_blank">Utafutaji wa Faili</a> na <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Mkalimani wa Msimbo</a>.
+Mchoro ufuatao unaonyesha mchakato wa kuitwa kwa kazi kwa Mfumo wa Microsoft Agent:
 
-Mchoro ufuatao unaonyesha mchakato wa miito ya kazi na Semantic Kernel:
+![kuitwa kwa kazi](../../../translated_images/sw/functioncalling-diagram.a84006fc287f6014.webp)
 
-![miito ya kazi](../../../translated_images/functioncalling-diagram.a84006fc287f60140cc0a484ff399acd25f69553ea05186981ac4d5155f9c2f6.sw.png)
-
-Katika Semantic Kernel kazi/zana zinaitwa <a href="https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python" target="_blank">Plugins</a>. Tunaweza kubadilisha kazi ya `get_current_time` tuliyoiona awali kuwa plugin kwa kuibadilisha kuwa darasa lenye kazi ndani yake. Tunaweza pia kuingiza kipambo cha `kernel_function`, ambacho kinachukua maelezo ya kazi. Unapounda kernel na GetCurrentTimePlugin, kernel itaweka moja kwa moja kazi na vigezo vyake katika muundo wa serial, ikitengeneza mfumo wa kutuma kwa LLM katika mchakato.
+Katika Mfumo wa Microsoft Agent, zana huwekwa kama kazi zilizo na alama. Tunaweza kubadilisha kazi `get_current_time` tuliyoiona awali kuwa zana kwa kutumia alama ya `@tool`. Mfumo utaandaa kwa moja serialization ya kazi na vigezo vyake, ukitengeneza muundo wa kutumwa kwa LLM.
 
 ```python
-from semantic_kernel.functions import kernel_function
+from agent_framework import tool
+from agent_framework.azure import AzureAIProjectAgentProvider
+from azure.identity import AzureCliCredential
 
-class GetCurrentTimePlugin:
-    async def __init__(self, location):
-        self.location = location
+@tool
+def get_current_time(location: str) -> str:
+    """Get the current time for a given location"""
+    ...
 
-    @kernel_function(
-        description="Get the current time for a given location"
-    )
-    def get_current_time(location: str = ""):
-        ...
+# Unda mteja
+provider = AzureAIProjectAgentProvider(credential=AzureCliCredential())
 
-```
-
-```python 
-from semantic_kernel import Kernel
-
-# Create the kernel
-kernel = Kernel()
-
-# Create the plugin
-get_current_time_plugin = GetCurrentTimePlugin(location)
-
-# Add the plugin to the kernel
-kernel.add_plugin(get_current_time_plugin)
+# Unda wakala na kuendesha kwa kutumia zana
+agent = await provider.create_agent(name="TimeAgent", instructions="Use available tools to answer questions.", tools=get_current_time)
+response = await agent.run("What time is it?")
 ```
   
-### Huduma ya Mawakala ya AI ya Azure
+### Huduma ya Azure AI Agent
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Huduma ya Mawakala ya AI ya Azure</a> ni mfumo mpya wa mawakala ulioundwa kuwawezesha watengenezaji kujenga, kupeleka, na kupanua mawakala wa AI wa hali ya juu na wa kupanuka bila hitaji la kusimamia rasilimali za msingi za kompyuta na hifadhi. Ni muhimu hasa kwa matumizi ya biashara kwa kuwa ni huduma inayosimamiwa kikamilifu yenye usalama wa daraja la biashara.
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent Service</a> ni mfumo mpya wa agentic ulioundwa kusaidia watengenezaji kujenga, kutekeleza, na kupanua kwa usalama mawakala bora wa AI bila hitaji la kusimamia rasilimali za kompyuta na hifadhi. Ni muhimu hasa kwa matumizi ya biashara kwa kuwa ni huduma inayosimamiwa kikamilifu yenye usalama wa ngazi ya biashara.
 
-Ikilinganishwa na kuendeleza moja kwa moja na API ya LLM, Huduma ya Mawakala ya AI ya Azure inatoa faida kadhaa, ikiwa ni pamoja na:
+Ukilinganisha na kuendeleza moja kwa moja na API ya LLM, Azure AI Agent Service inatoa faida kadhaa, ikiwemo:
 
-- Miito ya zana ya kiotomatiki – hakuna haja ya kuchambua mwito wa zana, kutekeleza zana, na kushughulikia majibu; yote haya sasa yanafanywa upande wa seva.
-- Usimamizi salama wa data – badala ya kusimamia hali yako ya mazungumzo, unaweza kutegemea nyuzi kuhifadhi taarifa zote unazohitaji.
-- Zana zilizotengenezwa tayari – Zana unazoweza kutumia kuingiliana na vyanzo vyako vya data, kama Bing, Azure AI Search, na Azure Functions.
+- Kuitwa kiotomatiki kwa zana – hakuna haja ya kuchambua mwito wa zana, kuitisha zana, na kusimamia majibu; yote hufanyika upande wa seva sasa
+- Usimamizi salama wa data – badala ya kusimamia hali ya mazungumzo yako, unaweza kutegemea utiririshaji kuhifadhi taarifa zote unazohitaji
+- Zana za moja kwa moja – Zana zinazoweza kutumika kuingiliana na vyanzo vya data vyako, kama Bing, Azure AI Search, na Azure Functions.
 
-Zana zinazopatikana katika Huduma ya Mawakala ya AI ya Azure zinaweza kugawanywa katika makundi mawili:
+Zana zinazopatikana katika Azure AI Agent Service zinaweza kugawanywa katika makundi mawili:
 
 1. Zana za Maarifa:
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview" target="_blank">Kutafuta na Bing Search</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/file-search?tabs=python&pivots=overview" target="_blank">Utafutaji wa Faili</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview" target="_blank">Kuimarisha na Bing Search</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/file-search?tabs=python&pivots=overview" target="_blank">Tafuta Faili</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-ai-search?tabs=azurecli%2Cpython&pivots=overview-azure-ai-search" target="_blank">Azure AI Search</a>
 
 2. Zana za Vitendo:
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview" target="_blank">Miito ya Kazi</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview" target="_blank">Mkalimani wa Msimbo</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview" target="_blank">Kuitwa kwa Kazi</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview" target="_blank">Tafsiri Msimbo</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/openapi-spec?tabs=python&pivots=overview" target="_blank">Zana zilizoainishwa na OpenAPI</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-functions?pivots=overview" target="_blank">Azure Functions</a>
 
-Huduma ya Mawakala inatuwezesha kutumia zana hizi pamoja kama `toolset`. Pia hutumia `threads` ambazo hufuatilia historia ya ujumbe kutoka kwa mazungumzo fulani.
+Huduma ya Agent inaruhusu kutumia zana hizi pamoja kama `toolset`. Pia inatumia `threads` zinazofuatilia historia ya ujumbe kutoka kwa mazungumzo fulani.
 
-Fikiria wewe ni wakala wa mauzo katika kampuni inayoitwa Contoso. Unataka kuunda wakala wa mazungumzo ambaye anaweza kujibu maswali kuhusu data yako ya mauzo.
+Fikiria wewe ni wakala wa mauzo katika kampuni inayoitwa Contoso. Unataka kuendeleza wakala wa mazungumzo unaoweza kujibu maswali kuhusu data zako za mauzo.
 
-Picha ifuatayo inaonyesha jinsi unavyoweza kutumia Huduma ya Mawakala ya AI ya Azure kuchambua data yako ya mauzo:
+Picha ifuatayo inaonyesha jinsi unavyoweza kutumia Azure AI Agent Service kuchambua data zako za mauzo:
 
-![Huduma ya Mawakala Katika Matendo](../../../translated_images/agent-service-in-action.34fb465c9a84659edd3003f8cb62d6b366b310a09b37c44e32535021fbb5c93f.sw.jpg)
+![Huduma ya Agentik Katika Vitendo](../../../translated_images/sw/agent-service-in-action.34fb465c9a84659e.webp)
 
-Ili kutumia zana yoyote na huduma hii tunaweza kuunda mteja na kufafanua zana au seti ya zana. Ili kutekeleza hili kwa vitendo tunaweza kutumia msimbo wa Python ufuatao. LLM itaweza kuangalia seti ya zana na kuamua kutumia kazi iliyoundwa na mtumiaji, `fetch_sales_data_using_sqlite_query`, au Mkalimani wa Msimbo uliotengenezwa tayari kulingana na ombi la mtumiaji.
+Ili kutumia zana zozote na huduma hii tunaweza kuunda mteja na kuainisha zana au seti ya zana. Kutekeleza hivi kwa vitendo tunaweza kutumia msimbo wa Python ufuatao. LLM itakuwa na uwezo wa kuona toolset na kuamua kama itatumia kazi ya mtumiaji `fetch_sales_data_using_sqlite_query`, au Tafsiri ya Msimbo iliyoandaliwa kabla kulingana na ombi la mtumiaji.
 
 ```python 
 import os
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
-from fetch_sales_data_functions import fetch_sales_data_using_sqlite_query # fetch_sales_data_using_sqlite_query function which can be found in a fetch_sales_data_functions.py file.
+from fetch_sales_data_functions import fetch_sales_data_using_sqlite_query # kifunction cha fetch_sales_data_using_sqlite_query kinachopatikana katika faili la fetch_sales_data_functions.py.
 from azure.ai.projects.models import ToolSet, FunctionTool, CodeInterpreterTool
 
 project_client = AIProjectClient.from_connection_string(
@@ -288,14 +277,15 @@ project_client = AIProjectClient.from_connection_string(
     conn_str=os.environ["PROJECT_CONNECTION_STRING"],
 )
 
-# Initialize function calling agent with the fetch_sales_data_using_sqlite_query function and adding it to the toolset
-fetch_data_function = FunctionTool(fetch_sales_data_using_sqlite_query)
+# Anzisha seti ya zana
 toolset = ToolSet()
+
+# Anzisha wakala wa kuita function na function ya fetch_sales_data_using_sqlite_query na kuiongeza kwenye seti ya zana
+fetch_data_function = FunctionTool(fetch_sales_data_using_sqlite_query)
 toolset.add(fetch_data_function)
 
-# Initialize Code Interpreter tool and adding it to the toolset. 
+# Anzisha zana ya Kielimishaji cha Msimbo na kuiongeza kwenye seti ya zana.
 code_interpreter = code_interpreter = CodeInterpreterTool()
-toolset = ToolSet()
 toolset.add(code_interpreter)
 
 agent = project_client.agents.create_agent(
@@ -304,39 +294,37 @@ agent = project_client.agents.create_agent(
 )
 ```
 
-## Ni mambo gani maalum ya kuzingatia wakati wa kutumia Muundo wa Matumizi ya Zana kujenga mawakala wa AI wanaoaminika?
+## Ni mambo gani maalum yanayozingatiwa wakati wa kutumia Mfano wa Ubunifu wa Matumizi ya Zana kuunda mawakala wa AI wa kuaminika?
 
-Shida ya kawaida na SQL inayotengenezwa kwa nguvu na LLMs ni usalama, hasa hatari ya sindano ya SQL au vitendo vya uharibifu, kama vile kufuta au kuharibu hifadhidata. Ingawa shida hizi ni halali, zinaweza kupunguzwa kwa ufanisi kwa kusanidi vibali vya ufikiaji wa hifadhidata ipasavyo. Kwa hifadhidata nyingi hii inahusisha kusanidi hifadhidata kama ya kusoma tu. Kwa huduma za hifadhidata kama PostgreSQL au Azure SQL, programu inapaswa kupewa jukumu la kusoma tu (SELECT).
-Kuendesha programu katika mazingira salama kunaboresha zaidi ulinzi. Katika hali za biashara, data kwa kawaida hutolewa na kubadilishwa kutoka mifumo ya uendeshaji hadi hifadhidata ya kusoma tu au ghala la data lenye mpangilio rahisi wa mtumiaji. Njia hii inahakikisha kuwa data ni salama, imeboreshwa kwa utendaji na upatikanaji, na kwamba programu ina ufikiaji wa kusoma tu uliozuiliwa.
+Shaka ya kawaida kuhusu SQL inayozalishwa kwa nguvu na LLM ni usalama, hasa hatari ya sindano ya SQL au vitendo vibaya kama kufuta au kuharibu hifadhidata. Ingawa shaka hizi ni halali, zinaweza kuzuilika kwa ufanisi kwa kusanidi vibali vizuri vya ufikiaji wa hifadhidata. Kwa hifadhidata nyingi inahusisha kusanidi hifadhidata kuwa ya kusoma tu. Kwa huduma za hifadhidata kama PostgreSQL au Azure SQL, programu inapaswa kupewa nafasi ya kusoma tu (SELECT).
 
-## Sampuli za Nambari
+Kukimbia programu katika mazingira salama kunaongeza kinga zaidi. Katika mazingira ya biashara, data kawaida hutolewa na kubadilishwa kutoka mifumo ya uendeshaji kwenda kwenye hifadhidata au ghala la data la kusoma tu lenye muundo wa kirafiki kwa mtumiaji. Njia hii huhakikisha data ni salama, imeboreshwa kwa utendaji na upatikanaji, na programu ina upatikanaji wa kusoma tu uliodhibitiwa.
+
+## Mifano ya Msimbo
 
 - Python: [Mfumo wa Wakala](./code_samples/04-python-agent-framework.ipynb)
 - .NET: [Mfumo wa Wakala](./code_samples/04-dotnet-agent-framework.md)
 
-## Una Maswali Zaidi Kuhusu Matumizi ya Mifumo ya Ubunifu wa Zana?
+## Je, una Maswali Zaidi kuhusu Mifano ya Ubunifu wa Matumizi ya Zana?
 
-Jiunge na [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) ili kukutana na wanafunzi wengine, kuhudhuria masaa ya ofisi, na kupata majibu ya maswali yako kuhusu Wakala wa AI.
+Jiunge na [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) kufikia wajumbe wengine, kuhudhuria masaa ya ofisi na kupata majibu ya maswali yako kuhusu Mawakala wa AI.
 
-## Rasilimali za Ziada
+## Rasilimali Zaidi
 
-- <a href="https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/" target="_blank">Warsha ya Huduma ya Wakala wa Azure AI</a>
-- <a href="https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop" target="_blank">Warsha ya Wakala Wengi wa Contoso Creative Writer</a>
-- <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">Mafunzo ya Kuita Kazi ya Semantic Kernel</a>
-- <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Kifasiri cha Nambari cha Semantic Kernel</a>
-- <a href="https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html" target="_blank">Zana za Autogen</a>
+- <a href="https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/" target="_blank">Warsha ya Huduma ya Mawakala wa Azure AI</a>
+- <a href="https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop" target="_blank">Warsha ya Mawakala Wengi wa Mwandishi wa Ubunifu wa Contoso</a>
+- <a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Muhtasari wa Mfumo wa Microsoft Agent</a>
 
-## Somo la Awali
+## Somo Lililopita
 
-[Kuelewa Mifumo ya Ubunifu wa Wakala](../03-agentic-design-patterns/README.md)
+[Kuelewa Mifano ya Ubunifu wa Agentic](../03-agentic-design-patterns/README.md)
 
 ## Somo Linalofuata
-
 [Agentic RAG](../05-agentic-rag/README.md)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+**Kidirisha cha Masuala (Disclaimer)**:  
+Nyaraka hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za moja kwa moja zinaweza kuwa na makosa au upungufu wa usahihi. Nyaraka ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu kutoka kwa binadamu inashauriwa. Hatubebei dhamana yoyote kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

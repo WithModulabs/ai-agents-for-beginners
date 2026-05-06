@@ -1,148 +1,152 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0ebf6b2290db55dbf2d10cc49655523b",
-  "translation_date": "2025-09-30T07:18:52+00:00",
-  "source_file": "05-agentic-rag/README.md",
-  "language_code": "fi"
-}
--->
-[![Agentic RAG](../../../translated_images/lesson-5-thumbnail.20ba9d0c0ae64fae06637eb2023395d437b0152c0463c2227ff456afe5f14644.fi.png)](https://youtu.be/WcjAARvdL7I?si=BCgwjwFb2yCkEhR9)
+[![Agentic RAG](../../../translated_images/fi/lesson-5-thumbnail.20ba9d0c0ae64fae.webp)](https://youtu.be/WcjAARvdL7I?si=BCgwjwFb2yCkEhR9)
 
-> _(Klikkaa yllä olevaa kuvaa nähdäksesi tämän oppitunnin videon)_
+> _(Napsauta yllä olevaa kuvaa nähdäksesi videon tästä oppitunnista)_
 
 # Agentic RAG
 
-Tämä oppitunti tarjoaa kattavan yleiskatsauksen Agentic Retrieval-Augmented Generation (Agentic RAG) -konseptista, joka on nouseva tekoälyn paradigma, jossa suuret kielimallit (LLM:t) suunnittelevat itsenäisesti seuraavat askeleensa samalla kun hakevat tietoa ulkoisista lähteistä. Toisin kuin staattiset haku-ja-lukeminen -mallit, Agentic RAG sisältää iteratiivisia kutsuja LLM:lle, joita vuorottelevat työkalujen tai funktioiden kutsut ja rakenteelliset tulokset. Järjestelmä arvioi tuloksia, tarkentaa kyselyitä, käyttää tarvittaessa lisätyökaluja ja jatkaa tätä sykliä, kunnes tyydyttävä ratkaisu on saavutettu.
+Tämä oppitunti tarjoaa kokonaisvaltaisen yleiskatsauksen Agentic Retrieval-Augmented Generationista (Agentic RAG), uudesta tekoälyparadigmasta, jossa suuret kielimallit (LLM) suunnittelevat itsenäisesti seuraavia askeleitaan samalla kun ne hakevat tietoa ulkoisista lähteistä. Toisin kuin staattiset hakemista ja sitten lukemista seuraavat mallit, Agentic RAG sisältää iteratiivisia kutsuja LLM:lle työkalu- tai funktiokutsujen välissä ja rakenteellisia tulosteita. Järjestelmä arvioi tulokset, tarkentaa kyselyjä, kutsuu tarvittaessa lisätyökaluja ja jatkaa tätä sykliä, kunnes tyydyttävä ratkaisu on saavutettu.
 
 ## Johdanto
 
-Tässä oppitunnissa käsitellään:
+Tämä oppitunti kattaa
 
-- **Ymmärrä Agentic RAG:** Tutustu tekoälyn nousevaan paradigmaan, jossa suuret kielimallit (LLM:t) suunnittelevat itsenäisesti seuraavat askeleensa samalla kun hakevat tietoa ulkoisista tietolähteistä.
-- **Omaksu iteratiivinen Maker-Checker-tyyli:** Ymmärrä iteratiivisten LLM-kutsujen sykli, jota vuorottelevat työkalujen tai funktioiden kutsut ja rakenteelliset tulokset, jotka on suunniteltu parantamaan tarkkuutta ja käsittelemään virheellisiä kyselyitä.
-- **Tutki käytännön sovelluksia:** Tunnista tilanteet, joissa Agentic RAG loistaa, kuten tarkkuuslähtöiset ympäristöt, monimutkaiset tietokantainteraktiot ja laajennetut työnkulut.
+- **Agentic RAG:n ymmärtäminen:** Opit tuntemaan tekoälyn uuden paradigman, jossa suuret kielimallit suunnittelevat itsenäisesti seuraavat askeleensa samalla kun ne hakevat tietoa ulkoisista tietolähteistä.
+- **Iteratiivisen Maker-Checker-tyylin hallinta:** Ymmärrät iteratiivisten LLM-kutsujen silmukan, johon on kytketty työkalu- tai funktiokutsuja ja rakenteellisia tulosteita, joiden tarkoituksena on parantaa oikeellisuutta ja käsitellä virheellisiä kyselyjä.
+- **Käytännön sovellusten tutkiminen:** Tunnistat tilanteet, joissa Agentic RAG loistaa, kuten oikeellisuuteen painottuvissa ympäristöissä, monimutkaisissa tietokantaintegraatioissa ja laajemmissa työnkuluissa.
 
 ## Oppimistavoitteet
 
-Oppitunnin jälkeen osaat/ymmärrät:
+Oppitunnin suoritettuasi osaat/ymmärrät:
 
-- **Ymmärrä Agentic RAG:** Tutustu tekoälyn nousevaan paradigmaan, jossa suuret kielimallit (LLM:t) suunnittelevat itsenäisesti seuraavat askeleensa samalla kun hakevat tietoa ulkoisista tietolähteistä.
-- **Iteratiivinen Maker-Checker-tyyli:** Omaksu iteratiivisten LLM-kutsujen sykli, jota vuorottelevat työkalujen tai funktioiden kutsut ja rakenteelliset tulokset, jotka on suunniteltu parantamaan tarkkuutta ja käsittelemään virheellisiä kyselyitä.
-- **Omaksu päättelyprosessi:** Ymmärrä järjestelmän kyky hallita omaa päättelyprosessiaan, tehdä päätöksiä ongelmien lähestymistavasta ilman ennalta määriteltyjä polkuja.
-- **Työnkulku:** Ymmärrä, miten agenttimalli itsenäisesti päättää hakea markkinatrendiraportteja, tunnistaa kilpailijatietoja, korreloida sisäisiä myyntimittareita, yhdistää löydökset ja arvioida strategiaa.
-- **Iteratiiviset silmukat, työkalujen integrointi ja muisti:** Tutustu järjestelmän riippuvuuteen silmukkamaisesta vuorovaikutusmallista, joka ylläpitää tilaa ja muistia vaiheiden välillä välttäen toistuvia silmukoita ja tehden perusteltuja päätöksiä.
-- **Virhetilanteiden käsittely ja itsekorjaus:** Tutki järjestelmän vahvoja itsekorjausmekanismeja, kuten iterointia ja uudelleenkyselyä, diagnostisten työkalujen käyttöä ja ihmisen valvontaan turvautumista.
-- **Toiminnan rajat:** Ymmärrä Agentic RAG:n rajoitukset, keskittyen toimialakohtaiseen autonomiaan, infrastruktuuririippuvuuteen ja turvamekanismien kunnioittamiseen.
-- **Käytännön käyttötapaukset ja arvo:** Tunnista tilanteet, joissa Agentic RAG loistaa, kuten tarkkuuslähtöiset ympäristöt, monimutkaiset tietokantainteraktiot ja laajennetut työnkulut.
-- **Hallinta, läpinäkyvyys ja luottamus:** Tutustu hallinnan ja läpinäkyvyyden merkitykseen, mukaan lukien selitettävä päättely, harhan hallinta ja ihmisen valvonta.
+- **Agentic RAG:n ymmärtäminen:** Opit tekoälyn uuden paradigman, jossa suuret kielimallit suunnittelevat itsenäisesti seuraavat askeleensa samalla kun ne hakevat tietoa ulkoisista tietolähteistä.
+- **Iteratiivinen Maker-Checker-tyyli:** Hallitset idean, jossa on iteratiivisten LLM-kutsujen silmukka, johon sisältyy työkalu- tai funktiokutsuja ja rakenteellisia tulosteita, jotka on suunniteltu parantamaan oikeellisuutta ja käsittelemään virheellisiä kyselyjä.
+- **Päättelyprosessin hallinta:** Ymmärrät järjestelmän kyvyn omistaa päättelyprosessinsa, tehdä päätöksiä ongelmien lähestymistavasta ilman ennalta määriteltyjä polkuja.
+- **Työnkulku:** Ymmärrät, miten agenttimalli itsenäisesti päättää hakea markkinatrendiraportteja, tunnistaa kilpailijatiedot, korreloida sisäisiä myyntimittareita, yhdistää löydökset ja arvioida strategiaa.
+- **Iteratiiviset silmukat, työkalujen integrointi ja muisti:** Opit järjestelmän nojaavan silmukkamalliseen vuorovaikutukseen, joka ylläpitää tilaa ja muistia vaiheiden välillä välttääkseen toistuvat silmukat ja tehdäkseen harkittuja päätöksiä.
+- **Virhetilanteiden käsittely ja itsekorjaus:** Tutkit järjestelmän vahvoja itsekorjausmekanismeja, mukaan lukien iterointi ja uudelleenkyselyt, diagnostiikkatyökalujen käyttö ja ihmisen valvontaan tukeutuminen.
+- **Agenttisuuden rajat:** Ymmärrät Agentic RAG:n rajoitteet, keskittyen toimialakohtaiseen autonomiaan, infrastruktuuririippuvuuteen ja valvontasääntöjen kunnioittamiseen.
+- **Käytännön käyttötapaukset ja arvon tuotto:** Tunnistat tilanteet, joissa Agentic RAG on erityisen hyödyllinen, kuten oikeellisuuteen painottuvissa ympäristöissä, monimutkaisissa tietokantaintegraatioissa ja laajemmissa työnkuluissa.
+- **Hallinnointi, läpinäkyvyys ja luottamus:** Opit hallinnon ja läpinäkyvyyden tärkeydestä, mukaan lukien selitettävä päättely, puolueettomuuden hallinta ja ihmisen valvonta.
 
 ## Mikä on Agentic RAG?
 
-Agentic Retrieval-Augmented Generation (Agentic RAG) on nouseva tekoälyn paradigma, jossa suuret kielimallit (LLM:t) suunnittelevat itsenäisesti seuraavat askeleensa samalla kun hakevat tietoa ulkoisista lähteistä. Toisin kuin staattiset haku-ja-lukeminen -mallit, Agentic RAG sisältää iteratiivisia kutsuja LLM:lle, joita vuorottelevat työkalujen tai funktioiden kutsut ja rakenteelliset tulokset. Järjestelmä arvioi tuloksia, tarkentaa kyselyitä, käyttää tarvittaessa lisätyökaluja ja jatkaa tätä sykliä, kunnes tyydyttävä ratkaisu on saavutettu. Tämä iteratiivinen “maker-checker”-tyyli parantaa tarkkuutta, käsittelee virheellisiä kyselyitä ja varmistaa korkealaatuiset tulokset.
+Agentic Retrieval-Augmented Generation (Agentic RAG) on uusi tekoälyparadigma, jossa suuret kielimallit (LLM) suunnittelevat itsenäisesti seuraavat askeleensa samalla kun ne hakevat tietoa ulkoisista lähteistä. Toisin kuin staattiset hakemista ja sitten lukemista seuraavat mallit, Agentic RAG sisältää iteratiivisia LLM-kutsuja, jotka vuorottelevat työkalu- tai funktiokutsujen ja rakenteellisten tulosteiden kanssa. Järjestelmä arvioi saadut tulokset, tarkentaa kyselyjä, kutsuu tarvittaessa lisätyökaluja ja jatkaa tätä sykliä, kunnes saadaan tyydyttävä ratkaisu. Tämä iteratiivinen ”maker-checker” -tyyli parantaa oikeellisuutta, käsittelee virheellisiä kyselyjä ja varmistaa korkealaatuiset tulokset.
 
-Järjestelmä hallitsee aktiivisesti omaa päättelyprosessiaan, kirjoittaa uudelleen epäonnistuneita kyselyitä, valitsee erilaisia hakumenetelmiä ja integroi useita työkaluja—kuten vektorihaku Azure AI Searchissa, SQL-tietokantoja tai mukautettuja API:ita—ennen lopullisen vastauksen antamista. Agenttijärjestelmän erottava ominaisuus on sen kyky hallita omaa päättelyprosessiaan. Perinteiset RAG-toteutukset luottavat ennalta määriteltyihin polkuihin, mutta agenttijärjestelmä päättää itsenäisesti askelten järjestyksen sen perusteella, mitä tietoa se löytää.
+Järjestelmä omistaa aktiivisesti päättelyprosessinsa, kirjoittaa uudelleen epäonnistuneet kyselyt, valitsee erilaisia hakumenetelmiä ja integroi useita työkaluja — kuten vektorihakua Azure AI Searchissa, SQL-tietokantoja tai räätälöityjä API-rajapintoja — ennen vastauksen lopullista muotoilua. Agenttijärjestelmän erottaava ominaisuus on kyky omistaa päättelyprosessinsa. Perinteiset RAG-ratkaisut luottavat ennalta määriteltyihin polkuihin, mutta agenttijärjestelmä määrittelee itsenäisesti vaiheiden järjestyksen löydetyn tiedon laadun perusteella.
 
-## Agentic Retrieval-Augmented Generation (Agentic RAG) määritelmä
+## Agentic Retrieval-Augmented Generationin (Agentic RAG) määrittely
 
-Agentic Retrieval-Augmented Generation (Agentic RAG) on nouseva paradigma tekoälyn kehityksessä, jossa LLM:t eivät ainoastaan hae tietoa ulkoisista tietolähteistä, vaan myös suunnittelevat itsenäisesti seuraavat askeleensa. Toisin kuin staattiset haku-ja-lukeminen -mallit tai huolellisesti skriptatut kehotussekvenssit, Agentic RAG sisältää iteratiivisia kutsuja LLM:lle, joita vuorottelevat työkalujen tai funktioiden kutsut ja rakenteelliset tulokset. Joka käänteessä järjestelmä arvioi saatuja tuloksia, päättää, tarkentaako kyselyitä, käyttääkö lisätyökaluja tarvittaessa ja jatkaa tätä sykliä, kunnes tyydyttävä ratkaisu on saavutettu.
+Agentic Retrieval-Augmented Generation (Agentic RAG) on uusi tekoälyn kehitysparadigma, jossa suurikokoiset kielimallit eivät vain hae tietoa ulkoisista tietolähteistä, vaan myös suunnittelevat itsenäisesti seuraavat askeleensa. Toisin kuin staattiset hakemista ja sitten lukemista seuraavat kuviot tai huolellisesti skriptatut kehotteet, Agentic RAG sisältää iteratiivisten LLM-kutsujen silmukan, johon sisältyy työkalu- tai funktiokutsuja ja rakenteellisia tulosteita. Joka kierroksella järjestelmä arvioi saatuja tuloksia, päättää, pitääkö kyselyjä tarkentaa, kutsuu lisätyökaluja tarvittaessa ja jatkaa tätä sykliä, kunnes tyydyttävä ratkaisu saavutetaan.
 
-Tämä iteratiivinen “maker-checker”-tyyli on suunniteltu parantamaan tarkkuutta, käsittelemään virheellisiä kyselyitä rakenteellisiin tietokantoihin (esim. NL2SQL) ja varmistamaan tasapainoiset, korkealaatuiset tulokset. Sen sijaan, että järjestelmä luottaisi pelkästään huolellisesti suunniteltuihin kehotusketjuihin, se hallitsee aktiivisesti omaa päättelyprosessiaan. Se voi kirjoittaa uudelleen epäonnistuneita kyselyitä, valita erilaisia hakumenetelmiä ja integroida useita työkaluja—kuten vektorihaku Azure AI Searchissa, SQL-tietokantoja tai mukautettuja API:ita—ennen lopullisen vastauksen antamista. Tämä poistaa tarpeen monimutkaisille orkestrointikehyksille. Sen sijaan suhteellisen yksinkertainen silmukka “LLM-kutsu → työkalun käyttö → LLM-kutsu → …” voi tuottaa hienostuneita ja hyvin perusteltuja tuloksia.
+Tämä iteratiivinen ”maker-checker” -tyylinen toiminta on suunniteltu parantamaan oikeellisuutta, käsittelemään virheellisiä kyselyjä rakenteellisiin tietokantoihin (kuten NL2SQL) ja varmistamaan tasapainoiset, korkealaatuiset tulokset. Sen sijaan, että luotettaisiin pelkästään huolellisesti laadittuihin kehotteisiin, järjestelmä omistaa aktiivisesti päättelyprosessinsa. Se voi kirjoittaa uudelleen epäonnistuneet kyselyt, valita erilaisia hakutapoja ja yhdistää useita työkaluja — kuten vektorihaku Azure AI Searchissa, SQL-tietokantoja tai räätälöityjä API-rajapintoja — ennen vastauksen lopullista tuottoa. Tämä poistaa tarpeen monimutkaisille orkestrointikehyksille. Sen sijaan suhteellisen yksinkertainen silmukka ”LLM-kutsu → työkalun käyttö → LLM-kutsu → …” voi tuottaa edistyneitä ja hyvin perusteltuja tuloksia.
 
-![Agentic RAG Core Loop](../../../translated_images/agentic-rag-core-loop.c8f4b85c26920f71ed181ebb14001ac7aae47c0b0af237edcf71898645a62db3.fi.png)
+![Agentic RAG Core Loop](../../../translated_images/fi/agentic-rag-core-loop.c8f4b85c26920f71.webp)
 
-## Päättelyprosessin hallinta
+## Päättelyprosessin omistaminen
 
-Agenttijärjestelmän erottava ominaisuus on sen kyky hallita omaa päättelyprosessiaan. Perinteiset RAG-toteutukset usein riippuvat ihmisistä, jotka määrittelevät mallille polun: ajatusketjun, joka hahmottaa, mitä hakea ja milloin. Mutta kun järjestelmä on aidosti agenttimainen, se päättää sisäisesti, miten lähestyä ongelmaa. Se ei vain suorita skriptiä; se määrittää itsenäisesti askelten järjestyksen sen perusteella, mitä tietoa se löytää.
+Erottava ominaisuus, joka tekee järjestelmästä ”agenttisen”, on sen kyky omistaa päättelyprosessinsa. Perinteiset RAG-toteutukset usein riippuvat ihmisistä, jotka määrittelevät mallille ennalta polun: ajatteluketjun, joka kuvaa, mitä haetaan ja milloin.
+Mutta kun järjestelmä on todella agenttinen, se päättää sisäisesti, miten ongelmaan lähestytään. Se ei vain suorita skriptiä; se määrittää itsenäisesti askelien järjestyksen löydetyn tiedon laadun perusteella.
+Esimerkiksi jos siltä pyydetään luomaan tuotteen lanseerausstrategia, se ei nojaa pelkästään kehotteeseen, joka kuvaa koko tutkimus- ja päätöksentekoprosessin. Sen sijaan agenttinen malli päättää itsenäisesti:
 
-Esimerkiksi, jos järjestelmää pyydetään luomaan tuotelanseerausstrategia, se ei luota pelkästään kehotukseen, joka määrittelee koko tutkimus- ja päätöksentekotyönkulun. Sen sijaan agenttimalli päättää itsenäisesti:
-
-1. Hakea nykyiset markkinatrendiraportit Bing Web Groundingin avulla.
-2. Tunnistaa relevantit kilpailijatiedot Azure AI Searchin avulla.
-3. Korreloida historialliset sisäiset myyntimittarit Azure SQL Databasea käyttäen.
-4. Yhdistää löydökset yhtenäiseksi strategiaksi, jota orkestroidaan Azure OpenAI Servicen avulla.
-5. Arvioida strategiaa aukkojen tai epäjohdonmukaisuuksien varalta, mikä voi johtaa uuteen hakukierrokseen.
-
-Kaikki nämä askeleet—kyselyiden tarkentaminen, lähteiden valinta, iterointi kunnes vastaus on “tyydyttävä”—päätetään mallin toimesta, ei ihmisen ennalta skriptamana.
+1. Hakea ajantasaiset markkinatrendiraportit käyttäen Bing Web Groundingia
+2. Tunnistaa relevantit kilpailijatiedot käyttäen Azure AI Searchia
+3. Korreloida historiallisia sisäisiä myyntimittareita käyttäen Azure SQL Databasea
+4. Yhdistää löydökset yhtenäiseksi strategiaksi Azure OpenAI Servicea hyödyntäen
+5. Arvioida strategia aukkojen tai ristiriitojen varalta ja tarvittaessa käynnistää toinen hakukierros.
+Kaikki nämä vaiheet — kyselyjen tarkentaminen, lähteiden valinta, iterointi kunnes vastaus on ”tyydyttävä” — päätetään mallin toimesta, ei ihmisen ennalta skriptaamina.
 
 ## Iteratiiviset silmukat, työkalujen integrointi ja muisti
 
-![Tool Integration Architecture](../../../translated_images/tool-integration.0f569710b5c17c106757adba082f6c4be025ca0721bff7d1ee4b929a3617a600.fi.png)
+![Tool Integration Architecture](../../../translated_images/fi/tool-integration.0f569710b5c17c10.webp)
 
-Agenttijärjestelmä perustuu silmukkamaiseen vuorovaikutusmalliin:
+Agenttinen järjestelmä perustuu silmukkamalliseen vuorovaikutukseen:
 
 - **Alkukutsu:** Käyttäjän tavoite (eli käyttäjän kehotus) esitetään LLM:lle.
-- **Työkalun käyttö:** Jos malli tunnistaa puuttuvaa tietoa tai epäselviä ohjeita, se valitsee työkalun tai hakumenetelmän—kuten vektorikantahaku (esim. Azure AI Search Hybrid search yksityisistä tiedoista) tai rakenteellisen SQL-kutsun—kerätäkseen lisää kontekstia.
-- **Arviointi ja tarkentaminen:** Palautetun datan tarkastelun jälkeen malli päättää, riittääkö tieto. Jos ei, se tarkentaa kyselyä, kokeilee eri työkalua tai säätää lähestymistapaansa.
-- **Toista kunnes tyytyväinen:** Tämä sykli jatkuu, kunnes malli päättää, että sillä on tarpeeksi selkeyttä ja todisteita lopullisen, hyvin perustellun vastauksen antamiseen.
-- **Muisti ja tila:** Koska järjestelmä ylläpitää tilaa ja muistia vaiheiden välillä, se voi muistaa aiemmat yritykset ja niiden tulokset, välttäen toistuvia silmukoita ja tehden perusteltuja päätöksiä edetessään.
+- **Työkalujen kutsuminen:** Jos malli tunnistaa puuttuvaa tietoa tai epäselviä ohjeita, se valitsee työkalun tai hakumenetelmän — kuten vektoritietokantakyselyn (esim. Azure AI Search Hybrid -haku yksityisille datoille) tai rakenteellisen SQL-kutsun — kerätäkseen lisäkontekstia.
+- **Arviointi ja tarkentaminen:** Saatuaan tietoja malli arvioi, onko tieto riittävä. Jos ei, se tarkentaa kyselyä, kokeilee eri työkalua tai muuttaa lähestymistapaansa.
+- **Toistaminen, kunnes tyydyttävä:** Tätä sykliä jatketaan, kunnes malli katsoo, että sillä on tarpeeksi selkeyttä ja näyttöä antaakseen lopullisen, hyvin perustellun vastauksen.
+- **Muisti ja tila:** Koska järjestelmä ylläpitää tilaa ja muistia vaiheiden välillä, se voi muistaa aiemmat yritykset ja niiden tulokset, välttäen toistuvia silmukoita ja tehdessään harkitumpia päätöksiä eteenpäin mentäessä.
 
-Ajan myötä tämä luo tunteen kehittyvästä ymmärryksestä, mahdollistaen mallin navigoida monimutkaisia, monivaiheisia tehtäviä ilman, että ihmisen täytyy jatkuvasti puuttua asiaan tai muotoilla kehotusta uudelleen.
+Ajan myötä tämä luo kehittyvän ymmärryksen, jonka avulla malli voi navigoida monimutkaisissa, monivaiheisissa tehtävissä ilman, että ihmisen tarvitsee jatkuvasti puuttua peliin tai muokata kehotetta.
 
 ## Virhetilanteiden käsittely ja itsekorjaus
 
-Agentic RAG:n autonomia sisältää myös vahvat itsekorjausmekanismit. Kun järjestelmä kohtaa umpikujia—kuten hakee epäolennaisia dokumentteja tai kohtaa virheellisiä kyselyitä—se voi:
+Agentic RAG:n autonomiaan kuuluvat myös vahvat itsekorjausmekanismit. Kun järjestelmä kohtaa umpikujaan, kuten epäolennaisten dokumenttien haun tai virheelliset kyselyt, se voi:
 
-- **Iteroida ja kysyä uudelleen:** Sen sijaan, että se palauttaisi vähäarvoisia vastauksia, malli kokeilee uusia hakustrategioita, kirjoittaa tietokantakyselyitä uudelleen tai tarkastelee vaihtoehtoisia tietojoukkoja.
-- **Käyttää diagnostisia työkaluja:** Järjestelmä voi kutsua lisätoimintoja, jotka on suunniteltu auttamaan sen päättelyvaiheiden virheenkorjauksessa tai varmistamaan haetun datan oikeellisuus. Työkalut kuten Azure AI Tracing ovat tärkeitä mahdollistamaan vahvan havainnoinnin ja seurannan.
-- **Turvautua ihmisen valvontaan:** Korkean panoksen tai toistuvasti epäonnistuvissa tilanteissa malli voi merkitä epävarmuuden ja pyytää ihmisen ohjausta. Kun ihminen antaa korjaavaa palautetta, malli voi sisällyttää sen oppitunnin jatkossa.
+- **Iteroida ja uudelleenhakea:** Palauttamisen sijaan vähäarvoisia vastauksia malli kokeilee uusia hakustrategioita, kirjoittaa uudelleen tietokantakyselyt tai etsii vaihtoehtoisia aineistoja.
+- **Käyttää diagnostiikkatyökaluja:** Järjestelmä voi kutsua lisätoimintoja, jotka auttavat virheiden jäljityksessä tai haettujen tietojen oikeellisuuden varmistamisessa. Työkaluja, kuten Azure AI Tracing, on tärkeää käyttää, jotta vahva valvonta ja havainnointi onnistuvat.
+- **Tukeutua ihmisen valvontaan:** Korkean panoksen tai toistuvasti epäonnistuvissa tilanteissa malli saattaa ilmoittaa epävarmuudesta ja pyytää ihmisen ohjausta. Kun ihminen antaa korjaavaa palautetta, malli voi sisäistää oppimansa jatkokäyttöä varten.
 
-Tämä iteratiivinen ja dynaaminen lähestymistapa mahdollistaa mallin jatkuvan parantamisen, varmistaen, että se ei ole vain kertaluonteinen järjestelmä, vaan oppii virheistään kyseisen istunnon aikana.
+Tämä iteratiivinen ja dynaaminen lähestymistapa mahdollistaa mallille jatkuvan parantumisen, varmistaen, että se ei ole vain kertakäyttöinen järjestelmä, vaan oppiva järjestelmä, joka oppii virheistään kulloisenkin istunnon aikana.
 
-![Self Correction Mechanism](../../../translated_images/self-correction.da87f3783b7f174bdc592c754b352884dd283814758bfeb7a68f5fd910272f3b.fi.png)
+![Self Correction Mechanism](../../../translated_images/fi/self-correction.da87f3783b7f174b.webp)
 
-## Toiminnan rajat
+## Agenttisuuden rajat
 
-Vaikka Agentic RAG on autonominen tehtävän sisällä, se ei ole verrattavissa yleiseen tekoälyyn (Artificial General Intelligence). Sen “agenttimaiset” kyvyt rajoittuvat ihmisten kehittäjien tarjoamiin työkaluihin, tietolähteisiin ja käytäntöihin. Se ei voi keksiä omia työkalujaan tai astua ulos sille asetetuista toimialarajoista. Sen sijaan se loistaa dynaamisesti orkestroimalla käytettävissä olevia resursseja.
+Vaikka Agentic RAG toimii tehtävän sisällä itsenäisesti, se ei vastaa yleisälykkyyttä (Artificial General Intelligence). Sen ”agenttiset” kyvyt rajoittuvat ihmisten kehittämiin työkaluihin, tietolähteisiin ja toimintaperiaatteisiin. Se ei voi keksiä omia työkalujaan tai toimia rajojen ulkopuolella. Sen sijaan se loistaa hallinnoimalla dynaamisesti käytettävissä olevia resursseja.
+Keskeisiä eroavaisuuksia kehittyneempiin tekoälymuotoihin ovat:
 
-Keskeiset erot kehittyneempiin tekoälymuotoihin verrattuna:
-
-1. **Toimialakohtainen autonomia:** Agentic RAG -järjestelmät keskittyvät käyttäjän määrittelemiin tavoitteisiin tunnetussa toimialassa, käyttäen strategioita kuten kyselyiden uudelleenkirjoittamista tai työkalujen valintaa parantaakseen tuloksia.
-2. **Infrastruktuuririippuvuus:** Järjestelmän kyvyt riippuvat kehittäjien integroimista työkaluista ja datasta. Se ei voi ylittää näitä rajoja ilman ihmisen väliintuloa.
-3. **Turvamekanismien kunnioittaminen:** Eettiset ohjeet, vaatimustenmukaisuussäännöt ja liiketoimintakäytännöt ovat edelleen erittäin tärkeitä. Agentin vapaus on aina rajoitettu turvallisuusmekanismeilla ja valvontajärjestelmillä (toivottavasti?).
+1. **Toimialakohtainen autonomia:** Agentic RAG -järjestelmät keskittyvät saavuttamaan käyttäjän määrittelemiä tavoitteita tunnetussa toimialassa, käyttämällä strategioita kuten kyselyjen uudelleenkirjoitus tai työkalujen valinta tulosten parantamiseksi.
+2. **Infrastruktuuririippuvuus:** Järjestelmän kyvyt perustuvat kehittäjien integroimiin työkaluihin ja tietoihin. Se ei voi ylittää näitä rajoja ilman ihmisen puuttumista.
+3. **Valvontasääntöjen kunnioitus:** Eettiset ohjeet, sääntelyvaatimukset ja liiketoimintapolitiikat ovat erittäin tärkeitä. Agentin vapaus on aina sidottu turvallisuustoimiin ja valvontamekanismeihin (toivottavasti).
 
 ## Käytännön käyttötapaukset ja arvo
 
-Agentic RAG loistaa tilanteissa, jotka vaativat iteratiivista tarkentamista ja tarkkuutta:
+Agentic RAG loistaa tilanteissa, joissa tarvitaan iteratiivista tarkennusta ja tarkkuutta:
 
-1. **Tarkkuuslähtöiset ympäristöt:** Vaatimustenmukaisuustarkastuksissa, sääntelyanalyysissä tai oikeudellisessa tutkimuksessa agenttimalli voi toistuvasti varmistaa faktat, konsultoida useita lähteitä ja kirjoittaa kyselyitä uudelleen, kunnes se tuottaa perusteellisesti tarkistetun vastauksen.
-2. **Monimutkaiset tietokantainteraktiot:** Kun käsitellään rakenteellista dataa, jossa kyselyt usein epäonnistuvat tai vaativat säätöä, järjestelmä voi itsenäisesti tarkentaa kyselyitään käyttäen Azure SQL:ää tai Microsoft Fabric OneLakea, varmistaen lopullisen haun vastaavan käyttäjän tarkoitusta.
-3. **Laajennetut työnkulut:** Pidemmät istunnot voivat kehittyä, kun uutta tietoa tulee esiin. Agentic RAG voi jatkuvasti sisällyttää uutta dataa, muuttaa strategioita oppiessaan lisää ongelma-alueesta.
+1. **Oikeellisuuteen painottuvat ympäristöt:** Vaatimustenmukaisuustarkastuksissa, sääntelyanalyysissä tai oikeudellisessa tutkimuksessa agenttimalli voi toistuvasti varmistaa faktat, konsultoida useita lähteitä ja kirjoittaa kyselyjä uudelleen, kunnes vastaukset on perusteellisesti validoitu.
+2. **Monimutkaiset tietokantaintegraatiot:** Kun käsitellään rakenteellista dataa, jossa kyselyt voivat usein epäonnistua tai vaatia säätöä, järjestelmä voi itsenäisesti hioa kyselyitään Azure SQL:n tai Microsoft Fabric OneLaken avulla varmistaen, että lopullinen haku vastaa käyttäjän tarkoitusta.
+3. **Laajennetut työnkulut:** Pidemmät istunnot voivat kehittyä uusien tietojen ilmaantuessa. Agentic RAG voi jatkuvasti sisällyttää uutta dataa, muuttaen strategioita oppiessaan lisää ongelmasta.
 
-## Hallinta, läpinäkyvyys ja luottamus
+## Hallinnointi, läpinäkyvyys ja luottamus
 
-Kun nämä järjestelmät tulevat yhä autonomisemmiksi päättelyssään, hallinta ja läpinäkyvyys ovat ratkaisevan tärkeitä:
+Näiden järjestelmien itsenäistymisen myötä hallinnointi ja läpinäkyvyys ovat ratkaisevia:
 
-- **Selitettävä päättely:** Malli voi tarjota auditointipolun tekemistään kyselyistä, konsultoimistaan lähteistä ja päättelyvaiheista, jotka johtivat sen lopputulokseen. Työkalut kuten Azure AI Content Safety ja Azure AI Tracing / GenAIOps voivat auttaa ylläpitämään läpinäkyvyyttä ja vähentämään riskejä.
-- **Harhan hallinta ja tasapainoinen haku:** Kehittäjät voivat säätää hakustrategioita varmistaakseen, että tasapainoiset ja edustavat tietolähteet otetaan huomioon, ja säännöllisesti auditoida tuloksia harhan tai vinoutuneiden mallien havaitsemiseksi käyttämällä mukautettuja malleja edistyneille data science -organisaatioille Azure Machine Learningin avulla.
-- **Ihmisen valvonta ja vaatimustenmukaisuus:** Herkissä tehtävissä ihmisen tarkistus on edelleen välttämätöntä. Agentic RAG ei korvaa ihmisen harkintaa korkean panoksen päätöksissä—se täydentää sitä tarjoamalla perusteellisemmin tarkistettuja vaihtoehtoja.
+- **Selitettävä päättely:** Malli voi tarjota auditointijäljen tekemiensä kyselyjen, konsultoitujen lähteiden ja päättelyaskelten osalta, jotka se käytti johtopäätökseen pääsemiseksi. Työkalut, kuten Azure AI Content Safety ja Azure AI Tracing / GenAIOps, voivat auttaa ylläpitämään läpinäkyvyyttä ja vähentämään riskejä.
+- **Harhaisuuden hallinta ja tasapainoinen haku:** Kehittäjät voivat säätää hakustrategioita varmistaakseen, että tiedonlähteet ovat tasapainoisia ja edustavia, sekä suorittaa säännöllisiä auditointeja puolueellisuuden ja vinoutuneiden kuvioiden havaitsemiseksi käyttäen räätälöityjä malleja edistyneille data science -organisaatioille Azure Machine Learningin avulla.
+- **Ihmisen valvonta ja vaatimustenmukaisuus:** Herkissä tehtävissä ihmisen arviointi on edelleen välttämätöntä. Agentic RAG ei korvaa ihmisen arvostelukykyä suuren panoksen päätöksissä — se täydentää sitä tarjoamalla perusteellisesti validoituja vaihtoehtoja.
 
-Työkalut, jotka tarjoavat selkeän kirjanpidon toimista, ovat välttämättömiä. Ilman niitä monivaiheisen prosessin virheenkorjaus voi olla erittäin vaikeaa. Katso seuraava esimerkki Literal AI:lta (Chainlitin takana oleva yritys) agentin suorituksesta:
+On välttämätöntä, että käytössä on työkalut, jotka tarjoavat selkeän toimintalokin. Ilman niitä monivaiheisen prosessin virheenkorjaus voi olla erittäin vaikeaa. Katso seuraava esimerkki Literal AI:ltä (Chainlitin takana oleva yritys) agentin suorituksesta:
 
-![AgentRunExample](./images/AgentRunExample.png
-- <a href="https://ragaboutit.com/agentic-rag-a-complete-guide-to-agent-based-retrieval-augmented-generation/" target="_blank">Agentic RAG: Täydellinen opas agenttipohjaiseen hakuun ja tuotettuun sisältöön – Uutisia sukupolven RAG:sta</a>
-- <a href="https://huggingface.co/learn/cookbook/agent_rag" target="_blank">Agentic RAG: tehosta RAG:ia kyselyn muotoilulla ja itse-kyselyllä! Hugging Face Open-Source AI Cookbook</a>
-- <a href="https://youtu.be/aQ4yQXeB1Ss?si=2HUqBzHoeB5tR04U" target="_blank">Agenttikerrosten lisääminen RAG:iin</a>
-- <a href="https://www.youtube.com/watch?v=zeAyuLc_f3Q&t=244s" target="_blank">Tiedon avustajien tulevaisuus: Jerry Liu</a>
-- <a href="https://www.youtube.com/watch?v=AOSjiXP1jmQ" target="_blank">Kuinka rakentaa agenttipohjaisia RAG-järjestelmiä</a>
-- <a href="https://ignite.microsoft.com/sessions/BRK102?source=sessions" target="_blank">Azure AI Foundry Agent Service -palvelun käyttö AI-agenttien skaalaamiseen</a>
+![AgentRunExample](../../../translated_images/fi/AgentRunExample.471a94bc40cbdc0c.webp)
 
-### Tieteelliset artikkelit
+## Yhteenveto
 
-- <a href="https://arxiv.org/abs/2303.17651" target="_blank">2303.17651 Self-Refine: Iteratiivinen tarkennus itsepalautteen avulla</a>
-- <a href="https://arxiv.org/abs/2303.11366" target="_blank">2303.11366 Reflexion: Kielelliset agentit sanallisella vahvistusoppimisella</a>
-- <a href="https://arxiv.org/abs/2305.11738" target="_blank">2305.11738 CRITIC: Suuret kielimallit voivat korjata itseään työkalujen avulla</a>
-- <a href="https://arxiv.org/abs/2501.09136" target="_blank">2501.09136 Agenttipohjainen haku ja tuotettu sisältö: Katsaus agenttipohjaiseen RAG:iin</a>
+Agentic RAG edustaa luonnollista kehitystä siinä, miten tekoälyjärjestelmät käsittelevät monimutkaisia, datarikkaita tehtäviä. Ottamalla käyttöön silmukkamallisen vuorovaikutuksen, itsenäisesti valiten työkaluja ja tarkentamalla kyselyjä, kunnes saavutetaan korkealaatuinen tulos, järjestelmä siirtyy staattisesta kehotteiden seuraamisesta kohti adaptiivisempaa, kontekstia ymmärtävää päätöksentekijää. Ihmisten määrittämien infrastruktuurien ja eettisten ohjeiden rajoissa nämä agenttikyvyt mahdollistavat rikkaampia, dynaamisempia ja lopulta hyödyllisempiä tekoälyvuorovaikutuksia sekä yrityksille että loppukäyttäjille.
+
+### Haluatko lisäkysymyksiä Agentic RAG:sta?
+
+Liity [Microsoft Foundry Discordiin](https://aka.ms/ai-agents/discord) tapaamaan muita oppijoita, osallistumaan toimistoaikoihin ja saamaan vastauksia AI Agents -kysymyksiisi.
+
+## Lisäresurssit
+- <a href="https://learn.microsoft.com/training/modules/use-own-data-azure-openai" target="_blank">Hanki RAG-ratkaisu käyttöön Azure OpenAI -palvelun avulla: Opi käyttämään omia tietojasi Azure OpenAI -palvelussa. Tämä Microsoft Learn -moduuli tarjoaa kattavan oppaan RAG:n toteuttamiseen</a>
+- <a href="https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai" target="_blank">Generatiivisten tekoälysovellusten arviointi Microsoft Foundrylla: Tässä artikkelissa käsitellään mallien arviointia ja vertailua julkisilla tietojoukoilla, mukaan lukien agenttipohjaiset tekoälysovellukset ja RAG-arkkitehtuurit</a>
+- <a href="https://weaviate.io/blog/what-is-agentic-rag" target="_blank">Mikä on Agentic RAG | Weaviate</a>
+- <a href="https://ragaboutit.com/agentic-rag-a-complete-guide-to-agent-based-retrieval-augmented-generation/" target="_blank">Agentic RAG: Täydellinen opas agenttipohjaiseen Retrieval Augmented Generationiin – Uutisia generatiivisesta RAG:sta</a>
+- <a href="https://huggingface.co/learn/cookbook/agent_rag" target="_blank">Agentic RAG: tehosta RAG:tasi kyselymuokkauksella ja itsehakemisella! Hugging Face Open-Source AI Cookbook</a>
+- <a href="https://youtu.be/aQ4yQXeB1Ss?si=2HUqBzHoeB5tR04U" target="_blank">Agenttipohjaisten kerrosten lisääminen RAG:iin</a>
+- <a href="https://www.youtube.com/watch?v=zeAyuLc_f3Q&t=244s" target="_blank">Tulevaisuuden tietoavustajat: Jerry Liu</a>
+- <a href="https://www.youtube.com/watch?v=AOSjiXP1jmQ" target="_blank">Kuinka rakentaa agenttipohjaiset RAG-järjestelmät</a>
+- <a href="https://ignite.microsoft.com/sessions/BRK102?source=sessions" target="_blank">Microsoft Foundry Agent -palvelun käyttö tekoälyagenttien skaalaamiseen</a>
+
+### Akateemiset artikkelit
+
+- <a href="https://arxiv.org/abs/2303.17651" target="_blank">2303.17651 Self-Refine: Iteratiivinen hienosäätö itsepalautteen avulla</a>
+- <a href="https://arxiv.org/abs/2303.11366" target="_blank">2303.11366 Reflexion: Kielelliset agentit verbaalisella vahvistusoppimisella</a>
+- <a href="https://arxiv.org/abs/2305.11738" target="_blank">2305.11738 CRITIC: Suuret kielimallit voivat itsekorjata työkalu-interaktiivisella kritiikillä</a>
+- <a href="https://arxiv.org/abs/2501.09136" target="_blank">2501.09136 Agenttipohjainen Retrieval-Augmented Generation: Katsaus Agentic RAG:iin</a>
 
 ## Edellinen oppitunti
 
-[Työkalujen käyttö -suunnittelumalli](../04-tool-use/README.md)
+[Työkalujen käyttötapa](../04-tool-use/README.md)
 
 ## Seuraava oppitunti
 
-[Luotettavien AI-agenttien rakentaminen](../06-building-trustworthy-agents/README.md)
+[Luotettavien tekoälyagenttien rakentaminen](../06-building-trustworthy-agents/README.md)
 
 ---
 
-**Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vastuuvapauslauseke**:
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta ota huomioon, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen omalla kielellä on virallinen lähde. Tärkeiden tietojen osalta suositellaan ammattilaisen tekemää ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käyttämisestä aiheutuvista väärinkäsityksistä tai virhetulkinnoista.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

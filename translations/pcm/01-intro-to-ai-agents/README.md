@@ -1,122 +1,141 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cdd28bc00816d2773bb2b5968d782abc",
-  "translation_date": "2025-11-11T14:11:36+00:00",
-  "source_file": "01-intro-to-ai-agents/README.md",
-  "language_code": "pcm"
-}
--->
-[![Intro to AI Agents](../../../translated_images/lesson-1-thumbnail.d21b2c34b32d35bbc7f1b4a40a81b031970b6076b4e0c59fb006cf818cac5d4a.pcm.png)](https://youtu.be/3zgm60bXmQk?si=QA4CW2-cmul5kk3D)
+[![Intro to AI Agents](../../../translated_images/pcm/lesson-1-thumbnail.d21b2c34b32d35bb.webp)](https://youtu.be/3zgm60bXmQk?si=QA4CW2-cmul5kk3D)
 
-> _(Click di image wey dey up to watch di video for dis lesson)_
-
+> _(Klik di piksha wey dey up dere to watch di video for dis lekshan)_
 
 # Introduction to AI Agents and Agent Use Cases
 
-Welcome to di "AI Agents for Beginners" course! Dis course go teach you di basic knowledge and show you example wey you fit use to build AI Agents.
+Welcome to di **AI Agents for Beginners** course! Dis course go gi you di basic knowledge — plus real working code — to start to build AI Agents from scratch.
 
-Join di <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Discord Community</a> to meet oda learners and people wey dey build AI Agents, plus ask any question wey you get about dis course.
+Make you come greet for di <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Discord Community</a> — e full of learners and AI builders wey happy to answer questions.
 
-To start dis course, we go first understand wetin AI Agents be and how we fit use dem for di apps and workflows wey we dey build.
+Bifor we start to build, make we sure say we sabi wetin be AI Agent *be* and wen e make sense to use one.
+
+---
 
 ## Introduction
 
-Dis lesson go cover:
+Dis lekshan cover:
 
-- Wetin AI Agents be and di different types of agents wey dey.
-- Wetin AI Agents fit do and how dem fit help us.
-- Wetin be di basic things we need to sabi when we dey design Agentic Solutions.
+- Wetin AI Agents be, and di different types wey dey
+- Which kind tasks AI Agents dey best for
+- Di main building blocks wey you go use wen you dey design one Agentic solution
 
 ## Learning Goals
-After you finish dis lesson, you go fit:
 
-- Sabi di concept of AI Agents and how dem different from oda AI solutions.
-- Use AI Agents well well.
-- Design Agentic solutions wey go work well for users and customers.
+By di end of dis lekshan, you go fit:
+
+- Explain wetin AI Agent be and how e different from regular AI solution
+- Know wen to reach for AI Agent (and wen no to)
+- Sketch out basic Agentic solution design for real-world wahala
+
+---
 
 ## Defining AI Agents and Types of AI Agents
 
-### Wetin AI Agents Be?
+### Wetin be AI Agents?
 
-AI Agents na **systems** wey dey make **Large Language Models(LLMs)** fit **do actions** by giving di LLMs **access to tools** and **knowledge**.
+Dis na simple way to think am:
 
-Make we break di definition into small parts:
+> **AI Agents na systems wey make Large Language Models (LLMs) actually *do tins* — by giving dem tools and knowledge to act for di world, no be only to respond to prompts.**
 
-- **System** - E dey important to see agents as system wey get many parts, no be just one thing. Di basic parts of AI Agent na:
-  - **Environment** - Di space wey di AI Agent dey operate. For example, if we get travel booking AI Agent, di environment fit be di travel booking system wey di AI Agent dey use to do tasks.
-  - **Sensors** - Environment dey give information and feedback. AI Agents dey use sensors to collect and understand di information about di environment state. For di Travel Booking Agent example, di travel booking system fit give info like hotel availability or flight prices.
-  - **Actuators** - After di AI Agent don collect di environment state, e go decide wetin action e go take to change di environment. For di travel booking agent, e fit be to book available room for di user.
+Make we unpack am small:
 
-![What Are AI Agents?](../../../translated_images/what-are-ai-agents.1ec8c4d548af601a3a78c6c02e5c355d19c06a4a74fe93e3609a1d08e8c15689.pcm.png)
+- **System** — AI Agent no be just one tin. E dey made up of parts wey dey work together. For e core, every agent get three parts:
 
-**Large Language Models** - Di idea of agents don dey before LLMs come. Di advantage of using LLMs for AI Agents na say dem sabi understand human language and data. Dis ability dey help LLMs understand di environment info and plan how to change di environment.
+  - **Environment** — Di space wey di agent dey work inside. For travel booking agent, na di booking platform itself be dat.
 
-**Perform Actions** - Outside AI Agent systems, LLMs dey limited to only generate content or info based on wetin user ask. Inside AI Agent systems, LLMs fit do tasks by understanding wetin user want and using di tools wey dey di environment.
+  - **Sensors** — How di agent dey read di current state of im environment. Our travel agent fit check hotel availability or flight prices.
 
-**Access To Tools** - Di tools wey LLM fit use na di environment wey e dey operate and wetin di developer of di AI Agent allow. For di travel agent example, di tools fit be di operations wey dey di booking system, or di developer fit limit di tools to flights only.
+  - **Actuators** — How di agent dey take action. Di travel agent fit book room, send confirmation, or cancel reservation.
 
-**Memory+Knowledge** - Memory fit be short-term for di conversation between di user and di agent. Long-term, di AI Agent fit collect knowledge from oda systems, services, tools, and even oda agents. For di travel agent example, dis knowledge fit be di user travel preferences wey dey customer database.
+![What Are AI Agents?](../../../translated_images/pcm/what-are-ai-agents.1ec8c4d548af601a.webp)
 
-### Di different types of agents
+- **Large Language Models** — Agents dey before LLMs, but na LLMs dey make modern agents powerful. Dem fit understand natural language, reason about context, and turn vague user request to solid plan of action.
 
-Now we don sabi wetin AI Agents be, make we look di specific types of agents and how dem fit work for travel booking AI agent.
+- **Perform Actions** — Without agent system, LLM just dey generate text. But inside agent system, LLM fit *execute* steps — search database, call API, send message.
 
-| **Agent Type**                | **Description**                                                                                                                       | **Example**                                                                                                                                                                                                                   |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Simple Reflex Agents**      | Dem dey do immediate actions based on rules wey dem don set before.                                                                                  | Travel agent go read di email and send travel complaints go customer service.                                                                                                                          |
-| **Model-Based Reflex Agents** | Dem dey act based on di model of di world and di changes wey dey di model.                                                              | Travel agent go focus on routes wey price don change well well based on historical pricing data.                                                                                                             |
-| **Goal-Based Agents**         | Dem dey plan how to achieve goals by understanding di goal and deciding actions to reach am.                                  | Travel agent go arrange journey by planning di travel arrangements (car, public transit, flights) from di current location to di destination.                                                                                |
-| **Utility-Based Agents**      | Dem dey check preferences and balance tradeoffs to decide how to achieve goals.                                               | Travel agent go balance convenience and cost when e dey book travel.                                                                                                                                          |
-| **Learning Agents**           | Dem dey improve over time by using feedback to adjust actions.                                                        | Travel agent go use customer feedback from post-trip surveys to make di next bookings better.                                                                                                               |
-| **Hierarchical Agents**       | Dem dey use multiple agents in levels, higher-level agents go divide tasks into smaller tasks for lower-level agents to finish. | Travel agent go cancel trip by dividing di task into smaller tasks (like canceling specific bookings) and lower-level agents go finish dem, then report back to di higher-level agent.                                     |
-| **Multi-Agent Systems (MAS)** | Agents dey work independently, either cooperatively or competitively.                                                           | Cooperative: Many agents go book travel services like hotels, flights, and entertainment. Competitive: Many agents go manage and compete for di same hotel booking calendar to book customers into di hotel. |
+- **Access to Tools** — Di tools wey agent fit use depend on (1) di environment wey e dey run and (2) wetin di developer choose to give am. Travel agent fit search flights but no fit edit customer record — na wetin you wire up.
 
-## When to Use AI Agents
+- **Memory + Knowledge** — Agents fit get short-term memory (di current conversation) and long-term memory (customer database, past interactions). Travel agent fit "remember" say you like window seats.
 
-For di earlier section, we use di Travel Agent example to explain how di different types of agents fit work for different travel booking situations. We go continue to use dis example for di course.
+---
 
-Make we look di types of use cases wey AI Agents dey best for:
+### Di Different Types of AI Agents
 
-![When to use AI Agents?](../../../translated_images/when-to-use-ai-agents.54becb3bed74a479f5caca9c951132ce81d482a6704bcd22e5a600dbabc9434e.pcm.png)
+No be all agents dem build di same way. Below na di main types, using travel booking agent as example:
 
+| **Agent Type** | **Wetin E Dey Do** | **Travel Agent Example** |
+|---|---|---|
+| **Simple Reflex Agents** | E dey follow code rules — no memory, no planning. | When e see complaint email → e send am go customer service. Na so e go. |
+| **Model-Based Reflex Agents** | E keep internal model of di world and dey update am as tins change. | E dey track historical flight prices and dey flag routes wey sudden expensive. |
+| **Goal-Based Agents** | E get goal and dey find how to reach am step by step. | E fit book full trip (flights, car, hotel) from where you dey go your destination. |
+| **Utility-Based Agents** | No just find *one* solution — e go find *best* one by weighing tradeoffs. | E balance cost vs. convenience to find trip wey best match your preferences. |
+| **Learning Agents** | E dey improve over time by learning from feedback. | E dey adjust future booking recommendations based on survey after trip. |
+| **Hierarchical Agents** | High-level agent go break work into small tasks and give lower-level agents. | To "cancel trip" request, e go split am: cancel flight, cancel hotel, cancel car rental — each na different sub-agent. |
+| **Multi-Agent Systems (MAS)** | Many independent agents dey work together (or compete). | Cooperative: different agents dey handle hotels, flights, entertainment. Competitive: plenty agents dey compete to fill hotel rooms at best price. |
 
-- **Open-Ended Problems** - Make di LLM decide wetin steps e need to complete task because e no fit always dey hardcoded into workflow.
-- **Multi-Step Processes** - Tasks wey need complexity wey go make di AI Agent use tools or info over many turns, no be just one time.  
-- **Improvement Over Time** - Tasks wey di agent fit dey improve over time by collecting feedback from di environment or users to do better work.
+---
 
-We go talk more about using AI Agents for di Building Trustworthy AI Agents lesson.
+## Wen to Use AI Agents
+
+No be because you fit use AI Agent mean say you suppose always use am. These na tins wey agents dey shine for:
+
+![When to use AI Agents?](../../../translated_images/pcm/when-to-use-ai-agents.54becb3bed74a479.webp)
+
+- **Open-Ended Problems** — Wen di steps to solve problem no fit pre-program. You need LLM to figure path dynamically.
+
+- **Multi-Step Processes** — Tasks wey need use tools for many steps, no be one-time lookup or generation.
+
+- **Improvement Over Time** — Wen you want system to sabi more based on user feedback or environment signals.
+
+Later for di course, we go dey go deeper into wen (and wen *no*) to use AI Agents for **Building Trustworthy AI Agents** lekshan.
+
+---
 
 ## Basics of Agentic Solutions
 
 ### Agent Development
 
-Di first step to design AI Agent system na to define di tools, actions, and behaviors. For dis course, we go focus on using di **Azure AI Agent Service** to define our Agents. E get features like:
+Di first tin you go do wen you dey build agent na to define *wetin e fit do* — im tools, actions, and behaviours.
 
-- Selection of Open Models like OpenAI, Mistral, and Llama
-- Use of Licensed Data from providers like Tripadvisor
-- Use of standardized OpenAPI 3.0 tools
+For dis course, we dey use **Azure AI Agent Service** as main platform. E support:
+
+- Open models like OpenAI, Mistral, and Llama
+- Licensed data from providers like Tripadvisor
+- Standardized OpenAPI 3.0 tool definitions
 
 ### Agentic Patterns
 
-Communication with LLMs na through prompts. Because AI Agents dey semi-autonomous, e no dey always possible or necessary to dey manually reprompt di LLM after di environment don change. We dey use **Agentic Patterns** wey go help us prompt di LLM over many steps in better way.
+You dey communicate with LLMs through prompts. With agents, you no fit hand-write every prompt — di agent need to take action across many steps. Na di **Agentic Patterns** dem dey use. Dem be reusable strategies for prompting and controlling LLMs in bigger, more reliable way.
 
-Dis course dey divided into some popular Agentic patterns wey dey now.
+Dis course na about di most common and useful agentic patterns.
 
 ### Agentic Frameworks
 
-Agentic Frameworks dey help developers use agentic patterns through code. Dis frameworks dey provide templates, plugins, and tools for better collaboration between AI Agents. Dem dey also help to monitor and fix problems for AI Agent systems.
+Agentic Frameworks dey give developers ready-made templates, tools, and infrastructure to build agents. E make am easier to:
 
-For dis course, we go look di research-driven AutoGen framework and di production-ready Agent framework from Semantic Kernel.
+- Wire up tools and capabilities
+- Observe wetin di agent dey do (and debug wen e go wrong)
+- Collaborate across many agents
 
-## Sample Codes
+For dis course, we focus on **Microsoft Agent Framework (MAF)** to build production-ready agents.
 
-- Python: [Agent Framework](./code_samples/01-python-agent-framework.ipynb)
-- .NET: [Agent Framework](./code_samples/01-dotnet-agent-framework.md)
+---
 
-## Get More Questions about AI Agents?
+## Code Samples
 
-Join di [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) to meet oda learners, attend office hours, and get answers to your AI Agents questions.
+You ready to see how e dey work? Here be di code samples for dis lekshan:
+
+- 🐍 Python: [Agent Framework](./code_samples/01-python-agent-framework.ipynb)
+- 🔷 .NET: [Agent Framework](./code_samples/01-dotnet-agent-framework.md)
+
+---
+
+## Got Questions?
+
+Join di [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) to connect with other learners, attend office hours, and get your AI Agent questions answered by di community.
+
+---
 
 ## Previous Lesson
 
@@ -130,5 +149,5 @@ Join di [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) to meet oda
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dis dokyument don use AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) do di translation. Even as we dey try make am accurate, abeg sabi say machine translation fit get mistake or no dey correct well. Di original dokyument for im native language na di main source wey you go trust. For important information, e better make professional human translation dey use. We no go fit take blame for any misunderstanding or wrong interpretation wey fit happen because you use dis translation.
+Dis document don translate wit AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Even though we dey try make am correct, abeg know say automated translation fit get some errors or wahala. Di original document for im own language na di correct source. For important information, better human professional translation betta. We no go responsible for any misunderstanding or incorrect meaning wey fit dey because of dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

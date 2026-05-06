@@ -8,7 +8,7 @@ This lesson will cover:
 
 - Understanding Microsoft Agent Framework: Key Features and Value  
 - Exploring the Key Concepts of Microsoft Agent Framework
-- Comparing MAF to Semantic Kernel and AutoGen: Migration Guide
+- Advanced MAF Patterns: Workflows, Middleware, and Memory
 
 ## Learning Goals
 
@@ -16,7 +16,7 @@ After completing this lesson, you will know how to:
 
 - Build Production Ready AI Agents using Microsoft Agent Framework
 - Apply the core features of Microsoft Agent Framework to your Agentic Use Cases
-- Migrate and integrate existing Agentic frameworks and tools  
+- Use advanced patterns including workflows, middleware, and observability
 
 ## Code Samples 
 
@@ -26,7 +26,7 @@ Code samples for [Microsoft Agent Framework (MAF)](https://aka.ms/ai-agents-begi
 
 ![Framework Intro](./images/framework-intro.png)
 
-[Microsoft Agent Framework (MAF)](https://aka.ms/ai-agents-beginners/agent-framewrok) builds on top of the experience and learnings from Semantic Kernel and AutoGen. It offers the flexibility to address the wide variety of agentic use cases seen in both production and research environments including:
+[Microsoft Agent Framework (MAF)](https://aka.ms/ai-agents-beginners/agent-framewrok) is Microsoft's unified framework for building AI agents. It offers the flexibility to address the wide variety of agentic use cases seen in both production and research environments including:
 
 - **Sequential Agent orchestration** in scenarios where step-by-step workflows are needed.
 - **Concurrent orchestration** in scenarios where agents need to complete tasks at the same time.
@@ -36,8 +36,8 @@ Code samples for [Microsoft Agent Framework (MAF)](https://aka.ms/ai-agents-begi
 
 To deliver AI Agents in Production, MAF also has included features for:
 
-- **Observability** through the use of OpenTelemetry where every action of the AI Agent including tool invocation, orchestration steps, reasoning flows and performance monitoring through Azure AI Foundry dashboards.
-- **Security** by hosting agents natively on Azure AI Foundry which includes security controls such as role-based access, private data handling and built-in content safety.
+- **Observability** through the use of OpenTelemetry where every action of the AI Agent including tool invocation, orchestration steps, reasoning flows and performance monitoring through Microsoft Foundry dashboards.
+- **Security** by hosting agents natively on Microsoft Foundry which includes security controls such as role-based access, private data handling and built-in content safety.
 - **Durability** as Agent threads and workflows can pause, resume and recover from errors which enables longer running process.
 - **Control** as human in the loop workflows are supported where tasks are marked as requiring human approval.
 
@@ -65,7 +65,7 @@ set of instructions for the AI Agent to follow, and an assigned `name`:
 agent = AzureOpenAIChatClient(credential=AzureCliCredential()).create_agent( instructions="You are good at recommending trips to customers based on their preferences.", name="TripRecommender" )
 ```
 
-The above is using `Azure OpenAI` but agents can be created using a variety of services including `Azure AI Foundry Agent Service`:
+The above is using `Azure OpenAI` but agents can be created using a variety of services including `Microsoft Foundry Agent Service`:
 
 ```python
 AzureAIAgentClient(async_credential=credential).create_agent( name="HelperAgent", instructions="You are a helpful assistant." ) as agent
@@ -79,6 +79,12 @@ agent = OpenAIResponsesClient().create_agent( name="WeatherBot", instructions="Y
 
 ```python
 agent = OpenAIChatClient().create_agent( name="HelpfulAssistant", instructions="You are a helpful assistant.", )
+```
+
+or [MiniMax](https://platform.minimaxi.com/), which provides an OpenAI-compatible API with large context windows (up to 204K tokens):
+
+```python
+agent = OpenAIChatClient(base_url="https://api.minimax.io/v1", api_key=os.environ["MINIMAX_API_KEY"], model_id="MiniMax-M2.7").create_agent( name="HelpfulAssistant", instructions="You are a helpful assistant.", )
 ```
 
 or remote agents using the A2A protocol:
@@ -329,47 +335,14 @@ To provide better observability into workflows, MAF offers built-in events for e
 - `ExecutorCompleteEvent`  -  Executor finishes processing
 - `RequestInfoEvent` - A request is issued
 
-## Migrating From Other Frameworks (Semantic Kernel and AutoGen)
+## Advanced MAF Patterns
 
-### Differences between MAF and Semantic Kernel
+The sections above cover the key concepts of Microsoft Agent Framework. As you build more complex agents, here are some advanced patterns to consider:
 
-**Simplified Agent Creation**
-
-Semantic Kernel relies on the creation of a Kernel instance for every agent. MAF uses has a simplified approach by using extensions for the main providers.
-
-```python
-agent = AzureOpenAIChatClient(credential=AzureCliCredential()).create_agent( instructions="You are good at reccomending trips to customers based on their preferences.", name="TripRecommender" )
-```
-
-**Agent Thread Creation**
-
-Semantic Kernel requires threads to be created manually. In MAF, the agent is directly assigned a thread.
-
-```python
-thread = agent.get_new_thread() # Run the agent with the thread. 
-```
-
-**Tool Registration**
-
-In Semantic Kernel, tools are registered to the Kernel and the Kernel is then passed to the agent. In MAF, tools are registered directly during the agent creation process.
-
-```python
-agent = ChatAgent( chat_client=OpenAIChatClient(), instructions="You are a helpful assistant", tools=[get_attractions]
-```
-
-### Differences between MAF and  AutoGen
-
-**Teams vs Workflows**
-
-`Teams` are the event structure for event driven activity with agents in AutoGen. MAF uses `Workflows` that route data to executors through a graph based architecture.
-
-**Tool Creation**
-
-AutoGen uses `FunctionTool` to wrap functions for agents to call. MAF uses @ai_function which operates similarly but also infers the schemas automatically for each function.
-
-**Agent Behaviour**
-
-Agents are single-turn agents by default in AutoGen unless `max_tool_iterations` is set to something higher. Within MAF the `ChatAgent` is a multi-turn by default meaning that it will keep calling tools until the user's task is complete.
+- **Middleware Composition**: Chain multiple middleware handlers (logging, auth, rate-limiting) using function and chat middleware for fine-grained control over agent behavior.
+- **Workflow Checkpointing**: Use workflow events and serialization to save and resume long-running agent processes.
+- **Dynamic Tool Selection**: Combine RAG over tool descriptions with MAF's tool registration to present only relevant tools per query.
+- **Multi-Agent Handoff**: Use workflow edges and conditional routing to orchestrate handoffs between specialized agents.
 
 ## Code Samples 
 
@@ -377,4 +350,4 @@ Code samples for Microsoft Agent Framework can be found in this repository under
 
 ## Got More Questions About Microsoft Agent Framework?
 
-Join the [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.
+Join the [Microsoft Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.

@@ -1,37 +1,27 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5f54aa3f419865e5d58bcfddb1d3198",
-  "translation_date": "2025-10-03T15:16:33+00:00",
-  "source_file": "AGENTS.md",
-  "language_code": "en"
-}
--->
 # AGENTS.md
 
 ## Project Overview
 
-This repository contains "AI Agents for Beginners" - a comprehensive educational course that teaches everything you need to know to build AI Agents. The course includes over 15 lessons covering the basics, design patterns, frameworks, and deploying AI agents in production.
+This repository contains "AI Agents for Beginners" - a comprehensive educational course teaching everything needed to build AI Agents. The course consists of 15+ lessons covering fundamentals, design patterns, frameworks, and production deployment of AI agents.
 
 **Key Technologies:**
 - Python 3.12+
 - Jupyter Notebooks for interactive learning
-- AI Frameworks: Semantic Kernel, AutoGen, Microsoft Agent Framework (MAF)
-- Azure AI Services: Azure AI Foundry, Azure AI Agent Service
-- GitHub Models Marketplace (free tier available)
+- AI Frameworks: Microsoft Agent Framework (MAF)
+- Azure AI Services: Microsoft Foundry, Azure AI Foundry Agent Service V2
 
 **Architecture:**
-- Lesson-based structure (directories numbered 00-15+)
-- Each lesson includes: README documentation, code samples (Jupyter notebooks), and images
-- Multi-language support through an automated translation system
-- Multiple framework options for each lesson (Semantic Kernel, AutoGen, Azure AI Agent Service)
+- Lesson-based structure (00-15+ directories)
+- Each lesson contains: README documentation, code samples (Jupyter notebooks), and images
+- Multi-language support via automated translation system
+- One Python notebook per lesson using Microsoft Agent Framework
 
 ## Setup Commands
 
 ### Prerequisites
 - Python 3.12 or higher
-- GitHub account (required for GitHub Models - free tier)
-- Azure subscription (optional, for Azure AI services)
+- Azure subscription (for Azure AI Foundry)
+- Azure CLI installed and authenticated (`az login`)
 
 ### Initial Setup
 
@@ -43,7 +33,7 @@ This repository contains "AI Agents for Beginners" - a comprehensive educational
    cd ai-agents-for-beginners
    ```
 
-2. **Create and activate a Python virtual environment:**
+2. **Create and activate Python virtual environment:**
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -62,22 +52,21 @@ This repository contains "AI Agents for Beginners" - a comprehensive educational
 
 ### Required Environment Variables
 
-For **GitHub Models (Free)**:
-- `GITHUB_TOKEN` - Personal access token from GitHub
+For **Azure AI Foundry** (Required):
+- `AZURE_AI_PROJECT_ENDPOINT` - Azure AI Foundry project endpoint
+- `AZURE_AI_MODEL_DEPLOYMENT_NAME` - Model deployment name (e.g., gpt-4o)
 
-For **Azure AI Services** (optional):
-- `PROJECT_ENDPOINT` - Azure AI Foundry project endpoint
-- `AZURE_OPENAI_API_KEY` - Azure OpenAI API key
-- `AZURE_OPENAI_ENDPOINT` - Azure OpenAI endpoint URL
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Deployment name for chat model
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Deployment name for embeddings
-- Additional Azure configuration as shown in `.env.example`
+For **Azure AI Search** (Lesson 05 - RAG):
+- `AZURE_SEARCH_SERVICE_ENDPOINT` - Azure AI Search endpoint
+- `AZURE_SEARCH_API_KEY` - Azure AI Search API key
+
+Authentication: Run `az login` before running notebooks (uses `AzureCliCredential`).
 
 ## Development Workflow
 
 ### Running Jupyter Notebooks
 
-Each lesson includes multiple Jupyter notebooks for different frameworks:
+Each lesson contains multiple Jupyter notebooks for different frameworks:
 
 1. **Start Jupyter:**
    ```bash
@@ -87,33 +76,16 @@ Each lesson includes multiple Jupyter notebooks for different frameworks:
 2. **Navigate to a lesson directory** (e.g., `01-intro-to-ai-agents/code_samples/`)
 
 3. **Open and run notebooks:**
-   - `*-semantic-kernel.ipynb` - Using the Semantic Kernel framework
-   - `*-autogen.ipynb` - Using the AutoGen framework
    - `*-python-agent-framework.ipynb` - Using Microsoft Agent Framework (Python)
    - `*-dotnet-agent-framework.ipynb` - Using Microsoft Agent Framework (.NET)
-   - `*-azureaiagent.ipynb` - Using Azure AI Agent Service
 
-### Working with Different Frameworks
+### Working with Microsoft Agent Framework
 
-**Semantic Kernel + GitHub Models:**
-- Free tier available with GitHub account
-- Ideal for learning and experimentation
-- File pattern: `*-semantic-kernel*.ipynb`
-
-**AutoGen + GitHub Models:**
-- Free tier available with GitHub account
-- Supports multi-agent orchestration
-- File pattern: `*-autogen.ipynb`
-
-**Microsoft Agent Framework (MAF):**
-- Latest framework from Microsoft
-- Available in Python and .NET
-- File pattern: `*-agent-framework.ipynb`
-
-**Azure AI Agent Service:**
+**Microsoft Agent Framework + Azure AI Foundry:**
 - Requires Azure subscription
-- Production-ready features
-- File pattern: `*-azureaiagent.ipynb`
+- Uses `AzureAIProjectAgentProvider` for Agent Service V2 (agents visible in Foundry portal)
+- Production-ready with built-in observability
+- File pattern: `*-python-agent-framework.ipynb`
 
 ## Testing Instructions
 
@@ -124,7 +96,7 @@ This is an educational repository with example code rather than production code 
 1. **Test Python environment:**
    ```bash
    python --version  # Should be 3.12+
-   pip list | grep -E "(autogen|semantic-kernel|azure-ai)"
+   pip list | grep -E "(agent-framework|azure-ai|azure-identity)"
    ```
 
 2. **Test notebook execution:**
@@ -168,10 +140,8 @@ Open notebooks in Jupyter and execute cells sequentially. Each notebook is self-
 <lesson-number>-<lesson-name>/
 ├── README.md                     # Lesson documentation
 ├── code_samples/
-│   ├── <number>-semantic-kernel.ipynb
-│   ├── <number>-autogen.ipynb
 │   ├── <number>-python-agent-framework.ipynb
-│   └── <number>-azureaiagent.ipynb
+│   └── <number>-dotnet-agent-framework.ipynb  (optional)
 └── images/
     └── *.png
 ```
@@ -182,14 +152,14 @@ Open notebooks in Jupyter and execute cells sequentially. Each notebook is self-
 
 This repository uses Markdown for documentation:
 - README.md files in each lesson folder
-- Main README.md at the repository root
+- Main README.md at repository root
 - Automated translation system via GitHub Actions
 
 ### CI/CD Pipeline
 
 Located in `.github/workflows/`:
 
-1. **co-op-translator.yml** - Automatically translates content into 50+ languages
+1. **co-op-translator.yml** - Automatic translation to 50+ languages
 2. **welcome-issue.yml** - Welcomes new issue creators
 3. **welcome-pr.yml** - Welcomes new pull request contributors
 
@@ -255,7 +225,7 @@ Use descriptive titles:
    - Some notebooks may require additional packages mentioned in their markdown cells
 
 4. **Azure services:**
-   - Azure AI services require an active subscription
+   - Azure AI services require active subscription
    - Some features are region-specific
    - Free tier limitations apply to GitHub Models
 
@@ -270,22 +240,20 @@ Recommended progression through lessons:
 
 ### Framework Selection
 
-Choose a framework based on your goals:
-- **Learning/Prototyping**: Semantic Kernel + GitHub Models (free)
-- **Multi-agent systems**: AutoGen
-- **Latest features**: Microsoft Agent Framework (MAF)
-- **Production deployment**: Azure AI Agent Service
+Choose framework based on your goals:
+- **All lessons**: Microsoft Agent Framework (MAF) with `AzureAIProjectAgentProvider`
+- **Agents register server-side** in Azure AI Foundry Agent Service V2 and are visible in the Foundry portal
 
 ### Getting Help
 
-- Join the [Azure AI Foundry Community Discord](https://aka.ms/ai-agents/discord)
+- Join the [Microsoft Foundry Community Discord](https://aka.ms/ai-agents/discord)
 - Review lesson README files for specific guidance
 - Check the main [README.md](./README.md) for course overview
 - Refer to [Course Setup](./00-course-setup/README.md) for detailed setup instructions
 
 ### Contributing
 
-This is an open educational project. Contributions are welcome:
+This is an open educational project. Contributions welcome:
 - Improve code examples
 - Fix typos or errors
 - Add clarifying comments
@@ -302,7 +270,7 @@ This repository uses an automated translation system:
 - 50+ languages supported
 - Translations in `/translations/<lang-code>/` directories
 - GitHub Actions workflow handles translation updates
-- Source files are in English at the repository root
+- Source files are in English at repository root
 
 ### Lesson Structure
 
@@ -315,11 +283,9 @@ Each lesson follows a consistent pattern:
 
 ### Code Sample Naming
 
-Format: `<lesson-number>-<framework-name>.ipynb`
-- `04-semantic-kernel.ipynb` - Lesson 4, Semantic Kernel
-- `07-autogen.ipynb` - Lesson 7, AutoGen
-- `14-python-agent-framework.ipynb` - Lesson 14, MAF Python
-- `14-dotnet-agent-framework.ipynb` - Lesson 14, MAF .NET
+Format: `<lesson-number>-python-agent-framework.ipynb`
+- `01-python-agent-framework.ipynb` - Lesson 1, MAF Python
+- `14-sequential.ipynb` - Lesson 14, MAF advanced patterns
 
 ### Special Directories
 
@@ -331,18 +297,16 @@ Format: `<lesson-number>-<framework-name>.ipynb`
 ### Dependencies
 
 Key packages from `requirements.txt`:
-- `autogen-agentchat`, `autogen-core`, `autogen-ext` - AutoGen framework
-- `semantic-kernel` - Semantic Kernel framework
 - `agent-framework` - Microsoft Agent Framework
+- `a2a-sdk` - Agent-to-Agent protocol support
 - `azure-ai-inference`, `azure-ai-projects` - Azure AI services
+- `azure-identity` - Azure authentication (AzureCliCredential)
 - `azure-search-documents` - Azure AI Search integration
-- `chromadb` - Vector database for RAG examples
-- `chainlit` - Chat UI framework
-- `browser_use` - Browser automation for agents
 - `mcp[cli]` - Model Context Protocol support
-- `mem0ai` - Memory management for agents
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document was translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive to ensure accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
